@@ -1,0 +1,382 @@
+:root {
+    --black:#0b0b0b;
+    --dark-principal:#0b0b0b;
+    --color:white;
+    --color-second:#eeeeee;
+    --color-third:#ddd;
+    --color-oposite:#0b0b0b;
+    --gradient: linear-gradient(to right, #d604cf, #9822ff);
+    --first:#e684ae;
+    --second:#79cbca;
+}
+.special {
+    width:100vw;
+    height:auto;
+    padding-top:80px;
+    background-color: var(--color-third);
+}
+.special-div {
+    display: flex;
+    align-items:flex-start;
+    background-color: var(--color-second);
+    justify-content: space-evenly;
+    margin:10px 25px 50px 25px;
+    width:calc(100vw - 50px);
+    height:auto;
+    flex-wrap: wrap;
+    padding:30px 50px;
+}
+.spec-left {
+    width:40vw;
+    min-width:500px;
+    height:500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 5px black;
+}
+.spec-slider {
+    width:20%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.spec-slider-photo {
+    width:75%;
+    height:20%;
+    object-fit: cover;
+    box-shadow:1px 1px 3px black;
+    cursor: pointer;
+}
+.spec-photo {
+    width:80%;
+    height:100%;
+}
+.spec-img {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+    cursor: zoom-in;
+}
+.special-zoom {
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.64);
+    position: fixed;
+    z-index:3;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.special-zoom-photo {
+    height:calc(100% - 150px);
+    object-fit: cover;
+}
+.spec-right {
+    width:25vw;
+    min-width: 500px;
+    height:500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    color:var(--color-oposite);
+    font-family: 'Poppins',sans-serif;
+    padding-left:20px;
+}
+.spec-name {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.spec-id-text {
+    font-size:22px;
+    font-weight: 500;
+    margin-top:5px;
+}
+.spec-price, .spec-id {
+    font-size:22px;
+    font-weight: 600;
+}
+.spec-price {
+    color:rgb(220, 38, 38)
+}
+.spec-price-old {
+    font-size:20px;
+    font-weight: 500;
+    text-decoration: line-through;
+    color:grey;
+}
+span.spec-price-old {
+    color:var(--color-oposite);
+    text-decoration: none;
+}
+.spec-size-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.spec-size, .spec-size-current, .spec-size-disable {
+   margin:10px 10px 0 0;
+   font-size:20px;
+   font-weight: 500;
+   width:60px;
+   height:40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1px solid grey;
+   cursor: pointer;
+   flex-wrap: wrap;
+}
+.spec-size-disable {
+   cursor:not-allowed;
+   opacity: 0.8;
+}
+.spec-size-current {
+    background-color: var(--dark-principal);
+    border:none;
+    color:var(--color)
+}
+.spec-size:hover {
+    border:1px solid var(--dark-principal);
+}
+.spec-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:15px;
+}
+.spec-add-cart {
+    cursor: pointer;
+    font-size:20px;
+    border-radius: 4px;
+    font-family: 'Noto sans georgian', sans-serif;
+    color:var(--color);
+    background-color: var(--dark-principal);
+    padding:5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 3px black;
+}
+.spec-cart-photo {
+    background-size: 30px 30px;
+    width:30px;
+    height:30px;
+    font-size:24px;
+    margin-left:10px;
+}
+.spec-cart-light {
+    background-image: url(../svg/shopping-cart-one.svg);
+}
+.spec-cart-dark {
+    background-image: url(../svg-dark/shopping-cart-one.svg);
+}
+.spec-cart-nr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:24px;
+    padding:0 8px;
+    font-weight: 600;
+    color:var(--color-oposite);
+    margin-left:10px;
+}
+.spec-cart-nr-flex {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    margin-left:5px;
+}
+.spec-cart-btn {
+    border:1px solid var(--color-oposite);
+    padding:0 5px;
+    font-size:20px;  
+    cursor: pointer; 
+}
+.spec-fav {
+    height:50px;
+    width:50px;
+    margin-top:10px;
+}
+.spec-det {
+    font-size:20px;
+    font-weight: 500;
+    margin-top:10px;
+}
+.spec-span {
+    font-weight: 600;
+}
+.spec-white-space {
+    width:100vw;
+    height:70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--dark-principal);
+}
+
+/*----------Review----------*/
+
+
+.spec-review-page {
+    width:100vw;
+    height:auto;
+    background-color: var(--color-second);
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
+    padding:30px 0;
+}
+.spec-review-left, .spec-review-right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width:50%;
+}
+.spec-review-left-content {
+    width:80%;
+    min-width: 400px;
+    box-shadow: 2px 2px 5px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:10px 0;
+    color:var(--color-oposite)
+}
+.spec-review-left {
+    position: sticky;
+    top:calc(50% - 100px);
+}
+.spec-review-right {
+    align-items: flex-start;
+    padding:0 50px;
+}
+.spec-rev-text {
+    font-size:22px;
+    color:var(--color-oposite);
+    font-weight: 600;
+    margin-bottom:15px;
+}
+.spec-rev-text-dark {
+    color:var(--color);
+    font-weight: 600;
+    font-size:24px;
+}
+.spec-rev-enter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:500px;
+    text-align: center;
+}
+.spec-rev-name {
+    font-size:22px;
+    font-weight: 600;
+    color:var(--color-oposite);
+    margin:10px 0;
+}
+.spec-rev-input {
+    width:400px;
+    height:40px;
+    font-weight: 22px;
+    padding:5px;
+    background-color: var(--dark-principal);
+    color:var(--color-second);
+    border-radius: 2px;
+}
+.spec-rev-input:focus {
+    outline: none;
+}
+.spec-rev-submit, .spec-rev-submit-anonim {
+    padding:0 15px;
+    margin:10px 0;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:22px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.spec-rev-submit {
+    color:var(--color);
+    background-color: var(--dark-principal);
+}
+.spec-rev-submit-anonim {
+    color:var(--color-oposite);
+    background-color: var(--color-second);
+    border:1px solid var(--color-oposite)
+}
+.spec-review {
+    width:100%;
+    height:100px;
+    margin-bottom:40px;
+}
+.spec-rev-upper {
+    font-weight: 600;
+    font-size:24px;
+    padding:0 10px;
+    display: flex;
+    align-items:flex-end;
+    justify-content: flex-start;
+    margin-bottom:5px;
+    color:var(--color-oposite);
+    flex-wrap: wrap;
+}
+.spec-rev-photo, .spec-rev-photo-dark, .spec-rev-anonim, .spec-rev-anonim-dark {
+    width:40px;
+    height:40px;
+    background-size: 100% 100%;
+    margin-right:10px;
+}
+.spec-rev-anonim {
+    background-image: url(../svg-dark/people-unknown.svg);
+}
+.spec-rev-anonim-dark {
+    background-image: url(../svg/people-unknown.svg);
+}
+.spec-rev-photo {
+    background-image: url(../svg-dark/people.svg);
+}
+.spec-rev-photo-dark {
+    background-image: url(../svg/people.svg);
+}
+.spec-rev-star {
+    justify-self: flex-end;
+    padding:0 5px;
+    height:30px;
+    position: relative;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.spec-rev-text {
+    font-weight: 600;
+    margin:0 50px;
+    text-align: justify;
+    font-size:16px;
+}
+.spec-rev-more {
+    color:var(--color);
+    background-color: var(--dark-principal);
+    padding:10px 14px;
+}
+.spec-rev-input-update {
+    width:calc(100% - 80px);
+    margin:0 40px;
+    height:40px;
+    padding:5px;
+    background-color: var(--color);
+    color:var(--color-oposite);
+
+}

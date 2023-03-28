@@ -1,13 +1,544 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin:0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+:root {
+  --black:#0b0b0b;
+  --dark-principal:#0b0b0b;
+  --color:white;
+  --color-second:#eeeeee;
+  --color-oposite:#0b0b0b;
+  --gradient: linear-gradient(to right, #d604cf, #9822ff);
+  --first:#e684ae;
+  --second:#79cbca;
+}
+.loading-bg {
+  width:100vw;
+  height:100vh;
+  z-index:1;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-spin {
+  width:200px;
+  height:100px;
+  font-size:30px;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color:black;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-clear-button {
+  display: none;
+}
+.acc-main {
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  background-color: #eee;
+  padding:0 10px;
+}
+.container {
+  position: relative;
+  width:768px;
+  max-width: 100%;
+  min-height: 480px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.sign-in, .sign-up {
+  position: absolute;
+  left:0;
+  top:0;
+  height:100%;
+  transition: all 0.6s ease-in-out;
+}
+.sign-up {
+  width:50%;
+  opacity: 0;
+  z-index:1;
+}
+.sign-in {
+  width:50%;
+  z-index:2;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*----------Sign Up / Sign In----------*/
+
+
+form.acc-form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height:100%;
+  text-align: center;
+}
+.acc-form-title {
+  font-size:26px;
+  font-family: 'Noto sans serif', sans-serif;
+  font-weight: 600;
+  margin:10px 0;
+}
+.acc-form-text {
+  font-size:14px;
+  font-family: 'Poppins', sans-serif;
+}
+input.acc-input {
+  background-color:#eee;
+  padding:12px 15px 10px 55px;
+  width:100%;
+  border:1px solid transparent;
+  outline: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size:14px;
+}
+input.acc-input:invalid{
+  animation: wrong 300ms ease-in-out;
+  border:1px solid rgb(249, 129, 129);
+}
+input.acc-input:valid {
+  background-color: rgb(230, 250, 255);
+}
+label.acc-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color:transparent;
+  border-radius: 5px;
+  margin:7px 0;
+  width:80%;
+  position: relative;
+}
+.acc-label .place-holder {
+  position: absolute;
+  transform: translateX(55px);
+  transition: 300ms ease;
+  opacity:0.8
+}
+input.acc-input:focus ~ .place-holder {
+  transform: translate(55px, -16px);
+  font-size:12px;
+}
+input.acc-input:not(:placeholder-shown) ~ .place-holder {
+  transform: translate(55px, -16px);
+  font-size:12px;
+}
+@keyframes wrong {
+  0% {transform: translateX(0)}
+  33% {transform: translateX(-5px)}
+  66% {transform: translateX(5px)}
+  100% {transform: translateX(0);}
+}
+.acc-svg {
+  scale:0.6;
+  position: absolute;
+  z-index:1;
+  border-right: 1px solid rgb(39, 39, 39);
+  padding-right:10px;
+}
+.acc-svg-sign {
+  cursor: pointer;
+  width:30px;
+  height:30px;
+}
+.acc-svg-eye {
+  position: absolute;
+  right:0;
+  z-index:1;
+  border-left:1px solid rgb(39,39,39);
+  scale:0.7;
+  padding-left:10px;
+}
+button.acc-btn {
+  color:#fff;
+  background-color:transparent;
+  font-size:18px;
+  padding: 6px 55px;
+  border-radius: 10px;
+  border:1px solid white;
+  outline:none;
+  /* text-transform: uppercase; */
+  transition: transform 80ms ease;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+button.acc-btn:active {
+  transform: scale(0.9);
+}
+.acc-btn {
+  background-color: transparent;
+  border:2px solid #fff;
+}
+.right-panel-active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+.right-panel-active .sign-in {
+  transform: translateX(100%);
+}
+.acc-submit {
+  border-radius: 10px;
+  padding:6px 55px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size:18px;
+  background: var(--gradient);
+  color:white;
+  margin:10px 0;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(113, 113, 113, 0.3), 0 0 5px rgba(156, 156, 156, 0.3), 0 rgba(185, 185, 185, 0.3);
+}
+
+
+/*----------Overlay----------*/
+
+
+.overlay-container {
+  position: absolute;
+  top:0;
+  left:50%;
+  width:50%;
+  height:100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index:9;
+}
+.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+.overlay {
+  position: relative;
+  color:#fff;
+  background-color: #ff416c;
+  left:-100%;
+  height:100%;
+  width:200%;
+  background: var(--gradient);
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+.overlay-left, .overlay-right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top:0;
+  height:100%;
+  width:50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out
+}
+.overlay-left {
+  transform: translateX(-20%);
+}
+.overlay-right {
+  right:0;
+  transform: translateX(0);
+}
+.right-panel-active .overlay-left {
+  transform: translateX(0);
+} 
+.right-panel-active .overlay-right {
+  transform: translateX(20%);
+} 
+.overlay-title {
+  font-size:26px;
+  color:white;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  margin-bottom:20px;
+}
+.overlay-text {
+  font-size:16px;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  margin-bottom:5px;
+}
+.acc-log-svg {
+  width:13px;
+  aspect-ratio: 1/1;
+}
+
+
+
+/*----------Main----------*/
+
+
+.main {
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  background-color: #eee;
+}
+.main-container {
+  position: relative;
+  width:100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+}
+.main-woman, .main-man {
+  position: absolute;
+  left:0;
+  top:0;
+  height:100%;
+  transition: all 0.6s ease-in-out;
+}
+.main-man {
+  width:50%;
+  opacity: 0;
+  z-index:1;
+}
+.main-woman {
+  width:50%;
+  z-index:2;
+}
+
+/*----------Sign Up / Sign In----------*/
+.main-acc-form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height:100%;
+  text-align: center;
+}
+button.main-acc-btn {
+  color:#fff;
+  background-color:transparent;
+  font-size:20px;
+  padding: 6px 55px;
+  border-radius: 10px;
+  border:1px solid white;
+  outline:none;
+  /* text-transform: uppercase; */
+  transition: transform 80ms ease;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin:20px 0;
+}
+.main-acc-btn:active, .main-acc-btn-slide:active  {
+  transform: scale(0.9);
+}
+.main-acc-btn-slide {
+  color:white;
+  background-color: transparent;
+  font-size:20px;
+  padding:6px 30px;
+  outline: none;
+  cursor:pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight:400;
+  margin:20px 0;
+}
+.main-panel .main-man {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+.main-panel .main-woman {
+  transform: translateX(100%);
+}
+
+
+.main-bg-man, .main-bg-woman {
+  width:100%;
+  position: absolute;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+}
+.main-bg-man {
+  background-image: url(/src/clothing/pexels-ivan-samkov-8499296.jpg);
+  background-position: bottom;
+}
+.main-bg-woman {
+  background-position: center -50px;
+  background-image: url(/src/clothing/woman/pexels-olena-bohovyk-3686769.jpg);
+}
+
+
+/*----------Overlay----------*/
+
+
+.main-overlay-container {
+  position: absolute;
+  top:0;
+  left:50%;
+  width:50%;
+  height:100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index:9;
+}
+.main-panel .main-overlay-container {
+  transform: translateX(-100%);
+}
+.main-overlay {
+  position: relative;
+  color:#fff;
+  left:-100%;
+  height:100%;
+  width:200%;
+  background: linear-gradient(90deg, #4e22ff 0%,#d604cf 100%);
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.main-panel .main-overlay {
+  transform: translateX(50%);
+}
+.main-overlay-left, .main-overlay-right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top:0;
+  height:100%;
+  width:50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out
+}
+.main-overlay-left {
+  transform: translateX(-20%);
+}
+.main-overlay-right {
+  right:0;
+  transform: translateX(0);
+}
+.main-panel .main-overlay-left {
+  transform: translateX(0);
+} 
+.main-panel .main-overlay-right {
+  transform: translateX(20%);
+} 
+.main-overlay-title {
+  font-size:35px;
+  color:white;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  margin-bottom:20px;
+  margin-top:90px;
+}
+.main-overlay-text {
+  font-size:16px;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  margin-bottom:5px;
+}
+.main-man-flex, .main-woman-flex {
+  height: 200px;
+  display: flex;
+  width:100%;
+  align-items: center;
+  justify-content: center;
+  margin:30px 0;
+}
+.main-man-cloth, .main-woman-cloth {
+  width:25%;
+  aspect-ratio: 1/1;
+  background-color:rgba(0, 0, 0, 0.1);
+  background-blend-mode: darken;
+  margin:0 20px;
+  display: flex;
+  background-size:cover;
+  transition: 400ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 3px 3px 7px rgb(39,39,39,0.6);
+}
+.main-man-cloth:nth-child(1) {
+  background-image:url(clothing/man/barbati-shirt.jpg)
+}
+.main-man-cloth:nth-child(2) {
+  background-position: bottom;
+  background-image: url(clothing/man/barbati-pants.jpg);
+}
+.main-man-cloth:nth-child(3) {
+  background-size:130% 130%;
+  background-position: 30% 30%;
+  background-image: url(clothing/man/barbati-shoes.jpg);
+}
+.main-woman-cloth:nth-child(1) {
+  background-image: url(clothing/woman/femei-shirt.jpg);
+}
+.main-woman-cloth:nth-child(2) {
+  background-image: url(clothing/woman/femei-pants.jpg);
+}
+.main-woman-cloth:nth-child(3) {
+  background-image: url(clothing/woman/femei-shoes.jpg);
+}
+.main-man-cloth:hover, .main-woman-cloth:hover {
+  flex-grow: 0.7;
+  margin:0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.main-man-cloth-text, .main-woman-cloth-text {
+  opacity: 0;
+  font-size:20px;
+  transition-delay: 400ms;
+  transition: 400ms ease;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.main-man-cloth-more, .main-woman-cloth-more {
+  opacity: 0;
+  font-size:16px;
+  transition-delay: 400ms;
+  transition: 400ms ease;
+  border:1px solid white;
+  padding:4px 6px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-top:20px;
+}
+.main-man-cloth:hover .main-man-cloth-text,
+.main-woman-cloth:hover .main-woman-cloth-text {
+  opacity: 1;
+}
+.main-man-cloth:hover .main-man-cloth-more,
+.main-woman-cloth:hover .main-woman-cloth-more {
+  opacity: 1;
 }

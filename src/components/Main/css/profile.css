@@ -1,0 +1,171 @@
+:root {
+  --dark-principal:#0b0b0b;
+  --dark-opac:#0b0b0bc3;
+  --color:white;
+  --color-second:#eeeeee;
+  --color-third:#ddd;
+  --color-oposite:#0b0b0b;
+  --gradient: linear-gradient(to right, #d604cf, #9822ff);
+  --first:#e684ae;
+  --seond: #79cbca;
+  --third: #77a1d3
+}
+.prof {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    width:100vw;
+    margin-top:50px;
+    position: relative;
+}
+.prof-center {
+    height: auto;
+    min-height:calc(100vh - 50px);
+}
+.prof-center {
+    background-color: var(--color-second);
+    width:40vw;
+    padding:30px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    color:var(--color-oposite);
+    font-size:18px;
+    overflow: hidden;
+    font-family:'Noto sans serif', sans-serif;
+    font-weight: 600;
+    box-shadow: 3px 3px 5px black;
+}
+.prof-photo {
+    width:150px;
+    height:150px;
+    background-color: var(--dark-principal);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px black;
+}
+.prof-photo-slider {
+    width:300px;
+    height:150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: translate;
+    transition: 600ms ease;
+}
+.prof-photo-save, .prof-photo-edit, .prof-photo-save-dark, .prof-photo-edit-dark {
+    width:150px;
+    height:150px;
+    background-position: center;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+}
+.prof-slide {
+    transform: translate(-50%);
+}
+.prof-photo-save-dark {
+    background-image: url(../svg-dark/people.svg);
+}
+.prof-photo-edit-dark {
+    background-image: url(../svg-dark/edit-name.svg);
+}
+.prof-photo-save {
+    background-image: url(../svg/people.svg);
+}
+.prof-photo-edit {
+    background-image: url(../svg/edit-name.svg);
+}
+.prof-txt {
+    margin:8px 0;
+    width:100%;
+    overflow: visible;
+}
+.prof-det {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    width:calc(200% + 200px);
+    position: relative;
+    transition-property: translate;
+    transition: 600ms ease;
+    align-self: flex-start;
+}
+.prof-det-txt {
+    width:100%;
+    text-align: left;
+    font-weight: 500;
+    font-size:16px;
+    font-family: 'Poppins',sans-serif;
+}
+.prof-save {
+    padding: 10px 16px;
+    color:var(--color);
+    cursor: pointer;
+    box-shadow: 3px 3px 7px black;
+    margin:10px 0;
+    background-color: var(--dark-principal);
+}
+.prof-back {
+    padding:10px 16px;
+    margin:10px 0;
+    color:var(--color-oposite);
+    cursor: pointer;
+    box-shadow: 3px 3px 7px black;
+    border:1px solid var(--dark-principal)
+}
+.prof-input {
+    width:100%;
+    font-weight: 500;
+    font-size:16px;
+    padding:3px 5px;
+    background-color: var(--color-third);
+    font-family: 'Poppins',sans-serif;
+    outline:none;
+    caret-color: var(--color-oposite);
+}
+.prof-input:focus {
+    background-color: var(--color-second);
+}
+.prof-btn-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width:100%;
+    margin-top:10px;
+}
+.prof-form-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width:100%;
+}
+.prof-label {
+    padding:5px 10px;
+    margin:0 5px;
+}
+.prof-line {
+    width:70%;
+    background-color: var(--color-second);
+    opacity: 0.5;
+    height:1px;
+    margin:0 3px;
+}
+.prof-left-info, .prof-left-save {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    width:calc(50% - 100px);
+    background-color: var(--color);
+    box-shadow: 3px 3px 7px 2px black;
+    padding:10px 5px;
+    margin-top:20px;
+}
+.prof-det-slider {
+    transform: translate(calc(-50% - 100px));
+}
+.prof-noset {
+    color:rgb(220, 38, 38);
+}
