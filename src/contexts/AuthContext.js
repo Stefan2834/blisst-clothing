@@ -99,8 +99,8 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '' })
-  // const server = process.env.REACT_APP_SERVER
-  const server = 'http://localhost:9000'
+  const server = process.env.REACT_APP_SERVER
+  // const server = 'http://localhost:9000'
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [filter, setFilter] = useState({
