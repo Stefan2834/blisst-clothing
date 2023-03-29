@@ -45,7 +45,8 @@
     overflow: hidden;
 }
 .sugg-img {
-    object-fit: cover;
+    background-size:  cover;
+    background-position: center;
     transition: 400ms ease;
     width:100%;
     height:100%

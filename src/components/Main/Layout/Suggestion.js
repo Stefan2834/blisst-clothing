@@ -46,7 +46,7 @@ export default function Suggestion(props) {
       <div className='sugg-div'>
         <Link to={`/product/${suggestion.id}`}>
           <div className="sugg-photo">
-            <img src={suggestion.photo} alt='Poza produs' className="sugg-img" />
+            <div style={{backgroundImage:`url(${suggestion.photo})`}} className="sugg-img" />
           </div>
         </Link>
         <div className={suggestion.sex === 'man' ? 'sugg-det sugg-grad-man' : 'sugg-det sugg-grad-woman'}>
