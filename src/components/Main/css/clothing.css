@@ -20,6 +20,7 @@
     margin:10px 5px;
     width:270px;
     height:420px;
+    box-shadow: 2px 2px 5px black;
 }
 .cloth-photo {
     height:350px;

@@ -16,7 +16,8 @@ body {
   --color:white;
   --color-second:#eeeeee;
   --color-oposite:#0b0b0b;
-  --gradient: linear-gradient(to right, #d604cf, #9822ff);
+  --color-third: #ddd;
+  --gradient:linear-gradient(180deg, #2289ff 0%,#d604cf 100%);
   --first:#e684ae;
   --second:#79cbca;
 }
@@ -136,6 +137,23 @@ label.acc-label {
   transition: 300ms ease;
   opacity:0.8
 }
+.acc-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin:5px 0;
+}
+.type-place-holder {
+  padding: 8px 16px;
+  transition: 400ms ease;
+  border-radius: 5px;
+  margin:0 5px;
+}
+.acc-type-input:checked ~ .type-place-holder {
+  background-color: var(--color-oposite);
+  color: var(--color);
+}
 input.acc-input:focus ~ .place-holder {
   transform: translate(55px, -16px);
   font-size:12px;
@@ -236,7 +254,7 @@ button.acc-btn:active {
   left:-100%;
   height:100%;
   width:200%;
-  background: var(--gradient);
+  background: linear-gradient(90deg, #25cdfc, #8d16ee);
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
 }
@@ -290,255 +308,216 @@ button.acc-btn:active {
 }
 
 
+/*----------Counter----------*/
+
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color:white;
+  font-size: 22px;
+  font-weight: 600;
+}
+.countdown-timer-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin:0 5px;
+  color:white;
+  font-family: 'Poppins',sans-serif;
+  color: rgb(234,88,12);
+  padding:3px;
+  text-align: center;
+  background-color: white;
+  border-radius: 4px;
+  font-size:22px;
+  min-width: 150px;
+}
+
 
 /*----------Main----------*/
 
 
 .main {
   width:100vw;
-  height:100vh;
+  height:auto;
   display:flex;
   align-items:center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #eee;
+  flex-direction: column;
 }
-.main-container {
-  position: relative;
+.main-off {
+  height:100vh;
   width:100vw;
-  max-width: 100%;
-  min-height: 100vh;
-  background-color: #fff;
-  overflow: hidden;
-}
-.main-woman, .main-man {
-  position: absolute;
-  left:0;
-  top:0;
-  height:100%;
-  transition: all 0.6s ease-in-out;
-}
-.main-man {
-  width:50%;
-  opacity: 0;
+  min-height:700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:var(--color-third);
   z-index:1;
-}
-.main-woman {
-  width:50%;
-  z-index:2;
-}
-
-/*----------Sign Up / Sign In----------*/
-.main-acc-form {
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height:100%;
-  text-align: center;
-}
-button.main-acc-btn {
-  color:#fff;
-  background-color:transparent;
-  font-size:20px;
-  padding: 6px 55px;
-  border-radius: 10px;
-  border:1px solid white;
-  outline:none;
-  /* text-transform: uppercase; */
-  transition: transform 80ms ease;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  margin:20px 0;
-}
-.main-acc-btn:active, .main-acc-btn-slide:active  {
-  transform: scale(0.9);
-}
-.main-acc-btn-slide {
-  color:white;
-  background-color: transparent;
-  font-size:20px;
-  padding:6px 30px;
-  outline: none;
-  cursor:pointer;
-  font-family: 'Poppins', sans-serif;
-  font-weight:400;
-  margin:20px 0;
-}
-.main-panel .main-man {
-  transform: translateX(100%);
-  opacity: 1;
-  z-index: 5;
-}
-.main-panel .main-woman {
-  transform: translateX(100%);
-}
-
-
-.main-bg-man, .main-bg-woman {
-  width:100%;
-  position: absolute;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: darken;
-}
-.main-bg-man {
-  background-image: url(/src/clothing/pexels-ivan-samkov-8499296.jpg);
-  background-position: bottom;
-}
-.main-bg-woman {
-  background-position: center -50px;
-  background-image: url(/src/clothing/woman/pexels-olena-bohovyk-3686769.jpg);
-}
-
-
-/*----------Overlay----------*/
-
-
-.main-overlay-container {
-  position: absolute;
-  top:0;
-  left:50%;
-  width:50%;
-  height:100%;
-  overflow: hidden;
-  transition: transform 0.6s ease-in-out;
-  z-index:9;
-}
-.main-panel .main-overlay-container {
-  transform: translateX(-100%);
-}
-.main-overlay {
   position: relative;
-  color:#fff;
-  left:-100%;
+  background-image: url(clothing/pexels-karolina-grabowska-5650037.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.695);
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.605);
+}
+.main-left, .main-right {
+  width:50%;
+  min-width: 400px;
   height:100%;
-  width:200%;
-  background: linear-gradient(90deg, #4e22ff 0%,#d604cf 100%);
-  transform: translateX(0);
-  transition: transform 0.6s ease-in-out;
-}
-.main-panel .main-overlay {
-  transform: translateX(50%);
-}
-.main-overlay-left, .main-overlay-right {
-  position: absolute;
   display: flex;
   align-items: center;
-  justify-content:flex-start;
-  flex-direction: column;
-  padding: 0 40px;
-  text-align: center;
-  top:0;
-  height:100%;
+  justify-content: flex-start;
+}
+.main-left {
+  width:30%;
+}
+.main-right {
   width:50%;
-  transform: translateX(0);
-  transition: transform 0.6s ease-in-out
+  flex-direction: row;
 }
-.main-overlay-left {
-  transform: translateX(-20%);
+.main-off-text span {
+  text-shadow: 1px 1px 2px rgb(185, 28, 28);
 }
-.main-overlay-right {
-  right:0;
-  transform: translateX(0);
-}
-.main-panel .main-overlay-left {
-  transform: translateX(0);
-} 
-.main-panel .main-overlay-right {
-  transform: translateX(20%);
-} 
-.main-overlay-title {
-  font-size:35px;
-  color:white;
-  font-family: 'Poppins',sans-serif;
+.main-off-title {
   font-weight: 600;
-  margin-bottom:20px;
-  margin-top:90px;
-}
-.main-overlay-text {
-  font-size:16px;
   color:white;
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  margin-bottom:5px;
+  font-weight: 800;
+  font-size:40px;
+  line-height: 50px;
+  text-align: center;
 }
-.main-man-flex, .main-woman-flex {
-  height: 200px;
+.main-off-text {
+  font-weight: 500;
+  font-family: 'Noto sans serif',sans-serif;
+  font-weight: 600;
+  font-size:20px;
+  color:white;
   display: flex;
-  width:100%;
+}
+.main-off-more {
+  font-size:22px;
+  font-family: 'Poppins', sans-serif;
+  border:2px solid white;
+  padding:5px 18px;
+  font-weight: 600;
+  text-align: center;
+  color:white;
+  cursor: pointer;
+  margin-top:10px;
+  transition: 300ms ease;
+}
+.main-off-more:hover {
+  border:2px solid transparent;
+  color:black;
+  background-color: white;
+  box-shadow: 0px 0px 5px white;
+}
+.main-off-man, .main-off-woman {
+  width:50%;
+  height:100%;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  margin:30px 0;
+  justify-content: flex-start;
+  margin: 50px 5px 0 5px;
+  flex-direction: column;
 }
-.main-man-cloth, .main-woman-cloth {
-  width:25%;
-  aspect-ratio: 1/1;
-  background-color:rgba(0, 0, 0, 0.1);
-  background-blend-mode: darken;
-  margin:0 20px;
-  display: flex;
-  background-size:cover;
+.main-off-photo-man, .main-off-photo-woman {
+  background-size: cover;
+  background-position: center;
+  height: calc(100% - 200px);
+  background-repeat: no-repeat;
+  width:100%;
+  border-radius: 5px;
+  margin-top:50px;
   transition: 400ms ease;
+  cursor: pointer;
+}
+.main-off-photo-man {
+  background-image: url(clothing/pexels-ron-lach-9604185-PhotoRoom.png-PhotoRoom.png);
+}
+.main-off-photo-woman {
+  background-image: url(clothing/pexels-cottonbro-studio-7762486-PhotoRoom.png-PhotoRoom.png);
+}
+.main-off-photo-man:hover,
+.main-off-photo-woman:hover {
+    scale:1.2;
+}
+.main-info {
   display: flex;
+  width:100vw;
+  height:100px;
+  background-color: var(--color-third);
   align-items: center;
   justify-content: space-evenly;
-  flex-direction: column;
-  box-shadow: 3px 3px 7px rgb(39,39,39,0.6);
+  box-shadow: 0px 0px 8px inset black;
 }
-.main-man-cloth:nth-child(1) {
-  background-image:url(clothing/man/barbati-shirt.jpg)
+.main-info-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
 }
-.main-man-cloth:nth-child(2) {
-  background-position: bottom;
-  background-image: url(clothing/man/barbati-pants.jpg);
+.main-info-icon-truck, .main-info-icon-truck-dark,
+.main-info-icon-wallet, .main-info-icon-wallet-dark,
+.main-info-icon-watch, .main-info-icon-watch-dark {
+  width:40px;
+  height:40px;
+  margin-right:10px;
+  background-size: 100% 100%;
+  background-position: center;
 }
-.main-man-cloth:nth-child(3) {
-  background-size:130% 130%;
-  background-position: 30% 30%;
-  background-image: url(clothing/man/barbati-shoes.jpg);
+.main-info-icon-truck {
+  background-image: url(components/Main/svg-dark/truck.svg);
 }
-.main-woman-cloth:nth-child(1) {
-  background-image: url(clothing/woman/femei-shirt.jpg);
+.main-info-icon-wallet {
+  background-image: url(components/Main/svg-dark/wallet.svg);
 }
-.main-woman-cloth:nth-child(2) {
-  background-image: url(clothing/woman/femei-pants.jpg);
+.main-info-icon-watch{
+  background-image: url(components/Main/svg-dark/stopwatch.svg);
 }
-.main-woman-cloth:nth-child(3) {
-  background-image: url(clothing/woman/femei-shoes.jpg);
+.main-info-icon-truck-dark {
+  background-image: url(components/Main/svg/truck.svg);
 }
-.main-man-cloth:hover, .main-woman-cloth:hover {
-  flex-grow: 0.7;
-  margin:0;
-  background-color: rgba(0, 0, 0, 0.5);
+.main-info-icon-wallet-dark {
+  background-image: url(components/Main/svg/wallet.svg);
 }
-.main-man-cloth-text, .main-woman-cloth-text {
-  opacity: 0;
+.main-info-icon-watch-dark{
+  background-image: url(components/Main/svg/stopwatch.svg);
+}
+.main-info-text {
+  color:var(--color-oposite);
   font-size:20px;
-  transition-delay: 400ms;
-  transition: 400ms ease;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 20px;
+  font-weight: 500;
+  font-family: 'Poppins',sans-serif;
+  line-height: 25px;
+  width:250px;
 }
-.main-man-cloth-more, .main-woman-cloth-more {
-  opacity: 0;
-  font-size:16px;
-  transition-delay: 400ms;
-  transition: 400ms ease;
-  border:1px solid white;
-  padding:4px 6px;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  margin-top:20px;
+.main-disc {
+  width:100vw;
+  height:600px;
+  padding:20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
-.main-man-cloth:hover .main-man-cloth-text,
-.main-woman-cloth:hover .main-woman-cloth-text {
-  opacity: 1;
+.main-disc-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.main-man-cloth:hover .main-man-cloth-more,
-.main-woman-cloth:hover .main-woman-cloth-more {
-  opacity: 1;
+.main-disc-top-text {
+  font-family: 'Noto sans serif',sans-serif;
+  font-size:40px;
+  font-weight: 600;
+  color:var(--color-oposite)
 }

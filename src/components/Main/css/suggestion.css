@@ -7,7 +7,7 @@
     --color-oposite: #0b0b0b;
     --gradient: linear-gradient(to right, #d604cf, #9822ff);
     --first: #e684ae;
-    --seond: #79cbca;
+    --second: #79cbca;
     --third: #77a1d3
 }
 .suggestion {
@@ -45,6 +45,7 @@
     overflow: hidden;
 }
 .sugg-img {
+    object-fit: cover;
     background-size:  cover;
     background-position: center;
     transition: 400ms ease;

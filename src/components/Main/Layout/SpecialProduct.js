@@ -26,7 +26,9 @@ export default function SpecialProduct() {
   useEffect(() => {
     startTransition(() => {
       setSpecialClothing(product.find(item => item.id === idPath))
-      setReview({ ...review, nr: product.find(item => item.id === idPath).review.filter(item => item.user === currentUser.email).length })
+      if(currentUser) {
+        setReview({ ...review, nr: product.find(item => item.id === idPath).review.filter(item => item.user === currentUser.email).length })
+      }
       setPhotoSlider(product.find(item => item.id === idPath).photo)
       const type = product.find(item => item.id === idPath).type
       if (type.includes('foot')) {

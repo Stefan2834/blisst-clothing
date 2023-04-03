@@ -10,16 +10,22 @@ export default function Cart() {
     const [cartPrice, setCartPrice] = useState(0)
     const [discount, setDiscount] = useState(0)
     const discountValue = useRef()
+    const [newCart, setNewCart] = useState(0);
 
     useEffect(() => {
-        startTransition(() => {
-            let price = 0;
-            cart.map((product) => {
-                price += (product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01) * product.number
-            })
-            setCartPrice(Number((price).toFixed(2)))
+        let price = 0;
+        cart.map((product) => {
+            price += (product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01) * product.number
         })
-    }, [cart])
+        setCartPrice(Number((price).toFixed(2)))
+        if(price >= 200) {
+            setNewCart(c => Number(price - (price * discount)).toFixed(2))
+        } else {
+            setNewCart(c => Number((price - (price * discount)) + 20).toFixed(2)) 
+        }
+    }, [cart, discount])
+
+
 
     const handleDiscount = (e) => {
         e.preventDefault()
@@ -45,13 +51,15 @@ export default function Cart() {
                     {cart.map((product) => {
                         return (
                             <div className='cart-product'>
-                                <div className='cart-photo'
-                                    style={{ backgroundImage: `url(${product.photo})` }}
-                                />
-                                <div className='cart-det'>
+                                <Link to={`/product/${product.id}`}>
+                                    <div className='cart-photo'
+                                        style={{ backgroundImage: `url(${product.photo})` }}
+                                    />
+                                </Link>
+                                <Link to={`/product/${product.id}`} className='cart-det'>
                                     <div className='cart-name'>{product.nume}</div>
                                     <div className='cart-info'>{product.spec}</div>
-                                </div>
+                                </Link>
                                 <div className='cart-action'>
                                     {product.discount > 0 ? (
                                         <>
@@ -71,14 +79,16 @@ export default function Cart() {
                                     <div className='cart-price'>Marime: {product.selectedSize}</div>
                                     <div className='flex'>
                                         <div className='cart-dec'
-                                            onClick={() => { startTransition(() => dispatchCart({ type: 'cartNrChange', payload: { stoc: product.size[product.selectedSize], product: product, number: product.number - 1 } })) }}
+                                            onClick={() => { dispatchCart({ type: 'cartNrChange', payload: { stoc: product.size[product.selectedSize], product: product, number: product.number - 1 } }) }}
                                         >&#8211;</div>
                                         <div className='cart-number'>{product.number}</div>
                                         <div className='cart-inc'
-                                            onClick={() => { startTransition(() => dispatchCart({ type: 'cartNrChange', payload: { stoc: product.size[product.selectedSize], product: product, number: product.number + 1 } })) }}
+                                            onClick={() => { dispatchCart({ type: 'cartNrChange', payload: { stoc: product.size[product.selectedSize], product: product, number: product.number + 1 } }) }}
                                         >+</div>
                                     </div>
-                                    <div className='cart-delete h-8'></div>
+                                    <div onClick={() => { startTransition(() => { dispatchCart({ type: 'cartRemove', payload: { cart: product } }) }) }}
+                                        className={darkTheme ? 'cart-delete-dark' : 'cart-delete'}
+                                    ></div>
                                 </div>
                             </div>
                         )
@@ -91,14 +101,26 @@ export default function Cart() {
                         {discount ? (
                             <>
                                 <div className='cart-right-price'>
-                                    <span className='text-gray-500 line-through'>{cartPrice}</span> 
-                                    {Number((cartPrice - (cartPrice * discount)).toFixed(2))} Lei
+                                    <span className='text-gray-500 line-through'>{cartPrice} Lei</span>
+                                    -{discount * 100} %
                                 </div>
                             </>
                         ) : (
                             <div className='cart-right-price'>{cartPrice} Lei</div>
                         )}
                     </div>
+                    {discount ? (
+                        <div className='flex justify-between w-full'>
+                            <div className='cart-text'>
+                                Cost produse nou:
+                            </div>
+                            <div className='cart-right-price'>
+                                {Number((cartPrice - (cartPrice * discount)).toFixed(2))} Lei
+                            </div>
+                        </div>
+                    ) : (
+                        <></>
+                    )}
                     <div className='flex justify-between w-full'>
                         <div className='cart-text'>Cost livrare:</div>
                         {cartPrice >= 200 ? (
@@ -108,7 +130,7 @@ export default function Cart() {
                         )}
                     </div>
                     <div className='cart-title'>Total:</div>
-                    <div className='text-xl font-semibold'>{cartPrice >= 200 ? cartPrice : Number((cartPrice + 20).toFixed(2))} Lei</div>
+                    <div className='text-xl font-semibold'>{newCart} Lei</div>
                     <div className='text-xl font-bold'>Ai un cod de reducere?</div>
                     <form className='flex justify-center items-center my-2' onSubmit={handleDiscount}>
                         <input type={'text'} maxLength={10} minLength={6}

@@ -110,7 +110,7 @@ export default function Clothing() {
                 <div className='cloth-div'>
                   <Link to={`/product/${product.id}`}>
                     <div className="cloth-photo">
-                      <img src={product.photo} alt='Poza produs' className="cloth-img" />
+                      <img src={product.photo} className="cloth-img" />
                     </div>
                   </Link>
                   <div className={product.sex === 'man' ? 'cloth-det cloth-grad-man' : 'cloth-det cloth-grad-woman'}>

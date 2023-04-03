@@ -1,69 +1,119 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDefault } from '../../contexts/DefaultContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import Countdown from './Layout/Countdown'
+
 
 export default function Main() {
-    const [activeForm, setActiveForm] = useState(true)
+  const {
+    currentUser,
+    favorite, dispatchFav,
+    server
+  } = useAuth()
+  const { darkTheme } = useDefault()
+  const [suggestion, setSuggestion] = useState({})
 
+
+  useEffect(() => {
+    axios.get(`${server}/suggestion/daily`)
+      .then(daily => {
+        setSuggestion(daily.data.data)
+      })
+      .catch(err => console.log(err))
+  }, [])
   return (
     <>
-    <div className='main'>
-        <div className={activeForm ? 'main-container main-panel' : 'main-container'} >
-            <div className='main-man'>
-                <div className='main-acc-form'>
-                    <div className='main-bg-man' />
-                </div>
-            </div>
-            <div className='main-woman'>
-                <div className='main-acc-form'>
-                    <div className='main-bg-woman' />
-                </div>
-            </div>
-            <div className='main-overlay-container'>
-                <div className='main-overlay'>
-                    <div className='main-overlay-left'>
-                        <div className='main-overlay-title'>Barbati</div>
-                        <div className='main-overlay-text'></div>
-                        <div className='main-man-flex'>
-                            <div className='main-man-cloth'>
-                                <div className='main-man-cloth-text'>Tricouri</div>
-                                <div className='main-man-cloth-more'><Link to='/main/cloth/man top'>Mai multe</Link></div>
+      <div className='main'>
+        <div className='main-off'>
+          <div className='main-left'>
+            <div className='flex items-center justify-start flex-col'>
+              <div className='main-off-title'>Noi dam <span className='text-orange-600'>Moda</span></div>
+              <div className='main-off-text'>Produsul zilei:</div>
+              <div className='sugg-div'>
+                <Link to={`/product/${suggestion.id}`}>
+                  <div className="sugg-photo">
+                    <div style={{ backgroundImage: `url(${suggestion.photo})` }} className="sugg-img" />
+                  </div>
+                </Link>
+                <div className={suggestion.sex === 'man' ? 'sugg-det sugg-grad-man' : 'sugg-det sugg-grad-woman'}>
+                  <Link to={`/product/${suggestion.id}`}>
+                    <div className="sugg-left">
+                      <div className="sugg-name">
+                        {suggestion.nume}
+                      </div>
+                      <div className="sugg-price">
+                        {suggestion.discount > 0 ? (
+                          <>
+                            <div className="sugg-price-flex">
+                              <div className="sugg-price-old">{suggestion.price}
+                                <span className="sugg-span">Lei</span>
+                              </div>
+                              <span className="sugg-price"> - {suggestion.discount * 100} %</span>
                             </div>
-                            <div className='main-man-cloth'>
-                                <div className='main-man-cloth-text'>Pantaloni</div>
-                                <div className='main-man-cloth-more'><Link to='/main/cloth/man bottom'>Mai multe</Link></div>
+                            <div className="sugg-price-new text-red-600">{suggestion.price + 0.01 - ((suggestion.price + 0.01) * suggestion.discount) - 0.01}
+                              <span className="sugg-span text-red-600">Lei</span>
                             </div>
-                            <div className='main-man-cloth'>
-                                <div className='main-man-cloth-text'>Adidasi</div>
-                                <div className='main-man-cloth-more'><Link to='/main/cloth/man foot'>Mai multe</Link></div>
-                            </div>
-                        </div>
-                        <button className='main-acc-btn'>Vezi tot</button>
-                        <button className='main-acc-btn-slide' onClick={() => {setActiveForm(false)}}>Pentru Femei</button>
+                          </>
+                        ) : (
+                          <>
+                            {suggestion.price} <span className="sugg-span">Lei</span>
+                          </>
+                        )}
+                      </div>
                     </div>
-                    <div className='main-overlay-right'>
-                        <div className='main-overlay-title'>Femei</div>
-                        <div className='main-overlay-text'></div>
-                        <div className='main-woman-flex'>
-                            <div className='main-woman-cloth'>
-                                <div className='main-woman-cloth-text'>Tricouri</div>
-                                <div className='main-woman-cloth-more'><Link to='/main/cloth/woman top'>Mai multe</Link></div>
-                            </div>
-                            <div className='main-woman-cloth'>
-                                <div className='main-woman-cloth-text'>Pantaloni</div>
-                                <div className='main-woman-cloth-more'><Link to='/main/cloth/woman bottom'>Mai multe</Link></div>
-                            </div>
-                            <div className='main-woman-cloth'>
-                                <div className='main-woman-cloth-text'>Adidasi</div>
-                                <div className='main-woman-cloth-more'><Link to='/main/cloth/woman foot'>Mai multe</Link></div> 
-                            </div>
-                        </div>
-                        <button className='main-acc-btn'>Vezi tot</button>
-                        <button className='main-acc-btn-slide' onClick={() => {setActiveForm(true)}}>Pentru Barbati</button>
-                    </div>
+                  </Link>
+                  <div className="sugg-right">
+                    {favorite.some(item => item.id === suggestion.id) ? (
+                      <div className="sugg-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: suggestion } })} />
+                    ) : (
+                      <div className="sugg-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: suggestion, user: currentUser } })} />
+                    )}
+                  </div>
                 </div>
+              </div>
+              <Countdown />
             </div>
+          </div>
+          <div className='main-right'>
+            <div className='main-off-man'>
+              <Link to='/main/cloth/man' className='main-off-photo-man' />
+              <Link to='/main/cloth/man' className='main-off-more'>Produse pentru <span className='text-orange-600'>El</span></Link>
+            </div>
+            <div className='main-off-woman'>
+              <Link to='/main/cloth/woman' className='main-off-photo-woman' />
+              <Link to='/main/cloth/woman' className='main-off-more'>Produse pentru <span className='text-orange-600'>Ea</span></Link>
+            </div>
+          </div>
         </div>
-    </div>
+        <div className='main-info'>
+          <div className='main-info-card'>
+            <div className={darkTheme ? 'main-info-icon-truck-dark' : 'main-info-icon-truck'} />
+            <div className='main-info-text'>
+              Plata cu <span className='text-orange-600'>ramburs</span> la curier
+            </div>
+          </div>
+          <div className='main-info-card'>
+            <div className={darkTheme ? 'main-info-icon-wallet-dark' : 'main-info-icon-wallet'} />
+            <div className='main-info-text'>
+              Livrare gratuita la comenzi de peste <span className='text-orange-600'>200</span> de Lei
+            </div>
+          </div>
+          <div className='main-info-card'>
+            <div className={darkTheme ? 'main-info-icon-watch-dark' : 'main-info-icon-watch'} />
+            <div className='main-info-text'>
+              Comanda livrata in <span className='text-orange-600'>3-5 zile</span> lucratoare
+            </div>
+          </div>
+        </div>
+        <div className='main-disc'>
+          <div className='main-disc-top'>
+            <div className='main-disc-top-text'>Produse la reducere</div>
+          </div>
+          <div className='main-disc-flex'></div>
+        </div>
+      </div>
     </>
   )
 }

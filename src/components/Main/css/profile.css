@@ -169,3 +169,38 @@
 .prof-noset {
     color:rgb(220, 38, 38);
 }
+.prof-woman {
+    color:var(--first);
+}
+.prof-man {
+    color:var(--seond)
+}
+.prof-type-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:160px;
+    position: relative;
+}
+.prof-type-select {
+    color:var(--color-oposite);
+    width:75px;
+    text-align: center;
+    cursor: pointer;
+    margin:0 5px;
+    z-index:1;
+}
+.prof-type-left, .prof-type-right {
+    width:75px;
+    height:100%;
+    background-color: red;
+    position: absolute;
+    transition: 400ms ease;
+    left:5px;
+    padding:8px 16px;
+    border-radius: 5px;
+    background-color: var(--color-third);
+}
+.prof-type-right {
+    translate: 75px;
+}

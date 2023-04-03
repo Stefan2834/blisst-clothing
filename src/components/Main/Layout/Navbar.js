@@ -17,7 +17,7 @@ export default function Navbar() {
   const { setError, setActiveForm,
     darkTheme, setDarkTheme,
   } = useDefault()
-  const [drop, setDrop] = useState([false, false, false, false])
+  const [drop, setDrop] = useState([false, false, false, false, false, false])
   const navIconRefs = useRef([])
   const navigate = useNavigate()
 
@@ -39,11 +39,11 @@ export default function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navIconRefs.current.every((ref) => !ref.contains(event.target))) {
-        setDrop([false, false, false, false]);
+        setDrop([false, false, false, false, false, false]);
       }
     };
     const handleScroll = () => {
-      setDrop([false, false, false, false])
+      setDrop([false, false, false, false, false, false])
     }
 
     window.addEventListener('click', handleClickOutside);
@@ -58,10 +58,13 @@ export default function Navbar() {
   return (
     <div className='navbar'>
       <div className='nav-left'>
-        <div className='nav-logo'><Link to='/main'>Fashionista</Link></div>
+        <div className='nav-logo'><Link to='/main' className='text-orange-600'>Fashionista</Link></div>
         <div className='nav-left-btn'>
-          <div className='nav-left-type'>Barbati</div>
-          <div className='nav-drop'>
+          <div className='nav-left-type'
+            ref={(el) => (navIconRefs.current[4] = el)}
+            onClick={() => { setDrop([false, false, false, false, !drop[4], false]) }}
+          >Barbati</div>
+          <div className={drop[4] ? 'nav-drop-active' : 'nav-drop'} >
             <div className='nav-collumn'>
               <div className='nav-collumn-title'><NavLink to='/main/cloth/man top'>Topuri</NavLink></div>
               <div className='nav-collumn-prod'><NavLink to='/main/cloth/man top tricouri'>Tricouri</NavLink></div>
@@ -80,8 +83,11 @@ export default function Navbar() {
           </div>
         </div>
         <div className='nav-left-btn'>
-          <div className='nav-left-type'>Femei</div>
-          <div className='nav-drop'>
+          <div className='nav-left-type'
+            ref={(el) => (navIconRefs.current[5] = el)}
+            onClick={() => { setDrop([false, false, false, false, false, !drop[5]]) }}
+          >Femei</div>
+          <div className={drop[5] ? 'nav-drop-active' : 'nav-drop'}>
             <div className='nav-collumn'>
               <div className='nav-collumn-title'><NavLink to='/main/cloth/woman top'>Topuri</NavLink></div>
               <div className='nav-collumn-prod'><NavLink to='/main/cloth/woman top tricouri'>Tricouri</NavLink></div>
@@ -115,7 +121,7 @@ export default function Navbar() {
           ref={(el) => (navIconRefs.current[0] = el)}
         >
           <div className={darkTheme ? 'nav-icon-dark-img1' : 'nav-icon-img1'}
-            onClick={() => { setDrop([!drop[0], false, false, false]) }}
+            onClick={() => { setDrop([!drop[0], false, false, false, false, false]) }}
           />
           <div className='nav-drop-right nav-spec'>
             <div className='nav-fav-title'>Favorite</div>
@@ -172,7 +178,7 @@ export default function Navbar() {
           ref={(el) => (navIconRefs.current[1] = el)}
         >
           <div className={darkTheme ? 'nav-icon-dark-img2' : 'nav-icon-img2'}
-            onClick={() => { setDrop([false, !drop[1], false, false]) }}
+            onClick={() => { setDrop([false, !drop[1], false, false, false, false]) }}
           />
           <div className='nav-drop-right nav-spec'>
             <div className='nav-fav-title'>Cosul meu</div>
@@ -231,7 +237,7 @@ export default function Navbar() {
           ref={(el) => (navIconRefs.current[2] = el)}
         >
           <div className={darkTheme ? 'nav-icon-dark-img3' : 'nav-icon-img3'}
-            onClick={() => { setDrop([false, false, !drop[2], false]) }}
+            onClick={() => { setDrop([false, false, !drop[2], false, false, false]) }}
           />
           <div className='nav-drop-right'>
             <div className='nav-fav-title'>Profil</div>
@@ -250,7 +256,7 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[3] = el)}
           >
             <div className={darkTheme ? 'nav-icon-dark-img4' : 'nav-icon-img4'}
-              onClick={() => setDrop([false, false, false, !drop[3]])}
+              onClick={() => setDrop([false, false, false, !drop[3], false, false])}
             />
             <div className='nav-drop-right nav-drop-set'>
               <div className='nav-fav-title'>Optiuni</div>
@@ -262,7 +268,7 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[3] = el)}
           >
             <div className={darkTheme ? 'nav-icon-dark-img5' : 'nav-icon-img5'}
-              onClick={() => setDrop([false, false, false, !drop[3]])}
+              onClick={() => setDrop([false, false, false, !drop[3], false, false])}
             />
             <div className='nav-drop-right nav-drop-set'>
               <div className='nav-fav-title'>Optiuni</div>

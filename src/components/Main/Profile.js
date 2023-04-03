@@ -8,12 +8,11 @@ import Suggestion from "./Layout/Suggestion";
 export default function Profile() {
     const {
         currentUser,
-        det, setDet, server, product
+        det, setDet, server
     } = useAuth()
     const { darkTheme, isPending, startTransition } = useDefault()
     const [infoChange, setInfoChange] = useState(false)
     const [preDet, setPreDet] = useState({})
-    const [suggestion, setSuggestion] = useState({ daily: {}, discount: {} })
     const changeInfo = () => {
         setInfoChange(true)
     }
@@ -29,7 +28,8 @@ export default function Profile() {
                         info: preDet.info,
                         tel: preDet.tel,
                         email: preDet.email,
-                        name: preDet.name
+                        name: preDet.name,
+                        type: preDet.type,
                     }); console.log(info.data)
                 })
                 .catch(err => {
@@ -37,7 +37,8 @@ export default function Profile() {
                         info: det.info,
                         tel: det.info,
                         email: det.email,
-                        name: det.name
+                        name: det.name,
+                        type: det.type
                     }); console.error(err)
                 })
             setInfoChange(false);
@@ -48,7 +49,8 @@ export default function Profile() {
             info: det.info,
             tel: det.tel,
             email: det.email,
-            name: det.name
+            name: det.name,
+            type: det.type
         })
         setInfoChange(false);
     }
@@ -96,7 +98,17 @@ export default function Profile() {
                             </div>
                             <div className="prof-txt">Nume utilizator:<br />
                                 <div className="prof-det-txt">
-                                    {det.name}
+                                    {det.nume}
+                                </div>
+                            </div>
+                            <div className="prof-txt">
+                                Tipul utilizatorului:
+                                <div className="prof-det-txt">
+                                    {det.type === 'woman' ? (
+                                        <div className="prof-woman">Femeie</div>
+                                    ) : (
+                                        <div className="prof-man">Barbat</div>
+                                    )}
                                 </div>
                             </div>
                             <div className="prof-save" onClick={changeInfo}>Editeaza</div>
@@ -131,6 +143,14 @@ export default function Profile() {
                                     onChange={e => setPreDet({ ...preDet, name: e.target.value })}
                                     className='prof-input' required minLength={3} maxLength={16}
                                 />
+                            </div>
+                            <div className="prof-txt">
+                                Tipul utilizatorului:
+                                <div className="prof-type-slide">
+                                    <div className="prof-type-select" onClick={() => setPreDet({...preDet, type:'man'})}>Barbat</div>
+                                    <div className="prof-type-select" onClick={() => setPreDet({...preDet, type:'woman'})}>Femeie</div>
+                                    <div className={preDet.type === 'man' ? 'prof-type-left' : 'prof-type-right'} />
+                                </div>
                             </div>
                             <div className="prof-btn-flex">
                                 <input type='submit' className="prof-save" value='Salveaza' />

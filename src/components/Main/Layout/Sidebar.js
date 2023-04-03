@@ -11,7 +11,7 @@ export default function Sidebar() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const validPath = [, 'man top tricouri', 'man top bluze', 'man bottom scurti', 'man bottom lungi',
+    const validPath = ['man', 'woman', 'man top tricouri', 'man top bluze', 'man bottom scurti', 'man bottom lungi',
       'man foot adidasi', 'man foot papuci', 'man top', 'man bottom', 'man foot',
       'woman top tricouri', 'woman top bluze', 'woman bottom scurti', 'woman bottom lungi',
       'woman foot adidasi', 'woman foot papuci', 'woman top', 'woman bottom', 'woman foot'
@@ -37,22 +37,6 @@ export default function Sidebar() {
 
   return (
     <div className='side-filter-bar'>
-      <div className='text-xl w-100'>Cauta dupa id</div>
-      <div className='side-search'>
-        <form>
-          <label>
-            <input
-              type={'text'}
-              className='side-price-input'
-              onChange={(e) => {
-                startTransition(() => {
-                  setSearch(e.target.value)
-                });
-              }}
-            />
-          </label>
-        </form>
-      </div>
       <span className='side-font'>Filtre</span>
       <form className="side-form" onChange={() => setProductLoad(8)} >
         <label>
@@ -127,6 +111,23 @@ export default function Sidebar() {
             </label>
           </div>
         </div>
+      <div className='side-search'>
+        <form>
+          <label className='side-id-label'>
+            <input
+              type={'text'} maxLength={8}
+              className='side-id-input'
+              onChange={(e) => {
+                startTransition(() => {
+                  setSearch(e.target.value)
+                });
+              }}
+              placeholder='Cauta dupa id'
+            />
+            <div className={darkTheme ? 'side-id-img-dark' : 'side-id-img'} />
+          </label>
+        </form>
+      </div>
       </form>
     </div>
   )

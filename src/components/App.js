@@ -18,6 +18,7 @@ import Main from './Main/Main';
 import Profile from './Main/Profile'
 import Favorite from './Main/Favorite'
 import Cart from './Main/Cart';
+import Test from './Main/Layout/Countdown'
 
 import SpecialProduct from './Main/Layout/SpecialProduct';
 import Clothing from './Main/Layout/Clothing'
@@ -55,6 +56,7 @@ function App() {
           <Routes>
             <Route path='/' index element={<GoTo />} />
             <Route path='/connect' element={<Connect />} />
+            <Route path='/test' element={<Test />} />
             <Route path='/main' element={<Layout />} >
               <Route exact index element={<Main />} />
               <Route path='profile' element={<PrivateRoute element={Profile} />} />
