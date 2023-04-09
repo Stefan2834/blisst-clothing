@@ -7,11 +7,11 @@ import Suggestion from "./Layout/Suggestion";
 
 export default function Profile() {
     const {
-        currentUser,
-        det, setDet, server
+        currentUser, server
     } = useAuth()
     const { darkTheme, isPending, startTransition } = useDefault()
     const [infoChange, setInfoChange] = useState(false)
+    const [det, setDet] = useState({ info: '', tel: '', email: '', name: '' })
     const [preDet, setPreDet] = useState({})
     const changeInfo = () => {
         setInfoChange(true)
@@ -54,10 +54,11 @@ export default function Profile() {
         })
         setInfoChange(false);
     }
+
     useEffect(() => {
-        startTransition(() => {
-            setPreDet(det)
-        })
+        axios.post(`${server}/user/info`, { uid: currentUser.uid })
+      .then(info => { setDet(info.data.det); setPreDet(info.data.det)})
+      .catch(err => console.error(err.error))
     }, [])
 
 
@@ -78,7 +79,7 @@ export default function Profile() {
                             <div className={darkTheme ? "prof-photo-edit-dark" : "prof-photo-edit"}></div>
                         </div>
                     </div>
-                    <div className="prof-txt text-center">Salut, {det.name}!</div>
+                    <div className="prof-txt text-center">Salut, <span className='text-orange-600'>{det.name}</span>!</div>
                     <div className={infoChange ? 'prof-det prof-det-slider' : 'prof-det'}>
                         <div className="prof-left-info">
                             <div className="prof-txt">Informatii adresa:<br />
@@ -98,7 +99,7 @@ export default function Profile() {
                             </div>
                             <div className="prof-txt">Nume utilizator:<br />
                                 <div className="prof-det-txt">
-                                    {det.nume}
+                                    {det.name}
                                 </div>
                             </div>
                             <div className="prof-txt">
@@ -118,7 +119,7 @@ export default function Profile() {
                         <form className="prof-left-save" onSubmit={saveInfo}>
                             <div className="prof-txt">
                                 Informatii adresa:
-                                <input type='text' value={preDet.info}
+                                <input type='text' value={preDet.info} minLength={20}
                                     onChange={e => setPreDet({ ...preDet, info: e.target.value })}
                                     className='prof-input'
                                 />
@@ -132,7 +133,7 @@ export default function Profile() {
                             </div>
                             <div className="prof-txt">
                                 Email de contact:
-                                <input type='email' value={preDet.email}
+                                <input type='email' value={preDet.email} minLength={8}
                                     onChange={e => setPreDet({ ...preDet, email: e.target.value })}
                                     className='prof-input' required
                                 />

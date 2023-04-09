@@ -80,9 +80,10 @@ export default function Clothing() {
       }
     } else {
       if (product.type.includes(filter.type)) {
-        if ((filter.maxPrice > product.price && filter.minPrice < product.price) ||
-          (filter.maxPrice > product.price && filter.minPrice === '') ||
-          (filter.minPrice < product.price && filter.maxPrice === '')) {
+        const productDiscount = product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01
+        if ((filter.maxPrice >= productDiscount && filter.minPrice <= productDiscount) ||
+          (filter.maxPrice >= productDiscount && filter.minPrice === '') ||
+          (filter.minPrice <= productDiscount && filter.maxPrice === '')) {
           if (filter.size === '' || product.size[filter.size] !== 0) {
             noProduct += 1;
             return true
@@ -118,6 +119,7 @@ export default function Clothing() {
                       <div className="cloth-left">
                         <div className="cloth-name">
                           {product.nume}
+                          <span className="font-normal text-xs">({(product.star.total / product.star.nr).toFixed(2)})</span>
                         </div>
                         <div className="cloth-price">
                           {product.discount > 0 ? (

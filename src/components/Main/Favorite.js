@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAuth } from '../../contexts/AuthContext';
 import Suggestion from "./Layout/Suggestion";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './css/cart.css'
 
 export default function Favorite() {
   const { favorite, dispatchFav, currentUser } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if(favorite.length === 0) {
+      navigate('/main')
+    }
+  }, [favorite])
   return (
     <div className='fav-div'>
       <Suggestion type={'daily'} />

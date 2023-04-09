@@ -79,11 +79,21 @@ export default function Main() {
           <div className='main-right'>
             <div className='main-off-man'>
               <Link to='/main/cloth/man' className='main-off-photo-man' />
-              <Link to='/main/cloth/man' className='main-off-more'>Produse pentru <span className='text-orange-600'>El</span></Link>
+              <Link to='/main/cloth/man' className='main-off-more'>Produse pentru
+                <span className='text-orange-600 ml-2'>
+                  El
+                </span>
+                <div className='nav-arrow' />
+              </Link>
             </div>
             <div className='main-off-woman'>
               <Link to='/main/cloth/woman' className='main-off-photo-woman' />
-              <Link to='/main/cloth/woman' className='main-off-more'>Produse pentru <span className='text-orange-600'>Ea</span></Link>
+              <Link to='/main/cloth/woman' className='main-off-more'>Produse pentru
+                <span className='text-orange-600 ml-2'>
+                  Ea
+                </span>
+                <div className='nav-arrow' />
+              </Link>
             </div>
           </div>
         </div>

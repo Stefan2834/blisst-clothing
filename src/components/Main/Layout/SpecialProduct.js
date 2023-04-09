@@ -22,19 +22,22 @@ export default function SpecialProduct() {
   const [photoSlider, setPhotoSlider] = useState()
   const [zoom, setZoom] = useState(false);
   const photos = [manPants, bluza, tricouGalben]
-  
+
   useEffect(() => {
     startTransition(() => {
-      setSpecialClothing(product.find(item => item.id === idPath))
-      if(currentUser) {
-        setReview({ ...review, nr: product.find(item => item.id === idPath).review.filter(item => item.user === currentUser.email).length })
+      const special = product.find(item => item.id === idPath)
+      setSpecialClothing(special)
+      if (currentUser && special) {
+        setReview({ ...review, nr: special.review.filter(item => item.user === currentUser.email).length })
       }
-      setPhotoSlider(product.find(item => item.id === idPath).photo)
-      const type = product.find(item => item.id === idPath).type
-      if (type.includes('foot')) {
-        setSizeType(['37', '38', '39', '40', '41', '42', '43', '44'])
-      } else {
-        setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
+      if (special) {
+        setPhotoSlider(special.photo)
+        const type = special.type
+        if (type.includes('foot')) {
+          setSizeType(['37', '38', '39', '40', '41', '42', '43', '44'])
+        } else {
+          setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
+        }
       }
     })
   }, [idPath])
@@ -208,7 +211,7 @@ export default function SpecialProduct() {
                           <div className={cartSpec.size === sizeMap ? 'spec-size-current' : 'spec-size'}
                             onClick={() => {
                               dispatch({ type: 'setSize', payload: { size: sizeMap } })
-                              dispatch({ type: 'restart' })
+                              dispatch({ type: 'cartReset' })
                             }}>{sizeMap}
                           </div>
                         )}
@@ -221,11 +224,27 @@ export default function SpecialProduct() {
                     <div className={darkTheme ? 'spec-cart-photo spec-cart-dark' : 'spec-cart-photo spec-cart-light'} />
                   </div>
                   <div className='spec-cart-nr'>
-                    <div className='w-7'>{cartSpec.number}</div>
-                    <div className='spec-cart-nr-flex'>
-                      <div className='spec-cart-btn' onClick={() => dispatch({ type: 'increase', payload: { stoc: specialClothing.size[cartSpec.size] } })}>+</div>
-                      <div className='spec-cart-btn' onClick={() => dispatch({ type: 'decrease' })}>-</div>
-                    </div>
+                    {specialClothing.size[cartSpec.size] && (
+                      <select value={cartSpec.number} className="spec-option"
+                        onChange={e => { dispatch({ type: 'cartNr', payload: { number: e.target.value } }) }}
+                      >
+                        <option value="" className='text-red-600'>Stoc:{specialClothing.size[cartSpec.size]}</option>
+                        {Array.from({ length: specialClothing.size[cartSpec.size] }, (_, index) => {
+                          if (index < 10) {
+                            return index + 1
+                          } else {
+                            return null
+                          }
+                        }).map((number) => <>(
+                          {number && (
+                            <option key={number} value={number} className='aaa'>
+                              {number}
+                            </option>
+                          )})
+                        </>
+                        )}
+                      </select>
+                    )}
                   </div>
                 </div>
                 <div className="spec-fav">
@@ -292,7 +311,7 @@ export default function SpecialProduct() {
                           {specialClothing.review.map(rev => {
                             if (rev.user === currentUser.email) {
                               return (
-                                <div className='spec-review'>
+                                <div className='spec-review-second'>
                                   <div className='spec-rev-upper'>
                                     {rev.anonim ? (
                                       <>
@@ -393,9 +412,15 @@ export default function SpecialProduct() {
             </div>
           </>
         ) : (
-          <div className="mt-14 m-auto">
-            Acest produs nu exista, sau a fost sters
-          </div>
+          <>
+            {!isPending && (
+              <div className="spec-deleted">
+                <div className='spec-deleted-text'>
+                  Acest produs nu exista, sau a fost sters
+                </div>
+              </div>
+            )}
+          </>
         )}
       </div>
     </>

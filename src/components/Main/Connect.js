@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom'
-import passSvg from '../svg-icon/key.svg'
-import emailSvg from '../svg-icon/email-security.svg'
-import checkSvg from '../svg-icon/check.svg'
-import eyeTrue from '../svg-icon/eye-check.svg'
-import eyeFalse from '../svg-icon/eye-off.svg'
-import nameSvg from '../svg-icon/me.svg'
-import { useDefault } from '../contexts/DefaultContext';
+import passSvg from '../../svg-icon/key.svg'
+import emailSvg from '../../svg-icon/email-security.svg'
+import checkSvg from '../../svg-icon/check.svg'
+import eyeTrue from '../../svg-icon/eye-check.svg'
+import eyeFalse from '../../svg-icon/eye-off.svg'
+import nameSvg from '../../svg-icon/me.svg'
+import { useDefault } from '../../contexts/DefaultContext';
 
 export default function Connect() {
     const signEmailRef = useRef();
@@ -22,7 +22,6 @@ export default function Connect() {
     const {
         server,
         setCurrentUser,
-        setDet,
         getUserData
     } = useAuth();
     const {
@@ -36,11 +35,11 @@ export default function Connect() {
 
     useEffect(() => {
         setCurrentUser()
-        setDet({ info: '', tel: '', email: '', name: '' })
     }, [])
 
 
     const handleRadio = (e) => {
+        console.log(e.target.value)
         setType(e.target.value);
     }
 

@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { Navigate } from 'react-router-dom';
 
 export default function PrivateRoute({ element: Element}) {
   const { currentUser } = useAuth()
-  const [isLogged, setIsLogged] = useState(true)
+  const [isLogged] = useState(currentUser)
 
-  useEffect(() => {
-    currentUser ? setIsLogged(true) : setIsLogged(false)
-  }, [])
   
 
   return isLogged ? (

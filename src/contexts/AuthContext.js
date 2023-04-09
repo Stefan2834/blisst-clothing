@@ -16,20 +16,12 @@ export function useAuth() {
 }
 
 export default function Reducer(state, action) {
+  console.log(state, action);
   switch (action.type) {
-    case ('increase'):
-      const increaseNr = state.number + 1;
-      const stoc = action.payload.stoc;
-      if (increaseNr > stoc) {
-        return { ...state, number: stoc }
-      } else {
-        return { ...state, number: increaseNr > 10 ? 10 : increaseNr };
-      }
-    case ('decrease'):
-      const decreaseNr = state.number - 1;
-      return { ...state, number: decreaseNr < 1 ? 1 : decreaseNr }
-    case ('restart'):
-      return { ...state, number: 1 }
+    case ('cartNr'):
+      return { ...state, number: action.payload.number }
+    case ('cartReset'):
+      return { ...state, number: '' }
     case ('setSize'):
       return { ...state, size: action.payload.size }
     case ('cartGet'):
@@ -39,8 +31,8 @@ export default function Reducer(state, action) {
         alert('Nu esti conectat!')
         return state
       } else {
-        if (action.payload.spec.size === '') {
-          alert('Selecteaza o marime!')
+        if (action.payload.spec.size === '' || action.payload.spec.number === '') {
+          alert('Selecteaza o marime si un numar!')
           return state
         } else if (state.some(item => item.id === action.payload.clothing.id && item.selectedSize === action.payload.spec.size)) {
           const updatedCart = state.map(cartMap => {
@@ -66,14 +58,10 @@ export default function Reducer(state, action) {
     case ('cartNrChange'):
       const updatedNr = state.map(cartMap => {
         if (cartMap.id === action.payload.product.id && cartMap.selectedSize === action.payload.product.selectedSize) {
-          if (action.payload.number > action.payload.product.size[action.payload.product.selectedSize]) {
-            return { ...cartMap, number: action.payload.product.size[cartMap.selectedSize] }
-          } else if (action.payload.number <= 10 && action.payload.number > 0) {
+          if (action.payload.number) {
             return { ...cartMap, number: action.payload.number }
-          } else if (action.payload.number === 0) {
-            return null
           } else {
-            return { ...cartMap, number: 10 }
+            return null
           }
         } else {
           return cartMap
@@ -90,6 +78,10 @@ export default function Reducer(state, action) {
       }
     case ('favRemove'):
       return state.filter(fav => fav.id !== action.payload.fav.id)
+    case ('commandGet'):
+      return action.payload.command
+    case ('commandAdd'):
+      return [...state, action.payload.command]
     default:
       return state
   }
@@ -98,11 +90,11 @@ export default function Reducer(state, action) {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '' })
   // const server = process.env.REACT_APP_SERVER
   const server = 'http://localhost:9000'
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
+  const [command, dispatchCommand] = useReducer(Reducer, [])
   const [filter, setFilter] = useState({
     minPrice: '',
     maxPrice: '',
@@ -126,7 +118,7 @@ export function AuthProvider({ children }) {
     { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     ],
     star: { total: 21, nr: 7 },
-    size: { XS: 10, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '0'
   }, {
     nume: 'Tricou Albastru',
@@ -176,7 +168,7 @@ export function AuthProvider({ children }) {
     discount: 0.5,
     photo: hanoracAlb,
     sex: 'woman',
-    type: 'man top bluze',
+    type: 'woman top bluze',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -307,7 +299,7 @@ export function AuthProvider({ children }) {
     discount: 0.5,
     photo: hanoracAlb,
     sex: 'woman',
-    type: 'man top bluze',
+    type: 'woman top bluze',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -438,7 +430,7 @@ export function AuthProvider({ children }) {
     discount: 0.5,
     photo: hanoracAlb,
     sex: 'woman',
-    type: 'man top bluze',
+    type: 'woman top bluze',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -569,7 +561,7 @@ export function AuthProvider({ children }) {
     discount: 0.5,
     photo: hanoracAlb,
     sex: 'woman',
-    type: 'man top bluze',
+    type: 'woman top bluze',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -647,10 +639,15 @@ export function AuthProvider({ children }) {
         if (data.data.cart) {
           dispatchCart({ type: 'cartGet', payload: { cart: data.data.cart } })
         }
+        setLoading(false)
       }).catch(err => console.error(err))
-    axios.post(`${server}/user/info`, { uid: uid })
-      .then(info => { setDet(info.data.det) })
-      .catch(err => console.error(err.error))
+    axios.post(`${server}/user/command/get`, { uid: uid })
+      .then(data => {
+        if (data.data.command) {
+          dispatchCommand({ type: 'commandGet', payload: { command: data.data.command } })
+        }
+        setLoading(false)
+      }).catch(err => console.error(err))
   }
 
   useEffect(() => {
@@ -660,8 +657,9 @@ export function AuthProvider({ children }) {
         console.log(user.data.user)
         if (user.data.user) {
           getUserData(user.data.user.uid)
+        } else {
+          setLoading(false)
         }
-        setLoading(false)
       })
       .catch(err => console.error(err.error))
     // axios.post(`${server}/user/product`, {
@@ -689,19 +687,30 @@ export function AuthProvider({ children }) {
         uid: currentUser.uid
       })
         .then(data => console.log(data))
-        .catch(err => console.log(err))
+        .catch(err => console.error(err))
     }
   }, [cart])
+
+  useEffect(() => {
+    if (currentUser) {
+      axios.post(`${server}/user/command/add`, {
+        command: command,
+        uid: currentUser.uid
+      })
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
+    }
+  }, [command])
 
 
   const value = {
     currentUser, setCurrentUser,
     cart, dispatchCart,
     favorite, dispatchFav,
-    det, setDet,
     loading, setLoading,
     server, product, setProduct,
     filter, setFilter,
+    command, dispatchCommand,
     getUserData
   }
   return (

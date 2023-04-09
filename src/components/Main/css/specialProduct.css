@@ -186,11 +186,12 @@ span.spec-price-old {
     color:var(--color-oposite);
     margin-left:10px;
 }
-.spec-cart-nr-flex {
-    display: flex;
-    flex-direction: column;
-    font-weight: 400;
-    margin-left:5px;
+.spec-option {
+    background-color: var(--color);
+    color:var(--color-oposite);
+    outline: none;
+    font-weight: 600;
+    font-size:20px
 }
 .spec-cart-btn {
     border:1px solid var(--color-oposite);
@@ -226,7 +227,7 @@ span.spec-price-old {
 .spec-review-page {
     width:100vw;
     height:auto;
-    background-color: var(--color-second);
+    background-color: var(--color-third);
     display: flex;
     align-items:flex-start;
     justify-content: flex-start;
@@ -248,20 +249,22 @@ span.spec-price-old {
     justify-content: center;
     flex-direction: column;
     padding:10px 0;
-    color:var(--color-oposite)
+    color:var(--color-oposite);
+    background-color: var(--color);
 }
 .spec-review-left {
     position: sticky;
     top:calc(50% - 100px);
 }
 .spec-review-right {
-    align-items: flex-start;
+    align-items: center;
     padding:0 50px;
 }
 .spec-rev-text {
     font-size:22px;
     color:var(--color-oposite);
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     margin-bottom:15px;
 }
 .spec-rev-text-dark {
@@ -297,7 +300,7 @@ span.spec-price-old {
 }
 .spec-rev-submit, .spec-rev-submit-anonim {
     padding:0 15px;
-    margin:10px 0;
+    margin-top:30px;
     height:40px;
     display: flex;
     align-items: center;
@@ -316,17 +319,21 @@ span.spec-price-old {
     background-color: var(--color-second);
     border:1px solid var(--color-oposite)
 }
-.spec-review {
+.spec-review, .spec-review-second {
     width:100%;
-    height:100px;
     margin-bottom:40px;
+    padding:20px;
+    background-color: var(--color);
+}
+.spec-review {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.725);
 }
 .spec-rev-upper {
     font-weight: 600;
     font-size:24px;
     padding:0 10px;
     display: flex;
-    align-items:flex-end;
+    align-items:center;
     justify-content: flex-start;
     margin-bottom:5px;
     color:var(--color-oposite);
@@ -359,6 +366,7 @@ span.spec-price-old {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left:10px;
 }
 .spec-rev-text {
     font-weight: 600;
@@ -370,13 +378,31 @@ span.spec-price-old {
     color:var(--color);
     background-color: var(--dark-principal);
     padding:10px 14px;
+    font-size:16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 .spec-rev-input-update {
     width:calc(100% - 80px);
     margin:0 40px;
     height:40px;
     padding:5px;
-    background-color: var(--color);
-    color:var(--color-oposite);
-
+    background-color: var(--color-oposite);
+    color:var(--color);
+    outline: none;
+}
+.spec-deleted {
+    width:100vw;
+    height:500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.spec-deleted-text {
+    padding:8px 20px;
+    margin-top:20px;
+    background-color: var(--color-oposite);
+    color:var(--color);
+    font-weight: 600;
+    border-radius: 4px;
 }
