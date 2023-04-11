@@ -87,13 +87,13 @@ body {
   height:50px;
   color:var(--color-oposite)
 }
-.nav-drop-link {
+.nav-drop-link, .nav-drop-link-active {
   padding:8px 18px;
   margin:10px 20px;
   font-size:20px;
   font-weight: 600;
 }
-.nav-drop-link:hover {
+.nav-drop-link-active {
   text-decoration: underline 2px;
 }
 .nav-drop-content {

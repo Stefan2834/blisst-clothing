@@ -102,15 +102,15 @@ export default function Navbar() {
           >Barbati</div>
           <div className={drop[4] ? 'nav-drop-active' : 'nav-drop'} >
             <div className='nav-drop-top'>
-              <NavLink className='nav-drop-link'
+              <NavLink className={hover[0] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([true, false, false])}
                 to='/main/cloth/man top'
               >Topuri</NavLink>
-              <NavLink className='nav-drop-link'
+              <NavLink className={hover[1] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, true, false])}
                 to='/main/cloth/man bottom'
               >Pantaloni</NavLink>
-              <NavLink className='nav-drop-link'
+              <NavLink className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, false, true])}
                 to='/main/cloth/man foot'
               >Adidasi</NavLink>
@@ -157,15 +157,15 @@ export default function Navbar() {
           >Femei</div>
           <div className={drop[5] ? 'nav-drop-active' : 'nav-drop'}>
             <div className='nav-drop-top'>
-              <NavLink className='nav-drop-link'
+              <NavLink className={hover[0] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([true, false, false])}
                 to='/main/cloth/man top'
               >Topuri</NavLink>
-              <NavLink className='nav-drop-link'
+              <NavLink className={hover[1] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, true, false])}
                 to='/main/cloth/man bottom'
               >Pantaloni</NavLink>
-              <NavLink className='nav-drop-link'
+              <NavLink className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, false, true])}
                 to='/main/cloth/man foot'
               >Adidasi</NavLink>
