@@ -73,7 +73,7 @@ export default function Connect() {
                         setError(response.data.message)
                     }
                 } else {
-                    console.log(response.data.message)
+                    console.log(response.data)
                     setError(response.data.message)
                 }
             } catch (err) {

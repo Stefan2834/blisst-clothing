@@ -13,7 +13,7 @@ export default function Main() {
     server
   } = useAuth()
   const { darkTheme } = useDefault()
-  const [suggestion, setSuggestion] = useState({})
+  const [suggestion, setSuggestion] = useState()
 
 
   useEffect(() => {
@@ -32,46 +32,50 @@ export default function Main() {
               <div className='main-off-title'>Noi dam <span className='text-orange-600'>Moda</span></div>
               <div className='main-off-text'>Produsul zilei:</div>
               <div className='sugg-div'>
-                <Link to={`/product/${suggestion.id}`}>
-                  <div className="sugg-photo">
-                    <div style={{ backgroundImage: `url(${suggestion.photo})` }} className="sugg-img" />
-                  </div>
-                </Link>
-                <div className={suggestion.sex === 'man' ? 'sugg-det sugg-grad-man' : 'sugg-det sugg-grad-woman'}>
-                  <Link to={`/product/${suggestion.id}`}>
-                    <div className="sugg-left">
-                      <div className="sugg-name">
-                        {suggestion.nume}
+                {suggestion && (
+                  <>
+                    <Link to={`/product/${suggestion.id}`}>
+                      <div className="sugg-photo">
+                        <div style={{ backgroundImage: `url(${suggestion.photo})` }} className="sugg-img" />
                       </div>
-                      <div className="sugg-price">
-                        {suggestion.discount > 0 ? (
-                          <>
-                            <div className="sugg-price-flex">
-                              <div className="sugg-price-old">{suggestion.price}
-                                <span className="sugg-span">Lei</span>
-                              </div>
-                              <span className="sugg-price"> - {suggestion.discount * 100} %</span>
-                            </div>
-                            <div className="sugg-price-new text-red-600">{suggestion.price + 0.01 - ((suggestion.price + 0.01) * suggestion.discount) - 0.01}
-                              <span className="sugg-span text-red-600">Lei</span>
-                            </div>
-                          </>
+                    </Link>
+                    <div className={suggestion.sex === 'man' ? 'sugg-det sugg-grad-man' : 'sugg-det sugg-grad-woman'}>
+                      <Link to={`/product/${suggestion.id}`}>
+                        <div className="sugg-left">
+                          <div className="sugg-name">
+                            {suggestion.nume}
+                          </div>
+                          <div className="sugg-price">
+                            {suggestion.discount > 0 ? (
+                              <>
+                                <div className="sugg-price-flex">
+                                  <div className="sugg-price-old">{suggestion.price}
+                                    <span className="sugg-span">Lei</span>
+                                  </div>
+                                  <span className="sugg-price"> - {suggestion.discount * 100} %</span>
+                                </div>
+                                <div className="sugg-price-new text-red-600">{suggestion.price + 0.01 - ((suggestion.price + 0.01) * suggestion.discount) - 0.01}
+                                  <span className="sugg-span text-red-600">Lei</span>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                {suggestion.price} <span className="sugg-span">Lei</span>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </Link>
+                      <div className="sugg-right">
+                        {favorite.some(item => item.id === suggestion.id) ? (
+                          <div className="sugg-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: suggestion } })} />
                         ) : (
-                          <>
-                            {suggestion.price} <span className="sugg-span">Lei</span>
-                          </>
+                          <div className="sugg-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: suggestion, user: currentUser } })} />
                         )}
                       </div>
                     </div>
-                  </Link>
-                  <div className="sugg-right">
-                    {favorite.some(item => item.id === suggestion.id) ? (
-                      <div className="sugg-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: suggestion } })} />
-                    ) : (
-                      <div className="sugg-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: suggestion, user: currentUser } })} />
-                    )}
-                  </div>
-                </div>
+                  </>
+                )}
               </div>
               <Countdown />
             </div>
