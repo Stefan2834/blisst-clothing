@@ -19,6 +19,7 @@ export default function Navbar() {
     darkTheme, setDarkTheme,
   } = useDefault()
   const [drop, setDrop] = useState([false, false, false, false, false, false])
+  const [hover, setHover] = useState([true, false, false])
   const navIconRefs = useRef([])
   const navigate = useNavigate()
 
@@ -100,41 +101,109 @@ export default function Navbar() {
             onClick={() => { setDrop([false, false, false, false, !drop[4], false]) }}
           >Barbati</div>
           <div className={drop[4] ? 'nav-drop-active' : 'nav-drop'} >
-            <div className='nav-collumn'>
-              <NavLink className='nav-collumn-title' to='/main/cloth/man top'>Topuri</NavLink>
+            <div className='nav-drop-top'>
+              <NavLink className='nav-drop-link'
+                onMouseEnter={() => setHover([true, false, false])}
+                to='/main/cloth/man top'
+              >Topuri</NavLink>
+              <NavLink className='nav-drop-link'
+                onMouseEnter={() => setHover([false, true, false])}
+                to='/main/cloth/man bottom'
+              >Pantaloni</NavLink>
+              <NavLink className='nav-drop-link'
+                onMouseEnter={() => setHover([false, false, true])}
+                to='/main/cloth/man foot'
+              >Adidasi</NavLink>
             </div>
-            <div className='nav-collumn'>
-              <NavLink className='nav-collumn-title' to='/main/cloth/man bottom'>Pantaloni</NavLink>
-            </div>
-            <div className='nav-collumn'>
-              <NavLink className='nav-collumn-title' to='/main/cloth/man foot'>Incaltaminte</NavLink>
+            <div className='nav-drop-content'>
+              <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Tricouri</div>
+                </Link>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Bluze</div>
+                </Link>
+              </div>
+              <div className={hover[1] ? 'nav-drop-content-top' : 'hidden'}>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Scurti</div>
+                </Link>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Lungi</div>
+                </Link>
+              </div>
+              <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Adidasi</div>
+                </Link>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Papuci</div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-        {/* <div className='nav-left-btn'
+        <div className='nav-left-btn'
           ref={(el) => (navIconRefs.current[5] = el)}
         >
           <div className='nav-left-type'
             onClick={() => { setDrop([false, false, false, false, false, !drop[5]]) }}
           >Femei</div>
           <div className={drop[5] ? 'nav-drop-active' : 'nav-drop'}>
-            <div className='nav-collumn'>
-              <NavLink className='nav-collumn-title' to='/main/cloth/woman top'>Topuri</NavLink>
-              <NavLink className='nav-collumn-prod' to='/main/cloth/woman top tricouri'>Tricouri</NavLink>
-              <NavLink className='nav-collumn-prod' to='/main/cloth/woman top bluze'>Bluze</NavLink>
+            <div className='nav-drop-top'>
+              <NavLink className='nav-drop-link'
+                onMouseEnter={() => setHover([true, false, false])}
+                to='/main/cloth/man top'
+              >Topuri</NavLink>
+              <NavLink className='nav-drop-link'
+                onMouseEnter={() => setHover([false, true, false])}
+                to='/main/cloth/man bottom'
+              >Pantaloni</NavLink>
+              <NavLink className='nav-drop-link'
+                onMouseEnter={() => setHover([false, false, true])}
+                to='/main/cloth/man foot'
+              >Adidasi</NavLink>
             </div>
-            <div className='nav-collumn'>
-              <NavLink className='nav-collumn-title' to='/main/cloth/woman bottom'>Pantaloni</NavLink>
-              <NavLink className='nav-collumn-prod' to='/main/cloth/woman bottom scurti'>Scurti</NavLink>
-              <NavLink className='nav-collumn-prod' to='/main/cloth/woman bottom lungi'>Lungi</NavLink>
-            </div>
-            <div className='nav-collumn'>
-              <NavLink className='nav-collumn-title' to='/main/cloth/woman foot'>Incaltaminte</NavLink>
-              <NavLink className='nav-collumn-prod' to='/main/cloth/woman foot adidasi'>Adidasi</NavLink>
-              <NavLink className='nav-collumn-prod' to='/main/cloth/woman foot papuci'>Papuci</NavLink>
+            <div className='nav-drop-content'>
+              <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Tricouri</div>
+                </Link>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Bluze</div>
+                </Link>
+              </div>
+              <div className={hover[1] ? 'nav-drop-content-top' : 'hidden'}>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Scurti</div>
+                </Link>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Lungi</div>
+                </Link>
+              </div>
+              <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Adidasi</div>
+                </Link>
+                <Link className='nav-drop-square'>
+                  <div className='nav-drop-img' />
+                  <div className='nav-square-text'>Papuci</div>
+                </Link>
+              </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
       <div className='nav-right'>
         <div className='nav-theme'>
