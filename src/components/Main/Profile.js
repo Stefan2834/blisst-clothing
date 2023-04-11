@@ -160,7 +160,7 @@ export default function Profile() {
                         </form>
                     </div>
                 </div>
-                <Suggestion type={'discount'} />
+                <div />
             </div>
         </>
     )

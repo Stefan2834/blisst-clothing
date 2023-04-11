@@ -4,6 +4,7 @@ import { useAuth } from '../../../contexts/AuthContext'
 import { useDefault } from '../../../contexts/DefaultContext'
 import Reducer from '../../../contexts/AuthContext'
 import { FaStar } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 import manPants from '../../../clothing/man/barbati-pants.jpg'
 import bluza from '../../../clothing/man/bluza.jpg'
@@ -58,7 +59,13 @@ export default function SpecialProduct() {
   const handleUpdate = e => {
     e.preventDefault()
     if (review.star === 0) {
-      alert('Da-i o nota produsului')
+      Swal.fire({
+        title: 'Eroare!',
+        text: "Nu ai selectat numarul de stele.",
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Inapoi',
+      })
       return
     }
     const idProduct = product.findIndex(item => {
@@ -106,11 +113,24 @@ export default function SpecialProduct() {
         }
       }))//logica pt update-ul stateului cu produse, care se salveaza in baza de date
     })
+    Swal.fire({
+      title: 'Editat',
+      text: "Review-ul a fost editat cu succes",
+      icon: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Ok',
+    })
   }
   const handleSubmit = (e) => {
     e.preventDefault()
     if (review.star === 0) {
-      alert('Da-i o nota produsului')
+      Swal.fire({
+        title: 'Eroare!',
+        text: "Nu ai selectat numarul de stele.",
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Inapoi',
+      })
       return
     }
     setReview({ ...review, text: '' }) // goleste inputul
@@ -129,6 +149,48 @@ export default function SpecialProduct() {
         }
       }))
     })// modifica media 
+    Swal.fire({
+      title: 'Postat',
+      text: "Review-ul a fost postat cu succes",
+      icon: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Ok',
+    })
+  }
+  const handleAddToCart = () => {
+    if (currentUser) {
+      if (cartSpec.size === '' || cartSpec.number === '') {
+        Swal.fire({
+          title: 'Eroare',
+          text: "Nu ai selectat marimea sau numarul de produse.",
+          icon: 'error',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Inapoi'
+        })
+      } else {
+        dispatchCart({ type: 'cartAdd', payload: { clothing: specialClothing, spec: cartSpec } })
+        Swal.fire(
+          'Adaugat!',
+          'Produsul a fost adaugat cu succes in cos.',
+          'success'
+        )
+      }
+    } else {
+      Swal.fire({
+        title: 'Nu esti conectat!',
+        text: "Trebuie sa te conectezi pentru aceasta actiune.",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Inapoi',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Conecteaza-te'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/connect'
+        }
+      })
+    }
   }
   return (
     <>
@@ -220,7 +282,7 @@ export default function SpecialProduct() {
                   })}
                 </div>
                 <div className='spec-cart'>
-                  <div className='spec-add-cart' onClick={() => { dispatchCart({ type: 'cartAdd', payload: { clothing: specialClothing, spec: cartSpec, user: currentUser } }) }}>Adauga in cos
+                  <div className='spec-add-cart' onClick={() => { handleAddToCart() }}>Adauga in cos
                     <div className={darkTheme ? 'spec-cart-photo spec-cart-dark' : 'spec-cart-photo spec-cart-light'} />
                   </div>
                   <div className='spec-cart-nr'>

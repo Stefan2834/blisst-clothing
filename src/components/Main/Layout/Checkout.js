@@ -5,16 +5,21 @@ import { useAuth } from '../../../contexts/AuthContext'
 import { useDefault } from '../../../contexts/DefaultContext'
 import axios from 'axios'
 import { counties } from './Test'
+import Swal from 'sweetalert2';
 
 export default function Checkout() {
-  const { server, currentUser, cart, dispatchCart, dispatchCommand } = useAuth()
+  const { server, currentUser,
+    cart, dispatchCart,
+    dispatchCommand,
+    product, setProduct
+  } = useAuth()
   const { startTransition, isPending, darkTheme } = useDefault()
   const [actualPage, setActualPage] = useState(1)
   const [edit, setEdit] = useState({ adress: false, contact: false, pay: false })
   const [error, setError] = useState({ adress: '', contact: '', pay: '' })
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', county: '' })
   const [cartPrice, setCartPrice] = useState(0)
-  const [newCommand, setNewCommand] = useState({ method: { card: false, ramburs: false } })
+  const [method, setMethod] = useState({ card: false, ramburs: false })
   const [discount, setDiscount] = useState(0)
   const [preDet, setPreDet] = useState({})
   const [productPrice, setProductPrice] = useState(0)
@@ -70,37 +75,126 @@ export default function Checkout() {
     if (det.tel === '') {
       actualError.contact = 'Seteaza un numar de telefon pentru a continua'
     }
-    if (newCommand.method.card === false && newCommand.method.ramburs === false) {
+    if (method.card === false && method.ramburs === false) {
       actualError.pay = 'Selecteaza o metoda de plata'
     }
     if (Object.values(actualError).every((value) => value === '')) {
       setActualPage(2);
       window.scrollTo(0, 0);
+    } else {
+      Swal.fire({
+        title: 'Eroare!',
+        text: "Nu ai introdus toate informatiile.",
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Inapoi.',
+      })
     }
     setError({ ...actualError })
   }
   const handleDiscount = (e) => {
     e.preventDefault()
     const value = discountValue.current.value
-    const discountCode = { stefan10: 0.1, stefan20: 0.2, stefan30: 0.3 }
-    if (discountCode.hasOwnProperty(value)) {
-      setDiscount(discountCode[value])
-    } else {
-      alert('Codul este invalid');
-    }
+    axios.post(`${server}/discount`, { discountCode: value })
+      .then(info => {
+        setDiscount(info.data.discount)
+        if (info.data.discount !== 0) {
+          Swal.fire({
+            title: 'Succes',
+            text: `Reducerea de ${info.data.discount * 100}% a fost aplicata cu succes`,
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Ok'
+          })
+        } else {
+          Swal.fire({
+            title: 'Eroare',
+            text: "Codul introdus este gresit sau a expirat",
+            icon: 'error',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Inapoi'
+          })
+        }
+      })
+      .catch(err => console.error(err.error))
     discountValue.current.value = '';
   }
   const handleNewCommand = () => {
-    const date = new Date();
-    const commandData = {
-      method: newCommand.method.card ? 'card' : 'ramburs',
-      details: det,
-      date: `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`,
-      price: cartPrice
-    }
-    setNewCommand(commandData)
-    dispatchCommand({type: 'commandAdd', payload: { command: commandData}})
-    navigate('/main/command')
+    Swal.fire({
+      title: 'Esti sigur?',
+      text: "Esti sigur ca vrei sa plasezi comanda?",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Plaseaza comanda',
+      cancelButtonText: 'Inapoi'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const date = new Date();
+        const commandData = {
+          method: method.card ? 'Card' : 'Ramburs',
+          details: det,
+          date: `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`,
+          price: {
+            productPrice: productPrice,
+            discount: discount,
+            delivery: productPrice >= 200 ? 0 : 20,
+            total: cartPrice
+          },
+          product: cart,
+          status: 'Se livreaza'
+        }
+        dispatchCart({ type: 'cartDeleteAll' })
+        dispatchCommand({ type: 'commandAdd', payload: { command: commandData } })
+        Swal.fire(
+          'Comanda Plasata!',
+          'Comanda a fost plasata.',
+          'success'
+        )
+        axios.post(`${server}/commandUpdate`,
+          {
+            uid: currentUser.uid,
+            command: commandData,
+            email: currentUser.email
+          }
+        ).then(info => {
+          console.log(info);
+          handleUpdateSizes()
+        })
+        .catch(err => console.error(err.error))
+        navigate('/main/command')
+      }
+    })
+  }
+  const handleUpdateSizes = () => {
+    let newProduct = product
+    cart.forEach(cart => {
+      newProduct = newProduct.map(product => {
+        const updatedProduct = product;
+        if(product.id === cart.id) {
+          updatedProduct.size[cart.selectedSize] -= cart.number
+        }
+        return updatedProduct
+      })
+    })
+    setProduct(newProduct)
+  }
+  const handleDeleteCart = product => {
+    Swal.fire({
+      title: 'Esti sigur?',
+      text: 'Asta o sa iti stearga produsul din cos.',
+      icon: 'warning',
+      cancelButtonText: 'Inapoi',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sterge-l'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatchCart({ type: 'cartRemove', payload: { cart: product } })
+      }
+    });
   }
   useEffect(() => {
     if (cart.length !== 0) {
@@ -146,7 +240,6 @@ export default function Checkout() {
               onClick={() => handleNext()}
             >Sumar Comanda</div>
             <div className={actualPage === 3 ? 'check-bar-text' : 'check-bar-text-grey'}
-              onClick={() => handleNewCommand()}
             >Comanda plasata</div>
           </div>
         </div>
@@ -275,9 +368,9 @@ export default function Checkout() {
             <div className='check-page-content'>
               <label className='check-page-pay cursor-not-allowed'>
                 <input type='radio'
-                  checked={newCommand.method.card}
+                  checked={method.card}
                   name="payCheckbox"
-                  onChange={() => setNewCommand({ ...newCommand, method: { ramburs: false, card: true } })}
+                  onChange={() => setMethod({ ramburs: false, card: true })}
                   disabled
                   className='check-page-checkbox' />
                 <div className='check-pay-content check-disabled'>
@@ -287,9 +380,9 @@ export default function Checkout() {
               </label>
               <label className='check-page-pay cursor-pointer'>
                 <input type='radio' name="payCheckbox"
-                  checked={newCommand.method.ramburs}
+                  checked={method.ramburs}
                   className='check-page-checkbox'
-                  onChange={() => setNewCommand({ ...newCommand, method: { card: false, ramburs: true } })}
+                  onChange={() => setMethod({ ramburs: true, card: false })}
                 />
                 <div className='check-pay-content'>
                   <div className='check-pay-title'>Ramburs la curier</div>
@@ -331,7 +424,7 @@ export default function Checkout() {
               <div className='check-sumar'>
                 <div className='check-txt'>Metoda de plata: <br />
                   <div className='check-det-txt'>
-                    {newCommand.method.ramburs ? 'Ramburs' : newCommand.method.card ? 'Card de credit' : 'Wrong'}
+                    {method.ramburs ? 'Ramburs' : method.card ? 'Card de credit' : 'Wrong'}
                   </div>
                 </div>
               </div>
@@ -369,9 +462,15 @@ export default function Checkout() {
                     )}
                     <div className='cart-price'>Marime: {product.selectedSize}</div>
                     <div className='flex'>
-                      <label htmlFor="nr-select" className='cart-price'>Numar:</label>
-                      <select id="nr-select" value={product.number} className='cart-option'
-                        onChange={e => { dispatchCart({ type: 'cartNrChange', payload: { product: product, number: e.target.value } }) }}
+                      <label className='cart-price'>Numar:</label>
+                      <select value={product.number} className='cart-option'
+                        onChange={e => {
+                          if (e.target.value === '') {
+                            handleDeleteCart(product)
+                          } else {
+                            dispatchCart({ type: 'cartNrChange', payload: { product: product, number: e.target.value } })
+                          }
+                        }}
                       >
                         <option value="" className='text-red-600 font-semibold'>0(sterge)</option>
                         {Array.from({ length: product.size[product.selectedSize] }, (_, index) => { if (index <= 10) { return index + 1 } }).map((number) => (
@@ -381,7 +480,7 @@ export default function Checkout() {
                         ))}
                       </select>
                     </div>
-                    <div onClick={() => { startTransition(() => { dispatchCart({ type: 'cartRemove', payload: { cart: product } }) }) }}
+                    <div onClick={() => { startTransition(() => { handleDeleteCart(product) }) }}
                       className={darkTheme ? 'cart-delete-dark' : 'cart-delete'}
                     ></div>
                   </div>

@@ -14,7 +14,7 @@
     height: auto;
     min-height:calc(100vh - 50px);
     background-color: var(--color-third);
-    width:30vw;
+    width:25vw;
     display: flex;
     align-items: center;
     justify-content: center;

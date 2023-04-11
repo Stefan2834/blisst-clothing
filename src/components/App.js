@@ -25,6 +25,7 @@ import ScrollToTop from './Main/Layout/ScrollToTop';
 import SpecialProduct from './Main/Layout/SpecialProduct';
 import Clothing from './Main/Layout/Clothing'
 import PrivateRoute from './PrivateRoute';
+import Test from './Main/Layout/Test';
 
 const Layout = () => (
   <>
@@ -59,7 +60,7 @@ function App() {
           <Routes>
             <Route path='/' index element={<GoTo />} />
             <Route path='/connect' element={<Connect />} />
-
+            <Route path='/test' element={<Test />} />
 
             <Route path='/main' element={<Layout />} >
 

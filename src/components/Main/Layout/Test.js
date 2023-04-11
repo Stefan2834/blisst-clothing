@@ -1,3 +1,26 @@
+import { useAuth } from "../../../contexts/AuthContext";
+export default function Test() {
+  const { cart, product, setProduct } = useAuth()
+
+  const handleUpdateSizes = () => {
+    let newProduct = product
+    cart.forEach(cart => {
+      newProduct = newProduct.map(product => {
+        const updatedProduct = product;
+        if(product.id === cart.id) {
+          updatedProduct.size[cart.selectedSize] -= cart.number
+        }
+        return updatedProduct
+      })
+    })
+    setProduct(newProduct)
+  }
+  return (
+    <div>
+      <button onClick={handleUpdateSizes}>Press</button><br />
+    </div>
+  );
+}
 
 export const counties = [
   'Alba',

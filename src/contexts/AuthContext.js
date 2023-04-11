@@ -9,6 +9,7 @@ import hanoracRosu from '../clothing/man/hanorac-rosu.jpg'
 import tricouAlb from '../clothing/man/tricou-alb.jpg'
 import tricouGri from '../clothing/man/tricou-negru.jpg'
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 export const AuthContext = createContext();
 export function useAuth() {
@@ -16,7 +17,6 @@ export function useAuth() {
 }
 
 export default function Reducer(state, action) {
-  console.log(state, action);
   switch (action.type) {
     case ('cartNr'):
       return { ...state, number: action.payload.number }
@@ -27,52 +27,49 @@ export default function Reducer(state, action) {
     case ('cartGet'):
       return action.payload.cart
     case ('cartAdd'):
-      if (!action.payload.user) {
-        alert('Nu esti conectat!')
-        return state
-      } else {
-        if (action.payload.spec.size === '' || action.payload.spec.number === '') {
-          alert('Selecteaza o marime si un numar!')
-          return state
-        } else if (state.some(item => item.id === action.payload.clothing.id && item.selectedSize === action.payload.spec.size)) {
-          const updatedCart = state.map(cartMap => {
-            if (cartMap.id === action.payload.clothing.id && cartMap.selectedSize === action.payload.spec.size) {
-              if (cartMap.number + action.payload.spec.number > action.payload.clothing.size[cartMap.selectedSize]) {
-                return { ...cartMap, number: action.payload.clothing.size[cartMap.selectedSize] }
-              } else if (cartMap.number + action.payload.spec.number <= 10) {
-                return { ...cartMap, number: cartMap.number + action.payload.spec.number }
-              } else {
-                return { ...cartMap, number: 10 }
-              }
+      if (state.some(item => item.id === action.payload.clothing.id && item.selectedSize === action.payload.spec.size)) {
+        const updatedCart = state.map(cartMap => {
+          if (cartMap.id === action.payload.clothing.id && cartMap.selectedSize === action.payload.spec.size) {
+            if (cartMap.number + action.payload.spec.number > action.payload.clothing.size[cartMap.selectedSize]) {
+              return { ...cartMap, number: action.payload.clothing.size[cartMap.selectedSize] }
+            } else if (cartMap.number + action.payload.spec.number <= 10) {
+              return { ...cartMap, number: cartMap.number + action.payload.spec.number }
             } else {
-              return cartMap
+              return { ...cartMap, number: 10 }
             }
-          })
-          return updatedCart
-        } else {
-          return [...state, { ...action.payload.clothing, selectedSize: action.payload.spec.size, number: action.payload.spec.number }]
-        }
+          } else {
+            return cartMap
+          }
+        })
+        return updatedCart
+      } else {
+        return [...state, { ...action.payload.clothing, selectedSize: action.payload.spec.size, number: action.payload.spec.number }]
       }
+
     case ('cartRemove'):
       return state.filter(cart => cart.id !== action.payload.cart.id || cart.selectedSize !== action.payload.cart.selectedSize)
     case ('cartNrChange'):
       const updatedNr = state.map(cartMap => {
         if (cartMap.id === action.payload.product.id && cartMap.selectedSize === action.payload.product.selectedSize) {
-          if (action.payload.number) {
-            return { ...cartMap, number: action.payload.number }
-          } else {
-            return null
-          }
+          return { ...cartMap, number: action.payload.number }
         } else {
           return cartMap
         }
-      }).filter(cartMap => cartMap !== null);
+      })
       return updatedNr
+    case ('cartDeleteAll'):
+      return []
     case ('favGet'):
       return action.payload.fav
     case ('favAdd'):
       if (!action.payload.user) {
-        alert('Nu esti conectat')
+        Swal.fire({
+          title: 'Eroare',
+          text: "Nu esti conectat",
+          icon: 'error',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Inapoi'
+        })
       } else {
         return [...state, action.payload.fav]
       }
@@ -81,7 +78,7 @@ export default function Reducer(state, action) {
     case ('commandGet'):
       return action.payload.command
     case ('commandAdd'):
-      return [...state, action.payload.command]
+      return [action.payload.command, ...state]
     default:
       return state
   }
@@ -90,8 +87,8 @@ export default function Reducer(state, action) {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  // const server = process.env.REACT_APP_SERVER
-  const server = 'http://localhost:9000'
+  const server = process.env.REACT_APP_SERVER
+  // const server = 'http://localhost:9000'
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
@@ -132,7 +129,7 @@ export function AuthProvider({ children }) {
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
     ],
     star: { total: 6, nr: 2 },
-    size: { XS: 0, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
+    size: { 37: 0, 38: 4, 39: 6, 40: 11, 41: 2, 42: 9, 43: 10, 44: 0, },
     id: '1'
   }, {
     nume: 'Bluza Dungi',

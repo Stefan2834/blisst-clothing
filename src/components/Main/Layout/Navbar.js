@@ -3,6 +3,7 @@ import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../contexts/AuthContext'
 import axios from 'axios'
 import { useDefault } from '../../../contexts/DefaultContext'
+import Swal from 'sweetalert2';
 
 
 export default function Navbar() {
@@ -34,6 +35,40 @@ export default function Navbar() {
     } catch {
       setError('Failed to log out')
     }
+  }
+  function handleDeleteCart(e, product) {
+    e.preventDefault();
+    Swal.fire({
+      title: 'Esti sigur?',
+      text: 'Asta o sa iti stearga produsul din cos.',
+      icon: 'warning',
+      cancelButtonText: 'Inapoi',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sterge-l'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatchCart({ type: 'cartRemove', payload: { cart: product } })
+      }
+    });
+  }
+  function handleDeleteFav(e, product) {
+    e.preventDefault()
+    Swal.fire({
+      title: 'Esti sigur?',
+      text: 'Asta o sa iti stearga produsul de la favorite.',
+      icon: 'warning',
+      cancelButtonText: 'Inapoi',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sterge-l'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatchFav({ type: 'favRemove', payload: { fav: product } }) 
+      }
+    });
   }
 
   useEffect(() => {
@@ -152,7 +187,7 @@ export default function Navbar() {
                                     {product.price} Lei
                                   </>
                                 )}
-                                <div className='nav-fav-del1' onClick={e => { e.preventDefault(); dispatchFav({ type: 'favRemove', payload: { fav: product } }) }} />
+                                <div className='nav-fav-del1' onClick={e => { handleDeleteFav(e, product)}} />
                               </div>
                             </div>
                           </div>
@@ -211,7 +246,7 @@ export default function Navbar() {
                                     {product.price} Lei
                                   </>
                                 )}
-                                <div className='nav-fav-del2' onClick={e => { e.preventDefault(); dispatchCart({ type: 'cartRemove', payload: { cart: product } }) }} />
+                                <div className='nav-fav-del2' onClick={e => { handleDeleteCart(e, product) }} />
                               </div>
                             </div>
                           </div>
