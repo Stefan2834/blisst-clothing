@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom'
+import { useDefault } from '../../contexts/DefaultContext';
+import Swal from 'sweetalert2';
 import passSvg from '../../svg-icon/key.svg'
 import emailSvg from '../../svg-icon/email-security.svg'
 import checkSvg from '../../svg-icon/check.svg'
 import eyeTrue from '../../svg-icon/eye-check.svg'
 import eyeFalse from '../../svg-icon/eye-off.svg'
 import nameSvg from '../../svg-icon/me.svg'
-import { useDefault } from '../../contexts/DefaultContext';
 
 export default function Connect() {
     const signEmailRef = useRef();
@@ -39,7 +40,6 @@ export default function Connect() {
 
 
     const handleRadio = (e) => {
-        console.log(e.target.value)
         setType(e.target.value);
     }
 
@@ -50,15 +50,15 @@ export default function Connect() {
         } else {
             try {
                 setLoading(true)
-                setError()
+                setError('Loading...')
                 const response = await axios.post(`${server}/connect/signUp`, {
                     email: signEmailRef.current.value,
                     password: signPassRef.current.value,
                 });
+                console.log(response.data)
                 if (response.data.success) {
                     console.log(response.data.user.user)
                     getUserData(response.data.user.user.uid)
-                    await setCurrentUser(response.data.user.user)
                     const writeData = await axios.post(`${server}/connect/write`, {
                         uid: response.data.user.user.uid,
                         email: signEmailRef.current.value,
@@ -67,14 +67,19 @@ export default function Connect() {
                         type: type
                     })
                     if (writeData.data.success) {
-                        navigate('/')
+                        Swal.fire(
+                            'Validare cont!',
+                            'Acceseaza link-ul de pe email, iar apoi conecteaza-te.',
+                            'warning'
+                          )
+                        setError()
                     } else {
                         console.log(writeData.data.message)
                         setError(response.data.message)
                     }
                 } else {
                     console.log(response.data)
-                    setError(response.data.message)
+                    setError(response.data.message.message)
                 }
             } catch (err) {
                 setError(`Failed to Signup: ${err}`)

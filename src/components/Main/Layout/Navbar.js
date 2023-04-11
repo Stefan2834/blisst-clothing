@@ -27,7 +27,6 @@ export default function Navbar() {
       setError()
       setActiveForm(false)
       const response = await axios.post(`${server}/connect/logout`)
-      console.log(response.data);
       if (response.data.success) {
         navigate('/connect');
         setCurrentUser()
