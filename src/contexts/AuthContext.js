@@ -8,6 +8,7 @@ import hanoracNegru from '../clothing/man/hanorac-negru.jpg'
 import hanoracRosu from '../clothing/man/hanorac-rosu.jpg'
 import tricouAlb from '../clothing/man/tricou-alb.jpg'
 import tricouGri from '../clothing/man/tricou-negru.jpg'
+import tricouBlisst from '../clothing/man/tricout-blisst.jpg'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
@@ -230,6 +231,25 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
     id: '8'
   }, {
+    nume: 'Tricou Blisst alb',
+    price: 99.99,
+    discount: 0.1,
+    photo: tricouBlisst,
+    sex: 'man',
+    type: 'man top tricouri',
+    spec: 'Tricou negru din bumbac',
+    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    ],
+    star: { total: 21, nr: 7 },
+    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+    id: '9'
+  }, {
     nume: 'Tricou Negru',
     price: 29.99,
     discount: 0.2,
@@ -361,6 +381,25 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
     id: '8'
   }, {
+    nume: 'Tricou Blisst alb',
+    price: 99.99,
+    discount: 0.1,
+    photo: tricouBlisst,
+    sex: 'man',
+    type: 'man top tricouri',
+    spec: 'Tricou negru din bumbac',
+    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    ],
+    star: { total: 21, nr: 7 },
+    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+    id: '9'
+  }, {
     nume: 'Tricou Negru',
     price: 29.99,
     discount: 0.2,
@@ -492,6 +531,25 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
     id: '8'
   }, {
+    nume: 'Tricou Blisst alb',
+    price: 99.99,
+    discount: 0.1,
+    photo: tricouBlisst,
+    sex: 'man',
+    type: 'man top tricouri',
+    spec: 'Tricou negru din bumbac',
+    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    ],
+    star: { total: 21, nr: 7 },
+    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+    id: '9'
+  }, {
     nume: 'Tricou Negru',
     price: 29.99,
     discount: 0.2,
@@ -622,6 +680,25 @@ export function AuthProvider({ children }) {
     star: { total: 6, nr: 2 },
     size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
     id: '8'
+  }, {
+    nume: 'Tricou Blisst alb',
+    price: 99.99,
+    discount: 0.1,
+    photo: tricouBlisst,
+    sex: 'man',
+    type: 'man top tricouri',
+    spec: 'Tricou negru din bumbac',
+    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    ],
+    star: { total: 21, nr: 7 },
+    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+    id: '9'
   }])
 
   const getUserData = async uid => {
