@@ -12,7 +12,7 @@
 .special {
     width:100vw;
     height:auto;
-    padding-top:80px;
+    padding-top:70px;
     background-color: var(--color-third);
 }
 .special-div {
@@ -20,7 +20,7 @@
     align-items:flex-start;
     background-color: var(--color-second);
     justify-content: space-evenly;
-    margin:10px 25px 50px 25px;
+    margin:0px 25px 50px 25px;
     width:calc(100vw - 50px);
     height:auto;
     flex-wrap: wrap;
@@ -29,7 +29,7 @@
 .spec-left {
     width:40vw;
     min-width:500px;
-    height:550px;
+    height:600px;
     display: flex;
     align-items: center;
     justify-content: space-between;
