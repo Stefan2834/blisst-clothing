@@ -29,7 +29,7 @@
 .spec-left {
     width:40vw;
     min-width:500px;
-    height:500px;
+    height:550px;
     display: flex;
     align-items: center;
     justify-content: space-between;

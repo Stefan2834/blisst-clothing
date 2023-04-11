@@ -10,9 +10,6 @@ import tricouBlisst1 from '../../../clothing/man/tricouBlisst1.jpg'
 import tricouBlisst2 from '../../../clothing/man/tricouBlisst2.jpg'
 import tricouBlisst3 from '../../../clothing/man/tricouBlisst3.jpg'
 
-
-
-
 export default function SpecialProduct() {
   const { idPath } = useParams()
   const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct } = useAuth()
