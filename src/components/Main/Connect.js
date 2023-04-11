@@ -47,7 +47,9 @@ export default function Connect() {
         e.preventDefault()
         if (signPassRef.current.value !== signPassConfirmRef.current.value) {
             setError('Password don\'t match')
-        } else {
+        } else if (!type) {
+            setError('Seteaza un tip')
+        } else{
             try {
                 setLoading(true)
                 setError('Loading...')

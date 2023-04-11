@@ -624,21 +624,21 @@ export function AuthProvider({ children }) {
     id: '8'
   }])
 
-  const getUserData = uid => {
-    axios.post(`${server}/user/favorite/get`, { uid: uid })
+  const getUserData = async uid => {
+    await axios.post(`${server}/user/favorite/get`, { uid: uid })
       .then(data => {
         if (data.data.fav) {
           dispatchFav({ type: 'favGet', payload: { fav: data.data.fav } })
         }
       }).catch(err => console.error(err))
-    axios.post(`${server}/user/cart/get`, { uid: uid })
+    await axios.post(`${server}/user/cart/get`, { uid: uid })
       .then(data => {
         if (data.data.cart) {
           dispatchCart({ type: 'cartGet', payload: { cart: data.data.cart } })
         }
         setLoading(false)
       }).catch(err => console.error(err))
-    axios.post(`${server}/user/command/get`, { uid: uid })
+    await axios.post(`${server}/user/command/get`, { uid: uid })
       .then(data => {
         if (data.data.command) {
           dispatchCommand({ type: 'commandGet', payload: { command: data.data.command } })
