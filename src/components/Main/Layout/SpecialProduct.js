@@ -6,9 +6,10 @@ import Reducer from '../../../contexts/AuthContext'
 import { FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
-import manPants from '../../../clothing/man/barbati-pants.jpg'
-import bluza from '../../../clothing/man/bluza.jpg'
-import tricouGalben from '../../../clothing/man/bluza-galbena.jpg'
+import tricouBlisst1 from '../../../clothing/man/tricouBlisst1.jpg'
+import tricouBlisst2 from '../../../clothing/man/tricouBlisst2.jpg'
+import tricouBlisst3 from '../../../clothing/man/tricouBlisst3.jpg'
+
 
 
 
@@ -22,7 +23,7 @@ export default function SpecialProduct() {
   const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false, nr: 0 })
   const [photoSlider, setPhotoSlider] = useState()
   const [zoom, setZoom] = useState(false);
-  const photos = [manPants, bluza, tricouGalben]
+  const photos = [tricouBlisst1, tricouBlisst2 ,tricouBlisst3]
 
   useEffect(() => {
     startTransition(() => {

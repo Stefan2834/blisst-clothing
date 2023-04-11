@@ -8,7 +8,7 @@ import hanoracNegru from '../clothing/man/hanorac-negru.jpg'
 import hanoracRosu from '../clothing/man/hanorac-rosu.jpg'
 import tricouAlb from '../clothing/man/tricou-alb.jpg'
 import tricouGri from '../clothing/man/tricou-negru.jpg'
-import tricouBlisst from '../clothing/man/tricout-blisst.jpg'
+import tricouBlisst from '../clothing/man/tricouBlisst3.jpg'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
