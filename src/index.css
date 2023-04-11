@@ -44,7 +44,7 @@ body {
 }
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-clear-button {
+input[type=number]::-webkit-clear-button{
   display: none;
 }
 .acc-main {

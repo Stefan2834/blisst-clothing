@@ -100,7 +100,7 @@ export default function Checkout() {
         setDiscount(info.data.discount)
         if (info.data.discount !== 0) {
           Swal.fire({
-            title: 'Succes',
+            title: 'Felicitari',
             text: `Reducerea de ${info.data.discount * 100}% a fost aplicata cu succes`,
             icon: 'success',
             confirmButtonColor: '#3085d6',

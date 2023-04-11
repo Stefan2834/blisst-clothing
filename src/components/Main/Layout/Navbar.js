@@ -65,7 +65,7 @@ export default function Navbar() {
       confirmButtonText: 'Sterge-l'
     }).then((result) => {
       if (result.isConfirmed) {
-        dispatchFav({ type: 'favRemove', payload: { fav: product } }) 
+        dispatchFav({ type: 'favRemove', payload: { fav: product } })
       }
     });
   }
@@ -93,52 +93,48 @@ export default function Navbar() {
     <div className='navbar'>
       <div className='nav-left'>
         <div className='nav-logo'><Link to='/main' className='text-orange-600'>Fashionista</Link></div>
-        <div className='nav-left-btn'>
+        <div className='nav-left-btn'
+          ref={(el) => (navIconRefs.current[4] = el)}
+        >
           <div className='nav-left-type'
-            ref={(el) => (navIconRefs.current[4] = el)}
             onClick={() => { setDrop([false, false, false, false, !drop[4], false]) }}
           >Barbati</div>
           <div className={drop[4] ? 'nav-drop-active' : 'nav-drop'} >
             <div className='nav-collumn'>
-              <div className='nav-collumn-title'><NavLink to='/main/cloth/man top'>Topuri</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/man top tricouri'>Tricouri</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/man top bluze'>Bluze</NavLink></div>
+              <NavLink className='nav-collumn-title' to='/main/cloth/man top'>Topuri</NavLink>
             </div>
             <div className='nav-collumn'>
-              <div className='nav-collumn-title'><NavLink to='/main/cloth/man bottom'>Pantaloni</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/man bottom scurti'>Scurti</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/man bottom lungi'>Lungi</NavLink></div>
+              <NavLink className='nav-collumn-title' to='/main/cloth/man bottom'>Pantaloni</NavLink>
             </div>
             <div className='nav-collumn'>
-              <div className='nav-collumn-title'><NavLink to='/main/cloth/man foot'>Incaltaminte</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/man foot adidasi'>Adidasi</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/man foot papuci'>Papuci</NavLink></div>
+              <NavLink className='nav-collumn-title' to='/main/cloth/man foot'>Incaltaminte</NavLink>
             </div>
           </div>
         </div>
-        <div className='nav-left-btn'>
+        {/* <div className='nav-left-btn'
+          ref={(el) => (navIconRefs.current[5] = el)}
+        >
           <div className='nav-left-type'
-            ref={(el) => (navIconRefs.current[5] = el)}
             onClick={() => { setDrop([false, false, false, false, false, !drop[5]]) }}
           >Femei</div>
           <div className={drop[5] ? 'nav-drop-active' : 'nav-drop'}>
             <div className='nav-collumn'>
-              <div className='nav-collumn-title'><NavLink to='/main/cloth/woman top'>Topuri</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/woman top tricouri'>Tricouri</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/woman top bluze'>Bluze</NavLink></div>
+              <NavLink className='nav-collumn-title' to='/main/cloth/woman top'>Topuri</NavLink>
+              <NavLink className='nav-collumn-prod' to='/main/cloth/woman top tricouri'>Tricouri</NavLink>
+              <NavLink className='nav-collumn-prod' to='/main/cloth/woman top bluze'>Bluze</NavLink>
             </div>
             <div className='nav-collumn'>
-              <div className='nav-collumn-title'><NavLink to='/main/cloth/woman bottom'>Pantaloni</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/woman bottom scurti'>Scurti</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/woman bottom lungi'>Lungi</NavLink></div>
+              <NavLink className='nav-collumn-title' to='/main/cloth/woman bottom'>Pantaloni</NavLink>
+              <NavLink className='nav-collumn-prod' to='/main/cloth/woman bottom scurti'>Scurti</NavLink>
+              <NavLink className='nav-collumn-prod' to='/main/cloth/woman bottom lungi'>Lungi</NavLink>
             </div>
             <div className='nav-collumn'>
-              <div className='nav-collumn-title'><NavLink to='/main/cloth/woman foot'>Incaltaminte</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/woman foot adidasi'>Adidasi</NavLink></div>
-              <div className='nav-collumn-prod'><NavLink to='/main/cloth/woman foot papuci'>Papuci</NavLink></div>
+              <NavLink className='nav-collumn-title' to='/main/cloth/woman foot'>Incaltaminte</NavLink>
+              <NavLink className='nav-collumn-prod' to='/main/cloth/woman foot adidasi'>Adidasi</NavLink>
+              <NavLink className='nav-collumn-prod' to='/main/cloth/woman foot papuci'>Papuci</NavLink>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className='nav-right'>
         <div className='nav-theme'>
@@ -186,7 +182,7 @@ export default function Navbar() {
                                     {product.price} Lei
                                   </>
                                 )}
-                                <div className='nav-fav-del1' onClick={e => { handleDeleteFav(e, product)}} />
+                                <div className='nav-fav-del1' onClick={e => { handleDeleteFav(e, product) }} />
                               </div>
                             </div>
                           </div>
