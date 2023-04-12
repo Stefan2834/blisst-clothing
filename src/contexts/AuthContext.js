@@ -89,8 +89,8 @@ export default function Reducer(state, action) {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  // const server = "https://eight-freckle-nectarine.glitch.me"
-  const server = 'http://localhost:9000'
+  const server = "https://eight-freckle-nectarine.glitch.me"
+  // const server = 'http://localhost:9000'
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
