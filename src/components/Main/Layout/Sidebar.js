@@ -11,10 +11,10 @@ export default function Sidebar() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const validPath = ['man', 'woman', 'man top tricouri', 'man top bluze', 'man bottom scurti', 'man bottom lungi',
-      'man foot adidasi', 'man foot papuci', 'man top', 'man bottom', 'man foot',
-      'woman top tricouri', 'woman top bluze', 'woman bottom scurti', 'woman bottom lungi',
-      'woman foot adidasi', 'woman foot papuci', 'woman top', 'woman bottom', 'woman foot'
+    const validPath = ['barbati', 'femei', 'barbati top tricouri', 'barbati top bluze', 'barbati bottom scurti', 'barbati bottom lungi',
+      'barbati foot adidasi', 'barbati foot papuci', 'barbati top', 'barbati bottom', 'barbati foot',
+      'femei top tricouri', 'femei top bluze', 'femei bottom scurti', 'femei bottom lungi',
+      'femei foot adidasi', 'femei foot papuci', 'femei top', 'femei bottom', 'femei foot'
     ]
     if (!validPath.includes(id)) {
       navigate('/')

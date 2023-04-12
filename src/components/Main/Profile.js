@@ -65,6 +65,7 @@ export default function Profile() {
             .catch(err => console.error(err.error))
     }, [])
 
+    console.log(det.county)
 
 
     return (
@@ -88,7 +89,7 @@ export default function Profile() {
                         <div className="prof-left-info">
                             <div className="prof-txt">Judet:<br />
                                 <div className="prof-det-txt">
-                                    {det.county !== '' ? det.county : (<div className="prof-noset">Judet nesetat</div>)}
+                                    {det.county || det.county === '' ? det.county : (<div className="prof-noset">Judet nesetat</div>)}
                                 </div>
                             </div>
                             <div className="prof-txt">Informatii adresa:<br />

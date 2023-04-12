@@ -11,6 +11,7 @@ import checkSvg from '../../svg-icon/check.svg'
 import eyeTrue from '../../svg-icon/eye-check.svg'
 import eyeFalse from '../../svg-icon/eye-off.svg'
 import nameSvg from '../../svg-icon/me.svg'
+import Cookies from 'js-cookie'
 
 export default function Connect() {
     const signEmailRef = useRef();
@@ -36,6 +37,9 @@ export default function Connect() {
 
     useEffect(() => {
         setCurrentUser()
+        axios.get(`${server}/connect/cookie`, {
+            withCredentials: true
+        })
     }, [])
 
 
@@ -49,7 +53,7 @@ export default function Connect() {
             setError('Password don\'t match')
         } else if (!type) {
             setError('Seteaza un tip')
-        } else{
+        } else {
             try {
                 setLoading(true)
                 setError('Loading...')
@@ -73,7 +77,7 @@ export default function Connect() {
                             'Validare cont!',
                             'Acceseaza link-ul de pe email, iar apoi conecteaza-te.',
                             'warning'
-                          )
+                        )
                         setError()
                     } else {
                         console.log(writeData.data.message)
@@ -97,11 +101,16 @@ export default function Connect() {
             const response = await axios.post(`${server}/connect/login`, {
                 email: logEmailRef.current.value,
                 password: logPassRef.current.value,
+            }, {
+                withCredentials: true
             });
             if (response.data.success === true) {
-                console.log(response.data.user.user);
-                setCurrentUser(response.data.user.user)
-                getUserData(response.data.user.user.uid)
+                const myCookieValue = Cookies.get('userData');
+                const user = JSON.parse(myCookieValue)
+                setCurrentUser(user)
+                setLoading(false)
+                console.log(user);
+                getUserData(user.uid)
                 navigate('/')
                 setError()
             } else {
@@ -109,8 +118,14 @@ export default function Connect() {
             }
             setLoading(false)
         } catch (err) {
-            console.error(err.message);
-            setError(err.message);
+            if (Cookies.get('userData')) {
+                navigate('/main')
+                window.location.reload();
+                setError()
+            } else {
+                console.log(err.message);
+                setError(err.message);
+            }
         }
         setLoading(false)
     }

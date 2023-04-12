@@ -56,28 +56,22 @@ body {
   justify-content: center;
   cursor: pointer;
 }
-.nav-drop, .nav-drop-active {
+.nav-drop {
   position: absolute;
   background-color: var(--color);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  transition: 400ms ease;
   left:0;
   width:100vw;
   height:350px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-.nav-drop {
-  top:70px;
-  visibility: hidden;
-  opacity: 0;
-}
-.nav-drop-active {
   top:50px;
+  visibility: hidden;
+}
+.nav-left-btn:hover .nav-drop {
   visibility: visible;
-  opacity: 1;
 }
 .nav-drop-top {
   display: flex;
@@ -118,11 +112,46 @@ body {
 }
 .nav-drop-img {
   width: 100%;
-  background-image: url(../../../clothing/man/tricouBlisst2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+}
+.nav-1 {
+  background-image: url(../../../clothing/man/tricouBlisst2.jpg);
+}
+.nav-2 {
+  background-image: url(../../../clothing/man/bluza.jpg);
+}
+.nav-3 {
+  background-image: url(../../../clothing/man/barbati-pants.jpg);
+}
+.nav-4 {
+  background-image: url(../../../clothing/man/barbati-shirt.jpg);
+}
+.nav-5 {
+  background-image: url(../../../clothing/man/barbati-shoes.jpg);
+}
+.nav-6 {
+  background-image: url(../../../clothing/man/barbati-shoes.jpg);
+}
+.nav-1 {
+  background-image: url(../../../clothing/man/tricouBlisst2.jpg);
+}
+.nav-8 {
+  background-image: url(../../../clothing/man/bluza.jpg);
+}
+.nav-9 {
+  background-image: url(../../../clothing/man/barbati-pants.jpg);
+}
+.nav-10 {
+  background-image: url(../../../clothing/man/barbati-shirt.jpg);
+}
+.nav-11 {
+  background-image: url(../../../clothing/man/barbati-shoes.jpg);
+}
+.nav-12 {
+  background-image: url(../../../clothing/man/barbati-shoes.jpg);
 }
 .nav-square-text {
   font-size: 20px;
