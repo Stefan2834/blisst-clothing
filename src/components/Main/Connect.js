@@ -115,8 +115,8 @@ export default function Connect() {
             }
             setLoading(false)
         } catch (err) {
-            console.log(err.message);
-            setError(err.message);
+            console.log(err);
+            setError(err);
         }
         setLoading(false)
     }
