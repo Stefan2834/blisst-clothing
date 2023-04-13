@@ -109,16 +109,16 @@ export default function Connect() {
                     setCurrentUser(user)
                     console.log(user);
                     getUserData(user.uid)
-                    navigate('/')
                 } 
+                navigate('/')
                 setError()
             } else {
                 setError(response.data.message)
             }
             setLoading(false)
         } catch (err) {
-            console.log(err);
-            setError(err);
+            console.log(err.code);
+            setError(err.code);
         }
         setLoading(false)
     }
