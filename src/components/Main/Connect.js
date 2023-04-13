@@ -37,9 +37,7 @@ export default function Connect() {
 
     useEffect(() => {
         setCurrentUser()
-        axios.get(`${server}/connect/cookie`, {
-            withCredentials: true
-        })
+        Cookies.remove('userData')
     }, [])
 
 
@@ -103,8 +101,9 @@ export default function Connect() {
                 withCredentials: true
             });
             if (response.data.success === true) {
-                const myCookieValue = Cookies.get('userData');
-                const user = JSON.parse(myCookieValue)
+                console.log(response)
+                const user = response.data.user
+                Cookies.set('userData', JSON.stringify(user), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
                 setCurrentUser(user)
                 console.log(user);
                 getUserData(user.uid)
@@ -115,8 +114,8 @@ export default function Connect() {
             }
             setLoading(false)
         } catch (err) {
-            console.log(err.code);
-            setError(err.code);
+            console.log(err);
+            setError(err);
         }
         setLoading(false)
     }
