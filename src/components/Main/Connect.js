@@ -108,7 +108,6 @@ export default function Connect() {
                 const myCookieValue = Cookies.get('userData');
                 const user = JSON.parse(myCookieValue)
                 setCurrentUser(user)
-                setLoading(false)
                 console.log(user);
                 getUserData(user.uid)
                 navigate('/')

@@ -82,7 +82,7 @@ export default function Main() {
           </div>
           <div className='main-right'>
             <div className='main-off-man'>
-              <Link to='/main/cloth/man' className='main-off-photo-man' />
+              <Link to='/main/cloth/barbati' className='main-off-photo-man' />
               <Link to='/main/cloth/man' className='main-off-more'>Produse pentru
                 <span className='text-orange-600 ml-2'>
                   El
@@ -91,7 +91,7 @@ export default function Main() {
               </Link>
             </div>
             <div className='main-off-woman'>
-              <Link to='/main/cloth/woman' className='main-off-photo-woman' />
+              <Link to='/main/cloth/femei' className='main-off-photo-woman' />
               <Link to='/main/cloth/woman' className='main-off-more'>Produse pentru
                 <span className='text-orange-600 ml-2'>
                   Ea

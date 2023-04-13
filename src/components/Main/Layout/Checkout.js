@@ -17,7 +17,7 @@ export default function Checkout() {
   const [actualPage, setActualPage] = useState(1)
   const [edit, setEdit] = useState({ adress: false, contact: false, pay: false })
   const [error, setError] = useState({ adress: '', contact: '', pay: '' })
-  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', county: '' })
+  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', county: '', newsLetter:false })
   const [cartPrice, setCartPrice] = useState(0)
   const [method, setMethod] = useState({ card: false, ramburs: false })
   const [discount, setDiscount] = useState(0)

@@ -1,4 +1,8 @@
 import React, { createContext, useContext, useEffect, useState, useReducer } from 'react'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie'
+import Swal from 'sweetalert2';
 import manTshirtBlack from '../clothing/man/barbati-shirt.jpg'
 import bluza from '../clothing/man/bluza.jpg'
 import tricouGalben from '../clothing/man/bluza-galbena.jpg'
@@ -9,9 +13,6 @@ import hanoracRosu from '../clothing/man/hanorac-rosu.jpg'
 import tricouAlb from '../clothing/man/tricou-alb.jpg'
 import tricouGri from '../clothing/man/tricou-negru.jpg'
 import tricouBlisst from '../clothing/man/tricouBlisst3.jpg'
-import axios from 'axios';
-import Cookies from 'js-cookie'
-import Swal from 'sweetalert2';
 
 export const AuthContext = createContext();
 export function useAuth() {
@@ -47,7 +48,6 @@ export default function Reducer(state, action) {
       } else {
         return [...state, { ...action.payload.clothing, selectedSize: action.payload.spec.size, number: action.payload.spec.number }]
       }
-
     case ('cartRemove'):
       return state.filter(cart => cart.id !== action.payload.cart.id || cart.selectedSize !== action.payload.cart.selectedSize)
     case ('cartNrChange'):
@@ -59,6 +59,21 @@ export default function Reducer(state, action) {
         }
       })
       return updatedNr
+    case ('cartUpdate'):
+      return state.map(cart => {
+        const selectedProduct = action.payload.product.find(product => product.id === cart.id);
+        if (selectedProduct.size[cart.selectedSize] === 0) {
+          return null
+        } else if (cart.number > selectedProduct.size[cart.selectedSize]) {
+          return {
+            ...cart, number: selectedProduct.size[cart.selectedSize],
+            size: {
+              ...cart.size, [cart.selectedSize]: selectedProduct.size[cart.selectedSize]
+            }
+          }
+        }
+        return { ...cart }
+      }).filter(cart => cart !== null)
     case ('cartDeleteAll'):
       return []
     case ('favGet'):
@@ -87,19 +102,6 @@ export default function Reducer(state, action) {
 }
 
 export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState();
-  const [loading, setLoading] = useState(true);
-  const server = "https://eight-freckle-nectarine.glitch.me"
-  // const server = 'http://localhost:9000'
-  const [favorite, dispatchFav] = useReducer(Reducer, [])
-  const [cart, dispatchCart] = useReducer(Reducer, [])
-  const [command, dispatchCommand] = useReducer(Reducer, [])
-  const [filter, setFilter] = useState({
-    minPrice: '',
-    maxPrice: '',
-    size: '',
-    sort: ''
-  })
   const [product, setProduct] = useState([{
     nume: 'Tricou Negru',
     price: 29.99,
@@ -118,7 +120,7 @@ export function AuthProvider({ children }) {
     ],
     star: { total: 21, nr: 7 },
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '0'
+    id: 'xy'
   }, {
     nume: 'Tricou Albastru',
     price: 29.99,
@@ -250,7 +252,7 @@ export function AuthProvider({ children }) {
     star: { total: 21, nr: 7 },
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '9'
-  },{
+  }, {
     nume: 'Tricou Negru',
     price: 29.99,
     discount: 0.2,
@@ -400,7 +402,7 @@ export function AuthProvider({ children }) {
     star: { total: 21, nr: 7 },
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '9'
-  },{
+  }, {
     nume: 'Tricou Negru',
     price: 29.99,
     discount: 0.2,
@@ -550,7 +552,7 @@ export function AuthProvider({ children }) {
     star: { total: 21, nr: 7 },
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '9'
-  },{
+  }, {
     nume: 'Tricou Negru',
     price: 29.99,
     discount: 0.2,
@@ -701,6 +703,20 @@ export function AuthProvider({ children }) {
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '9'
   }])
+  const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(true);
+  // const server = "https://eight-freckle-nectarine.glitch.me"
+  const server = 'http://localhost:9000'
+  const [favorite, dispatchFav] = useReducer(Reducer, [])
+  const [cart, dispatchCart] = useReducer(Reducer, [])
+  const [command, dispatchCommand] = useReducer(Reducer, [])
+  const [filter, setFilter] = useState({
+    minPrice: '',
+    maxPrice: '',
+    size: '',
+    sort: ''
+  })
+  const navigate = useNavigate()
 
   const getUserData = async uid => {
     await axios.post(`${server}/user/favorite/get`, { uid: uid })
@@ -713,25 +729,38 @@ export function AuthProvider({ children }) {
       .then(data => {
         if (data.data.cart) {
           dispatchCart({ type: 'cartGet', payload: { cart: data.data.cart } })
+          dispatchCart({ type: 'cartUpdate', payload: { product: product } })
         }
-        setLoading(false)
       }).catch(err => console.error(err))
     await axios.post(`${server}/user/command/get`, { uid: uid })
       .then(data => {
         if (data.data.command) {
           dispatchCommand({ type: 'commandGet', payload: { command: data.data.command } })
+          setLoading(false)
         }
-        setLoading(false)
       }).catch(err => console.error(err))
   }
 
   useEffect(() => {
-    const myCookieValue = Cookies.get('userData');
-    if(myCookieValue) {
-      const user = JSON.parse(myCookieValue)
-      setCurrentUser(user)
-    }
-    setLoading(false)
+    axios.get(`${server}/connect`)
+      .then(data => {
+        console.log(data)
+        if (data.data.success) {
+          const myCookieValue = Cookies.get('userData');
+          if (myCookieValue) {
+            const user = JSON.parse(myCookieValue)
+            getUserData(user.uid)
+            setCurrentUser(user)
+          }
+        } else {
+          setLoading(false)
+          navigate('/connect')
+        }
+      })
+      .catch(err => {
+        setLoading(false);
+        console.log(err)
+      })
     // axios.post(`${server}/user/product`, {
     //   product: product
     // })
@@ -781,7 +810,7 @@ export function AuthProvider({ children }) {
     server, product, setProduct,
     filter, setFilter,
     command, dispatchCommand,
-    getUserData
+    getUserData, 
   }
   return (
     <AuthContext.Provider value={value}>

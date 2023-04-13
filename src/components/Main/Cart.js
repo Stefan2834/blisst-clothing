@@ -1,4 +1,4 @@
-import React, { useState, useEffect  } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAuth } from '../../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import './css/cart.css'
@@ -6,7 +6,7 @@ import { useDefault } from '../../contexts/DefaultContext';
 import Swal from 'sweetalert2';
 
 export default function Cart() {
-    const { cart, dispatchCart } = useAuth()
+    const { cart, dispatchCart, product } = useAuth()
     const { startTransition, isPending, darkTheme, } = useDefault()
     const [productPrice, setProductPrice] = useState(0)
     const [cartPrice, setCartPrice] = useState(0)
@@ -25,25 +25,26 @@ export default function Cart() {
                 setCartPrice(c => Number(price + 20).toFixed(2))
             }
         } else {
-            navigate('/main')
+            navigate('/')
         }
     }, [cart])
+
     function handleDeleteCart(product) {
         Swal.fire({
-          title: 'Esti sigur?',
-          text: 'Asta o sa iti stearga produsul din cos.',
-          icon: 'warning',
-          cancelButtonText: 'Inapoi',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Sterge-l'
+            title: 'Esti sigur?',
+            text: 'Asta o sa iti stearga produsul din cos.',
+            icon: 'warning',
+            cancelButtonText: 'Inapoi',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sterge-l'
         }).then((result) => {
-          if (result.isConfirmed) {
-            dispatchCart({ type: 'cartRemove', payload: { cart: product } })
-          }
+            if (result.isConfirmed) {
+                dispatchCart({ type: 'cartRemove', payload: { cart: product } })
+            }
         });
-      }
+    }
 
 
     return (
@@ -87,10 +88,13 @@ export default function Cart() {
                                     <div className='flex'>
                                         <label htmlFor="nr-select" className='cart-price'>Numar:</label>
                                         <select id="nr-select" value={product.number} className='cart-option'
-                                            onChange={e => { if(e.target.value === '') {
-                                                handleDeleteCart(product)
-                                            } else {
-                                                dispatchCart({ type: 'cartNrChange', payload: { product: product, number: e.target.value } }) }}
+                                            onChange={e => {
+                                                if (e.target.value === '') {
+                                                    handleDeleteCart(product)
+                                                } else {
+                                                    dispatchCart({ type: 'cartNrChange', payload: { product: product, number: e.target.value } })
+                                                }
+                                            }
                                             }
                                         >
                                             <option value="" className='text-red-600 font-semibold'>0(sterge)</option>

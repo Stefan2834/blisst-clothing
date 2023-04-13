@@ -55,8 +55,19 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  width:35px;
+  height:35px;
+  background-position: center;
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
 }
-.nav-drop {
+.nav-left-photo1 {
+  background-image: url(../../../svg-icon/male.svg);
+}
+.nav-left-photo2 {
+  background-image: url(../../../svg-icon/female.svg);
+}
+.nav-drop, .nav-drop-active {
   position: absolute;
   background-color: var(--color);
   display: flex;
@@ -68,9 +79,11 @@ body {
   height:350px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   top:50px;
+}
+.nav-drop {
   visibility: hidden;
 }
-.nav-left-btn:hover .nav-drop {
+.nav-drop-active {
   visibility: visible;
 }
 .nav-drop-top {
@@ -102,8 +115,9 @@ body {
   align-items: center;
   justify-content: space-around;
 }
-.nav-drop-img:hover ~ .nav-square-text {
-  text-decoration: underline;
+.nav-drop-img:hover ~ .nav-square-text-man,
+.nav-drop-img:hover ~ .nav-square-text-woman {
+  text-decoration: underline 2px;
 }
 .nav-drop-square {
   width:200px;
@@ -135,11 +149,11 @@ body {
 .nav-6 {
   background-image: url(../../../clothing/man/barbati-shoes.jpg);
 }
-.nav-1 {
+.nav-7 {
   background-image: url(../../../clothing/man/tricouBlisst2.jpg);
 }
 .nav-8 {
-  background-image: url(../../../clothing/man/bluza.jpg);
+  background-image: url(../../../clothing/man/hanorac-alb.jpg);
 }
 .nav-9 {
   background-image: url(../../../clothing/man/barbati-pants.jpg);
@@ -153,18 +167,22 @@ body {
 .nav-12 {
   background-image: url(../../../clothing/man/barbati-shoes.jpg);
 }
-.nav-square-text {
+.nav-square-text-woman, .nav-square-text-man {
   font-size: 20px;
   font-weight: 600;
   font-family: 'Poppins',sans-serif;
-  color:var(--color-oposite);
   position: absolute;
   bottom:-40px;
   left:50%;
   transform: translate(-50%);
   background-color: transparent;
 }
-
+.nav-square-text-man {
+  color:var(--second)
+}
+.nav-square-text-woman {
+  color:var(--first)
+}
 .nav-right {
   display: flex;
   align-items: center;
@@ -215,6 +233,18 @@ body {
 }
 .nav-icon-dark-img5 {
   background-image: url(../../Main/svg/login.svg);
+}
+.nav-nr-absolute {
+  position: absolute;
+  right:0;
+  top:0;
+  background-color: var(--color-oposite);
+  color:var(--color);
+  padding:0 3px;
+  font-size:16px;
+  line-height: 18px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 .nav-drop-right {
   position: absolute;

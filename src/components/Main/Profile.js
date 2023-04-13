@@ -13,7 +13,7 @@ export default function Profile() {
     } = useAuth()
     const { darkTheme, isPending, startTransition } = useDefault()
     const [infoChange, setInfoChange] = useState(false)
-    const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '' })
+    const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter:true })
     const [preDet, setPreDet] = useState({})
     const changeInfo = () => {
         setInfoChange(true)
@@ -65,7 +65,6 @@ export default function Profile() {
             .catch(err => console.error(err.error))
     }, [])
 
-    console.log(det.county)
 
 
     return (
