@@ -104,12 +104,10 @@ export default function Connect() {
             });
             if (response.data.success === true) {
                 const myCookieValue = Cookies.get('userData');
-                if(myCookieValue) {
-                    const user = JSON.parse(myCookieValue)
-                    setCurrentUser(user)
-                    console.log(user);
-                    getUserData(user.uid)
-                } 
+                const user = JSON.parse(myCookieValue)
+                setCurrentUser(user)
+                console.log(user);
+                getUserData(user.uid)
                 navigate('/')
                 setError()
             } else {
