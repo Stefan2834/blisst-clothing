@@ -751,6 +751,8 @@ export function AuthProvider({ children }) {
             const user = JSON.parse(myCookieValue)
             getUserData(user.uid)
             setCurrentUser(user)
+          } else {
+            setLoading(false)
           }
         } else {
           setLoading(false)
@@ -758,8 +760,8 @@ export function AuthProvider({ children }) {
         }
       })
       .catch(err => {
-        setLoading(false);
         console.log(err)
+        setLoading(false);
       })
     // axios.post(`${server}/user/product`, {
     //   product: product
