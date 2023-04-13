@@ -176,7 +176,6 @@ export default function Connect() {
                             <div className=' text-red-600'>{error}</div>
                         )}
                         <button disabled={loading} type='submit' className='acc-submit'>Logheaza-te</button>
-                        <div className='acc-form-text'><Link to='/error/resendEmail'>nu am primit un email</Link></div>
                     </form>
                 </div>
                 <div className='sign-in'>
@@ -199,6 +198,7 @@ export default function Connect() {
                         )}
                         <button disabled={loading} className='acc-submit' type='submit'>Conectare</button>
                         <div className='acc-form-text'><Link to='/error/forgotPassword'>mi-am uitat parola</Link></div>
+                        <div className='acc-form-text'><Link to='/error/resendEmail'>nu am primit un email</Link></div>
                     </form>
                 </div>
                 <div className='overlay-container'>
