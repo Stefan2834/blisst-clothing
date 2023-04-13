@@ -39,8 +39,9 @@ export default function Footer() {
     handleModify(false)
   }
   const handleModify = (value) => {
-    setDet({ ...det, newsLetter: value })
-    axios.post(`${server}/user/InfoUpdate`, { uid: currentUser.uid, det: { ...det, newsLetter: value } })
+    const newDet = {...det, newsLetter: value}
+    setDet(newDet)
+    axios.post(`${server}/user/infoUpdate`, { uid: currentUser.uid, det: newDet })
       .then((data) => {
         console.log(data)
         if (value) {
