@@ -705,7 +705,7 @@ export function AuthProvider({ children }) {
   }])
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  // const server = "https://eight-freckle-nectarine.glitch.me"
+  // const server = "https://clothing-shop2834.herokuapp.com"
   const server = 'http://localhost:9000'
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
@@ -736,9 +736,9 @@ export function AuthProvider({ children }) {
       .then(data => {
         if (data.data.command) {
           dispatchCommand({ type: 'commandGet', payload: { command: data.data.command } })
-          setLoading(false)
         }
       }).catch(err => console.error(err))
+      setLoading(false)
   }
 
   useEffect(() => {

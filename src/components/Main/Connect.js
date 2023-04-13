@@ -116,15 +116,9 @@ export default function Connect() {
                 setError(response.data.message)
             }
             setLoading(false)
-        } catch (err) {
-            if (Cookies.get('userData')) {
-                navigate('/main')
-                window.location.reload();
-                setError()
-            } else {
+        } catch (err) {            
                 console.log(err.message);
                 setError(err.message);
-            }
         }
         setLoading(false)
     }

@@ -12,6 +12,7 @@ export default function DefaultProvider({ children }) {
   const [isPending, startTransition] = useTransition({ timeoutMs: 500 });
   const [activeForm, setActiveForm] = useState(true)
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState();
   const [productLoad, setProductLoad] = useState(8);
 
@@ -31,6 +32,7 @@ export default function DefaultProvider({ children }) {
       document.documentElement.style.setProperty("--color-oposite", '#0b0b0b')
       document.documentElement.style.setProperty("--color-third", '#ddd')
     }
+    setLoading(false)
   }, [darkTheme])
 
 
@@ -46,7 +48,7 @@ export default function DefaultProvider({ children }) {
   }
   return (
     <DefaultContext.Provider value={value}>
-      {children}
+      {!loading && children}
     </DefaultContext.Provider>
   )
 }
