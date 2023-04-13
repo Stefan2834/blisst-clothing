@@ -156,7 +156,9 @@ export default function Clothing() {
           }
         })}
         {noProduct >= productLoad && (
-          <div className="cloth-more" onClick={() => startTransition(() => setProductLoad(p => p + 8))}>Incarca mai multe produse</div>
+          <div className="cloth-more">
+            <div className="cloth-more-btn" onClick={() => startTransition(() => setProductLoad(p => p + 8))}>Incarca mai multe produse</div>
+          </div>
         )}
         {noProduct === 0 && (
           <div className="mt-8">Nici un product in stoc nu indeplineste filtrele</div>
