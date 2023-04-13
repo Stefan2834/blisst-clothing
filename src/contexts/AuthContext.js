@@ -737,30 +737,31 @@ export function AuthProvider({ children }) {
           dispatchCommand({ type: 'commandGet', payload: { command: data.data.command } })
         }
       }).catch(err => console.error(err))
-      setLoading(false)
+    setLoading(false)
   }
 
   useEffect(() => {
-    axios.get(`${server}/connect`)
-      .then(data => {
-        console.log(data)
-        if (data.data.success) {
-          const myCookieValue = Cookies.get('userData');
-          if (myCookieValue) {
-            const user = JSON.parse(myCookieValue)
-            getUserData(user.uid)
-            setCurrentUser(user)
-          } else {
-            setLoading(false)
-          }
-        } else {
-          setLoading(false)
-        }
-      })
-      .catch(err => {
-        console.log(err)
-      })
-      // setLoading(false);
+    const myCookieValue = Cookies.get('userData');
+    if (myCookieValue) {
+      const user = JSON.parse(myCookieValue)
+      getUserData(user.uid)
+      setCurrentUser(user)
+    }
+    setLoading(false)
+    // axios.get(`${server}/connect`)
+    //   .then(data => {
+    //     console.log(data)
+    //     if (data.data.success) {
+    //       } else {
+    //         setLoading(false)
+    //       }
+    //     } else {
+    //     }
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
+    // setLoading(false);
     // axios.post(`${server}/user/product`, {
     //   product: product
     // })
@@ -810,7 +811,7 @@ export function AuthProvider({ children }) {
     server, product, setProduct,
     filter, setFilter,
     command, dispatchCommand,
-    getUserData, 
+    getUserData,
   }
   return (
     <AuthContext.Provider value={value}>
