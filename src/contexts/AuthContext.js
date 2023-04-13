@@ -705,8 +705,8 @@ export function AuthProvider({ children }) {
   }])
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = "https://clothing-shop2834.herokuapp.com"
-  // const server = 'http://localhost:9000'
+  // const server = "https://clothing-shop2834.herokuapp.com"
+  const server = 'http://localhost:9000'
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
@@ -756,13 +756,12 @@ export function AuthProvider({ children }) {
           }
         } else {
           setLoading(false)
-          navigate('/connect')
         }
       })
       .catch(err => {
         console.log(err)
-        setLoading(false);
       })
+      // setLoading(false);
     // axios.post(`${server}/user/product`, {
     //   product: product
     // })

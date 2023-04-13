@@ -128,8 +128,8 @@ export default function Profile() {
                         <form className="prof-left-save" onSubmit={saveInfo}>
                             <div className="prof-txt">
                                 Judet:<br />
-                                <select id="county-select" value={preDet.county}
-                                    className='prof-det-txt'
+                                <select value={preDet.county}
+                                    className='prof-det-txt outline-0'
                                     onChange={e => setPreDet({ ...preDet, county: e.target.value })}
                                 >
                                     <option value="" className='check-option'>Judete</option>
@@ -142,7 +142,7 @@ export default function Profile() {
                             </div>
                             <div className="prof-txt">
                                 Informatii adresa:
-                                <input type='text' value={preDet.info} minLength={20}
+                                <input type='text' value={preDet.info} minLength={20} maxLength={150}
                                     onChange={e => setPreDet({ ...preDet, info: e.target.value })}
                                     className='prof-input'
                                 />
@@ -151,7 +151,7 @@ export default function Profile() {
                                 Numar de telefon:
                                 <input type='number' value={preDet.tel}
                                     onChange={e => setPreDet({ ...preDet, tel: e.target.value })}
-                                    className='prof-input'
+                                    className='prof-input' minLength={8} maxLength={16}
                                 />
                             </div>
                             <div className="prof-txt">

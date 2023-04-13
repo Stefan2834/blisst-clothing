@@ -296,6 +296,7 @@ export default function Checkout() {
                       <form onSubmit={saveInfo}>
                         <input type='text'
                           className='check-input'
+                          minLength={20} maxLength={150}
                           value={preDet.info}
                           onChange={e => setPreDet({ ...preDet, info: e.target.value })}
                         />
@@ -343,13 +344,15 @@ export default function Checkout() {
                       <input type='number' value={preDet.tel}
                         onChange={e => setPreDet({ ...preDet, tel: e.target.value })}
                         className='check-input'
+                        minLength={8}
+                        maxLength={16}
                       />
                     </div>
                     <div className="check-txt">
                       Email de contact:
                       <input type='email' value={preDet.email}
                         onChange={e => setPreDet({ ...preDet, email: e.target.value })}
-                        className='check-input' required
+                        className='check-input' required minLength={8} maxLength={40}
                       />
                     </div>
                     <div className='w-full flex justify-around mt-3'>

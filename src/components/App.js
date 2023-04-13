@@ -9,23 +9,28 @@ import { useEffect } from 'react';
 import { AuthProvider } from '../contexts/AuthContext';
 import DefaultProvider from '../contexts/DefaultContext';
 import { BrowserRouter, Outlet, Route, Routes, useNavigate } from 'react-router-dom'
+
 import Navbar from './Main/Layout/Navbar';
 import Footer from './Main/Layout/Footer';
 import Sidebar from './Main/Layout/Sidebar';
+import PrivateRoute from './PrivateRoute';
+import Test from './Main/Layout/Test';
 import Checkout from './Main/Layout/Checkout'
-import Command from './Main/Layout/Command'
+import ScrollToTop from './Main/Layout/ScrollToTop';
+import ForgotPassword from './Main/Layout/ForgotPassword';
+import ResendEmail from './Main/Layout/ResendEmail';
 
+
+import Command from './Main/Layout/Command'
 import Connect from './Main/Connect';
 import Main from './Main/Main';
 import Profile from './Main/Profile'
 import Favorite from './Main/Favorite'
 import Cart from './Main/Cart';
 
-import ScrollToTop from './Main/Layout/ScrollToTop';
+
 import SpecialProduct from './Main/Layout/SpecialProduct';
 import Clothing from './Main/Layout/Clothing'
-import PrivateRoute from './PrivateRoute';
-import Test from './Main/Layout/Test';
 
 const Layout = () => (
   <>
@@ -61,6 +66,16 @@ function App() {
             <Route path='/' index element={<GoTo />} />
             <Route path='/connect' element={<Connect />} />
             <Route path='/test' element={<Test />} />
+
+
+            <Route path='/error' element={<Outlet />}>
+
+
+              <Route path='forgotPassword' index element={<ForgotPassword />} />
+              <Route path='resendEmail' element={<ResendEmail />} />
+
+
+            </Route>
 
             <Route path='/main' element={<Layout />} >
 

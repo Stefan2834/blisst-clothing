@@ -24,7 +24,7 @@
     width:230px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
 }
 .foo-left-text {
@@ -43,6 +43,7 @@
 }
 .foo-top {
     width:100%;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-around;

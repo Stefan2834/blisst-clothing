@@ -57,9 +57,9 @@ export default function Footer() {
     <div className='footer'>
       <div className='foo-left'>
         <div className='foo-left-text'>
-          Acest site a fost creat de <span className='text-orange-600'>Stefan Iosif</span>.<br />
+          Acest site a fost creat de <span className='text-orange-600 font-semibold'>Stefan Iosif</span>.<br />
           Pentru mai multe informatii, lasa un email la:<br />
-          <span className='text-orange-600'>iosifs617@gmail.com</span>
+          <span className='text-orange-600 font-semibold'>iosifs617@gmail.com</span>
         </div>
       </div>
       <div className='foo-content'>
