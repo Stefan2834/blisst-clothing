@@ -705,8 +705,8 @@ export function AuthProvider({ children }) {
   }])
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = "https://clothing-shop2834.herokuapp.com"
-  // const server = 'http://localhost:9000'
+  // const server = "https://clothing-shop2834.herokuapp.com"
+  const server = 'http://localhost:9000'
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
@@ -737,31 +737,31 @@ export function AuthProvider({ children }) {
           dispatchCommand({ type: 'commandGet', payload: { command: data.data.command } })
         }
       }).catch(err => console.error(err))
-    setLoading(false)
+      setLoading(false)
   }
 
   useEffect(() => {
-    const myCookieValue = Cookies.get('userData');
-    if (myCookieValue) {
-      const user = JSON.parse(myCookieValue)
-      getUserData(user.uid)
-      setCurrentUser(user)
-    }
-    setLoading(false)
-    // axios.get(`${server}/connect`)
-    //   .then(data => {
-    //     console.log(data)
-    //     if (data.data.success) {
-    //       } else {
-    //         setLoading(false)
-    //       }
-    //     } else {
-    //     }
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
-    // setLoading(false);
+    axios.get(`${server}/connect`)
+      .then(data => {
+        console.log(data)
+        if (data.data.success) {
+          const myCookieValue = Cookies.get('userData');
+          if (myCookieValue) {
+            const user = JSON.parse(myCookieValue)
+            getUserData(user.uid)
+            setCurrentUser(user)
+          } else {
+            setError(myCookieValue)
+            setLoading(false)
+          }
+        } else {
+          setLoading(false)
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+      // setLoading(false);
     // axios.post(`${server}/user/product`, {
     //   product: product
     // })
@@ -811,7 +811,7 @@ export function AuthProvider({ children }) {
     server, product, setProduct,
     filter, setFilter,
     command, dispatchCommand,
-    getUserData,
+    getUserData, 
   }
   return (
     <AuthContext.Provider value={value}>
