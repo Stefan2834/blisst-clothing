@@ -227,6 +227,7 @@ export default function Checkout() {
   }, [cart, discount])
 
   useEffect(() => {
+    document.title = 'Blisst — Plaseaza comanda'
     startTransition(() => {
       axios.post(`${server}/user/info`, { uid: currentUser.uid })
         .then(info => { setDet(info.data.det); setPreDet(info.data.det) })

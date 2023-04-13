@@ -12,6 +12,7 @@ export default function Command() {
   const [selectedProducts, setSelectedProducts] = useState([])
 
   useEffect(() => {
+    document.title = 'Blisst — Comenziile mele'
     axios.post(`${server}/user/info`, { uid: currentUser.uid })
       .then(info => { setDet(info.data.det) })
       .catch(err => console.error(err.error))
