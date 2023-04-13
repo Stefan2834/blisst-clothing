@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState, useReducer } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2';
 import manTshirtBlack from '../clothing/man/barbati-shirt.jpg'
@@ -90,6 +89,7 @@ export default function Reducer(state, action) {
       } else {
         return [...state, action.payload.fav]
       }
+      return
     case ('favRemove'):
       return state.filter(fav => fav.id !== action.payload.fav.id)
     case ('commandGet'):
@@ -120,7 +120,7 @@ export function AuthProvider({ children }) {
     ],
     star: { total: 21, nr: 7 },
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: 'xy'
+    id: '0'
   }, {
     nume: 'Tricou Albastru',
     price: 29.99,
@@ -705,8 +705,8 @@ export function AuthProvider({ children }) {
   }])
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = "https://clothing-shop2834.herokuapp.com"
-  // const server = 'http://localhost:9000'
+  // const server = "https://clothing-shop2834.herokuapp.com"
+  const server = 'http://localhost:9000'
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
@@ -749,14 +749,16 @@ export function AuthProvider({ children }) {
             const user = JSON.parse(Cookies.get('userData'));
             setCurrentUser(user)
             getUserData(user.uid)
+          } else {
+            setLoading(false)
           }
         } else {
+          setLoading(false)
         }
       })
       .catch(err => {
         console.log(err)
       })
-    setLoading(false)
     // setLoading(false);
     // axios.post(`${server}/user/product`, {
     //   product: product

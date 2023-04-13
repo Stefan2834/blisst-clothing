@@ -36,6 +36,7 @@ export default function Connect() {
     const [passView, setPassView] = useState([false, false, false]);
 
     useEffect(() => {
+        document.title = 'Blisst — Conectare'
         setCurrentUser()
         Cookies.remove('userData')
     }, [])

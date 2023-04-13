@@ -30,6 +30,7 @@ export default function SpecialProduct() {
         setReview({ ...review, nr: special.review.filter(item => item.user === currentUser.email).length })
       }
       if (special) {
+        document.title = `Blisst — ${special.nume}`
         setPhotoSlider(special.photo)
         const type = special.type
         if (type.includes('foot')) {
@@ -37,6 +38,8 @@ export default function SpecialProduct() {
         } else {
           setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
         }
+      } else {
+        document.title = `Blisst - Produs inexistent`
       }
     })
   }, [idPath])

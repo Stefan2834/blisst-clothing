@@ -9,6 +9,7 @@ export default function Favorite() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    document.title = 'Blisst — Favorite'
     if(favorite.length === 0) {
       navigate('/main')
     }

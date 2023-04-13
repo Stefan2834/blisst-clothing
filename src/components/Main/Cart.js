@@ -13,6 +13,7 @@ export default function Cart() {
     const navigate = useNavigate()
 
     useEffect(() => {
+        document.title = 'Blisst — Cosul meu'
         if (cart.length !== 0) {
             let price = 0;
             cart.map((product) => {

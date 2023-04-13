@@ -17,6 +17,7 @@ export default function Main() {
 
 
   useEffect(() => {
+    document.title = 'Blisst'
     axios.get(`${server}/suggestion/daily`)
       .then(daily => {
         setSuggestion(daily.data.data)

@@ -11,6 +11,7 @@ export default function Sidebar() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
     const validPath = ['barbati', 'femei', 'barbati top tricouri', 'barbati top bluze', 'barbati bottom scurti', 'barbati bottom lungi',
       'barbati foot adidasi', 'barbati foot papuci', 'barbati top', 'barbati bottom', 'barbati foot',
       'femei top tricouri', 'femei top bluze', 'femei bottom scurti', 'femei bottom lungi',
@@ -19,7 +20,7 @@ export default function Sidebar() {
     if (!validPath.includes(id)) {
       navigate('/')
     }
-    if (id.includes('woman')) {
+    if (id.includes('femei')) {
       document.documentElement.style.setProperty("--principal", '#e684ae')
     } else {
       document.documentElement.style.setProperty("--principal", '#79cbca')

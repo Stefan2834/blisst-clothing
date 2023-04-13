@@ -60,6 +60,7 @@ export default function Profile() {
     }
 
     useEffect(() => {
+        document.title = 'Blisst — Profilul meu'
         axios.post(`${server}/user/info`, { uid: currentUser.uid })
             .then(info => { if(info.data.det){setDet(info.data.det); setPreDet(info.data.det) }})
             .catch(err => console.error(err.error))
