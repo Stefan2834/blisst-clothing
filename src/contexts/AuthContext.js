@@ -751,8 +751,7 @@ export function AuthProvider({ children }) {
             getUserData(user.uid)
             setCurrentUser(user)
           } else {
-            setError(myCookieValue)
-            setLoading(false)
+            setLoading(myCookieValue)
           }
         } else {
           setLoading(false)
