@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useAuth } from '../../../contexts/AuthContext'
-import { useDefault } from '../../../contexts/DefaultContext'
+import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../contexts/DefaultContext'
 
 export default function Sidebar() {
   const { setProductLoad, darkTheme, setSearch, startTransition } = useDefault()

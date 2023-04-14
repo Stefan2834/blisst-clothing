@@ -9,10 +9,10 @@ import { useEffect } from 'react';
 import { AuthProvider } from '../contexts/AuthContext';
 import DefaultProvider from '../contexts/DefaultContext';
 import { BrowserRouter, Outlet, Route, Routes, useNavigate } from 'react-router-dom'
-import Navbar from './Main/MainComponents/Navbar';
-import Footer from './Main/MainComponents/Footer';
-import Sidebar from './Main/MainComponents/Sidebar';
-import Main from './Main/MainComponents/Main';
+import Navbar from './MainComponents/Navbar';
+import Footer from './MainComponents/Footer';
+import Sidebar from './MainComponents/Sidebar';
+import Main from './MainComponents/Main';
 
 
 import PrivateRoute from './SmallComponents/PrivateRoute';

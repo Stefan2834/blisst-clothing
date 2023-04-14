@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import axios from 'axios'
-import { useAuth } from '../../../contexts/AuthContext'
-import { useDefault } from '../../../contexts/DefaultContext'
+import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../contexts/DefaultContext'
 
 export default function Footer() {
   const { currentUser, server } = useAuth()
