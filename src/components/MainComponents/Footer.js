@@ -84,13 +84,17 @@ export default function Footer() {
             <Link to='/main/cloth/femei foot papuci' className='foo-text'>Papuci</Link>
           </div>
           <div className='foo-collumn'>
-            <div className='foo-title'>Informatii</div>
+            <div className='foo-title'>Contul meu</div>
             <Link to='/main/fav' className='foo-text'>Favorite</Link>
             <Link to='/main/cart' className='foo-text'>Cosul meu</Link>
             <Link to='/main/profile' className='foo-text'>Profilul meu</Link>
             <Link to='/connect' className='foo-text'>Conecteaza-te</Link>
+          </div>
+          <div className='foo-collumn'>
+            <div className='foo-title'>Informatii</div>
             <Link to='/main/terms' className='foo-text'>Termeni si conditii</Link>
             <Link to='/main/faq' className='foo-text'>Faq</Link>
+            <Link to='/main/help' className='foo-text'>Ajutor</Link>
           </div>
           <div className='foo-collumn'>
             <div className='foo-title-news'>News letter</div>

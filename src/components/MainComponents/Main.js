@@ -4,6 +4,8 @@ import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Countdown from '../SmallComponents/Countdown'
+import Swal from 'sweetalert2'
+
 
 
 export default function Main() {
@@ -14,16 +16,59 @@ export default function Main() {
   } = useAuth()
   const { darkTheme } = useDefault()
   const [suggestion, setSuggestion] = useState()
+  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false })
 
+  const handleSubscribe = () => {
+    Swal.fire({
+      title: 'Te-ai abonat',
+      text: "Multumim ca te-ai abonat! Verifica adresa de email pentru a primi codul de reducere.",
+      icon: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Ok',
+    })
+    handleModify(true)
+  }
+
+  const handleUnSubscribe = () => {
+    Swal.fire({
+      title: 'Ne pare rau.',
+      text: "Te-ai dezabonat de la News Letter",
+      icon: 'success',
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Ok',
+    })
+    handleModify(false)
+  }
+
+  const handleModify = (value) => {
+    const newDet = { ...det, newsLetter: value }
+    setDet(newDet)
+    axios.post(`${server}/user/infoUpdate`, { uid: currentUser.uid, det: newDet })
+      .then((data) => {
+        console.log(data)
+        if (value) {
+          axios.post(`${server}/email/newsLetter`, { email: currentUser.email, name: det.name })
+            .then((data) => console.log(data))
+            .catch(err => console.error(err))
+        }
+      })
+      .catch(err => console.error(err))
+  }
 
   useEffect(() => {
     document.title = 'Blisst'
     axios.get(`${server}/suggestion/daily`)
       .then(daily => {
         setSuggestion(daily.data.data)
+        if (currentUser) {
+          axios.post(`${server}/user/info`, { uid: currentUser.uid })
+            .then(info => { if (info.data.det) { setDet(info.data.det) } })
+            .catch(err => console.error(err.error))
+        }
       })
       .catch(err => console.log(err))
   }, [])
+
   return (
     <>
       <div className='main'>
@@ -124,22 +169,109 @@ export default function Main() {
         </div>
         <div className='main-disc'>
           <div className='main-disc-top'>
-            <div className='main-disc-top-text'>Produse la reducere</div>
+            <div className='main-disc-top-text'>Produse</div>
           </div>
           <div className='main-disc-flex'>
-            <div className='main-disc-left'></div>
-            <div className='main-disc-right'>
-              <div className='main-disc-him'>
-                <div className='main-disc-text'>Reduceri pentru El
-                  <div className='main-disc-btn'>Vezi tot</div>
+            <div className='main-disc-flex-container'>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo1' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Tricou pentru El
+                  </div>
                 </div>
-                <div className='main-disc-photo'></div>
               </div>
-              <div className='main-disc-her'>
-                <div className='main-disc-text'>Reduceri pentru Ea
-                  <div className='main-disc-btn'>Vezi tot</div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo2' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Tricou pentru Ea
+                  </div>
                 </div>
-                <div className='main-disc-photo'></div>
+              </div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo3' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Hanorac pentru El
+                  </div>
+                </div>
+              </div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo4' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Hanorac pentru Ea
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='main-disc-flex-container'>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo5' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Pantaloni scurti pentru El
+                  </div>
+                </div>
+              </div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo6' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Pantaloni scurti pentru Ea
+                  </div>
+                </div>
+              </div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo7' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Pantaloni lungi pentru El
+                  </div>
+                </div>
+              </div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo8' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Pantaloni lungi pentru Ea
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='main-disc-flex-container'>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo9' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Adidasi pentru El
+                  </div>
+                </div>
+              </div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo10' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Adidasi pentru Ea
+                  </div>
+                </div>
+              </div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo11' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Papuci pentru El
+                  </div>
+                </div>
+              </div>
+              <div className='main-disc-container'>
+                <div className='main-disc-photo main-disc-photo12' />
+                <div className='main-disc-text'>
+                  <div className='main-disc-text-btn'>
+                    Papuci pentru Ea
+                  </div>
+                </div>
               </div>
             </div>
           </div>

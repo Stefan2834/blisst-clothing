@@ -21,9 +21,9 @@ export default function Sidebar() {
       navigate('/')
     }
     if (id.includes('femei')) {
-      document.documentElement.style.setProperty("--principal", '#e684ae')
+      document.documentElement.style.setProperty("--principal2", '#e684ae')
     } else {
-      document.documentElement.style.setProperty("--principal", '#79cbca')
+      document.documentElement.style.setProperty("--principal2", '#79cbca')
     }
     setProductLoad(10)
     setFilter({ ...filter, type: id, size: '' })
