@@ -14,7 +14,7 @@ export default function DefaultProvider({ children }) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState();
-  const [productLoad, setProductLoad] = useState(8);
+  const [productLoad, setProductLoad] = useState(10);
 
   useEffect(() => {
     if (darkTheme) {

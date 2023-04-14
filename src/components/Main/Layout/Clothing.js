@@ -157,7 +157,7 @@ export default function Clothing() {
         })}
         {noProduct >= productLoad && (
           <div className="cloth-more">
-            <div className="cloth-more-btn" onClick={() => startTransition(() => setProductLoad(p => p + 8))}>Incarca mai multe produse</div>
+            <div className="cloth-more-btn" onClick={() => startTransition(() => setProductLoad(p => p + 10))}>Incarca mai multe produse</div>
           </div>
         )}
         {noProduct === 0 && (
