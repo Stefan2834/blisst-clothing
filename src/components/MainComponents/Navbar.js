@@ -93,7 +93,7 @@ export default function Navbar() {
   return (
     <div className='navbar'>
       <div className='nav-left'>
-        <div className='nav-logo'><Link to='/main' className='text-orange-600'>Fashionista</Link></div>
+        <div className='nav-logo'><Link to='/main' className='text-orange-600'>Blisst</Link></div>
         <div className='nav-left-btn'
         >
           <div className='nav-left-type nav-left-photo1'

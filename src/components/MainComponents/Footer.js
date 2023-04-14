@@ -39,7 +39,7 @@ export default function Footer() {
     handleModify(false)
   }
   const handleModify = (value) => {
-    const newDet = {...det, newsLetter: value}
+    const newDet = { ...det, newsLetter: value }
     setDet(newDet)
     axios.post(`${server}/user/infoUpdate`, { uid: currentUser.uid, det: newDet })
       .then((data) => {
@@ -134,25 +134,25 @@ export default function Footer() {
             </div>
           ) : (
             <div className='foo-bottom-content'>
-              <Link to='/'>
+              <Link to='https://www.instagram.com/stefaniosif17/'>
                 <div className='foo-social foo-insta' />
               </Link>
-              <Link to='/'>
+              <Link to='https://github.com/Stefan2834'>
                 <div className='foo-social foo-github' />
               </Link>
-              <Link to='/'>
+              <Link to='https://www.youtube.com/channel/UCAV4P3xhYwZ_4gDFXyc5JMg'>
                 <div className='foo-social foo-youtube' />
               </Link>
-              <Link to='/'>
+              <Link to='https://twitter.com/Stefan2834'>
                 <div className='foo-social foo-twitter' />
               </Link>
-              <Link to='/'>
+              <Link to='https://www.tiktok.com/@stefan2834'>
                 <div className='foo-social foo-tiktok' />
               </Link>
             </div>
           )}
         </div>
-        <div className='foo-logo text-orange-600'>Fashionista</div>
+        <div className='foo-logo text-orange-600'>Blisst</div>
       </div>
     </div>
   )

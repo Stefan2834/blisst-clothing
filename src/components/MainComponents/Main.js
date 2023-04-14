@@ -126,7 +126,23 @@ export default function Main() {
           <div className='main-disc-top'>
             <div className='main-disc-top-text'>Produse la reducere</div>
           </div>
-          <div className='main-disc-flex'></div>
+          <div className='main-disc-flex'>
+            <div className='main-disc-left'></div>
+            <div className='main-disc-right'>
+              <div className='main-disc-him'>
+                <div className='main-disc-text'>Reduceri pentru El
+                  <div className='main-disc-btn'>Vezi tot</div>
+                </div>
+                <div className='main-disc-photo'></div>
+              </div>
+              <div className='main-disc-her'>
+                <div className='main-disc-text'>Reduceri pentru Ea
+                  <div className='main-disc-btn'>Vezi tot</div>
+                </div>
+                <div className='main-disc-photo'></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
