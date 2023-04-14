@@ -118,34 +118,34 @@
     background-repeat: no-repeat;
 }
 .foo-insta {
-    background-image: url(../svg-dark/instagram.svg);
+    background-image: url(../Main/svg-dark/instagram.svg);
 }
 .foo-github {
-    background-image: url(../svg-dark/github.svg);
+    background-image: url(../Main/svg-dark/github.svg);
 }
 .foo-youtube {
-    background-image: url(../svg-dark/youtube.svg);
+    background-image: url(../Main/svg-dark/youtube.svg);
 }
 .foo-twitter {
-    background-image: url(../svg-dark/twitter.svg);
+    background-image: url(../Main/svg-dark/twitter.svg);
 }
 .foo-tiktok {
-    background-image: url(../svg-dark/tiktok.svg);
+    background-image: url(../Main/svg-dark/tiktok.svg);
 }
 .foo-insta-dark {
-    background-image: url(../svg/instagram.svg);
+    background-image: url(../Main/svg/instagram.svg);
 }
 .foo-github-dark {
-    background-image: url(../svg/github.svg);
+    background-image: url(../Main/svg/github.svg);
 }
 .foo-youtube-dark {
-    background-image: url(../svg/youtube.svg);
+    background-image: url(../Main/svg/youtube.svg);
 }
 .foo-twitter-dark {
-    background-image: url(../svg/twitter.svg);
+    background-image: url(../Main/svg/twitter.svg);
 }
 .foo-tiktok-dark {
-    background-image: url(../svg/tiktok.svg);
+    background-image: url(../Main/svg/tiktok.svg);
 }
 .foo-logo {
     font-size:35px;

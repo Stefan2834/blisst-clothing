@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../../contexts/AuthContext';
-import { Link } from 'react-router-dom'
 import { useDefault } from '../../contexts/DefaultContext';
+import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2';
 import passSvg from '../../svg-icon/key.svg'
 import emailSvg from '../../svg-icon/email-security.svg'
@@ -197,8 +197,8 @@ export default function Connect() {
                             <div className=' text-red-600'>{error}</div>
                         )}
                         <button disabled={loading} className='acc-submit' type='submit'>Conectare</button>
-                        <div className='acc-form-text'><Link to='/error/forgotPassword'>mi-am uitat parola</Link></div>
-                        <div className='acc-form-text'><Link to='/error/resendEmail'>nu am primit un email</Link></div>
+                        <div className='acc-form-text'><Link to='/main/error/forgotPassword'>mi-am uitat parola</Link></div>
+                        <div className='acc-form-text'><Link to='/main/error/resendEmail'>nu am primit un email</Link></div>
                     </form>
                 </div>
                 <div className='overlay-container'>

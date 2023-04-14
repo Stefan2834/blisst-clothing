@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/suggestion.css'
 import axios from 'axios'
-import { useAuth } from '../../../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 
 export default function Suggestion(props) {
   const [type, setType] = useState(props.type)

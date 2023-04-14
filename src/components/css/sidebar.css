@@ -9,42 +9,7 @@
     --second:#79cbca;
     --principal:white;
 }
-.side-open-btn, .side-open-btn-dark {
-    width:40px;
-    height:40px;
-    position: fixed;
-    top:5px;
-    left:5px;
-    z-index:20;
-    cursor: pointer;
-    background-size: 30px 30px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.side-open-btn {
-    background-image: url(../svg/filter.svg);
-}
-.side-open-btn-dark {
-    background-image: url(../svg-dark/filter.svg);
-}
-.side-bg, .side-bg-active {
-    width:100vw;
-    height:100vh;
-    background-color: black;
-    position: fixed;
-    top:0;
-    left:0;
-    transition: 400ms ease;
-}
-.side-bg {
-    visibility: hidden;
-    opacity: 0;
-}
-.side-bg-active {
-    visibility: visible;
-    opacity: 0.5;
-}
-.side-filter-bar, .side-filter-active {
+.side-filter-bar{
     width:230px;
     height:100vh;
     background-color: var(--color);
@@ -56,12 +21,9 @@
     justify-content: flex-start;
     flex-direction: column;
     z-index:9;
-    left:-230px;
+    /* left:-230px; */
     top:0;
     transition: 400ms ease;
-}
-.side-filter-active {
-    translate: 230px;
 }
 .side-form {
     display: flex;
@@ -102,10 +64,10 @@
     cursor: pointer;
 }
 .side-id-img {
-    background-image: url(../svg/search.svg);
+    background-image: url(../Main/svg/search.svg);
 }
 .side-id-img-dark {
-    background-image: url(../svg-dark/search.svg);
+    background-image: url(../Main/svg-dark/search.svg);
 }
 .side-price-input {
     outline: none;
@@ -144,16 +106,16 @@
     color:var(--color)
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-up {
-    background-image: url(../svg/arrow-up.svg);
+    background-image: url(../Main/svg/arrow-up.svg);
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-down {
-    background-image: url(../svg/arrow-down.svg);
+    background-image: url(../Main/svg/arrow-down.svg);
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-up-dark {
-    background-image: url(../svg-dark/arrow-up.svg);
+    background-image: url(../Main/svg-dark/arrow-up.svg);
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-down-dark {
-    background-image: url(../svg-dark/arrow-down.svg);
+    background-image: url(../Main/svg-dark/arrow-down.svg);
 }
 .side-size-label {
     padding:5px 0;
@@ -170,16 +132,16 @@
     background-size: 100% 100%;
 }
 .side-size-img-up {
-    background-image: url(../svg-dark/arrow-up.svg)
+    background-image: url(../Main/svg-dark/arrow-up.svg)
 }
 .side-size-img-down {
-    background-image: url(../svg-dark/arrow-down.svg)
+    background-image: url(../Main/svg-dark/arrow-down.svg)
 }
 .side-size-img-up-dark {
-    background-image: url(../svg/arrow-up.svg)
+    background-image: url(../Main/svg/arrow-up.svg)
 }
 .side-size-img-down-dark {
-    background-image: url(../svg/arrow-down.svg)
+    background-image: url(../Main/svg/arrow-down.svg)
 }
 .side-sort {
     display: flex;

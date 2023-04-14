@@ -8,7 +8,6 @@ export default function Sidebar() {
   const { filter, setFilter } = useAuth()
   const { id } = useParams()
   const [sizeType, setSizeType] = useState([])
-  const [sideBar, setSideBar] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -39,12 +38,7 @@ export default function Sidebar() {
 
   return (
     <>
-
-      <div className={darkTheme ? 'side-open-btn-dark' : 'side-open-btn'}
-        onClick={() => setSideBar(s => !s)}
-      />
-      <div className={sideBar ? 'side-bg-active' : 'side-bg'} onClick={() => setSideBar(false)} />
-      <div className={sideBar ? 'side-filter-active' : 'side-filter-bar'}>
+      <div className='side-filter-bar'>
         <span className='side-font'>Filtre</span>
         <form className="side-form" onChange={() => setProductLoad(8)} >
           <label>

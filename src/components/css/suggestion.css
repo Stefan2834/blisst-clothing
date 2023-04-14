@@ -94,14 +94,14 @@
     transition: 400ms ease;
 }
 .sugg-fav {
-    background-image: url(../svg-dark/fav.svg);
+    background-image: url(../Main/svg-dark/fav.svg);
 }
 .sugg-removefav {
     animation: scale 400ms ease;
-    background-image: url(../svg-dark/unfav.svg);
+    background-image: url(../Main/svg-dark/unfav.svg);
 }
 .sugg-fav-dark {
-    background-image: url(../svg/fav.svg);
+    background-image: url(../Main/svg/fav.svg);
 }
 @keyframes scale {
     0%{scale:0.4}

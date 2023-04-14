@@ -1,36 +1,37 @@
 import '../index.css';
-import './Main/css/navbar.css'
-import './Main/css/footer.css'
-import './Main/css/sidebar.css'
-import './Main/css/profile.css'
-import './Main/css/clothing.css'
-import './Main/css/specialProduct.css'
+import './css/navbar.css'
+import './css/footer.css'
+import './css/sidebar.css'
+import './css/profile.css'
+import './css/clothing.css'
+import './css/specialProduct.css'
 import { useEffect } from 'react';
 import { AuthProvider } from '../contexts/AuthContext';
 import DefaultProvider from '../contexts/DefaultContext';
 import { BrowserRouter, Outlet, Route, Routes, useNavigate } from 'react-router-dom'
-
-import Navbar from './Main/Layout/Navbar';
-import Footer from './Main/Layout/Footer';
-import Sidebar from './Main/Layout/Sidebar';
-import PrivateRoute from './PrivateRoute';
-import Test from './Main/Layout/Test';
-import Checkout from './Main/Layout/Checkout'
-import ScrollToTop from './Main/Layout/ScrollToTop';
-import ForgotPassword from './Main/Layout/ForgotPassword';
-import ResendEmail from './Main/Layout/ResendEmail';
+import Navbar from './Main/MainComponents/Navbar';
+import Footer from './Main/MainComponents/Footer';
+import Sidebar from './Main/MainComponents/Sidebar';
+import Main from './Main/MainComponents/Main';
 
 
-import Command from './Main/Layout/Command'
-import Connect from './Main/Connect';
-import Main from './Main/Main';
-import Profile from './Main/Profile'
-import Favorite from './Main/Favorite'
-import Cart from './Main/Cart';
+import PrivateRoute from './SmallComponents/PrivateRoute';
+import Test from './SmallComponents/Test';
+import Checkout from './Layout/Checkout'
+import ScrollToTop from './SmallComponents/ScrollToTop';
+import ForgotPassword from './SmallComponents/ForgotPassword';
+import ResendEmail from './SmallComponents/ResendEmail';
 
 
-import SpecialProduct from './Main/Layout/SpecialProduct';
-import Clothing from './Main/Layout/Clothing'
+import Command from './Layout/Command'
+import Connect from './Layout/Connect';
+import Profile from './Layout/Profile'
+import Favorite from './Layout/Favorite'
+import Cart from './Layout/Cart';
+
+
+import SpecialProduct from './Layout/SpecialProduct';
+import Clothing from './Layout/Clothing'
 
 const Layout = () => (
   <>
@@ -68,14 +69,6 @@ function App() {
             <Route path='/test' element={<Test />} />
 
 
-            <Route path='/error' element={<Outlet />}>
-
-
-              <Route path='forgotPassword' index element={<ForgotPassword />} />
-              <Route path='resendEmail' element={<ResendEmail />} />
-
-
-            </Route>
 
             <Route path='/main' element={<Layout />} >
 
@@ -85,6 +78,10 @@ function App() {
               <Route path='fav' element={<PrivateRoute element={Favorite} />} />
               <Route path='command' element={<PrivateRoute element={Command} />} />
 
+              <Route path='error' element={<Outlet />}>
+                <Route path='forgotPassword' index element={<ForgotPassword />} />
+                <Route path='resendEmail' element={<ResendEmail />} />
+              </Route>
 
               <Route path='cart' element={<Outlet />} >
                 <Route index exact element={<PrivateRoute element={Cart} />} />

@@ -1,12 +1,11 @@
 import React, { useRef, useState } from 'react'
-import emailSvg from '../../../svg-icon/email-security.svg'
-import { useAuth } from '../../../contexts/AuthContext';
-import { useDefault } from '../../../contexts/DefaultContext';
+import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import passSvg from '../../../svg-icon/key.svg'
-import eyeTrue from '../../../svg-icon/eye-check.svg'
-import eyeFalse from '../../../svg-icon/eye-off.svg'
+import emailSvg from '../../svg-icon/email-security.svg'
+import passSvg from '../../svg-icon/key.svg'
+import eyeTrue from '../../svg-icon/eye-check.svg'
+import eyeFalse from '../../svg-icon/eye-off.svg'
 
 export default function ResendEmail() {
 

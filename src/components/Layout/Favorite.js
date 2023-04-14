@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useAuth } from '../../contexts/AuthContext';
-import Suggestion from "./Layout/Suggestion";
+import Suggestion from "../SmallComponents/Suggestion";
 import { Link, useNavigate } from 'react-router-dom';
-import './css/cart.css'
+import '../css/cart.css'
 
 export default function Favorite() {
   const { favorite, dispatchFav, currentUser } = useAuth()

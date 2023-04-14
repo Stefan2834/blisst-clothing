@@ -89,7 +89,8 @@ export default function Footer() {
             <Link to='/main/cart' className='foo-text'>Cosul meu</Link>
             <Link to='/main/profile' className='foo-text'>Profilul meu</Link>
             <Link to='/connect' className='foo-text'>Conecteaza-te</Link>
-            <Link to='/main/' className='foo-text'>Termeni si conditii</Link>
+            <Link to='/main/terms' className='foo-text'>Termeni si conditii</Link>
+            <Link to='/main/faq' className='foo-text'>Faq</Link>
           </div>
           <div className='foo-collumn'>
             <div className='foo-title-news'>News letter</div>

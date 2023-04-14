@@ -210,7 +210,7 @@
   transition: 0.2s all;
 }
 .check-page-checkbox:checked {
-  background-image: url('../svg/check.svg');
+  background-image: url('../Main/svg/check.svg');
   background-size: 80% 80%;
   background-repeat: no-repeat;
   background-position: center;

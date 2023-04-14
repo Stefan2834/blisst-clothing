@@ -146,10 +146,10 @@ span.cart-span {
     background-position: center;
 }
 .cart-delete {
-    background-image: url(../svg-dark/remove-shopping-cart.svg);
+    background-image: url(../Main/svg-dark/remove-shopping-cart.svg);
 }
 .cart-delete-dark {
-    background-image: url(../svg/remove-shopping-cart.svg);
+    background-image: url(../Main/svg/remove-shopping-cart.svg);
 }
 .cart-right {
     width:350px;
@@ -222,10 +222,10 @@ span.cart-span {
     background-repeat: no-repeat;
 }
 .cart-form-submit {
-    background-image: url(../svg-dark/double-right.svg);
+    background-image: url(../Main/svg-dark/double-right.svg);
 }
 .cart-form-submit-dark {
-    background-image: url(../svg/double-right.svg);
+    background-image: url(../Main/svg/double-right.svg);
 }
 .cart-continue a {
     width:100%;

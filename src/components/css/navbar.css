@@ -62,10 +62,10 @@ body {
   background-repeat: no-repeat;
 }
 .nav-left-photo1 {
-  background-image: url(../../../svg-icon/male.svg);
+  background-image: url(../../svg-icon/male.svg);
 }
 .nav-left-photo2 {
-  background-image: url(../../../svg-icon/female.svg);
+  background-image: url(../../svg-icon/female.svg);
 }
 .nav-drop, .nav-drop-active {
   position: absolute;
@@ -132,40 +132,40 @@ body {
   height: 100%;
 }
 .nav-1 {
-  background-image: url(../../../clothing/man/tricouBlisst2.jpg);
+  background-image: url(../../clothing/man/tricouBlisst2.jpg);
 }
 .nav-2 {
-  background-image: url(../../../clothing/man/bluza.jpg);
+  background-image: url(../../clothing/man/bluza.jpg);
 }
 .nav-3 {
-  background-image: url(../../../clothing/man/barbati-pants.jpg);
+  background-image: url(../../clothing/man/barbati-pants.jpg);
 }
 .nav-4 {
-  background-image: url(../../../clothing/man/barbati-shirt.jpg);
+  background-image: url(../../clothing/man/barbati-shirt.jpg);
 }
 .nav-5 {
-  background-image: url(../../../clothing/man/barbati-shoes.jpg);
+  background-image: url(../../clothing/man/barbati-shoes.jpg);
 }
 .nav-6 {
-  background-image: url(../../../clothing/man/barbati-shoes.jpg);
+  background-image: url(../../clothing/man/barbati-shoes.jpg);
 }
 .nav-7 {
-  background-image: url(../../../clothing/man/tricouBlisst2.jpg);
+  background-image: url(../../clothing/man/tricouBlisst2.jpg);
 }
 .nav-8 {
-  background-image: url(../../../clothing/man/hanorac-alb.jpg);
+  background-image: url(../../clothing/man/hanorac-alb.jpg);
 }
 .nav-9 {
-  background-image: url(../../../clothing/man/barbati-pants.jpg);
+  background-image: url(../../clothing/man/barbati-pants.jpg);
 }
 .nav-10 {
-  background-image: url(../../../clothing/man/barbati-shirt.jpg);
+  background-image: url(../../clothing/man/barbati-shirt.jpg);
 }
 .nav-11 {
-  background-image: url(../../../clothing/man/barbati-shoes.jpg);
+  background-image: url(../../clothing/man/barbati-shoes.jpg);
 }
 .nav-12 {
-  background-image: url(../../../clothing/man/barbati-shoes.jpg);
+  background-image: url(../../clothing/man/barbati-shoes.jpg);
 }
 .nav-square-text-woman, .nav-square-text-man {
   font-size: 20px;
@@ -205,34 +205,34 @@ body {
   cursor: pointer;
 }
 .nav-icon-img1 {
-  background-image: url(../../Main/svg-dark/like.svg);
+  background-image: url(../Main/svg-dark/like.svg);
 }
 .nav-icon-img2 {
-  background-image: url(../../Main/svg-dark/shopping-cart-one.svg);
+  background-image: url(../Main/svg-dark/shopping-cart-one.svg);
 }
 .nav-icon-img3 {
-  background-image: url(../../Main/svg-dark/people.svg);
+  background-image: url(../Main/svg-dark/people.svg);
 }
 .nav-icon-img4 {
-  background-image: url(../../Main/svg-dark/logout.svg);
+  background-image: url(../Main/svg-dark/logout.svg);
 }
 .nav-icon-img5 {
-  background-image: url(../../Main/svg-dark/login.svg);
+  background-image: url(../Main/svg-dark/login.svg);
 }
 .nav-icon-dark-img1 {
-  background-image: url(../../Main/svg/like.svg);
+  background-image: url(../Main/svg/like.svg);
 }
 .nav-icon-dark-img2 {
-  background-image: url(../../Main/svg/shopping-cart-one.svg);
+  background-image: url(../Main/svg/shopping-cart-one.svg);
 }
 .nav-icon-dark-img3 {
-  background-image: url(../../Main/svg/people.svg)
+  background-image: url(../Main/svg/people.svg)
 }
 .nav-icon-dark-img4 {
-  background-image: url(../../Main/svg/logout.svg);
+  background-image: url(../Main/svg/logout.svg);
 }
 .nav-icon-dark-img5 {
-  background-image: url(../../Main/svg/login.svg);
+  background-image: url(../Main/svg/login.svg);
 }
 .nav-nr-absolute {
   position: absolute;
@@ -261,7 +261,7 @@ body {
   text-align: center;
   padding-right:5px;
   font-weight: 500;
-  width:200px;
+  width:250px;
 }
 .nav-drop-right::before {
   content: '';
@@ -357,10 +357,10 @@ body {
   margin-right:-10px;
 }
 .nav-fav-del1 {
-  background-image: url(../svg-dark/unfav.svg);
+  background-image: url(../Main/svg-dark/unfav.svg);
 }
 .nav-fav-del2 {
-  background-image: url(../svg-dark/remove-shopping-cart.svg);
+  background-image: url(../Main/svg-dark/remove-shopping-cart.svg);
 }
 .nav-fav-nr {
   font-size:15px;
@@ -412,10 +412,10 @@ body {
   transition: 400ms ease;
 }
 .nav-arrow {
-  background-image: url(../svg/double-right.svg);
+  background-image: url(../Main/svg/double-right.svg);
 }
 .nav-arrow-dark {
-  background-image: url(../svg-dark/double-right.svg);
+  background-image: url(../Main/svg-dark/double-right.svg);
 }
 .nav-theme {
   margin:0 5px;
@@ -450,9 +450,9 @@ body {
   background-repeat: no-repeat;
 }
 .nav-handle {
-  background-image: url(../svg/moon.svg);
+  background-image: url(../Main/svg/moon.svg);
   transform: translateX(24px);
 }
 .nav-handle-dark {
-  background-image: url(../svg-dark/sun.svg);
+  background-image: url(../Main/svg-dark/sun.svg);
 }

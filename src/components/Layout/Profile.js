@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDefault } from "../../contexts/DefaultContext";
-import Suggestion from "./Layout/Suggestion";
-import { counties } from "./Layout/Test";
+import Suggestion from "../SmallComponents/Suggestion";
+import { counties } from "../SmallComponents/Test";
 
 export default function Profile() {
     const {
@@ -13,7 +13,7 @@ export default function Profile() {
     } = useAuth()
     const { darkTheme, isPending, startTransition } = useDefault()
     const [infoChange, setInfoChange] = useState(false)
-    const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter:true })
+    const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true })
     const [preDet, setPreDet] = useState({})
     const changeInfo = () => {
         setInfoChange(true)
@@ -62,7 +62,7 @@ export default function Profile() {
     useEffect(() => {
         document.title = 'Blisst — Profilul meu'
         axios.post(`${server}/user/info`, { uid: currentUser.uid })
-            .then(info => { if(info.data.det){setDet(info.data.det); setPreDet(info.data.det) }})
+            .then(info => { if (info.data.det) { setDet(info.data.det); setPreDet(info.data.det) } })
             .catch(err => console.error(err.error))
     }, [])
 
@@ -172,8 +172,12 @@ export default function Profile() {
                             <div className="prof-txt">
                                 Tipul utilizatorului:
                                 <div className="prof-type-slide">
-                                    <div className="prof-type-select" onClick={() => setPreDet({ ...preDet, type: 'man' })}>Barbat</div>
-                                    <div className="prof-type-select" onClick={() => setPreDet({ ...preDet, type: 'woman' })}>Femeie</div>
+                                    <div className={preDet.type === 'man' ? "prof-type-active" :"prof-type-select"}
+                                        onClick={() => setPreDet({ ...preDet, type: 'man' })}
+                                    >Barbat</div>
+                                    <div className={preDet.type === 'woman' ? "prof-type-active" :"prof-type-select"}
+                                        onClick={() => setPreDet({ ...preDet, type: 'woman' })}
+                                    >Femeie</div>
                                     <div className={preDet.type === 'man' ? 'prof-type-left' : 'prof-type-right'} />
                                 </div>
                             </div>
@@ -208,7 +212,7 @@ export default function Profile() {
                         </div>
                     ) : (
                         <>
-                        <Suggestion type={'discount'} />
+                            <Suggestion type={'discount'} />
                         </>
                     )}
                 </div>

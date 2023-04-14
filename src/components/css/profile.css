@@ -66,16 +66,16 @@
     transform: translate(-50%);
 }
 .prof-photo-save-dark {
-    background-image: url(../svg-dark/people.svg);
+    background-image: url(../Main/svg-dark/people.svg);
 }
 .prof-photo-edit-dark {
-    background-image: url(../svg-dark/edit-name.svg);
+    background-image: url(../Main/svg-dark/edit-name.svg);
 }
 .prof-photo-save {
-    background-image: url(../svg/people.svg);
+    background-image: url(../Main/svg/people.svg);
 }
 .prof-photo-edit {
-    background-image: url(../svg/edit-name.svg);
+    background-image: url(../Main/svg/edit-name.svg);
 }
 .prof-txt {
     margin:8px 0;
@@ -184,24 +184,29 @@
     width:160px;
     position: relative;
 }
-.prof-type-select {
-    color:var(--color-oposite);
+.prof-type-select, .prof-type-active {
     width:75px;
     text-align: center;
     cursor: pointer;
     margin:0 5px;
     z-index:1;
+    transition: 400ms ease;
+}
+.prof-type-select {
+    color:var(--color-oposite);
+}
+.prof-type-active {
+    color:var(--color);
 }
 .prof-type-left, .prof-type-right {
     width:75px;
     height:100%;
-    background-color: red;
     position: absolute;
     transition: 400ms ease;
     left:5px;
     padding:8px 16px;
     border-radius: 5px;
-    background-color: var(--color-third);
+    background-color: var(--color-oposite);
 }
 .prof-type-right {
     translate: 75px;

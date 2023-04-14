@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
-import emailSvg from '../../../svg-icon/email-security.svg'
-import { useAuth } from '../../../contexts/AuthContext';
-import { useDefault } from '../../../contexts/DefaultContext';
+import emailSvg from '../../svg-icon/email-security.svg'
+import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 

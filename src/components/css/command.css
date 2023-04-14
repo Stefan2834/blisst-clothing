@@ -43,10 +43,10 @@
   box-shadow: 2px 2px 5px black;
 }
 .comm-photo {
-  background-image: url(../svg/people.svg);
+  background-image: url(../Main/svg/people.svg);
 }
 .comm-photo-dark {
-  background-image: url(../svg-dark/people.svg);
+  background-image: url(../Main/svg-dark/people.svg);
 }
 .comm-name {
   font-size:18px;

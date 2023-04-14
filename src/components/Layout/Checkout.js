@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import '../css/cartCheckout.css'
-import { useAuth } from '../../../contexts/AuthContext'
-import { useDefault } from '../../../contexts/DefaultContext'
+import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../contexts/DefaultContext'
 import axios from 'axios'
-import { counties } from './Test'
+import { counties } from '../SmallComponents/Test'
 import Swal from 'sweetalert2';
 
 export default function Checkout() {

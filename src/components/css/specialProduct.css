@@ -171,10 +171,10 @@ span.spec-price-old {
     margin-left:10px;
 }
 .spec-cart-light {
-    background-image: url(../svg/shopping-cart-one.svg);
+    background-image: url(../Main/svg/shopping-cart-one.svg);
 }
 .spec-cart-dark {
-    background-image: url(../svg-dark/shopping-cart-one.svg);
+    background-image: url(../Main/svg-dark/shopping-cart-one.svg);
 }
 .spec-cart-nr {
     display: flex;
@@ -346,16 +346,16 @@ span.spec-price-old {
     margin-right:10px;
 }
 .spec-rev-anonim {
-    background-image: url(../svg-dark/people-unknown.svg);
+    background-image: url(../Main/svg-dark/people-unknown.svg);
 }
 .spec-rev-anonim-dark {
-    background-image: url(../svg/people-unknown.svg);
+    background-image: url(../Main/svg/people-unknown.svg);
 }
 .spec-rev-photo {
-    background-image: url(../svg-dark/people.svg);
+    background-image: url(../Main/svg-dark/people.svg);
 }
 .spec-rev-photo-dark {
-    background-image: url(../svg/people.svg);
+    background-image: url(../Main/svg/people.svg);
 }
 .spec-rev-star {
     justify-self: flex-end;

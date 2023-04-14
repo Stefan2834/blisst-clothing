@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom';
-import './css/cart.css'
+import '../css/cart.css'
 import { useDefault } from '../../contexts/DefaultContext';
 import Swal from 'sweetalert2';
 

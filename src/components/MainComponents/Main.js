@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useDefault } from '../../contexts/DefaultContext'
-import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../../contexts/DefaultContext'
+import { useAuth } from '../../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import Countdown from './Layout/Countdown'
+import Countdown from '../../SmallComponents/Countdown'
 
 
 export default function Main() {
