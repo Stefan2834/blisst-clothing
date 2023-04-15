@@ -707,6 +707,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const server = "https://clothing-shop2834.herokuapp.com"
   // const server = 'http://localhost:9000'
+  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
@@ -737,7 +738,15 @@ export function AuthProvider({ children }) {
           dispatchCommand({ type: 'commandGet', payload: { command: data.data.command } })
         }
       }).catch(err => console.error(err))
-    setLoading(false)
+    await axios.post(`${server}/user/info`, { uid: uid })
+      .then(info => {
+        setLoading(false);
+        if (info.data.det) {
+          setDet(info.data.det);
+          document.documentElement.style.setProperty("--principal", info.data.det.color)
+        }
+      })
+      .catch(err => console.error(err.error))
   }
 
   useEffect(() => {
@@ -810,6 +819,7 @@ export function AuthProvider({ children }) {
     filter, setFilter,
     command, dispatchCommand,
     getUserData,
+    det, setDet
   }
   return (
     <AuthContext.Provider value={value}>

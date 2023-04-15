@@ -9,11 +9,10 @@ import { counties } from "../SmallComponents/Test";
 
 export default function Profile() {
     const {
-        currentUser, server, command
+        currentUser, server, command, det, setDet
     } = useAuth()
     const { darkTheme, isPending, startTransition } = useDefault()
     const [infoChange, setInfoChange] = useState(false)
-    const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true })
     const [preDet, setPreDet] = useState({})
     const changeInfo = () => {
         setInfoChange(true)
@@ -26,13 +25,15 @@ export default function Profile() {
                 det: preDet
             })
                 .then(info => {
+                    document.documentElement.style.setProperty("--principal", preDet.color)
                     setDet({
                         info: preDet.info,
                         tel: preDet.tel,
                         email: preDet.email,
                         name: preDet.name,
                         type: preDet.type,
-                        county: preDet.county
+                        county: preDet.county,
+                        color: preDet.color
                     }); console.log(info.data)
                 })
                 .catch(err => {
@@ -42,7 +43,8 @@ export default function Profile() {
                         email: det.email,
                         name: det.name,
                         type: det.type,
-                        county: det.county
+                        county: det.county,
+                        color: det.color
                     }); console.error(err)
                 })
             setInfoChange(false);
@@ -54,16 +56,15 @@ export default function Profile() {
             tel: det.tel,
             email: det.email,
             name: det.name,
-            type: det.type
+            type: det.type,
+            color: det.color
         })
         setInfoChange(false);
     }
 
     useEffect(() => {
         document.title = 'Blisst — Profilul meu'
-        axios.post(`${server}/user/info`, { uid: currentUser.uid })
-            .then(info => { if (info.data.det) { setDet(info.data.det); setPreDet(info.data.det) } })
-            .catch(err => console.error(err.error))
+        setPreDet(det)
     }, [])
 
 
@@ -84,7 +85,7 @@ export default function Profile() {
                             <div className={darkTheme ? "prof-photo-edit-dark" : "prof-photo-edit"}></div>
                         </div>
                     </div>
-                    <div className="prof-txt text-center">Salut, <span className='text-orange-600'>{det.name}</span>!</div>
+                    <div className="prof-txt text-center">Salut, <span className='principal'>{det.name}</span>!</div>
                     <div className={infoChange ? 'prof-det prof-det-slider' : 'prof-det'}>
                         <div className="prof-left-info">
                             <div className="prof-txt">Judet:<br />
@@ -121,6 +122,9 @@ export default function Profile() {
                                         <div className="prof-man">Barbat</div>
                                     )}
                                 </div>
+                            </div>
+                            <div className="prof-txt">Culoare preferata:<br />
+                                <div className="prof-det-square" style={{ backgroundColor: det.color }} />
                             </div>
                             <div className="prof-save" onClick={changeInfo}>Editeaza</div>
                         </div>
@@ -172,13 +176,38 @@ export default function Profile() {
                             <div className="prof-txt">
                                 Tipul utilizatorului:
                                 <div className="prof-type-slide">
-                                    <div className={preDet.type === 'man' ? "prof-type-active" :"prof-type-select"}
+                                    <div className={preDet.type === 'man' ? "prof-type-active" : "prof-type-select"}
                                         onClick={() => setPreDet({ ...preDet, type: 'man' })}
                                     >Barbat</div>
-                                    <div className={preDet.type === 'woman' ? "prof-type-active" :"prof-type-select"}
+                                    <div className={preDet.type === 'woman' ? "prof-type-active" : "prof-type-select"}
                                         onClick={() => setPreDet({ ...preDet, type: 'woman' })}
                                     >Femeie</div>
                                     <div className={preDet.type === 'man' ? 'prof-type-left' : 'prof-type-right'} />
+                                </div>
+                            </div>
+                            <div className="prof-txt">
+                                Culoare preferata:
+                                <div className="flex">
+                                    <div className="prof-det-square"
+                                        style={{ backgroundColor: "red" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "red" })}
+                                    />
+                                    <div className="prof-det-square"
+                                        style={{ backgroundColor: "blue" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "blue" })}
+                                    />
+                                    <div className="prof-det-square"
+                                        style={{ backgroundColor: "#ea580c" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#ea580c" })}
+                                    />
+                                    <div className="prof-det-square"
+                                        style={{ backgroundColor: "green" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "green" })}
+                                    />
+                                    <div className="prof-det-square"
+                                        style={{ backgroundColor: "#e684ae" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#e684ae" })}
+                                    />
                                 </div>
                             </div>
                             <div className="prof-btn-flex">

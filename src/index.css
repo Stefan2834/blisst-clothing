@@ -20,7 +20,10 @@ body {
   --gradient:linear-gradient(180deg, #2289ff 0%,#d604cf 100%);
   --first:#e684ae;
   --second:#79cbca;
-  --principal:rgb(234, 88, 12) ;
+  --principal:#ea580c;
+}
+.principal {
+  color:var(--principal)
 }
 ::selection {
   background-color: var(--principal);
@@ -344,7 +347,7 @@ button.acc-btn:hover {
   margin:0 5px;
   color:white;
   font-family: 'Poppins',sans-serif;
-  color: rgb(234,88,12);
+  color: var(--principal);
   padding:3px;
   text-align: center;
   background-color: white;
@@ -552,7 +555,7 @@ button.acc-btn:hover {
   height:4px;
   top:50%;
   translate:0 -50%;
-  background-color: var(--color-oposite);
+  background-color: var(--principal);
 }
 .main-disc-top-text::before {
   left:-100%;

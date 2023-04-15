@@ -75,7 +75,7 @@ export default function Main() {
         <div className='main-off'>
           <div className='main-left'>
             <div className='flex items-center justify-start flex-col'>
-              <div className='main-off-title'>Noi dam <span className='text-orange-600'>Moda</span></div>
+              <div className='main-off-title'>Noi dam <span className='principal'>Moda</span></div>
               <div className='main-off-text'>Produsul zilei:</div>
               <div className='sugg-div'>
                 {suggestion && (
@@ -130,7 +130,7 @@ export default function Main() {
             <div className='main-off-man'>
               <Link to='/main/cloth/barbati' className='main-off-photo-man' />
               <Link to='/main/cloth/man' className='main-off-more'>Produse pentru
-                <span className='text-orange-600 ml-2'>
+                <span className='principal ml-2'>
                   El
                 </span>
                 <div className='nav-arrow' />
@@ -139,7 +139,7 @@ export default function Main() {
             <div className='main-off-woman'>
               <Link to='/main/cloth/femei' className='main-off-photo-woman' />
               <Link to='/main/cloth/woman' className='main-off-more'>Produse pentru
-                <span className='text-orange-600 ml-2'>
+                <span className='principal ml-2'>
                   Ea
                 </span>
                 <div className='nav-arrow' />
@@ -151,19 +151,19 @@ export default function Main() {
           <div className='main-info-card'>
             <div className={darkTheme ? 'main-info-icon-truck-dark' : 'main-info-icon-truck'} />
             <div className='main-info-text'>
-              Plata cu <span className='text-orange-600'>ramburs</span> la curier
+              Plata cu <span className='principal'>ramburs</span> la curier
             </div>
           </div>
           <div className='main-info-card'>
             <div className={darkTheme ? 'main-info-icon-wallet-dark' : 'main-info-icon-wallet'} />
             <div className='main-info-text'>
-              Livrare gratuita la comenzi de peste <span className='text-orange-600'>200</span> de Lei
+              Livrare gratuita la comenzi de peste <span className='principal'>200</span> de Lei
             </div>
           </div>
           <div className='main-info-card'>
             <div className={darkTheme ? 'main-info-icon-watch-dark' : 'main-info-icon-watch'} />
             <div className='main-info-text'>
-              Comanda livrata in <span className='text-orange-600'>3-5 zile</span> lucratoare
+              Comanda livrata in <span className='principal'>3-5 zile</span> lucratoare
             </div>
           </div>
         </div>

@@ -11,13 +11,13 @@ export default function Checkout() {
   const { server, currentUser,
     cart, dispatchCart,
     dispatchCommand,
-    product, setProduct
+    product, setProduct,
+    det, setDet
   } = useAuth()
   const { startTransition, isPending, darkTheme } = useDefault()
   const [actualPage, setActualPage] = useState(1)
   const [edit, setEdit] = useState({ adress: false, contact: false, pay: false })
   const [error, setError] = useState({ adress: '', contact: '', pay: '' })
-  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', county: '', newsLetter:false })
   const [cartPrice, setCartPrice] = useState(0)
   const [method, setMethod] = useState({ card: false, ramburs: false })
   const [discount, setDiscount] = useState(0)
@@ -228,11 +228,6 @@ export default function Checkout() {
 
   useEffect(() => {
     document.title = 'Blisst — Plaseaza comanda'
-    startTransition(() => {
-      axios.post(`${server}/user/info`, { uid: currentUser.uid })
-        .then(info => { setDet(info.data.det); setPreDet(info.data.det) })
-        .catch(err => console.error(err.error))
-    })
   }, [])
 
 
