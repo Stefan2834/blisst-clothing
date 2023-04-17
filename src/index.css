@@ -373,7 +373,7 @@ button.acc-btn:hover {
   flex-direction: column;
 }
 .main-off {
-  height:100vh;
+  height:110vh;
   width:100vw;
   min-height:700px;
   display: flex;
@@ -468,10 +468,10 @@ button.acc-btn:hover {
   cursor: pointer;
 }
 .main-off-photo-man {
-  background-image: url(clothing/pexels-ron-lach-9604185-PhotoRoom.png-PhotoRoom.png);
+  background-image: url(clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
 }
 .main-off-photo-woman {
-  background-image: url(clothing/pexels-cottonbro-studio-7762486-PhotoRoom.png-PhotoRoom.png);
+  background-image: url(clothing/blisst-woman-PhotoRoom.png-PhotoRoom.png);
 }
 .main-off-photo-man:hover,
 .main-off-photo-woman:hover {
