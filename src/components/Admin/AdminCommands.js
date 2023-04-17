@@ -71,14 +71,17 @@ export default function AdminCommands() {
                   <option value={'Toate'} className='comm-option' >
                     Toate
                   </option>
+                  <option value={'Se livreaza'} className='comm-option' >
+                    Se livreaza
+                  </option>
                   <option value={'Plasata'} className='comm-option' >
                     Plasata
                   </option>
-                  <option value={'Livrat'} className='comm-option'>
-                    Livrat
+                  <option value={'Livrata'} className='comm-option'>
+                    Livrata
                   </option>
-                  <option value={'Anulat'} className='comm-option'>
-                    Anulat
+                  <option value={'Anulata'} className='comm-option'>
+                    Anulata
                   </option>
                 </select>
               </div>
@@ -175,11 +178,14 @@ export default function AdminCommands() {
                             <option value={'Plasata'} className='comm-option' >
                               Plasata
                             </option>
-                            <option value={'Livrat'} className='comm-option'>
-                              Livrat
+                            <option value={'Se livreaza'} className='comm-option' >
+                              Se livreaza
                             </option>
-                            <option value={'Anulat'} className='comm-option'>
-                              Anulat
+                            <option value={'Livrata'} className='comm-option'>
+                              Livrata
+                            </option>
+                            <option value={'Anulata'} className='comm-option'>
+                              Anulata
                             </option>
                           </select>
                         </div>
