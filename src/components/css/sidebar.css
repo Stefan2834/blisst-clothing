@@ -176,6 +176,7 @@
         background-repeat: no-repeat;
         height:40px;
         z-index:40px;
+        background-color: red;
         left:-70px;
         top:20px;
     }
@@ -199,7 +200,7 @@
     .side-filter-bar {
         margin-left:70px;
     }
-    .side-switch{
+    .side-switch, .side-switch-dark{
         left:-55px;
     }
     .side-filter-closed .side-switch,
