@@ -36,6 +36,7 @@ import Clothing from './Layout/Clothing'
 import PrivateRoute from '../CustomHook/PrivateRoute';
 import AdminRoute from '../CustomHook/AdminRoute'
 
+import Admin from './Admin/Admin';
 import AdminCommands from '../components/Admin/AdminCommands'
 
 const Layout = () => (
@@ -98,6 +99,7 @@ function App() {
               <Route path='help' element={<Help />} />
 
               <Route path='admin' element={<Outlet />} >
+                <Route index element={<AdminRoute element={Admin} />} />
                 <Route path='commands' element={<AdminRoute element={AdminCommands} />} />
               </Route>
 

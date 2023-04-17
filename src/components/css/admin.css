@@ -1,0 +1,63 @@
+:root {
+  --black:#0b0b0b;
+  --dark-principal:#0b0b0b;
+  --color:white;
+  --color-second:#eeeeee;
+  --color-oposite:#0b0b0b;
+  --color-third: #ddd;
+  --gradient:linear-gradient(180deg, #2289ff 0%,#d604cf 100%);
+  --first:#e684ae;
+  --second:#79cbca;
+}
+.admin-commands {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:70px 20px 20px 20px;
+}
+.admin-commands-div {
+  width:100vw;
+  height:auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.admin {
+  width:100vw;
+  height:100vh;
+  background-color: var(--color-third);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin-div {
+  height:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding:10px 20px;
+  background-color: var(--color);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  font-family: 'Poppins', sans-serif;
+}
+.admin-top {
+  font-size:22px;
+  font-weight: 600;
+  margin:20px 0;
+}
+.admin-txt {
+  font-size:20px;
+  font-weight: 500;
+  margin:10px 0;
+}
+.admin-link {
+  font-size:20px;
+  font-weight: 600;
+  padding:6px 12px;
+  margin:20px;
+  background-color: var(--color-oposite);
+  color:var(--color);
+  border-radius: 4px;
+}

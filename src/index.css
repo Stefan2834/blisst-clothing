@@ -717,19 +717,3 @@ button.acc-btn:hover {
   font-weight: 500;
   color:var(--color-oposite)
 }
-
-/*---------Admin---------*/
-.admin-commands {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding:70px 20px 20px 20px;
-}
-.admin-commands-div {
-  width:100vw;
-  height:auto;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-}

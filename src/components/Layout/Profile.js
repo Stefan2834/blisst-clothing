@@ -9,7 +9,7 @@ import { counties } from "../SmallComponents/Test";
 
 export default function Profile() {
     const {
-        currentUser, server, command, det, setDet
+        currentUser, server, command, det, setDet, admin
     } = useAuth()
     const { darkTheme, isPending, startTransition } = useDefault()
     const [infoChange, setInfoChange] = useState(false)
@@ -86,6 +86,9 @@ export default function Profile() {
                         </div>
                     </div>
                     <div className="prof-txt text-center">Salut, <span className='principal'>{det.name}</span>!</div>
+                    {admin && (
+                        <Link to='/main/admin' className="prof-admin">Pagina admini</Link>
+                    )}
                     <div className={infoChange ? 'prof-det prof-det-slider' : 'prof-det'}>
                         <div className="prof-left-info">
                             <div className="prof-txt">Judet:<br />
