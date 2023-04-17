@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
 import { useDefault } from '../../contexts/DefaultContext'
@@ -17,7 +17,7 @@ export default function Navbar() {
   const { setError, setActiveForm,
     darkTheme, setDarkTheme,
   } = useDefault()
-  const [windowHeight, setWindowHeight] = useState(1000)
+  const { pathname } = useLocation();
   const [drop, setDrop] = useState([false, false, false, false, false, false])
   const [hover, setHover] = useState([true, false, false])
   const navIconRefs = useRef([])
@@ -70,16 +70,11 @@ export default function Navbar() {
     });
   }
 
-  useEffect(() => {
-    function handleResize() {
-      setWindowHeight(window.innerHeight);
-    }
 
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [])
+
+  useEffect(() => {
+    setDrop([false,false,false,false,false,false])
+  }, [pathname]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -105,9 +100,9 @@ export default function Navbar() {
       <div className='nav-left'>
         <div className='nav-logo'><Link to='/main' className='principal'>Blisst</Link></div>
         <div className='nav-left-btn'
+          ref={(el) => (navIconRefs.current[4] = el)}
         >
           <div className='nav-left-type nav-left-photo1'
-            ref={(el) => (navIconRefs.current[4] = el)}
             onClick={() => { setDrop([false, false, false, false, !drop[4], false]) }}
           />
           <div className={drop[4] ? 'nav-drop-active' : 'nav-drop'}>
@@ -160,9 +155,9 @@ export default function Navbar() {
           </div>
         </div>
         <div className='nav-left-btn'
+          ref={(el) => (navIconRefs.current[5] = el)}
         >
           <div className='nav-left-type nav-left-photo2'
-            ref={(el) => (navIconRefs.current[5] = el)}
             onClick={() => { setDrop([false, false, false, false, false, !drop[5]]) }}
           />
           <div className={drop[5] ? 'nav-drop-active' : 'nav-drop'}>

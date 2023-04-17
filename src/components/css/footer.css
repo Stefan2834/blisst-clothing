@@ -56,7 +56,6 @@
     justify-content: center;
 }
 .foo-collumn {
-    height:100%;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -157,4 +156,38 @@
     font-family: 'Freehand', sans-serif;
     height:50px;
     padding:0 8px;
+}
+
+/*----------Media Queries----------*/
+
+@media screen and (max-width:1000px) { 
+    .footer {
+        width:calc(100vw - 100px);
+        margin-left:100px;
+        box-shadow: 2px 2px 4px inset black;
+    }  
+    .foo-top {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+@media screen and (max-width:800px) {
+    .footer {
+        flex-direction: column;
+    }
+    .foo-left {
+        width:100%;
+    }
+    .foo-content {
+        width:100%;
+    }
+    .foo-bottom {
+        width:300px;
+    }
+}
+@media screen and (max-width:500px) {
+    .footer {
+        width:calc(100vw - 70px);
+        margin-left:70px;
+    }
 }

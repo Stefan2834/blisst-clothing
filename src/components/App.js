@@ -78,6 +78,7 @@ function App() {
 
 
               <Route exact index element={<Main />} />
+              <Route path='navbar' element={<Test />} />
               <Route path='profile' element={<PrivateRoute element={Profile} />} />
               <Route path='fav' element={<PrivateRoute element={Favorite} />} />
               <Route path='command' element={<PrivateRoute element={Command} />} />
