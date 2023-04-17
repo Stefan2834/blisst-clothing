@@ -23,6 +23,10 @@
   justify-content: flex-start;
   flex-direction: column;
 }
+.admin-comm-filter {
+  color:var(--color-oposite);
+  background-color: var(--color);
+}
 .admin {
   width:100vw;
   height:100vh;
