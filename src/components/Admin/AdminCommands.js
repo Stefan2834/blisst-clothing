@@ -86,7 +86,7 @@ export default function AdminCommands() {
                 </select>
               </div>
             </div>
-            {commands.map((command, index) => {
+            {[...commands].reverse().map((command, index) => {
               if (command.status === filter || filter === 'Toate') {
                 const selectedProduct = selectedProducts[index] || command.product[0]
                 return (

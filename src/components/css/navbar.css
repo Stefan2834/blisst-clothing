@@ -201,8 +201,10 @@ body {
   background-size: 35px 35px;
   position: absolute;
   aspect-ratio: 1/1;
-  height:35px;
+  height:100%;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .nav-icon-img1 {
   background-image: url(../Main/svg-dark/like.svg);
@@ -454,4 +456,60 @@ body {
 }
 .nav-handle-dark {
   background-image: url(../Main/svg-dark/sun.svg);
+}
+
+/*----------Media Queries----------*/
+
+
+@media screen and (max-width:1000px) {
+  .navbar {
+    height:500px;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 500px;
+  }
+  .nav-left {
+    flex-direction: column;
+    height:auto;
+    margin-left:0;
+    width:100%;
+  }
+  .nav-left-btn {
+    flex-direction: column;
+    height:auto;
+    width:100%;
+    margin:5px 0;
+  }
+  .nav-theme {
+    margin:5px 0;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-left-type {
+    height:50px;
+    width:100%;
+  }
+  .nav-right {
+    flex-direction: column;
+    height:auto;
+    margin-right:0;
+    width:100%;
+  }
+  .nav-icon {
+    height:50px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:5px 0;
+  }
+  .navbar{
+    justify-content: center;
+  }
+  .nav-icon-img1, .nav-icon-img2, .nav-icon-img3, .nav-icon-img4, .nav-icon-img5,
+  .nav-icon-dark-img1, .nav-icon-dark-img2, .nav-icon-dark-img3, .nav-icon-dark-img4, .nav-icon-dark-img5 {
+    width:100%;
+  }
 }
