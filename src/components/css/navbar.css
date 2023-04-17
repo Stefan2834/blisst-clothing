@@ -474,12 +474,12 @@ body {
     flex-direction: column;
     height:auto;
     margin-left:0;
-    width:100px;
+    width:100%;
   }
   .nav-left-btn {
     flex-direction: column;
     height:auto;
-    width:100px;
+    width:100%;
     margin:5px 0;
   }
   .nav-theme {
@@ -491,13 +491,13 @@ body {
   }
   .nav-left-type {
     height:50px;
-    width:100px;
+    width:100%;
   }
   .nav-right {
     flex-direction: column;
     height:auto;
     margin-right:0;
-    width:100px;
+    width:100%;
   }
   .nav-icon {
     height:50px;
@@ -522,12 +522,20 @@ body {
   }
   .nav-drop-right::before {
     left:0;
-    top:50%;
+    top:45%;
     translate:0,-50%;
     left:-22px;
     rotate: 270deg;
   }
   .nav-icon-active .nav-drop-right {
     top:50%;
+  }
+}
+@media screen and (max-width:500px) {
+  .navbar {
+    width:70px;
+  }
+  .nav-logo {
+    font-size:28px;
   }
 }
