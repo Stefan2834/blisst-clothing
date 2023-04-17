@@ -133,3 +133,22 @@ span.cloth-price {
     padding:8px 16px;
     font-size:16px;
 }
+
+
+/*----------Media Queries----------*/
+
+
+@media screen and (max-width:1000px) {
+    .cloth {
+        padding:20px 0px 0px 100px;
+    }
+    .cloth-div {
+        scale:0.8;
+        margin:0;
+    }
+}
+@media screen and (max-width:500px) {
+    .cloth {
+        padding:20px 0 0 70px;
+    }
+}
