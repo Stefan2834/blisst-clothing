@@ -10,7 +10,7 @@ export default function Admin() {
   return (
     <div className='admin'>
       <div className='admin-div'>
-        <div className='admin-top'>Salut, 
+        <div className='admin-top'>Salut, Domnule  
           <span className='principal'> {det.name}</span>
         </div>
         <div className='admin-txt'>Bun venit pe pagina pentru admini!</div>
