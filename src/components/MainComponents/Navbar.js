@@ -17,6 +17,7 @@ export default function Navbar() {
   const { setError, setActiveForm,
     darkTheme, setDarkTheme,
   } = useDefault()
+  const [windowHeight, setWindowHeight] = useState(1000)
   const [drop, setDrop] = useState([false, false, false, false, false, false])
   const [hover, setHover] = useState([true, false, false])
   const navIconRefs = useRef([])
@@ -68,6 +69,17 @@ export default function Navbar() {
       }
     });
   }
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowHeight(window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -218,7 +230,9 @@ export default function Navbar() {
           ref={(el) => (navIconRefs.current[0] = el)}
         >
           <div className={darkTheme ? 'nav-icon-dark-img1' : 'nav-icon-img1'}
-            onClick={() => { setDrop([!drop[0], false, false, false, false, false]) }}
+            onClick={() => {
+              setDrop([!drop[0], false, false, false, false, false])
+            }}
           />
           {currentUser && (
             <div className='nav-nr-absolute'
@@ -280,13 +294,19 @@ export default function Navbar() {
           ref={(el) => (navIconRefs.current[1] = el)}
         >
           <div className={darkTheme ? 'nav-icon-dark-img2' : 'nav-icon-img2'}
-            onClick={() => { setDrop([false, !drop[1], false, false, false, false]) }}
+            onClick={() => {
+              // if (window.innerHeight <= 1000) {
+              //   navigate('/main/cart')
+              // } else {
+                setDrop([false, !drop[1], false, false, false, false])
+              // }
+            }}
           />
           {currentUser && (
             <div className='nav-nr-absolute'
-            onClick={() => { setDrop([false, !drop[1], false, false, false, false]) }}
+              onClick={() => { setDrop([false, !drop[1], false, false, false, false]) }}
             >{cart.length}</div>
-            )}
+          )}
           <div className='nav-drop-right nav-spec'>
             <div className='nav-fav-title'>Cosul meu</div>
             {currentUser ? (
