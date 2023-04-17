@@ -818,7 +818,7 @@ export function AuthProvider({ children }) {
     command, dispatchCommand,
     getUserData,
     det, setDet,
-    admin
+    admin, setAdmin
   }
 
   return (

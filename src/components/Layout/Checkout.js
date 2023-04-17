@@ -143,7 +143,7 @@ export default function Checkout() {
             total: cartPrice
           },
           product: cart,
-          status: 'Se livreaza',
+          status: 'Plasata',
           id: command.length
         }
         dispatchCart({ type: 'cartDeleteAll' })

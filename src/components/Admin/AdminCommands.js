@@ -71,8 +71,8 @@ export default function AdminCommands() {
                   <option value={'Toate'} className='comm-option' >
                     Toate
                   </option>
-                  <option value={'Se livreaza'} className='comm-option' >
-                    Se livreaza
+                  <option value={'Plasata'} className='comm-option' >
+                    Plasata
                   </option>
                   <option value={'Livrat'} className='comm-option'>
                     Livrat
@@ -168,12 +168,12 @@ export default function AdminCommands() {
                         <div className="comm-title flex items-center">Data comenzi:
                           <div className="comm-txt">{command.date}</div>
                         </div>
-                        <div className='comm-title flex items-center'>Status
+                        <div className='comm-title flex items-center'>Status: 
                           <select value={command.status} className='comm-option'
                             onChange={e => { handleStatus(e.target.value, command.id, command.uid) }}
                           >
-                            <option value={'Se livreaza'} className='comm-option' >
-                              Se livreaza
+                            <option value={'Plasata'} className='comm-option' >
+                              Plasata
                             </option>
                             <option value={'Livrat'} className='comm-option'>
                               Livrat
