@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding:70px 20px 0 250px;
+    padding:70px 20px 20px 250px;
     flex-wrap: wrap;
 }
 .cloth-div {

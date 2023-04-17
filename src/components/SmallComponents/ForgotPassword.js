@@ -3,6 +3,7 @@ import emailSvg from '../../svg-icon/email-security.svg'
 import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 export default function ForgotPassword() {
@@ -20,6 +21,11 @@ export default function ForgotPassword() {
       const response = await axios.post(`${server}/connect/reset`, { email: email })
       console.log(response)
       if (response.data.success) {
+        Swal.fire(
+          'Trimis!',
+          'Emailul de resetare a fost trimis. Verica-ti emailul pentru a reseta parola',
+          'success'
+        )
         navigate('/connect')
       } else {
         setResponse(response.data.message)

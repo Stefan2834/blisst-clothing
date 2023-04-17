@@ -14,13 +14,13 @@ import Footer from './MainComponents/Footer';
 import Sidebar from './MainComponents/Sidebar';
 import Main from './MainComponents/Main';
 
-
-import PrivateRoute from './SmallComponents/PrivateRoute';
 import Test from './SmallComponents/Test';
 import Checkout from './Layout/Checkout'
 import ScrollToTop from './SmallComponents/ScrollToTop';
 import ForgotPassword from './SmallComponents/ForgotPassword';
 import ResendEmail from './SmallComponents/ResendEmail';
+import Help from './SmallComponents/Help';
+import NotFound from './SmallComponents/NotFound';
 
 
 import Command from './Layout/Command'
@@ -32,6 +32,11 @@ import Cart from './Layout/Cart';
 
 import SpecialProduct from './Layout/SpecialProduct';
 import Clothing from './Layout/Clothing'
+
+import PrivateRoute from '../CustomHook/PrivateRoute';
+import AdminRoute from '../CustomHook/AdminRoute'
+
+import AdminCommands from '../components/Admin/AdminCommands'
 
 const Layout = () => (
   <>
@@ -47,9 +52,6 @@ const GoTo = () => {
   }, []);
   return (<></>)
 }
-const NotFound = () => (
-  <>Pagina in lucru, sau link gresit.</>
-)
 const SecondLayout = () => (
   <>
     <Sidebar />
@@ -93,6 +95,12 @@ function App() {
                 <Route path=':id' exact element={<Clothing />} />
               </Route>
 
+              <Route path='help' element={<Help />} />
+
+              <Route path='admin' element={<Outlet />} >
+                <Route path='commands' element={<AdminRoute element={AdminCommands} />} />
+              </Route>
+
 
             </Route>
 
@@ -102,7 +110,7 @@ function App() {
             </Route>
 
 
-            <Route path='*' index element={<NotFound />} />
+            <Route path='*' index element={<><Navbar /><NotFound /><Footer /></>} />
           </Routes>
         </DefaultProvider>
       </AuthProvider>

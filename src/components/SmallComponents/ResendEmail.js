@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import emailSvg from '../../svg-icon/email-security.svg'
 import passSvg from '../../svg-icon/key.svg'
 import eyeTrue from '../../svg-icon/eye-check.svg'
@@ -23,13 +24,17 @@ export default function ResendEmail() {
       setLoading(true)
       const email = emailRef.current.value
       const password = passRef.current.value
-      const response = await axios.post(`${server}/connect/resendEmail`,
-        {
-          email: email,
-          password: password
-        })
+      const response = await axios.post(`${server}/connect/resendEmail`, {
+        email: email,
+        password: password
+      })
       console.log(response)
       if (response.data.success) {
+        Swal.fire(
+          'Trimis!',
+          'Emailul de resetare a fost trimis. Verica-ti emailul pentru a reseta parola',
+          'success'
+        )
         navigate('/connect')
       } else {
         setResponse(response.data.message)
@@ -53,7 +58,7 @@ export default function ResendEmail() {
         <div className='for-content'>
           <div className='for-title'>Nu ai primit emailul?</div>
           <div className='for-text'>Daca nu ai primit emailul iti sugeram sa verifici sectiunea "spam".
-            Daca l-ai sters din greseala, sau nu il gasesti scrie-l aici.
+            Daca l-ai sters din greseala, sau nu il gasesti, conecteaza-te aici.
           </div>
           <form className='for-form' onSubmit={handleEmail}>
             <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />

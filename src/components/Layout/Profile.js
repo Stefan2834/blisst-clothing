@@ -34,7 +34,7 @@ export default function Profile() {
                         type: preDet.type,
                         county: preDet.county,
                         color: preDet.color
-                    }); console.log(info.data)
+                    });
                 })
                 .catch(err => {
                     setPreDet({
@@ -61,7 +61,7 @@ export default function Profile() {
         })
         setInfoChange(false);
     }
-
+    console.log(det)
     useEffect(() => {
         document.title = 'Blisst — Profilul meu'
         setPreDet(det)
@@ -176,12 +176,12 @@ export default function Profile() {
                             <div className="prof-txt">
                                 Tipul utilizatorului:
                                 <div className="prof-type-slide">
-                                    <div className={preDet.type === 'man' ? "prof-type-active" : "prof-type-select"}
+                                    <div className={preDet.type === 'man' ? "prof-type-active nav-left-photo1" : "nav-left-photo1 prof-type-select"}
                                         onClick={() => setPreDet({ ...preDet, type: 'man' })}
-                                    >Barbat</div>
-                                    <div className={preDet.type === 'woman' ? "prof-type-active" : "prof-type-select"}
+                                    ></div>
+                                    <div className={preDet.type === 'woman' ? "prof-type-active nav-left-photo2" : "nav-left-photo2 prof-type-select"}
                                         onClick={() => setPreDet({ ...preDet, type: 'woman' })}
-                                    >Femeie</div>
+                                    ></div>
                                     <div className={preDet.type === 'man' ? 'prof-type-left' : 'prof-type-right'} />
                                 </div>
                             </div>
@@ -193,8 +193,8 @@ export default function Profile() {
                                         onClick={() => setPreDet({ ...preDet, color: "red" })}
                                     />
                                     <div className="prof-det-square"
-                                        style={{ backgroundColor: "blue" }}
-                                        onClick={() => setPreDet({ ...preDet, color: "blue" })}
+                                        style={{ backgroundColor: "#79cbca" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#79cbca" })}
                                     />
                                     <div className="prof-det-square"
                                         style={{ backgroundColor: "#ea580c" }}

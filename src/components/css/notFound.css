@@ -1,0 +1,79 @@
+:root {
+  --dark-principal:#0b0b0b;
+  --dark-opac:#0b0b0bc3;
+  --color:white;
+  --color-second:#eeeeee;
+  --color-third:#ddd;
+  --color-oposite:#0b0b0b;
+  --gradient: linear-gradient(to right, #d604cf, #9822ff);
+  --first:#e684ae;
+  --seond: #79cbca;
+  --third: #77a1d3
+}
+.not {
+  width:100vw;
+  height:100vh;
+  min-height:500px;
+  padding:50px 20px 20px 20px;
+  background-color: var(--color-third);
+  color: var(--color-oposite);
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+.not-right-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding:30px;
+  background-color: var(--color);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+.not-photo, .not-photo-dark {
+  width:90px;
+  height:90px;
+  margin:10px 0;
+  background-position: center;
+  background-size: 100% 100%;
+}
+.not-photo {
+  background-image: url(../Main/svg-dark/dizzy-face.svg);
+}
+.not-photo-dark {
+  background-image: url(../Main/svg/dizzy-face.svg);
+
+}
+.not-404 {
+  font-size:100px;
+  font-weight: 700;
+  line-height: 120px;
+  color:var(--principal);
+  font-family: 'Chivo Mono', monospace;
+}
+.not-title {
+  margin:10px 0;
+  font-size:22px;
+  font-family: 'Poppins', sans-serif;
+  color:var(--color-oposite);
+  font-weight: 600;
+}
+.not-text {
+  font-size:20px;
+  font-family: 'Poppins', sans-serif;
+  color:var(--color-oposite);
+  font-weight: 500;
+  margin:10px 0;
+}
+.not-btn {
+  padding:6px 18px;
+  font-size:20px;
+  font-family: 'Poppins',sans-serif;
+  color:var(--color);
+  background-color: var(--color-oposite);
+  margin:10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}

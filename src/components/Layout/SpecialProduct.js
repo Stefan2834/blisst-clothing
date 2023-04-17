@@ -242,7 +242,7 @@ export default function SpecialProduct() {
                       <FaStar
                         key={ratingValue}
                         size={24}
-                        className={ratingValue <= specialClothing.star.total / specialClothing.star.nr + 0.5 ? 'text-yellow-400' : 'black'}
+                        className={ratingValue <= specialClothing.star.total / specialClothing.star.nr + 0.5 ? 'principal' : 'black'}
                       />
                     );
                   })}
@@ -291,7 +291,7 @@ export default function SpecialProduct() {
                       <select value={cartSpec.number} className="spec-option"
                         onChange={e => { dispatch({ type: 'cartNr', payload: { number: e.target.value } }) }}
                       >
-                        <option value="" className='text-red-600'>Stoc:{specialClothing.size[cartSpec.size]}</option>
+                        <option value="" className='principal'>Stoc:{specialClothing.size[cartSpec.size]}</option>
                         {Array.from({ length: specialClothing.size[cartSpec.size] }, (_, index) => {
                           if (index < 10) {
                             return index + 1
@@ -342,7 +342,7 @@ export default function SpecialProduct() {
                                 <FaStar
                                   key={ratingValue}
                                   size={24}
-                                  className={ratingValue <= review.star ? 'text-yellow-400' : 'black'}
+                                  className={ratingValue <= review.star ? 'principal' : 'black'}
                                   onClick={() => handleStar(ratingValue)}
                                   style={{ cursor: 'pointer' }}
                                 />
@@ -394,14 +394,13 @@ export default function SpecialProduct() {
                                           <FaStar
                                             key={ratingValue}
                                             size={24}
-                                            className={ratingValue <= review.star ? 'text-yellow-400' : 'black'}
+                                            className={ratingValue <= review.star ? 'principal' : 'black'}
                                             style={{ cursor: 'pointer' }}
                                             onClick={() => handleStar(ratingValue)}
                                           />
                                         );
                                       })}
                                     </div>
-                                    <div className='text-base'>{review.type}</div>
                                   </div>
                                   <form onSubmit={handleUpdate}>
                                     <input type={'text'} value={review.text}
@@ -455,7 +454,7 @@ export default function SpecialProduct() {
                                 <FaStar
                                   key={ratingValue}
                                   size={24}
-                                  className={ratingValue <= rev.star ? 'text-yellow-400' : 'black'}
+                                  className={ratingValue <= rev.star ? 'principal' : 'black'}
                                 />
                               );
                             })}

@@ -131,7 +131,7 @@ export default function Cart() {
                     </div>
                     <div className='flex justify-between w-full cart-line mt-4'>
                         <div className='cart-title'>Total:</div>
-                        <div className='text-xl font-semibold text-orange-600'>{cartPrice} Lei</div>
+                        <div className='text-xl font-semibold principal'>{cartPrice} Lei</div>
                     </div>
                     <div className='cart-continue'><Link to='/main/cart/checkout'>Continua<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
                 </div>

@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 export default function Checkout() {
   const { server, currentUser,
     cart, dispatchCart,
-    dispatchCommand,
+    command, dispatchCommand,
     product, setProduct,
     det, setDet
   } = useAuth()
@@ -143,7 +143,8 @@ export default function Checkout() {
             total: cartPrice
           },
           product: cart,
-          status: 'Se livreaza'
+          status: 'Se livreaza',
+          id: command.length
         }
         dispatchCart({ type: 'cartDeleteAll' })
         dispatchCommand({ type: 'commandAdd', payload: { command: commandData } })
@@ -166,12 +167,12 @@ export default function Checkout() {
               price: commandData.price.total
             }).then((data) => {
               console.log(data)
-              handleUpdateSizes()
             }).catch(err => {
               console.log(err)
             })
         })
           .catch(err => console.error(err.error))
+        handleUpdateSizes()
         navigate('/main/command')
       }
     })
@@ -228,6 +229,7 @@ export default function Checkout() {
 
   useEffect(() => {
     document.title = 'Blisst — Plaseaza comanda'
+    setPreDet(det)
   }, [])
 
 
@@ -492,7 +494,7 @@ export default function Checkout() {
                             }
                           }}
                         >
-                          <option value="" className='text-red-600 font-semibold'>0(sterge)</option>
+                          <option value="" className='principal font-semibold'>0(sterge)</option>
                           {Array.from({ length: product.size[product.selectedSize] }, (_, index) => { if (index <= 10) { return index + 1 } }).map((number) => (
                             <option key={number} value={number} className='cart-option'>
                               {number}
@@ -537,7 +539,7 @@ export default function Checkout() {
                 </div>
                 <div className='flex justify-between w-full cart-line mt-4'></div>
                 <div className='cart-title'>Total:</div>
-                <div className='text-xl font-semibold text-orange-600'>{cartPrice} Lei</div>
+                <div className='text-xl font-semibold principal'>{cartPrice} Lei</div>
                 <div className='text-xl font-bold cart-text'>Ai un cod de reducere?</div>
                 <form className='flex justify-center items-center my-2' onSubmit={handleDiscount}>
                   <input type={'text'} maxLength={10} minLength={6}

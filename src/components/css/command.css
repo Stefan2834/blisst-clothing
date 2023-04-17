@@ -58,6 +58,7 @@
 }
 .comm-txt {
   font-size:16px;
+  word-wrap: break-word;
   font-weight: 600;
   margin-left:5px;
   line-height: 22px;
@@ -170,8 +171,10 @@ span.comm-span {
 }
 .comm-title {
   font-size:18px;
+  word-wrap: break-word;
   font-weight: 600;
   line-height: 24px;
+  width:100%;
   color:var(--color-oposite);
   font-family: 'Poppins', sans-serif;
 }

@@ -140,6 +140,9 @@ label.acc-label {
   width:80%;
   position: relative;
 }
+.place-holder {
+  cursor:text;
+}
 .acc-label .place-holder {
   position: absolute;
   transform: translateX(55px);
@@ -712,4 +715,21 @@ button.acc-btn:hover {
   font-size:16px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
+  color:var(--color-oposite)
+}
+
+/*---------Admin---------*/
+.admin-commands {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:70px 20px 20px 20px;
+}
+.admin-commands-div {
+  width:100vw;
+  height:auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }

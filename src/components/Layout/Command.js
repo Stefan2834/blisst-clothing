@@ -3,19 +3,14 @@ import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 import { Link } from 'react-router-dom'
 import '../css/command.css'
-import axios from 'axios'
 
 export default function Command() {
-  const { command, server, currentUser } = useAuth()
+  const { command, det } = useAuth()
   const { darkTheme, startTransition, isPending } = useDefault()
-  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '' })
   const [selectedProducts, setSelectedProducts] = useState([])
 
   useEffect(() => {
     document.title = 'Blisst — Comenziile mele'
-    axios.post(`${server}/user/info`, { uid: currentUser.uid })
-      .then(info => { setDet(info.data.det) })
-      .catch(err => console.error(err.error))
   }, [])
 
   const handleProductSelect = (commandIndex, selectedProduct) => {
@@ -33,7 +28,7 @@ export default function Command() {
           <div className='comm-top'>
             <div className={darkTheme ? 'comm-photo-dark' : 'comm-photo'}></div>
             <div className="comm-name">Salut,
-              <span className='text-orange-600'> {det.name}</span>!
+              <span className='principal'> {det.name}</span>!
               <br />Uite istoricul comenziilor tale
             </div>
           </div>
@@ -123,6 +118,9 @@ export default function Command() {
                     </div>
                     <div className="comm-title flex items-center">Statusul comenzi:
                       <div className="comm-txt">{command.status}</div>
+                    </div>
+                    <div className="comm-title flex items-center">Id comanda:
+                      <div className="comm-txt">{command.id}</div>
                     </div>
                   </div>
                 </div>

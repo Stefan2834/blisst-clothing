@@ -707,6 +707,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const server = "https://clothing-shop2834.herokuapp.com"
   // const server = 'http://localhost:9000'
+  const [admin, setAdmin] = useState()
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
@@ -719,40 +720,37 @@ export function AuthProvider({ children }) {
   })
 
   const getUserData = async uid => {
-    await axios.post(`${server}/user/favorite/get`, { uid: uid })
-      .then(data => {
-        if (data.data.fav) {
-          dispatchFav({ type: 'favGet', payload: { fav: data.data.fav } })
-        }
-      }).catch(err => console.error(err))
-    await axios.post(`${server}/user/cart/get`, { uid: uid })
-      .then(data => {
-        if (data.data.cart) {
-          dispatchCart({ type: 'cartGet', payload: { cart: data.data.cart } })
-          dispatchCart({ type: 'cartUpdate', payload: { product: product } })
-        }
-      }).catch(err => console.error(err))
-    await axios.post(`${server}/user/command/get`, { uid: uid })
-      .then(data => {
-        if (data.data.command) {
-          dispatchCommand({ type: 'commandGet', payload: { command: data.data.command } })
-        }
-      }).catch(err => console.error(err))
     await axios.post(`${server}/user/info`, { uid: uid })
       .then(info => {
-        setLoading(false);
-        if (info.data.det) {
-          setDet(info.data.det);
-          document.documentElement.style.setProperty("--principal", info.data.det.color)
+        if (info.data.success) {
+          if (info.data.data.fav) {
+            dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav } })
+          }
+          if (info.data.data.cart) {
+            dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart } })
+            dispatchCart({ type: 'cartUpdate', payload: { product: product } })
+          }
+          if (info.data.data.command) {
+            dispatchCommand({ type: 'commandGet', payload: { command: info.data.data.command } })
+          }
+          if (info.data.data.det) {
+            setDet(info.data.data.det);
+            document.documentElement.style.setProperty("--principal", info.data.data.det.color)
+          }
         }
       })
       .catch(err => console.error(err.error))
+    setLoading(false);
   }
 
   useEffect(() => {
     axios.get(`${server}/connect`)
       .then(data => {
         console.log(data)
+        if(data.data.admin) {
+          setAdmin(true)
+          console.log('Admin')
+        }
         if (data.data.success) {
           if (Cookies.get('userData')) {
             const user = JSON.parse(Cookies.get('userData'));
@@ -802,7 +800,7 @@ export function AuthProvider({ children }) {
     if (currentUser) {
       axios.post(`${server}/user/command/add`, {
         command: command,
-        uid: currentUser.uid
+        uid: currentUser.uid,
       })
         .then(data => console.log(data))
         .catch(err => console.error(err))
@@ -819,8 +817,10 @@ export function AuthProvider({ children }) {
     filter, setFilter,
     command, dispatchCommand,
     getUserData,
-    det, setDet
+    det, setDet,
+    admin
   }
+
   return (
     <AuthContext.Provider value={value}>
       {!loading && children}

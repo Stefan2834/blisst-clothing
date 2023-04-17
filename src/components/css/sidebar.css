@@ -7,7 +7,6 @@
     --gradient: linear-gradient(to right, #d604cf, #9822ff);
     --first:#e684ae;
     --second:#79cbca;
-    --principal2:white;
 }
 .side-filter-bar{
     width:230px;
@@ -21,8 +20,8 @@
     justify-content: flex-start;
     flex-direction: column;
     z-index:9;
-    /* left:-230px; */
     top:0;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
     transition: 400ms ease;
 }
 .side-form {
@@ -102,7 +101,8 @@
     display:none
 }
 .side-size-check:checked ~ .side-size-label {
-    background-color: var(--principal2);
+    background-color: var(--principal);
+    font-weight: 600;
     color:var(--color)
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-up {

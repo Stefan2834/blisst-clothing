@@ -11,7 +11,6 @@ export default function Navbar() {
     currentUser,
     favorite,
     cart,
-    setCurrentUser,
     server,
     dispatchCart, dispatchFav,
   } = useAuth()
@@ -30,7 +29,6 @@ export default function Navbar() {
       const response = await axios.post(`${server}/connect/logout`)
       if (response.data.success) {
         navigate('/connect');
-        setCurrentUser()
       }
     } catch {
       setError('Failed to log out')
@@ -113,7 +111,7 @@ export default function Navbar() {
               <NavLink className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, false, true])}
                 to='/main/cloth/barbati foot'
-              >Adidasi</NavLink>
+              >Incaltaminte</NavLink>
             </div>
             <div className='nav-drop-content'>
               <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
@@ -168,7 +166,7 @@ export default function Navbar() {
               <NavLink className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, false, true])}
                 to='/main/cloth/femei foot'
-              >Adidasi</NavLink>
+              >Incaltaminte</NavLink>
             </div>
             <div className='nav-drop-content'>
               <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
@@ -352,7 +350,7 @@ export default function Navbar() {
             <div className='nav-fav-title'>Profil</div>
             {currentUser ? (
               <>
-                <div className='nav-profile-email'>{currentUser.email}</div>
+                <div className='nav-profile-email principal'>{currentUser.email}</div>
                 <div className='nav-tot'><Link className='flex' to='/main/profile'>Vezi Profilul<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
               </>
             ) : (

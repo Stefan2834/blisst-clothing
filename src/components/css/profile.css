@@ -96,6 +96,7 @@
 .prof-det-txt {
     width:100%;
     text-align: left;
+    word-wrap: break-word;
     font-weight: 500;
     font-size:16px;
     background-color: var(--color);
@@ -181,16 +182,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width:160px;
+    width:90px;
     position: relative;
 }
 .prof-type-select, .prof-type-active {
-    width:75px;
+    width:40px;
+    height:40px;
     text-align: center;
     cursor: pointer;
     margin:0 5px;
     z-index:1;
     transition: 400ms ease;
+    background-position: center;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
 }
 .prof-type-select {
     color:var(--color-oposite);
@@ -199,17 +204,17 @@
     color:var(--color);
 }
 .prof-type-left, .prof-type-right {
-    width:75px;
+    width:40px;
     height:100%;
     position: absolute;
     transition: 400ms ease;
-    left:5px;
+    left:2.5px;
     padding:8px 16px;
     border-radius: 5px;
     background-color: var(--color-oposite);
 }
 .prof-type-right {
-    translate: 75px;
+    translate: 45px;
 }
 .prof-right {
     height: auto;
@@ -250,6 +255,7 @@
     width:calc(100% - 8px)
 }
 .prof-comm-txt {
+    word-wrap: break-word;
     font-family: 'Poppins',sans-serif;
     font-weight: 500;
     font-size:16px;

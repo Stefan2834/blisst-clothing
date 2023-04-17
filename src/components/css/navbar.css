@@ -238,7 +238,7 @@ body {
   position: absolute;
   right:0;
   top:0;
-  background-color: var(--color-oposite);
+  background-color: var(--principal);
   color:var(--color);
   padding:0 3px;
   font-size:16px;
@@ -440,7 +440,6 @@ body {
   width:24px;
   height:24px;
   overflow: hidden;
-  /* background-color: var(--dark-principal); */
   position: relative;
   border-radius: 50%;
   transition-property: background-image, background-color;
