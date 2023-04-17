@@ -8,13 +8,17 @@ export default function AdminErrors() {
   const { darkTheme } = useDefault()
   const [error, setError] = useState([])
 
-  const handleDelete = (user, data) => {
-    setError(errors => errors.filter(error => error.email !== user || error.error !== data));
-    // axios.delete(`${server}/admin/errors`, { user: user, data: data })
-    //   .then(data => {
-    //     console.log(data)
-    //   })
-    //   .catch(err => console.error(err))
+  const handleDelete = (id) => {
+    console.log(id)
+    axios.delete(`${server}/admin/errors`, { id: id })
+      .then(data => {
+        setError(prevErrors => {
+          const newErrors = [...prevErrors]
+          newErrors.splice(id , 1)
+          return newErrors;
+        });
+      })
+      .catch(err => console.error(err))
   }
 
   useEffect(() => {
@@ -22,7 +26,6 @@ export default function AdminErrors() {
       .then(data => {
         if (data.data.errors) {
           setError(data.data.errors)
-          console.log(data.data.errors)
         }
       })
       .catch(err => console.error(err))
@@ -38,7 +41,7 @@ export default function AdminErrors() {
           </div>
         ) : (
           <>
-            {error.map((err) => {
+            {error.map((err, index) => {
               return (
                 <div className='admin-err'>
                   <div className='flex flex-col'>
@@ -46,7 +49,7 @@ export default function AdminErrors() {
                     <div className='admin-err-text'>{err.error}</div>
                   </div>
                   <div className='flex flex-col'>
-                    <div onClick={() => handleDelete(err.email, err.error)}
+                    <div onClick={() => handleDelete(index)}
                       className={darkTheme ? 'admin-err-checkbox-dark' : 'admin-err-checkbox'}
                     ></div>
                   </div>
