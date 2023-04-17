@@ -24,7 +24,7 @@ export default function Connect() {
     const {
         server,
         setCurrentUser,
-        getUserData, dispatchCart, setAdmin
+        getUserData, setAdmin
     } = useAuth();
     const {
         error, setError,

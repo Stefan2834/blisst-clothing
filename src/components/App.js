@@ -38,6 +38,7 @@ import AdminRoute from '../CustomHook/AdminRoute'
 
 import Admin from './Admin/Admin';
 import AdminCommands from '../components/Admin/AdminCommands'
+import AdminErrors from './Admin/AdminErrors';
 
 const Layout = () => (
   <>
@@ -101,6 +102,7 @@ function App() {
               <Route path='admin' element={<Outlet />} >
                 <Route index element={<AdminRoute element={Admin} />} />
                 <Route path='commands' element={<AdminRoute element={AdminCommands} />} />
+                <Route path='errors' element={<AdminRoute element={AdminErrors} />} />
               </Route>
 
 

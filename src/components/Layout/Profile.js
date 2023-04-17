@@ -79,12 +79,21 @@ export default function Profile() {
             <div className="prof">
                 <Suggestion type={'daily'} />
                 <div className="prof-center">
-                    <div className="prof-photo">
-                        <div className={infoChange ? 'prof-photo-slider prof-slide' : 'prof-photo-slider'}>
-                            <div className={darkTheme ? "prof-photo-save-dark" : "prof-photo-save"}></div>
-                            <div className={darkTheme ? "prof-photo-edit-dark" : "prof-photo-edit"}></div>
+                    {admin ? (
+                        <div className="prof-photo">
+                            <div className={infoChange ? 'prof-photo-slider prof-slide' : 'prof-photo-slider'}>
+                                <div className={darkTheme ? "prof-photo-admin-dark" : "prof-photo-admin"}></div>
+                                <div className={darkTheme ? "prof-photo-edit-dark" : "prof-photo-edit"}></div>
+                            </div>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="prof-photo">
+                            <div className={infoChange ? 'prof-photo-slider prof-slide' : 'prof-photo-slider'}>
+                                <div className={darkTheme ? "prof-photo-save-dark" : "prof-photo-save"}></div>
+                                <div className={darkTheme ? "prof-photo-edit-dark" : "prof-photo-edit"}></div>
+                            </div>
+                        </div>
+                    )}
                     <div className="prof-txt text-center">Salut, <span className='principal'>{det.name}</span>!</div>
                     {admin && (
                         <Link to='/main/admin' className="prof-admin">Pagina admini</Link>

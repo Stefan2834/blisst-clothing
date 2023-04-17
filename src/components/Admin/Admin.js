@@ -17,7 +17,7 @@ export default function Admin() {
         <div className='flex justify-around items-center'>
           <Link to='/main/admin/commands' className='admin-link'>Comenzi</Link>
           <Link to='/main/admin/products' className='admin-link'>Produse</Link>
-          <Link to='/main/admin/products' className='admin-link'>Produse</Link>
+          <Link to='/main/admin/errors' className='admin-link'>Erori</Link>
         </div>
       </div>
     </div>

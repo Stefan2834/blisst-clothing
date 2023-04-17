@@ -705,8 +705,8 @@ export function AuthProvider({ children }) {
   }])
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  // const server = "https://clothing-shop2834.herokuapp.com"
-  const server = 'http://localhost:9000'
+  const server = "https://clothing-shop2834.herokuapp.com"
+  // const server = 'http://localhost:9000'
   const [admin, setAdmin] = useState()
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
@@ -723,20 +723,12 @@ export function AuthProvider({ children }) {
     await axios.post(`${server}/user/info`, { uid: uid })
       .then(info => {
         if (info.data.success) {
-          if (info.data.data.fav) {
-            dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav } })
-          }
-          if (info.data.data.cart) {
-            dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart } })
-            dispatchCart({ type: 'cartUpdate', payload: { product: product } })
-          }
-          if (info.data.data.command) {
-            dispatchCommand({ type: 'commandGet', payload: { command: info.data.data.command } })
-          }
-          if (info.data.data.det) {
-            setDet(info.data.data.det);
-            document.documentElement.style.setProperty("--principal", info.data.data.det.color)
-          }
+          dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav } })
+          dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart } })
+          dispatchCart({ type: 'cartUpdate', payload: { product: product } })
+          dispatchCommand({ type: 'commandGet', payload: { command: info.data.data.command } })
+          setDet(info.data.data.det);
+          document.documentElement.style.setProperty("--principal", info.data.data.det.color)
         }
       })
       .catch(err => console.error(err.error))

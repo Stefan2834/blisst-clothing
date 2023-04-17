@@ -66,4 +66,65 @@
   background-color: var(--color-oposite);
   color:var(--color);
   border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+/*----------Admin err----------*/
+.admin-err-container {
+  width:100vw;
+  background-color: var(--color-third);
+  display: flex;
+  height:auto;
+  padding:100px 20px 20px 20px;
+  align-items: center;
+  justify-content: center;
+}
+.admin-err-div {
+  width:80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding:10px 20px;
+  color:var(--color-oposite);
+  background-color: var(--color-second);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  font-family: 'Poppins', sans-serif;
+}
+.admin-err {
+  width:100%;
+  background-color: var(--color);
+  margin:10px;
+  padding:5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.admin-err-title {
+  font-size:22px;
+  font-weight: 600;
+  margin:5px 0;
+}
+.admin-err-text {
+  font-size:18px;
+  font-weight: 500;
+  margin:0 5px;
+}
+.admin-err-checkbox, .admin-err-checkbox-dark {
+  width:45px;
+  height:45px;
+  background-size: 40px 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.admin-err-checkbox {
+  background-image: url(../Main//svg-dark/delete.svg);
+}
+.admin-err-checkbox-dark {
+  background-image: url(../Main/svg/delete.svg);
 }

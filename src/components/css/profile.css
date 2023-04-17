@@ -55,7 +55,9 @@
     transition-property: translate;
     transition: 600ms ease;
 }
-.prof-photo-save, .prof-photo-edit, .prof-photo-save-dark, .prof-photo-edit-dark {
+.prof-photo-save, .prof-photo-edit, 
+.prof-photo-save-dark, .prof-photo-edit-dark,
+.prof-photo-admin, .prof-photo-admin-dark {
     width:150px;
     height:150px;
     background-position: center;
@@ -76,6 +78,12 @@
 }
 .prof-photo-edit {
     background-image: url(../Main/svg/edit-name.svg);
+}
+.prof-photo-admin {
+    background-image: url(../Main/svg/user-business.svg);
+}
+.prof-photo-admin-dark {
+    background-image: url(../Main/svg-dark/user-business.svg);
 }
 .prof-admin {
     background-color: var(--color-oposite);
