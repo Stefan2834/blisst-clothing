@@ -757,6 +757,7 @@ export function AuthProvider({ children }) {
       })
       .catch(err => {
         console.log(err)
+        setLoading(false)
       })
     // setLoading(false);
     // axios.post(`${server}/user/product`, {

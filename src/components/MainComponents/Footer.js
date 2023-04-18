@@ -95,6 +95,7 @@ export default function Footer() {
             <Link to='/main/terms' className='foo-text'>Termeni si conditii</Link>
             <Link to='/main/faq' className='foo-text'>Faq</Link>
             <Link to='/main/help' className='foo-text'>Ajutor</Link>
+            <Link to='/main/license' className='foo-text'>Licente</Link>
           </div>
           <div className='foo-collumn'>
             <div className='foo-title-news'>News letter</div>

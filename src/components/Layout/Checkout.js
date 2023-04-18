@@ -538,8 +538,10 @@ export default function Checkout() {
                   )}
                 </div>
                 <div className='flex justify-between w-full cart-line mt-4'></div>
-                <div className='cart-title'>Total:</div>
-                <div className='text-xl font-semibold principal'>{cartPrice} Lei</div>
+                <div className='flex justify-between w-full flex-row'>
+                  <div className='cart-title'>Total:</div>
+                  <div className='text-xl font-semibold principal'>{cartPrice} Lei</div>
+                </div>
                 <div className='text-xl font-bold cart-text'>Ai un cod de reducere?</div>
                 <form className='flex justify-center items-center my-2' onSubmit={handleDiscount}>
                   <input type={'text'} maxLength={10} minLength={6}

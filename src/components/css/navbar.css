@@ -11,7 +11,7 @@
 body {
   background-color: var(--color-second);
 }
-.navbar {
+.navbar, .navbar-closed {
   width:100vw;
   height:50px;
   background-color:var(--color);
@@ -463,13 +463,47 @@ body {
 
 
 @media screen and (max-width:1000px) {
-  .navbar {
+  .navbar, .navbar-closed {
     height:100vh;
     flex-direction: column;
     justify-content: flex-start;
     min-height: 500px;
     width:100px;
     align-items: flex-start;
+  }
+  .navbar-bg {
+    z-index:9;
+    background-color: var(--color-oposite);
+    opacity: 0.6;
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    top:0;
+    left:0;
+  }
+  .navbar-top-container {
+    width:100vw;
+    height:50px;
+    background-color: var(--color);
+    box-shadow: 1px 1px 3px var(--color);
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:10;
+  }
+  .nav-open {
+    width:35px;
+    height:35px;
+    top:10px;
+    background-color: red;
+    cursor: pointer;
+    position: absolute;
+  }
+  .navbar-closed .nav-open {
+    transform: translate(100px);
+  }
+  .navbar-closed {
+    transform: translate(-100px);
   }
   .nav-left {
     flex-direction: column;
@@ -573,5 +607,11 @@ body {
   }
   .nav-logo {
     font-size:28px;
+  }
+  .navbar-closed .nav-open {
+    transform: translate(85px);
+  }
+  .navbar-closed {
+    transform: translate(-100px);
   }
 }
