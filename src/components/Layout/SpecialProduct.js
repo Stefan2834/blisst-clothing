@@ -349,7 +349,7 @@ export default function SpecialProduct() {
                               );
                             })}
                           </div>
-                          <div className='spec-rev-text'>{review.type}</div>
+                          <div className='spec-rev-left-text'>{review.type}</div>
                           <div className='spec-rev-name'>Spune-ne ceva despre produs</div>
                           <form className='spec-rev-enter' onSubmit={handleSubmit}>
                             <input className='spec-rev-input' type='text'
@@ -407,7 +407,7 @@ export default function SpecialProduct() {
                                       required minLength={10} maxLength={160}
                                       onChange={e => setReview({ ...review, text: e.target.value })}
                                     />
-                                    <div className='flex items-center justify-around w-full' >
+                                    <div className='spec-rev-type-submit' >
                                       <input type='submit' value={'Salveaza'} className='spec-rev-submit'
                                         onClick={() => { setReview({ ...review, anonim: false }) }}
                                       />
