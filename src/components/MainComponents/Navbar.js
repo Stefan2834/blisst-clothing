@@ -79,7 +79,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navIconRefs.current.every((ref) => !ref.contains(event.target))) {
-        setDrop([false, false, false, false]);
+        setDrop([false, false, false, false, false, false]);
       }
     };
     const handleScroll = () => {
@@ -107,18 +107,15 @@ export default function Navbar() {
           />
           <div className={drop[4] ? 'nav-drop-active' : 'nav-drop'}>
             <div className='nav-drop-top'>
-              <NavLink className={hover[0] ? 'nav-drop-link-active' : 'nav-drop-link'}
+              <div className={hover[0] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([true, false, false])}
-                to='/main/cloth/barbati top'
-              >Topuri</NavLink>
-              <NavLink className={hover[1] ? 'nav-drop-link-active' : 'nav-drop-link'}
+              >Topuri</div>
+              <div className={hover[1] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, true, false])}
-                to='/main/cloth/barbati bottom'
-              >Pantaloni</NavLink>
-              <NavLink className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
+              >Pantaloni</div>
+              <div className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, false, true])}
-                to='/main/cloth/barbati foot'
-              >Incaltaminte</NavLink>
+              >Incaltaminte</div>
             </div>
             <div className='nav-drop-content'>
               <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
@@ -162,18 +159,15 @@ export default function Navbar() {
           />
           <div className={drop[5] ? 'nav-drop-active' : 'nav-drop'}>
             <div className='nav-drop-top'>
-              <NavLink className={hover[0] ? 'nav-drop-link-active' : 'nav-drop-link'}
+              <div className={hover[0] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([true, false, false])}
-                to='/main/cloth/femei top'
-              >Topuri</NavLink>
-              <NavLink className={hover[1] ? 'nav-drop-link-active' : 'nav-drop-link'}
+              >Topuri</div>
+              <div className={hover[1] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, true, false])}
-                to='/main/cloth/femei bottom'
-              >Pantaloni</NavLink>
-              <NavLink className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
+              >Pantaloni</div>
+              <div className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
                 onMouseEnter={() => setHover([false, false, true])}
-                to='/main/cloth/femei foot'
-              >Incaltaminte</NavLink>
+              >Incaltaminte</div>
             </div>
             <div className='nav-drop-content'>
               <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>

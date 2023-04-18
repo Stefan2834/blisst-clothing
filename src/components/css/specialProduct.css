@@ -225,8 +225,9 @@ span.spec-price-old {
 
 
 .spec-review-page {
-    width:100vw;
+    width:calc(100vw - 20px);
     height:auto;
+    margin-right:20px;
     background-color: var(--color-third);
     display: flex;
     align-items:flex-start;
@@ -241,7 +242,7 @@ span.spec-price-old {
     width:50%;
 }
 .spec-review-left-content {
-    width:80%;
+    width:700px;
     min-width: 400px;
     box-shadow: 2px 2px 5px black;
     display: flex;
@@ -277,7 +278,7 @@ span.spec-price-old {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width:500px;
+    width:100%;
     text-align: center;
 }
 .spec-rev-name {
@@ -320,9 +321,9 @@ span.spec-price-old {
     border:1px solid var(--color-oposite)
 }
 .spec-review, .spec-review-second {
-    width:100%;
+    width:700px;
     margin-bottom:40px;
-    padding:20px;
+    padding:10px;
     background-color: var(--color);
 }
 .spec-review {
@@ -335,7 +336,7 @@ span.spec-price-old {
     display: flex;
     align-items:center;
     justify-content: flex-start;
-    margin-bottom:5px;
+    margin-bottom:10px;
     color:var(--color-oposite);
     flex-wrap: wrap;
 }
@@ -370,9 +371,10 @@ span.spec-price-old {
 }
 .spec-rev-text {
     font-weight: 600;
-    margin:0 50px;
+    margin:20px 0 0 10px;
     text-align: justify;
     font-size:16px;
+    word-break: break-all;
 }
 .spec-rev-more {
     color:var(--color);
@@ -380,6 +382,8 @@ span.spec-price-old {
     padding:10px 14px;
     font-size:16px;
     font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
     font-family: 'Poppins', sans-serif;
 }
 .spec-rev-input-update {
@@ -405,4 +409,61 @@ span.spec-price-old {
     color:var(--color);
     font-weight: 600;
     border-radius: 4px;
+}
+
+/*-----------Media Queries----------*/
+
+
+@media screen and (max-width:1450px) {
+    .spec-review-left-content, .spec-review, .spec-review-second {
+        width:600px;
+    }
+}
+@media screen and (max-width:1250px) {
+    .spec-review-left-content, .spec-review, .spec-review-second {
+        width:500px;
+    }
+}
+@media screen and (max-width:1050px) {
+    .spec-review-page {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .spec-review-left {
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .spec-rev-text-dark:nth-child(2) {
+        display: none;
+    }
+}
+@media screen and (max-width:1000px) {
+    .spec-review-page {
+        width:calc(100vw - 100px);
+        margin:0 0 0 100px
+    }
+    .spec-rev-text-dark:nth-child(1) {
+        margin-left:100px;
+    }
+}
+@media screen and (max-width:700px) {
+    .spec-review-left-content, .spec-review, .spec-review-second {
+        width:380px;
+    }
+    .spec-rev-input {
+        width:90%;
+    }
+}
+@media screen and (max-width:500px) {
+    .spec-review-left-content {
+        width:300px;
+    }
+    .spec-rev-text-dark:nth-child(1) {
+        margin-left:60px;
+    }
+    .spec-review-page {
+        width:calc(100vw - 60px);
+        margin:0 0 0 60px
+    }
 }

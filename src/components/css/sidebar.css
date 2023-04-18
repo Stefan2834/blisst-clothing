@@ -164,8 +164,18 @@
         width:230px;
         margin-left:100px;
         height:100vh;
-        z-index:20;
+        z-index:9;
         transition: 0ms;
+    }
+    .side-filter-bg {
+        background-color: var(--color);
+        opacity: 0.6;
+        left:0;
+        top:0;
+        width: 100vw;
+        height:100vh;
+        z-index:1;
+        position: fixed;
     }
     .side-switch, .side-switch-dark {
         position:absolute;
@@ -176,8 +186,9 @@
         background-repeat: no-repeat;
         height:40px;
         z-index:40px;
-        left:-70px;
-        top:20px;
+        left:0px;
+        top:0px;
+        background-color: var(--color);
     }
     .side-switch {
         background-image: url(../Main/svg/filter.svg);
@@ -188,11 +199,11 @@
     .side-filter-closed {
         left:-230px;
         transition: 0ms;
-        z-index:20;
+        z-index:9;
     }
     .side-filter-closed .side-switch,
     .side-filter-closed .side-switch-dark {
-        left:260px;
+        left:330px;
     }
 }
 @media screen and (max-width:500px) {
@@ -200,10 +211,10 @@
         margin-left:70px;
     }
     .side-switch, .side-switch-dark{
-        left:-55px;
+        left:0px;
     }
     .side-filter-closed .side-switch,
     .side-filter-closed .side-switch-dark{
-        left:245px;
+        left:300px;
     }
 }

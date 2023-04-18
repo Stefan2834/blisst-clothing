@@ -20,7 +20,7 @@ export default function SpecialProduct() {
   const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false, nr: 0 })
   const [photoSlider, setPhotoSlider] = useState()
   const [zoom, setZoom] = useState(false);
-  const photos = [tricouBlisst1, tricouBlisst2 ,tricouBlisst3]
+  const photos = [tricouBlisst1, tricouBlisst2, tricouBlisst3]
 
   useEffect(() => {
     startTransition(() => {
@@ -352,13 +352,11 @@ export default function SpecialProduct() {
                           <div className='spec-rev-text'>{review.type}</div>
                           <div className='spec-rev-name'>Spune-ne ceva despre produs</div>
                           <form className='spec-rev-enter' onSubmit={handleSubmit}>
-                            <label>
-                              <input className='spec-rev-input' type='text'
-                                placeholder='Scrie ceva'
-                                value={review.text} required minLength={10} maxLength={160}
-                                onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
-                              />
-                            </label>
+                            <input className='spec-rev-input' type='text'
+                              placeholder='Scrie ceva'
+                              value={review.text} required minLength={10} maxLength={160}
+                              onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
+                            />
                             <div className='flex items-center justify-around w-full' >
                               <input type='submit' value={'Posteaza'} className='spec-rev-submit'
                                 onClick={() => { setReview({ ...review, anonim: false }) }}
@@ -467,7 +465,7 @@ export default function SpecialProduct() {
                 })}
                 {specialClothing.review.length > review.load && (
                   <div className='spec-rev-more'
-                    onClick={() => setReview({ ...review, load: review.load + 2 })}
+                    onClick={() => setReview({ ...review, load: review.load + 4 })}
                   >Incarca mai multe Reviewuri</div>
                 )}
               </div>
