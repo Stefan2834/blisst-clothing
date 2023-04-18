@@ -102,11 +102,13 @@ export default function Navbar() {
 
   return (
     <>
+      <div className='navbar-top-container'>
+          <div className='nav-open' onClick={() => setOpen(o => !o)} />
+          <div className='nav-logo-second'><Link to='/main' className='principal'>Blisst</Link></div>
+      </div>
       <div className={open ? 'navbar-bg' : 'hidden'} onClick={() => setOpen(false)} />
-      <div className='navbar-top-container'></div>
       <div className={open ? 'navbar' : 'navbar-closed'}>
         <div className='nav-left'>
-          <div className='nav-open' onClick={() => setOpen(o => !o)} />
           <div className='nav-logo'><Link to='/main' className='principal'>Blisst</Link></div>
           <div className='nav-left-btn'
             ref={(el) => (navIconRefs.current[4] = el)}
@@ -245,7 +247,7 @@ export default function Navbar() {
                 ) : (
                   <>
                     {favorite.map((product, index) => {
-                      if (index < 4) {
+                      if (index < 3) {
                         return (
                           <Link to={`/product/${product.id}`}>
                             <div className={product.sex === 'man' ? (
@@ -272,10 +274,10 @@ export default function Navbar() {
                             </div>
                           </Link>
                         )
-                      } else if (index === 4) {
+                      } else if (index === 3) {
                         return (
                           <div>
-                            + Alte {favorite.length - 4} produse
+                            + Alte {favorite.length - 3} produse
                           </div>
                         )
                       }
@@ -292,13 +294,7 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[1] = el)}
           >
             <div className={darkTheme ? 'nav-icon-dark-img2' : 'nav-icon-img2'}
-              onClick={() => {
-                // if (window.innerHeight <= 1000) {
-                //   navigate('/main/cart')
-                // } else {
-                setDrop([false, !drop[1], false, false, false, false])
-                // }
-              }}
+              onClick={() => {setDrop([false, !drop[1], false, false, false, false])}}
             />
             {currentUser && (
               <div className='nav-nr-absolute'
@@ -313,7 +309,7 @@ export default function Navbar() {
                 ) : (
                   <>
                     {cart.map((product, index) => {
-                      if (index < 4) {
+                      if (index < 3) {
                         return (
                           <Link to={`/product/${product.id}`}>
                             <div className={product.sex === 'man' ? (
@@ -342,10 +338,10 @@ export default function Navbar() {
                             </div>
                           </Link>
                         )
-                      } else if (index === 4) {
+                      } else if (index === 3) {
                         return (
                           <div>
-                            + Alte {cart.length - 4} produse
+                            + Alte {cart.length - 3} produse
                           </div>
                         )
                       }

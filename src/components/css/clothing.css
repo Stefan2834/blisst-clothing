@@ -140,7 +140,7 @@ span.cloth-price {
 
 @media screen and (max-width:1000px) {
     .cloth {
-        padding:20px 0px 0px 100px;
+        padding:20px 0px 0px 20px;
     }
     .cloth-div {
         scale:0.8;
@@ -149,6 +149,6 @@ span.cloth-price {
 }
 @media screen and (max-width:500px) {
     .cloth {
-        padding:20px 0 0 70px;
+        padding:0px 0 0 0px;
     }
 }
