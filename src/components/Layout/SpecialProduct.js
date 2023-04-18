@@ -335,7 +335,7 @@ export default function SpecialProduct() {
                     <>
                       {review.nr === 0 ? (
                         <>
-                          <div className='flex'>
+                          <div className='flex w-full justify-center'>
                             {[...Array(5)].map((_, i) => {
                               const ratingValue = i + 1;
                               return (
@@ -357,7 +357,7 @@ export default function SpecialProduct() {
                               value={review.text} required minLength={10} maxLength={160}
                               onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
                             />
-                            <div className='flex items-center justify-around w-full' >
+                            <div className='spec-rev-type-submit' >
                               <input type='submit' value={'Posteaza'} className='spec-rev-submit'
                                 onClick={() => { setReview({ ...review, anonim: false }) }}
                               />
