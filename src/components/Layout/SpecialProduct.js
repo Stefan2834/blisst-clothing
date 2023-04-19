@@ -41,6 +41,11 @@ export default function SpecialProduct() {
       } else {
         document.title = `Blisst - Produs inexistent`
       }
+      document.addEventListener('scroll', () => setZoom(false))
+
+      return () => {
+        document.removeEventListener('scroll', () => setZoom(false))
+      }
     })
   }, [idPath])
 

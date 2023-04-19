@@ -25,6 +25,9 @@ body {
   justify-content: space-between;
   transition: 400ms ease background-color;
 }
+.nav-logo-second {
+  display: none;
+}
 .nav-left {
   display: flex;
   align-items: center;
@@ -471,7 +474,7 @@ body {
     width:100px;
     align-items: flex-start;
     transition: 400ms ease;
-  justify-content: center;
+    justify-content: center;
   }
   .navbar-closed {
     transform: translate(-100px);

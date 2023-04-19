@@ -75,9 +75,10 @@ export default function Navbar() {
 
   useEffect(() => {
     setDrop([false, false, false, false, false, false])
-    document.addEventListener('scroll', () => {setOpen(false)})
+    document.addEventListener('scroll', () => { setOpen(false) })
+
     return () => {
-      document.removeEventListener('scroll', () => {setOpen(false)})
+      document.removeEventListener('scroll', () => { setOpen(false) })
     }
   }, [pathname]);
 
@@ -103,8 +104,10 @@ export default function Navbar() {
   return (
     <>
       <div className='navbar-top-container'>
-          <div className='nav-open' onClick={() => setOpen(o => !o)} />
-          <div className='nav-logo-second'><Link to='/main' className='principal'>Blisst</Link></div>
+        <div className='nav-open' onClick={() => setOpen(o => !o)} />
+        <div className='nav-logo-second'>
+          <Link to='/main' className='principal'>Blisst</Link>
+        </div>
       </div>
       <div className={open ? 'navbar-bg' : 'hidden'} onClick={() => setOpen(false)} />
       <div className={open ? 'navbar' : 'navbar-closed'}>
@@ -294,12 +297,12 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[1] = el)}
           >
             <div className={darkTheme ? 'nav-icon-dark-img2' : 'nav-icon-img2'}
-              onClick={() => {setDrop([false, !drop[1], false, false, false, false])}}
+              onClick={() => { setDrop([false, !drop[1], false, false, false, false]) }}
             />
             {currentUser && (
               <div className='nav-nr-absolute'
                 onClick={() => { setDrop([false, !drop[1], false, false, false, false]) }}
-              >{cart.length}</div>
+              >{cart.reduce((total, cart) => total + Number(cart.number), 0)}</div>
             )}
             <div className='nav-drop-right nav-spec'>
               <div className='nav-fav-title'>Cosul meu</div>

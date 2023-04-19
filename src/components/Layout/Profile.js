@@ -229,8 +229,8 @@ export default function Profile() {
                         </form>
                     </div>
                 </div>
-                <div className="prof-right">
-                    {command.length >= 1 ? (
+                {command.length >= 1 ? (
+                    <div className="prof-right">
                         <div className="prof-comm">
                             <div className="prof-comm-title">Ultima comanda: </div>
                             <div className="prof-comm-subtitle">Judet</div>
@@ -251,12 +251,12 @@ export default function Profile() {
                                 Vezi mai multe detalii
                             </Link>
                         </div>
-                    ) : (
-                        <>
-                            <Suggestion type={'discount'} />
-                        </>
-                    )}
-                </div>
+                    </div>
+                ) : (
+                    <>
+                        <Suggestion type={'discount'} />
+                    </>
+                )}
             </div>
         </>
     )

@@ -89,6 +89,7 @@
 }
 .spec-name {
     font-size: 22px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 .spec-id-text {
@@ -311,6 +312,7 @@ span.spec-price-old {
     padding:0 15px;
     height:40px;
     display: flex;
+    font-family: 'Poppins', sans-serif;
     align-items: center;
     justify-content: center;
     font-size:22px;
@@ -348,7 +350,7 @@ span.spec-price-old {
     justify-content: flex-start;
     margin-bottom:10px;
     color:var(--color-oposite);
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 .spec-rev-photo, .spec-rev-photo-dark, .spec-rev-anonim, .spec-rev-anonim-dark {
     width:40px;
@@ -377,7 +379,6 @@ span.spec-price-old {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left:10px;
 }
 .spec-rev-left-text {
     font-weight: 600;
@@ -460,11 +461,10 @@ span.spec-price-old {
     }
     .special-div {
         width:100vw;
-        margin: 0;
-        padding:10px 20px;
+        margin:50px 0 0 0 ;
     }
     .special {
-        padding-top: 0px;
+        padding-top: 50px;
     }
     .spec-review-left, .spec-review-right {
         width:100%;
@@ -476,7 +476,6 @@ span.spec-price-old {
     }
     .spec-review {
         width:calc(100vw - 20px);
-        margin-left:10px;
     }
     .spec-rev-input {
         width:250px;
@@ -494,7 +493,6 @@ span.spec-price-old {
         height:auto;
         min-width:300px;
         width:100%;
-        margin-left:10px;
         flex-direction:column-reverse;
         margin-top:30px;
     }
@@ -505,7 +503,6 @@ span.spec-price-old {
         flex-direction:column;
         margin-top:30px;
         padding-left:0;
-        margin-left:10px
     }
     .spec-photo {
         width:100%;

@@ -135,3 +135,18 @@ span.sugg-price {
     align-items:center;
     justify-content: flex-start;
 }
+
+/*----------Media Queries----------*/
+@media screen and (max-width:1200px) {
+    .sugg-div {
+        scale: 0.9;
+    }
+}
+@media screen and (max-width:1000px) {
+    .suggestion {
+        position: relative;
+        width:100%;
+        top:0;
+        display: none;
+    }
+}
