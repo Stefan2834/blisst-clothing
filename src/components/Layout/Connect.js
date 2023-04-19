@@ -40,9 +40,9 @@ export default function Connect() {
         setLoading(true)
         setAdmin()
         document.title = 'Blisst — Conectare'
-        dispatchCart({type: 'deleteState'})
-        dispatchFav({type: 'deleteState'})
-        dispatchCommand({type: 'deleteState'})
+        dispatchCart({ type: 'deleteState' })
+        dispatchFav({ type: 'deleteState' })
+        dispatchCommand({ type: 'deleteState' })
         Cookies.remove('userData')
         setCurrentUser()
         setLoading(false)
@@ -114,16 +114,9 @@ export default function Connect() {
                 Cookies.set('userData', JSON.stringify(user), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
                 await setCurrentUser(user)
                 console.log(user);
-                await axios.get(`${server}/connect`)
-                    .then(data => {
-                        console.log(data)
-                        if (data.data.admin) {
-                            setAdmin(true)
-                        }
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    })
+                if (user.email === 'iosifstefan220@gmail.com' || user.email === 'renjibenji2007@gmail.com') {
+                    setAdmin(true)
+                }
                 await getUserData(user.uid)
                 navigate('/')
                 setError()
