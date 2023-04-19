@@ -80,11 +80,18 @@ export default function Reducer(state, action) {
     case ('favAdd'):
       if (!action.payload.user) {
         Swal.fire({
-          title: 'Eroare',
-          text: "Nu esti conectat",
-          icon: 'error',
+          title: 'Nu esti conectat!',
+          text: "Trebuie sa te conectezi pentru aceasta actiune.",
+          icon: 'warning',
+          showCancelButton: true,
+          cancelButtonText: 'Inapoi',
           confirmButtonColor: '#3085d6',
-          confirmButtonText: 'Inapoi'
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Conecteaza-te'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '/connect'
+          }
         })
         return []
       } else {
