@@ -109,7 +109,7 @@ export default function Navbar() {
           <Link to='/main' className='principal'>Blisst</Link>
         </div>
       </div>
-      <div className={open ? 'navbar-bg' : 'hidden'} onClick={() => setOpen(false)} />
+      <div className={open ? 'navbar-bg' : 'navbar-bg-closed'} onClick={() => setOpen(false)} />
       <div className={open ? 'navbar' : 'navbar-closed'}>
         <div className='nav-left'>
           <div className='nav-logo'><Link to='/main' className='principal'>Blisst</Link></div>

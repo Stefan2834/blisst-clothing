@@ -491,15 +491,23 @@ body {
     height:50px;
     padding:0 8px;
   }
-  .navbar-bg {
+  .navbar-bg, .navbar-bg-closed {
     z-index:9;
     background-color: black;
-    opacity: 0.6;
     width:100vw;
     height:100vh;
     position: fixed;
     top:0;
     left:0;
+    transition: 400ms ease;
+  }
+  .navbar-bg {
+    opacity: 0.6;
+    visibility: visible;
+  }
+  .navbar-bg-closed {
+    opacity: 0;
+    visibility: hidden;
   }
   .navbar-top-container {
     width:100vw;

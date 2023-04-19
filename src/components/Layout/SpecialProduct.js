@@ -5,6 +5,7 @@ import { useDefault } from '../../contexts/DefaultContext'
 import Reducer from '../../contexts/AuthContext'
 import { FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom'
 
 import tricouBlisst1 from '../../clothing/man/tricouBlisst1.jpg'
 import tricouBlisst2 from '../../clothing/man/tricouBlisst2.jpg'
@@ -429,7 +430,14 @@ export default function SpecialProduct() {
                       )}
                     </>
                   ) : (
-                    <></>
+                    <>
+                      <div className='spec-rev-name text-center p-2'>Nu esti conectat. Conecteaza-te pentru a lasa o parere.</div>
+                      <div className='spec-rev-enter'>
+                        <div className='spec-rev-type-submit' >
+                          <Link className='spec-rev-submit'>Conecteaza</Link>
+                        </div>
+                      </div>
+                    </>
                   )}
                 </div>
               </div>

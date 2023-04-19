@@ -62,7 +62,7 @@
     justify-content: flex-start;
     flex-direction: column;
     height:auto;
-    max-width: 200px;
+    min-width: 200px;
     padding:0 10px;
 }
 .foo-title, .foo-title-news {
