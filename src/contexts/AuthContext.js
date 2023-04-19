@@ -104,6 +104,8 @@ export default function Reducer(state, action) {
       return action.payload.command
     case ('commandAdd'):
       return [action.payload.command, ...state]
+    case ('deleteState'):
+      return []
     default:
       return state
   }

@@ -24,7 +24,8 @@ export default function Connect() {
     const {
         server,
         setCurrentUser,
-        getUserData, setAdmin
+        getUserData, setAdmin,
+        dispatchCart, dispatchCommand, dispatchFav
     } = useAuth();
     const {
         error, setError,
@@ -36,9 +37,15 @@ export default function Connect() {
     const [passView, setPassView] = useState([false, false, false]);
 
     useEffect(() => {
+        setLoading(true)
         setAdmin()
         document.title = 'Blisst — Conectare'
+        dispatchCart({type: 'deleteState'})
+        dispatchFav({type: 'deleteState'})
+        dispatchCommand({type: 'deleteState'})
         Cookies.remove('userData')
+        setCurrentUser()
+        setLoading(false)
     }, [])
 
 
@@ -105,9 +112,9 @@ export default function Connect() {
                 console.log(response)
                 const user = response.data.user
                 Cookies.set('userData', JSON.stringify(user), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
-                setCurrentUser(user)
+                await setCurrentUser(user)
                 console.log(user);
-                axios.get(`${server}/connect`)
+                await axios.get(`${server}/connect`)
                     .then(data => {
                         console.log(data)
                         if (data.data.admin) {
@@ -117,7 +124,7 @@ export default function Connect() {
                     .catch(err => {
                         console.log(err)
                     })
-                getUserData(user.uid)
+                await getUserData(user.uid)
                 navigate('/')
                 setError()
             } else {
