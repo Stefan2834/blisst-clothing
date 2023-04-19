@@ -524,6 +524,11 @@ span.spec-price-old {
         height:30px;
         margin-right:5px;
     }
+    .spec-rev-submit, .spec-rev-submit-anonim {
+        font-size:20px;
+        height:auto;
+        padding:4px 12px;
+    }
 }
 @media screen and (max-width:500px) {
     .spec-slider {

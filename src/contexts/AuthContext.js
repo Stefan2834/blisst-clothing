@@ -706,7 +706,8 @@ export function AuthProvider({ children }) {
   }])
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = "https://clothing-shop2834.herokuapp.com"
+  const server = "https://tired-frock-goat.cyclic.app/"
+  // const server = "https://clothing-shop2834.herokuapp.com"
   // const server = 'http://localhost:9000'
   const [admin, setAdmin] = useState()
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true, color: '' })

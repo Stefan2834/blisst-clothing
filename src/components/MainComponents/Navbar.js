@@ -18,7 +18,7 @@ export default function Navbar() {
     darkTheme, setDarkTheme,
   } = useDefault()
   const { pathname } = useLocation();
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const [drop, setDrop] = useState([false, false, false, false, false, false])
   const [hover, setHover] = useState([true, false, false])
   const navIconRefs = useRef([])

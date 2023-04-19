@@ -235,7 +235,7 @@ export default function SpecialProduct() {
               </div>
               <div className='spec-right'>
                 <div className='spec-name'>{specialClothing.nume}</div>
-                <div className='flex mb-2'>
+                <div className='flex mb-2 flex-wrap'>
                   {[...Array(5)].map((_, i) => {
                     const ratingValue = i + 1;
                     return (
