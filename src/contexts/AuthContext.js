@@ -747,18 +747,29 @@ export function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-      if (Cookies.get('userData')) {
-        const user = JSON.parse(Cookies.get('userData'));
-        console.log(user)
-        setCurrentUser(user)
-        getUserData(user.uid)
-        if(user.email === 'iosifstefan220@gmail.com' || user.email === 'renjibenji2007@gmail.com') {
+    axios.get(`${server}/connect`)
+      .then(data => {
+        console.log(data)
+        if(data.data.admin) {
           setAdmin(true)
-          console.log(admin)
+          console.log('Admin')
         }
-      } else {
+        if (data.data.success) {
+          if (Cookies.get('userData')) {
+            const user = JSON.parse(Cookies.get('userData'));
+            setCurrentUser(user)
+            getUserData(user.uid)
+          } else {
+            setLoading(false)
+          }
+        } else {
+          setLoading(false)
+        }
+      })
+      .catch(err => {
+        console.log(err)
         setLoading(false)
-      }
+      })
     // setLoading(false);
     // axios.post(`${server}/user/product`, {
     //   product: product
