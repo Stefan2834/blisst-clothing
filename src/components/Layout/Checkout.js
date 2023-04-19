@@ -209,7 +209,6 @@ export default function Checkout() {
 
   useEffect(() => {
     startTransition(() => {
-
       if (cart.length !== 0) {
         let price = 0;
         cart.map((product) => {
