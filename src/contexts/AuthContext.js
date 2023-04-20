@@ -734,10 +734,13 @@ export function AuthProvider({ children }) {
           dispatchCommand({ type: 'commandGet', payload: { command: info.data.data.command } })
           setDet(info.data.data.det);
           document.documentElement.style.setProperty("--principal", info.data.data.det.color)
+          setLoading(false);
         }
       })
-      .catch(err => console.error(err.error))
-    setLoading(false);
+      .catch(err => {
+        console.error(err.error)
+        setLoading(false)
+      })
   }
 
   useEffect(() => {
