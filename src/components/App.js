@@ -88,8 +88,10 @@ function App() {
               </Route>
 
               <Route path='cart' element={<Outlet />} >
-                <Route index exact element={<PrivateRoute element={Cart} />} />
-                <Route path='checkout' element={<PrivateRoute element={Checkout} />} />
+                {/* <Route index exact element={<PrivateRoute element={Cart} />} /> */}
+                <Route index exact element={<Cart />} />
+                {/* <Route path='checkout' element={<PrivateRoute element={Checkout} />} /> */}
+                <Route path='checkout' element={<Checkout />} />
               </Route>
 
 

@@ -747,7 +747,7 @@ export function AuthProvider({ children }) {
     axios.get(`${server}/connect`)
       .then(data => {
         console.log(data)
-        if(data.data.admin) {
+        if (data.data.admin) {
           setAdmin(true)
           console.log('Admin')
         }

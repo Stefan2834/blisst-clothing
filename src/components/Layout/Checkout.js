@@ -15,7 +15,7 @@ export default function Checkout() {
     det, setDet
   } = useAuth()
   const { startTransition, isPending, darkTheme } = useDefault()
-  const [actualPage, setActualPage] = useState(1)
+  const [actualPage, setActualPage] = useState(2)
   const [edit, setEdit] = useState({ adress: false, contact: false, pay: false })
   const [error, setError] = useState({ adress: '', contact: '', pay: '' })
   const [cartPrice, setCartPrice] = useState(0)
