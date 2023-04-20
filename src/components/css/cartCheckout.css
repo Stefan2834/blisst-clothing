@@ -279,14 +279,13 @@
   width:1000px;
   margin-top:50px;
   padding:10px;
-  background-color: red;
   max-width: calc(100vw - 20px);
   background-color: var(--color-second);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
 }
 .check-sumar-total {
   background-color: var(--color);
-  margin:10px 0;
+  margin:10px auto;
   padding:10px;
   left:50%;
   width:320px;

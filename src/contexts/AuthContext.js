@@ -721,45 +721,44 @@ export function AuthProvider({ children }) {
   const [admin, setAdmin] = useState()
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
-  const [cart, dispatchCart] = useReducer(Reducer, [
-    {
-      nume: 'Tricou Alb',
-      price: 49.99,
-      discount: 0,
-      photo: tricouAlb,
-      sex: 'man',
-      type: 'barbati top tricouri',
-      spec: 'Tricou negru din bumbac',
-      review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-      { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-      ],
-      star: { total: 6, nr: 2 },
-      size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
-      id: '8',
-      selectedSize: 'M',
-      number:4
-    }, {
-      nume: 'Tricou Blisst alb',
-      price: 99.99,
-      discount: 0.1,
-      photo: tricouBlisst,
-      sex: 'man',
-      type: 'barbati top tricouri',
-      spec: 'Tricou negru din bumbac',
-      review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-      { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-      { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-      { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-      { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-      { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-      { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-      ],
-      star: { total: 21, nr: 7 },
-      size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-      id: '9',
-      selectedSize:'M',
-      number:4
-    }])
+  const [cart, dispatchCart] = useReducer(Reducer, [{
+    nume: 'Tricou Alb',
+    price: 49.99,
+    discount: 0,
+    photo: tricouAlb,
+    sex: 'man',
+    type: 'barbati top tricouri',
+    spec: 'Tricou negru din bumbac',
+    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
+    ],
+    star: { total: 6, nr: 2 },
+    size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
+    id: '8',
+    selectedSize: 'M',
+    number: 4
+  }, {
+    nume: 'Tricou Blisst alb',
+    price: 99.99,
+    discount: 0.1,
+    photo: tricouBlisst,
+    sex: 'man',
+    type: 'barbati top tricouri',
+    spec: 'Tricou negru din bumbac',
+    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
+    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
+    ],
+    star: { total: 21, nr: 7 },
+    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+    id: '9',
+    selectedSize: 'M',
+    number: 4
+  }])
   const [command, dispatchCommand] = useReducer(Reducer, [])
 
   const getUserData = async uid => {

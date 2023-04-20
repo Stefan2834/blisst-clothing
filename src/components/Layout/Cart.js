@@ -98,7 +98,7 @@ export default function Cart() {
                                             }
                                             }
                                         >
-                                            <option value="" className='text-red-600 font-semibold'>0(sterge)</option>
+                                            <option value="" className='principal font-semibold'>0(sterge)</option>
                                             {Array.from({ length: product.size[product.selectedSize] }, (_, index) => { if (index < 10) { return index + 1 } }).map((number) => <>
                                                 {number && (
                                                     <option key={number} value={number} className='cart-option'>

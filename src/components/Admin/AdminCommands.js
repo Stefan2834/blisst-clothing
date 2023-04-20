@@ -5,7 +5,7 @@ import axios from 'axios'
 import '../css/admin.css'
 
 export default function AdminCommands() {
-  const { server } = useAuth()
+  const { server, product, setProduct } = useAuth()
   const [commands, setCommands] = useState([])
   const [selectedProducts, setSelectedProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -18,15 +18,31 @@ export default function AdminCommands() {
       return newState
     })
   }
-
+  
+  console.log(product)
   const handleStatus = async (status, id, uid) => {
+    console.log('test')
     const updatedCommands = commands.map(command => {
       if (command.id === id && command.uid === uid) {
-        return { ...command, status: status }
+        if (status === 'Anulata') {
+          console.log(command.product)
+          command.product.map(comm => {
+            setProduct(product.map((product) => {
+              if (product.id === comm.id) {
+                return { ...product, size: {...product.size, [comm.selectedSize]: product.size[comm.selectedSize] + comm.number } }
+              } else {
+                return product
+              }
+            }))
+          })
+          return null
+        } else {
+          return { ...command, status: status }
+        }
       } else {
         return command
       }
-    })
+    }).filter(c => c !== null)
     await axios.post(`${server}/admin/status`, {
       uid: uid,
       id: id,
