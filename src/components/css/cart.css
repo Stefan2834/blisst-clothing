@@ -103,7 +103,7 @@
     align-items: flex-end;
     justify-content: space-between;
     flex-direction: column;
-    width:25%;
+    width:30%;
     height:100%;
     padding:5px;
 }
@@ -261,6 +261,13 @@ span.cart-span {
     .cart-div {
         padding:20px 10px;
     }
+    .cart-name {
+        font-size:20px;
+    }
+    .cart-info {
+        line-height: 22px;
+        font-size:16px;
+    }
     .cart-product {
         flex-wrap: wrap;
         flex-direction: column;
@@ -285,8 +292,6 @@ span.cart-span {
         height:50%;
         width:50%;
         justify-content: flex-end;
-        align-items: flex-start;
-        text-align: left;
     }
 }
 @media screen and (max-width:520px) {
