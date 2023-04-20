@@ -15,6 +15,15 @@ export default function DefaultProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState();
   const [productLoad, setProductLoad] = useState(10);
+  const [filter, setFilter] = useState({
+    minPrice: '',
+    maxPrice: '',
+    size: '',
+    sort: '',
+    color: '',
+    search: '',
+    type:''
+  })
 
   useEffect(() => {
     if (darkTheme) {
@@ -44,6 +53,7 @@ export default function DefaultProvider({ children }) {
     productLoad, setProductLoad,
     darkTheme, setDarkTheme,
     search, setSearch,
+    filter, setFilter,
     startTransition, isPending
   }
   return (

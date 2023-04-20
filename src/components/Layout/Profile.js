@@ -94,10 +94,7 @@ export default function Profile() {
                             </div>
                         </div>
                     )}
-                    <div className="prof-txt text-center">Salut, <span className='principal'>{det.name}</span>!</div>
-                    {admin && (
-                        <Link to='/main/admin' className="prof-admin">Pagina admini</Link>
-                    )}
+                    <div className="prof-txt text-center">Salut, {admin && 'Domnule'} <span className='principal'>{det.name}</span>!</div>
                     <div className={infoChange ? 'prof-det prof-det-slider' : 'prof-det'}>
                         <div className="prof-left-info">
                             <div className="prof-txt">Judet:<br />

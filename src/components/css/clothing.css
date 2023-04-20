@@ -117,7 +117,6 @@ span.cloth-price {
     justify-content: flex-start;
 }
 .cloth-more {
-    cursor: pointer;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     width:100%;
@@ -126,6 +125,7 @@ span.cloth-price {
     justify-content: center;
 }
 .cloth-more-btn {
+    cursor: pointer;
     margin:15px 0;
     border-radius: 4px;
     background-color: var(--dark-principal);

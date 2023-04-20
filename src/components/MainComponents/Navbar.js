@@ -12,6 +12,7 @@ export default function Navbar() {
     favorite,
     cart,
     server,
+    admin,
     dispatchCart, dispatchFav,
   } = useAuth()
   const { setError, setActiveForm,
@@ -74,7 +75,7 @@ export default function Navbar() {
 
 
   useEffect(() => {
-    setDrop([false, false, false, false, false, false])
+    setDrop([false, false, false, false, false, false, false])
     document.addEventListener('scroll', () => { setOpen(false) })
 
     return () => {
@@ -85,11 +86,11 @@ export default function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navIconRefs.current.every((ref) => !ref.contains(event.target))) {
-        setDrop([false, false, false, false, false, false]);
+        setDrop([false, false, false, false, false, false, false]);
       }
     };
     const handleScroll = () => {
-      setDrop([false, false, false, false, false, false])
+      setDrop([false, false, false, false, false, false, false])
     }
 
     window.addEventListener('click', handleClickOutside);
@@ -117,7 +118,7 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[4] = el)}
           >
             <div className='nav-left-type nav-left-photo1'
-              onClick={() => { setDrop([false, false, false, false, !drop[4], false]) }}
+              onClick={() => { setDrop([false, false, false, false, !drop[4], false, false]) }}
             />
             <div className={drop[4] ? 'nav-drop-active' : 'nav-drop'}>
               <div className='nav-drop-top'>
@@ -133,6 +134,10 @@ export default function Navbar() {
               </div>
               <div className='nav-drop-content'>
                 <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
+                  <Link className='nav-drop-square' to='/main/cloth/barbati top'>
+                    <div className='nav-drop-img nav-2' />
+                    <div className='nav-square-text-man'>Toate</div>
+                  </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati top tricouri'>
                     <div className='nav-drop-img nav-1' />
                     <div className='nav-square-text-man'>Tricouri</div>
@@ -143,6 +148,10 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className={hover[1] ? 'nav-drop-content-top' : 'hidden'}>
+                  <Link className='nav-drop-square' to='/main/cloth/barbati bottom'>
+                    <div className='nav-drop-img nav-3' />
+                    <div className='nav-square-text-man'>Toate</div>
+                  </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati bottom scurti'>
                     <div className='nav-drop-img nav-3' />
                     <div className='nav-square-text-man'>Scurti</div>
@@ -153,6 +162,10 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
+                  <Link className='nav-drop-square' to='/main/cloth/barbati foot adidasi'>
+                    <div className='nav-drop-img nav-5' />
+                    <div className='nav-square-text-man'>Toate</div>
+                  </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati foot adidasi'>
                     <div className='nav-drop-img nav-5' />
                     <div className='nav-square-text-man'>Adidasi</div>
@@ -169,7 +182,7 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[5] = el)}
           >
             <div className='nav-left-type nav-left-photo2'
-              onClick={() => { setDrop([false, false, false, false, false, !drop[5]]) }}
+              onClick={() => { setDrop([false, false, false, false, false, !drop[5], false]) }}
             />
             <div className={drop[5] ? 'nav-drop-active' : 'nav-drop'}>
               <div className='nav-drop-top'>
@@ -185,6 +198,10 @@ export default function Navbar() {
               </div>
               <div className='nav-drop-content'>
                 <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
+                  <Link className='nav-drop-square' to='/main/cloth/femei top'>
+                    <div className='nav-drop-img nav-7' />
+                    <div className='nav-square-text-woman'>Toate</div>
+                  </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei top tricouri'>
                     <div className='nav-drop-img nav-7' />
                     <div className='nav-square-text-woman'>Tricouri</div>
@@ -195,6 +212,10 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className={hover[1] ? 'nav-drop-content-top' : 'hidden'}>
+                  <Link className='nav-drop-square' to='/main/cloth/femei bottom'>
+                    <div className='nav-drop-img nav-9' />
+                    <div className='nav-square-text-woman'>Toate</div>
+                  </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei bottom scurti'>
                     <div className='nav-drop-img nav-9' />
                     <div className='nav-square-text-woman'>Scurti</div>
@@ -205,6 +226,10 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
+                  <Link className='nav-drop-square' to='/main/cloth/femei foot'>
+                    <div className='nav-drop-img nav-11' />
+                    <div className='nav-square-text-woman'>Toate</div>
+                  </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei foot adidasi'>
                     <div className='nav-drop-img nav-11' />
                     <div className='nav-square-text-woman'>Adidasi</div>
@@ -219,6 +244,20 @@ export default function Navbar() {
           </div>
         </div>
         <div className='nav-right'>
+          {admin && (
+            <div className={drop[6] ? 'nav-icon nav-icon-active' : 'nav-icon'}
+              ref={(el) => (navIconRefs.current[6] = el)}
+            >
+              <div className={darkTheme ? 'nav-icon-dark-img6' : 'nav-icon-img6'}
+                onClick={() => setDrop([false, false, false, false, false, false, !drop[6]])}
+              />
+              <div className='nav-drop-right'>
+                <div className='nav-fav-title'>Admin</div>
+                <div className='nav-profile-email principal'>{currentUser.email}</div>
+                <div className='nav-tot'><Link className='flex' to='/main/admin'>Vezi Admin<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
+              </div>
+            </div>
+          )}
           <div className='nav-theme'>
             <label>
               <input type='checkbox' value={darkTheme} className='nav-theme-input'
@@ -234,12 +273,12 @@ export default function Navbar() {
           >
             <div className={darkTheme ? 'nav-icon-dark-img1' : 'nav-icon-img1'}
               onClick={() => {
-                setDrop([!drop[0], false, false, false, false, false])
+                setDrop([!drop[0], false, false, false, false, false, false])
               }}
             />
             {currentUser && (
               <div className='nav-nr-absolute'
-                onClick={() => { setDrop([!drop[0], false, false, false, false, false]) }}
+                onClick={() => { setDrop([!drop[0], false, false, false, false, false, false]) }}
               >{favorite.length}</div>
             )}
             <div className='nav-drop-right nav-spec'>
@@ -297,11 +336,11 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[1] = el)}
           >
             <div className={darkTheme ? 'nav-icon-dark-img2' : 'nav-icon-img2'}
-              onClick={() => { setDrop([false, !drop[1], false, false, false, false]) }}
+              onClick={() => { setDrop([false, !drop[1], false, false, false, false, false]) }}
             />
             {currentUser && (
               <div className='nav-nr-absolute'
-                onClick={() => { setDrop([false, !drop[1], false, false, false, false]) }}
+                onClick={() => { setDrop([false, !drop[1], false, false, false, false, false]) }}
               >{cart.reduce((total, cart) => total + Number(cart.number), 0)}</div>
             )}
             <div className='nav-drop-right nav-spec'>
@@ -361,7 +400,7 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[2] = el)}
           >
             <div className={darkTheme ? 'nav-icon-dark-img3' : 'nav-icon-img3'}
-              onClick={() => { setDrop([false, false, !drop[2], false, false, false]) }}
+              onClick={() => { setDrop([false, false, !drop[2], false, false, false, false]) }}
             />
             <div className='nav-drop-right'>
               <div className='nav-fav-title'>Profil</div>
@@ -380,7 +419,7 @@ export default function Navbar() {
               ref={(el) => (navIconRefs.current[3] = el)}
             >
               <div className={darkTheme ? 'nav-icon-dark-img4' : 'nav-icon-img4'}
-                onClick={() => setDrop([false, false, false, !drop[3], false, false])}
+                onClick={() => setDrop([false, false, false, !drop[3], false, false, false])}
               />
               <div className='nav-drop-right nav-drop-set'>
                 <div className='nav-fav-title'>Optiuni</div>
@@ -392,7 +431,7 @@ export default function Navbar() {
               ref={(el) => (navIconRefs.current[3] = el)}
             >
               <div className={darkTheme ? 'nav-icon-dark-img5' : 'nav-icon-img5'}
-                onClick={() => setDrop([false, false, false, !drop[3], false, false])}
+                onClick={() => setDrop([false, false, false, !drop[3], false, false, false])}
               />
               <div className='nav-drop-right nav-drop-set'>
                 <div className='nav-fav-title'>Optiuni</div>

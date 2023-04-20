@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 
 export default function Sidebar() {
-  const { setProductLoad, darkTheme, setSearch, startTransition } = useDefault()
-  const { filter, setFilter } = useAuth()
+  const { setProductLoad, darkTheme, startTransition, filter, setFilter } = useDefault()
   const { id } = useParams()
   const [sizeType, setSizeType] = useState([])
   const [expand, setExpand] = useState()
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
     const validPath = ['barbati', 'femei', 'barbati top tricouri', 'barbati top bluze', 'barbati bottom scurti', 'barbati bottom lungi',
       'barbati foot adidasi', 'barbati foot papuci', 'barbati top', 'barbati bottom', 'barbati foot',
@@ -226,14 +225,28 @@ export default function Sidebar() {
                   className='side-id-input'
                   onChange={(e) => {
                     startTransition(() => {
-                      setSearch(e.target.value)
+                      setFilter({ ...filter, search: e.target.value })
                     });
                   }}
+                  value={filter.search}
                   placeholder='Cauta dupa id'
                 />
                 <div className={darkTheme ? 'side-id-img-dark' : 'side-id-img'} />
               </label>
             </form>
+          </div>
+          <div className='side-expand' onClick={() => {
+            startTransition(() => {
+              setExpand()
+              setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, search: '' })
+            })
+          }}>
+            <span className='side-selection side-selection'>Sterge Filtre</span>
+            {darkTheme ? (
+              <div className='side-del-dark' />
+            ) : (
+              <div className='side-del' />
+            )}
           </div>
         </form>
       </div>

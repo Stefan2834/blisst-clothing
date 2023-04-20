@@ -723,13 +723,6 @@ export function AuthProvider({ children }) {
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
-  const [filter, setFilter] = useState({
-    minPrice: '',
-    maxPrice: '',
-    size: '',
-    sort: '',
-    color: ''
-  })
 
   const getUserData = async uid => {
     await axios.post(`${server}/user/info`, { uid: uid })
@@ -819,7 +812,6 @@ export function AuthProvider({ children }) {
     favorite, dispatchFav,
     loading, setLoading,
     server, product, setProduct,
-    filter, setFilter,
     command, dispatchCommand,
     getUserData,
     det, setDet,

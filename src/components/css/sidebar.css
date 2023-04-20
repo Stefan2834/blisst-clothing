@@ -105,7 +105,7 @@
     background-color: transparent;
     color:var(--color-oposite)
 }
-.side-plus, .side-minus, .side-plus-dark, .side-minus-dark {
+.side-plus, .side-minus, .side-plus-dark, .side-minus-dark, .side-del, .side-del-dark {
     width:25px;
     height:25px;
     background-size: 100% 100%;
@@ -123,6 +123,12 @@
 }
 .side-minus-dark {
     background-image: url(../Main/svg/minus.svg);
+}
+.side-del {
+    background-image: url(../Main/svg-dark/delete.svg);
+}
+.side-del-dark {
+    background-image: url(../Main/svg/delete.svg);
 }
 .side-overflow, .side-overflow-expand {
     color:var(--color-oposite);

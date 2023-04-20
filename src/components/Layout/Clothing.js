@@ -4,11 +4,10 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useDefault } from "../../contexts/DefaultContext";
 
 export default function Clothing() {
-  const { product,
-    filter, favorite, dispatchFav, currentUser
+  const { product, favorite, dispatchFav, currentUser
   } = useAuth()
   const { productLoad, setProductLoad,
-    search, setSearch,
+    filter, setFilter,
     startTransition, isPending
   } = useDefault()
   const [sortedProducts, setSortedProducts] = useState([...product])
@@ -72,13 +71,13 @@ export default function Clothing() {
   }, [filter.sort])
   useEffect(() => {
     startTransition(() => {
-      setSearch()
+      setFilter({...filter, search:''})
     })
   }, [])
 
   const handleFilter = (product) => {
-    if (search) {
-      if (product.id.includes(search.toLowerCase())) {
+    if (filter.search !== "") {
+      if (product.id.includes(filter.search.toLowerCase())) {
         noProduct += 1;
         return true
       }

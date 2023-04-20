@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useState, useReducer, useLayoutEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
@@ -23,7 +23,7 @@ export default function SpecialProduct() {
   const [zoom, setZoom] = useState(false);
   const photos = [tricouBlisst1, tricouBlisst2, tricouBlisst3]
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     startTransition(() => {
       const special = product.find(item => item.id === idPath)
       setSpecialClothing(special)
