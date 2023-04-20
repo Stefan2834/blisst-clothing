@@ -52,7 +52,9 @@ export default function Connect() {
     const handleRadio = (e) => {
         setType(e.target.value);
     }
-
+    // setTimeout(() => {
+    //     setActiveForm(c => !c)
+    // }, 1000)
     async function handleSignUp(e) {
         e.preventDefault()
         if (signPassRef.current.value !== signPassConfirmRef.current.value) {
@@ -144,7 +146,6 @@ export default function Connect() {
                 <div className='sign-up'>
                     <form className='acc-form' onSubmit={handleSignUp}>
                         <div className='acc-form-title'>Creeaza un cont</div>
-
                         <label className='acc-label'><img className='acc-svg' src={nameSvg} alt='Img' />
                             <input ref={signNameRef} className='acc-input' type='text' placeholder=' ' minLength={3} maxLength={16} required />
                             <span className='place-holder'>Nume*</span>
@@ -163,7 +164,7 @@ export default function Connect() {
                         </label>
                         <label className='acc-label'><img className='acc-svg' src={checkSvg} alt='Img' />
                             <input ref={signPassConfirmRef} className='acc-input' type={passView[1] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
-                            <span className='place-holder'>Confirma parola*</span>
+                            <span className='place-holder'>Confirma*</span>
                             <img className='acc-svg-eye'
                                 src={passView[1] ? eyeTrue : eyeFalse}
                                 alt='Img' onClick={() => { setPassView(c => [c[0], !c[1], c[2]]) }}
