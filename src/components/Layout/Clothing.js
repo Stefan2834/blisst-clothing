@@ -62,6 +62,10 @@ export default function Clothing() {
             return -1
           }
         })
+      } else if(filter.sort === 'nrReview') {
+        sort.sort((a,b) => {
+          return b.review.length - a.review.length;
+        })
       }
       setSortedProducts([...sort])
     })

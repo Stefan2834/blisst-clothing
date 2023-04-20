@@ -32,27 +32,32 @@ export default function Command() {
               <br />Uite istoricul comenziilor tale
             </div>
           </div>
-          {command.map((command, index) => {
+          {[...command].reverse().map((command, index) => {
             const selectedProduct = selectedProducts[index] || command.product[0]
             return (
               <div className='comm-element'>
                 <div className='comm-left'>
                   <div className='comm-left-top'>
-                    <label className='comm-option'>Produs:</label>
-                    <select value={JSON.stringify(selectedProduct)} className='comm-option'
-                      onChange={e => { handleProductSelect(index, JSON.parse(e.target.value)) }}
-                    >
-                      {command.product.map((product) => {
-                        return (
-                          <option key={product.id}
-                            value={JSON.stringify(product)}
-                            className='comm-option'
-                          >
-                            {product.nume} {product.selectedSize}
-                          </option>
-                        )
-                      })}
-                    </select>
+                    <div className="comm-title flex items-center">Data comenzi:
+                      <div className="comm-txt">{command.date}</div>
+                    </div>
+                    <>
+                      <label className='comm-option'>Produs:</label>
+                      <select value={JSON.stringify(selectedProduct)} className='comm-option'
+                        onChange={e => { handleProductSelect(index, JSON.parse(e.target.value)) }}
+                      >
+                        {command.product.map((product) => {
+                          return (
+                            <option key={product.id}
+                              value={JSON.stringify(product)}
+                              className='comm-option'
+                            >
+                              {product.nume} {product.selectedSize}
+                            </option>
+                          )
+                        })}
+                      </select>
+                    </>
                   </div>
                   <div className='comm-product'>
                     <Link to={`/product/${selectedProduct.id}`}>
@@ -112,9 +117,6 @@ export default function Command() {
                     </div>
                     <div className="comm-title flex items-center">Metoda de livrare:
                       <div className="comm-txt">{command.method}</div>
-                    </div>
-                    <div className="comm-title flex items-center">Data comenzi:
-                      <div className="comm-txt">{command.date}</div>
                     </div>
                     <div className="comm-title flex items-center">Statusul comenzi:
                       <div className="comm-txt">{command.status}</div>

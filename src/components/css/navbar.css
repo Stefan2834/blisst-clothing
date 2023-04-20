@@ -272,7 +272,7 @@ body {
 .nav-drop-right::before {
   content: '';
   left:50%;
-  translate:-50%,0;
+  transform: translate(-50%,0);
   background-color:var(--color-oposite);
   width:20px;
   height:15px;
@@ -581,7 +581,7 @@ body {
   .nav-drop-right::before {
     left:0;
     top:50%;
-    translate:0,-50%;
+    transform: translate(0,-50%);
     left:-20px;
     rotate: 270deg;
   }

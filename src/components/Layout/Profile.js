@@ -61,11 +61,11 @@ export default function Profile() {
         })
         setInfoChange(false);
     }
-    console.log(det)
     useEffect(() => {
         document.title = 'Blisst — Profilul meu'
         setPreDet(det)
     }, [])
+    console.log(det.county)
 
 
 
@@ -102,7 +102,7 @@ export default function Profile() {
                         <div className="prof-left-info">
                             <div className="prof-txt">Judet:<br />
                                 <div className="prof-det-txt">
-                                    {det.county || det.county === '' ? det.county : (<div className="prof-noset">Judet nesetat</div>)}
+                                    {det.county !== '' ? det.county : (<div className="prof-noset">Judet nesetat</div>)}
                                 </div>
                             </div>
                             <div className="prof-txt">Informatii adresa:<br />
@@ -234,19 +234,19 @@ export default function Profile() {
                         <div className="prof-comm">
                             <div className="prof-comm-title">Ultima comanda: </div>
                             <div className="prof-comm-subtitle">Judet</div>
-                            <div className="prof-comm-txt">{command[0].details.county}</div>
+                            <div className="prof-comm-txt">{command[command.length - 1].details.county}</div>
                             <div className="prof-comm-subtitle">Adresa</div>
-                            <div className="prof-comm-txt">{command[0].details.info}</div>
+                            <div className="prof-comm-txt">{command[command.length - 1].details.info}</div>
                             <div className="prof-comm-subtitle">Telefon</div>
-                            <div className="prof-comm-txt">{command[0].details.tel}</div>
+                            <div className="prof-comm-txt">{command[command.length - 1].details.tel}</div>
                             <div className="prof-comm-subtitle">Email</div>
-                            <div className="prof-comm-txt">{command[0].details.email}</div>
+                            <div className="prof-comm-txt">{command[command.length - 1].details.email}</div>
                             <div className="prof-comm-subtitle">Metoda de plata</div>
-                            <div className="prof-comm-txt">{command[0].method}</div>
+                            <div className="prof-comm-txt">{command[command.length - 1].method}</div>
                             <div className="prof-comm-subtitle">Total</div>
-                            <div className="prof-comm-txt">{command[0].price.total} Lei</div>
+                            <div className="prof-comm-txt">{command[command.length - 1].price.total} Lei</div>
                             <div className="prof-comm-subtitle">Status</div>
-                            <div className="prof-comm-txt">{command[0].status}</div>
+                            <div className="prof-comm-txt">{command[command.length - 1].status}</div>
                             <Link to='/main/command' className="prof-comm-btn">
                                 Vezi mai multe detalii
                             </Link>

@@ -52,7 +52,7 @@ export default function Checkout() {
             name: preDet.name,
             type: preDet.type,
             county: preDet.county
-          }); console.log(info.data)
+          })
         })
         .catch(err => {
           setPreDet({
@@ -310,7 +310,7 @@ export default function Checkout() {
                   <>
                     <div className='check-txt'>Judet: <br />
                       <div className='check-det-txt'>
-                        {det.county ? det.county : (<div className="prof-noset">Judet neselectat</div>)}
+                        {det.county !== "" ? det.county : (<div className="prof-noset">Judet neselectat</div>)}
                       </div>
                     </div>
                     <div className="check-txt">Informatii adresa:<br />

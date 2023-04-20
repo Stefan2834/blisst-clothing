@@ -6,17 +6,8 @@ import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 
 export default function Footer() {
-  const { currentUser, server } = useAuth()
+  const { currentUser, server, det, setDet } = useAuth()
   const { darkTheme } = useDefault()
-  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false })
-
-  useEffect(() => {
-    if (currentUser) {
-      axios.post(`${server}/user/info`, { uid: currentUser.uid })
-        .then(info => { if (info.data.det) { setDet(info.data.det) } })
-        .catch(err => console.error(err.error))
-    }
-  }, [])
 
   const handleSubscribe = () => {
     Swal.fire({

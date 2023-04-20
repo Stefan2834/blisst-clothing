@@ -103,7 +103,7 @@ export default function Reducer(state, action) {
     case ('commandGet'):
       return action.payload.command
     case ('commandAdd'):
-      return [action.payload.command, ...state]
+      return [...state, action.payload.command]
     case ('deleteState'):
       return []
     default:
@@ -716,7 +716,6 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   // const server = process.env.REACT_APP_SERVER;
-  // const server = "https://tired-frock-goat.cyclic.app"
   const server = "https://blisst.onrender.com"
   // const server = 'http://localhost:9000'
   const [admin, setAdmin] = useState()
@@ -728,7 +727,8 @@ export function AuthProvider({ children }) {
     minPrice: '',
     maxPrice: '',
     size: '',
-    sort: ''
+    sort: '',
+    color: ''
   })
 
   const getUserData = async uid => {

@@ -1,26 +1,28 @@
-import { useAuth } from "../../contexts/AuthContext";
-export default function Test() {
-  const { cart, product, setProduct } = useAuth()
+import { useState } from "react";
 
-  const handleUpdateSizes = () => {
-    let newProduct = product
-    cart.forEach(cart => {
-      newProduct = newProduct.map(product => {
-        const updatedProduct = product;
-        if(product.id === cart.id) {
-          updatedProduct.size[cart.selectedSize] -= cart.number
-        }
-        return updatedProduct
-      })
-    })
-    setProduct(newProduct)
-  }
+export default function Test() {
+  const [rangeValues, setRangeValues] = useState([50, 150]); // initial values for the range slider
+
+  const handleChange = (event) => {
+    setRangeValues([event.target.min, event.target.max].map(parseFloat)); // set the minimum and maximum values of the range slider
+  };
+
   return (
     <div>
-      <button onClick={handleUpdateSizes}>Press</button><br />
+      <input
+        type="range"
+        min="0"
+        max="200"
+        step="1"
+        value={rangeValues}
+        onChange={handleChange}
+        className="range-slider"
+      />
+      <div className="range-slider-thumb" style={{ left: rangeValues[0] + "%" }} />
+      <div className="range-slider-thumb" style={{ left: rangeValues[1] + "%" }} />
     </div>
   );
-}
+};
 
 export const counties = [
   'Alba',
