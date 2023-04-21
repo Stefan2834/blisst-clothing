@@ -20,7 +20,7 @@ export default function Checkout() {
   const [error, setError] = useState({ adress: '', contact: '', pay: '' })
   const [cartPrice, setCartPrice] = useState(0)
   const [method, setMethod] = useState({ card: false, ramburs: false })
-  const [discount, setDiscount] = useState(0)
+  const [discount, setDiscount] = useState({value:0, code:''})
   const [preDet, setPreDet] = useState({})
   const [productPrice, setProductPrice] = useState(0)
   const discountValue = useRef()
@@ -95,10 +95,10 @@ export default function Checkout() {
   const handleDiscount = (e) => {
     e.preventDefault()
     const value = discountValue.current.value
-    axios.post(`${server}/discount`, { discountCode: value })
+    axios.post(`${server}/discount`, { discountCode: value, email: currentUser.email })
       .then(info => {
-        setDiscount(info.data.discount)
-        if (info.data.discount !== 0) {
+        if(info.data.success === true) {
+          setDiscount({value: info.data.discount,code:value})
           Swal.fire({
             title: 'Felicitari',
             text: `Reducerea de ${info.data.discount * 100}% a fost aplicata cu succes`,
@@ -109,7 +109,7 @@ export default function Checkout() {
         } else {
           Swal.fire({
             title: 'Eroare',
-            text: "Codul introdus este gresit sau a expirat",
+            text: info.data.message,
             icon: 'error',
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'Inapoi'
@@ -132,13 +132,16 @@ export default function Checkout() {
     }).then((result) => {
       if (result.isConfirmed) {
         const date = new Date();
+        if(discount.value !== 0) {
+          axios.post(`${server}/discountOnce`, {email:currentUser.email, code:discount.code})
+        }
         const commandData = {
           method: method.card ? 'Card' : 'Ramburs',
           details: det,
           date: `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`,
           price: {
             productPrice: productPrice,
-            discount: discount,
+            discount: discount.value,
             delivery: productPrice >= 200 ? 0 : 20,
             total: cartPrice
           },
@@ -216,9 +219,9 @@ export default function Checkout() {
         })
         setProductPrice(Number((price).toFixed(2)))
         if (price >= 200) {
-          setCartPrice(c => Number(price - (price * discount)).toFixed(2))
+          setCartPrice(c => Number(price - (price * discount.value)).toFixed(2))
         } else {
-          setCartPrice(c => Number((price - (price * discount)) + 20).toFixed(2))
+          setCartPrice(c => Number((price - (price * discount.value)) + 20).toFixed(2))
         }
       } else {
         navigate('/main')
@@ -511,21 +514,21 @@ export default function Checkout() {
               <div className='check-sumar-total'>
                 <div className='flex justify-between w-full'>
                   <div className='cart-text'>Cost produse:</div>
-                  {discount ? (
+                  {discount.value !== 0 ? (
                     <>
                       <div className='cart-right-price'>
                         <span className='text-gray-500 line-through'>{productPrice} Lei</span>
-                        -{discount * 100} %
+                        -{discount.value * 100} %
                       </div>
                     </>
                   ) : (
                     <div className='cart-right-price'>{productPrice} Lei</div>
                   )}
                 </div>
-                {discount ? (
+                {discount.value !== 0 ? (
                   <div className='flex justify-between w-full'>
                     <div className='cart-text'>Cost produse nou</div>
-                    <div className='cart-right-price'>{(productPrice - (productPrice * discount)).toFixed(2)} Lei</div>
+                    <div className='cart-right-price'>{(productPrice - (productPrice * discount.value)).toFixed(2)} Lei</div>
                   </div>
                 ) : (<></>)}
                 <div className='flex justify-between w-full'>

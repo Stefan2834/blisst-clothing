@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { useDefault } from "../../contexts/DefaultContext";
+import Product from "../SmallComponents/Product";
 
 export default function Clothing() {
-  const { product, favorite, dispatchFav, currentUser
-  } = useAuth()
+  const { product } = useAuth()
   const { productLoad, setProductLoad,
     filter, setFilter,
     startTransition, isPending
@@ -61,8 +60,8 @@ export default function Clothing() {
             return -1
           }
         })
-      } else if(filter.sort === 'nrReview') {
-        sort.sort((a,b) => {
+      } else if (filter.sort === 'nrReview') {
+        sort.sort((a, b) => {
           return b.review.length - a.review.length;
         })
       }
@@ -71,7 +70,7 @@ export default function Clothing() {
   }, [filter.sort])
   useEffect(() => {
     startTransition(() => {
-      setFilter({...filter, search:''})
+      setFilter({ ...filter, search: '' })
     })
   }, [])
 
@@ -111,49 +110,7 @@ export default function Clothing() {
           if (noProduct < productLoad) {
             if (handleFilter(product)) {
               return (
-                <div className='cloth-div'>
-                  <Link to={`/product/${product.id}`}>
-                    <div className="cloth-photo">
-                      <img src={product.photo} className="cloth-img" />
-                    </div>
-                  </Link>
-                  <div className={product.sex === 'man' ? 'cloth-det cloth-grad-man' : 'cloth-det cloth-grad-woman'}>
-                    <Link to={`/product/${product.id}`}>
-                      <div className="cloth-left">
-                        <div className="cloth-name">
-                          {product.nume}
-                          <span className="font-normal text-xs">({(product.star.total / product.star.nr).toFixed(2)})</span>
-                        </div>
-                        <div className="cloth-price">
-                          {product.discount > 0 ? (
-                            <>
-                              <div className="cloth-price-flex">
-                                <div className="cloth-price-old">{product.price}
-                                  <span className="cloth-span">Lei</span>
-                                </div>
-                                <span className="cloth-price"> - {product.discount * 100} %</span>
-                              </div>
-                              <div className="cloth-price-new text-red-600">{product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01}
-                                <span className="cloth-span text-red-600">Lei</span>
-                              </div>
-                            </>
-                          ) : (
-                            <>
-                              {product.price} <span className="cloth-span">Lei</span>
-                            </>
-                          )}
-                        </div>
-                      </div>
-                    </Link>
-                    <div className="cloth-right">
-                      {favorite.some(item => item.id === product.id) ? (
-                        <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: product } })} />
-                      ) : (
-                        <div className="cloth-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: product, user: currentUser } })} />
-                      )}
-                    </div>
-                  </div>
-                </div>
+                <Product product={product} />
               )
             }
           }

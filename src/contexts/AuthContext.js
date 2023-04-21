@@ -113,7 +113,7 @@ export default function Reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [product, setProduct] = useState([{
-    nume: 'Tricou Negru',
+    nume: 'Tricou Negru milsugeti',
     price: 29.99,
     discount: 0.2,
     photo: manTshirtBlack,

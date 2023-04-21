@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Countdown from '../SmallComponents/Countdown'
 import Swal from 'sweetalert2'
+import { FaStar } from 'react-icons/fa'
 
 
 
@@ -16,55 +17,12 @@ export default function Main() {
   } = useAuth()
   const { darkTheme } = useDefault()
   const [suggestion, setSuggestion] = useState()
-  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false })
-
-  const handleSubscribe = () => {
-    Swal.fire({
-      title: 'Te-ai abonat',
-      text: "Multumim ca te-ai abonat! Verifica adresa de email pentru a primi codul de reducere.",
-      icon: 'success',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'Ok',
-    })
-    handleModify(true)
-  }
-
-  const handleUnSubscribe = () => {
-    Swal.fire({
-      title: 'Ne pare rau.',
-      text: "Te-ai dezabonat de la News Letter",
-      icon: 'success',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'Ok',
-    })
-    handleModify(false)
-  }
-
-  const handleModify = (value) => {
-    const newDet = { ...det, newsLetter: value }
-    setDet(newDet)
-    axios.post(`${server}/user/infoUpdate`, { uid: currentUser.uid, det: newDet })
-      .then((data) => {
-        console.log(data)
-        if (value) {
-          axios.post(`${server}/email/newsLetter`, { email: currentUser.email, name: det.name })
-            .then((data) => console.log(data))
-            .catch(err => console.error(err))
-        }
-      })
-      .catch(err => console.error(err))
-  }
 
   useEffect(() => {
     document.title = 'Blisst'
     axios.get(`${server}/suggestion/daily`)
       .then(daily => {
         setSuggestion(daily.data.data)
-        if (currentUser) {
-          axios.post(`${server}/user/info`, { uid: currentUser.uid })
-            .then(info => { if (info.data.det) { setDet(info.data.det) } })
-            .catch(err => console.error(err.error))
-        }
       })
       .catch(err => console.log(err))
   }, [])
@@ -118,6 +76,11 @@ export default function Main() {
                         ) : (
                           <div className="sugg-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: suggestion, user: currentUser } })} />
                         )}
+                        <div className="flex items-start justify-center">
+                          <FaStar size={16} className='principal' />
+                          <span className="font-medium text-sm">{(suggestion.star.total / suggestion.star.nr).toFixed(2)}</span>
+                          <span className="font-light text-sm">({suggestion.star.nr})</span>
+                        </div>
                       </div>
                     </div>
                   </>
