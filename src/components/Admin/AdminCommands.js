@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
 import '../css/admin.css'
+import '../../index.css'
+import { useDefault } from '../../contexts/DefaultContext'
 
 export default function AdminCommands() {
   const { server, product, setProduct } = useAuth()
+  const { isPending, startTransition } = useDefault()
   const [commands, setCommands] = useState([])
   const [selectedProducts, setSelectedProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('Toate')
+  const [load, setLoad] = useState(4)
 
   const handleProductSelect = (commandIndex, selectedProduct) => {
     setSelectedProducts(prevState => {
@@ -18,10 +22,8 @@ export default function AdminCommands() {
       return newState
     })
   }
-  
-  console.log(product)
+
   const handleStatus = async (status, id, uid) => {
-    console.log('test')
     const updatedCommands = commands.map(command => {
       if (command.id === id && command.uid === uid) {
         if (status === 'Anulata') {
@@ -29,7 +31,7 @@ export default function AdminCommands() {
           command.product.map(comm => {
             setProduct(product.map((product) => {
               if (product.id === comm.id) {
-                return { ...product, size: {...product.size, [comm.selectedSize]: product.size[comm.selectedSize] + comm.number } }
+                return { ...product, size: { ...product.size, [comm.selectedSize]: product.size[comm.selectedSize] + comm.number } }
               } else {
                 return product
               }
@@ -59,9 +61,9 @@ export default function AdminCommands() {
   useEffect(() => {
     axios.get(`${server}/admin/commands`)
       .then(data => {
+        setLoading(false)
         if (data.data.commands) {
           setCommands(data.data.commands)
-          setLoading(false)
         }
       })
       .catch(err => {
@@ -72,12 +74,12 @@ export default function AdminCommands() {
 
   return (
     <>
-      {loading ? (
+        <div className='admin-commands'>
+      {loading || isPending && (
         <div className="loading-bg">
           <div className="loading-spin">Loading...</div>
         </div>
-      ) : (
-        <div className='admin-commands'>
+      )}
           <div className='admin-commands-div'>
             <div className='admin-comm-filter'>
               <div className='comm-title'>
@@ -105,91 +107,83 @@ export default function AdminCommands() {
             {[...commands].reverse().map((command, index) => {
               if (command.status === filter || filter === 'Toate') {
                 const selectedProduct = selectedProducts[index] || command.product[0]
-                return (
-                  <div className='comm-element'>
-                    <div className='comm-left'>
-                      <div className='comm-left-top'>
-                        <div className="comm-title flex items-center">Data comenzi:
-                          <div className="comm-txt">{command.date}</div>
-                        </div>
-                        <>
-                          <label className='comm-option'>Produs:</label>
-                          <select value={JSON.stringify(selectedProduct)} className='comm-option'
-                            onChange={e => { handleProductSelect(index, JSON.parse(e.target.value)) }}
-                          >
-                            {command.product.map((product) => {
-                              return (
-                                <option key={product.id}
-                                  value={JSON.stringify(product)}
-                                  className='comm-option'
-                                >
-                                  {product.nume} {product.selectedSize}
-                                </option>
-                              )
-                            })}
-                          </select>
-                        </>
-                      </div>
-                      <div className='comm-product'>
-                        <Link to={`/product/${selectedProduct.id}`}>
-                          <div className='comm-photo-product'
-                            style={{ backgroundImage: `url(${selectedProduct.photo})` }}
-                          />
-                        </Link>
-                        <Link to={`/product/${selectedProduct.id}`} className='comm-det'>
-                          <div className='comm-text'>{selectedProduct.nume}</div>
-                          <div className='comm-info'>{selectedProduct.spec}</div>
-                        </Link>
-                        <div className='comm-action'>
-                          {selectedProduct.discount > 0 ? (
-                            <>
-                              <div className="comm-price-flex">
-                                <div className="comm-price-old">{selectedProduct.price}
-                                  <span className="comm-span">Lei</span>
-                                </div>
-                                <span className="comm-price"> - {selectedProduct.discount * 100} %</span>
-                              </div>
-                              <div className="comm-price-new text-red-600">{selectedProduct.price + 0.01 - ((selectedProduct.price + 0.01) * selectedProduct.discount) - 0.01}
-                                <span className="comm-span text-red-600">Lei</span>
-                              </div>
-                            </>
-                          ) : (
-                            <div className='comm-price'>{selectedProduct.price} Lei</div>
-                          )}
-                          <div className='comm-price'>Marime: {selectedProduct.selectedSize}</div>
-                          <div className='comm-price'>Numar: {selectedProduct.number}</div>
-                          <div className='comm-price'>Id: {selectedProduct.id}</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='comm-right'>
-                      <div className='comm-right-adress'>
-                        <div className='comm-title'>Judetul: <br />
-                          <div className='comm-txt'>{command.details.county}</div>
-                        </div>
-                        <div className="comm-title">Informatii adresa:<br />
-                          <div className="comm-txt">{command.details.info}</div>
-                        </div>
-                        <div className="comm-title">Telefon:<br />
-                          <div className="comm-txt">{command.details.tel}</div>
-                        </div>
-                        <div className="comm-title">Email:<br />
-                          <div className="comm-txt">{command.details.email}</div>
-                        </div>
-                      </div>
-                      <div className='comm-right-det'>
-                        <div className="comm-title flex items-center">Total:
-                          <div className="comm-txt">{command.price.total}</div>
-                        </div>
-                        <div className="comm-title flex items-center">Reducere:
-                          <div className="comm-txt">
-                            {command.price.discount === 0 ? 'Nu' : `${command.price.discount * 100}%`}
+                if (load > index) {
+                  return (
+                    <div className='comm-element'>
+                      <div className='comm-left'>
+                        <div className='comm-left-top'>
+                          <div className="comm-option flex justify-center items-center">Data comenzi:
+                            <div className="comm-txt">{command.date}</div>
+                          </div>
+                          <div>
+                            <label className='comm-option'>Produs:</label>
+                            <select value={JSON.stringify(selectedProduct)} className='comm-option'
+                              onChange={e => { handleProductSelect(index, JSON.parse(e.target.value)) }}
+                            >
+                              {command.product.map((product) => {
+                                return (
+                                  <option key={product.id}
+                                    value={JSON.stringify(product)}
+                                    className='comm-option'
+                                  >
+                                    {product.nume} {product.selectedSize}
+                                  </option>
+                                )
+                              })}
+                            </select>
                           </div>
                         </div>
-                        <div className="comm-title flex items-center">Metoda de livrare:
+                        <div className='cart-product'>
+                          <Link to={`/product/${selectedProduct.id}`}>
+                            <div className='cart-photo'
+                              style={{ backgroundImage: `url(${selectedProduct.photo})` }}
+                            />
+                          </Link>
+                          <Link to={`/product/${selectedProduct.id}`} className='cart-det'>
+                            <div className='cart-name'>{selectedProduct.nume}</div>
+                            <div className='cart-info'>{selectedProduct.spec}</div>
+                          </Link>
+                          <div className='comm-action'>
+                            {selectedProduct.discount > 0 ? (
+                              <>
+                                <div className="cart-price-flex">
+                                  <div className="cart-price-old">{selectedProduct.price}
+                                    <span className="cart-span">Lei</span>
+                                  </div>
+                                  <span className="cart-price"> - {selectedProduct.discount * 100} %</span>
+                                </div>
+                                <div className="cart-price-new text-red-600">{selectedProduct.price + 0.01 - ((selectedProduct.price + 0.01) * selectedProduct.discount) - 0.01}
+                                  <span className="cart-span text-red-600">Lei</span>
+                                </div>
+                              </>
+                            ) : (
+                              <div className='cart-price'>{selectedProduct.price} Lei</div>
+                            )}
+                            <div className='cart-price'>Marime: {selectedProduct.selectedSize}</div>
+                            <div className='cart-price'>Numar: {selectedProduct.number}</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='comm-right'>
+                        <div className='comm-title'>Judetul:
+                          <div className='comm-txt'>{command.details.county}</div>
+                        </div>
+                        <div className="comm-title">Informatii adresa:
+                          <div className="comm-txt">{command.details.info}</div>
+                        </div>
+                        <div className="comm-title">Telefon:
+                          <div className="comm-txt">{command.details.tel}</div>
+                        </div>
+                        <div className="comm-title">Email:
+                          <div className="comm-txt">{command.details.email}</div>
+                        </div>
+                        <div className="comm-title">Total:
+                          <div className="comm-txt">{command.price.total}</div>
+                        </div>
+                        <div className="comm-title">Metoda de livrare:
                           <div className="comm-txt">{command.method}</div>
                         </div>
-                        <div className='comm-title flex items-center'>Status:
+                        <div className='comm-title'>Status:
                           <select value={command.status} className='comm-option'
                             onChange={e => { handleStatus(e.target.value, command.id, command.uid) }}
                           >
@@ -207,21 +201,19 @@ export default function AdminCommands() {
                             </option>
                           </select>
                         </div>
-                        <div className="comm-title flex items-center">Uid:
-                          <div className="comm-txt">{command.uid}</div>
-                        </div>
-                        <div className="comm-title flex items-center">Id comanda:
-                          <div className="comm-txt">{command.id}</div>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                )
+                  )
+                }
               }
             })}
+            {load < commands.length && (
+              <div className="cloth-more">
+                <div className="cloth-more-btn" onClick={() => startTransition(() => setLoad(p => p + 4))}>Incarca mai multe comenzi</div>
+              </div>
+            )}
           </div>
         </div>
-      )}
     </>
   )
 }
