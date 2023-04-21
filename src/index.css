@@ -704,6 +704,7 @@ button.acc-btn:hover {
 }
 .for-content {
   width:450px;
+  max-width: 100%;
   background-color: var(--color);
   display: flex;
   align-items: center;
@@ -751,4 +752,14 @@ button.acc-btn:hover {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   color:var(--color-oposite)
+}
+
+@media screen and (max-width:470px) {
+  .for {
+    width:100vw;
+    min-width: auto;
+  }
+  .for-content {
+    width:350px
+  }
 }

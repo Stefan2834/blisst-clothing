@@ -534,14 +534,22 @@ body {
     align-items: center;
     justify-content: center;
   }
-  .nav-open {
+  .nav-open, .nav-open-dark {
     width:35px;
     height:35px;
     position: absolute;
     left:10px;
-    background-color: red;
+    background-position: center;
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
     cursor: pointer;
     z-index:11;
+  }
+  .nav-open {
+    background-image: url(../Main/svg-dark/hamburger-button.svg);
+  }
+  .nav-open-dark {
+    background-image: url(../Main/svg/hamburger-button.svg);
   }
   .nav-left {
     flex-direction: column;

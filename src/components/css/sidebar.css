@@ -229,10 +229,11 @@
 @media screen and (max-width:1000px) {
     .side-filter-bar {
         width:230px;
-        margin-left:100px;
         height:100vh;
         z-index:9;
         transition: 0ms;
+        right:0;
+        z-index:5;
     }
     .side-filter-bg {
         background-color: var(--color);
@@ -253,8 +254,8 @@
         background-repeat: no-repeat;
         height:40px;
         z-index:40px;
-        left:0px;
-        top:0px;
+        right:10px;
+        top:5px;
         background-color: var(--color);
     }
     .side-switch {
@@ -264,24 +265,12 @@
         background-image: url(../Main/svg-dark/filter.svg)
     }
     .side-filter-closed {
-        left:-230px;
-        transition: 0ms;
-        z-index:9;
+        right:-230px;
+        transition: 0;
+        z-index:11;
     }
     .side-filter-closed .side-switch,
     .side-filter-closed .side-switch-dark {
-        left:330px;
-    }
-}
-@media screen and (max-width:500px) {
-    .side-filter-bar {
-        margin-left:70px;
-    }
-    .side-switch, .side-switch-dark{
-        left:0px;
-    }
-    .side-filter-closed .side-switch,
-    .side-filter-closed .side-switch-dark{
-        left:300px;
+        transform: translate(-230px);
     }
 }

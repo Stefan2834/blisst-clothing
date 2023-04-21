@@ -105,7 +105,7 @@ export default function Navbar() {
   return (
     <>
       <div className='navbar-top-container'>
-        <div className='nav-open' onClick={() => setOpen(o => !o)} />
+        <div className={darkTheme ? 'nav-open-dark' : 'nav-open'} onClick={() => setOpen(o => !o)} />
         <div className='nav-logo-second'>
           <Link to='/main' className='principal'>Blisst</Link>
         </div>

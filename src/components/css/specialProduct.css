@@ -270,6 +270,9 @@ span.spec-price-old {
     font-family: 'Poppins', sans-serif;
     margin-bottom:15px;
 }
+.spec-rev-user {
+    word-break: break-all;
+}
 .spec-rev-text-dark {
     color:var(--color);
     font-weight: 600;
@@ -390,7 +393,6 @@ span.spec-price-old {
     margin:20px 0 0 10px;
     text-align: justify;
     font-size:16px;
-    word-break: break-all;
 }
 .spec-rev-more {
     color:var(--color);

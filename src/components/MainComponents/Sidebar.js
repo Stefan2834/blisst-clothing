@@ -8,7 +8,7 @@ export default function Sidebar() {
   const { id } = useParams()
   const [sizeType, setSizeType] = useState([])
   const [expand, setExpand] = useState()
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const navigate = useNavigate()
 
   useLayoutEffect(() => {
@@ -32,6 +32,11 @@ export default function Sidebar() {
       setSizeType(['37', '38', '39', '40', '41', '42', '43', '44'])
     } else {
       setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
+    }
+    
+    window.addEventListener("scroll", () => setOpen(false))
+    return () => {
+      window.removeEventListener("scroll", () => setOpen(false))
     }
 
   }, [id])
