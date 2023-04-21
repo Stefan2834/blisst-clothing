@@ -88,7 +88,7 @@ export default function AdminDiscount() {
                 Codul:<span className='font-semibold'>{dis.code}</span>
               </div>
               <div>
-                Reducere:<span className='font-semibold'>{dis.value * 100} %</span>
+                Reducere:<span className='font-semibold'>{dis.value * 100}%</span>
               </div>
             </div>
           )

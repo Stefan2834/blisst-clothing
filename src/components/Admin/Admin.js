@@ -14,7 +14,7 @@ export default function Admin() {
           <span className='principal'> {det.name}</span>
         </div>
         <div className='admin-txt'>Bun venit pe pagina pentru admini!</div>
-        <div className='flex justify-around items-center'>
+        <div className='admin-bottom-flex'>
           <Link to='/main/admin/commands' className='admin-link'>Comenzi</Link>
           <Link to='/main/admin/discount' className='admin-link'>Discount-uri</Link>
           <Link to='/main/admin/products' className='admin-link'>Produse</Link>

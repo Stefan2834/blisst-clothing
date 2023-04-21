@@ -43,7 +43,9 @@
   justify-content: center;
   flex-direction: column;
   padding:10px 20px;
+  max-width: 100%;
   color:var(--color-oposite);
+  width:600px;
   background-color: var(--color);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
   font-family: 'Poppins', sans-serif;
@@ -52,8 +54,10 @@
   font-size:22px;
   font-weight: 600;
   margin:20px 0;
+  text-align: center;
 }
 .admin-txt {
+  text-align: center;
   font-size:20px;
   font-weight: 500;
   margin:10px 0;
@@ -62,11 +66,29 @@
   font-size:20px;
   font-weight: 600;
   padding:6px 12px;
-  margin:20px;
+  margin:20px 5px;
   background-color: var(--color-oposite);
   color:var(--color);
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.admin-bottom-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width:calc(100% - 40px);
+}
+
+@media screen and (max-width:600px) {
+  .admin-bottom-flex {
+    flex-direction: column;
+  }
+  .admin-link {
+    margin:10px 5px;
+  }
+  .admin-div {
+    width:calc(100% - 20px);
+  }
 }
 
 
@@ -128,6 +150,21 @@
 .admin-err-checkbox-dark {
   background-image: url(../Main/svg/delete.svg);
 }
+@media screen and (max-width:1000px) {
+  .admin-err-div {
+    width:100%;
+    padding:5px;
+  }
+}
+@media screen and (max-width:700px) {
+  .admin-err {
+    flex-direction: column;
+  }
+  .admin-err-title {
+    font-size:20px;
+    word-wrap: break-word;
+  }
+}
 
 
 /*----------Discount----------*/
@@ -158,6 +195,7 @@
 .adm-dis-title {
   font-size:22px;
   font-weight: 600;
+  text-align: center;
   color:var(--color-oposite);
   font-family: 'Poppins', sans-serif;
 }
