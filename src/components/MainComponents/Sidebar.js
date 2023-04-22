@@ -27,7 +27,7 @@ export default function Sidebar() {
       document.documentElement.style.setProperty("--principal2", '#79cbca')
     }
     setProductLoad(10)
-    setFilter({ ...filter, type: id, size: '' })
+    setFilter({ ...filter, type: id, })
     if (id.includes('foot')) {
       setSizeType(['37', '38', '39', '40', '41', '42', '43', '44'])
     } else {

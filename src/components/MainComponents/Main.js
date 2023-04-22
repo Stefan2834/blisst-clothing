@@ -4,17 +4,12 @@ import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Countdown from '../SmallComponents/Countdown'
-import Swal from 'sweetalert2'
-import { FaStar } from 'react-icons/fa'
+import Product from '../SmallComponents/Product'
 
 
 
 export default function Main() {
-  const {
-    currentUser,
-    favorite, dispatchFav,
-    server
-  } = useAuth()
+  const { server } = useAuth()
   const { darkTheme } = useDefault()
   const [suggestion, setSuggestion] = useState()
 
@@ -35,57 +30,9 @@ export default function Main() {
             <div className='flex items-center justify-start flex-col'>
               <div className='main-off-title'>Noi dam <span className='principal'>Moda</span></div>
               <div className='main-off-text'>Produsul zilei:</div>
-              <div className='sugg-div'>
-                {suggestion && (
-                  <>
-                    <Link to={`/product/${suggestion.id}`}>
-                      <div className="sugg-photo">
-                        <div style={{ backgroundImage: `url(${suggestion.photo})` }} className="sugg-img" />
-                      </div>
-                    </Link>
-                    <div className={suggestion.sex === 'man' ? 'sugg-det sugg-grad-man' : 'sugg-det sugg-grad-woman'}>
-                      <Link to={`/product/${suggestion.id}`}>
-                        <div className="sugg-left">
-                          <div className="sugg-name">
-                            {suggestion.nume}
-                          </div>
-                          <div className="sugg-price">
-                            {suggestion.discount > 0 ? (
-                              <>
-                                <div className="sugg-price-flex">
-                                  <div className="sugg-price-old">{suggestion.price}
-                                    <span className="sugg-span">Lei</span>
-                                  </div>
-                                  <span className="sugg-price"> - {suggestion.discount * 100} %</span>
-                                </div>
-                                <div className="sugg-price-new text-red-600">{suggestion.price + 0.01 - ((suggestion.price + 0.01) * suggestion.discount) - 0.01}
-                                  <span className="sugg-span text-red-600">Lei</span>
-                                </div>
-                              </>
-                            ) : (
-                              <>
-                                {suggestion.price} <span className="sugg-span">Lei</span>
-                              </>
-                            )}
-                          </div>
-                        </div>
-                      </Link>
-                      <div className="sugg-right">
-                        {favorite.some(item => item.id === suggestion.id) ? (
-                          <div className="sugg-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: suggestion } })} />
-                        ) : (
-                          <div className="sugg-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: suggestion, user: currentUser } })} />
-                        )}
-                        <div className="flex items-start justify-center">
-                          <FaStar size={16} className='principal' />
-                          <span className="font-medium text-sm">{(suggestion.star.total / suggestion.star.nr).toFixed(2)}</span>
-                          <span className="font-light text-sm">({suggestion.star.nr})</span>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
+              {suggestion && (
+                <Product product={suggestion} />
+              )}
               <Countdown />
             </div>
           </div>

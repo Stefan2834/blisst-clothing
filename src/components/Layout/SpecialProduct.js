@@ -263,6 +263,9 @@ export default function SpecialProduct() {
                   </>
                 )}
                 <div className='spec-id-text'>Id produs: <span className='spec-id'>{specialClothing.id}</span></div>
+                <div className='spec-id-text flex'>Culoare:
+                  <div className='spec-color' style={{ backgroundColor: specialClothing.color }} />
+                </div>
                 <div className='spec-id my-2'>Marimi</div>
                 <div className='spec-size-flex'>
                   {sizeType.map((sizeMap) => {
@@ -321,7 +324,7 @@ export default function SpecialProduct() {
               </div>
             </div>
             <div className='spec-white-space'>
-              {specialClothing.review.filter(item => item.user === currentUser.email). length === 0 ? (
+              {specialClothing.review.filter(item => item.user === currentUser.email).length === 0 ? (
                 <div className='spec-rev-text-dark'>Lasa un Review</div>
               ) : (
                 <div className='spec-rev-text-dark'>Editeaza</div>

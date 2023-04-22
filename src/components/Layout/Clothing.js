@@ -67,11 +67,6 @@ export default function Clothing() {
       setSortedProducts([...sort])
     })
   }, [filter.sort])
-  useEffect(() => {
-    startTransition(() => {
-      setFilter({ ...filter, search: '' })
-    })
-  }, [])
 
   const handleFilter = (product) => {
     if (filter.search !== "") {

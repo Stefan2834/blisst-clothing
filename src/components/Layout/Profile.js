@@ -197,25 +197,25 @@ export default function Profile() {
                             <div className="prof-txt">
                                 Culoare preferata:
                                 <div className="flex">
-                                    <div className="prof-det-square"
-                                        style={{ backgroundColor: "red" }}
-                                        onClick={() => setPreDet({ ...preDet, color: "red" })}
+                                    <div className={preDet.color === "#FFB30B" ? "prof-det-square-selected" : "prof-det-square"}
+                                        style={{ backgroundColor: "#FFB30B" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#FFB30B" })}
                                     />
-                                    <div className="prof-det-square"
-                                        style={{ backgroundColor: "#79cbca" }}
-                                        onClick={() => setPreDet({ ...preDet, color: "#79cbca" })}
+                                    <div className={preDet.color === "#FB5607" ? "prof-det-square-selected" : "prof-det-square"}
+                                        style={{ backgroundColor: "#FB5607" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#FB5607" })}
                                     />
-                                    <div className="prof-det-square"
-                                        style={{ backgroundColor: "#ea580c" }}
-                                        onClick={() => setPreDet({ ...preDet, color: "#ea580c" })}
+                                    <div className={preDet.color === "#FF0063" ? "prof-det-square-selected" : "prof-det-square"}
+                                        style={{ backgroundColor: "#FF0063" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#FF0063" })}
                                     />
-                                    <div className="prof-det-square"
-                                        style={{ backgroundColor: "green" }}
-                                        onClick={() => setPreDet({ ...preDet, color: "green" })}
+                                    <div className={preDet.color === "#8338EC" ? "prof-det-square-selected" : "prof-det-square"}
+                                        style={{ backgroundColor: "#8338EC" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#8338EC" })}
                                     />
-                                    <div className="prof-det-square"
-                                        style={{ backgroundColor: "#e684ae" }}
-                                        onClick={() => setPreDet({ ...preDet, color: "#e684ae" })}
+                                    <div className={preDet.color === "#3A86FF" ? "prof-det-square-selected" : "prof-det-square"}
+                                        style={{ backgroundColor: "#3A86FF" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#3A86FF" })}
                                     />
                                 </div>
                             </div>

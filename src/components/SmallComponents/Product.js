@@ -13,7 +13,7 @@ export default function Product(props) {
   //pentru fiecare produs din favorite, paginile cu haine,
   //produsul zilei si top reducere
 
-
+  console.log(product.photo)
   return (
     <div className='cloth-div'>
       <Link to={`/product/${product.id}`}>
