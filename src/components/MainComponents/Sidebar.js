@@ -1,6 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 
 export default function Sidebar() {
@@ -10,6 +9,7 @@ export default function Sidebar() {
   const [expand, setExpand] = useState()
   const [open, setOpen] = useState(true)
   const navigate = useNavigate()
+  const colors = ['#1c1919', '#0091e5', '#00d2ff', '#1200ff', '#72ff00', '#fd6500', '#ff00f0', '#a200ff', '#ea0000', '#00ffd8', '#eee', '#fff600']
 
   useLayoutEffect(() => {
     document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
@@ -33,10 +33,11 @@ export default function Sidebar() {
     } else {
       setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
     }
-    
+
     window.addEventListener("scroll", () => setOpen(false))
     return () => {
       window.removeEventListener("scroll", () => setOpen(false))
+      setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, search: '' })
     }
 
   }, [id])
@@ -171,48 +172,17 @@ export default function Sidebar() {
             )}
           </div>
           <div className={expand === 'Culori' ? 'side-overflow-expand' : "side-overflow"}>
-            <label className="m-1">
-              <input type='checkbox' className="side-size-check"
-                checked={filter.color === 'red'}
-                onChange={e => startTransition(() => !e.target.checked ? setFilter({ ...filter, color: '' }) : setFilter({ ...filter, color: 'red' }))}
-              />
-              <div className="side-colors side-selection side-color1"></div>
-            </label>
-            <label className="m-1">
-              <input type='checkbox' className="side-size-check"
-                checked={filter.color === 'blue'}
-                onChange={e => startTransition(() => !e.target.checked ? setFilter({ ...filter, color: '' }) : setFilter({ ...filter, color: 'blue' }))}
-              />
-              <div className="side-colors side-selection side-color2"></div>
-            </label>
-            <label className="m-1">
-              <input type='checkbox' className="side-size-check"
-                checked={filter.color === 'pink'}
-                onChange={e => startTransition(() => !e.target.checked ? setFilter({ ...filter, color: '' }) : setFilter({ ...filter, color: 'pink' }))}
-              />
-              <div className="side-colors side-selection side-color3"></div>
-            </label>
-            <label className="m-1">
-              <input type='checkbox' className="side-size-check"
-                checked={filter.color === 'orange'}
-                onChange={e => startTransition(() => !e.target.checked ? setFilter({ ...filter, color: '' }) : setFilter({ ...filter, color: 'orange' }))}
-              />
-              <div className="side-colors side-selection side-color4"></div>
-            </label>
-            <label className="m-1">
-              <input type='checkbox' className="side-size-check"
-                checked={filter.color === 'green'}
-                onChange={e => startTransition(() => !e.target.checked ? setFilter({ ...filter, color: '' }) : setFilter({ ...filter, color: 'green' }))}
-              />
-              <div className="side-colors side-selection side-color5"></div>
-            </label>
-            <label className="m-1">
-              <input type='checkbox' className="side-size-check"
-                checked={filter.color === 'black'}
-                onChange={e => startTransition(() => !e.target.checked ? setFilter({ ...filter, color: '' }) : setFilter({ ...filter, color: 'black' }))}
-              />
-              <div className="side-colors side-selection side-color6"></div>
-            </label>
+            {colors.map(color => {
+              return (
+                <label>
+                  <input type='checkbox' className="side-size-check"
+                    checked={filter.color === color}
+                    onChange={e => startTransition(() => !e.target.checked ? setFilter({ ...filter, color: '' }) : setFilter({ ...filter, color: color }))}
+                  />
+                  <div className="side-colors side-selection" style={{backgroundColor:color}} />
+                </label>
+              )
+            })}
           </div>
           <div className='side-expand' onClick={() => handleExpand('Cauta')}>
             <span className='side-selection side-selection'>Cauta</span>

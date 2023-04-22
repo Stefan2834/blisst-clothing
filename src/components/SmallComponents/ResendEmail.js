@@ -44,7 +44,8 @@ export default function ResendEmail() {
       setResponse(err.message)
     }
     setLoading(false)
-  }
+  }//daca emailul de verificare nu a fost trimis(foarte putin probabil) sau a fost sters din greseala, 
+  //emailul se retrimite iar
 
 
   return (

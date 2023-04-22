@@ -170,8 +170,6 @@
         box-shadow: 2px 2px 4px inset black;
     }  
     .foo-top {
-        flex-direction: column;
-        flex-wrap: nowrap;
         align-items: center;
     }
 }
@@ -181,6 +179,10 @@
     }
     .foo-left {
         width:100%;
+    }
+    .foo-collumn {
+        margin:10px 0;
+        width:auto;
     }
     .foo-content {
         width:100%;

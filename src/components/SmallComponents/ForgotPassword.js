@@ -35,7 +35,7 @@ export default function ForgotPassword() {
       setResponse(err.message)
     }
     setLoading(false)
-  }
+  }//trimite un email catre emailul introdus, pentru resetarea parolei
 
   return (
     <>

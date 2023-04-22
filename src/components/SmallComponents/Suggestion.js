@@ -10,6 +10,7 @@ export default function Suggestion(props) {
   const [loading, setLoading] = useState(true)
   const { server, product } = useAuth()
 
+  //componentul pentru afisare produsul zilei sau top reducere
 
   useLayoutEffect(() => {
     if (type === 'daily') {
@@ -30,7 +31,7 @@ export default function Suggestion(props) {
       setSuggestion(discount)
       setLoading(false)
     }
-  }, [])
+  }, [])//daca props.type === daily afiseaza produsul zile, altfel afiseaza produsul cu cel mai mare discount
 
 
 

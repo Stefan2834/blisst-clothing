@@ -46,15 +46,12 @@ export default function Connect() {
         Cookies.remove('userData')
         setCurrentUser()
         setLoading(false)
-    }, [])
+    }, [])// daca ai accesat aceasta pagina, sterge cosul favoritele si comenziile urilizatorului, si deconecteaza-l
 
 
     const handleRadio = (e) => {
         setType(e.target.value);
     }
-    // setTimeout(() => {
-    //     setActiveForm(c => !c)
-    // }, 1000)
     async function handleSignUp(e) {
         e.preventDefault()
         if (signPassRef.current.value !== signPassConfirmRef.current.value) {
@@ -98,7 +95,7 @@ export default function Connect() {
             }
             setLoading(false);
         }
-    }
+    }//creeaza un cont pt utilizator
     async function handleLogIn(e) {
         e.preventDefault()
         try {
@@ -138,7 +135,7 @@ export default function Connect() {
             setError(err);
         }
         setLoading(false)
-    }
+    }//conecteaza utilizatorul
     return (
 
         <div className='acc-main'>

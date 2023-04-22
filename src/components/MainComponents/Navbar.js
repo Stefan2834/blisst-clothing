@@ -36,7 +36,7 @@ export default function Navbar() {
     } catch {
       setError('Failed to log out')
     }
-  }
+  }//deconecteaza utilizatorul, si trimite-l pe pagina de connect
   function handleDeleteCart(e, product) {
     e.preventDefault();
     Swal.fire({
@@ -53,7 +53,7 @@ export default function Navbar() {
         dispatchCart({ type: 'cartRemove', payload: { cart: product } })
       }
     });
-  }
+  }// daca utilizatorul vrea sa stearga produsul din cos, intreaba-l daca e sigur si apoi sterge-l
   function handleDeleteFav(e, product) {
     e.preventDefault()
     Swal.fire({
@@ -70,7 +70,7 @@ export default function Navbar() {
         dispatchFav({ type: 'favRemove', payload: { fav: product } })
       }
     });
-  }
+  }//la fel ca la handleDeleteCart, dar pentru favorite
 
 
 
@@ -81,7 +81,7 @@ export default function Navbar() {
     return () => {
       document.removeEventListener('scroll', () => { setOpen(false) })
     }
-  }, [pathname]);
+  }, [pathname]);//daca utilizatorul da scroll, sau schimba pagina, inchide toate dropdown-urile
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -100,7 +100,7 @@ export default function Navbar() {
       window.removeEventListener('click', handleClickOutside);
       window.removeEventListener('scroll', handleScroll)
     };
-  }, [navIconRefs]);
+  }, [navIconRefs]);//logica pentru deschidere/inchidere drop down-uri
 
   return (
     <>

@@ -15,7 +15,6 @@ export default function Clothing() {
   useEffect(() => {
     const sort = [...product]
     startTransition(() => {
-
       if (filter.sort === 'price+') {
         sort.sort((a, b) => {
           const priceA = a.price + 0.01 - ((a.price + 0.01) * a.discount) - 0.01
@@ -87,8 +86,10 @@ export default function Clothing() {
           (filter.maxPrice >= productDiscount && filter.minPrice === '') ||
           (filter.minPrice <= productDiscount && filter.maxPrice === '')) {
           if (filter.size === '' || product.size[filter.size] !== 0) {
-            noProduct += 1;
-            return true
+            if (filter.color === product.color || filter.color === "") {
+              noProduct += 1;
+              return true
+            }
           }
         }
       }

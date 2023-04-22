@@ -1,15 +1,12 @@
 import React, { useState, useReducer, useLayoutEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 import Reducer from '../../contexts/AuthContext'
 import { FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom'
 
-import tricouBlisst1 from '../../clothing/man/tricouBlisst1.jpg'
-import tricouBlisst2 from '../../clothing/man/tricouBlisst2.jpg'
-import tricouBlisst3 from '../../clothing/man/tricouBlisst3.jpg'
+
 
 export default function SpecialProduct() {
   const { idPath } = useParams()
@@ -18,19 +15,16 @@ export default function SpecialProduct() {
   const [sizeType, setSizeType] = useState([])
   const [cartSpec, dispatch] = useReducer(Reducer, { size: '', number: 1 })
   const [specialClothing, setSpecialClothing] = useState()
-  const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false, nr: 0 })
+  const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false })
   const [photoSlider, setPhotoSlider] = useState()
   const [zoom, setZoom] = useState(false);
-  const photos = [tricouBlisst1, tricouBlisst2, tricouBlisst3]
+  const navigate = useNavigate()
 
   useLayoutEffect(() => {
     startTransition(() => {
       const special = product.find(item => item.id === idPath)
-      setSpecialClothing(special)
-      if (currentUser && special) {
-        setReview({ ...review, nr: special.review.filter(item => item.user === currentUser.email).length })
-      }
       if (special) {
+        setSpecialClothing(special)
         document.title = `Blisst — ${special.nume}`
         setPhotoSlider(special.photo)
         const type = special.type
@@ -41,6 +35,7 @@ export default function SpecialProduct() {
         }
       } else {
         document.title = `Blisst - Produs inexistent`
+        navigate('/main/productNotFound')
       }
       document.addEventListener('scroll', () => setZoom(false))
 
@@ -48,7 +43,7 @@ export default function SpecialProduct() {
         document.removeEventListener('scroll', () => setZoom(false))
       }
     })
-  }, [idPath])
+  }, [idPath])//cauta produsul cu id-ul egal cu idPath, iar daca nu exista, muta utilizatorul pe pagina 404
 
   const handleStar = (ratingValue) => {
     if (ratingValue === 1) {
@@ -127,7 +122,7 @@ export default function SpecialProduct() {
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Ok',
     })
-  }
+  }// logica pentru editarea unui review mai vechi
   const handleSubmit = (e) => {
     e.preventDefault()
     if (review.star === 0) {
@@ -143,9 +138,7 @@ export default function SpecialProduct() {
     setReview({ ...review, text: '' }) // goleste inputul
     const idProduct = product.findIndex(item => {
       return item.id === idPath
-    }); // id-ul produsului respectiv
-    setReview({ ...review, nr: 1 });
-    //numara review-urile
+    }); // id-ul produsului respectiv  
     startTransition(() => {
       setSpecialClothing(p => { return { ...p, star: { total: p.star.total + review.star, nr: p.star.nr + 1 }, review: [{ text: review.text, user: currentUser.email, anonim: review.anonim, star: review.star }, ...p.review] } })
       setProduct(c => c.map((prod, index) => {
@@ -163,7 +156,7 @@ export default function SpecialProduct() {
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Ok',
     })
-  }
+  }//logica pentru postare review
   const handleAddToCart = () => {
     if (currentUser) {
       if (cartSpec.size === '' || cartSpec.number === '') {
@@ -198,7 +191,7 @@ export default function SpecialProduct() {
         }
       })
     }
-  }
+  }// logica pentru adaugarea unui produs in cos, daca s-a selectat marimea si pretul corect
   return (
     <>
       {isPending && (
@@ -207,7 +200,7 @@ export default function SpecialProduct() {
         </div>
       )}
       <div className='special'>
-        {specialClothing ? (
+        {specialClothing && (
           <>
             <div className='special-div'>
               {zoom && (
@@ -223,7 +216,8 @@ export default function SpecialProduct() {
                     className='spec-slider-photo'
                     alt='Poza' onClick={() => setPhotoSlider(specialClothing.photo)}
                   />
-                  {photos.map((photo) => {
+                  {specialClothing.sliderPhoto.map((photo) => {
+                    console.log(photo)
                     return (
                       <img src={photo}
                         className='spec-slider-photo'
@@ -327,7 +321,7 @@ export default function SpecialProduct() {
               </div>
             </div>
             <div className='spec-white-space'>
-              {review.nr === 0 ? (
+              {specialClothing.review.filter(item => item.user === currentUser.email). length === 0 ? (
                 <div className='spec-rev-text-dark'>Lasa un Review</div>
               ) : (
                 <div className='spec-rev-text-dark'>Editeaza</div>
@@ -339,7 +333,7 @@ export default function SpecialProduct() {
                 <div className='spec-review-left-content'>
                   {currentUser ? (
                     <>
-                      {review.nr === 0 ? (
+                      {specialClothing.review.filter(item => item.user === currentUser.email).length === 0 ? (
                         <>
                           <div className='flex w-full justify-center'>
                             {[...Array(5)].map((_, i) => {
@@ -483,16 +477,6 @@ export default function SpecialProduct() {
                 )}
               </div>
             </div>
-          </>
-        ) : (
-          <>
-            {!isPending && (
-              <div className="spec-deleted">
-                <div className='spec-deleted-text'>
-                  Acest produs nu exista, sau a fost sters
-                </div>
-              </div>
-            )}
           </>
         )}
       </div>

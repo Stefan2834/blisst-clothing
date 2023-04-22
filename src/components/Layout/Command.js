@@ -20,7 +20,7 @@ export default function Command() {
       newState[commandIndex] = selectedProduct
       return newState
     })
-  }
+  }//schimba produsul selectat pt fiecare comanda
 
   return (
     <>
@@ -39,10 +39,11 @@ export default function Command() {
             </div>
           </div>
           {[...command].reverse().map((command, index) => {
+            // afiseaza comenziile, dar in ordine inversa, adica de la cea mai recenta in jos
             const selectedProduct = selectedProducts[index] || command.product[0]
             console.log(index, load)
             if (load > index) {
-              return (                                                                                  
+              return (
                 <div className='comm-element'>
                   <div className='comm-left'>
                     <div className='comm-left-top'>
@@ -69,8 +70,8 @@ export default function Command() {
                     </div>
                     <div className='cart-product'>
                       <Link to={`/product/${selectedProduct.id}`}>
-                        <div className='cart-photo'
-                          style={{ backgroundImage: `url(${selectedProduct.photo})` }}
+                        <img className='cart-photo'
+                          src={selectedProduct.photo} alt='Poza'
                         />
                       </Link>
                       <Link to={`/product/${selectedProduct.id}`} className='cart-det'>
@@ -112,7 +113,7 @@ export default function Command() {
                       <div className="comm-txt">{command.details.email}</div>
                     </div>
                     <div className="comm-title">Total:
-                      <div className="comm-txt">{command.price.total}</div>
+                      <div className="comm-txt">{command.price.total} Lei</div>
                     </div>
                     <div className="comm-title">Metoda de livrare:
                       <div className="comm-txt">{command.method}</div>

@@ -28,7 +28,7 @@ export default function Footer() {
       confirmButtonText: 'Ok',
     })
     handleModify(false)
-  }
+  }//daca utilizatorul vrea se se dezaboneze de la newsLetter, cheama functia handleModify cu parametrul egal cu adevarat respectiv fals
   const handleModify = (value) => {
     const newDet = { ...det, newsLetter: value }
     setDet(newDet)
@@ -42,7 +42,7 @@ export default function Footer() {
         }
       })
       .catch(err => console.error(err))
-  }
+  }// modifica in baza de date, datele de la newsLetter
 
 
   return (

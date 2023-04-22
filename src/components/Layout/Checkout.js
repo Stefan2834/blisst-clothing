@@ -20,7 +20,7 @@ export default function Checkout() {
   const [error, setError] = useState({ adress: '', contact: '', pay: '' })
   const [cartPrice, setCartPrice] = useState(0)
   const [method, setMethod] = useState({ card: false, ramburs: false })
-  const [discount, setDiscount] = useState({value:0, code:''})
+  const [discount, setDiscount] = useState({ value: 0, code: '' })
   const [preDet, setPreDet] = useState({})
   const [productPrice, setProductPrice] = useState(0)
   const discountValue = useRef()
@@ -36,7 +36,7 @@ export default function Checkout() {
       county: det.county
     })
     setEdit({ adress: false, contact: false, pay: false })
-  }
+  }//daca utilizatorul nu modifica informatiile, nu le salva
   const saveInfo = e => {
     e.preventDefault()
     startTransition(() => {
@@ -66,7 +66,7 @@ export default function Checkout() {
         })
       setEdit({ adress: false, contact: false, pay: false })
     })
-  }
+  }//daca utilizatorul apasa salveaza,salveaza informatiile
   const handleNext = () => {
     let actualError = { adress: '', contact: '', pay: '' }
     if (det.info === '' || det.county === '') {
@@ -91,14 +91,14 @@ export default function Checkout() {
       })
     }
     setError({ ...actualError })
-  }
+  }//daca utilizatorul apasa continuare, verifica daca informatiile sunt corecte,iar apoi schimba pagina
   const handleDiscount = (e) => {
     e.preventDefault()
     const value = discountValue.current.value
     axios.post(`${server}/discount`, { discountCode: value, email: currentUser.email })
       .then(info => {
-        if(info.data.success === true) {
-          setDiscount({value: info.data.discount,code:value})
+        if (info.data.success === true) {
+          setDiscount({ value: info.data.discount, code: value })
           Swal.fire({
             title: 'Felicitari',
             text: `Reducerea de ${info.data.discount * 100}% a fost aplicata cu succes`,
@@ -118,7 +118,7 @@ export default function Checkout() {
       })
       .catch(err => console.error(err.error))
     discountValue.current.value = '';
-  }
+  }//verifica daca discount-ul este bun, si daca a mai fost folosit de acest utilizator
   const handleNewCommand = () => {
     Swal.fire({
       title: 'Esti sigur?',
@@ -132,8 +132,8 @@ export default function Checkout() {
     }).then((result) => {
       if (result.isConfirmed) {
         const date = new Date();
-        if(discount.value !== 0) {
-          axios.post(`${server}/discountOnce`, {email:currentUser.email, code:discount.code})
+        if (discount.value !== 0) {
+          axios.post(`${server}/discountOnce`, { email: currentUser.email, code: discount.code })
         }
         const commandData = {
           method: method.card ? 'Card' : 'Ramburs',
@@ -179,7 +179,7 @@ export default function Checkout() {
         navigate('/main/command')
       }
     })
-  }
+  }//plaseaza comanda(adica salveaza comanda in baza de date la user/uid/command si la commands), trimite un email cu comanda, si sterge produsele din cos.
   const handleUpdateSizes = () => {
     let newProduct = product
     cart.forEach(cart => {
@@ -192,7 +192,7 @@ export default function Checkout() {
       })
     })
     setProduct(newProduct)
-  }
+  }//dupa ce comanda a fost plasata, produsele cumparate se scad din stoc
   const handleDeleteCart = product => {
     Swal.fire({
       title: 'Esti sigur?',
@@ -208,7 +208,7 @@ export default function Checkout() {
         dispatchCart({ type: 'cartRemove', payload: { cart: product } })
       }
     });
-  }
+  }//sterge un produs din cos
 
   useEffect(() => {
     startTransition(() => {
@@ -227,7 +227,7 @@ export default function Checkout() {
         navigate('/main')
       }
     })
-  }, [cart, discount])
+  }, [cart, discount])//cand cosul sau discount-ul se modifica, recalculeaza pretul produselor
 
   useEffect(() => {
     document.title = 'Blisst — Plaseaza comanda'
@@ -266,6 +266,7 @@ export default function Checkout() {
           </div>
         </div>
         {actualPage === 1 ? (
+          // pagina 1 (detalii comanda)
           <>
             <div className='check-page'>
               <div className='check-page-top'>
@@ -418,6 +419,7 @@ export default function Checkout() {
             <div className='check-continue' onClick={handleNext}>Mai departe</div>
           </>
         ) : (
+          // pagina 2 (editeaza informatiile, cosul si adauga discount)
           <>
             <div className='check-sumar-div'>
               <div className='check-sumar-flex'>
@@ -460,8 +462,8 @@ export default function Checkout() {
                 return (
                   <div className='cart-product'>
                     <Link to={`/product/${product.id}`}>
-                      <div className='cart-photo'
-                        style={{ backgroundImage: `url(${product.photo})` }}
+                      <img className='cart-photo'
+                        src={product.photo} alt='Poza'
                       />
                     </Link>
                     <Link to={`/product/${product.id}`} className='cart-det'>

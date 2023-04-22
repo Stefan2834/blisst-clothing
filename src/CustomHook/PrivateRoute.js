@@ -6,6 +6,9 @@ export default function PrivateRoute({ element: Element}) {
   const { currentUser } = useAuth()
   const [isLogged] = useState(currentUser)
 
+  //daca utilizatorul nu este conectar, si incearca sa acceseze o pagina de tip fav, cart etc,
+  //este retrimis pe main
+
   
 
   return isLogged ? (

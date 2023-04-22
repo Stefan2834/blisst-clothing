@@ -5,6 +5,7 @@ import { useDefault } from '../../contexts/DefaultContext'
 
 export default function NotFound() {
   const { darkTheme } = useDefault()
+  //daca pagina nu exista, afiseaza asta
 
   return (
     <div className='not'>

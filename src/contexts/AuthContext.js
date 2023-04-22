@@ -2,16 +2,33 @@ import React, { createContext, useContext, useEffect, useState, useReducer } fro
 import axios from 'axios';
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2';
-import manTshirtBlack from '../clothing/man/barbati-shirt.jpg'
-import bluza from '../clothing/man/bluza.jpg'
-import tricouGalben from '../clothing/man/bluza-galbena.jpg'
-import hanoracAlb from '../clothing/man/hanorac-alb.jpg'
-import hanoracGalben from '../clothing/man/hanorac-galbne.jpg'
-import hanoracNegru from '../clothing/man/hanorac-negru.jpg'
-import hanoracRosu from '../clothing/man/hanorac-rosu.jpg'
-import tricouAlb from '../clothing/man/tricou-alb.jpg'
-import tricouGri from '../clothing/man/tricou-negru.jpg'
-import tricouBlisst from '../clothing/man/tricouBlisst3.jpg'
+import blackTeeFront from '../clothing/man/black 1c1919/default tee front.png'
+import blueTeeFront from '../clothing/man/blue 0091e5/default tee front.png'
+import cyanTeeFront from '../clothing/man/cyan 00d2ff/default tee front.png'
+import darkBlueTeeFront from '../clothing/man/dark blue 1200ff/default tee front.png'
+import greenTeeFront from '../clothing/man/green 72ff00/default tee front.png'
+import orangeTeeFront from '../clothing/man/orange fd6500/default tee front.png'
+import pinkTeeFront from '../clothing/man/pink ff00f0/default tee front.png'
+import purpleTeeFront from '../clothing/man/purple a200ff/default tee front.png'
+import redTeeFront from '../clothing/man/red ea0000/default tee front.png'
+import turqoiseTeeFront from '../clothing/man/turqoise 00ffd8/default tee front.png'
+import whiteTeeFront from '../clothing/man/white fff/default tee front.png'
+import yellowTeeFront from '../clothing/man/yellow ff600/default tee front.png'
+import blackTeeBack from '../clothing/man/black 1c1919/default tee back.png'
+import blueTeeBack from '../clothing/man/blue 0091e5/default tee back.png'
+import cyanTeeBack from '../clothing/man/cyan 00d2ff/default tee back.png'
+import darkBlueTeeBack from '../clothing/man/dark blue 1200ff/default tee back.png'
+import greenTeeBack from '../clothing/man/green 72ff00/default tee back.png'
+import orangeTeeBack from '../clothing/man/orange fd6500/default tee back.png'
+import pinkTeeBack from '../clothing/man/pink ff00f0/default tee back.png'
+import purpleTeeBack from '../clothing/man/purple a200ff/default tee back.png'
+import redTeeBack from '../clothing/man/red ea0000/default tee back.png'
+import turqoiseTeeBack from '../clothing/man/turqoise 00ffd8/default tee back.png'
+import whiteTeeBack from '../clothing/man/white fff/default tee back.png'
+import yellowTeeBack from '../clothing/man/yellow ff600/default tee back.png'
+
+
+
 
 export const AuthContext = createContext();
 export function useAuth() {
@@ -113,12 +130,14 @@ export default function Reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [product, setProduct] = useState([{
-    nume: 'Tricou Negru milsugeti',
+    nume: 'Tricou simplu',
     price: 29.99,
     discount: 0.2,
-    photo: manTshirtBlack,
+    photo: blackTeeFront,
+    sliderPhoto:[blackTeeBack,blackTeeBack,blackTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
+    color: '#1c1919',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
@@ -132,26 +151,30 @@ export function AuthProvider({ children }) {
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '0'
   }, {
-    nume: 'Tricou Albastru',
+    nume: 'Tricou simplu',
     price: 29.99,
     discount: 0.4,
-    photo: tricouGri,
+    photo: blueTeeFront,
+    sliderPhoto:[blueTeeBack,blueTeeBack,blueTeeBack],
     sex: 'man',
-    type: 'barbati foot adidasi',
+    type: 'barbati top tricouri',
+    color: '#0091e5',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
     ],
     star: { total: 6, nr: 2 },
-    size: { 37: 0, 38: 4, 39: 6, 40: 11, 41: 2, 42: 9, 43: 10, 44: 0, },
+    size: { XS:4, S:0, M:5, L:10, XL:2, XXL:5 },
     id: '1'
   }, {
-    nume: 'Bluza Dungi',
+    nume: 'Tricou simplu',
     price: 79.99,
     discount: 0,
-    photo: bluza,
+    photo: cyanTeeFront,
+    sliderPhoto:[cyanTeeBack,cyanTeeBack,cyanTeeBack],
     sex: 'man',
-    type: 'barbati top bluze',
+    type: 'barbati top tricouri',
+    color: '#00d2ff',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -160,12 +183,14 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 5, M: 0, L: 9, XL: 0, XXL: 4 },
     id: '2'
   }, {
-    nume: 'Tricou Pac Man',
+    nume: 'Tricou simplu',
     price: 49.99,
     discount: 0.2,
-    photo: tricouGalben,
+    photo: darkBlueTeeFront,
+    sliderPhoto:[darkBlueTeeBack,darkBlueTeeBack,darkBlueTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
+    color: '#1200ff',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -174,12 +199,14 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 5, M: 0, L: 9, XL: 1, XXL: 4 },
     id: '3'
   }, {
-    nume: 'Hanorac Alb',
+    nume: 'Tricou simplu',
     price: 149.99,
     discount: 0.5,
-    photo: hanoracAlb,
-    sex: 'woman',
-    type: 'femei top bluze',
+    photo: greenTeeFront,
+    sliderPhoto:[greenTeeBack,greenTeeBack,greenTeeBack],
+    sex: 'man',
+    type: 'barbati top tricouri',
+    color: '#72ff00',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -188,12 +215,14 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '4'
   }, {
-    nume: 'Hanorac Galben',
+    nume: 'Tricou simplu',
     price: 99.99,
     discount: 0.1,
-    photo: hanoracGalben,
+    photo: orangeTeeFront,
+    sliderPhoto:[orangeTeeBack,orangeTeeBack,orangeTeeBack],
     sex: 'man',
-    type: 'barbati top bluze',
+    type: 'barbati top tricouri',
+    color: '#fd6500',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -202,12 +231,14 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '5'
   }, {
-    nume: 'Hanorac Negru',
+    nume: 'Tricou simplu',
     price: 129.99,
     discount: 0,
-    photo: hanoracNegru,
+    photo: pinkTeeFront,
+    sliderPhoto:[pinkTeeBack,pinkTeeBack,pinkTeeBack],
     sex: 'man',
-    type: 'barbati top bluze',
+    type: 'barbati top tricouri',
+    color: '#ff00f0',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -216,12 +247,14 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 5, M: 0, L: 0, XL: 1, XXL: 4 },
     id: '6'
   }, {
-    nume: 'Hanorac Rosu',
+    nume: 'Tricou simplu',
     price: 89.99,
     discount: 0,
-    photo: hanoracRosu,
+    photo: purpleTeeFront,
+    sliderPhoto:[purpleTeeBack,purpleTeeBack,purpleTeeBack],
     sex: 'man',
-    type: 'barbati top bluze',
+    type: 'barbati top tricouri',
+    color: '#a200ff',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -230,12 +263,14 @@ export function AuthProvider({ children }) {
     size: { XS: 0, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '7'
   }, {
-    nume: 'Tricou Alb',
+    nume: 'Tricou simplu',
     price: 49.99,
     discount: 0,
-    photo: tricouAlb,
+    photo: redTeeFront,
+    sliderPhoto:[redTeeBack,redTeeBack,redTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
+    color: '#ea0000',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
@@ -244,12 +279,14 @@ export function AuthProvider({ children }) {
     size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
     id: '8'
   }, {
-    nume: 'Tricou Blisst alb',
+    nume: 'Tricou simplu',
     price: 99.99,
     discount: 0.1,
-    photo: tricouBlisst,
+    photo: turqoiseTeeFront,
+    sliderPhoto:[turqoiseTeeBack,turqoiseTeeBack,turqoiseTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
+    color: '#00ffd8',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
@@ -263,12 +300,14 @@ export function AuthProvider({ children }) {
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
     id: '9'
   }, {
-    nume: 'Tricou Negru',
+    nume: 'Tricou simplu',
     price: 29.99,
     discount: 0.2,
-    photo: manTshirtBlack,
+    photo: whiteTeeFront,
+    sliderPhoto:[whiteTeeBack,whiteTeeBack,whiteTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
+    color: '#eee',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
@@ -280,438 +319,23 @@ export function AuthProvider({ children }) {
     ],
     star: { total: 21, nr: 7 },
     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '0'
+    id: '10'
   }, {
-    nume: 'Tricou Albastru',
-    price: 29.99,
-    discount: 0.4,
-    photo: tricouGri,
-    sex: 'man',
-    type: 'barbati foot adidasi',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { 37: 0, 38: 4, 39: 6, 40: 11, 41: 2, 42: 9, 43: 10, 44: 0, },
-    id: '1'
-  }, {
-    nume: 'Bluza Dungi',
-    price: 79.99,
-    discount: 0,
-    photo: bluza,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 9, XL: 0, XXL: 4 },
-    id: '2'
-  }, {
-    nume: 'Tricou Pac Man',
-    price: 49.99,
-    discount: 0.2,
-    photo: tricouGalben,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 9, XL: 1, XXL: 4 },
-    id: '3'
-  }, {
-    nume: 'Hanorac Alb',
-    price: 149.99,
-    discount: 0.5,
-    photo: hanoracAlb,
-    sex: 'woman',
-    type: 'femei top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '4'
-  }, {
-    nume: 'Hanorac Galben',
-    price: 99.99,
-    discount: 0.1,
-    photo: hanoracGalben,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '5'
-  }, {
-    nume: 'Hanorac Negru',
-    price: 129.99,
-    discount: 0,
-    photo: hanoracNegru,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 0, XL: 1, XXL: 4 },
-    id: '6'
-  }, {
-    nume: 'Hanorac Rosu',
-    price: 89.99,
-    discount: 0,
-    photo: hanoracRosu,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 0, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '7'
-  }, {
-    nume: 'Tricou Alb',
-    price: 49.99,
-    discount: 0,
-    photo: tricouAlb,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
-    id: '8'
-  }, {
-    nume: 'Tricou Blisst alb',
-    price: 99.99,
-    discount: 0.1,
-    photo: tricouBlisst,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    ],
-    star: { total: 21, nr: 7 },
-    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '9'
-  }, {
-    nume: 'Tricou Negru',
-    price: 29.99,
-    discount: 0.2,
-    photo: manTshirtBlack,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    ],
-    star: { total: 21, nr: 7 },
-    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '0'
-  }, {
-    nume: 'Tricou Albastru',
+    nume: 'Tricou simplu',
     price: 29.99,
     discount: 0.4,
-    photo: tricouGri,
-    sex: 'man',
-    type: 'barbati foot adidasi',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { 37: 0, 38: 4, 39: 6, 40: 11, 41: 2, 42: 9, 43: 10, 44: 0, },
-    id: '1'
-  }, {
-    nume: 'Bluza Dungi',
-    price: 79.99,
-    discount: 0,
-    photo: bluza,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 9, XL: 0, XXL: 4 },
-    id: '2'
-  }, {
-    nume: 'Tricou Pac Man',
-    price: 49.99,
-    discount: 0.2,
-    photo: tricouGalben,
+    photo: yellowTeeFront,
+    sliderPhoto:[yellowTeeBack,yellowTeeBack,yellowTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
+    color: '#fff600',
     spec: 'Tricou negru din bumbac',
     review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
     { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
     ],
     star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 9, XL: 1, XXL: 4 },
-    id: '3'
-  }, {
-    nume: 'Hanorac Alb',
-    price: 149.99,
-    discount: 0.5,
-    photo: hanoracAlb,
-    sex: 'woman',
-    type: 'femei top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '4'
-  }, {
-    nume: 'Hanorac Galben',
-    price: 99.99,
-    discount: 0.1,
-    photo: hanoracGalben,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '5'
-  }, {
-    nume: 'Hanorac Negru',
-    price: 129.99,
-    discount: 0,
-    photo: hanoracNegru,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 0, XL: 1, XXL: 4 },
-    id: '6'
-  }, {
-    nume: 'Hanorac Rosu',
-    price: 89.99,
-    discount: 0,
-    photo: hanoracRosu,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 0, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '7'
-  }, {
-    nume: 'Tricou Alb',
-    price: 49.99,
-    discount: 0,
-    photo: tricouAlb,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
-    id: '8'
-  }, {
-    nume: 'Tricou Blisst alb',
-    price: 99.99,
-    discount: 0.1,
-    photo: tricouBlisst,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    ],
-    star: { total: 21, nr: 7 },
-    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '9'
-  }, {
-    nume: 'Tricou Negru',
-    price: 29.99,
-    discount: 0.2,
-    photo: manTshirtBlack,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    ],
-    star: { total: 21, nr: 7 },
-    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '0'
-  }, {
-    nume: 'Tricou Albastru',
-    price: 29.99,
-    discount: 0.4,
-    photo: tricouGri,
-    sex: 'man',
-    type: 'barbati foot adidasi',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { 37: 0, 38: 4, 39: 6, 40: 11, 41: 2, 42: 9, 43: 10, 44: 0, },
-    id: '1'
-  }, {
-    nume: 'Bluza Dungi',
-    price: 79.99,
-    discount: 0,
-    photo: bluza,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 9, XL: 0, XXL: 4 },
-    id: '2'
-  }, {
-    nume: 'Tricou Pac Man',
-    price: 49.99,
-    discount: 0.2,
-    photo: tricouGalben,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 9, XL: 1, XXL: 4 },
-    id: '3'
-  }, {
-    nume: 'Hanorac Alb',
-    price: 149.99,
-    discount: 0.5,
-    photo: hanoracAlb,
-    sex: 'woman',
-    type: 'femei top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '4'
-  }, {
-    nume: 'Hanorac Galben',
-    price: 99.99,
-    discount: 0.1,
-    photo: hanoracGalben,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '5'
-  }, {
-    nume: 'Hanorac Negru',
-    price: 129.99,
-    discount: 0,
-    photo: hanoracNegru,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 0, L: 0, XL: 1, XXL: 4 },
-    id: '6'
-  }, {
-    nume: 'Hanorac Rosu',
-    price: 89.99,
-    discount: 0,
-    photo: hanoracRosu,
-    sex: 'man',
-    type: 'barbati top bluze',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 0, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '7'
-  }, {
-    nume: 'Tricou Alb',
-    price: 49.99,
-    discount: 0,
-    photo: tricouAlb,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
-    id: '8'
-  }, {
-    nume: 'Tricou Blisst alb',
-    price: 99.99,
-    discount: 0.1,
-    photo: tricouBlisst,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    ],
-    star: { total: 21, nr: 7 },
-    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '9'
+    size: { XS:4, S:5, M:0, L:2, XL:1, XXL:9 },
+    id: '11'
   }])
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
@@ -721,44 +345,7 @@ export function AuthProvider({ children }) {
   const [admin, setAdmin] = useState()
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
-  const [cart, dispatchCart] = useReducer(Reducer, [{
-    nume: 'Tricou Alb',
-    price: 49.99,
-    discount: 0,
-    photo: tricouAlb,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 }
-    ],
-    star: { total: 6, nr: 2 },
-    size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
-    id: '8',
-    selectedSize: 'M',
-    number: 4
-  }, {
-    nume: 'Tricou Blisst alb',
-    price: 99.99,
-    discount: 0.1,
-    photo: tricouBlisst,
-    sex: 'man',
-    type: 'barbati top tricouri',
-    spec: 'Tricou negru din bumbac',
-    review: [{ text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Din pacate produsul nu este precum cel din poza', user: 'domnuGuticaLucian@gmail.com', anonim: false, star: 3 },
-    { text: 'Produs impecabil', user: 'guticaLucian@gmail.com', anonim: false, star: 3 },
-    ],
-    star: { total: 21, nr: 7 },
-    size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    id: '9',
-    selectedSize: 'M',
-    number: 4
-  }])
+  const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
 
   const getUserData = async uid => {

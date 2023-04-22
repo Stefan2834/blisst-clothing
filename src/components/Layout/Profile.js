@@ -16,7 +16,7 @@ export default function Profile() {
     const [preDet, setPreDet] = useState({})
     const changeInfo = () => {
         setInfoChange(true)
-    }
+    }// daca utilizatorul apasa Editeaza, muta pagina pe partea de editare, utilizant animatii
     const saveInfo = e => {
         e.preventDefault()
         startTransition(() => {
@@ -49,7 +49,7 @@ export default function Profile() {
                 })
             setInfoChange(false);
         })
-    }
+    }//salveaza informatiile
     const backInfo = () => {
         setPreDet({
             info: det.info,
@@ -60,12 +60,11 @@ export default function Profile() {
             color: det.color
         })
         setInfoChange(false);
-    }
+    }//nu salva informatiile introduse
     useEffect(() => {
         document.title = 'Blisst — Profilul meu'
         setPreDet(det)
     }, [])
-    console.log(det.county)
 
 
 
@@ -94,6 +93,7 @@ export default function Profile() {
                             </div>
                         </div>
                     )}
+                    {/*verifica daca utilizatorul este admin, si daca da, schimba-i poza */}
                     <div className="prof-txt text-center">Salut, {admin && 'Domnule'} <span className='principal'>{det.name}</span>!</div>
                     <div className={infoChange ? 'prof-det prof-det-slider' : 'prof-det'}>
                         <div className="prof-left-info">
@@ -254,6 +254,7 @@ export default function Profile() {
                         <Suggestion type={'discount'} />
                     </>
                 )}
+                {/*afiseaza ultima comanda, daca exista, daca nu afiseaza produsul cu cea mai mare reducere */}
             </div>
         </>
     )

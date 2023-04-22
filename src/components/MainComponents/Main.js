@@ -25,7 +25,7 @@ export default function Main() {
         setSuggestion(daily.data.data)
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [])//fa o cerere la server, pentru a vedea care este produsul zilei
 
   return (
     <>

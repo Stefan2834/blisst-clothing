@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
@@ -6,10 +6,12 @@ import { useAuth } from '../../contexts/AuthContext';
 
 
 export default function Product(props) {
-  const [product, setProduct] = useState(props.product)
-  console.log(props.product)
-
+  const product = props.product
   const { favorite, dispatchFav, currentUser } = useAuth()
+
+  //ca sa nu existe prea multe lini de cod degeaba, am creat un component care apare 
+  //pentru fiecare produs din favorite, paginile cu haine,
+  //produsul zilei si top reducere
 
 
   return (

@@ -6,7 +6,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname]);// de fiecare data cand pagina se schimba, se da scroll in varful pagini
 
   return null;
 }

@@ -143,7 +143,7 @@
     display: none;
 }
 .side-size-check {
-    display:none
+    display:none;
 }
 .side-size-check:checked ~ .side-size-label {
     background-color: var(--principal);
@@ -190,7 +190,7 @@
     background-image: url(../Main/svg/arrow-down.svg)
 }
 .side-size-check:checked ~ .side-colors {
-    border:3px solid var(--color-oposite)
+    outline:3px solid var(--color-oposite)
 }
 .side-colors {
     width:35px;

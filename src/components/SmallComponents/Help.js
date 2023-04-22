@@ -39,7 +39,7 @@ export default function Help() {
       setResponse(err)
     }
     setLoading(false)
-  }
+  }// salveaza in baza de date eroarea gasita de catre utilizator, iar apoi trimite-l pe pagina de main
 
   return (
     <>
@@ -69,7 +69,7 @@ export default function Help() {
                 value='Raporteaza problema'
               />
               <div className='for-res'>
-                {response}
+                {response /* posibila eroare */}
               </div>
             </form>
           </div>

@@ -13,7 +13,7 @@ export default function Countdown() {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, []);//numara orele, minutele si secundele pana cand se reseteaza produsul zilei
 
   return (
     <div className="countdown-timer">

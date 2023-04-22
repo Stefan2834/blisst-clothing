@@ -14,7 +14,7 @@ export default function Favorite() {
     if (favorite.length === 0) {
       navigate('/main')
     }
-  }, [favorite])
+  }, [favorite])//daca nu ai nimic la favorite, trimite-l pe pagina principala
   return (
     <div className='fav-div'>
       <Suggestion type={'daily'} />

@@ -18,15 +18,15 @@ export default function Cart() {
             let price = 0;
             cart.map((product) => {
                 price += (product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01) * product.number
-            })
+            })//seteaza pretul total
             setProductPrice(Number((price).toFixed(2)))
             if (price >= 200) {
                 setCartPrice(c => Number(price).toFixed(2))
             } else {
                 setCartPrice(c => Number(price + 20).toFixed(2))
-            }
+            }//daca pretul este mai mic de 200, livrarea costa 20 de lei
         } else {
-            navigate('/')
+            navigate('/main')//daca cosul este gol, scoate utilizatorul din pagina
         }
     }, [cart])
 
@@ -45,7 +45,7 @@ export default function Cart() {
                 dispatchCart({ type: 'cartRemove', payload: { cart: product } })
             }
         });
-    }
+    }//sterge produsul din cos
 
 
     return (
@@ -61,8 +61,8 @@ export default function Cart() {
                         return (
                             <div className='cart-product'>
                                 <Link to={`/product/${product.id}`}>
-                                    <div className='cart-photo'
-                                        style={{ backgroundImage: `url(${product.photo})` }}
+                                    <img className='cart-photo'
+                                        src={product.photo}
                                     />
                                 </Link>
                                 <Link to={`/product/${product.id}`} className='cart-det'>
@@ -96,7 +96,7 @@ export default function Cart() {
                                                     dispatchCart({ type: 'cartNrChange', payload: { product: product, number: e.target.value } })
                                                 }
                                             }
-                                            }
+                                            }//modifica numarul de produse, iar daca nr ="", atunci sterge-l
                                         >
                                             <option value="" className='principal font-semibold'>0(sterge)</option>
                                             {Array.from({ length: product.size[product.selectedSize] }, (_, index) => { if (index < 10) { return index + 1 } }).map((number) => <>

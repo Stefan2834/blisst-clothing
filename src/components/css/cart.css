@@ -68,10 +68,9 @@
 }
 .cart-photo {
     height:100%;
-    aspect-ratio: 12/16;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    aspect-ratio: 10/8;
+    object-fit: cover;
+    object-position: center;
 }
 
 .cart-det {
@@ -283,6 +282,7 @@ span.cart-span {
     .cart-photo {
         aspect-ratio: 9/16;
         height:400px;
+        object-fit: contain;
     }
     .cart-det {
         height:50%;
