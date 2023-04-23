@@ -29,13 +29,13 @@ export default function DefaultProvider({ children }) {
     if (darkTheme) {
       document.documentElement.style.setProperty("--black", '#fff')
       document.documentElement.style.setProperty("--dark-principal", '#fff')
-      document.documentElement.style.setProperty("--color", 'black')
+      document.documentElement.style.setProperty("--color", '#141414')
       document.documentElement.style.setProperty("--color-second", '#141414')
       document.documentElement.style.setProperty("--color-oposite", '#fff')
       document.documentElement.style.setProperty("--color-third", '#1c1c1c')
     } else {
       document.documentElement.style.setProperty("--black", '#141414')
-      document.documentElement.style.setProperty("--dark-principal", '#141414')
+      document.documentElement.style.setProperty("--dark-principal", '#101010')
       document.documentElement.style.setProperty("--color", 'white')
       document.documentElement.style.setProperty("--color-second", '#eee')
       document.documentElement.style.setProperty("--color-oposite", '#141414')

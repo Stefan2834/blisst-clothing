@@ -5,45 +5,58 @@ import { useDefault } from '../../contexts/DefaultContext'
 import Reducer from '../../contexts/AuthContext'
 import { FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import axios from 'axios'
 
 
 
 export default function SpecialProduct() {
+  const { server } = useAuth()
   const { idPath } = useParams()
   const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct } = useAuth()
   const { darkTheme, isPending, startTransition } = useDefault()
   const [sizeType, setSizeType] = useState([])
   const [cartSpec, dispatch] = useReducer(Reducer, { size: '', number: 1 })
   const [specialClothing, setSpecialClothing] = useState()
-  const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false })
+  const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false, edit: false })
   const [photoSlider, setPhotoSlider] = useState()
   const [zoom, setZoom] = useState(false);
   const navigate = useNavigate()
+  const email = currentUser ? currentUser.email : undefined
+  console.log(email)
 
   useLayoutEffect(() => {
-    startTransition(() => {
-      const special = product.find(item => item.id === idPath)
-      if (special) {
-        setSpecialClothing(special)
-        document.title = `Blisst — ${special.nume}`
-        setPhotoSlider(special.photo)
-        const type = special.type
-        if (type.includes('foot')) {
-          setSizeType(['37', '38', '39', '40', '41', '42', '43', '44'])
+    startTransition(async () => {
+      try {
+        const special = product.find(item => item.id === idPath)
+        if (special) {
+          document.title = `Blisst — ${special.nume}`
+          const reviewList = (await axios.post(`${server}/product/review`, { id: special.id })).data.review
+          const reviewIndex = reviewList.findIndex(rev => rev.user === email)
+          if (reviewIndex !== -1) {
+            setReview({ ...review, star: reviewList[reviewIndex].star, text: reviewList[reviewIndex].text })
+          }
+          setSpecialClothing({ ...special, review: reviewList })
+          setPhotoSlider(special.photo)
+          const type = special.type
+          if (type.includes('foot')) {
+            setSizeType(['37', '38', '39', '40', '41', '42', '43', '44'])
+          } else {
+            setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
+          }
         } else {
-          setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
+          document.title = `Blisst - Produs inexistent`
+          navigate('/main/productNotFound')
         }
-      } else {
-        document.title = `Blisst - Produs inexistent`
-        navigate('/main/productNotFound')
-      }
-      document.addEventListener('scroll', () => setZoom(false))
-
-      return () => {
-        document.removeEventListener('scroll', () => setZoom(false))
+      } catch (err) {
+        console.error(err)
       }
     })
-  }, [idPath])//cauta produsul cu id-ul egal cu idPath, iar daca nu exista, muta utilizatorul pe pagina 404
+    document.addEventListener('scroll', () => setZoom(false))
+
+    return () => {
+      document.removeEventListener('scroll', () => setZoom(false))
+    }
+  }, [idPath, product])//cauta produsul cu id-ul egal cu idPath, iar daca nu exista, muta utilizatorul pe pagina 404
 
   const handleStar = (ratingValue) => {
     if (ratingValue === 1) {
@@ -58,71 +71,6 @@ export default function SpecialProduct() {
       setReview({ ...review, type: 'Excelent', star: ratingValue })
     }
   }
-  const handleUpdate = e => {
-    e.preventDefault()
-    if (review.star === 0) {
-      Swal.fire({
-        title: 'Eroare!',
-        text: "Nu ai selectat numarul de stele.",
-        icon: 'error',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi',
-      })
-      return
-    }
-    const idProduct = product.findIndex(item => {
-      return item.id === idPath
-    });
-    startTransition(() => {
-      setSpecialClothing(p => {
-        return {
-          ...p, star: {
-            ...p.star, total: p.star.total - p.review.reduce((acc, rev) => {
-              if (rev.user === currentUser.email) {
-                return acc + rev.star;
-              } else {
-                return acc;
-              }
-            }, 0) + review.star
-          }, review: p.review.map((rev) => {
-            if (rev.user === currentUser.email) {
-              return { star: review.star, anonim: review.anonim, text: review.text, user: currentUser.email };
-            }
-            return rev
-          })
-        }
-      })//logica pentru update-ul statului cu produsul pagini
-      setProduct(c => c.map((p, index) => {
-        if (index === idProduct) {
-          return {
-            ...p, star: {
-              ...p.star, total: p.star.total - p.review.reduce((acc, rev) => {
-                if (rev.user === currentUser.email) {
-                  return acc + rev.star;
-                } else {
-                  return acc;
-                }
-              }, 0) + review.star
-            }, review: p.review.map((rev) => {
-              if (rev.user === currentUser.email) {
-                return { star: review.star, anonim: review.anonim, text: review.text, type: review.type, user: currentUser.email };
-              }
-              return rev
-            })
-          }
-        } else {
-          return p
-        }
-      }))//logica pt update-ul stateului cu produse, care se salveaza in baza de date
-    })
-    Swal.fire({
-      title: 'Editat',
-      text: "Review-ul a fost editat cu succes",
-      icon: 'success',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'Ok',
-    })
-  }// logica pentru editarea unui review mai vechi
   const handleSubmit = (e) => {
     e.preventDefault()
     if (review.star === 0) {
@@ -135,28 +83,112 @@ export default function SpecialProduct() {
       })
       return
     }
-    setReview({ ...review, text: '' }) // goleste inputul
-    const idProduct = product.findIndex(item => {
-      return item.id === idPath
-    }); // id-ul produsului respectiv  
-    startTransition(() => {
-      setSpecialClothing(p => { return { ...p, star: { total: p.star.total + review.star, nr: p.star.nr + 1 }, review: [{ text: review.text, user: currentUser.email, anonim: review.anonim, star: review.star }, ...p.review] } })
-      setProduct(c => c.map((prod, index) => {
-        if (idProduct === index) {
-          return { ...prod, star: { total: prod.star.total + review.star, nr: prod.star.nr + 1 }, review: [{ text: review.text, user: currentUser.email, anonim: review.anonim, star: review.star }, ...prod.review,] }
+    startTransition(async () => {
+      const reviewPost = await axios.post(`${server}/product/review/post`, {
+        review: review,
+        id: specialClothing.id,
+        user: currentUser.email
+      })
+      if (reviewPost.data.success) {
+        setProduct(p => p.map(prod => {
+          if (prod.id === specialClothing.id) {
+            return { ...prod, star: reviewPost.data.star }
+          } else {
+            return prod
+          }
+        }))
+        Swal.fire({
+          title: 'Postat',
+          text: "Review-ul a fost postat cu succes",
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Ok',
+        })
+      } else {
+        Swal.fire({
+          title: 'Eroare!',
+          text: `Am intampinat o eroare: ${reviewPost.data.message.code}`,
+          icon: 'error',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Inapoi',
+        })
+      }
+    })
+  }//logica pentru postare review
+  const handleUpdate = async e => {
+    e.preventDefault()
+    setReview({ ...review, edit: false })
+    if (review.star === 0) {
+      Swal.fire({
+        title: 'Eroare!',
+        text: "Nu ai selectat numarul de stele.",
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Inapoi',
+      })
+      return
+    }
+    const revUpdate = await axios.post(`${server}/product/review/update`, {
+      user: currentUser.email,
+      review: review,
+      id: specialClothing.id
+    })
+    if (revUpdate.data.success) {
+      setProduct(p => p.map(prod => {
+        if (prod.id === specialClothing.id) {
+          return { ...prod, star: revUpdate.data.star }
         } else {
           return prod
         }
       }))
-    })// modifica media 
-    Swal.fire({
-      title: 'Postat',
-      text: "Review-ul a fost postat cu succes",
-      icon: 'success',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'Ok',
+      Swal.fire({
+        title: 'Editat',
+        text: "Review-ul a fost editat cu succes",
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Ok',
+      })
+    } else {
+      Swal.fire({
+        title: 'Eroare!',
+        text: `Am intampinat o eroare: ${revUpdate.data.message.code}`,
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Inapoi',
+      })
+    }
+  }// logica pentru editarea unui review mai vechi
+  const handleDelete = async () => {
+    const reviewDelete = await axios.post(`${server}/product/review/delete`, {
+      user: currentUser.email,
+      id: specialClothing.id
     })
-  }//logica pentru postare review
+    if (reviewDelete.data.success) {
+      setReview({ ...review, text: "" })
+      setProduct(p => p.map(prod => {
+        if (prod.id === specialClothing.id) {
+          return { ...prod, star: reviewDelete.data.star }
+        } else {
+          return prod
+        }
+      }))
+      Swal.fire({
+        title: 'Star',
+        text: "Review-ul a fost sters cu succes",
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Ok',
+      })
+    } else {
+      Swal.fire({
+        title: 'Eroare!',
+        text: `Am intampinat o eroare: ${reviewDelete.data.message.code}`,
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Inapoi',
+      })
+    }
+  }// logica pentru a sterge un review definitiv
   const handleAddToCart = () => {
     if (currentUser) {
       if (cartSpec.size === '' || cartSpec.number === '') {
@@ -217,7 +249,6 @@ export default function SpecialProduct() {
                     alt='Poza' onClick={() => setPhotoSlider(specialClothing.photo)}
                   />
                   {specialClothing.sliderPhoto.map((photo) => {
-                    console.log(photo)
                     return (
                       <img src={photo}
                         className='spec-slider-photo'
@@ -324,7 +355,7 @@ export default function SpecialProduct() {
               </div>
             </div>
             <div className='spec-white-space'>
-              {specialClothing.review.filter(item => item.user === currentUser.email).length === 0 ? (
+              {specialClothing.review.filter(item => item.user === email).length === 0 ? (
                 <div className='spec-rev-text-dark'>Lasa un Review</div>
               ) : (
                 <div className='spec-rev-text-dark'>Editeaza</div>
@@ -333,11 +364,11 @@ export default function SpecialProduct() {
             </div>
             <div className='spec-review-page'>
               <div className='spec-review-left'>
-                <div className='spec-review-left-content'>
-                  {currentUser ? (
-                    <>
-                      {specialClothing.review.filter(item => item.user === currentUser.email).length === 0 ? (
-                        <>
+                {currentUser ? (
+                  <>
+                    {specialClothing.review.filter(item => item.user === currentUser.email).length === 0 ? (
+                      <>
+                        <form className='spec-review-left-content' onSubmit={handleSubmit}>
                           <div className='flex w-full justify-center'>
                             {[...Array(5)].map((_, i) => {
                               const ratingValue = i + 1;
@@ -353,42 +384,40 @@ export default function SpecialProduct() {
                             })}
                           </div>
                           <div className='spec-rev-left-text'>{review.type}</div>
-                          <div className='spec-rev-name'>Spune-ne ceva despre produs</div>
-                          <form className='spec-rev-enter' onSubmit={handleSubmit}>
-                            <input className='spec-rev-input' type='text'
-                              placeholder='Scrie ceva'
-                              value={review.text} required minLength={10} maxLength={160}
-                              onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
+                          <div className='flex flex-col items-start justify-start w-full'>
+                            <div className='spec-rev-title'>Parerea ta conteaza</div>
+                            <label className='spec-rev-label'>
+                              <input className='spec-rev-input' type='text'
+                                value={review.text}
+                                placeholder='Spune-ti parerea' required minLength={10} maxLength={160}
+                                onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
+                              />
+                              {review.text.length >= 10 ? (
+                                <div className='spec-place-holder'>{review.text.length}/160</div>
+                              ) : (
+                                <div className='spec-place-holder text-red-600'>{review.text.length}/160</div>
+                              )}
+                            </label>
+                          </div>
+                          <div className='my-3 flex items-center justify-around w-full'>
+                            <input type='submit' value={'Posteaza'} className='spec-rev-submit'
+                              onClick={() => { setReview({ ...review, anonim: false }) }}
                             />
-                            <div className='spec-rev-type-submit' >
-                              <input type='submit' value={'Posteaza'} className='spec-rev-submit'
-                                onClick={() => { setReview({ ...review, anonim: false }) }}
-                              />
-                              <input type='submit' value={'Posteaza anonim'} className='spec-rev-submit-anonim'
-                                onClick={() => { setReview({ ...review, anonim: true }) }}
-                              />
-                            </div>
-                          </form>
-                        </>
-                      ) : (
-                        <>
-                          {specialClothing.review.map(rev => {
-                            if (rev.user === currentUser.email) {
+                            <input type='submit' value={'Posteaza anonim'} className='spec-rev-submit-anonim'
+                              onClick={() => { setReview({ ...review, anonim: true }) }}
+                            />
+                          </div>
+                        </form>
+                      </>
+                    ) : (
+                      <>
+                        {specialClothing.review.map(rev => {
+                          if (rev.user === currentUser.email) {
+                            if (review.edit) {
                               return (
-                                <div className='spec-review-second'>
-                                  <div className='spec-rev-upper'>
-                                    {rev.anonim ? (
-                                      <>
-                                        <div className={darkTheme ? 'spec-rev-anonim-dark' : 'spec-rev-anonim'} />
-                                        <div className='spec-rev-user'>Anonim</div>
-                                      </>
-                                    ) : (
-                                      <>
-                                        <div className={darkTheme ? 'spec-rev-photo-dark' : 'spec-rev-photo'} />
-                                        <div className='spec-rev-user'>{rev.user}</div>
-                                      </>
-                                    )}
-                                    <div className='spec-rev-star'>
+                                <>
+                                  <form className='spec-review-left-content' onSubmit={handleUpdate}>
+                                    <div className='flex w-full justify-center'>
                                       {[...Array(5)].map((_, i) => {
                                         const ratingValue = i + 1;
                                         return (
@@ -396,47 +425,93 @@ export default function SpecialProduct() {
                                             key={ratingValue}
                                             size={24}
                                             className={ratingValue <= review.star ? 'principal' : 'black'}
-                                            style={{ cursor: 'pointer' }}
                                             onClick={() => handleStar(ratingValue)}
+                                            style={{ cursor: 'pointer' }}
                                           />
                                         );
                                       })}
                                     </div>
-                                  </div>
-                                  <form onSubmit={handleUpdate}>
-                                    <input type={'text'} value={review.text}
-                                      className='spec-rev-input-update'
-                                      placeholder='Modifica Review-ul'
-                                      required minLength={10} maxLength={160}
-                                      onChange={e => setReview({ ...review, text: e.target.value })}
-                                    />
-                                    <div className='spec-rev-type-submit' >
+                                    <div className='spec-rev-left-text'>{review.type}</div>
+                                    <div className='flex flex-col items-start justify-start w-full'>
+                                      <div className='flex items-center justify-between w-full'>
+                                        <div className='spec-rev-title'>{rev.anonim ? 'Anonim' : rev.user}</div>
+                                        <div className='spec-rev-trash' onClick={() => handleDelete()} />
+                                      </div>
+                                      <label className='spec-rev-label'>
+                                        <input className='spec-rev-input' type='text'
+                                          value={review.text}
+                                          placeholder='Spune-ti parerea' required minLength={10} maxLength={160}
+                                          onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
+                                        />
+                                        {review.text.length >= 10 ? (
+                                          <div className='spec-place-holder'>{review.text.length}/160</div>
+                                        ) : (
+                                          <div className='spec-place-holder text-red-600'>{review.text.length}/160</div>
+                                        )}
+                                      </label>
+                                    </div>
+                                    <div className='spec-rev-edit-flex'>
                                       <input type='submit' value={'Salveaza'} className='spec-rev-submit'
                                         onClick={() => { setReview({ ...review, anonim: false }) }}
                                       />
-                                      <input type='submit' value={'Salveaza ca anonim'} className='spec-rev-submit-anonim'
+                                      <input type='submit' value={'Salveaza anonim'} className='spec-rev-submit-anonim'
                                         onClick={() => { setReview({ ...review, anonim: true }) }}
                                       />
+                                      <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: false })}>Inapoi</div>
                                     </div>
                                   </form>
-                                </div>
+                                </>
+                              )
+                            } else {
+                              return (
+                                <>
+                                  <div className='spec-review'>
+                                    <div className='spec-rev-upper'>
+                                      {rev.anonim ? (
+                                        <>
+                                          <div className='spec-rev-user'>Anonim</div>
+                                        </>
+                                      ) : (
+                                        <>
+                                          <div className='spec-rev-user'>{rev.user}</div>
+                                        </>
+                                      )}
+                                      <div className='spec-rev-star'>
+                                        {[...Array(5)].map((_, i) => {
+                                          const ratingValue = i + 1;
+                                          return (
+                                            <FaStar
+                                              key={ratingValue}
+                                              size={24}
+                                              className={ratingValue <= rev.star ? 'principal' : 'black'}
+                                            />
+                                          );
+                                        })}
+                                      </div>
+                                    </div>
+                                    <div className='spec-rev-text'>{rev.text}</div>
+                                    <div className='flex items-center justify-around my-2'>
+                                      <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: true })}>Editeaza</div>
+                                    </div>
+                                  </div>
+                                </>
                               )
                             }
-                          })}
-                        </>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <div className='spec-rev-name text-center p-2'>Nu esti conectat. Conecteaza-te pentru a lasa o parere.</div>
-                      <div className='spec-rev-enter'>
-                        <div className='spec-rev-type-submit' >
-                          <Link className='spec-rev-submit'>Conecteaza</Link>
-                        </div>
+                          }
+                        })}
+                      </>
+                    )}
+                  </>
+                ) : (
+                  <div className='spec-review'>
+                    <div className='spec-rev-name text-center p-2'>Nu esti conectat. Conecteaza-te pentru a lasa o parere.</div>
+                    <div className='spec-rev-enter'>
+                      <div className='spec-rev-type-submit' >
+                        <Link to='/connect' className='spec-rev-submit'>Conecteaza</Link>
                       </div>
-                    </>
-                  )}
-                </div>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className='spec-review-right'>
                 {specialClothing.review.map((rev, index) => {
@@ -446,12 +521,10 @@ export default function SpecialProduct() {
                         <div className='spec-rev-upper'>
                           {rev.anonim ? (
                             <>
-                              <div className={darkTheme ? 'spec-rev-anonim-dark' : 'spec-rev-anonim'} />
                               <div className='spec-rev-user'>Anonim</div>
                             </>
                           ) : (
                             <>
-                              <div className={darkTheme ? 'spec-rev-photo-dark' : 'spec-rev-photo'} />
                               <div className='spec-rev-user'>{rev.user}</div>
                             </>
                           )}

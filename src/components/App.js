@@ -38,6 +38,7 @@ import AdminRoute from '../CustomHook/AdminRoute'
 
 import Admin from './Admin/Admin';
 import AdminCommands from '../components/Admin/AdminCommands'
+import AdminProducs from './Admin/AdminProducs';
 import AdminDiscount from './Admin/AdminDiscount';
 import AdminErrors from './Admin/AdminErrors';
 
@@ -71,7 +72,7 @@ function App() {
           <Routes>
             <Route path='/' index element={<GoTo />} />
             <Route path='/connect' element={<Connect />} />
-            <Route path='/test' element={<Admin />} />
+            <Route path='/test' element={<Test />} />
 
 
 
@@ -103,6 +104,7 @@ function App() {
               <Route path='admin' element={<Outlet />} >
                 <Route index element={<AdminRoute element={Admin} />} />
                 <Route path='commands' element={<AdminRoute element={AdminCommands} />} />
+                <Route path='products' element={<AdminRoute element={AdminProducs} />} />
                 <Route path='discount' element={<AdminRoute element={AdminDiscount} />} />
                 <Route path='errors' element={<AdminRoute element={AdminErrors} />} />
               </Route>

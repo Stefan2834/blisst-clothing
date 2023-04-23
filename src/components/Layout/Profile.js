@@ -213,9 +213,9 @@ export default function Profile() {
                                         style={{ backgroundColor: "#8338EC" }}
                                         onClick={() => setPreDet({ ...preDet, color: "#8338EC" })}
                                     />
-                                    <div className={preDet.color === "#3A86FF" ? "prof-det-square-selected" : "prof-det-square"}
-                                        style={{ backgroundColor: "#3A86FF" }}
-                                        onClick={() => setPreDet({ ...preDet, color: "#3A86FF" })}
+                                    <div className={preDet.color === "#2289ff" ? "prof-det-square-selected" : "prof-det-square"}
+                                        style={{ backgroundColor: "#2289ff" }}
+                                        onClick={() => setPreDet({ ...preDet, color: "#2289ff" })}
                                     />
                                 </div>
                             </div>

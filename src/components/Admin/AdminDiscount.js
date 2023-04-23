@@ -70,17 +70,21 @@ export default function AdminDiscount() {
         <div className='adm-dis-title'>Adauga un cod de discount</div>
         <label className='adm-label'>
           <input ref={codeRef} className='adm-input' type='text' placeholder=' ' required minLength={6} maxLength={10} />
-          <span className='adm-place-holder'>Codul</span>
+          <span className='adm-place-holder'>Cod</span>
         </label>
         <label className='adm-label'>
           <input ref={valueRef} className='adm-input' type='number' placeholder=' ' required min={1} max={100} />
-          <span className='adm-place-holder'>Discount-ul %</span>
+          <span className='adm-place-holder'>Valoare discount %</span>
         </label>
         <input type='submit' value={'Creeaza codul'} className='adm-submit' />
       </form>
       <div className='adm-dis-add'>
         <div className='adm-dis-title'>Alte coduri</div>
-        <div className='adm-submit' onClick={() => handleView()}>Afiseaza alte coduri</div>
+        {discount.length === 0 ? (
+          <div className='adm-submit' onClick={() => handleView()}>Afiseaza alte coduri</div>
+        ) : (
+          <div className='adm-submit' onClick={() => setDiscount([])}>Opreste afisarea</div>
+        )}
         {discount.map(dis => {
           return (
             <div className='adm-dis-div'>

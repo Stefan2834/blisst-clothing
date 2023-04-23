@@ -23,7 +23,7 @@ export default function Connect() {
     const [type, setType] = useState('man')
     const {
         server,
-        setCurrentUser,
+        setCurrentUser, product,
         getUserData, setAdmin,
         dispatchCart, dispatchCommand, dispatchFav
     } = useAuth();
@@ -66,8 +66,6 @@ export default function Connect() {
                 });
                 console.log(response.data)
                 if (response.data.success) {
-                    console.log(response.data.user.user)
-                    getUserData(response.data.user.user.uid)
                     const writeData = await axios.post(`${server}/connect/write`, {
                         uid: response.data.user.user.uid,
                         email: signEmailRef.current.value,
@@ -123,7 +121,7 @@ export default function Connect() {
                     .catch(err => {
                         console.log(err)
                     })
-                await getUserData(user.uid)
+                await getUserData(user.uid, product)
                 navigate('/')
                 setError()
             } else {

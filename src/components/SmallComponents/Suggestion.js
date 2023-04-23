@@ -39,7 +39,7 @@ export default function Suggestion(props) {
   return (
     <>
       {loading ? (
-        <div className='suggestion bg-slate-600'>
+        <div className='suggestion'>
           {type === 'daily' ? (
             <div className='sugg-title'>Produsul Zilei</div>
           ) : (
@@ -47,13 +47,14 @@ export default function Suggestion(props) {
           )}
         </div>
       ) : (
-        <div className='suggestion' style={{ backgroundImage: `url(${suggestion.photo})` }}>
+        <div className='suggestion'>
           {type === 'daily' ? (
             <div className='sugg-title'>Produsul Zilei</div>
           ) : (
             <div className='sugg-title'>Top reducere</div>
           )}
           <Product product={suggestion} />
+          <img src={suggestion.photo} alt='Poza' className='sugg-photo-bg' />
         </div>
       )}
     </>

@@ -13,7 +13,7 @@
 .suggestion {
     height: auto;
     min-height:calc(100vh - 50px);
-    background-color: var(--color-third);
+    background-color:black;
     width:25vw;
     display: flex;
     align-items: center;
@@ -22,10 +22,16 @@
     height:100vh;
     position: sticky;
     top:50px;
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
+}
+.sugg-photo-bg {
+    object-position: center;
+    object-fit: cover;
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity: 0.4;
+    filter: blur(4px);
 }
 .sugg-title {
     font-size:24px;

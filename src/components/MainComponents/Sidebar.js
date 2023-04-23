@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDefault } from '../../contexts/DefaultContext'
+import { colors } from '../SmallComponents/Test'
 
 export default function Sidebar() {
   const { setProductLoad, darkTheme, startTransition, filter, setFilter } = useDefault()
@@ -9,7 +10,7 @@ export default function Sidebar() {
   const [expand, setExpand] = useState()
   const [open, setOpen] = useState(true)
   const navigate = useNavigate()
-  const colors = ['#1c1919', '#0091e5', '#00d2ff', '#1200ff', '#72ff00', '#fd6500', '#ff00f0', '#a200ff', '#ea0000', '#00ffd8', '#eee', '#fff600']
+  
 
   useLayoutEffect(() => {
     document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
@@ -179,7 +180,7 @@ export default function Sidebar() {
                     checked={filter.color === color}
                     onChange={e => startTransition(() => !e.target.checked ? setFilter({ ...filter, color: '' }) : setFilter({ ...filter, color: color }))}
                   />
-                  <div className="side-colors side-selection" style={{backgroundColor:color}} />
+                  <div className="side-colors side-selection" style={{ backgroundColor: color }} />
                 </label>
               )
             })}

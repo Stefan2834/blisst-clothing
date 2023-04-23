@@ -20,14 +20,14 @@ body {
   --gradient:linear-gradient(180deg, #2289ff 0%,#d604cf 100%);
   --first:#e684ae;
   --second:#79cbca;
-  --principal:#ea580c;
+  --principal:#2289ff;
 }
 .principal {
   color:var(--principal)
 }
 ::selection {
   background-color: var(--principal);
-  color:white;
+  color: white;
 }
 .loading-bg {
   width:100vw;

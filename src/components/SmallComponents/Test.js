@@ -23,6 +23,7 @@ export default function Test() {
     </div>
   );
 };
+export const colors = ['#1c1919', '#bdbeb4', '#eee', '#0091e5', '#00ffd8', '#00d2ff', '#72ff00', '#ff00f0', '#a200ff', '#fd6500', '#fff600', '#ea0000']
 
 export const counties = [
   'Alba',

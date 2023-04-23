@@ -13,7 +13,6 @@ export default function Product(props) {
   //pentru fiecare produs din favorite, paginile cu haine,
   //produsul zilei si top reducere
 
-  console.log(product.photo)
   return (
     <div className='cloth-div'>
       <Link to={`/product/${product.id}`}>
@@ -54,7 +53,7 @@ export default function Product(props) {
           ) : (
             <div className="cloth-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: product, user: currentUser } })} />
           )}
-          <div className="flex items-start justify-center">
+          <div className="flex items-center justify-center">
             <FaStar size={16} className='principal' />
             <span className="font-medium text-sm">{(product.star.total / product.star.nr).toFixed(2)}</span>
             <span className="font-light text-sm">({product.star.nr})</span>
