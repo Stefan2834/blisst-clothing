@@ -402,14 +402,19 @@ span.spec-price-old {
     align-items: center;
     justify-content: center;
 }
-.spec-rev-trash {
+.spec-rev-trash, .spec-rev-trash-dark {
     width:35px;
     height:35px;
-    background-image: url(../Main/svg-dark/delete.svg);
     background-size: 35px 35px;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
+}
+.spec-rev-trash {
+    background-image: url(../Main/svg-dark/delete.svg);
+}
+.spec-rev-trash-dark {
+    background-image: url(../Main/svg/delete.svg);
 }
 .spec-rev-left-text {
     font-weight: 600;

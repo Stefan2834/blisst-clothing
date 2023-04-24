@@ -13,8 +13,9 @@ export default function SpecialProduct() {
   const { server } = useAuth()
   const { idPath } = useParams()
   const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct } = useAuth()
-  const { darkTheme, isPending, startTransition } = useDefault()
+  const { darkTheme } = useDefault()
   const [sizeType, setSizeType] = useState([])
+  const [loading, setLoading] = useState(true)
   const [cartSpec, dispatch] = useReducer(Reducer, { size: '', number: 1 })
   const [specialClothing, setSpecialClothing] = useState()
   const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false, edit: false })
@@ -22,10 +23,10 @@ export default function SpecialProduct() {
   const [zoom, setZoom] = useState(false);
   const navigate = useNavigate()
   const email = currentUser ? currentUser.email : undefined
-  console.log(email)
 
   useLayoutEffect(() => {
-    startTransition(async () => {
+    setLoading(true)
+    const fetchData = async () => {
       try {
         const special = product.find(item => item.id === idPath)
         if (special) {
@@ -50,9 +51,10 @@ export default function SpecialProduct() {
       } catch (err) {
         console.error(err)
       }
-    })
-    document.addEventListener('scroll', () => setZoom(false))
-
+      document.addEventListener('scroll', () => setZoom(false))
+    }
+    fetchData()
+    setLoading(false)
     return () => {
       document.removeEventListener('scroll', () => setZoom(false))
     }
@@ -71,7 +73,8 @@ export default function SpecialProduct() {
       setReview({ ...review, type: 'Excelent', star: ratingValue })
     }
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault()
     if (review.star === 0) {
       Swal.fire({
@@ -83,39 +86,39 @@ export default function SpecialProduct() {
       })
       return
     }
-    startTransition(async () => {
-      const reviewPost = await axios.post(`${server}/product/review/post`, {
-        review: review,
-        id: specialClothing.id,
-        user: currentUser.email
-      })
-      if (reviewPost.data.success) {
-        setProduct(p => p.map(prod => {
-          if (prod.id === specialClothing.id) {
-            return { ...prod, star: reviewPost.data.star }
-          } else {
-            return prod
-          }
-        }))
-        Swal.fire({
-          title: 'Postat',
-          text: "Review-ul a fost postat cu succes",
-          icon: 'success',
-          confirmButtonColor: '#3085d6',
-          confirmButtonText: 'Ok',
-        })
-      } else {
-        Swal.fire({
-          title: 'Eroare!',
-          text: `Am intampinat o eroare: ${reviewPost.data.message.code}`,
-          icon: 'error',
-          confirmButtonColor: '#3085d6',
-          confirmButtonText: 'Inapoi',
-        })
-      }
+    const reviewPost = await axios.post(`${server}/product/review/post`, {
+      review: review,
+      id: specialClothing.id,
+      user: currentUser.email
     })
+    if (reviewPost.data.success) {
+      setProduct(p => p.map(prod => {
+        if (prod.id === specialClothing.id) {
+          return { ...prod, star: reviewPost.data.star }
+        } else {
+          return prod
+        }
+      }))
+      Swal.fire({
+        title: 'Postat',
+        text: "Review-ul a fost postat cu succes",
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Ok',
+      })
+    } else {
+      Swal.fire({
+        title: 'Eroare!',
+        text: `Am intampinat o eroare: ${reviewPost.data.message.code}`,
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Inapoi',
+      })
+    }
+    setLoading(false)
   }//logica pentru postare review
   const handleUpdate = async e => {
+    setLoading(true)
     e.preventDefault()
     setReview({ ...review, edit: false })
     if (review.star === 0) {
@@ -157,8 +160,10 @@ export default function SpecialProduct() {
         confirmButtonText: 'Inapoi',
       })
     }
+    setLoading(false)
   }// logica pentru editarea unui review mai vechi
   const handleDelete = async () => {
+    setLoading(true)
     const reviewDelete = await axios.post(`${server}/product/review/delete`, {
       user: currentUser.email,
       id: specialClothing.id
@@ -188,6 +193,7 @@ export default function SpecialProduct() {
         confirmButtonText: 'Inapoi',
       })
     }
+    setLoading(false)
   }// logica pentru a sterge un review definitiv
   const handleAddToCart = () => {
     if (currentUser) {
@@ -226,7 +232,7 @@ export default function SpecialProduct() {
   }// logica pentru adaugarea unui produs in cos, daca s-a selectat marimea si pretul corect
   return (
     <>
-      {isPending && (
+      {loading && (
         <div className="loading-bg">
           <div className="loading-spin">Loading...</div>
         </div>
@@ -435,7 +441,9 @@ export default function SpecialProduct() {
                                     <div className='flex flex-col items-start justify-start w-full'>
                                       <div className='flex items-center justify-between w-full'>
                                         <div className='spec-rev-title'>{rev.anonim ? 'Anonim' : rev.user}</div>
-                                        <div className='spec-rev-trash' onClick={() => handleDelete()} />
+                                        <div className={darkTheme ? 'spec-rev-trash-dark' : 'spec-rev-trash'}
+                                          onClick={() => handleDelete()}
+                                        />
                                       </div>
                                       <label className='spec-rev-label'>
                                         <input className='spec-rev-input' type='text'
