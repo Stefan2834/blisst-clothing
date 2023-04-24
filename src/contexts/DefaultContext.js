@@ -13,7 +13,7 @@ export default function DefaultProvider({ children }) {
   const [activeForm, setActiveForm] = useState(true)
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true)
-  const [search, setSearch] = useState();
+  const [filterOpen, setFilterOpen] = useState(false)
   const [productLoad, setProductLoad] = useState(10);
   const [filter, setFilter] = useState({
     minPrice: '',
@@ -52,9 +52,9 @@ export default function DefaultProvider({ children }) {
     activeForm, setActiveForm,
     productLoad, setProductLoad,
     darkTheme, setDarkTheme,
-    search, setSearch,
+    filterOpen, setFilterOpen,
     filter, setFilter,
-    startTransition, isPending
+    startTransition, isPending,
   }
   return (
     <DefaultContext.Provider value={value}>

@@ -144,10 +144,59 @@
   margin-right: 10px;
 }
 .admin-err-checkbox {
-  background-image: url(../Main//svg-dark/delete.svg);
+  background-image: url(../Main//svg-dark/send-one.svg);
 }
 .admin-err-checkbox-dark {
-  background-image: url(../Main/svg/delete.svg);
+  background-image: url(../Main/svg/send-one.svg);
+}
+.adm-popup {
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  min-height:500px;
+  z-index:4;
+  top:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.adm-popup-bg {
+  width:100%;
+  height:100%;
+  z-index:-1;
+  position: absolute;
+  background-color: var(--color-oposite);
+  opacity: 0.5;
+}
+.adm-pop-content {
+  width:650px;
+  background-color: var(--color);
+  padding:10px 20px;
+  display: flex;
+  max-width: calc(100% - 20px);
+  align-items: center;
+  color:var(--color-oposite);
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+.adm-pop-send {
+  background-color: var(--color-oposite);
+  color:var(--color);
+  padding:8px 14px;
+  font-size:18px;
+  font-weight: 600;
+  margin:10px 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+.adm-pop-input {
+  font-size:20px;
+  font-weight: 500;
+  padding:4px;
+  background-color: var(--color-second);
+}
+.adm-pop-input:focus {
+  outline: none;
 }
 @media screen and (max-width:1000px) {
   .admin-err-div {

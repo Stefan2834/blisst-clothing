@@ -551,6 +551,25 @@ body {
   .nav-open-dark {
     background-image: url(../Main/svg/hamburger-button.svg);
   }
+  .side-switch, .side-switch-dark {
+    position:absolute;
+    width:40px;
+    background-position: center;
+    background-size: 35px 35px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    height:40px;
+    z-index:40px;
+    right:10px;
+    top:5px;
+    background-color: var(--color);
+  }
+  .side-switch {
+    background-image: url(../Main/svg/filter.svg);
+  }
+  .side-switch-dark {
+    background-image: url(../Main/svg-dark/filter.svg)
+  }
   .nav-left {
     flex-direction: column;
     height:auto;

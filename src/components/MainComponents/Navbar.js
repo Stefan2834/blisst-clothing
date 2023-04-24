@@ -17,6 +17,7 @@ export default function Navbar() {
   } = useAuth()
   const { setError, setActiveForm,
     darkTheme, setDarkTheme,
+    setFilterOpen
   } = useDefault()
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false)
@@ -106,6 +107,7 @@ export default function Navbar() {
     <>
       <div className='navbar-top-container'>
         <div className={darkTheme ? 'nav-open-dark' : 'nav-open'} onClick={() => setOpen(o => !o)} />
+        <div className={darkTheme ? 'side-switch-dark' : 'side-switch'} onClick={() => setFilterOpen(o => !o)} />
         <div className='nav-logo-second'>
           <Link to='/main' className='principal'>Blisst</Link>
         </div>

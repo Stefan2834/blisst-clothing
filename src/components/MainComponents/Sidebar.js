@@ -4,11 +4,10 @@ import { useDefault } from '../../contexts/DefaultContext'
 import { colors } from '../SmallComponents/Test'
 
 export default function Sidebar() {
-  const { setProductLoad, darkTheme, startTransition, filter, setFilter } = useDefault()
+  const { setProductLoad, darkTheme, startTransition, filter, setFilter, filterOpen, setFilterOpen } = useDefault()
   const { id } = useParams()
   const [sizeType, setSizeType] = useState([])
   const [expand, setExpand] = useState()
-  const [open, setOpen] = useState(true)
   const navigate = useNavigate()
   
 
@@ -35,9 +34,9 @@ export default function Sidebar() {
       setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
     }
 
-    window.addEventListener("scroll", () => setOpen(false))
+    window.addEventListener("scroll", () => setFilterOpen(false))
     return () => {
-      window.removeEventListener("scroll", () => setOpen(false))
+      window.removeEventListener("scroll", () => setFilterOpen(false))
       setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, search: '' })
     }
 
@@ -55,9 +54,8 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className={open ? 'side-filter-bg' : 'hidden'} onClick={() => setOpen(false)} />
-      <div className={open ? 'side-filter-bar' : 'side-filter-closed'}>
-        <div className={darkTheme ? 'side-switch-dark' : 'side-switch'} onClick={() => setOpen(o => !o)} />
+      <div className={filterOpen ? 'side-filter-bg' : 'hidden'} onClick={() => setFilterOpen(false)} />
+      <div className={filterOpen ? 'side-filter-bar' : 'side-filter-closed'}>
         <div className='side-font'>Filtre</div>
         <form className="side-form" onChange={() => setProductLoad(8)}>
           <div className='side-expand' onClick={() => handleExpand('Pret')}>
