@@ -1,28 +1,28 @@
-import { useState } from "react";
+import React from 'react';
+import { useAuth } from '../../contexts/AuthContext';
+import axios from 'axios';
 
-export default function Test() {
-  const [rangeValues, setRangeValues] = useState([50, 150]); // initial values for the range slider
-
-  const handleChange = (event) => {
-    setRangeValues([event.target.min, event.target.max].map(parseFloat)); // set the minimum and maximum values of the range slider
+const Test = () => {
+  const { server } = useAuth()
+  const handleUpload = (event) => {
+    const file = event.target.files[0];
+    axios.post(`${server}/admin/upload-photo`, {file:file})
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
   };
 
   return (
     <div>
-      <input
-        type="range"
-        min="0"
-        max="200"
-        step="1"
-        value={rangeValues}
-        onChange={handleChange}
-        className="range-slider"
-      />
-      <div className="range-slider-thumb" style={{ left: rangeValues[0] + "%" }} />
-      <div className="range-slider-thumb" style={{ left: rangeValues[1] + "%" }} />
+      <input type="file" onChange={handleUpload} />
     </div>
   );
 };
+
+export default Test;
+
+
+
+
 export const colors = ['#1c1919', '#bdbeb4', '#eee', '#0091e5', '#00ffd8', '#00d2ff', '#72ff00', '#ff00f0', '#a200ff', '#fd6500', '#fff600', '#ea0000']
 
 export const counties = [
