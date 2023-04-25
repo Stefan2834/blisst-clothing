@@ -186,6 +186,7 @@
   padding:8px 14px;
   font-size:18px;
   font-weight: 600;
+  cursor: pointer;
   margin:10px 0;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
@@ -311,6 +312,7 @@ input.adm-input:valid {
 .adm-dis-div {
   width:100%;
   background-color: var(--color-second);
+  color:var(--color-oposite);
   display: flex;
   padding:10px;
   margin:10px 0;
@@ -320,7 +322,6 @@ input.adm-input:valid {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-family: 'Poppins', sans-serif;
 }
-
 
 /*----------Products----------*/
 
@@ -356,9 +357,20 @@ input.adm-input:valid {
   font-size:18px;
   font-weight: 500;
   outline: none;
+  background-color: var(--color);
   color:var(--color-oposite);
 }
 .adm-option-label {
   width:80%;
   margin:10px 0;
+}
+.adm-prod-submit {
+  color: var(--color);
+  background-color:var(--color-oposite);
+  padding:6px 20px;
+  font-size:20px;
+  font-weight: 600;
+  margin:10px 0;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
 }

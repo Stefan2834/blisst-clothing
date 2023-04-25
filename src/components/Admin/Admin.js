@@ -10,7 +10,7 @@ export default function Admin() {
   return (
     <div className='admin'>
       <div className='admin-div'>
-        <div className='admin-top'>Salut, Domnule  
+        <div className='admin-top'>Salut, {det.type === 'man' ? 'Domnule' : 'Doamna'}  
           <span className='principal'> {det.name}</span>
         </div>
         <div className='admin-txt'>Bun venit pe pagina pentru admini!</div>

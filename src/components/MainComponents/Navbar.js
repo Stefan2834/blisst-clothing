@@ -301,7 +301,7 @@ export default function Navbar() {
                             )}>
                               <img src={product.photo} alt='Poza' className='nav-fav-photo' />
                               <div className='nav-fav-flex'>
-                                <div className='nav-fav-nume'>{product.nume}</div>
+                                <div className='nav-fav-nume'>{product.name}</div>
                                 <div className='nav-fav-price'>
                                   {product.discount > 0 ? (
                                     <>
@@ -363,7 +363,7 @@ export default function Navbar() {
                             )}>
                               <img src={product.photo} alt='Poza' className='nav-fav-photo' />
                               <div className='nav-fav-flex'>
-                                <div className='nav-fav-nume'>{product.nume}</div>
+                                <div className='nav-fav-nume'>{product.name}</div>
                                 <div className='nav-fav-size'>Marime: {product.selectedSize}</div>
                                 <div className='nav-fav-nr'>Numar: {product.number}</div>
                                 <div className='nav-fav-price'>

@@ -22,7 +22,6 @@ import ResendEmail from './SmallComponents/ResendEmail';
 import Help from './SmallComponents/Help';
 import NotFound from './SmallComponents/NotFound';
 
-
 import Command from './Layout/Command'
 import Connect from './Layout/Connect';
 import Profile from './Layout/Profile'

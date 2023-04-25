@@ -30,7 +30,7 @@ export default function SpecialProduct() {
       try {
         const special = product.find(item => item.id === idPath)
         if (special) {
-          document.title = `Blisst — ${special.nume}`
+          document.title = `Blisst — ${special.name}`
           const reviewList = (await axios.post(`${server}/product/review`, { id: special.id })).data.review
           const reviewIndex = reviewList.findIndex(rev => rev.user === email)
           if (reviewIndex !== -1) {
@@ -84,6 +84,7 @@ export default function SpecialProduct() {
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Inapoi',
       })
+      setLoading(false)
       return
     }
     const reviewPost = await axios.post(`${server}/product/review/post`, {
@@ -129,6 +130,7 @@ export default function SpecialProduct() {
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Inapoi',
       })
+      setLoading(false)
       return
     }
     const revUpdate = await axios.post(`${server}/product/review/update`, {
@@ -271,7 +273,7 @@ export default function SpecialProduct() {
                 </div>
               </div>
               <div className='spec-right'>
-                <div className='spec-name'>{specialClothing.nume}</div>
+                <div className='spec-name'>{specialClothing.name}</div>
                 <div className='flex mb-2 flex-wrap'>
                   {[...Array(5)].map((_, i) => {
                     const ratingValue = i + 1;
@@ -283,7 +285,15 @@ export default function SpecialProduct() {
                       />
                     );
                   })}
-                  Medie: {Number((specialClothing.star.total / specialClothing.star.nr).toFixed(2))}
+                  {specialClothing.star.total === 0 ? (
+                    <>
+                      Medie: 0.00
+                    </>
+                  ) : (
+                    <>
+                      Medie: {Number((specialClothing.star.total / specialClothing.star.nr).toFixed(2))}
+                    </>
+                  )}
                   <div>({specialClothing.star.nr} Review-uri)</div>
                 </div>
                 {specialClothing.discount > 0 ? (

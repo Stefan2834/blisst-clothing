@@ -1,22 +1,35 @@
-import React from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import axios from 'axios';
+import { useState } from 'react';
+import { getDatabase, ref, push, set } from 'firebase/database';
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+import app from './Firebase';
+const db = getDatabase(app);
+const storage = getStorage(app);
 
-const Test = () => {
-  const { server } = useAuth()
-  const handleUpload = (event) => {
-    const file = event.target.files[0];
-    axios.post(`${server}/admin/upload-photo`, {file:file})
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
+function Test() {
+  const [text, setText] = useState('');
+  const [file, setFile] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let imageUrl = null;
+    if (file) {
+      const imageRef = storageRef(storage, `images/${file.name}`);
+      await uploadBytes(imageRef, file);
+      imageUrl = await getDownloadURL(imageRef);
+      console.log(imageUrl)
+    }
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleUpload} />
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+      <button type="submit">Post</button>
+    </form>
   );
-};
+}
+
 
 export default Test;
 

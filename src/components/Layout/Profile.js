@@ -94,7 +94,11 @@ export default function Profile() {
                         </div>
                     )}
                     {/*verifica daca utilizatorul este admin, si daca da, schimba-i poza */}
-                    <div className="prof-txt text-center">Salut, {admin && 'Domnule'} <span className='principal'>{det.name}</span>!</div>
+                    {admin ? (
+                        <div className="prof-txt text-center">Salut, {det.type === 'man' ? 'Domnule' : 'Doamna'} <span className='principal'>{det.name}</span>!</div>
+                    ) : (
+                        <div className="prof-txt text-center">Salut, <span className='principal'>{det.name}</span>!</div>
+                    )}
                     <div className={infoChange ? 'prof-det prof-det-slider' : 'prof-det'}>
                         <div className="prof-left-info">
                             <div className="prof-txt">Judet:<br />

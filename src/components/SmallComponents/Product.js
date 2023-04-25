@@ -24,7 +24,7 @@ export default function Product(props) {
         <Link to={`/product/${product.id}`}>
           <div className="cloth-left">
             <div className="cloth-name">
-              {product.nume}
+              {product.name}
             </div>
             <div className="cloth-price">
               {product.discount > 0 ? (
@@ -55,7 +55,11 @@ export default function Product(props) {
           )}
           <div className="flex items-center justify-center">
             <FaStar size={16} className='principal' />
-            <span className="font-medium text-sm">{(product.star.total / product.star.nr).toFixed(2)}</span>
+            {product.star.total === 0 ? (
+              <span className='font-medium text-sm'>0.00</span>
+            ) : (
+              <span className="font-medium text-sm">{(product.star.total / product.star.nr).toFixed(2)}</span>
+            )}
             <span className="font-light text-sm">({product.star.nr})</span>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
 import { useDefault } from '../../contexts/DefaultContext'
@@ -31,12 +31,10 @@ export default function AdminErrors() {
         Swal.fire({
           title: 'Email trimis',
           text: `Emailul a fost trimis cu succes catre ${popUp.user}`,
-          icon: 'warning',
-          cancelButtonText: 'Inapoi',
-          showCancelButton: true,
+          icon: 'success',
+          cancelButtonText: 'Ok',
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Sterge-l'
         })
         setPopUp({ user: '', open: false, error: '', id: '' })
       })
@@ -45,7 +43,7 @@ export default function AdminErrors() {
       })
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     axios.get(`${server}/admin/errors`)
       .then(data => {
         if (data.data.errors) {
@@ -75,6 +73,7 @@ export default function AdminErrors() {
               <div className='font-medium text-lg'>Raspunde:</div>
               <input type='text' ref={solve}
                 className='adm-pop-input w-full'
+                required
                 placeholder='Raspuns...' minLength={10} maxLength={300}
               />
             </div>

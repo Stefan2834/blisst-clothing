@@ -61,7 +61,7 @@ export default function Command() {
                                 value={JSON.stringify(product)}
                                 className='comm-option'
                               >
-                                {product.nume} {product.selectedSize}
+                                {product.name} {product.selectedSize}
                               </option>
                             )
                           })}
@@ -75,7 +75,7 @@ export default function Command() {
                         />
                       </Link>
                       <Link to={`/product/${selectedProduct.id}`} className='cart-det'>
-                        <div className='cart-name'>{selectedProduct.nume}</div>
+                        <div className='cart-name'>{selectedProduct.name}</div>
                         <div className='cart-info'>{selectedProduct.spec}</div>
                       </Link>
                       <div className='comm-action'>

@@ -66,7 +66,7 @@ export default function Cart() {
                                     />
                                 </Link>
                                 <Link to={`/product/${product.id}`} className='cart-det'>
-                                    <div className='cart-name'>{product.nume}</div>
+                                    <div className='cart-name'>{product.name}</div>
                                     <div className='cart-info'>{product.spec}</div>
                                 </Link>
                                 <div className='cart-action'>
