@@ -26,6 +26,27 @@ import redTeeBack from '../clothing/man/red ea0000/default tee back.png'
 import turqoiseTeeBack from '../clothing/man/turqoise 00ffd8/default tee back.png'
 import whiteTeeBack from '../clothing/man/white fff/default tee back.png'
 import yellowTeeBack from '../clothing/man/yellow ff600/default tee back.png'
+import blueHooFrontPatern from '../clothing/man/patern/frontBlue.png'
+import blueHooBackPatern from '../clothing/man/patern/backBlue.png'
+import blueHooLeftPatern from '../clothing/man/patern/leftBlue.png'
+import blueHooRightPatern from '../clothing/man/patern/rightBlue.png'
+import redHooFrontPatern from '../clothing/man/patern/frontRed.png'
+import redHooBackPatern from '../clothing/man/patern/backRed.png'
+import redHooLeftPatern from '../clothing/man/patern/leftRed.png'
+import redHooRightPatern from '../clothing/man/patern/rightRed.png'
+import yellowHooFrontPatern from '../clothing/man/patern/frontYellow.png'
+import yellowHooBackPatern from '../clothing/man/patern/backYellow.png'
+import yellowHooLeftPatern from '../clothing/man/patern/leftYellow.png'
+import yellowHooRightPatern from '../clothing/man/patern/rightYellow.png'
+import whiteHooFrontPatern from '../clothing/man/patern/frontWhite.png'
+import whiteHooBackPatern from '../clothing/man/patern/backWhite.png'
+import whiteHooLeftPatern from '../clothing/man/patern/leftWhite.png'
+import whiteHooRightPatern from '../clothing/man/patern/rightWhite.png'
+import greenHooFrontPatern from '../clothing/man/patern/frontGreen.png'
+import greenHooBackPatern from '../clothing/man/patern/backGreen.png'
+import greenHooLeftPatern from '../clothing/man/patern/leftGreen.png'
+import greenHooRightPatern from '../clothing/man/patern/rightGreen.png'
+
 
 
 
@@ -287,6 +308,71 @@ export function AuthProvider({ children }) {
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 0, L: 2, XL: 1, XXL: 9 },
     //     id: 'l'
+    //   }, m: {
+    //     name: 'Hanorac cu patern',
+    //     price: 129.99,
+    //     discount: 0,
+    //     photo: blueHooFrontPatern,
+    //     sliderPhoto: [blueHooBackPatern, blueHooLeftPatern, blueHooRightPatern],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
+    //     id: 'm',
+    //   }, n: {
+    //     name: 'Hanorac cu patern',
+    //     price: 129.99,
+    //     discount: 0,
+    //     photo: redHooFrontPatern,
+    //     sliderPhoto: [redHooBackPatern, redHooLeftPatern, redHooRightPatern],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 5, M: 3, L: 1, XL: 7, XXL: 3 },
+    //     id: 'n',
+    //   }, o: {
+    //     name: 'Hanorac cu patern',
+    //     price: 129.99,
+    //     discount: 0,
+    //     photo: yellowHooFrontPatern,
+    //     sliderPhoto: [yellowHooBackPatern, yellowHooLeftPatern, yellowHooRightPatern],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
+    //     id: 'o',
+    //   }, p: {
+    //     name: 'Hanorac cu patern',
+    //     price: 129.99,
+    //     discount: 0,
+    //     photo: whiteHooFrontPatern,
+    //     sliderPhoto: [whiteHooBackPatern, whiteHooLeftPatern, whiteHooRightPatern],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 2, M: 5, L: 6, XL: 7, XXL: 3 },
+    //     id: 'p',
+    //   }, q: {
+    //     name: 'Hanorac cu patern',
+    //     price: 129.99,
+    //     discount: 0,
+    //     photo: greenHooFrontPatern,
+    //     sliderPhoto: [greenHooBackPatern, greenHooLeftPatern, greenHooRightPatern],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 5, M: 2, L: 6, XL: 7, XXL: 3 },
+    //     id: 'q',
     //   }
     // }
     ]
