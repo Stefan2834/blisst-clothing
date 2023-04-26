@@ -209,7 +209,28 @@ export default function Checkout() {
       }
     });
   }//sterge un produs din cos
-
+  const handleCreditCard = async () => {
+    try {
+      const response = await axios.post(`${server}/create-checkout-session`, {
+        cart: cart,
+        discount: discount,
+        total: productPrice
+      });
+      console.log(response)
+      if(response.data.success) {
+        window.open(response.data.url, '_blank')
+        navigate('/main')
+      }
+    } catch (err) {
+      Swal.fire({
+        title: 'Eroare',
+        text: `A aparut o eroare: ${err.message}`,
+        icon: 'error',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Inapoi'
+      })
+    }
+  }
   useEffect(() => {
     startTransition(() => {
       if (cart.length !== 0) {
@@ -391,16 +412,15 @@ export default function Checkout() {
                 </div>
               </div>
               <div className='check-page-content'>
-                <label className='check-page-pay cursor-not-allowed'>
+                <label className='check-page-pay cursor-pointer'>
                   <input type='radio'
                     checked={method.card}
                     name="payCheckbox"
                     onChange={() => setMethod({ ramburs: false, card: true })}
-                    disabled
                     className='check-page-checkbox' />
-                  <div className='check-pay-content check-disabled'>
+                  <div className='check-pay-content'>
                     <div className='check-pay-title'>Plata cu cardul</div>
-                    <div className='check-pay-info'>Aceasta optiune nu este inca disponibila, revino mai tarziu</div>
+                    <div className='check-pay-info'>Vei introduce cardul putin mai tarziu</div>
                   </div>
                 </label>
                 <label className='check-page-pay cursor-pointer'>
@@ -557,9 +577,15 @@ export default function Checkout() {
                 </form>
               </div>
             </div>
-            <div className='check-sumar-command' onClick={() => handleNewCommand()}>
-              Plaseaza comanda
-            </div>
+            {method.card ? (
+              <div className='check-sumar-command' onClick={() => handleCreditCard()}>
+                Introdu cardul de credit
+              </div>
+            ) : (
+              <div className='check-sumar-command' onClick={() => handleNewCommand()}>
+                Plaseaza comanda
+              </div>
+            )}
           </>
         )}
       </div>

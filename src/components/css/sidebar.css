@@ -23,6 +23,22 @@
     top:0;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.7);
 }
+.my-credit-card-input {
+  border-radius: 4px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  color:white;
+  background-color: black;
+}
+
+
+.my-stripe-button:hover {
+  background-color: #0062cc;
+}
 .side-form {
     display: flex;
     align-items: flex-start;

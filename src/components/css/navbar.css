@@ -344,7 +344,8 @@ body {
 }
 .nav-fav-photo {
   height:100%;
-  background-size:cover;
+  aspect-ratio: 8/10;
+  object-fit:cover;
 }
 .nav-fav-nume {
   text-align: left;

@@ -13,7 +13,7 @@ import purpleTeeFront from '../clothing/man/purple a200ff/default tee front.png'
 import redTeeFront from '../clothing/man/red ea0000/default tee front.png'
 import turqoiseTeeFront from '../clothing/man/turqoise 00ffd8/default tee front.png'
 import whiteTeeFront from '../clothing/man/white fff/default tee front.png'
-import yellowTeeFront from '../clothing/man/yellow ff600/default tee front.png'
+import yellowTeeFront from '../clothing/man/yellow fff600/default tee front.png'
 import blackTeeBack from '../clothing/man/black 1c1919/default tee back.png'
 import blueTeeBack from '../clothing/man/blue 0091e5/default tee back.png'
 import cyanTeeBack from '../clothing/man/cyan 00d2ff/default tee back.png'
@@ -25,27 +25,83 @@ import purpleTeeBack from '../clothing/man/purple a200ff/default tee back.png'
 import redTeeBack from '../clothing/man/red ea0000/default tee back.png'
 import turqoiseTeeBack from '../clothing/man/turqoise 00ffd8/default tee back.png'
 import whiteTeeBack from '../clothing/man/white fff/default tee back.png'
-import yellowTeeBack from '../clothing/man/yellow ff600/default tee back.png'
+import yellowTeeBack from '../clothing/man/yellow fff600/default tee back.png'
+
 import blueHooFrontPatern from '../clothing/man/patern/frontBlue.png'
 import blueHooBackPatern from '../clothing/man/patern/backBlue.png'
 import blueHooLeftPatern from '../clothing/man/patern/leftBlue.png'
 import blueHooRightPatern from '../clothing/man/patern/rightBlue.png'
+
 import redHooFrontPatern from '../clothing/man/patern/frontRed.png'
 import redHooBackPatern from '../clothing/man/patern/backRed.png'
 import redHooLeftPatern from '../clothing/man/patern/leftRed.png'
 import redHooRightPatern from '../clothing/man/patern/rightRed.png'
+
 import yellowHooFrontPatern from '../clothing/man/patern/frontYellow.png'
 import yellowHooBackPatern from '../clothing/man/patern/backYellow.png'
 import yellowHooLeftPatern from '../clothing/man/patern/leftYellow.png'
 import yellowHooRightPatern from '../clothing/man/patern/rightYellow.png'
+
 import whiteHooFrontPatern from '../clothing/man/patern/frontWhite.png'
 import whiteHooBackPatern from '../clothing/man/patern/backWhite.png'
 import whiteHooLeftPatern from '../clothing/man/patern/leftWhite.png'
 import whiteHooRightPatern from '../clothing/man/patern/rightWhite.png'
+
 import greenHooFrontPatern from '../clothing/man/patern/frontGreen.png'
 import greenHooBackPatern from '../clothing/man/patern/backGreen.png'
 import greenHooLeftPatern from '../clothing/man/patern/leftGreen.png'
 import greenHooRightPatern from '../clothing/man/patern/rightGreen.png'
+
+import blueHooFront from '../clothing/man/blue 0091e5/default hoo front.png'
+import blueHooBack from '../clothing/man/blue 0091e5/default hoo back.png'
+import blueHooRight from '../clothing/man/blue 0091e5/default hoo right.png'
+import blueHooLeft from '../clothing/man/blue 0091e5/default hoo left.png'
+
+import cyanHooFront from '../clothing/man/cyan 00d2ff/default hoo front.png'
+import cyanHooBack from '../clothing/man/cyan 00d2ff/default hoo back.png'
+import cyanHooRight from '../clothing/man/cyan 00d2ff/default hoo right.png'
+import cyanHooLeft from '../clothing/man/cyan 00d2ff/default hoo left.png'
+
+import greenHooFront from '../clothing/man/green 72ff00/default hoo front.png'
+import greenHooBack from '../clothing/man/green 72ff00/default hoo back.png'
+import greenHooRight from '../clothing/man/green 72ff00/default hoo right.png'
+import greenHooLeft from '../clothing/man/green 72ff00/default hoo left.png'
+
+import orangeHooFront from '../clothing/man/orange fd6500/default hoo front.png'
+import orangeHooBack from '../clothing/man/orange fd6500/default hoo back.png'
+import orangeHooRight from '../clothing/man/orange fd6500/default hoo right.png'
+import orangeHooLeft from '../clothing/man/orange fd6500/default hoo left.png'
+
+import pinkHooFront from '../clothing/man/pink ff00f0/default hoo front.png'
+import pinkHooBack from '../clothing/man/pink ff00f0/default hoo back.png'
+import pinkHooRight from '../clothing/man/pink ff00f0/default hoo right.png'
+import pinkHooLeft from '../clothing/man/pink ff00f0/default hoo left.png'
+
+import purpleHooFront from '../clothing/man/purple a200ff/default hoo front.png'
+import purpleHooBack from '../clothing/man/purple a200ff/default hoo back.png'
+import purpleHooRight from '../clothing/man/purple a200ff/default hoo right.png'
+import purpleHooLeft from '../clothing/man/purple a200ff/default hoo left.png'
+
+import redHooFront from '../clothing/man/red ea0000/default hoo front.png'
+import redHooBack from '../clothing/man/red ea0000/default hoo back.png'
+import redHooRight from '../clothing/man/red ea0000/default hoo right.png'
+import redHooLeft from '../clothing/man/red ea0000/default hoo left.png'
+
+import turqoiseHooFront from '../clothing/man/turqoise 00ffd8/default hoo front.png'
+import turqoiseHooBack from '../clothing/man/turqoise 00ffd8/default hoo back.png'
+import turqoiseHooRight from '../clothing/man/turqoise 00ffd8/default hoo right.png'
+import turqoiseHooLeft from '../clothing/man/turqoise 00ffd8/default hoo left.png'
+
+import blackHooFront from '../clothing/man/black 1c1919/default hoo front.png'
+import blackHooBack from '../clothing/man/black 1c1919/default hoo back.png'
+import blackHooRight from '../clothing/man/black 1c1919/default hoo right.png'
+import blackHooLeft from '../clothing/man/black 1c1919/default hoo left.png'
+
+import yellowHooFront from '../clothing/man/yellow fff600/default hoo front.png'
+import yellowHooBack from '../clothing/man/yellow fff600/default hoo back.png'
+import yellowHooRight from '../clothing/man/yellow fff600/default hoo right.png'
+import yellowHooLeft from '../clothing/man/yellow fff600/default hoo left.png'
+
 
 
 
@@ -317,7 +373,7 @@ export function AuthProvider({ children }) {
     //     sex: 'man',
     //     type: 'barbati top bluze',
     //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
+    //     color: '#0091e5',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
     //     id: 'm',
@@ -330,7 +386,7 @@ export function AuthProvider({ children }) {
     //     sex: 'man',
     //     type: 'barbati top bluze',
     //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
+    //     color: '#ea0000',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 3, L: 1, XL: 7, XXL: 3 },
     //     id: 'n',
@@ -343,7 +399,7 @@ export function AuthProvider({ children }) {
     //     sex: 'man',
     //     type: 'barbati top bluze',
     //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
+    //     color: '#fff600',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
     //     id: 'o',
@@ -369,11 +425,141 @@ export function AuthProvider({ children }) {
     //     sex: 'man',
     //     type: 'barbati top bluze',
     //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
+    //     color: '#72ff00',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 2, L: 6, XL: 7, XXL: 3 },
     //     id: 'q',
-    //   }
+    //   } , r: {
+    //     name: 'Hanorac simplu',
+    //     price: 99.99,
+    //     discount: 0,
+    //     photo: blueHooFront,
+    //     sliderPhoto: [blueHooBack, blueHooLeft, blueHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#0091e5',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 5, M: 5, L: 6, XL: 7, XXL: 6 },
+    //     id: 'r',
+    //   } , s: {
+    //     name: 'Hanorac simplu',
+    //     price: 79.99,
+    //     discount: 0,
+    //     photo: cyanHooFront,
+    //     sliderPhoto: [cyanHooBack, cyanHooLeft, cyanHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#00d2ff',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 7, M: 9, L: 1, XL: 7, XXL: 0 },
+    //     id: 's',
+    //   } , t: {
+    //     name: 'Hanorac simplu',
+    //     price: 109.99,
+    //     discount: 0,
+    //     photo: greenHooFront,
+    //     sliderPhoto: [greenHooBack, greenHooLeft, greenHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#72ff00',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 5, M: 6, L: 0, XL: 7, XXL: 0 },
+    //     id: 't',
+    //   } , u: {
+    //     name: 'Hanorac simplu',
+    //     price: 139.99,
+    //     discount: 0.3,
+    //     photo: orangeHooFront,
+    //     sliderPhoto: [orangeHooBack, orangeHooLeft, orangeHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#fd6500',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 6, S: 6, M: 14, L: 15, XL: 21, XXL: 23 },
+    //     id: 'u',
+    //   } , v: {
+    //     name: 'Hanorac simplu',
+    //     price: 99.99,
+    //     discount: 0.2,
+    //     photo: pinkHooFront,
+    //     sliderPhoto: [pinkHooBack, pinkHooLeft, pinkHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ff00f0',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 5, S: 5, M: 3, L: 0, XL: 2, XXL: 6 },
+    //     id: 'v',
+    //   } , w: {
+    //     name: 'Hanorac simplu',
+    //     price: 79.99,
+    //     discount: 0,
+    //     photo: purpleHooFront,
+    //     sliderPhoto: [purpleHooBack, purpleHooLeft, purpleHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#a200ff',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 0, M: 4, L: 2, XL: 7, XXL: 3 },
+    //     id: 'w',
+    //   } , x: {
+    //     name: 'Hanorac simplu',
+    //     price: 94.99,
+    //     discount: 0,
+    //     photo: redHooFront,
+    //     sliderPhoto: [redHooBack, redHooLeft, redHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ea0000',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 6, M: 3, L: 7, XL: 7, XXL: 3 },
+    //     id: 'x',
+    //   } , y: {
+    //     name: 'Hanorac simplu',
+    //     price: 59.99,
+    //     discount: 0,
+    //     photo: turqoiseHooFront,
+    //     sliderPhoto: [turqoiseHooBack, turqoiseHooLeft, turqoiseHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#00ffd8',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 6, S: 3, M: 0, L: 9, XL: 11, XXL: 21 },
+    //     id: 'y',
+    //   } , z: {
+    //     name: 'Hanorac simplu',
+    //     price: 69.99,
+    //     discount: 0,
+    //     photo: blackHooFront,
+    //     sliderPhoto: [blackHooBack, blackHooLeft, blackHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#1c1919',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 6, S: 2, M: 4, L: 3, XL: 0, XXL: 0 },
+    //     id: 'z',
+    //   } , aa: {
+    //     name: 'Hanorac simplu',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: yellowHooFront,
+    //     sliderPhoto: [yellowHooBack, yellowHooLeft, yellowHooRight],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'aa',
+    //   } ,
     // }
     ]
   )
