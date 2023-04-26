@@ -525,6 +525,7 @@ span.spec-price-old {
     }
     .spec-photo {
         width:100%;
+        aspect-ratio: 8/10;
     }
     .spec-review-page {
         width:100%;
