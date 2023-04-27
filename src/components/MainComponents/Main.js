@@ -121,7 +121,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo5' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Pantaloni scurti pentru El
+                    Pantaloni lungi pentru El
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo6' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Pantaloni scurti pentru Ea
+                    Pantaloni lungi pentru Ea
                   </div>
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo7' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Pantaloni lungi pentru El
+                    Pantaloni scurti pentru El
                   </div>
                 </div>
               </div>
@@ -145,7 +145,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo8' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Pantaloni lungi pentru Ea
+                    Pantaloni scurti pentru Ea
                   </div>
                 </div>
               </div>

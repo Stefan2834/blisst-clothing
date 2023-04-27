@@ -581,7 +581,7 @@ export default function Checkout() {
             </div>
             {method.card ? (
               <div className='check-sumar-command' onClick={() => handleNewCommand('card')}>
-                Introdu cardul de credit
+                Plaseaza comanda
               </div>
             ) : (
               <div className='check-sumar-command' onClick={() => handleNewCommand('ramburs')}>

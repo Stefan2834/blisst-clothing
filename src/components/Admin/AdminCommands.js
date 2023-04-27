@@ -180,7 +180,7 @@ export default function AdminCommands() {
                       <div className="comm-title">Total:
                         <div className="comm-txt">{command.price.total} Lei</div>
                       </div>
-                      <div className="comm-title">Metoda de livrare:
+                      <div className="comm-title">Metoda de plata:
                         <div className="comm-txt">{command.method}</div>
                       </div>
                       <div className='comm-title'>Status:

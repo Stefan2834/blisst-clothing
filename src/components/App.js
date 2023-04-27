@@ -73,7 +73,7 @@ function App() {
             <Route path='/' index element={<GoTo />} />
             <Route path='/connect' element={<Connect />} />
             <Route path='/test' element={<Test />} />
-            <Route path='creditCard'>
+            <Route path='/creditCard'>
               <Route path=':cardId' exact element={<CreditCard />} />
             </Route>
 

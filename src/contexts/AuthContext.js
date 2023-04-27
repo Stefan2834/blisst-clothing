@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 import blackTeeFront from '../clothing/man/top/black 1c1919/default tee front.png'
 import blueTeeFront from '../clothing/man/top/blue 0091e5/default tee front.png'
 import cyanTeeFront from '../clothing/man/top/cyan 00d2ff/default tee front.png'
-import darkBlueTeeFront from '../clothing/man/top/dark blue 1200ff/default tee front.png'
 import greenTeeFront from '../clothing/man/top/green 72ff00/default tee front.png'
 import orangeTeeFront from '../clothing/man/top/orange fd6500/default tee front.png'
 import pinkTeeFront from '../clothing/man/top/pink ff00f0/default tee front.png'
@@ -17,7 +16,6 @@ import yellowTeeFront from '../clothing/man/top/yellow fff600/default tee front.
 import blackTeeBack from '../clothing/man/top/black 1c1919/default tee back.png'
 import blueTeeBack from '../clothing/man/top/blue 0091e5/default tee back.png'
 import cyanTeeBack from '../clothing/man/top/cyan 00d2ff/default tee back.png'
-import darkBlueTeeBack from '../clothing/man/top/dark blue 1200ff/default tee back.png'
 import greenTeeBack from '../clothing/man/top/green 72ff00/default tee back.png'
 import orangeTeeBack from '../clothing/man/top/orange fd6500/default tee back.png'
 import pinkTeeBack from '../clothing/man/top/pink ff00f0/default tee back.png'
@@ -68,7 +66,7 @@ import shapeHooLeftCustom from '../clothing/man/top/custom/leftShape.png'
 import shapeHooRightCustom from '../clothing/man/top/custom/rightShape.png'
 
 import snakeHooFrontCustom from '../clothing/man/top/custom/frontSnake.png'
-import snakeHooBackCustom from '../clothing/man/top/black 1c1919/default hoo back.png'
+import snakeHooBackCustom from '../clothing/man/top/custom/backSnake.jpg'
 import snakeHooLeftCustom from '../clothing/man/top/custom/leftSnake.png'
 import snakeHooRightCustom from '../clothing/man/top/custom/rightSnake.png'
 
@@ -123,126 +121,124 @@ import yellowHooRight from '../clothing/man/top/yellow fff600/default hoo right.
 import yellowHooLeft from '../clothing/man/top/yellow fff600/default hoo left.png'
 
 
-/*--------------------Woman--------------------*/
-
 
 /*----------Pants----------*/
 
 
 
-import womanblackPanBrownFront from '../clothing/woman/bottom/black 1c1919/default pan brown front.png'
-import womanblackPanBrownBack from '../clothing/woman/bottom/black 1c1919/default pan brown front.png'
-import womanblackPanBrownRight from '../clothing/woman/bottom/black 1c1919/default pan brown front.png'
-import womanblackPanBrownLeft from '../clothing/woman/bottom/black 1c1919/default pan brown front.png'
+import manblackPanBrownFront from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
+import manblackPanBrownBack from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
+import manblackPanBrownRight from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
+import manblackPanBrownLeft from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
 
-import womanbluePanBrownFront from '../clothing/woman/bottom/blue 0091e5/default pan brown front.png'
-import womanbluePanBrownBack from '../clothing/woman/bottom/blue 0091e5/default pan brown front.png'
-import womanbluePanBrownRight from '../clothing/woman/bottom/blue 0091e5/default pan brown front.png'
-import womanbluePanBrownLeft from '../clothing/woman/bottom/blue 0091e5/default pan brown front.png'
+import manbluePanBrownFront from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
+import manbluePanBrownBack from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
+import manbluePanBrownRight from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
+import manbluePanBrownLeft from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
 
-import womancyanPanBrownFront from '../clothing/woman/bottom/cyan 00d2ff/default pan brown front.png'
-import womancyanPanBrownBack from '../clothing/woman/bottom/cyan 00d2ff/default pan brown front.png'
-import womancyanPanBrownRight from '../clothing/woman/bottom/cyan 00d2ff/default pan brown front.png'
-import womancyanPanBrownLeft from '../clothing/woman/bottom/cyan 00d2ff/default pan brown front.png'
+import mancyanPanBrownFront from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
+import mancyanPanBrownBack from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
+import mancyanPanBrownRight from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
+import mancyanPanBrownLeft from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
 
-import womangreenPanBrownFront from '../clothing/woman/bottom/green 72ff00/default pan brown front.png'
-import womangreenPanBrownBack from '../clothing/woman/bottom/green 72ff00/default pan brown front.png'
-import womangreenPanBrownRight from '../clothing/woman/bottom/green 72ff00/default pan brown front.png'
-import womangreenPanBrownLeft from '../clothing/woman/bottom/green 72ff00/default pan brown front.png'
+import mangreenPanBrownFront from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
+import mangreenPanBrownBack from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
+import mangreenPanBrownRight from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
+import mangreenPanBrownLeft from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
 
-import womanorangePanBrownFront from '../clothing/woman/bottom/orange fd6500/default pan brown front.png'
-import womanorangePanBrownBack from '../clothing/woman/bottom/orange fd6500/default pan brown front.png'
-import womanorangePanBrownRight from '../clothing/woman/bottom/orange fd6500/default pan brown front.png'
-import womanorangePanBrownLeft from '../clothing/woman/bottom/orange fd6500/default pan brown front.png'
+import manorangePanBrownFront from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
+import manorangePanBrownBack from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
+import manorangePanBrownRight from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
+import manorangePanBrownLeft from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
 
-import womanpinkPanBrownFront from '../clothing/woman/bottom/pink ff00f0/default pan brown front.png'
-import womanpinkPanBrownBack from '../clothing/woman/bottom/pink ff00f0/default pan brown front.png'
-import womanpinkPanBrownRight from '../clothing/woman/bottom/pink ff00f0/default pan brown front.png'
-import womanpinkPanBrownLeft from '../clothing/woman/bottom/pink ff00f0/default pan brown front.png'
+import manpinkPanBrownFront from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
+import manpinkPanBrownBack from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
+import manpinkPanBrownRight from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
+import manpinkPanBrownLeft from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
 
-import womanpurplePanBrownFront from '../clothing/woman/bottom/purple a200ff/default pan brown front.png'
-import womanpurplePanBrownBack from '../clothing/woman/bottom/purple a200ff/default pan brown front.png'
-import womanpurplePanBrownRight from '../clothing/woman/bottom/purple a200ff/default pan brown front.png'
-import womanpurplePanBrownLeft from '../clothing/woman/bottom/purple a200ff/default pan brown front.png'
+import manpurplePanBrownFront from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
+import manpurplePanBrownBack from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
+import manpurplePanBrownRight from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
+import manpurplePanBrownLeft from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
 
-import womanredPanBrownFront from '../clothing/woman/bottom/red ea0000/default pan brown front.png'
-import womanredPanBrownBack from '../clothing/woman/bottom/red ea0000/default pan brown front.png'
-import womanredPanBrownRight from '../clothing/woman/bottom/red ea0000/default pan brown front.png'
-import womanredPanBrownLeft from '../clothing/woman/bottom/red ea0000/default pan brown front.png'
+import manredPanBrownFront from '../clothing/man/bottom/red ea0000/default pan brown front.png'
+import manredPanBrownBack from '../clothing/man/bottom/red ea0000/default pan brown front.png'
+import manredPanBrownRight from '../clothing/man/bottom/red ea0000/default pan brown front.png'
+import manredPanBrownLeft from '../clothing/man/bottom/red ea0000/default pan brown front.png'
 
-import womanturqoisePanBrownFront from '../clothing/woman/bottom/turqoise 00ffd8/default pan brown front.png'
-import womanturqoisePanBrownBack from '../clothing/woman/bottom/turqoise 00ffd8/default pan brown front.png'
-import womanturqoisePanBrownRight from '../clothing/woman/bottom/turqoise 00ffd8/default pan brown front.png'
-import womanturqoisePanBrownLeft from '../clothing/woman/bottom/turqoise 00ffd8/default pan brown front.png'
+import manturqoisePanBrownFront from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
+import manturqoisePanBrownBack from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
+import manturqoisePanBrownRight from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
+import manturqoisePanBrownLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
 
-import womanwhitePanBrownFront from '../clothing/woman/bottom/white fff/default pan brown front.png'
-import womanwhitePanBrownBack from '../clothing/woman/bottom/white fff/default pan brown front.png'
-import womanwhitePanBrownRight from '../clothing/woman/bottom/white fff/default pan brown front.png'
-import womanwhitePanBrownLeft from '../clothing/woman/bottom/white fff/default pan brown front.png'
+import manwhitePanBrownFront from '../clothing/man/bottom/white fff/default pan brown front.png'
+import manwhitePanBrownBack from '../clothing/man/bottom/white fff/default pan brown front.png'
+import manwhitePanBrownRight from '../clothing/man/bottom/white fff/default pan brown front.png'
+import manwhitePanBrownLeft from '../clothing/man/bottom/white fff/default pan brown front.png'
 
-import womanyellowPanBrownFront from '../clothing/woman/bottom/yellow fff600/default pan brown front.png'
-import womanyellowPanBrownBack from '../clothing/woman/bottom/yellow fff600/default pan brown front.png'
-import womanyellowPanBrownRight from '../clothing/woman/bottom/yellow fff600/default pan brown front.png'
-import womanyellowPanBrownLeft from '../clothing/woman/bottom/yellow fff600/default pan brown front.png'
+import manyellowPanBrownFront from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
+import manyellowPanBrownBack from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
+import manyellowPanBrownRight from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
+import manyellowPanBrownLeft from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
 
 
 /*Grey*/
 
 
-import womanblackPanGreyFront from '../clothing/woman/bottom/black 1c1919/default pan grey front.png'
-import womanblackPanGreyBack from '../clothing/woman/bottom/black 1c1919/default pan grey front.png'
-import womanblackPanGreyRight from '../clothing/woman/bottom/black 1c1919/default pan grey front.png'
-import womanblackPanGreyLeft from '../clothing/woman/bottom/black 1c1919/default pan grey front.png'
+import manblackPanGreyFront from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
+import manblackPanGreyBack from '../clothing/man/bottom/black 1c1919/default pan grey back.png'
+import manblackPanGreyRight from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
+import manblackPanGreyLeft from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
 
-import womanbluePanGreyFront from '../clothing/woman/bottom/blue 0091e5/default pan grey front.png'
-import womanbluePanGreyBack from '../clothing/woman/bottom/blue 0091e5/default pan grey front.png'
-import womanbluePanGreyRight from '../clothing/woman/bottom/blue 0091e5/default pan grey front.png'
-import womanbluePanGreyLeft from '../clothing/woman/bottom/blue 0091e5/default pan grey front.png'
+import manbluePanGreyFront from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
+import manbluePanGreyBack from '../clothing/man/bottom/blue 0091e5/default pan grey back.png'
+import manbluePanGreyRight from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
+import manbluePanGreyLeft from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
 
-import womancyanPanGreyFront from '../clothing/woman/bottom/cyan 00d2ff/default pan grey front.png'
-import womancyanPanGreyBack from '../clothing/woman/bottom/cyan 00d2ff/default pan grey front.png'
-import womancyanPanGreyRight from '../clothing/woman/bottom/cyan 00d2ff/default pan grey front.png'
-import womancyanPanGreyLeft from '../clothing/woman/bottom/cyan 00d2ff/default pan grey front.png'
+import mancyanPanGreyFront from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
+import mancyanPanGreyBack from '../clothing/man/bottom/cyan 00d2ff/default pan grey back.png'
+import mancyanPanGreyRight from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
+import mancyanPanGreyLeft from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
 
-import womangreenPanGreyFront from '../clothing/woman/bottom/green 72ff00/default pan grey front.png'
-import womangreenPanGreyBack from '../clothing/woman/bottom/green 72ff00/default pan grey front.png'
-import womangreenPanGreyRight from '../clothing/woman/bottom/green 72ff00/default pan grey front.png'
-import womangreenPanGreyLeft from '../clothing/woman/bottom/green 72ff00/default pan grey front.png'
+import mangreenPanGreyFront from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
+import mangreenPanGreyBack from '../clothing/man/bottom/green 72ff00/default pan grey back.png'
+import mangreenPanGreyRight from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
+import mangreenPanGreyLeft from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
 
-import womanorangePanGreyFront from '../clothing/woman/bottom/orange fd6500/default pan grey front.png'
-import womanorangePanGreyBack from '../clothing/woman/bottom/orange fd6500/default pan grey front.png'
-import womanorangePanGreyRight from '../clothing/woman/bottom/orange fd6500/default pan grey front.png'
-import womanorangePanGreyLeft from '../clothing/woman/bottom/orange fd6500/default pan grey front.png'
+import manorangePanGreyFront from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
+import manorangePanGreyBack from '../clothing/man/bottom/orange fd6500/default pan grey back.png'
+import manorangePanGreyRight from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
+import manorangePanGreyLeft from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
 
-import womanpinkPanGreyFront from '../clothing/woman/bottom/pink ff00f0/default pan grey front.png'
-import womanpinkPanGreyBack from '../clothing/woman/bottom/pink ff00f0/default pan grey front.png'
-import womanpinkPanGreyRight from '../clothing/woman/bottom/pink ff00f0/default pan grey front.png'
-import womanpinkPanGreyLeft from '../clothing/woman/bottom/pink ff00f0/default pan grey front.png'
+import manpinkPanGreyFront from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
+import manpinkPanGreyBack from '../clothing/man/bottom/pink ff00f0/default pan grey back.png'
+import manpinkPanGreyRight from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
+import manpinkPanGreyLeft from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
 
-import womanpurplePanGreyFront from '../clothing/woman/bottom/purple a200ff/default pan grey front.png'
-import womanpurplePanGreyBack from '../clothing/woman/bottom/purple a200ff/default pan grey front.png'
-import womanpurplePanGreyRight from '../clothing/woman/bottom/purple a200ff/default pan grey front.png'
-import womanpurplePanGreyLeft from '../clothing/woman/bottom/purple a200ff/default pan grey front.png'
+import manpurplePanGreyFront from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
+import manpurplePanGreyBack from '../clothing/man/bottom/purple a200ff/default pan grey back.png'
+import manpurplePanGreyRight from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
+import manpurplePanGreyLeft from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
 
-import womanredPanGreyFront from '../clothing/woman/bottom/red ea0000/default pan grey front.png'
-import womanredPanGreyBack from '../clothing/woman/bottom/red ea0000/default pan grey front.png'
-import womanredPanGreyRight from '../clothing/woman/bottom/red ea0000/default pan grey front.png'
-import womanredPanGreyLeft from '../clothing/woman/bottom/red ea0000/default pan grey front.png'
+import manredPanGreyFront from '../clothing/man/bottom/red ea0000/default pan grey front.png'
+import manredPanGreyBack from '../clothing/man/bottom/red ea0000/default pan grey back.png'
+import manredPanGreyRight from '../clothing/man/bottom/red ea0000/default pan grey front.png'
+import manredPanGreyLeft from '../clothing/man/bottom/red ea0000/default pan grey front.png'
 
-import womanturqoisePanGreyFront from '../clothing/woman/bottom/turqoise 00ffd8/default pan grey front.png'
-import womanturqoisePanGreyBack from '../clothing/woman/bottom/turqoise 00ffd8/default pan grey front.png'
-import womanturqoisePanGreyRight from '../clothing/woman/bottom/turqoise 00ffd8/default pan grey front.png'
-import womanturqoisePanGreyLeft from '../clothing/woman/bottom/turqoise 00ffd8/default pan grey front.png'
+import manturqoisePanGreyFront from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
+import manturqoisePanGreyBack from '../clothing/man/bottom/turqoise 00ffd8/default pan grey back.png'
+import manturqoisePanGreyRight from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
+import manturqoisePanGreyLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
 
-import womanwhitePanGreyFront from '../clothing/woman/bottom/white fff/default pan grey front.png'
-import womanwhitePanGreyBack from '../clothing/woman/bottom/white fff/default pan grey front.png'
-import womanwhitePanGreyRight from '../clothing/woman/bottom/white fff/default pan grey front.png'
-import womanwhitePanGreyLeft from '../clothing/woman/bottom/white fff/default pan grey front.png'
+import manwhitePanGreyFront from '../clothing/man/bottom/white fff/default pan grey front.png'
+import manwhitePanGreyBack from '../clothing/man/bottom/white fff/default pan grey back.png'
+import manwhitePanGreyRight from '../clothing/man/bottom/white fff/default pan grey front.png'
+import manwhitePanGreyLeft from '../clothing/man/bottom/white fff/default pan grey front.png'
 
-import womanyellowPanGreyFront from '../clothing/woman/bottom/yellow fff600/default pan grey front.png'
-import womanyellowPanGreyBack from '../clothing/woman/bottom/yellow fff600/default pan grey front.png'
-import womanyellowPanGreyRight from '../clothing/woman/bottom/yellow fff600/default pan grey front.png'
-import womanyellowPanGreyLeft from '../clothing/woman/bottom/yellow fff600/default pan grey front.png'
+import manyellowPanGreyFront from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
+import manyellowPanGreyBack from '../clothing/man/bottom/yellow fff600/default pan grey back.png'
+import manyellowPanGreyRight from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
+import manyellowPanGreyLeft from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
 
 
 
@@ -347,700 +343,687 @@ export default function Reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [product, setProduct] = useState(
-    [
-    // {
-    //   a: {
-    //     name: 'Tricou simplu',
-    //     price: 29.99,
-    //     discount: 0.2,
-    //     photo: blackTeeFront,
-    //     sliderPhoto: [blackTeeBack, blackTeeBack, blackTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#1c1919',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    //     id: 'a'
-    //   }, b: {
-    //     name: 'Tricou simplu',
-    //     price: 29.99,
-    //     discount: 0.4,
-    //     photo: blueTeeFront,
-    //     sliderPhoto: [blueTeeBack, blueTeeBack, blueTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#0091e5',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 0, M: 5, L: 10, XL: 2, XXL: 5 },
-    //     id: 'b'
-    //   }, c: {
-    //     name: 'Tricou simplu',
-    //     price: 79.99,
-    //     discount: 0,
-    //     photo: cyanTeeFront,
-    //     sliderPhoto: [cyanTeeBack, cyanTeeBack, cyanTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#00d2ff',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 10, S: 5, M: 0, L: 9, XL: 0, XXL: 4 },
-    //     id: 'c'
-    //   }, d: {
-    //     name: 'Tricou simplu',
-    //     price: 49.99,
-    //     discount: 0.2,
-    //     photo: darkBlueTeeFront,
-    //     sliderPhoto: [darkBlueTeeBack, darkBlueTeeBack, darkBlueTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#1200ff',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 10, S: 5, M: 0, L: 9, XL: 1, XXL: 4 },
-    //     id: 'd'
-    //   }, e: {
-    //     name: 'Tricou simplu',
-    //     price: 149.99,
-    //     discount: 0.5,
-    //     photo: greenTeeFront,
-    //     sliderPhoto: [greenTeeBack, greenTeeBack, greenTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#72ff00',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 10, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
-    //     id: 'e'
-    //   }, f: {
-    //     name: 'Tricou simplu',
-    //     price: 99.99,
-    //     discount: 0.1,
-    //     photo: orangeTeeFront,
-    //     sliderPhoto: [orangeTeeBack, orangeTeeBack, orangeTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#fd6500',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 10, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    //     id: 'f'
-    //   }, g: {
-    //     name: 'Tricou simplu',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: pinkTeeFront,
-    //     sliderPhoto: [pinkTeeBack, pinkTeeBack, pinkTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#ff00f0',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 10, S: 5, M: 0, L: 0, XL: 1, XXL: 4 },
-    //     id: 'g'
-    //   }, h: {
-    //     name: 'Tricou simplu',
-    //     price: 89.99,
-    //     discount: 0,
-    //     photo: purpleTeeFront,
-    //     sliderPhoto: [purpleTeeBack, purpleTeeBack, purpleTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#a200ff',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
-    //     id: 'h'
-    //   }, i: {
-    //     name: 'Tricou simplu',
-    //     price: 49.99,
-    //     discount: 0,
-    //     photo: redTeeFront,
-    //     sliderPhoto: [redTeeBack, redTeeBack, redTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#ea0000',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
-    //     id: 'i'
-    //   }, j: {
-    //     name: 'Tricou simplu',
-    //     price: 99.99,
-    //     discount: 0.1,
-    //     photo: turqoiseTeeFront,
-    //     sliderPhoto: [turqoiseTeeBack, turqoiseTeeBack, turqoiseTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#00ffd8',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    //     id: 'j'
-    //   }, k: {
-    //     name: 'Tricou simplu',
-    //     price: 29.99,
-    //     discount: 0.2,
-    //     photo: whiteTeeFront,
-    //     sliderPhoto: [whiteTeeBack, whiteTeeBack, whiteTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#eee',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
-    //     id: 'k'
-    //   }, l: {
-    //     name: 'Tricou simplu',
-    //     price: 29.99,
-    //     discount: 0.4,
-    //     photo: yellowTeeFront,
-    //     sliderPhoto: [yellowTeeBack, yellowTeeBack, yellowTeeBack],
-    //     sex: 'man',
-    //     type: 'barbati top tricouri',
-    //     color: '#fff600',
-    //     spec: 'Tricou negru din bumbac',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 5, M: 0, L: 2, XL: 1, XXL: 9 },
-    //     id: 'l'
-    //   }, p1: {
-    //     name: 'Hanorac cu patern',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: blueHooFrontPatern,
-    //     sliderPhoto: [blueHooBackPatern, blueHooLeftPatern, blueHooRightPatern],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#0091e5',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
-    //     id: 'p1',
-    //   }, p2: {
-    //     name: 'Hanorac cu patern',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: redHooFrontPatern,
-    //     sliderPhoto: [redHooBackPatern, redHooLeftPatern, redHooRightPatern],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ea0000',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 5, M: 3, L: 1, XL: 7, XXL: 3 },
-    //     id: 'p2',
-    //   }, p3: {
-    //     name: 'Hanorac cu patern',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: yellowHooFrontPatern,
-    //     sliderPhoto: [yellowHooBackPatern, yellowHooLeftPatern, yellowHooRightPatern],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#fff600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
-    //     id: 'p3',
-    //   }, p4: {
-    //     name: 'Hanorac cu patern',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: whiteHooFrontPatern,
-    //     sliderPhoto: [whiteHooBackPatern, whiteHooLeftPatern, whiteHooRightPatern],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 2, M: 5, L: 6, XL: 7, XXL: 3 },
-    //     id: 'p4',
-    //   }, p5: {
-    //     name: 'Hanorac cu patern',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: greenHooFrontPatern,
-    //     sliderPhoto: [greenHooBackPatern, greenHooLeftPatern, greenHooRightPatern],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#72ff00',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 0, M: 2, L: 6, XL: 0, XXL: 3 },
-    //     id: 'p5',
-    //   }, p6: {
-    //     name: 'Hanorac custom',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: sprayHooFrontCustom,
-    //     sliderPhoto: [sprayHooBackCustom, sprayHooLeftCustom, sprayHooRightCustom],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 0, L: 3, XL: 4, XXL: 3 },
-    //     id: 'p6',
-    //   }, p7: {
-    //     name: 'Hanorac custom',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: bascketHooFrontCustom,
-    //     sliderPhoto: [bascketHooBackCustom, bascketHooLeftCustom, bascketHooRightCustom],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 6, M: 3, L: 2, XL: 5, XXL: 4 },
-    //     id: 'p7',
-    //   }, p8: {
-    //     name: 'Hanorac custom',
-    //     price: 129.99,
-    //     discount: 0,
-    //     photo: shapeHooFrontCustom,
-    //     sliderPhoto: [shapeHooBackCustom, shapeHooLeftCustom, shapeHooRightCustom],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 5, M: 2, L: 6, XL: 7, XXL: 3 },
-    //     id: 'p8',
-    //   }, p9: {
-    //     name: 'Hanorac Snake',
-    //     price: 129.99,
-    //     discount: 0.2,
-    //     photo: snakeHooFrontCustom,
-    //     sliderPhoto: [snakeHooBackCustom, snakeHooLeftCustom, snakeHooRightCustom],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#eee',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 2, S: 5, M: 4, L: 0, XL: 3, XXL: 1 },
-    //     id: 'p9',
-    //   }, h1: {
-    //     name: 'Hanorac simplu',
-    //     price: 99.99,
-    //     discount: 0,
-    //     photo: blueHooFront,
-    //     sliderPhoto: [blueHooBack, blueHooLeft, blueHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#0091e5',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 5, M: 5, L: 6, XL: 7, XXL: 6 },
-    //     id: 'h1',
-    //   }, h2: {
-    //     name: 'Hanorac simplu',
-    //     price: 79.99,
-    //     discount: 0,
-    //     photo: cyanHooFront,
-    //     sliderPhoto: [cyanHooBack, cyanHooLeft, cyanHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#00d2ff',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 7, M: 9, L: 1, XL: 7, XXL: 0 },
-    //     id: 'h2',
-    //   }, h3: {
-    //     name: 'Hanorac simplu',
-    //     price: 109.99,
-    //     discount: 0,
-    //     photo: greenHooFront,
-    //     sliderPhoto: [greenHooBack, greenHooLeft, greenHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#72ff00',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 5, M: 6, L: 0, XL: 7, XXL: 0 },
-    //     id: 'h3',
-    //   }, h4: {
-    //     name: 'Hanorac simplu',
-    //     price: 139.99,
-    //     discount: 0.3,
-    //     photo: orangeHooFront,
-    //     sliderPhoto: [orangeHooBack, orangeHooLeft, orangeHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#fd6500',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 6, S: 6, M: 14, L: 15, XL: 21, XXL: 23 },
-    //     id: 'h4',
-    //   }, h5: {
-    //     name: 'Hanorac simplu',
-    //     price: 99.99,
-    //     discount: 0.2,
-    //     photo: pinkHooFront,
-    //     sliderPhoto: [pinkHooBack, pinkHooLeft, pinkHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ff00f0',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 5, S: 5, M: 3, L: 0, XL: 2, XXL: 6 },
-    //     id: 'h5',
-    //   }, h6: {
-    //     name: 'Hanorac simplu',
-    //     price: 79.99,
-    //     discount: 0,
-    //     photo: purpleHooFront,
-    //     sliderPhoto: [purpleHooBack, purpleHooLeft, purpleHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#a200ff',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 0, M: 4, L: 2, XL: 7, XXL: 3 },
-    //     id: 'h6',
-    //   }, h7: {
-    //     name: 'Hanorac simplu',
-    //     price: 94.99,
-    //     discount: 0,
-    //     photo: redHooFront,
-    //     sliderPhoto: [redHooBack, redHooLeft, redHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ea0000',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 4, S: 6, M: 3, L: 7, XL: 7, XXL: 3 },
-    //     id: 'h7',
-    //   }, h8: {
-    //     name: 'Hanorac simplu',
-    //     price: 59.99,
-    //     discount: 0,
-    //     photo: turqoiseHooFront,
-    //     sliderPhoto: [turqoiseHooBack, turqoiseHooLeft, turqoiseHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#00ffd8',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 6, S: 3, M: 0, L: 9, XL: 11, XXL: 21 },
-    //     id: 'h8',
-    //   }, h9: {
-    //     name: 'Hanorac simplu',
-    //     price: 69.99,
-    //     discount: 0,
-    //     photo: blackHooFront,
-    //     sliderPhoto: [blackHooBack, blackHooLeft, blackHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#1c1919',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 6, S: 2, M: 4, L: 3, XL: 0, XXL: 0 },
-    //     id: 'h9',
-    //   }, h10: {
-    //     name: 'Hanorac simplu',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: yellowHooFront,
-    //     sliderPhoto: [yellowHooBack, yellowHooLeft, yellowHooRight],
-    //     sex: 'man',
-    //     type: 'barbati top bluze',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'h10',
-    //   }, wpb1: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanblackPanBrownFront,
-    //     sliderPhoto: [womanblackPanBrownBack, womanblackPanBrownLeft, womanblackPanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb1',
-    //   }, wpb2: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanbluePanBrownFront,
-    //     sliderPhoto: [womanbluePanBrownBack, womanbluePanBrownLeft, womanbluePanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb2',
-    //   }, wpb3: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womancyanPanBrownFront,
-    //     sliderPhoto: [womancyanPanBrownBack, womancyanPanBrownLeft, womancyanPanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb3',
-    //   }, wpb4: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womangreenPanBrownFront,
-    //     sliderPhoto: [womangreenPanBrownBack, womangreenPanBrownLeft, womangreenPanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb4',
-    //   }, wpb5: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanorangePanBrownFront,
-    //     sliderPhoto: [womanorangePanBrownBack, womanorangePanBrownLeft, womanorangePanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb5',
-    //   }, wpb6: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanpinkPanBrownFront,
-    //     sliderPhoto: [womanpinkPanBrownBack, womanpinkPanBrownLeft, womanpinkPanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb6',
-    //   }, wpb7: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanpurplePanBrownFront,
-    //     sliderPhoto: [womanpurplePanBrownBack, womanpurplePanBrownLeft, womanpurplePanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb7',
-    //   }, wpb8: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanredPanBrownFront,
-    //     sliderPhoto: [womanredPanBrownBack, womanredPanBrownLeft, womanredPanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb8',
-    //   }, wpb9: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanturqoisePanBrownFront,
-    //     sliderPhoto: [womanturqoisePanBrownBack, womanturqoisePanBrownLeft, womanturqoisePanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb9',
-    //   }, wpb10: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanwhitePanBrownFront,
-    //     sliderPhoto: [womanwhitePanBrownBack, womanwhitePanBrownLeft, womanwhitePanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb10',
-    //   }, wpb11: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0.2,
-    //     photo: womanyellowPanBrownFront,
-    //     sliderPhoto: [womanyellowPanBrownBack, womanyellowPanBrownLeft, womanyellowPanBrownRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'wpb11',
-    //   }, wpg1: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanblackPanGreyFront,
-    //     sliderPhoto: [womanblackPanGreyBack, womanblackPanGreyLeft, womanblackPanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg1',
-    //   }, wpg2: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womancyanPanGreyFront,
-    //     sliderPhoto: [womancyanPanGreyBack, womancyanPanGreyLeft, womancyanPanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg2',
-    //   }, wpg3: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womangreenPanGreyFront,
-    //     sliderPhoto: [womangreenPanGreyBack, womangreenPanGreyLeft, womangreenPanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg3',
-    //   }, wpg4: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanorangePanGreyFront,
-    //     sliderPhoto: [womanorangePanGreyBack, womanorangePanGreyLeft, womanorangePanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg4',
-    //   }, wpg5: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanpinkPanGreyFront,
-    //     sliderPhoto: [womanpinkPanGreyBack, womanpinkPanGreyLeft, womanpinkPanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg5',
-    //   }, wpg6: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanpurplePanGreyFront,
-    //     sliderPhoto: [womanpurplePanGreyBack, womanpurplePanGreyLeft, womanpurplePanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg6',
-    //   }, wpg7: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanredPanGreyFront,
-    //     sliderPhoto: [womanredPanGreyBack, womanredPanGreyLeft, womanredPanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg7',
-    //   }, wpg8: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanturqoisePanGreyFront,
-    //     sliderPhoto: [womanturqoisePanGreyBack, womanturqoisePanGreyLeft, womanturqoisePanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg8',
-    //   }, wpg9: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanwhitePanGreyFront,
-    //     sliderPhoto: [womanwhitePanGreyBack, womanwhitePanGreyLeft, womanwhitePanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg9',
-    //   }, wpg10: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanyellowPanGreyFront,
-    //     sliderPhoto: [womanyellowPanGreyBack, womanyellowPanGreyLeft, womanyellowPanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg10',
-    //   }, wpg11: {
-    //     name: 'Pantaloni simpli',
-    //     price: 119.99,
-    //     discount: 0,
-    //     photo: womanyellowPanGreyFront,
-    //     sliderPhoto: [womanyellowPanGreyBack, womanyellowPanGreyLeft, womanyellowPanGreyRight],
-    //     sex: 'man',
-    //     type: 'femei bottom lungi',
-    //     spec: 'Tricou negru din bumbac',
-    //     color: '#ffd600',
-    //     star: { total: 0, nr: 0 },
-    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    //     id: 'wpg11',
-    //   },
-    // }
-    ]
+    // [
+    {
+      a: {
+        name: 'Tricou simplu',
+        price: 29.99,
+        discount: 0.2,
+        photo: blackTeeFront,
+        sliderPhoto: [blackTeeBack, blackTeeBack, blackTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#1c1919',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+        id: 'a'
+      }, b: {
+        name: 'Tricou simplu',
+        price: 29.99,
+        discount: 0.4,
+        photo: blueTeeFront,
+        sliderPhoto: [blueTeeBack, blueTeeBack, blueTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#0091e5',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 0, M: 5, L: 10, XL: 2, XXL: 5 },
+        id: 'b'
+      }, c: {
+        name: 'Tricou simplu',
+        price: 79.99,
+        discount: 0,
+        photo: cyanTeeFront,
+        sliderPhoto: [cyanTeeBack, cyanTeeBack, cyanTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#00d2ff',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 10, S: 5, M: 0, L: 9, XL: 0, XXL: 4 },
+        id: 'c'
+      }, e: {
+        name: 'Tricou simplu',
+        price: 149.99,
+        discount: 0.5,
+        photo: greenTeeFront,
+        sliderPhoto: [greenTeeBack, greenTeeBack, greenTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#72ff00',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 10, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
+        id: 'e'
+      }, f: {
+        name: 'Tricou simplu',
+        price: 99.99,
+        discount: 0.1,
+        photo: orangeTeeFront,
+        sliderPhoto: [orangeTeeBack, orangeTeeBack, orangeTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#fd6500',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 10, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+        id: 'f'
+      }, g: {
+        name: 'Tricou simplu',
+        price: 129.99,
+        discount: 0,
+        photo: pinkTeeFront,
+        sliderPhoto: [pinkTeeBack, pinkTeeBack, pinkTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#ff00f0',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 10, S: 5, M: 0, L: 0, XL: 1, XXL: 4 },
+        id: 'g'
+      }, h: {
+        name: 'Tricou simplu',
+        price: 89.99,
+        discount: 0,
+        photo: purpleTeeFront,
+        sliderPhoto: [purpleTeeBack, purpleTeeBack, purpleTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#a200ff',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 5, M: 4, L: 9, XL: 1, XXL: 4 },
+        id: 'h'
+      }, i: {
+        name: 'Tricou simplu',
+        price: 49.99,
+        discount: 0,
+        photo: redTeeFront,
+        sliderPhoto: [redTeeBack, redTeeBack, redTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#ea0000',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 10, S: 5, M: 4, L: 9, XL: 0, XXL: 4 },
+        id: 'i'
+      }, j: {
+        name: 'Tricou simplu',
+        price: 99.99,
+        discount: 0.1,
+        photo: turqoiseTeeFront,
+        sliderPhoto: [turqoiseTeeBack, turqoiseTeeBack, turqoiseTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#00ffd8',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+        id: 'j'
+      }, k: {
+        name: 'Tricou simplu',
+        price: 29.99,
+        discount: 0.2,
+        photo: whiteTeeFront,
+        sliderPhoto: [whiteTeeBack, whiteTeeBack, whiteTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#eee',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 20, S: 0, M: 4, L: 9, XL: 1, XXL: 4 },
+        id: 'k'
+      }, l: {
+        name: 'Tricou simplu',
+        price: 29.99,
+        discount: 0.4,
+        photo: yellowTeeFront,
+        sliderPhoto: [yellowTeeBack, yellowTeeBack, yellowTeeBack],
+        sex: 'man',
+        type: 'barbati top tricouri',
+        color: '#fff600',
+        spec: 'Tricou negru din bumbac',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 5, M: 0, L: 2, XL: 1, XXL: 9 },
+        id: 'l'
+      }, p1: {
+        name: 'Hanorac cu patern',
+        price: 129.99,
+        discount: 0,
+        photo: blueHooFrontPatern,
+        sliderPhoto: [blueHooBackPatern, blueHooLeftPatern, blueHooRightPatern],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#0091e5',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
+        id: 'p1',
+      }, p2: {
+        name: 'Hanorac cu patern',
+        price: 129.99,
+        discount: 0,
+        photo: redHooFrontPatern,
+        sliderPhoto: [redHooBackPatern, redHooLeftPatern, redHooRightPatern],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#ea0000',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 5, M: 3, L: 1, XL: 7, XXL: 3 },
+        id: 'p2',
+      }, p3: {
+        name: 'Hanorac cu patern',
+        price: 129.99,
+        discount: 0,
+        photo: yellowHooFrontPatern,
+        sliderPhoto: [yellowHooBackPatern, yellowHooLeftPatern, yellowHooRightPatern],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#fff600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
+        id: 'p3',
+      }, p4: {
+        name: 'Hanorac cu patern',
+        price: 129.99,
+        discount: 0,
+        photo: whiteHooFrontPatern,
+        sliderPhoto: [whiteHooBackPatern, whiteHooLeftPatern, whiteHooRightPatern],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#eee',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 2, M: 5, L: 6, XL: 7, XXL: 3 },
+        id: 'p4',
+      }, p5: {
+        name: 'Hanorac cu patern',
+        price: 129.99,
+        discount: 0,
+        photo: greenHooFrontPatern,
+        sliderPhoto: [greenHooBackPatern, greenHooLeftPatern, greenHooRightPatern],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#72ff00',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 0, M: 2, L: 6, XL: 0, XXL: 3 },
+        id: 'p5',
+      }, p6: {
+        name: 'Hanorac custom',
+        price: 129.99,
+        discount: 0,
+        photo: sprayHooFrontCustom,
+        sliderPhoto: [sprayHooBackCustom, sprayHooLeftCustom, sprayHooRightCustom],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#eee',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 0, L: 3, XL: 4, XXL: 3 },
+        id: 'p6',
+      }, p7: {
+        name: 'Hanorac custom',
+        price: 129.99,
+        discount: 0,
+        photo: bascketHooFrontCustom,
+        sliderPhoto: [bascketHooBackCustom, bascketHooLeftCustom, bascketHooRightCustom],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#eee',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 6, M: 3, L: 2, XL: 5, XXL: 4 },
+        id: 'p7',
+      }, p8: {
+        name: 'Hanorac custom',
+        price: 129.99,
+        discount: 0,
+        photo: shapeHooFrontCustom,
+        sliderPhoto: [shapeHooBackCustom, shapeHooLeftCustom, shapeHooRightCustom],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#eee',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 5, M: 2, L: 6, XL: 7, XXL: 3 },
+        id: 'p8',
+      }, p9: {
+        name: 'Hanorac Snake',
+        price: 129.99,
+        discount: 0.2,
+        photo: snakeHooFrontCustom,
+        sliderPhoto: [snakeHooBackCustom, snakeHooLeftCustom, snakeHooRightCustom],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#eee',
+        star: { total: 0, nr: 0 },
+        size: { XS: 2, S: 5, M: 4, L: 0, XL: 3, XXL: 1 },
+        id: 'p9',
+      }, h1: {
+        name: 'Hanorac simplu',
+        price: 99.99,
+        discount: 0,
+        photo: blueHooFront,
+        sliderPhoto: [blueHooBack, blueHooLeft, blueHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#0091e5',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 5, M: 5, L: 6, XL: 7, XXL: 6 },
+        id: 'h1',
+      }, h2: {
+        name: 'Hanorac simplu',
+        price: 79.99,
+        discount: 0,
+        photo: cyanHooFront,
+        sliderPhoto: [cyanHooBack, cyanHooLeft, cyanHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#00d2ff',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 7, M: 9, L: 1, XL: 7, XXL: 0 },
+        id: 'h2',
+      }, h3: {
+        name: 'Hanorac simplu',
+        price: 109.99,
+        discount: 0,
+        photo: greenHooFront,
+        sliderPhoto: [greenHooBack, greenHooLeft, greenHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#72ff00',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 5, M: 6, L: 0, XL: 7, XXL: 0 },
+        id: 'h3',
+      }, h4: {
+        name: 'Hanorac simplu',
+        price: 139.99,
+        discount: 0.3,
+        photo: orangeHooFront,
+        sliderPhoto: [orangeHooBack, orangeHooLeft, orangeHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#fd6500',
+        star: { total: 0, nr: 0 },
+        size: { XS: 6, S: 6, M: 14, L: 15, XL: 21, XXL: 23 },
+        id: 'h4',
+      }, h5: {
+        name: 'Hanorac simplu',
+        price: 99.99,
+        discount: 0.2,
+        photo: pinkHooFront,
+        sliderPhoto: [pinkHooBack, pinkHooLeft, pinkHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#ff00f0',
+        star: { total: 0, nr: 0 },
+        size: { XS: 5, S: 5, M: 3, L: 0, XL: 2, XXL: 6 },
+        id: 'h5',
+      }, h6: {
+        name: 'Hanorac simplu',
+        price: 79.99,
+        discount: 0,
+        photo: purpleHooFront,
+        sliderPhoto: [purpleHooBack, purpleHooLeft, purpleHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#a200ff',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 0, M: 4, L: 2, XL: 7, XXL: 3 },
+        id: 'h6',
+      }, h7: {
+        name: 'Hanorac simplu',
+        price: 94.99,
+        discount: 0,
+        photo: redHooFront,
+        sliderPhoto: [redHooBack, redHooLeft, redHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#ea0000',
+        star: { total: 0, nr: 0 },
+        size: { XS: 4, S: 6, M: 3, L: 7, XL: 7, XXL: 3 },
+        id: 'h7',
+      }, h8: {
+        name: 'Hanorac simplu',
+        price: 59.99,
+        discount: 0,
+        photo: turqoiseHooFront,
+        sliderPhoto: [turqoiseHooBack, turqoiseHooLeft, turqoiseHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#00ffd8',
+        star: { total: 0, nr: 0 },
+        size: { XS: 6, S: 3, M: 0, L: 9, XL: 11, XXL: 21 },
+        id: 'h8',
+      }, h9: {
+        name: 'Hanorac simplu',
+        price: 69.99,
+        discount: 0,
+        photo: blackHooFront,
+        sliderPhoto: [blackHooBack, blackHooLeft, blackHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#1c1919',
+        star: { total: 0, nr: 0 },
+        size: { XS: 6, S: 2, M: 4, L: 3, XL: 0, XXL: 0 },
+        id: 'h9',
+      }, h10: {
+        name: 'Hanorac simplu',
+        price: 119.99,
+        discount: 0.2,
+        photo: yellowHooFront,
+        sliderPhoto: [yellowHooBack, yellowHooLeft, yellowHooRight],
+        sex: 'man',
+        type: 'barbati top bluze',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'h10',
+      }, mpb1: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manblackPanBrownFront,
+        sliderPhoto: [manblackPanBrownBack, manblackPanBrownLeft, manblackPanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb1',
+      }, mpb2: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manbluePanBrownFront,
+        sliderPhoto: [manbluePanBrownBack, manbluePanBrownLeft, manbluePanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb2',
+      }, mpb3: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: mancyanPanBrownFront,
+        sliderPhoto: [mancyanPanBrownBack, mancyanPanBrownLeft, mancyanPanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb3',
+      }, mpb4: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: mangreenPanBrownFront,
+        sliderPhoto: [mangreenPanBrownBack, mangreenPanBrownLeft, mangreenPanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb4',
+      }, mpb5: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manorangePanBrownFront,
+        sliderPhoto: [manorangePanBrownBack, manorangePanBrownLeft, manorangePanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb5',
+      }, mpb6: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manpinkPanBrownFront,
+        sliderPhoto: [manpinkPanBrownBack, manpinkPanBrownLeft, manpinkPanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb6',
+      }, mpb7: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manpurplePanBrownFront,
+        sliderPhoto: [manpurplePanBrownBack, manpurplePanBrownLeft, manpurplePanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb7',
+      }, mpb8: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manredPanBrownFront,
+        sliderPhoto: [manredPanBrownBack, manredPanBrownLeft, manredPanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb8',
+      }, mpb9: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manturqoisePanBrownFront,
+        sliderPhoto: [manturqoisePanBrownBack, manturqoisePanBrownLeft, manturqoisePanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb9',
+      }, mpb10: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manwhitePanBrownFront,
+        sliderPhoto: [manwhitePanBrownBack, manwhitePanBrownLeft, manwhitePanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb10',
+      }, mpb11: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0.2,
+        photo: manyellowPanBrownFront,
+        sliderPhoto: [manyellowPanBrownBack, manyellowPanBrownLeft, manyellowPanBrownRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+        id: 'mpb11',
+      }, mpg1: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manblackPanGreyFront,
+        sliderPhoto: [manblackPanGreyBack, manblackPanGreyLeft, manblackPanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg1',
+      }, mpg2: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manbluePanGreyFront,
+        sliderPhoto: [manbluePanGreyBack, manbluePanGreyLeft, manbluePanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg2',
+      }, mpg3: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: mancyanPanGreyFront,
+        sliderPhoto: [mancyanPanGreyBack, mancyanPanGreyLeft, mancyanPanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg3',
+      }, mpg4: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: mangreenPanGreyFront,
+        sliderPhoto: [mangreenPanGreyBack, mangreenPanGreyLeft, mangreenPanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg4',
+      }, mpg5: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manorangePanGreyFront,
+        sliderPhoto: [manorangePanGreyBack, manorangePanGreyLeft, manorangePanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg5',
+      }, mpg6: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manpinkPanGreyFront,
+        sliderPhoto: [manpinkPanGreyBack, manpinkPanGreyLeft, manpinkPanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg6',
+      }, mpg7: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manpurplePanGreyFront,
+        sliderPhoto: [manpurplePanGreyBack, manpurplePanGreyLeft, manpurplePanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg7',
+      }, mpg8: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manredPanGreyFront,
+        sliderPhoto: [manredPanGreyBack, manredPanGreyLeft, manredPanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg8',
+      }, mpg9: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manturqoisePanGreyFront,
+        sliderPhoto: [manturqoisePanGreyBack, manturqoisePanGreyLeft, manturqoisePanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg9',
+      }, mpg10: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manwhitePanGreyFront,
+        sliderPhoto: [manwhitePanGreyBack, manwhitePanGreyLeft, manwhitePanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg10',
+      }, mpg11: {
+        name: 'Pantaloni simpli',
+        price: 119.99,
+        discount: 0,
+        photo: manyellowPanGreyFront,
+        sliderPhoto: [manyellowPanGreyBack, manyellowPanGreyLeft, manyellowPanGreyRight],
+        sex: 'man',
+        type: 'barbati bottom lungi',
+        spec: 'Tricou negru din bumbac',
+        color: '#ffd600',
+        star: { total: 0, nr: 0 },
+        size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+        id: 'mpg11',
+      },
+    }
+    // ]
   )
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
@@ -1098,7 +1081,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     getData()
-    // postProduct()
+    postProduct()
   }, [])
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useLayoutEffect } from 'react'
+import React, { useState, useReducer, useLayoutEffect, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
@@ -51,15 +51,21 @@ export default function SpecialProduct() {
       } catch (err) {
         console.error(err)
       }
-      document.addEventListener('scroll', () => setZoom(false))
     }
     fetchData()
     setLoading(false)
-    return () => {
-      document.removeEventListener('scroll', () => setZoom(false))
-    }
   }, [idPath, product])//cauta produsul cu id-ul egal cu idPath, iar daca nu exista, muta utilizatorul pe pagina 404
 
+  useEffect(() => {
+    if (zoom) {
+      document.body.style.overflowY = "hidden"
+    } else {
+      document.body.style.overflowY = "scroll"
+    }
+    return () => {
+      document.body.style.overflowY = 'scroll'
+    }
+  }, [zoom])
   const handleStar = (ratingValue) => {
     if (ratingValue === 1) {
       setReview({ ...review, type: 'Nu recomand', star: ratingValue })
@@ -244,7 +250,9 @@ export default function SpecialProduct() {
           <>
             <div className='special-div'>
               {zoom && (
-                <div className='special-zoom' onClick={() => setZoom(false)}>
+                <div className='special-zoom' onClick={() => {
+                  setZoom(false)
+                }}>
                   <img className='special-zoom-photo'
                     src={photoSlider}
                     alt='Poza' />
@@ -267,7 +275,9 @@ export default function SpecialProduct() {
                 </div>
                 <div className='spec-photo'>
                   <img alt='Poza Produs'
-                    className='spec-img' onClick={() => setZoom(true)}
+                    className='spec-img' onClick={() => {
+                      setZoom(true)
+                    }}
                     src={photoSlider}
                   />
                 </div>

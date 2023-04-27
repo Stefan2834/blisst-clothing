@@ -41,7 +41,6 @@ export default function Command() {
           {[...command].reverse().map((command, index) => {
             // afiseaza comenziile, dar in ordine inversa, adica de la cea mai recenta in jos
             const selectedProduct = selectedProducts[index] || command.product[0]
-            console.log(index, load)
             if (load > index) {
               return (
                 <div className='comm-element'>
@@ -115,7 +114,7 @@ export default function Command() {
                     <div className="comm-title">Total:
                       <div className="comm-txt">{command.price.total} Lei</div>
                     </div>
-                    <div className="comm-title">Metoda de livrare:
+                    <div className="comm-title">Metoda de plata:
                       <div className="comm-txt">{command.method}</div>
                     </div>
                     <div className="comm-title">Statusul comenzi:

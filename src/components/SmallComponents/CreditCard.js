@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
@@ -11,12 +11,14 @@ export default function CreditCard() {
 
   useEffect(() => {
     const handleCommand = async () => {
+      console.log('here')
       try {
         const commandData = JSON.parse(cardId)
         console.log(commandData)
         if (commandData.price.discount !== 0) {
           axios.post(`${server}/discountOnce`, { email: currentUser.email, code: commandData.price.code })
         }
+        navigate('/main/command')
         dispatchCart({ type: 'cartDeleteAll' })
         dispatchCommand({ type: 'commandAdd', payload: { command: commandData } })
         Swal.fire(
@@ -43,16 +45,14 @@ export default function CreditCard() {
         })
           .catch(err => console.error(err.error))
         // handleUpdateSizes()
-        navigate('/main/command')
       } catch (err) {
         console.log(err)
       }
     }
     handleCommand()
-    console.log('test')
   }, [])
 
   return (
-    <div>{cardId}</div>
+    <></>
   )
 }

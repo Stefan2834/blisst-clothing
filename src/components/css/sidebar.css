@@ -167,16 +167,16 @@
     color:var(--color)
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-up {
-    background-image: url(../Main/svg/arrow-up.svg);
+    background-image: url(../Main/svg/arrow-right-up.svg);
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-down {
-    background-image: url(../Main/svg/arrow-down.svg);
+    background-image: url(../Main/svg/arrow-right-down.svg);
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-up-dark {
-    background-image: url(../Main/svg-dark/arrow-up.svg);
+    background-image: url(../Main/svg-dark/arrow-right-up.svg);
 }
 .side-size-check:checked ~ .side-size-label .side-size-img-down-dark {
-    background-image: url(../Main/svg-dark/arrow-down.svg);
+    background-image: url(../Main/svg-dark/arrow-right-down.svg);
 }
 .side-size-label {
     padding:5px 0;
@@ -194,16 +194,16 @@
     background-size: 100% 100%;
 }
 .side-size-img-up {
-    background-image: url(../Main/svg-dark/arrow-up.svg)
+    background-image: url(../Main/svg-dark/arrow-right-up.svg)
 }
 .side-size-img-down {
-    background-image: url(../Main/svg-dark/arrow-down.svg)
+    background-image: url(../Main/svg-dark/arrow-right-down.svg)
 }
 .side-size-img-up-dark {
-    background-image: url(../Main/svg/arrow-up.svg)
+    background-image: url(../Main/svg/arrow-right-up.svg)
 }
 .side-size-img-down-dark {
-    background-image: url(../Main/svg/arrow-down.svg)
+    background-image: url(../Main/svg/arrow-right-down.svg)
 }
 .side-size-check:checked ~ .side-colors {
     outline:3px solid var(--color-oposite)
