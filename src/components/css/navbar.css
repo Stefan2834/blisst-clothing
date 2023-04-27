@@ -132,17 +132,17 @@ body {
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   height: 100%;
 }
 .nav-1 {
   background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
 }
 .nav-2 {
-  background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
+  background-image: url(../../clothing/navbarPhotos/manTee.png)
 }
 .nav-3 {
-  background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
+  background-image: url(../../clothing/navbarPhotos/manHoo.png);
 }
 .nav-4 {
   background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
@@ -169,6 +169,24 @@ body {
   background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
 }
 .nav-12 {
+  background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
+}
+.nav-13 {
+  background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
+}
+.nav-14 {
+  background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
+}
+.nav-15 {
+  background-image: url(../../clothing/navbarPhotos/womanPan.png);
+}
+.nav-16 {
+  background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
+}
+.nav-17 {
+  background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
+}
+.nav-18 {
   background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
 }
 .nav-square-text-woman, .nav-square-text-man {
@@ -226,7 +244,7 @@ body {
   background-image: url(../Main/svg-dark/login.svg);
 }
 .nav-icon-img6 {
-  background-image: url(../Main//svg-dark/user-business.svg);
+  background-image: url(../Main/svg-dark/user-business.svg);
 }
 .nav-icon-dark-img1 {
   background-image: url(../Main/svg/like.svg);

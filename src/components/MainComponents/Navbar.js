@@ -137,43 +137,43 @@ export default function Navbar() {
               <div className='nav-drop-content'>
                 <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/barbati top'>
-                    <div className='nav-drop-img nav-2' />
+                    <div className='nav-drop-img nav-1' />
                     <div className='nav-square-text-man'>Toate</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati top tricouri'>
-                    <div className='nav-drop-img nav-1' />
+                    <div className='nav-drop-img nav-2' />
                     <div className='nav-square-text-man'>Tricouri</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati top bluze'>
-                    <div className='nav-drop-img nav-2' />
+                    <div className='nav-drop-img nav-3' />
                     <div className='nav-square-text-man'>Bluze</div>
                   </Link>
                 </div>
                 <div className={hover[1] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/barbati bottom'>
-                    <div className='nav-drop-img nav-3' />
+                    <div className='nav-drop-img nav-4' />
                     <div className='nav-square-text-man'>Toate</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati bottom scurti'>
-                    <div className='nav-drop-img nav-3' />
+                    <div className='nav-drop-img nav-5' />
                     <div className='nav-square-text-man'>Scurti</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati bottom lungi'>
-                    <div className='nav-drop-img nav-4' />
+                    <div className='nav-drop-img nav-6' />
                     <div className='nav-square-text-man'>Lungi</div>
                   </Link>
                 </div>
                 <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/barbati foot adidasi'>
-                    <div className='nav-drop-img nav-5' />
+                    <div className='nav-drop-img nav-7' />
                     <div className='nav-square-text-man'>Toate</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati foot adidasi'>
-                    <div className='nav-drop-img nav-5' />
+                    <div className='nav-drop-img nav-8' />
                     <div className='nav-square-text-man'>Adidasi</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati foot papuci'>
-                    <div className='nav-drop-img nav-6' />
+                    <div className='nav-drop-img nav-9' />
                     <div className='nav-square-text-man'>Papuci</div>
                   </Link>
                 </div>
@@ -201,29 +201,29 @@ export default function Navbar() {
               <div className='nav-drop-content'>
                 <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/femei top'>
-                    <div className='nav-drop-img nav-7' />
+                    <div className='nav-drop-img nav-10' />
                     <div className='nav-square-text-woman'>Toate</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei top tricouri'>
-                    <div className='nav-drop-img nav-7' />
+                    <div className='nav-drop-img nav-11' />
                     <div className='nav-square-text-woman'>Tricouri</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei top bluze'>
-                    <div className='nav-drop-img nav-8' />
+                    <div className='nav-drop-img nav-12' />
                     <div className='nav-square-text-woman'>Bluze</div>
                   </Link>
                 </div>
                 <div className={hover[1] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/femei bottom'>
-                    <div className='nav-drop-img nav-9' />
+                    <div className='nav-drop-img nav-13' />
                     <div className='nav-square-text-woman'>Toate</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei bottom scurti'>
-                    <div className='nav-drop-img nav-9' />
+                    <div className='nav-drop-img nav-14' />
                     <div className='nav-square-text-woman'>Scurti</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei bottom lungi'>
-                    <div className='nav-drop-img nav-10' />
+                    <div className='nav-drop-img nav-15' />
                     <div className='nav-square-text-woman'>Lungi</div>
                   </Link>
                 </div>

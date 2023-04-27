@@ -25,7 +25,6 @@ export default function Checkout() {
   const [productPrice, setProductPrice] = useState(0)
   const discountValue = useRef()
   const navigate = useNavigate()
-
   const backInfo = () => {
     setPreDet({
       info: det.info,
@@ -119,7 +118,7 @@ export default function Checkout() {
       .catch(err => console.error(err.error))
     discountValue.current.value = '';
   }//verifica daca discount-ul este bun, si daca a mai fost folosit de acest utilizator
-  const handleNewCommand = () => {
+  const handleNewCommand = (payMethod) => {
     Swal.fire({
       title: 'Esti sigur?',
       text: "Esti sigur ca vrei sa plasezi comanda?",
@@ -129,12 +128,9 @@ export default function Checkout() {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Plaseaza comanda',
       cancelButtonText: 'Inapoi'
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         const date = new Date();
-        if (discount.value !== 0) {
-          axios.post(`${server}/discountOnce`, { email: currentUser.email, code: discount.code })
-        }
         const commandData = {
           method: method.card ? 'Card' : 'Ramburs',
           details: det,
@@ -149,34 +145,60 @@ export default function Checkout() {
           status: 'Plasata',
           id: command.length
         }
-        dispatchCart({ type: 'cartDeleteAll' })
-        dispatchCommand({ type: 'commandAdd', payload: { command: commandData } })
-        Swal.fire(
-          'Comanda Plasata!',
-          'Comanda a fost plasata.',
-          'success'
-        )
-        axios.post(`${server}/commandUpdate`,
-          {
+        if (payMethod === 'card') {
+          try {
+            const response = await axios.post(`${server}/create-checkout-session`, {
+              cart: cart,
+              discount: discount,
+              total: productPrice,
+              commandData: commandData
+            });
+            console.log(response)
+            if (response.data.success) {
+              window.open(response.data.url, '_blank')
+              navigate('/main')
+            }
+          } catch (err) {
+            Swal.fire({
+              title: 'Eroare',
+              text: `A aparut o eroare: ${err.message}`,
+              icon: 'error',
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'Inapoi'
+            })
+          }
+        } else if (payMethod === 'ramburs') {
+          if (discount.value !== 0) {
+            axios.post(`${server}/discountOnce`, { email: currentUser.email, code: discount.code })
+          }
+          dispatchCart({ type: 'cartDeleteAll' })
+          dispatchCommand({ type: 'commandAdd', payload: { command: commandData } })
+          Swal.fire(
+            'Comanda Plasata!',
+            'Comanda a fost plasata.',
+            'success'
+          )
+          axios.post(`${server}/commandUpdate`, {
             uid: currentUser.uid,
             command: commandData,
           }
-        ).then(info => {
-          console.log(info);
-          axios.post(`${server}/email/command`,
-            {
-              email: currentUser.email,
-              name: commandData.details.name,
-              price: commandData.price.total
-            }).then((data) => {
-              console.log(data)
-            }).catch(err => {
-              console.log(err)
-            })
-        })
-          .catch(err => console.error(err.error))
-        handleUpdateSizes()
-        navigate('/main/command')
+          ).then(info => {
+            console.log(info);
+            axios.post(`${server}/email/command`,
+              {
+                email: currentUser.email,
+                name: commandData.details.name,
+                price: commandData.price.total
+              }).then((data) => {
+                console.log(data)
+              }).catch(err => {
+                console.log(err)
+              })
+          })
+            .catch(err => console.error(err.error))
+          handleUpdateSizes()
+          navigate('/main/command')
+        }
       }
     })
   }//plaseaza comanda(adica salveaza comanda in baza de date la user/uid/command si la commands), trimite un email cu comanda, si sterge produsele din cos.
@@ -214,10 +236,9 @@ export default function Checkout() {
       const response = await axios.post(`${server}/create-checkout-session`, {
         cart: cart,
         discount: discount,
-        total: productPrice
+        total: productPrice,
       });
-      console.log(response)
-      if(response.data.success) {
+      if (response.data.success) {
         window.open(response.data.url, '_blank')
         navigate('/main')
       }
@@ -578,11 +599,11 @@ export default function Checkout() {
               </div>
             </div>
             {method.card ? (
-              <div className='check-sumar-command' onClick={() => handleCreditCard()}>
+              <div className='check-sumar-command' onClick={() => handleNewCommand('card')}>
                 Introdu cardul de credit
               </div>
             ) : (
-              <div className='check-sumar-command' onClick={() => handleNewCommand()}>
+              <div className='check-sumar-command' onClick={() => handleNewCommand('ramburs')}>
                 Plaseaza comanda
               </div>
             )}

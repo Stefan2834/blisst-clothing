@@ -2,106 +2,247 @@ import React, { createContext, useContext, useEffect, useState, useReducer } fro
 import axios from 'axios';
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2';
-import blackTeeFront from '../clothing/man/black 1c1919/default tee front.png'
-import blueTeeFront from '../clothing/man/blue 0091e5/default tee front.png'
-import cyanTeeFront from '../clothing/man/cyan 00d2ff/default tee front.png'
-import darkBlueTeeFront from '../clothing/man/dark blue 1200ff/default tee front.png'
-import greenTeeFront from '../clothing/man/green 72ff00/default tee front.png'
-import orangeTeeFront from '../clothing/man/orange fd6500/default tee front.png'
-import pinkTeeFront from '../clothing/man/pink ff00f0/default tee front.png'
-import purpleTeeFront from '../clothing/man/purple a200ff/default tee front.png'
-import redTeeFront from '../clothing/man/red ea0000/default tee front.png'
-import turqoiseTeeFront from '../clothing/man/turqoise 00ffd8/default tee front.png'
-import whiteTeeFront from '../clothing/man/white fff/default tee front.png'
-import yellowTeeFront from '../clothing/man/yellow fff600/default tee front.png'
-import blackTeeBack from '../clothing/man/black 1c1919/default tee back.png'
-import blueTeeBack from '../clothing/man/blue 0091e5/default tee back.png'
-import cyanTeeBack from '../clothing/man/cyan 00d2ff/default tee back.png'
-import darkBlueTeeBack from '../clothing/man/dark blue 1200ff/default tee back.png'
-import greenTeeBack from '../clothing/man/green 72ff00/default tee back.png'
-import orangeTeeBack from '../clothing/man/orange fd6500/default tee back.png'
-import pinkTeeBack from '../clothing/man/pink ff00f0/default tee back.png'
-import purpleTeeBack from '../clothing/man/purple a200ff/default tee back.png'
-import redTeeBack from '../clothing/man/red ea0000/default tee back.png'
-import turqoiseTeeBack from '../clothing/man/turqoise 00ffd8/default tee back.png'
-import whiteTeeBack from '../clothing/man/white fff/default tee back.png'
-import yellowTeeBack from '../clothing/man/yellow fff600/default tee back.png'
+import blackTeeFront from '../clothing/man/top/black 1c1919/default tee front.png'
+import blueTeeFront from '../clothing/man/top/blue 0091e5/default tee front.png'
+import cyanTeeFront from '../clothing/man/top/cyan 00d2ff/default tee front.png'
+import darkBlueTeeFront from '../clothing/man/top/dark blue 1200ff/default tee front.png'
+import greenTeeFront from '../clothing/man/top/green 72ff00/default tee front.png'
+import orangeTeeFront from '../clothing/man/top/orange fd6500/default tee front.png'
+import pinkTeeFront from '../clothing/man/top/pink ff00f0/default tee front.png'
+import purpleTeeFront from '../clothing/man/top/purple a200ff/default tee front.png'
+import redTeeFront from '../clothing/man/top/red ea0000/default tee front.png'
+import turqoiseTeeFront from '../clothing/man/top/turqoise 00ffd8/default tee front.png'
+import whiteTeeFront from '../clothing/man/top/white fff/default tee front.png'
+import yellowTeeFront from '../clothing/man/top/yellow fff600/default tee front.png'
+import blackTeeBack from '../clothing/man/top/black 1c1919/default tee back.png'
+import blueTeeBack from '../clothing/man/top/blue 0091e5/default tee back.png'
+import cyanTeeBack from '../clothing/man/top/cyan 00d2ff/default tee back.png'
+import darkBlueTeeBack from '../clothing/man/top/dark blue 1200ff/default tee back.png'
+import greenTeeBack from '../clothing/man/top/green 72ff00/default tee back.png'
+import orangeTeeBack from '../clothing/man/top/orange fd6500/default tee back.png'
+import pinkTeeBack from '../clothing/man/top/pink ff00f0/default tee back.png'
+import purpleTeeBack from '../clothing/man/top/purple a200ff/default tee back.png'
+import redTeeBack from '../clothing/man/top/red ea0000/default tee back.png'
+import turqoiseTeeBack from '../clothing/man/top/turqoise 00ffd8/default tee back.png'
+import whiteTeeBack from '../clothing/man/top/white fff/default tee back.png'
+import yellowTeeBack from '../clothing/man/top/yellow fff600/default tee back.png'
 
-import blueHooFrontPatern from '../clothing/man/patern/frontBlue.png'
-import blueHooBackPatern from '../clothing/man/patern/backBlue.png'
-import blueHooLeftPatern from '../clothing/man/patern/leftBlue.png'
-import blueHooRightPatern from '../clothing/man/patern/rightBlue.png'
+import blueHooFrontPatern from '../clothing/man/top/patern/frontBlue.png'
+import blueHooBackPatern from '../clothing/man/top/patern/backBlue.png'
+import blueHooLeftPatern from '../clothing/man/top/patern/leftBlue.png'
+import blueHooRightPatern from '../clothing/man/top/patern/rightBlue.png'
 
-import redHooFrontPatern from '../clothing/man/patern/frontRed.png'
-import redHooBackPatern from '../clothing/man/patern/backRed.png'
-import redHooLeftPatern from '../clothing/man/patern/leftRed.png'
-import redHooRightPatern from '../clothing/man/patern/rightRed.png'
+import redHooFrontPatern from '../clothing/man/top/patern/frontRed.png'
+import redHooBackPatern from '../clothing/man/top/patern/backRed.png'
+import redHooLeftPatern from '../clothing/man/top/patern/leftRed.png'
+import redHooRightPatern from '../clothing/man/top/patern/rightRed.png'
 
-import yellowHooFrontPatern from '../clothing/man/patern/frontYellow.png'
-import yellowHooBackPatern from '../clothing/man/patern/backYellow.png'
-import yellowHooLeftPatern from '../clothing/man/patern/leftYellow.png'
-import yellowHooRightPatern from '../clothing/man/patern/rightYellow.png'
+import yellowHooFrontPatern from '../clothing/man/top/patern/frontYellow.png'
+import yellowHooBackPatern from '../clothing/man/top/patern/backYellow.png'
+import yellowHooLeftPatern from '../clothing/man/top/patern/leftYellow.png'
+import yellowHooRightPatern from '../clothing/man/top/patern/rightYellow.png'
 
-import whiteHooFrontPatern from '../clothing/man/patern/frontWhite.png'
-import whiteHooBackPatern from '../clothing/man/patern/backWhite.png'
-import whiteHooLeftPatern from '../clothing/man/patern/leftWhite.png'
-import whiteHooRightPatern from '../clothing/man/patern/rightWhite.png'
+import whiteHooFrontPatern from '../clothing/man/top/patern/frontWhite.png'
+import whiteHooBackPatern from '../clothing/man/top/patern/backWhite.png'
+import whiteHooLeftPatern from '../clothing/man/top/patern/leftWhite.png'
+import whiteHooRightPatern from '../clothing/man/top/patern/rightWhite.png'
 
-import greenHooFrontPatern from '../clothing/man/patern/frontGreen.png'
-import greenHooBackPatern from '../clothing/man/patern/backGreen.png'
-import greenHooLeftPatern from '../clothing/man/patern/leftGreen.png'
-import greenHooRightPatern from '../clothing/man/patern/rightGreen.png'
+import greenHooFrontPatern from '../clothing/man/top/patern/frontGreen.png'
+import greenHooBackPatern from '../clothing/man/top/patern/backGreen.png'
+import greenHooLeftPatern from '../clothing/man/top/patern/leftGreen.png'
+import greenHooRightPatern from '../clothing/man/top/patern/rightGreen.png'
 
-import blueHooFront from '../clothing/man/blue 0091e5/default hoo front.png'
-import blueHooBack from '../clothing/man/blue 0091e5/default hoo back.png'
-import blueHooRight from '../clothing/man/blue 0091e5/default hoo right.png'
-import blueHooLeft from '../clothing/man/blue 0091e5/default hoo left.png'
+import sprayHooFrontCustom from '../clothing/man/top/custom/frontSpray.png'
+import sprayHooBackCustom from '../clothing/man/top/custom/backSpray.png'
+import sprayHooLeftCustom from '../clothing/man/top/custom/leftSpray.png'
+import sprayHooRightCustom from '../clothing/man/top/custom/rightSpray.png'
 
-import cyanHooFront from '../clothing/man/cyan 00d2ff/default hoo front.png'
-import cyanHooBack from '../clothing/man/cyan 00d2ff/default hoo back.png'
-import cyanHooRight from '../clothing/man/cyan 00d2ff/default hoo right.png'
-import cyanHooLeft from '../clothing/man/cyan 00d2ff/default hoo left.png'
+import bascketHooFrontCustom from '../clothing/man/top/custom/frontBascket.png'
+import bascketHooBackCustom from '../clothing/man/top/custom/backBascket.png'
+import bascketHooLeftCustom from '../clothing/man/top/custom/leftBascket.png'
+import bascketHooRightCustom from '../clothing/man/top/custom/rightBascket.png'
 
-import greenHooFront from '../clothing/man/green 72ff00/default hoo front.png'
-import greenHooBack from '../clothing/man/green 72ff00/default hoo back.png'
-import greenHooRight from '../clothing/man/green 72ff00/default hoo right.png'
-import greenHooLeft from '../clothing/man/green 72ff00/default hoo left.png'
+import shapeHooFrontCustom from '../clothing/man/top/custom/frontShape.png'
+import shapeHooBackCustom from '../clothing/man/top/custom/backShape.png'
+import shapeHooLeftCustom from '../clothing/man/top/custom/leftShape.png'
+import shapeHooRightCustom from '../clothing/man/top/custom/rightShape.png'
 
-import orangeHooFront from '../clothing/man/orange fd6500/default hoo front.png'
-import orangeHooBack from '../clothing/man/orange fd6500/default hoo back.png'
-import orangeHooRight from '../clothing/man/orange fd6500/default hoo right.png'
-import orangeHooLeft from '../clothing/man/orange fd6500/default hoo left.png'
+import snakeHooFrontCustom from '../clothing/man/top/custom/frontSnake.png'
+import snakeHooBackCustom from '../clothing/man/top/black 1c1919/default hoo back.png'
+import snakeHooLeftCustom from '../clothing/man/top/custom/leftSnake.png'
+import snakeHooRightCustom from '../clothing/man/top/custom/rightSnake.png'
 
-import pinkHooFront from '../clothing/man/pink ff00f0/default hoo front.png'
-import pinkHooBack from '../clothing/man/pink ff00f0/default hoo back.png'
-import pinkHooRight from '../clothing/man/pink ff00f0/default hoo right.png'
-import pinkHooLeft from '../clothing/man/pink ff00f0/default hoo left.png'
+import blueHooFront from '../clothing/man/top/blue 0091e5/default hoo front.png'
+import blueHooBack from '../clothing/man/top/blue 0091e5/default hoo back.png'
+import blueHooRight from '../clothing/man/top/blue 0091e5/default hoo right.png'
+import blueHooLeft from '../clothing/man/top/blue 0091e5/default hoo left.png'
 
-import purpleHooFront from '../clothing/man/purple a200ff/default hoo front.png'
-import purpleHooBack from '../clothing/man/purple a200ff/default hoo back.png'
-import purpleHooRight from '../clothing/man/purple a200ff/default hoo right.png'
-import purpleHooLeft from '../clothing/man/purple a200ff/default hoo left.png'
+import cyanHooFront from '../clothing/man/top/cyan 00d2ff/default hoo front.png'
+import cyanHooBack from '../clothing/man/top/cyan 00d2ff/default hoo back.png'
+import cyanHooRight from '../clothing/man/top/cyan 00d2ff/default hoo right.png'
+import cyanHooLeft from '../clothing/man/top/cyan 00d2ff/default hoo left.png'
 
-import redHooFront from '../clothing/man/red ea0000/default hoo front.png'
-import redHooBack from '../clothing/man/red ea0000/default hoo back.png'
-import redHooRight from '../clothing/man/red ea0000/default hoo right.png'
-import redHooLeft from '../clothing/man/red ea0000/default hoo left.png'
+import greenHooFront from '../clothing/man/top/green 72ff00/default hoo front.png'
+import greenHooBack from '../clothing/man/top/green 72ff00/default hoo back.png'
+import greenHooRight from '../clothing/man/top/green 72ff00/default hoo right.png'
+import greenHooLeft from '../clothing/man/top/green 72ff00/default hoo left.png'
 
-import turqoiseHooFront from '../clothing/man/turqoise 00ffd8/default hoo front.png'
-import turqoiseHooBack from '../clothing/man/turqoise 00ffd8/default hoo back.png'
-import turqoiseHooRight from '../clothing/man/turqoise 00ffd8/default hoo right.png'
-import turqoiseHooLeft from '../clothing/man/turqoise 00ffd8/default hoo left.png'
+import orangeHooFront from '../clothing/man/top/orange fd6500/default hoo front.png'
+import orangeHooBack from '../clothing/man/top/orange fd6500/default hoo back.png'
+import orangeHooRight from '../clothing/man/top/orange fd6500/default hoo right.png'
+import orangeHooLeft from '../clothing/man/top/orange fd6500/default hoo left.png'
 
-import blackHooFront from '../clothing/man/black 1c1919/default hoo front.png'
-import blackHooBack from '../clothing/man/black 1c1919/default hoo back.png'
-import blackHooRight from '../clothing/man/black 1c1919/default hoo right.png'
-import blackHooLeft from '../clothing/man/black 1c1919/default hoo left.png'
+import pinkHooFront from '../clothing/man/top/pink ff00f0/default hoo front.png'
+import pinkHooBack from '../clothing/man/top/pink ff00f0/default hoo back.png'
+import pinkHooRight from '../clothing/man/top/pink ff00f0/default hoo right.png'
+import pinkHooLeft from '../clothing/man/top/pink ff00f0/default hoo left.png'
 
-import yellowHooFront from '../clothing/man/yellow fff600/default hoo front.png'
-import yellowHooBack from '../clothing/man/yellow fff600/default hoo back.png'
-import yellowHooRight from '../clothing/man/yellow fff600/default hoo right.png'
-import yellowHooLeft from '../clothing/man/yellow fff600/default hoo left.png'
+import purpleHooFront from '../clothing/man/top/purple a200ff/default hoo front.png'
+import purpleHooBack from '../clothing/man/top/purple a200ff/default hoo back.png'
+import purpleHooRight from '../clothing/man/top/purple a200ff/default hoo right.png'
+import purpleHooLeft from '../clothing/man/top/purple a200ff/default hoo left.png'
 
+import redHooFront from '../clothing/man/top/red ea0000/default hoo front.png'
+import redHooBack from '../clothing/man/top/red ea0000/default hoo back.png'
+import redHooRight from '../clothing/man/top/red ea0000/default hoo right.png'
+import redHooLeft from '../clothing/man/top/red ea0000/default hoo left.png'
+
+import turqoiseHooFront from '../clothing/man/top/turqoise 00ffd8/default hoo front.png'
+import turqoiseHooBack from '../clothing/man/top/turqoise 00ffd8/default hoo back.png'
+import turqoiseHooRight from '../clothing/man/top/turqoise 00ffd8/default hoo right.png'
+import turqoiseHooLeft from '../clothing/man/top/turqoise 00ffd8/default hoo left.png'
+
+import blackHooFront from '../clothing/man/top/black 1c1919/default hoo front.png'
+import blackHooBack from '../clothing/man/top/black 1c1919/default hoo back.png'
+import blackHooRight from '../clothing/man/top/black 1c1919/default hoo right.png'
+import blackHooLeft from '../clothing/man/top/black 1c1919/default hoo left.png'
+
+import yellowHooFront from '../clothing/man/top/yellow fff600/default hoo front.png'
+import yellowHooBack from '../clothing/man/top/yellow fff600/default hoo back.png'
+import yellowHooRight from '../clothing/man/top/yellow fff600/default hoo right.png'
+import yellowHooLeft from '../clothing/man/top/yellow fff600/default hoo left.png'
+
+
+/*--------------------Woman--------------------*/
+
+
+/*----------Pants----------*/
+
+
+
+import womanblackPanBrownFront from '../clothing/woman/bottom/black 1c1919/default pan brown front.png'
+import womanblackPanBrownBack from '../clothing/woman/bottom/black 1c1919/default pan brown front.png'
+import womanblackPanBrownRight from '../clothing/woman/bottom/black 1c1919/default pan brown front.png'
+import womanblackPanBrownLeft from '../clothing/woman/bottom/black 1c1919/default pan brown front.png'
+
+import womanbluePanBrownFront from '../clothing/woman/bottom/blue 0091e5/default pan brown front.png'
+import womanbluePanBrownBack from '../clothing/woman/bottom/blue 0091e5/default pan brown front.png'
+import womanbluePanBrownRight from '../clothing/woman/bottom/blue 0091e5/default pan brown front.png'
+import womanbluePanBrownLeft from '../clothing/woman/bottom/blue 0091e5/default pan brown front.png'
+
+import womancyanPanBrownFront from '../clothing/woman/bottom/cyan 00d2ff/default pan brown front.png'
+import womancyanPanBrownBack from '../clothing/woman/bottom/cyan 00d2ff/default pan brown front.png'
+import womancyanPanBrownRight from '../clothing/woman/bottom/cyan 00d2ff/default pan brown front.png'
+import womancyanPanBrownLeft from '../clothing/woman/bottom/cyan 00d2ff/default pan brown front.png'
+
+import womangreenPanBrownFront from '../clothing/woman/bottom/green 72ff00/default pan brown front.png'
+import womangreenPanBrownBack from '../clothing/woman/bottom/green 72ff00/default pan brown front.png'
+import womangreenPanBrownRight from '../clothing/woman/bottom/green 72ff00/default pan brown front.png'
+import womangreenPanBrownLeft from '../clothing/woman/bottom/green 72ff00/default pan brown front.png'
+
+import womanorangePanBrownFront from '../clothing/woman/bottom/orange fd6500/default pan brown front.png'
+import womanorangePanBrownBack from '../clothing/woman/bottom/orange fd6500/default pan brown front.png'
+import womanorangePanBrownRight from '../clothing/woman/bottom/orange fd6500/default pan brown front.png'
+import womanorangePanBrownLeft from '../clothing/woman/bottom/orange fd6500/default pan brown front.png'
+
+import womanpinkPanBrownFront from '../clothing/woman/bottom/pink ff00f0/default pan brown front.png'
+import womanpinkPanBrownBack from '../clothing/woman/bottom/pink ff00f0/default pan brown front.png'
+import womanpinkPanBrownRight from '../clothing/woman/bottom/pink ff00f0/default pan brown front.png'
+import womanpinkPanBrownLeft from '../clothing/woman/bottom/pink ff00f0/default pan brown front.png'
+
+import womanpurplePanBrownFront from '../clothing/woman/bottom/purple a200ff/default pan brown front.png'
+import womanpurplePanBrownBack from '../clothing/woman/bottom/purple a200ff/default pan brown front.png'
+import womanpurplePanBrownRight from '../clothing/woman/bottom/purple a200ff/default pan brown front.png'
+import womanpurplePanBrownLeft from '../clothing/woman/bottom/purple a200ff/default pan brown front.png'
+
+import womanredPanBrownFront from '../clothing/woman/bottom/red ea0000/default pan brown front.png'
+import womanredPanBrownBack from '../clothing/woman/bottom/red ea0000/default pan brown front.png'
+import womanredPanBrownRight from '../clothing/woman/bottom/red ea0000/default pan brown front.png'
+import womanredPanBrownLeft from '../clothing/woman/bottom/red ea0000/default pan brown front.png'
+
+import womanturqoisePanBrownFront from '../clothing/woman/bottom/turqoise 00ffd8/default pan brown front.png'
+import womanturqoisePanBrownBack from '../clothing/woman/bottom/turqoise 00ffd8/default pan brown front.png'
+import womanturqoisePanBrownRight from '../clothing/woman/bottom/turqoise 00ffd8/default pan brown front.png'
+import womanturqoisePanBrownLeft from '../clothing/woman/bottom/turqoise 00ffd8/default pan brown front.png'
+
+import womanwhitePanBrownFront from '../clothing/woman/bottom/white fff/default pan brown front.png'
+import womanwhitePanBrownBack from '../clothing/woman/bottom/white fff/default pan brown front.png'
+import womanwhitePanBrownRight from '../clothing/woman/bottom/white fff/default pan brown front.png'
+import womanwhitePanBrownLeft from '../clothing/woman/bottom/white fff/default pan brown front.png'
+
+import womanyellowPanBrownFront from '../clothing/woman/bottom/yellow fff600/default pan brown front.png'
+import womanyellowPanBrownBack from '../clothing/woman/bottom/yellow fff600/default pan brown front.png'
+import womanyellowPanBrownRight from '../clothing/woman/bottom/yellow fff600/default pan brown front.png'
+import womanyellowPanBrownLeft from '../clothing/woman/bottom/yellow fff600/default pan brown front.png'
+
+
+/*Grey*/
+
+
+import womanblackPanGreyFront from '../clothing/woman/bottom/black 1c1919/default pan grey front.png'
+import womanblackPanGreyBack from '../clothing/woman/bottom/black 1c1919/default pan grey front.png'
+import womanblackPanGreyRight from '../clothing/woman/bottom/black 1c1919/default pan grey front.png'
+import womanblackPanGreyLeft from '../clothing/woman/bottom/black 1c1919/default pan grey front.png'
+
+import womanbluePanGreyFront from '../clothing/woman/bottom/blue 0091e5/default pan grey front.png'
+import womanbluePanGreyBack from '../clothing/woman/bottom/blue 0091e5/default pan grey front.png'
+import womanbluePanGreyRight from '../clothing/woman/bottom/blue 0091e5/default pan grey front.png'
+import womanbluePanGreyLeft from '../clothing/woman/bottom/blue 0091e5/default pan grey front.png'
+
+import womancyanPanGreyFront from '../clothing/woman/bottom/cyan 00d2ff/default pan grey front.png'
+import womancyanPanGreyBack from '../clothing/woman/bottom/cyan 00d2ff/default pan grey front.png'
+import womancyanPanGreyRight from '../clothing/woman/bottom/cyan 00d2ff/default pan grey front.png'
+import womancyanPanGreyLeft from '../clothing/woman/bottom/cyan 00d2ff/default pan grey front.png'
+
+import womangreenPanGreyFront from '../clothing/woman/bottom/green 72ff00/default pan grey front.png'
+import womangreenPanGreyBack from '../clothing/woman/bottom/green 72ff00/default pan grey front.png'
+import womangreenPanGreyRight from '../clothing/woman/bottom/green 72ff00/default pan grey front.png'
+import womangreenPanGreyLeft from '../clothing/woman/bottom/green 72ff00/default pan grey front.png'
+
+import womanorangePanGreyFront from '../clothing/woman/bottom/orange fd6500/default pan grey front.png'
+import womanorangePanGreyBack from '../clothing/woman/bottom/orange fd6500/default pan grey front.png'
+import womanorangePanGreyRight from '../clothing/woman/bottom/orange fd6500/default pan grey front.png'
+import womanorangePanGreyLeft from '../clothing/woman/bottom/orange fd6500/default pan grey front.png'
+
+import womanpinkPanGreyFront from '../clothing/woman/bottom/pink ff00f0/default pan grey front.png'
+import womanpinkPanGreyBack from '../clothing/woman/bottom/pink ff00f0/default pan grey front.png'
+import womanpinkPanGreyRight from '../clothing/woman/bottom/pink ff00f0/default pan grey front.png'
+import womanpinkPanGreyLeft from '../clothing/woman/bottom/pink ff00f0/default pan grey front.png'
+
+import womanpurplePanGreyFront from '../clothing/woman/bottom/purple a200ff/default pan grey front.png'
+import womanpurplePanGreyBack from '../clothing/woman/bottom/purple a200ff/default pan grey front.png'
+import womanpurplePanGreyRight from '../clothing/woman/bottom/purple a200ff/default pan grey front.png'
+import womanpurplePanGreyLeft from '../clothing/woman/bottom/purple a200ff/default pan grey front.png'
+
+import womanredPanGreyFront from '../clothing/woman/bottom/red ea0000/default pan grey front.png'
+import womanredPanGreyBack from '../clothing/woman/bottom/red ea0000/default pan grey front.png'
+import womanredPanGreyRight from '../clothing/woman/bottom/red ea0000/default pan grey front.png'
+import womanredPanGreyLeft from '../clothing/woman/bottom/red ea0000/default pan grey front.png'
+
+import womanturqoisePanGreyFront from '../clothing/woman/bottom/turqoise 00ffd8/default pan grey front.png'
+import womanturqoisePanGreyBack from '../clothing/woman/bottom/turqoise 00ffd8/default pan grey front.png'
+import womanturqoisePanGreyRight from '../clothing/woman/bottom/turqoise 00ffd8/default pan grey front.png'
+import womanturqoisePanGreyLeft from '../clothing/woman/bottom/turqoise 00ffd8/default pan grey front.png'
+
+import womanwhitePanGreyFront from '../clothing/woman/bottom/white fff/default pan grey front.png'
+import womanwhitePanGreyBack from '../clothing/woman/bottom/white fff/default pan grey front.png'
+import womanwhitePanGreyRight from '../clothing/woman/bottom/white fff/default pan grey front.png'
+import womanwhitePanGreyLeft from '../clothing/woman/bottom/white fff/default pan grey front.png'
+
+import womanyellowPanGreyFront from '../clothing/woman/bottom/yellow fff600/default pan grey front.png'
+import womanyellowPanGreyBack from '../clothing/woman/bottom/yellow fff600/default pan grey front.png'
+import womanyellowPanGreyRight from '../clothing/woman/bottom/yellow fff600/default pan grey front.png'
+import womanyellowPanGreyLeft from '../clothing/woman/bottom/yellow fff600/default pan grey front.png'
 
 
 
@@ -364,7 +505,7 @@ export function AuthProvider({ children }) {
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 0, L: 2, XL: 1, XXL: 9 },
     //     id: 'l'
-    //   }, m: {
+    //   }, p1: {
     //     name: 'Hanorac cu patern',
     //     price: 129.99,
     //     discount: 0,
@@ -376,8 +517,8 @@ export function AuthProvider({ children }) {
     //     color: '#0091e5',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
-    //     id: 'm',
-    //   }, n: {
+    //     id: 'p1',
+    //   }, p2: {
     //     name: 'Hanorac cu patern',
     //     price: 129.99,
     //     discount: 0,
@@ -389,8 +530,8 @@ export function AuthProvider({ children }) {
     //     color: '#ea0000',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 3, L: 1, XL: 7, XXL: 3 },
-    //     id: 'n',
-    //   }, o: {
+    //     id: 'p2',
+    //   }, p3: {
     //     name: 'Hanorac cu patern',
     //     price: 129.99,
     //     discount: 0,
@@ -402,8 +543,8 @@ export function AuthProvider({ children }) {
     //     color: '#fff600',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 0, L: 0, XL: 7, XXL: 3 },
-    //     id: 'o',
-    //   }, p: {
+    //     id: 'p3',
+    //   }, p4: {
     //     name: 'Hanorac cu patern',
     //     price: 129.99,
     //     discount: 0,
@@ -415,8 +556,8 @@ export function AuthProvider({ children }) {
     //     color: '#eee',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 0, S: 2, M: 5, L: 6, XL: 7, XXL: 3 },
-    //     id: 'p',
-    //   }, q: {
+    //     id: 'p4',
+    //   }, p5: {
     //     name: 'Hanorac cu patern',
     //     price: 129.99,
     //     discount: 0,
@@ -427,9 +568,61 @@ export function AuthProvider({ children }) {
     //     spec: 'Tricou negru din bumbac',
     //     color: '#72ff00',
     //     star: { total: 0, nr: 0 },
+    //     size: { XS: 4, S: 0, M: 2, L: 6, XL: 0, XXL: 3 },
+    //     id: 'p5',
+    //   }, p6: {
+    //     name: 'Hanorac custom',
+    //     price: 129.99,
+    //     discount: 0,
+    //     photo: sprayHooFrontCustom,
+    //     sliderPhoto: [sprayHooBackCustom, sprayHooLeftCustom, sprayHooRightCustom],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 0, L: 3, XL: 4, XXL: 3 },
+    //     id: 'p6',
+    //   }, p7: {
+    //     name: 'Hanorac custom',
+    //     price: 129.99,
+    //     discount: 0,
+    //     photo: bascketHooFrontCustom,
+    //     sliderPhoto: [bascketHooBackCustom, bascketHooLeftCustom, bascketHooRightCustom],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 6, M: 3, L: 2, XL: 5, XXL: 4 },
+    //     id: 'p7',
+    //   }, p8: {
+    //     name: 'Hanorac custom',
+    //     price: 129.99,
+    //     discount: 0,
+    //     photo: shapeHooFrontCustom,
+    //     sliderPhoto: [shapeHooBackCustom, shapeHooLeftCustom, shapeHooRightCustom],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 2, L: 6, XL: 7, XXL: 3 },
-    //     id: 'q',
-    //   } , r: {
+    //     id: 'p8',
+    //   }, p9: {
+    //     name: 'Hanorac Snake',
+    //     price: 129.99,
+    //     discount: 0.2,
+    //     photo: snakeHooFrontCustom,
+    //     sliderPhoto: [snakeHooBackCustom, snakeHooLeftCustom, snakeHooRightCustom],
+    //     sex: 'man',
+    //     type: 'barbati top bluze',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#eee',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 2, S: 5, M: 4, L: 0, XL: 3, XXL: 1 },
+    //     id: 'p9',
+    //   }, h1: {
     //     name: 'Hanorac simplu',
     //     price: 99.99,
     //     discount: 0,
@@ -441,8 +634,8 @@ export function AuthProvider({ children }) {
     //     color: '#0091e5',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 5, L: 6, XL: 7, XXL: 6 },
-    //     id: 'r',
-    //   } , s: {
+    //     id: 'h1',
+    //   }, h2: {
     //     name: 'Hanorac simplu',
     //     price: 79.99,
     //     discount: 0,
@@ -454,8 +647,8 @@ export function AuthProvider({ children }) {
     //     color: '#00d2ff',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 7, M: 9, L: 1, XL: 7, XXL: 0 },
-    //     id: 's',
-    //   } , t: {
+    //     id: 'h2',
+    //   }, h3: {
     //     name: 'Hanorac simplu',
     //     price: 109.99,
     //     discount: 0,
@@ -467,8 +660,8 @@ export function AuthProvider({ children }) {
     //     color: '#72ff00',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 5, M: 6, L: 0, XL: 7, XXL: 0 },
-    //     id: 't',
-    //   } , u: {
+    //     id: 'h3',
+    //   }, h4: {
     //     name: 'Hanorac simplu',
     //     price: 139.99,
     //     discount: 0.3,
@@ -480,8 +673,8 @@ export function AuthProvider({ children }) {
     //     color: '#fd6500',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 6, S: 6, M: 14, L: 15, XL: 21, XXL: 23 },
-    //     id: 'u',
-    //   } , v: {
+    //     id: 'h4',
+    //   }, h5: {
     //     name: 'Hanorac simplu',
     //     price: 99.99,
     //     discount: 0.2,
@@ -493,8 +686,8 @@ export function AuthProvider({ children }) {
     //     color: '#ff00f0',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 5, S: 5, M: 3, L: 0, XL: 2, XXL: 6 },
-    //     id: 'v',
-    //   } , w: {
+    //     id: 'h5',
+    //   }, h6: {
     //     name: 'Hanorac simplu',
     //     price: 79.99,
     //     discount: 0,
@@ -506,8 +699,8 @@ export function AuthProvider({ children }) {
     //     color: '#a200ff',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 0, S: 0, M: 4, L: 2, XL: 7, XXL: 3 },
-    //     id: 'w',
-    //   } , x: {
+    //     id: 'h6',
+    //   }, h7: {
     //     name: 'Hanorac simplu',
     //     price: 94.99,
     //     discount: 0,
@@ -519,8 +712,8 @@ export function AuthProvider({ children }) {
     //     color: '#ea0000',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 4, S: 6, M: 3, L: 7, XL: 7, XXL: 3 },
-    //     id: 'x',
-    //   } , y: {
+    //     id: 'h7',
+    //   }, h8: {
     //     name: 'Hanorac simplu',
     //     price: 59.99,
     //     discount: 0,
@@ -532,8 +725,8 @@ export function AuthProvider({ children }) {
     //     color: '#00ffd8',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 6, S: 3, M: 0, L: 9, XL: 11, XXL: 21 },
-    //     id: 'y',
-    //   } , z: {
+    //     id: 'h8',
+    //   }, h9: {
     //     name: 'Hanorac simplu',
     //     price: 69.99,
     //     discount: 0,
@@ -545,8 +738,8 @@ export function AuthProvider({ children }) {
     //     color: '#1c1919',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 6, S: 2, M: 4, L: 3, XL: 0, XXL: 0 },
-    //     id: 'z',
-    //   } , aa: {
+    //     id: 'h9',
+    //   }, h10: {
     //     name: 'Hanorac simplu',
     //     price: 119.99,
     //     discount: 0.2,
@@ -558,8 +751,294 @@ export function AuthProvider({ children }) {
     //     color: '#ffd600',
     //     star: { total: 0, nr: 0 },
     //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
-    //     id: 'aa',
-    //   } ,
+    //     id: 'h10',
+    //   }, wpb1: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanblackPanBrownFront,
+    //     sliderPhoto: [womanblackPanBrownBack, womanblackPanBrownLeft, womanblackPanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb1',
+    //   }, wpb2: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanbluePanBrownFront,
+    //     sliderPhoto: [womanbluePanBrownBack, womanbluePanBrownLeft, womanbluePanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb2',
+    //   }, wpb3: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womancyanPanBrownFront,
+    //     sliderPhoto: [womancyanPanBrownBack, womancyanPanBrownLeft, womancyanPanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb3',
+    //   }, wpb4: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womangreenPanBrownFront,
+    //     sliderPhoto: [womangreenPanBrownBack, womangreenPanBrownLeft, womangreenPanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb4',
+    //   }, wpb5: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanorangePanBrownFront,
+    //     sliderPhoto: [womanorangePanBrownBack, womanorangePanBrownLeft, womanorangePanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb5',
+    //   }, wpb6: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanpinkPanBrownFront,
+    //     sliderPhoto: [womanpinkPanBrownBack, womanpinkPanBrownLeft, womanpinkPanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb6',
+    //   }, wpb7: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanpurplePanBrownFront,
+    //     sliderPhoto: [womanpurplePanBrownBack, womanpurplePanBrownLeft, womanpurplePanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb7',
+    //   }, wpb8: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanredPanBrownFront,
+    //     sliderPhoto: [womanredPanBrownBack, womanredPanBrownLeft, womanredPanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb8',
+    //   }, wpb9: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanturqoisePanBrownFront,
+    //     sliderPhoto: [womanturqoisePanBrownBack, womanturqoisePanBrownLeft, womanturqoisePanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb9',
+    //   }, wpb10: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanwhitePanBrownFront,
+    //     sliderPhoto: [womanwhitePanBrownBack, womanwhitePanBrownLeft, womanwhitePanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb10',
+    //   }, wpb11: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0.2,
+    //     photo: womanyellowPanBrownFront,
+    //     sliderPhoto: [womanyellowPanBrownBack, womanyellowPanBrownLeft, womanyellowPanBrownRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
+    //     id: 'wpb11',
+    //   }, wpg1: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanblackPanGreyFront,
+    //     sliderPhoto: [womanblackPanGreyBack, womanblackPanGreyLeft, womanblackPanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg1',
+    //   }, wpg2: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womancyanPanGreyFront,
+    //     sliderPhoto: [womancyanPanGreyBack, womancyanPanGreyLeft, womancyanPanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg2',
+    //   }, wpg3: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womangreenPanGreyFront,
+    //     sliderPhoto: [womangreenPanGreyBack, womangreenPanGreyLeft, womangreenPanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg3',
+    //   }, wpg4: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanorangePanGreyFront,
+    //     sliderPhoto: [womanorangePanGreyBack, womanorangePanGreyLeft, womanorangePanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg4',
+    //   }, wpg5: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanpinkPanGreyFront,
+    //     sliderPhoto: [womanpinkPanGreyBack, womanpinkPanGreyLeft, womanpinkPanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg5',
+    //   }, wpg6: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanpurplePanGreyFront,
+    //     sliderPhoto: [womanpurplePanGreyBack, womanpurplePanGreyLeft, womanpurplePanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg6',
+    //   }, wpg7: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanredPanGreyFront,
+    //     sliderPhoto: [womanredPanGreyBack, womanredPanGreyLeft, womanredPanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg7',
+    //   }, wpg8: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanturqoisePanGreyFront,
+    //     sliderPhoto: [womanturqoisePanGreyBack, womanturqoisePanGreyLeft, womanturqoisePanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg8',
+    //   }, wpg9: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanwhitePanGreyFront,
+    //     sliderPhoto: [womanwhitePanGreyBack, womanwhitePanGreyLeft, womanwhitePanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg9',
+    //   }, wpg10: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanyellowPanGreyFront,
+    //     sliderPhoto: [womanyellowPanGreyBack, womanyellowPanGreyLeft, womanyellowPanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg10',
+    //   }, wpg11: {
+    //     name: 'Pantaloni simpli',
+    //     price: 119.99,
+    //     discount: 0,
+    //     photo: womanyellowPanGreyFront,
+    //     sliderPhoto: [womanyellowPanGreyBack, womanyellowPanGreyLeft, womanyellowPanGreyRight],
+    //     sex: 'man',
+    //     type: 'femei bottom lungi',
+    //     spec: 'Tricou negru din bumbac',
+    //     color: '#ffd600',
+    //     star: { total: 0, nr: 0 },
+    //     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    //     id: 'wpg11',
+    //   },
     // }
     ]
   )

@@ -21,6 +21,7 @@ import ForgotPassword from './SmallComponents/ForgotPassword';
 import ResendEmail from './SmallComponents/ResendEmail';
 import Help from './SmallComponents/Help';
 import NotFound from './SmallComponents/NotFound';
+import CreditCard from './SmallComponents/CreditCard';
 
 import Command from './Layout/Command'
 import Connect from './Layout/Connect';
@@ -72,6 +73,9 @@ function App() {
             <Route path='/' index element={<GoTo />} />
             <Route path='/connect' element={<Connect />} />
             <Route path='/test' element={<Test />} />
+            <Route path='creditCard'>
+              <Route path=':cardId' exact element={<CreditCard />} />
+            </Route>
 
 
 
