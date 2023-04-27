@@ -138,6 +138,7 @@ export default function Checkout() {
           price: {
             productPrice: productPrice,
             discount: discount.value,
+            code: discount.code,
             delivery: productPrice >= 200 ? 0 : 20,
             total: cartPrice
           },
@@ -149,16 +150,17 @@ export default function Checkout() {
           try {
             const response = await axios.post(`${server}/create-checkout-session`, {
               cart: cart,
-              discount: discount,
-              total: productPrice,
-              commandData: commandData
+              productPrice: productPrice,
+              commandData: commandData,
+              totalPrice: cartPrice,
             });
             console.log(response)
             if (response.data.success) {
               window.open(response.data.url, '_blank')
               navigate('/main')
-            }
+            } 
           } catch (err) {
+            console.log(err)
             Swal.fire({
               title: 'Eroare',
               text: `A aparut o eroare: ${err.message}`,
@@ -231,27 +233,6 @@ export default function Checkout() {
       }
     });
   }//sterge un produs din cos
-  const handleCreditCard = async () => {
-    try {
-      const response = await axios.post(`${server}/create-checkout-session`, {
-        cart: cart,
-        discount: discount,
-        total: productPrice,
-      });
-      if (response.data.success) {
-        window.open(response.data.url, '_blank')
-        navigate('/main')
-      }
-    } catch (err) {
-      Swal.fire({
-        title: 'Eroare',
-        text: `A aparut o eroare: ${err.message}`,
-        icon: 'error',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi'
-      })
-    }
-  }
   useEffect(() => {
     startTransition(() => {
       if (cart.length !== 0) {
