@@ -1027,9 +1027,8 @@ export function AuthProvider({ children }) {
   )
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = process.env.REACT_APP_SERVER;
+  const server = "https://blisst.onrender.com"
   // const server = 'http://localhost:9000'
-  console.log(server)
   const [admin, setAdmin] = useState()
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
