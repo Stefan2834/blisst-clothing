@@ -9,11 +9,11 @@ export default function AdminErrors() {
   const { server } = useAuth()
   const { darkTheme } = useDefault()
   const [error, setError] = useState([])
-  const [popUp, setPopUp] = useState({ user: '', open: false, error: "", id: 0 })
+  const [popUp, setPopUp] = useState({ user: '', open: false, error: "" })
   const solve = useRef()
 
   const handleDelete = (id) => {
-    axios.delete(`${server}/admin/errors`, { id: id })
+    axios.post(`${server}/admin/errors`, { id: id })
       .then(data => {
         setError(prevErrors => {
           const newErrors = [...prevErrors]
@@ -25,7 +25,7 @@ export default function AdminErrors() {
   }
 
   const handleSend = async () => {
-    await axios.post(`${server}/email/error`, { name: popUp.user, solve: solve.current.value })
+    await axios.post(`${server}/email/error`, { name: popUp.user, solve: solve.current.value, error: popUp.error })
       .then(() => {
         handleDelete(popUp.id)
         Swal.fire({
@@ -36,7 +36,7 @@ export default function AdminErrors() {
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
         })
-        setPopUp({ user: '', open: false, error: '', id: '' })
+        setPopUp({ user: '', open: false, error: '' })
       })
       .catch(err => {
         console.log(err)
@@ -58,7 +58,7 @@ export default function AdminErrors() {
     <div className='admin-err-container'>
       {popUp.open && (
         <div className='adm-popup'>
-          <div className='adm-popup-bg' onClick={() => setPopUp({ user: "", open: false, error: "", id: 0 })} />
+          <div className='adm-popup-bg' onClick={() => setPopUp({ user: "", open: false, error: "" })} />
           <div className='adm-pop-content'>
             <div className='adm-dis-title'>Raspunde acestui utilizator</div>
             <div className='flex justify-start items-center my-4 w-full'>
