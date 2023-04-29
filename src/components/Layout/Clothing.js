@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useDefault } from "../../contexts/DefaultContext";
 import Product from "../SmallComponents/Product";
@@ -6,11 +6,10 @@ import Product from "../SmallComponents/Product";
 export default function Clothing() {
   const { product } = useAuth()
   const { productLoad, setProductLoad,
-    filter, setFilter,
+    filter,
     startTransition, isPending
   } = useDefault()
   const [sortedProducts, setSortedProducts] = useState([...product])
-  let noProduct = 0;
 
   useEffect(() => {
     const sort = [...product]
@@ -68,10 +67,9 @@ export default function Clothing() {
     })
   }, [filter.sort])
 
-  const handleFilter = (product) => {
+  const handleFilter = useMemo(() => (product) => {
     if (filter.search !== "") {
       if (product.id.includes(filter.search.toLowerCase())) {
-        noProduct += 1;
         return true
       }
     } else {
@@ -82,7 +80,6 @@ export default function Clothing() {
           (filter.minPrice <= productDiscount && filter.maxPrice === '')) {
           if (filter.size === '' || product.size[filter.size] !== 0) {
             if (filter.color === product.color || filter.color === "") {
-              noProduct += 1;
               return true
             }
           }
@@ -90,10 +87,9 @@ export default function Clothing() {
       }
     }
     return false
-  }
+  }, [filter])
 
-
-
+  let noProduct = 0
   return (
     <>
       {isPending && (
@@ -105,6 +101,7 @@ export default function Clothing() {
         {sortedProducts.map((product) => {
           if (noProduct < productLoad) {
             if (handleFilter(product)) {
+              noProduct += 1;
               return (
                 <Product product={product} />
               )

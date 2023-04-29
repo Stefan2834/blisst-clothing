@@ -41,6 +41,7 @@ export default function Command() {
           {[...command].reverse().map((command, index) => {
             // afiseaza comenziile, dar in ordine inversa, adica de la cea mai recenta in jos
             const selectedProduct = selectedProducts[index] || command.product[0]
+            console.log(selectedProduct.photo)
             if (load > index) {
               return (
                 <div className='comm-element'>

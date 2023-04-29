@@ -115,7 +115,7 @@ export default function AdminProducs() {
               } else {
                 setSize([])
               }
-              setNewProduct({ ...newProduct, type: e.target.value, size: size })
+              setNewProduct({ ...newProduct, type: e.target.value, size: size, sex: e.target.value.includes('barbati') ? 'man' : 'woman' })
             }}
           >
             <option value="" className='adm-option'>Selecteaza</option>
@@ -168,21 +168,6 @@ export default function AdminProducs() {
                 </option>
               )
             })}
-          </select>
-        </label>
-        <label className='adm-option adm-option-label'>Sex:
-          <select value={newProduct.sex} className='adm-option' required
-            onChange={e => { setNewProduct({ ...newProduct, sex: e.target.value }) }}
-          >
-            <option value="" className='adm-option'>
-              Selecteaza
-            </option>
-            <option value={'man'} className='adm-option'>
-              Barbat
-            </option>
-            <option value={'woman'} className='adm-option'>
-              Femeie
-            </option>
           </select>
         </label>
         <label className='adm-option-label'>

@@ -76,21 +76,13 @@ export default function Navbar() {
 
 
   useEffect(() => {
-    setDrop([false, false, false, false, false, false, false])
-    document.addEventListener('scroll', () => { setOpen(false) })
-
-    return () => {
-      document.removeEventListener('scroll', () => { setOpen(false) })
-    }
-  }, [pathname]);//daca utilizatorul da scroll, sau schimba pagina, inchide toate dropdown-urile
-
-  useEffect(() => {
     const handleClickOutside = (event) => {
       if (navIconRefs.current.every((ref) => !ref.contains(event.target))) {
         setDrop([false, false, false, false, false, false, false]);
       }
     };
     const handleScroll = () => {
+      setOpen(false)
       setDrop([false, false, false, false, false, false, false])
     }
 
@@ -107,7 +99,9 @@ export default function Navbar() {
     <>
       <div className='navbar-top-container'>
         <div className={darkTheme ? 'nav-open-dark' : 'nav-open'} onClick={() => setOpen(o => !o)} />
-        <div className={darkTheme ? 'side-switch-dark' : 'side-switch'} onClick={() => setFilterOpen(o => !o)} />
+        {pathname.includes('/main/cloth/') && (
+          <div className={darkTheme ? 'side-switch-dark' : 'side-switch'} onClick={() => setFilterOpen(o => !o)} />
+        )}
         <div className='nav-logo-second'>
           <Link to='/main' className='principal'>Blisst</Link>
         </div>

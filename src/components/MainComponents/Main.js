@@ -9,7 +9,7 @@ import Product from '../SmallComponents/Product'
 
 
 export default function Main() {
-  const { server } = useAuth()
+  const { server, product } = useAuth()
   const { darkTheme } = useDefault()
   const [suggestion, setSuggestion] = useState()
 
@@ -17,7 +17,8 @@ export default function Main() {
     document.title = 'Blisst'
     axios.get(`${server}/suggestion/daily`)
       .then(daily => {
-        setSuggestion(daily.data.data)
+        const id = daily.data.data
+        setSuggestion(product.find(p => p.id === id))
       })
       .catch(err => console.log(err))
   }, [])//fa o cerere la server, pentru a vedea care este produsul zilei

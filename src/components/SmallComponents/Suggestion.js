@@ -5,7 +5,7 @@ import Product from './Product'
 import { useAuth } from '../../contexts/AuthContext'
 
 export default function Suggestion(props) {
-  const [type] = useState(props.type)
+  const type = props.type
   const [suggestion, setSuggestion] = useState({})
   const [loading, setLoading] = useState(true)
   const { server, product } = useAuth()
@@ -16,7 +16,8 @@ export default function Suggestion(props) {
     if (type === 'daily') {
       axios.get(`${server}/suggestion/daily`)
         .then(daily => {
-          setSuggestion(daily.data.data)
+          const id = daily.data.data
+          setSuggestion(product.find(p => p.id === id))
           setLoading(false)
         })
         .catch(err => console.log(err))

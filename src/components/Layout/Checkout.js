@@ -142,17 +142,13 @@ export default function Checkout() {
             delivery: productPrice >= 200 ? 0 : 20,
             total: cartPrice
           },
-          product: cart,
           status: 'Plasata',
           id: command.length
         }
         if (payMethod === 'card') {
           try {
             const response = await axios.post(`${server}/create-checkout-session`, {
-              cart: cart,
-              productPrice: productPrice,
               commandData: commandData,
-              totalPrice: cartPrice,
             });
             console.log(response)
             if (response.data.success) {
@@ -170,53 +166,12 @@ export default function Checkout() {
             })
           }
         } else if (payMethod === 'ramburs') {
-          if (discount.value !== 0) {
-            axios.post(`${server}/discountOnce`, { email: currentUser.email, code: discount.code })
-          }
-          dispatchCart({ type: 'cartDeleteAll' })
-          dispatchCommand({ type: 'commandAdd', payload: { command: commandData } })
-          Swal.fire(
-            'Comanda Plasata!',
-            'Comanda a fost plasata.',
-            'success'
-          )
-          axios.post(`${server}/commandUpdate`, {
-            uid: currentUser.uid,
-            command: commandData,
-          }
-          ).then(info => {
-            console.log(info);
-            axios.post(`${server}/email/command`,
-              {
-                email: currentUser.email,
-                name: commandData.details.name,
-                price: commandData.price.total
-              }).then((data) => {
-                console.log(data)
-              }).catch(err => {
-                console.log(err)
-              })
-          })
-            .catch(err => console.error(err.error))
-          handleUpdateSizes()
-          navigate('/main/command')
+          const newCommand = encodeURIComponent(JSON.stringify(commandData));
+          navigate(`/creditCard/${newCommand}`)
         }
       }
     })
   }//plaseaza comanda(adica salveaza comanda in baza de date la user/uid/command si la commands), trimite un email cu comanda, si sterge produsele din cos.
-  const handleUpdateSizes = () => {
-    let newProduct = product
-    cart.forEach(cart => {
-      newProduct = newProduct.map(product => {
-        const updatedProduct = product;
-        if (product.id === cart.id) {
-          updatedProduct.size[cart.selectedSize] -= cart.number
-        }
-        return updatedProduct
-      })
-    })
-    setProduct(newProduct)
-  }//dupa ce comanda a fost plasata, produsele cumparate se scad din stoc
   const handleDeleteCart = product => {
     Swal.fire({
       title: 'Esti sigur?',

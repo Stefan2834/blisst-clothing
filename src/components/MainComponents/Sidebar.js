@@ -9,7 +9,7 @@ export default function Sidebar() {
   const [sizeType, setSizeType] = useState([])
   const [expand, setExpand] = useState()
   const navigate = useNavigate()
-  
+
 
   useLayoutEffect(() => {
     document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
@@ -50,13 +50,18 @@ export default function Sidebar() {
     }
   }
 
-
+  let filterNumber = Object.values(filter).reduce((total, fil) => total + (fil === "" ? 0 : 1), -1)
+  console.log(filterNumber)
 
   return (
     <>
       <div className={filterOpen ? 'side-filter-bg' : 'hidden'} onClick={() => setFilterOpen(false)} />
       <div className={filterOpen ? 'side-filter-bar' : 'side-filter-closed'}>
-        <div className='side-font'>Filtre</div>
+        <div className='side-font flex items-start'>Filtre
+          {filterNumber > 0 && (
+            <span className="text-sm">({filterNumber})</span>
+          )}
+        </div>
         <form className="side-form" onChange={() => setProductLoad(8)}>
           <div className='side-expand' onClick={() => handleExpand('Pret')}>
             <span className='side-selection'>Pret</span>
@@ -71,6 +76,7 @@ export default function Sidebar() {
               Minim (Lei):
               <input type='number'
                 className='side-price-input'
+                value={filter.minPrice}
                 onChange={e => startTransition(() => setFilter({ ...filter, minPrice: e.target.value }))}
               />
             </label>
@@ -78,6 +84,7 @@ export default function Sidebar() {
               Maxim (Lei):
               <input type='number'
                 className='side-price-input'
+                value={filter.maxPrice}
                 onChange={e => startTransition(() => setFilter({ ...filter, maxPrice: e.target.value }))}
               />
             </label>

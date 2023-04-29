@@ -610,6 +610,61 @@ button.acc-btn:hover {
   background-color: var(--color-oposite);
 }
 
+@media screen and (max-width:1000px) {
+  .main-off {
+    height: auto;
+    flex-direction: column;
+  }
+  .main-left {
+    height:100vh;
+    margin-top:50px;
+    width:100%;
+    justify-content: center;
+  }
+  .main-right {
+    flex-direction: column;
+    width:100vw;
+  }
+  .main-off-man, .main-off-woman {
+    width:100%;
+    height:100vh;
+    margin:0;
+  }
+  .main-off-photo-man, .main-off-photo-woman {
+    background-size: contain;
+  }
+  .main-off-photo-man:hover, .main-off-photo-woman:hover {
+    scale:1;
+  }
+  .main-info {
+    flex-direction: column;
+    height:300px;
+  }
+}
+@media screen and (max-width:700px) {
+  .main-disc-top-text::before,
+  .main-disc-top-text::after {
+    width:25vw;
+  }
+  .main-disc-top-text:before {
+    left:-25vw;
+  }
+  .main-disc-top-text::after {
+    right:-25vw;
+  }
+}
+@media screen and (max-width:500px) {
+  .main-disc-flex-container {
+    width:100%;
+  }
+  .main-disc-flex {
+    margin:0;
+  }
+  .main-off-photo-man, .main-off-photo-woman {
+    width:100vw;
+  }
+}
+
 /*----------ForgotPassword----------*/
 
 .for {
