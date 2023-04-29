@@ -663,6 +663,9 @@ button.acc-btn:hover {
   .main-off-photo-man, .main-off-photo-woman {
     width:100vw;
   }
+  .main-off {
+    overflow: hidden;
+  }
 }
 
 /*----------ForgotPassword----------*/
