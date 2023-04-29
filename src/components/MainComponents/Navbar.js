@@ -93,7 +93,7 @@ export default function Navbar() {
       window.removeEventListener('click', handleClickOutside);
       window.removeEventListener('scroll', handleScroll)
     };
-  }, [navIconRefs]);//logica pentru deschidere/inchidere drop down-uri
+  }, [navIconRefs, pathname]);//logica pentru deschidere/inchidere drop down-uri
 
   return (
     <>

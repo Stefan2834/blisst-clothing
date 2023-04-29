@@ -31,9 +31,11 @@ export default function Main() {
             <div className='flex items-center justify-start flex-col'>
               <div className='main-off-title'>Noi dam <span className='principal'>Moda</span></div>
               <div className='main-off-text'>Produsul zilei:</div>
-              {suggestion && (
-                <Product product={suggestion} />
-              )}
+              <div className='cloth-div main-cloth-div'>
+                {suggestion && (
+                  <Product product={suggestion} />
+                )}
+              </div>
               <Countdown />
             </div>
           </div>
