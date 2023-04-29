@@ -328,8 +328,8 @@ button.acc-btn:hover {
   flex-direction: column;
 }
 .main-cloth-div {
-  box-shadow: 0 0 0 transparent;
-  padding:0;
+  width:280px;
+  height:420px;
   display: flex;
   align-items: center;
   justify-content: center;
