@@ -73,7 +73,9 @@ export default function Navbar() {
     });
   }//la fel ca la handleDeleteCart, dar pentru favorite
 
-
+  useEffect(() => {
+    setDrop([false, false, false, false, false, false, false])
+  }, [pathname])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -93,7 +95,7 @@ export default function Navbar() {
       window.removeEventListener('click', handleClickOutside);
       window.removeEventListener('scroll', handleScroll)
     };
-  }, [navIconRefs, pathname]);//logica pentru deschidere/inchidere drop down-uri
+  }, [navIconRefs]);//logica pentru deschidere/inchidere drop down-uri
 
   return (
     <>
