@@ -10,7 +10,7 @@
     --second:#79cbca;
 }
 .special {
-    width:100%;
+    width:100vw;
     height:auto;
     padding-top:70px;
     background-color: var(--color-third);

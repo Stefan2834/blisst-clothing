@@ -46,6 +46,7 @@ export default function Suggestion(props) {
           ) : (
             <div className='sugg-title'>Top reducere</div>
           )}
+          <div className='main-cloth-div'></div>
         </div>
       ) : (
         <div className='suggestion'>
@@ -54,7 +55,9 @@ export default function Suggestion(props) {
           ) : (
             <div className='sugg-title'>Top reducere</div>
           )}
-          <Product product={suggestion} />
+          <div className='main-cloth-div'>
+            <Product product={suggestion} />
+          </div>
           <img src={suggestion.photo} alt='Poza' className='sugg-photo-bg' />
         </div>
       )}

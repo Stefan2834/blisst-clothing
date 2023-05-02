@@ -16,7 +16,7 @@ export default function AdminProducs() {
     name: "",
     id: "",
     type: "",
-    color: "",
+    colors: ["",""],
     sex: "",
     spec: "",
     photo: ["", "", "", ""],
@@ -50,7 +50,7 @@ export default function AdminProducs() {
   const handleNewProduct = async e => {
     e.preventDefault()
     const sendProduct = await axios.post(`${server}/admin/product`, { newProduct: newProduct })
-    if(sendProduct.data.success) {
+    if (sendProduct.data.success) {
       Swal.fire({
         title: 'Produs adaugat!',
         text: "Produsul a fost adaugat cu succes, iar acum este pe site!",
@@ -153,9 +153,9 @@ export default function AdminProducs() {
             )
           })}
         </label>
-        <label className='adm-option adm-option-label'>Culoare:
-          <select value={newProduct.color} className='adm-option' required
-            onChange={e => { setNewProduct({ ...newProduct, color: e.target.value }) }}
+        <label className='adm-option adm-option-label'>Culoare 1:
+          <select value={newProduct.colors[0]} className='adm-option' required
+            onChange={e => { setNewProduct({ ...newProduct, colors: [e.target.value, newProduct.colors[1]] }) }}
           >
             <option value="" className='adm-option'>Selecteaza</option>
             {colors.map((color) => {
@@ -163,8 +163,33 @@ export default function AdminProducs() {
                 <option key={color}
                   value={color}
                   className='adm-option'
-                  style={{ backgroundColor: color, color: "white" }}
+                  style={color !== '#1c1919' ?
+                    { backgroundColor: color, color: 'black' }
+                    :
+                    { backgroundColor: color, color: 'white' }}
                 >
+                  {color}
+                </option>
+              )
+            })}
+          </select>
+        </label>
+        <label className='adm-option adm-option-label'>Culoare 2:
+          <select value={newProduct.colors[1]} className='adm-option' required
+            onChange={e => { setNewProduct({ ...newProduct, colors: [newProduct.colors[0], e.target.value] }) }}
+          >
+            <option value="" className='adm-option'>Selecteaza</option>
+            {colors.map((color) => {
+              return (
+                <option key={color}
+                  value={color}
+                  className='adm-option'
+                  style={color !== '#1c1919' ?
+                    { backgroundColor: color, color: 'black' }
+                    :
+                    { backgroundColor: color, color: 'white' }}
+                >
+                  {color}
                 </option>
               )
             })}

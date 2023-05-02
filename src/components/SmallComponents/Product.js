@@ -33,9 +33,9 @@ export default function Product(props) {
                     <div className="cloth-price-old">{product.price}
                       <span className="cloth-span">Lei</span>
                     </div>
-                    <span className="cloth-price"> - {product.discount * 100} %</span>
+                    <span className="cloth-price"> - {(product.discount * 100).toFixed(0)} %</span>
                   </div>
-                  <div className="cloth-price-new text-red-600">{product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01}
+                  <div className="cloth-price-new text-red-600">{(product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01).toFixed(2)}
                     <span className="cloth-span text-red-600">Lei</span>
                   </div>
                 </>

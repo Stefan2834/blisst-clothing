@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useTransition } from 'react'
+import React, { createContext, useContext, useState, useEffect, useTransition, useDeferredValue } from 'react'
 import useLocalStorage from '../CustomHook/useLocalStorage'
 
 export const DefaultContext = createContext();
@@ -24,7 +24,9 @@ export default function DefaultProvider({ children }) {
     search: '',
     type:''
   })
+  const deferredSearch = useDeferredValue(filter.search)
 
+  
   useEffect(() => {
     if (darkTheme) {
       document.documentElement.style.setProperty("--black", '#fff')
@@ -55,6 +57,7 @@ export default function DefaultProvider({ children }) {
     filterOpen, setFilterOpen,
     filter, setFilter,
     startTransition, isPending,
+    deferredSearch
   }
   return (
     <DefaultContext.Provider value={value}>

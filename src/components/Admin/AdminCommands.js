@@ -126,7 +126,7 @@ export default function AdminCommands() {
                                   value={JSON.stringify(product)}
                                   className='comm-option'
                                 >
-                                  {product.nume} {product.selectedSize}
+                                  {product.name} {product.selectedSize}
                                 </option>
                               )
                             })}
@@ -140,7 +140,7 @@ export default function AdminCommands() {
                           />
                         </Link>
                         <Link to={`/product/${selectedProduct.id}`} className='cart-det'>
-                          <div className='cart-name'>{selectedProduct.nume}</div>
+                          <div className='cart-name'>{selectedProduct.name}</div>
                           <div className='cart-info'>{selectedProduct.spec}</div>
                         </Link>
                         <div className='comm-action'>
@@ -150,9 +150,9 @@ export default function AdminCommands() {
                                 <div className="cart-price-old">{selectedProduct.price}
                                   <span className="cart-span">Lei</span>
                                 </div>
-                                <span className="cart-price"> - {selectedProduct.discount * 100} %</span>
+                                <span className="cart-price"> - {(selectedProduct.discount * 100).toFixed(2)} %</span>
                               </div>
-                              <div className="cart-price-new text-red-600">{selectedProduct.price + 0.01 - ((selectedProduct.price + 0.01) * selectedProduct.discount) - 0.01}
+                              <div className="cart-price-new text-red-600">{(selectedProduct.price + 0.01 - ((selectedProduct.price + 0.01) * selectedProduct.discount) - 0.01).toFixed(2)}
                                 <span className="cart-span text-red-600">Lei</span>
                               </div>
                             </>

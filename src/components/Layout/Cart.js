@@ -76,9 +76,9 @@ export default function Cart() {
                                                 <div className="cart-price-old">{product.price}
                                                     <span className="cart-span">Lei</span>
                                                 </div>
-                                                <span className="cart-price"> - {product.discount * 100} %</span>
+                                                <span className="cart-price"> - {(product.discount * 100).toFixed(0)} %</span>
                                             </div>
-                                            <div className="cart-price-new text-red-600">{product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01}
+                                            <div className="cart-price-new text-red-600">{(product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01).toFixed(2)}
                                                 <span className="cart-span text-red-600">Lei</span>
                                             </div>
                                         </>

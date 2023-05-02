@@ -39,7 +39,6 @@ export default function Sidebar() {
       window.removeEventListener("scroll", () => setFilterOpen(false))
       setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, search: '' })
     }
-
   }, [id])
 
   const handleExpand = (type) => {
@@ -50,8 +49,7 @@ export default function Sidebar() {
     }
   }
 
-  let filterNumber = Object.values(filter).reduce((total, fil) => total + (fil === "" ? 0 : 1), -1)
-  console.log(filterNumber)
+  let filterNumber = filter.search === "" ? Object.values(filter).reduce((total, fil) => total + (fil === "" ? 0 : 1), -1) : 1
 
   return (
     <>
@@ -62,7 +60,7 @@ export default function Sidebar() {
             <span className="text-sm">({filterNumber})</span>
           )}
         </div>
-        <form className="side-form" onChange={() => setProductLoad(8)}>
+        <form className="side-form" onChange={() => { setProductLoad(10); window.scrollTo(0, 0) }} onSubmit={(e) => e.preventDefault()}>
           <div className='side-expand' onClick={() => handleExpand('Pret')}>
             <span className='side-selection'>Pret</span>
             {darkTheme ? (
@@ -138,7 +136,7 @@ export default function Sidebar() {
                 checked={filter.sort === 'nrReview'}
                 onChange={e => startTransition(() => e.target.checked && setFilter({ ...filter, sort: 'nrReview' }))}
               />
-              <div className="side-size-label side-selection">Nr.review-uri</div>
+              <div className="side-size-label side-selection">Review-uri</div>
             </label>
             <label className="w-5/12 m-1">
               <input type='checkbox' className="side-size-check"
@@ -200,19 +198,13 @@ export default function Sidebar() {
           </div>
           <div className={expand === 'Cauta' ? 'side-overflow-expand' : 'side-overflow'}>
             <form>
-              <label className='side-id-label'>
-                <input
-                  type={'text'} maxLength={8}
-                  className='side-id-input'
-                  onChange={(e) => {
-                    startTransition(() => {
-                      setFilter({ ...filter, search: e.target.value })
-                    });
-                  }}
+              <label className='side-selection'>
+                Dupa id sau nume:
+                <input type='text'
+                  className='side-price-input'
                   value={filter.search}
-                  placeholder='Cauta dupa id'
+                  onChange={e => setFilter({ ...filter, search: e.target.value })}
                 />
-                <div className={darkTheme ? 'side-id-img-dark' : 'side-id-img'} />
               </label>
             </form>
           </div>

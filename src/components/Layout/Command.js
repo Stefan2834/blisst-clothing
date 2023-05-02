@@ -41,7 +41,6 @@ export default function Command() {
           {[...command].reverse().map((command, index) => {
             // afiseaza comenziile, dar in ordine inversa, adica de la cea mai recenta in jos
             const selectedProduct = selectedProducts[index] || command.product[0]
-            console.log(selectedProduct.photo)
             if (load > index) {
               return (
                 <div className='comm-element'>
@@ -85,9 +84,9 @@ export default function Command() {
                               <div className="cart-price-old">{selectedProduct.price}
                                 <span className="cart-span">Lei</span>
                               </div>
-                              <span className="cart-price"> - {selectedProduct.discount * 100} %</span>
+                              <span className="cart-price"> - {(selectedProduct.discount * 100).toFixed(0)} %</span>
                             </div>
-                            <div className="cart-price-new text-red-600">{selectedProduct.price + 0.01 - ((selectedProduct.price + 0.01) * selectedProduct.discount) - 0.01}
+                            <div className="cart-price-new text-red-600">{(selectedProduct.price + 0.01 - ((selectedProduct.price + 0.01) * selectedProduct.discount) - 0.01).toFixed(2)}
                               <span className="cart-span text-red-600">Lei</span>
                             </div>
                           </>

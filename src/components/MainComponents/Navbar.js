@@ -29,7 +29,7 @@ export default function Navbar() {
   async function handleLogout() {
     try {
       setError()
-      setActiveForm(false)
+      setActiveForm(true)
       const response = await axios.post(`${server}/connect/logout`)
       if (response.data.success) {
         navigate('/connect');
@@ -301,7 +301,7 @@ export default function Navbar() {
                                 <div className='nav-fav-price'>
                                   {product.discount > 0 ? (
                                     <>
-                                      {product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01} Lei
+                                      {(product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01).toFixed(2)} Lei
                                     </>
                                   ) : (
                                     <>
@@ -365,7 +365,7 @@ export default function Navbar() {
                                 <div className='nav-fav-price'>
                                   {product.discount ? (
                                     <>
-                                      {product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01} Lei
+                                      {(product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01).toFixed(2)} Lei
                                     </>
                                   ) : (
                                     <>

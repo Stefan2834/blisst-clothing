@@ -111,16 +111,12 @@ export default function Connect() {
                 Cookies.set('userData', JSON.stringify(user), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
                 await setCurrentUser(user)
                 console.log(user);
-                await axios.get(`${server}/connect`)
-                    .then(data => {
-                        console.log(data)
-                        if (data.data.admin) {
-                            setAdmin(true)
-                        }
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    })
+                console.log('run')
+                const admin = await axios.get(`${server}/connect/admin`)
+                if(admin.data.success) {
+                    console.log(admin)
+                    setAdmin(admin.data.admin)
+                }
                 await getUserData(user.uid, product)
                 navigate('/')
                 setError()

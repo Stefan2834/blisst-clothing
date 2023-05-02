@@ -1,15 +1,27 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useDefault } from "../../contexts/DefaultContext";
+import Fuse from "fuse.js";
 import Product from "../SmallComponents/Product";
+
+const options = {
+  keys: ['name', "type"],
+  threshold: 0.5,
+  includeScore: true,
+}
 
 export default function Clothing() {
   const { product } = useAuth()
   const { productLoad, setProductLoad,
     filter,
-    startTransition, isPending
+    startTransition, isPending,
+    deferredSearch
   } = useDefault()
   const [sortedProducts, setSortedProducts] = useState([...product])
+  const fuse = new Fuse(product, options);
+  const searchResult = useMemo(() => {
+    return fuse.search(deferredSearch)
+  }, [filter.search])
 
   useEffect(() => {
     const sort = [...product]
@@ -68,20 +80,14 @@ export default function Clothing() {
   }, [filter.sort])
 
   const handleFilter = useMemo(() => (product) => {
-    if (filter.search !== "") {
-      if (product.id.includes(filter.search.toLowerCase())) {
-        return true
-      }
-    } else {
-      if (product.type.includes(filter.type)) {
-        const productDiscount = product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01
-        if ((filter.maxPrice >= productDiscount && filter.minPrice <= productDiscount) ||
-          (filter.maxPrice >= productDiscount && filter.minPrice === '') ||
-          (filter.minPrice <= productDiscount && filter.maxPrice === '')) {
-          if (filter.size === '' || product.size[filter.size] !== 0) {
-            if (filter.color === product.color || filter.color === "") {
-              return true
-            }
+    if (product.type.includes(filter.type)) {
+      const productDiscount = product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01
+      if ((filter.maxPrice >= productDiscount && filter.minPrice <= productDiscount) ||
+        (filter.maxPrice >= productDiscount && filter.minPrice === '') ||
+        (filter.minPrice <= productDiscount && filter.maxPrice === '')) {
+        if (filter.size === '' || product.size[filter.size] !== 0) {
+          if (product.colors.includes(filter.color) || filter.color === "") {
+            return true
           }
         }
       }
@@ -98,16 +104,27 @@ export default function Clothing() {
         </div>
       )}
       <div className='cloth'>
-        {sortedProducts.map((product) => {
-          if (noProduct < productLoad) {
-            if (handleFilter(product)) {
+        {filter.search.length < 2 ? (
+          sortedProducts.map((product, index) => {
+            if (noProduct < productLoad) {
+              if (handleFilter(product)) {
+                noProduct += 1;
+                return (
+                  <Product key={index} product={product} />
+                )
+              }
+            }
+          })
+        ) : (
+          searchResult.map((product,index) => {
+            if (noProduct < productLoad) {
               noProduct += 1;
               return (
-                <Product product={product} />
+                <Product key={index} product={product.item} />
               )
             }
-          }
-        })}
+          })
+        )}
         {noProduct >= productLoad && (
           <div className="cloth-more">
             <div className="cloth-more-btn" onClick={() => startTransition(() => setProductLoad(p => p + 10))}>Incarca mai multe produse</div>

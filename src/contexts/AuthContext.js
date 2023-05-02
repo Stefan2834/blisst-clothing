@@ -109,8 +109,8 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const server = "https://blisst.onrender.com"
   // const server = 'http://localhost:9000'
-  const [admin, setAdmin] = useState()
-  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: true, color: '' })
+  const [admin, setAdmin] = useState(false)
+  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
@@ -137,7 +137,7 @@ export function AuthProvider({ children }) {
     if (product.data.success) {
       setProduct(product.data.product)
     }
-    const connect = await axios.get(`${server}/connect`)
+    const connect = await axios.get(`${server}/connect/admin`)
     if (connect.data.admin) {
       setAdmin(true)
     }
@@ -152,12 +152,11 @@ export function AuthProvider({ children }) {
   }
   const postProduct = () => {
     axios.post(`${server}/user/product`, {
-      product: product
+      product: product,
     })
       .then(data => console.log(data))
       .catch(err => console.log(err))
   }
-
   useEffect(() => {
     getData()
     // postProduct()

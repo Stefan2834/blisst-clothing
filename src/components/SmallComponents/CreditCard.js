@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useHistory } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
 import Swal from 'sweetalert2'
@@ -8,6 +8,7 @@ export default function CreditCard() {
   const { server, currentUser, cart, dispatchCart, dispatchCommand } = useAuth()
   const { cardId } = useParams()
   const navigate = useNavigate()
+
 
   useEffect(() => {
     const handleCommand = async () => {
@@ -45,10 +46,11 @@ export default function CreditCard() {
       } catch (err) {
         console.log(err)
       }
-      navigate('/main/command')
+      navigate('/main/command', { replace: true })
     }
     handleCommand()
   }, [])
+
 
   return (
     <></>

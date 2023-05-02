@@ -147,6 +147,7 @@ export default function Checkout() {
         }
         if (payMethod === 'card') {
           try {
+            console.log(commandData.price.total)
             const response = await axios.post(`${server}/create-checkout-session`, {
               commandData: commandData,
             });
@@ -193,7 +194,7 @@ export default function Checkout() {
       if (cart.length !== 0) {
         let price = 0;
         cart.map((product) => {
-          price += (product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01) * product.number
+          price += ((product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01)).toFixed(2) * product.number
         })
         setProductPrice(Number((price).toFixed(2)))
         if (price >= 200) {
@@ -454,9 +455,9 @@ export default function Checkout() {
                             <div className="cart-price-old">{product.price}
                               <span className="cart-span">Lei</span>
                             </div>
-                            <span className="cart-price"> - {product.discount * 100} %</span>
+                            <span className="cart-price"> - {(product.discount * 100).toFixed(2)} %</span>
                           </div>
-                          <div className="cart-price-new text-red-600">{product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01}
+                          <div className="cart-price-new text-red-600">{(product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01).toFixed(2)}
                             <span className="cart-span text-red-600">Lei</span>
                           </div>
                         </>

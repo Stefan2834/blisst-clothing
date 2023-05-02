@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 
 export default function Footer() {
+  const { pathname } = useLocation()
   const { currentUser, server, det, setDet } = useAuth()
   const { darkTheme } = useDefault()
+  const [full, setFull] = useState(true)
 
   const handleSubscribe = () => {
     Swal.fire({
@@ -44,17 +46,18 @@ export default function Footer() {
       .catch(err => console.error(err))
   }// modifica in baza de date, datele de la newsLetter
 
+  useEffect(() => {
+    if (pathname.includes('/main/cloth')) {
+      setFull(false)
+    } else {
+      setFull(true)
+    }
+  }, [pathname])
+
 
   return (
     <div className='footer'>
-      <div className='foo-left'>
-        <div className='foo-left-text'>
-          Acest site a fost creat de <span className='principal font-semibold'>Stefan Iosif</span>.<br />
-          Pentru mai multe informatii, lasa un email la:<br />
-          <span className='principal font-semibold'>iosifs617@gmail.com</span>
-        </div>
-      </div>
-      <div className='foo-content'>
+      <div className={full ? 'foo-content-full' : 'foo-content'}>
         <div className='foo-top'>
           <div className='foo-collumn'>
             <div className='foo-title'>Barbati</div>
@@ -87,6 +90,7 @@ export default function Footer() {
             <Link to='/main/faq' className='foo-text'>Faq</Link>
             <Link to='/main/help' className='foo-text'>Ajutor</Link>
             <Link to='/main/license' className='foo-text'>Licente</Link>
+            <Link to='/main/credits' className='foo-text'>Credite</Link>
           </div>
           <div className='foo-collumn'>
             <div className='foo-title-news'>News letter</div>
@@ -112,19 +116,19 @@ export default function Footer() {
         <div className='foo-bottom'>
           {darkTheme ? (
             <div className='foo-bottom-content'>
-              <Link to='/'>
+              <Link to='https://www.instagram.com/stefaniosif17/'>
                 <div className='foo-social foo-insta-dark' />
               </Link>
-              <Link to='/'>
+              <Link to='https://github.com/Stefan2834'>
                 <div className='foo-social foo-github-dark' />
               </Link>
-              <Link to='/'>
+              <Link to='https://www.youtube.com/channel/UCAV4P3xhYwZ_4gDFXyc5JMg'>
                 <div className='foo-social foo-youtube-dark' />
               </Link>
-              <Link to='/'>
+              <Link to='https://twitter.com/Stefan2834'>
                 <div className='foo-social foo-twitter-dark' />
               </Link>
-              <Link to='/'>
+              <Link to='https://www.tiktok.com/@stefan2834'>
                 <div className='foo-social foo-tiktok-dark' />
               </Link>
             </div>
@@ -148,7 +152,7 @@ export default function Footer() {
             </div>
           )}
         </div>
-        <div className='foo-logo principal'>Blisst</div>
+        <Link to='/' className='foo-logo principal'>Blisst</Link>
       </div>
     </div>
   )

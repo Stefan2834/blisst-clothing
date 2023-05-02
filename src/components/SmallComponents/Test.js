@@ -1,64 +1,42 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useDeferredValue } from 'react';
+import Fuse from 'fuse.js';
 import { useAuth } from '../../contexts/AuthContext';
-import StripeCheckout from 'react-stripe-checkout';
-import '../css/sidebar.css'
-import { useNavigate } from 'react-router-dom';
 
-// function Test() {
-//   const { server } = useAuth()
-//   const [paymentAmount, setPaymentAmount] = useState(10);
-//   const [paymentToken, setPaymentToken] = useState(null);
+const options = {
+  keys: ['name'],
+  threshold: 0.3,
+  includeScore: true,
+};
 
-//   const handleSubmit = async () => {
-//     const response = await axios.post(`${server}/charge`, {
-//       amount: paymentAmount * 100,
-//       token: paymentToken,
-//     });
+const Test = () => {
+  const { product } = useAuth()
+  const [searchTerm, setSearchTerm] = useState('');
+  const deferredSearchTerm = useDeferredValue(searchTerm, { timeoutMs: 2000 });
 
-//     console.log(response.data.message);
-//   };
+  console.log('Rendering with searchTerm:', searchTerm, 'deferredSearchTerm:', deferredSearchTerm);
 
-//   const handleToken = (token) => {
-//     setPaymentToken(token);
-//   };
-
-//   return (
-//     <div>
-//       <input type="number" value={paymentAmount} onChange={(e) => setPaymentAmount(e.target.value)} />
-//       <StripeCheckout
-//         stripeKey="pk_test_51N0nLNJak7XWs1IO2ryVvKBoNLX84G6htRhF2Qngwgzzy5Fkafx01iaUtCPa3zCYpAbzbCC0vGffv1C2WOny0op900WR0ZeVUf"
-//         token={handleToken}
-//         panelLabel="Pay now"
-//         amount={paymentAmount * 100}
-//         currency="RON"
-//         zipCode={true}
-//         description="Plateste"
-//       >
-//         {/* <div className='my-credit-card-input'>Plateste</div> */}
-//       </StripeCheckout>
-//       {/* <button onClick={handleSubmit}>Pay</button> */}
-//     </div>
-//   );
-// };
-
-
-function Test() {
-  const { server } = useAuth()
-  const navigate = useNavigate()
-
-  const handleCheckout = async () => {
-    const response = await axios.post(`${server}/create-checkout-session`);
-    console.log(response.data.url)
-    window.location.href = response.data.url
-  };
-
+  const fuse = new Fuse(product, options);
+  const searchResults = fuse.search(deferredSearchTerm);
   return (
     <div>
-      <button onClick={handleCheckout}>Checkout</button>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search products"
+      />
+
+      {searchResults.map((result) => (
+        <div key={result.item.id}>
+          <h2>{result.item.name}</h2>
+          <p>{result.item.spec}</p>
+          <p>{result.item.price}</p>
+        </div>
+      ))}
     </div>
   );
-}
+};
+
 export default Test;
 
 

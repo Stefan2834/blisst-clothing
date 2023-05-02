@@ -2,9 +2,14 @@ import React from 'react'
 import '../css/admin.css'
 import { useAuth } from '../../contexts/AuthContext'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export default function Admin() {
   const { det } = useAuth()
+
+  useEffect(() => {
+    document.title = 'Blisst — Admin'
+  }, [])
 
 
   return (
