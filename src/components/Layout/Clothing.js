@@ -5,8 +5,8 @@ import Fuse from "fuse.js";
 import Product from "../SmallComponents/Product";
 
 const options = {
-  keys: ['name', "type"],
-  threshold: 0.5,
+  keys: ["name", "type"],
+  threshold: 0.4,
   includeScore: true,
 }
 
@@ -20,8 +20,18 @@ export default function Clothing() {
   const [sortedProducts, setSortedProducts] = useState([...product])
   const fuse = new Fuse(product, options);
   const searchResult = useMemo(() => {
-    return fuse.search(deferredSearch)
-  }, [filter.search])
+    if (filter.searchName !== '') {
+      return fuse.search(deferredSearch)
+    } else if (filter.searchId !== "") {
+      return product.map((p) => {
+        if (p.id.toLowerCase().includes(filter.searchId.toLowerCase())) {
+          return p
+        } else {
+          return null
+        }
+      }).filter(p => p != null)
+    }
+  }, [filter.searchName, filter.searchId])
 
   useEffect(() => {
     const sort = [...product]
@@ -104,7 +114,7 @@ export default function Clothing() {
         </div>
       )}
       <div className='cloth'>
-        {filter.search.length < 2 ? (
+        {filter.searchName.length < 2 && filter.searchId.length < 2 ? (
           sortedProducts.map((product, index) => {
             if (noProduct < productLoad) {
               if (handleFilter(product)) {
@@ -116,12 +126,19 @@ export default function Clothing() {
             }
           })
         ) : (
-          searchResult.map((product,index) => {
+          searchResult.map((product, index) => {
             if (noProduct < productLoad) {
               noProduct += 1;
-              return (
-                <Product key={index} product={product.item} />
-              )
+              console.log(product)
+              if (filter.searchId !== '') {
+                return (
+                  <Product key={index} product={product} />
+                )
+              } else if(filter.searchName !== ''){
+                return (
+                  <Product key={index} product={product.item} />
+                )
+              }
             }
           })
         )}

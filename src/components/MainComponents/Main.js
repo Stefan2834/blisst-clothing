@@ -86,106 +86,106 @@ export default function Main() {
           </div>
           <div className='main-disc-flex'>
             <div className='main-disc-flex-container'>
-              <div className='main-disc-container'>
+              <Link to='/main/cloth/barbati top tricouri' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo1' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Tricou pentru El
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/femei top tricouri' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo2' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Tricou pentru Ea
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/barbati top bluze' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo3' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Hanorac pentru El
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/femei top bluze' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo4' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Hanorac pentru Ea
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className='main-disc-flex-container'>
-              <div className='main-disc-container'>
+              <Link to='/main/cloth/barbati bottom lungi' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo5' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Pantaloni lungi pentru El
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/femei bottom lungi' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo6' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Pantaloni lungi pentru Ea
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/barbati bottom scurti' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo7' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Pantaloni scurti pentru El
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/femei bottom scurti' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo8' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Pantaloni scurti pentru Ea
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className='main-disc-flex-container'>
-              <div className='main-disc-container'>
+              <Link to='/main/cloth/barbati foot adidasi' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo9' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Adidasi pentru El
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/femei foot adidasi' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo10' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Adidasi pentru Ea
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/barbati foot papuci' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo11' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Papuci pentru El
                   </div>
                 </div>
-              </div>
-              <div className='main-disc-container'>
+              </Link>
+              <Link to='/main/cloth/femei foot papuci' className='main-disc-container'>
                 <div className='main-disc-photo main-disc-photo12' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
                     Papuci pentru Ea
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

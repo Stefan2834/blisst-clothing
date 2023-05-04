@@ -21,10 +21,11 @@ export default function DefaultProvider({ children }) {
     size: '',
     sort: '',
     color: '',
-    search: '',
+    searchId: '',
+    searchName: '',
     type:''
   })
-  const deferredSearch = useDeferredValue(filter.search)
+  const deferredSearch = useDeferredValue(filter.searchName)
 
   
   useEffect(() => {

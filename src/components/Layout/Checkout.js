@@ -4,14 +4,13 @@ import '../css/cartCheckout.css'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 import axios from 'axios'
-import { counties } from '../SmallComponents/Test'
+import { counties } from '../../contexts/Import'
 import Swal from 'sweetalert2';
 
 export default function Checkout() {
   const { server, currentUser,
     cart, dispatchCart,
-    command, dispatchCommand,
-    product, setProduct,
+    command,
     det, setDet
   } = useAuth()
   const { startTransition, isPending, darkTheme } = useDefault()
@@ -69,13 +68,13 @@ export default function Checkout() {
   const handleNext = () => {
     let actualError = { adress: '', contact: '', pay: '' }
     if (det.info === '' || det.county === '') {
-      actualError.adress = 'Seteaza adresa pentru a continua'
+      actualError.adress = 'Seteaza adresa pentru a continua!'
     }
     if (det.tel === '') {
-      actualError.contact = 'Seteaza un numar de telefon pentru a continua'
+      actualError.contact = 'Seteaza un numar de telefon pentru a continua!'
     }
     if (method.card === false && method.ramburs === false) {
-      actualError.pay = 'Selecteaza o metoda de plata'
+      actualError.pay = 'Selecteaza o metoda de plata!'
     }
     if (Object.values(actualError).every((value) => value === '')) {
       setActualPage(2);
@@ -131,10 +130,11 @@ export default function Checkout() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const date = new Date();
+        const options = { month: 'long' };
         const commandData = {
           method: method.card ? 'Card' : 'Ramburs',
           details: det,
-          date: `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`,
+          date: `${date.getDate()} ${date.toLocaleDateString('ro-RO', options)} ${date.getHours()}:${date.getMinutes()}`,
           price: {
             productPrice: productPrice,
             discount: discount.value,
@@ -455,7 +455,7 @@ export default function Checkout() {
                             <div className="cart-price-old">{product.price}
                               <span className="cart-span">Lei</span>
                             </div>
-                            <span className="cart-price"> - {(product.discount * 100).toFixed(2)} %</span>
+                            <span className="cart-price"> - {(product.discount * 100).toFixed(0)} %</span>
                           </div>
                           <div className="cart-price-new text-red-600">{(product.price + 0.01 - ((product.price + 0.01) * product.discount) - 0.01).toFixed(2)}
                             <span className="cart-span text-red-600">Lei</span>

@@ -1,0 +1,97 @@
+:root {
+  --black:#0b0b0b;
+  --dark-principal:#0b0b0b;
+  --color:white;
+  --color-second:#eeeeee;
+  --color-third:#ddd;
+  --color-oposite:#0b0b0b;
+  --gradient: linear-gradient(to right, #d604cf, #9822ff);
+  --first:#e684ae;
+  --second:#79cbca;
+}
+.faq {
+  width:100vw;
+  height:auto;
+  background-color: var(--color-third);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:70px 20px 20px 20px;
+}
+.faq-container {
+  width:1000px;
+  height:auto;
+  background-color: var(--color-second);
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  overflow: hidden;
+  color:var(--color-oposite);
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.faq-title {
+  font-size:22px;
+  font-weight: 600;
+  margin-bottom:20px;
+  height:50px;
+}
+.faq-content {
+  width:80%;
+  height:auto;
+  overflow: hidden;
+}
+.faq-question {
+  width:100%;
+  cursor: pointer;
+  background-color: var(--color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top:10px;
+  position: relative;
+  padding:0 10px;
+  overflow: hidden;
+  transition: 400ms ease;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  height:50px;
+}
+.faq-que-text {
+  font-size:20px;
+  height:50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 600;
+}
+.faq-que-plus, .faq-que-plus-rotate {
+  aspect-ratio: 1/1;
+  height:50px;
+  background-size: 40px 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 300ms ease;
+  background-image: url(../Main/svg-dark/plus.svg);
+}
+.faq-que-plus-rotate {
+  transform: rotate(45deg);
+}
+.faq-overflow, .faq-overflow-open {
+  position: relative;
+  font-size:18px;
+  font-weight: 500;
+  width:100%;
+  background-color: var(--color);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+.faq-overflow-open {
+  height:auto;
+  padding:5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.8);
+}
+.faq-overflow {
+  height:0;
+  padding: 0 5px;
+}

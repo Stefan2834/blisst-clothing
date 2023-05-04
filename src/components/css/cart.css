@@ -210,7 +210,7 @@ span.cart-span {
     display: flex;
 }
 .cart-form-input {
-    width:280px;
+    width:fit-content;
     color:var(--color-oposite);
     font-size:20px;
     padding:5px;

@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDefault } from '../../contexts/DefaultContext'
-import { colors } from '../SmallComponents/Test'
+import { colors } from '../../contexts/Import'
 
 export default function Sidebar() {
   const { setProductLoad, darkTheme, startTransition, filter, setFilter, filterOpen, setFilterOpen } = useDefault()
@@ -10,7 +10,7 @@ export default function Sidebar() {
   const [expand, setExpand] = useState()
   const navigate = useNavigate()
 
-
+  console.log(filter.searchId)
   useLayoutEffect(() => {
     document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
     const validPath = ['barbati', 'femei', 'barbati top tricouri', 'barbati top bluze', 'barbati bottom scurti', 'barbati bottom lungi',
@@ -37,7 +37,7 @@ export default function Sidebar() {
     window.addEventListener("scroll", () => setFilterOpen(false))
     return () => {
       window.removeEventListener("scroll", () => setFilterOpen(false))
-      setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, search: '' })
+      setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, searchId: '', searchName: '' })
     }
   }, [id])
 
@@ -49,7 +49,7 @@ export default function Sidebar() {
     }
   }
 
-  let filterNumber = filter.search === "" ? Object.values(filter).reduce((total, fil) => total + (fil === "" ? 0 : 1), -1) : 1
+  let filterNumber = (filter.searchId || filter.searchName) === "" ? Object.values(filter).reduce((total, fil) => total + (fil === "" ? 0 : 1), -1) : 1
 
   return (
     <>
@@ -197,21 +197,27 @@ export default function Sidebar() {
             )}
           </div>
           <div className={expand === 'Cauta' ? 'side-overflow-expand' : 'side-overflow'}>
-            <form>
-              <label className='side-selection'>
-                Dupa id sau nume:
-                <input type='text'
-                  className='side-price-input'
-                  value={filter.search}
-                  onChange={e => setFilter({ ...filter, search: e.target.value })}
-                />
-              </label>
-            </form>
+            <label className='side-selection'>
+              Dupa nume:
+              <input type='text'
+                className='side-price-input'
+                value={filter.searchName}
+                onChange={e => setFilter({ ...filter, searchName: e.target.value, searchId: '' })}
+              />
+            </label>
+            <label className='side-selection'>
+              Dupa id:
+              <input type='text'
+                className='side-price-input'
+                value={filter.searchId}
+                onChange={e => setFilter({ ...filter, searchId: e.target.value, searchName: '' })}
+              />
+            </label>
           </div>
           <div className='side-expand' onClick={() => {
             startTransition(() => {
               setExpand()
-              setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, search: '' })
+              setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, searchId: '', searchName: ''})
             })
           }}>
             <span className='side-selection side-selection'>Sterge Filtre</span>

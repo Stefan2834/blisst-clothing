@@ -590,7 +590,6 @@ import manSnakeyellowPanOrangeBack from '../clothing/man/bottom/yellow fff600/sn
 import manSnakeyellowPanOrangeRight from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
 import manSnakeyellowPanOrangeLeft from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
 
-
 export const Product = {
   a: {
     name: 'Tricou simplu',
@@ -2129,3 +2128,52 @@ export const Product = {
     id: 'mpso11',
   },
 }
+
+
+
+export const colors = ['#1c1919', '#bdbeb4', '#eee', '#0091e5', '#00ffd8', '#00d2ff', '#72ff00', '#ff00f0', '#a200ff', '#fd6500', '#fff600', '#ea0000']
+
+export const counties = [
+  'Alba',
+  'Arad',
+  'Arges',
+  'Bacau',
+  'Bihor',
+  'Bistrita-Nasaud',
+  'Botosani',
+  'Braila',
+  'Brasov',
+  'Bucuresti',
+  'Buzau',
+  'Calarasi',
+  'Caras-Severin',
+  'Cluj',
+  'Constanta',
+  'Covasna',
+  'Dambovita',
+  'Dolj',
+  'Galati',
+  'Giurgiu',
+  'Gorj',
+  'Harghita',
+  'Hunedoara',
+  'Ialomita',
+  'Iasi',
+  'Ilfov',
+  'Maramures',
+  'Mehedinti',
+  'Mures',
+  'Neamt',
+  'Olt',
+  'Prahova',
+  'Salaj',
+  'Satu Mare',
+  'Sibiu',
+  'Suceava',
+  'Teleorman',
+  'Timis',
+  'Tulcea',
+  'Valcea',
+  'Vaslui',
+  'Vrancea'
+];

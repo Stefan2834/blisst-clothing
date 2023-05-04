@@ -3,6 +3,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2';
 import { Product } from './Import';
+import { useNavigate } from 'react-router-dom';
 export const AuthContext = createContext();
 export function useAuth() {
   return useContext(AuthContext)
@@ -114,6 +115,7 @@ export function AuthProvider({ children }) {
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
+  const navigate = useNavigate()
 
   const getUserData = async (uid, product) => {
     await axios.post(`${server}/user/info`, { uid: uid })
@@ -139,13 +141,17 @@ export function AuthProvider({ children }) {
     }
     const connect = await axios.get(`${server}/connect/admin`)
     if (connect.data.admin) {
+      console.log(connect)
       setAdmin(true)
     }
     if (connect.data.success) {
       if (Cookies.get('userData')) {
         const user = JSON.parse(Cookies.get('userData'));
+        console.log(user)
         setCurrentUser(user)
         await getUserData(user.uid, product.data.product)
+      } else {
+        navigate('/connect')
       }
     }
     setLoading(false)

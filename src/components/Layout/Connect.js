@@ -59,7 +59,6 @@ export default function Connect() {
         } else {
             try {
                 setLoading(true)
-                setError('Loading...')
                 const response = await axios.post(`${server}/connect/signUp`, {
                     email: signEmailRef.current.value,
                     password: signPassRef.current.value,
@@ -98,7 +97,6 @@ export default function Connect() {
         e.preventDefault()
         try {
             setLoading(true)
-            setError('Se incarca...')
             const response = await axios.post(`${server}/connect/login`, {
                 email: logEmailRef.current.value,
                 password: logPassRef.current.value,
@@ -111,10 +109,8 @@ export default function Connect() {
                 Cookies.set('userData', JSON.stringify(user), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
                 await setCurrentUser(user)
                 console.log(user);
-                console.log('run')
                 const admin = await axios.get(`${server}/connect/admin`)
-                if(admin.data.success) {
-                    console.log(admin)
+                if (admin.data.success) {
                     setAdmin(admin.data.admin)
                 }
                 await getUserData(user.uid, product)
@@ -131,93 +127,99 @@ export default function Connect() {
         setLoading(false)
     }//conecteaza utilizatorul
     return (
-
-        <div className='acc-main'>
-            <div className={!activeForm ? 'acc-slider-active' : 'acc-slider'}>
-                <div className='acc-slider-left' onClick={() => setActiveForm(false)}>Inregistrare</div>
-                <div className='acc-slider-right' onClick={() => setActiveForm(true)}>Conectare</div>
-            </div>
-            <div className='container'>
-                <div className={activeForm ? 'container-overflow-active' : 'container-overflow'}>
-                    <div className='sign-up'>
-                        <form className='acc-form' onSubmit={handleSignUp}>
-                            <div className='acc-form-title'>Creeaza un cont</div>
-                            <label className='acc-label'><img className='acc-svg' src={nameSvg} alt='Img' />
-                                <input ref={signNameRef} className='acc-input' type='text' placeholder=' ' minLength={3} maxLength={16} required />
-                                <span className='place-holder'>Nume*</span>
-                            </label>
-                            <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />
-                                <input ref={signEmailRef} className='acc-input' type='email' placeholder=' ' required />
-                                <span className='place-holder'>Email*</span>
-                            </label>
-                            <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
-                                <input ref={signPassRef} className='acc-input' type={passView[0] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
-                                <span className='place-holder'>Parola*</span>
-                                <img className='acc-svg-eye'
-                                    src={passView[0] ? eyeTrue : eyeFalse}
-                                    alt='Img' onClick={() => { setPassView(c => [!c[0], c[1], c[2]]) }}
-                                />
-                            </label>
-                            <label className='acc-label'><img className='acc-svg' src={checkSvg} alt='Img' />
-                                <input ref={signPassConfirmRef} className='acc-input' type={passView[1] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
-                                <span className='place-holder'>Confirma*</span>
-                                <img className='acc-svg-eye'
-                                    src={passView[1] ? eyeTrue : eyeFalse}
-                                    alt='Img' onClick={() => { setPassView(c => [c[0], !c[1], c[2]]) }}
-                                />
-                            </label>
-                            <div className='acc-type'>
-                                <label>
-                                    <input className='acc-type-input hidden'
-                                        type='radio' value='man'
-                                        name='radio-type'
-                                        checked={type === 'man'}
-                                        onChange={e => handleRadio(e)}
-                                    />
-                                    <div className='type-place-holder nav-left-photo1' />
+        <>
+            {loading && (
+                <div className="loading-bg">
+                    <div className="loading-spin">Loading...</div>
+                </div>
+            )}
+            <div className='acc-main'>
+                <div className={!activeForm ? 'acc-slider-active' : 'acc-slider'}>
+                    <div className='acc-slider-left' onClick={() => setActiveForm(false)}>Inregistrare</div>
+                    <div className='acc-slider-right' onClick={() => setActiveForm(true)}>Conectare</div>
+                </div>
+                <div className='container'>
+                    <div className={activeForm ? 'container-overflow-active' : 'container-overflow'}>
+                        <div className='sign-up'>
+                            <form className='acc-form' onSubmit={handleSignUp}>
+                                <div className='acc-form-title'>Creeaza un cont</div>
+                                <label className='acc-label'><img className='acc-svg' src={nameSvg} alt='Img' />
+                                    <input ref={signNameRef} className='acc-input' type='text' placeholder=' ' minLength={3} maxLength={16} required />
+                                    <span className='place-holder'>Nume*</span>
                                 </label>
-                                <label>
-                                    <input className='acc-type-input hidden'
-                                        type='radio' value='woman'
-                                        name='radio-type'
-                                        checked={type === 'woman'}
-                                        onChange={e => handleRadio(e)}
-                                    />
-                                    <div className='type-place-holder nav-left-photo2' />
+                                <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />
+                                    <input ref={signEmailRef} className='acc-input' type='email' placeholder=' ' required />
+                                    <span className='place-holder'>Email*</span>
                                 </label>
-                            </div>
-                            {error && (
-                                <div className=' text-red-600'>{error}</div>
-                            )}
-                            <button disabled={loading} type='submit' className='acc-submit'>Inregistreaza-te</button>
-                        </form>
-                    </div>
-                    <div className='sign-in'>
-                        <form className='acc-form' onSubmit={handleLogIn}>
-                            <div className='acc-form-title'>Conectare</div>
-                            <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />
-                                <input ref={logEmailRef} className='acc-input' type='email' placeholder=' ' required />
-                                <span className='place-holder'>Email*</span>
-                            </label>
-                            <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
-                                <input ref={logPassRef} className='acc-input' type={passView[2] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
-                                <span className='place-holder'>Parola*</span>
-                                <img className='acc-svg-eye'
-                                    src={passView[2] ? eyeTrue : eyeFalse}
-                                    alt='Img' onClick={() => { setPassView(c => [c[0], c[1], !c[2]]) }}
-                                />
-                            </label>
-                            {error && (
-                                <div className=' text-red-600'>{error}</div>
-                            )}
-                            <button disabled={loading} className='acc-submit' type='submit'>Conectare</button>
-                            <div className='acc-form-text'><Link to='/main/error/forgotPassword'>mi-am uitat parola</Link></div>
-                            <div className='acc-form-text'><Link to='/main/error/resendEmail'>nu am primit un email</Link></div>
-                        </form>
+                                <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
+                                    <input ref={signPassRef} className='acc-input' type={passView[0] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
+                                    <span className='place-holder'>Parola*</span>
+                                    <img className='acc-svg-eye'
+                                        src={passView[0] ? eyeTrue : eyeFalse}
+                                        alt='Img' onClick={() => { setPassView(c => [!c[0], c[1], c[2]]) }}
+                                    />
+                                </label>
+                                <label className='acc-label'><img className='acc-svg' src={checkSvg} alt='Img' />
+                                    <input ref={signPassConfirmRef} className='acc-input' type={passView[1] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
+                                    <span className='place-holder'>Confirma*</span>
+                                    <img className='acc-svg-eye'
+                                        src={passView[1] ? eyeTrue : eyeFalse}
+                                        alt='Img' onClick={() => { setPassView(c => [c[0], !c[1], c[2]]) }}
+                                    />
+                                </label>
+                                <div className='acc-type'>
+                                    <label>
+                                        <input className='acc-type-input hidden'
+                                            type='radio' value='man'
+                                            name='radio-type'
+                                            checked={type === 'man'}
+                                            onChange={e => handleRadio(e)}
+                                        />
+                                        <div className='type-place-holder nav-left-photo1' />
+                                    </label>
+                                    <label>
+                                        <input className='acc-type-input hidden'
+                                            type='radio' value='woman'
+                                            name='radio-type'
+                                            checked={type === 'woman'}
+                                            onChange={e => handleRadio(e)}
+                                        />
+                                        <div className='type-place-holder nav-left-photo2' />
+                                    </label>
+                                </div>
+                                {error && (
+                                    <div className=' text-red-600'>{error}</div>
+                                )}
+                                <button disabled={loading} type='submit' className='acc-submit'>Inregistreaza-te</button>
+                            </form>
+                        </div>
+                        <div className='sign-in'>
+                            <form className='acc-form' onSubmit={handleLogIn}>
+                                <div className='acc-form-title'>Conectare</div>
+                                <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />
+                                    <input ref={logEmailRef} className='acc-input' type='email' placeholder=' ' required />
+                                    <span className='place-holder'>Email*</span>
+                                </label>
+                                <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
+                                    <input ref={logPassRef} className='acc-input' type={passView[2] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
+                                    <span className='place-holder'>Parola*</span>
+                                    <img className='acc-svg-eye'
+                                        src={passView[2] ? eyeTrue : eyeFalse}
+                                        alt='Img' onClick={() => { setPassView(c => [c[0], c[1], !c[2]]) }}
+                                    />
+                                </label>
+                                {error && (
+                                    <div className=' text-red-600'>{error}</div>
+                                )}
+                                <button disabled={loading} className='acc-submit' type='submit'>Conectare</button>
+                                <div className='acc-form-text'><Link to='/main/error/forgotPassword'>mi-am uitat parola</Link></div>
+                                <div className='acc-form-text'><Link to='/main/error/resendEmail'>nu am primit un email</Link></div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div >
+            </div >
+        </>
     )
 }
 

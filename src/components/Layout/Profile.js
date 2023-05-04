@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDefault } from "../../contexts/DefaultContext";
 import Suggestion from "../SmallComponents/Suggestion";
-import { counties } from "../SmallComponents/Test";
+import { counties } from "../../contexts/Import";
 
 export default function Profile() {
     const {

@@ -144,10 +144,10 @@
   margin-right: 10px;
 }
 .admin-err-checkbox {
-  background-image: url(../Main//svg-dark/send-one.svg);
+  background-image: url(../Main/svg-dark/send-email.svg);
 }
 .admin-err-checkbox-dark {
-  background-image: url(../Main/svg/send-one.svg);
+  background-image: url(../Main/svg/send-email.svg);
 }
 .adm-popup {
   width:100vw;
@@ -337,6 +337,7 @@ input.adm-input:valid {
 }
 .adm-prod-form {
   width:1000px;
+  max-width:calc(100% - 20px);
   color: #101010;
   display: flex;
   padding:10px;
@@ -373,4 +374,77 @@ input.adm-input:valid {
   margin:10px 0;
   cursor: pointer;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+}
+@media screen and (max-width:700px) {
+  label.adm-label {
+    width:calc(100% - 20px)
+  }
+  .adm-option-label {
+    width:calc(100% - 20px)
+  }
+  .adm-prod {
+    padding:70px 10px 10px 10px;
+  }
+}
+
+/*----------List---------*/
+
+
+.adm-list {
+  width:100vw;
+  height:100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--color-third);
+}
+.adm-list-container {
+  width:500px;
+  background-color: var(--color);
+  display: flex;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding:10px;
+  margin:10px 0;
+}
+.adm-list-title {
+  color:var(--color-oposite);
+  font-size:22px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+
+}
+.adm-list-name {
+  font-size:18px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color:var(--color-oposite)
+}
+.adm-list-delete {
+  aspect-ratio: 1/1;
+  height:40px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: url(../Main/svg-dark/delete.svg);
+}
+
+@media screen and (max-width:800px) {
+  .adm-list {
+    flex-direction: column;
+    padding:0 10px;
+  }
+  .adm-list-container {
+    max-width: calc(100% - 20px);
+  }
+  .adm-list-title {
+    font-size:20px;
+    word-wrap: break-word;
+  }
+  .adm-list-name {
+    font-size:16px;
+  }
 }

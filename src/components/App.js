@@ -14,7 +14,7 @@ import Footer from './MainComponents/Footer';
 import Sidebar from './MainComponents/Sidebar';
 import Main from './MainComponents/Main';
 
-import Test from './SmallComponents/Test';
+import Test from '../CustomHook/Test';
 import Checkout from './Layout/Checkout'
 import ScrollToTop from './SmallComponents/ScrollToTop';
 import ForgotPassword from './SmallComponents/ForgotPassword';
@@ -22,6 +22,7 @@ import ResendEmail from './SmallComponents/ResendEmail';
 import Help from './SmallComponents/Help';
 import NotFound from './SmallComponents/NotFound';
 import CreditCard from './SmallComponents/CreditCard';
+import Faq from './SmallComponents/Faq';
 
 import Command from './Layout/Command'
 import Connect from './Layout/Connect';
@@ -35,12 +36,14 @@ import Clothing from './Layout/Clothing'
 
 import PrivateRoute from '../CustomHook/PrivateRoute';
 import AdminRoute from '../CustomHook/AdminRoute'
+import OwnerRoute from '../CustomHook/OwnerRoute';
 
 import Admin from './Admin/Admin';
 import AdminCommands from '../components/Admin/AdminCommands'
 import AdminProducs from './Admin/AdminProducs';
 import AdminDiscount from './Admin/AdminDiscount';
 import AdminErrors from './Admin/AdminErrors';
+import AdminList from './Admin/AdminList';
 
 const Layout = () => (
   <>
@@ -103,6 +106,7 @@ function App() {
               </Route>
 
               <Route path='help' element={<Help />} />
+              <Route path='faq' element={<Faq />} />
 
               <Route path='admin' element={<Outlet />} >
                 <Route index element={<AdminRoute element={Admin} />} />
@@ -110,7 +114,8 @@ function App() {
                 <Route path='products' element={<AdminRoute element={AdminProducs} />} />
                 <Route path='discount' element={<AdminRoute element={AdminDiscount} />} />
                 <Route path='errors' element={<AdminRoute element={AdminErrors} />} />
-              </Route>
+                <Route path='list' element={<OwnerRoute element={AdminList} />} />
+               </Route>
 
 
             </Route>

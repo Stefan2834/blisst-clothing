@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
-import { colors } from '../SmallComponents/Test'
+import { colors } from '../../contexts/Import';
 import axios from 'axios'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +16,7 @@ export default function AdminProducs() {
     name: "",
     id: "",
     type: "",
-    colors: ["",""],
+    colors: ["", ""],
     sex: "",
     spec: "",
     photo: ["", "", "", ""],

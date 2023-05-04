@@ -244,7 +244,7 @@ export default function SpecialProduct() {
           <div className="loading-bg">
             <div className="loading-spin">Loading...</div>
           </div>
-          <div className="h-screen" />
+          <div className='h-screen' />
         </>
       ) : (
         <div className='special'>
@@ -322,7 +322,7 @@ export default function SpecialProduct() {
                     </>
                   )}
                   <div className='spec-id-text'>Id produs: <span className='spec-id'>{specialClothing.id}</span></div>
-                  <div className='spec-id-text flex'>Culoare:
+                  <div className='spec-id-text flex'>Culori:
                     {specialClothing.colors.map(color => {
                       return (
                         <div className='spec-color' style={{ backgroundColor: color }} />
@@ -408,7 +408,7 @@ export default function SpecialProduct() {
                                   <FaStar
                                     key={ratingValue}
                                     size={24}
-                                    className={ratingValue <= review.star ? 'principal' : 'black'}
+                                    className={ratingValue <= review.star ? 'principal-star' : 'black'}
                                     onClick={() => handleStar(ratingValue)}
                                     style={{ cursor: 'pointer' }}
                                   />
