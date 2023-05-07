@@ -75,8 +75,8 @@
 }
 .special-zoom-photo {
     object-position: center;
-    height: 200vh;
-    object-fit: contain;
+    height:200vh;
+    object-fit: cover;
 }
 .spec-right {
     width:25vw;

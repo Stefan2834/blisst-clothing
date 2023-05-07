@@ -124,58 +124,52 @@ import yellowHooLeft from '../clothing/man/top/yellow fff600/default hoo left.pn
 
 
 
+import manLayoutPanBrownBack from '../clothing/man/bottom/layout/default pan brown back.png'
+import manLayoutPanGreyBack from '../clothing/man/bottom/layout/default pan grey back.png'
+import manLayoutPanRedBack from '../clothing/man/bottom/layout/default pan red back.png'
+import manLayoutPanOrangeBack from '../clothing/man/bottom/layout/default pan orange back.png'
+
 import manblackPanBrownFront from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
-import manblackPanBrownBack from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
 import manblackPanBrownRight from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
 import manblackPanBrownLeft from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
 
 import manbluePanBrownFront from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
-import manbluePanBrownBack from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
 import manbluePanBrownRight from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
 import manbluePanBrownLeft from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
 
 import mancyanPanBrownFront from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
-import mancyanPanBrownBack from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
 import mancyanPanBrownRight from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
 import mancyanPanBrownLeft from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
 
 import mangreenPanBrownFront from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
-import mangreenPanBrownBack from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
 import mangreenPanBrownRight from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
 import mangreenPanBrownLeft from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
 
 import manorangePanBrownFront from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
-import manorangePanBrownBack from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
 import manorangePanBrownRight from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
 import manorangePanBrownLeft from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
 
 import manpinkPanBrownFront from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
-import manpinkPanBrownBack from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
 import manpinkPanBrownRight from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
 import manpinkPanBrownLeft from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
 
 import manpurplePanBrownFront from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
-import manpurplePanBrownBack from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
 import manpurplePanBrownRight from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
 import manpurplePanBrownLeft from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
 
 import manredPanBrownFront from '../clothing/man/bottom/red ea0000/default pan brown front.png'
-import manredPanBrownBack from '../clothing/man/bottom/red ea0000/default pan brown front.png'
 import manredPanBrownRight from '../clothing/man/bottom/red ea0000/default pan brown front.png'
 import manredPanBrownLeft from '../clothing/man/bottom/red ea0000/default pan brown front.png'
 
 import manturqoisePanBrownFront from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
-import manturqoisePanBrownBack from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
 import manturqoisePanBrownRight from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
 import manturqoisePanBrownLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
 
 import manwhitePanBrownFront from '../clothing/man/bottom/white fff/default pan brown front.png'
-import manwhitePanBrownBack from '../clothing/man/bottom/white fff/default pan brown front.png'
 import manwhitePanBrownRight from '../clothing/man/bottom/white fff/default pan brown front.png'
 import manwhitePanBrownLeft from '../clothing/man/bottom/white fff/default pan brown front.png'
 
 import manyellowPanBrownFront from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
-import manyellowPanBrownBack from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
 import manyellowPanBrownRight from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
 import manyellowPanBrownLeft from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
 
@@ -184,57 +178,46 @@ import manyellowPanBrownLeft from '../clothing/man/bottom/yellow fff600/default 
 
 
 import manblackPanGreyFront from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
-import manblackPanGreyBack from '../clothing/man/bottom/black 1c1919/default pan grey back.png'
 import manblackPanGreyRight from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
 import manblackPanGreyLeft from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
 
 import manbluePanGreyFront from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
-import manbluePanGreyBack from '../clothing/man/bottom/blue 0091e5/default pan grey back.png'
 import manbluePanGreyRight from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
 import manbluePanGreyLeft from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
 
 import mancyanPanGreyFront from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
-import mancyanPanGreyBack from '../clothing/man/bottom/cyan 00d2ff/default pan grey back.png'
 import mancyanPanGreyRight from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
 import mancyanPanGreyLeft from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
 
 import mangreenPanGreyFront from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
-import mangreenPanGreyBack from '../clothing/man/bottom/green 72ff00/default pan grey back.png'
 import mangreenPanGreyRight from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
 import mangreenPanGreyLeft from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
 
 import manorangePanGreyFront from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
-import manorangePanGreyBack from '../clothing/man/bottom/orange fd6500/default pan grey back.png'
 import manorangePanGreyRight from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
 import manorangePanGreyLeft from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
 
 import manpinkPanGreyFront from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
-import manpinkPanGreyBack from '../clothing/man/bottom/pink ff00f0/default pan grey back.png'
 import manpinkPanGreyRight from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
 import manpinkPanGreyLeft from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
 
 import manpurplePanGreyFront from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
-import manpurplePanGreyBack from '../clothing/man/bottom/purple a200ff/default pan grey back.png'
 import manpurplePanGreyRight from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
 import manpurplePanGreyLeft from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
 
 import manredPanGreyFront from '../clothing/man/bottom/red ea0000/default pan grey front.png'
-import manredPanGreyBack from '../clothing/man/bottom/red ea0000/default pan grey back.png'
 import manredPanGreyRight from '../clothing/man/bottom/red ea0000/default pan grey front.png'
 import manredPanGreyLeft from '../clothing/man/bottom/red ea0000/default pan grey front.png'
 
 import manturqoisePanGreyFront from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
-import manturqoisePanGreyBack from '../clothing/man/bottom/turqoise 00ffd8/default pan grey back.png'
 import manturqoisePanGreyRight from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
 import manturqoisePanGreyLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
 
 import manwhitePanGreyFront from '../clothing/man/bottom/white fff/default pan grey front.png'
-import manwhitePanGreyBack from '../clothing/man/bottom/white fff/default pan grey back.png'
 import manwhitePanGreyRight from '../clothing/man/bottom/white fff/default pan grey front.png'
 import manwhitePanGreyLeft from '../clothing/man/bottom/white fff/default pan grey front.png'
 
 import manyellowPanGreyFront from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
-import manyellowPanGreyBack from '../clothing/man/bottom/yellow fff600/default pan grey back.png'
 import manyellowPanGreyRight from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
 import manyellowPanGreyLeft from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
 
@@ -243,57 +226,46 @@ import manyellowPanGreyLeft from '../clothing/man/bottom/yellow fff600/default p
 
 
 import manblackPanRedFront from '../clothing/man/bottom/black 1c1919/default pan red front.png'
-import manblackPanRedBack from '../clothing/man/bottom/black 1c1919/default pan red front.png'
 import manblackPanRedRight from '../clothing/man/bottom/black 1c1919/default pan red front.png'
 import manblackPanRedLeft from '../clothing/man/bottom/black 1c1919/default pan red front.png'
 
 import manbluePanRedFront from '../clothing/man/bottom/blue 0091e5/default pan red front.png'
-import manbluePanRedBack from '../clothing/man/bottom/blue 0091e5/default pan red front.png'
 import manbluePanRedRight from '../clothing/man/bottom/blue 0091e5/default pan red front.png'
 import manbluePanRedLeft from '../clothing/man/bottom/blue 0091e5/default pan red front.png'
 
 import mancyanPanRedFront from '../clothing/man/bottom/cyan 00d2ff/default pan red front.png'
-import mancyanPanRedBack from '../clothing/man/bottom/cyan 00d2ff/default pan red front.png'
 import mancyanPanRedRight from '../clothing/man/bottom/cyan 00d2ff/default pan red front.png'
 import mancyanPanRedLeft from '../clothing/man/bottom/cyan 00d2ff/default pan red front.png'
 
 import mangreenPanRedFront from '../clothing/man/bottom/green 72ff00/default pan red front.png'
-import mangreenPanRedBack from '../clothing/man/bottom/green 72ff00/default pan red front.png'
 import mangreenPanRedRight from '../clothing/man/bottom/green 72ff00/default pan red front.png'
 import mangreenPanRedLeft from '../clothing/man/bottom/green 72ff00/default pan red front.png'
 
 import manorangePanRedFront from '../clothing/man/bottom/orange fd6500/default pan red front.png'
-import manorangePanRedBack from '../clothing/man/bottom/orange fd6500/default pan red front.png'
 import manorangePanRedRight from '../clothing/man/bottom/orange fd6500/default pan red front.png'
 import manorangePanRedLeft from '../clothing/man/bottom/orange fd6500/default pan red front.png'
 
 import manpinkPanRedFront from '../clothing/man/bottom/pink ff00f0/default pan red front.png'
-import manpinkPanRedBack from '../clothing/man/bottom/pink ff00f0/default pan red front.png'
 import manpinkPanRedRight from '../clothing/man/bottom/pink ff00f0/default pan red front.png'
 import manpinkPanRedLeft from '../clothing/man/bottom/pink ff00f0/default pan red front.png'
 
 import manpurplePanRedFront from '../clothing/man/bottom/purple a200ff/default pan red front.png'
-import manpurplePanRedBack from '../clothing/man/bottom/purple a200ff/default pan red front.png'
 import manpurplePanRedRight from '../clothing/man/bottom/purple a200ff/default pan red front.png'
 import manpurplePanRedLeft from '../clothing/man/bottom/purple a200ff/default pan red front.png'
 
 import manredPanRedFront from '../clothing/man/bottom/red ea0000/default pan red front.png'
-import manredPanRedBack from '../clothing/man/bottom/red ea0000/default pan red front.png'
 import manredPanRedRight from '../clothing/man/bottom/red ea0000/default pan red front.png'
 import manredPanRedLeft from '../clothing/man/bottom/red ea0000/default pan red front.png'
 
 import manturqoisePanRedFront from '../clothing/man/bottom/turqoise 00ffd8/default pan red front.png'
-import manturqoisePanRedBack from '../clothing/man/bottom/turqoise 00ffd8/default pan red front.png'
 import manturqoisePanRedRight from '../clothing/man/bottom/turqoise 00ffd8/default pan red front.png'
 import manturqoisePanRedLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan red front.png'
 
 import manwhitePanRedFront from '../clothing/man/bottom/white fff/default pan red front.png'
-import manwhitePanRedBack from '../clothing/man/bottom/white fff/default pan red front.png'
 import manwhitePanRedRight from '../clothing/man/bottom/white fff/default pan red front.png'
 import manwhitePanRedLeft from '../clothing/man/bottom/white fff/default pan red front.png'
 
 import manyellowPanRedFront from '../clothing/man/bottom/yellow fff600/default pan red front.png'
-import manyellowPanRedBack from '../clothing/man/bottom/yellow fff600/default pan red front.png'
 import manyellowPanRedRight from '../clothing/man/bottom/yellow fff600/default pan red front.png'
 import manyellowPanRedLeft from '../clothing/man/bottom/yellow fff600/default pan red front.png'
 
@@ -301,175 +273,142 @@ import manyellowPanRedLeft from '../clothing/man/bottom/yellow fff600/default pa
 /*----------Orange---------*/
 
 import manblackPanOrangeFront from '../clothing/man/bottom/black 1c1919/default pan orange front.png'
-import manblackPanOrangeBack from '../clothing/man/bottom/black 1c1919/default pan orange front.png'
 import manblackPanOrangeRight from '../clothing/man/bottom/black 1c1919/default pan orange front.png'
 import manblackPanOrangeLeft from '../clothing/man/bottom/black 1c1919/default pan orange front.png'
 
 import manbluePanOrangeFront from '../clothing/man/bottom/blue 0091e5/default pan orange front.png'
-import manbluePanOrangeBack from '../clothing/man/bottom/blue 0091e5/default pan orange front.png'
 import manbluePanOrangeRight from '../clothing/man/bottom/blue 0091e5/default pan orange front.png'
 import manbluePanOrangeLeft from '../clothing/man/bottom/blue 0091e5/default pan orange front.png'
 
 import mancyanPanOrangeFront from '../clothing/man/bottom/cyan 00d2ff/default pan orange front.png'
-import mancyanPanOrangeBack from '../clothing/man/bottom/cyan 00d2ff/default pan orange front.png'
 import mancyanPanOrangeRight from '../clothing/man/bottom/cyan 00d2ff/default pan orange front.png'
 import mancyanPanOrangeLeft from '../clothing/man/bottom/cyan 00d2ff/default pan orange front.png'
 
 import mangreenPanOrangeFront from '../clothing/man/bottom/green 72ff00/default pan orange front.png'
-import mangreenPanOrangeBack from '../clothing/man/bottom/green 72ff00/default pan orange front.png'
 import mangreenPanOrangeRight from '../clothing/man/bottom/green 72ff00/default pan orange front.png'
 import mangreenPanOrangeLeft from '../clothing/man/bottom/green 72ff00/default pan orange front.png'
 
 import manorangePanOrangeFront from '../clothing/man/bottom/orange fd6500/default pan orange front.png'
-import manorangePanOrangeBack from '../clothing/man/bottom/orange fd6500/default pan orange front.png'
 import manorangePanOrangeRight from '../clothing/man/bottom/orange fd6500/default pan orange front.png'
 import manorangePanOrangeLeft from '../clothing/man/bottom/orange fd6500/default pan orange front.png'
 
 import manpinkPanOrangeFront from '../clothing/man/bottom/pink ff00f0/default pan orange front.png'
-import manpinkPanOrangeBack from '../clothing/man/bottom/pink ff00f0/default pan orange front.png'
 import manpinkPanOrangeRight from '../clothing/man/bottom/pink ff00f0/default pan orange front.png'
 import manpinkPanOrangeLeft from '../clothing/man/bottom/pink ff00f0/default pan orange front.png'
 
 import manpurplePanOrangeFront from '../clothing/man/bottom/purple a200ff/default pan orange front.png'
-import manpurplePanOrangeBack from '../clothing/man/bottom/purple a200ff/default pan orange front.png'
 import manpurplePanOrangeRight from '../clothing/man/bottom/purple a200ff/default pan orange front.png'
 import manpurplePanOrangeLeft from '../clothing/man/bottom/purple a200ff/default pan orange front.png'
 
 import manredPanOrangeFront from '../clothing/man/bottom/red ea0000/default pan orange front.png'
-import manredPanOrangeBack from '../clothing/man/bottom/red ea0000/default pan orange front.png'
 import manredPanOrangeRight from '../clothing/man/bottom/red ea0000/default pan orange front.png'
 import manredPanOrangeLeft from '../clothing/man/bottom/red ea0000/default pan orange front.png'
 
 import manturqoisePanOrangeFront from '../clothing/man/bottom/turqoise 00ffd8/default pan orange front.png'
-import manturqoisePanOrangeBack from '../clothing/man/bottom/turqoise 00ffd8/default pan orange front.png'
 import manturqoisePanOrangeRight from '../clothing/man/bottom/turqoise 00ffd8/default pan orange front.png'
 import manturqoisePanOrangeLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan orange front.png'
 
 import manwhitePanOrangeFront from '../clothing/man/bottom/white fff/default pan orange front.png'
-import manwhitePanOrangeBack from '../clothing/man/bottom/white fff/default pan orange front.png'
 import manwhitePanOrangeRight from '../clothing/man/bottom/white fff/default pan orange front.png'
 import manwhitePanOrangeLeft from '../clothing/man/bottom/white fff/default pan orange front.png'
 
 import manyellowPanOrangeFront from '../clothing/man/bottom/yellow fff600/default pan orange front.png'
-import manyellowPanOrangeBack from '../clothing/man/bottom/yellow fff600/default pan orange front.png'
 import manyellowPanOrangeRight from '../clothing/man/bottom/yellow fff600/default pan orange front.png'
 import manyellowPanOrangeLeft from '../clothing/man/bottom/yellow fff600/default pan orange front.png'
 
 
 /*Snake edition*/
-/*----------Brown---------*/
+/*----------BrownSnake---------*/
 
-import manSnakeblackPanBrownFront from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
-import manSnakeblackPanBrownBack from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
-import manSnakeblackPanBrownRight from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
-import manSnakeblackPanBrownLeft from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
+import manSnakeblackPanBrownFront from '../clothing/man/bottom/black 1c1919/snake pan brown front.png'
+import manSnakeblackPanBrownRight from '../clothing/man/bottom/black 1c1919/snake pan brown front.png'
+import manSnakeblackPanBrownLeft from '../clothing/man/bottom/black 1c1919/snake pan brown front.png'
 
-import manSnakebluePanBrownFront from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
-import manSnakebluePanBrownBack from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
-import manSnakebluePanBrownRight from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
-import manSnakebluePanBrownLeft from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
+import manSnakebluePanBrownFront from '../clothing/man/bottom/blue 0091e5/snake pan brown front.png'
+import manSnakebluePanBrownRight from '../clothing/man/bottom/blue 0091e5/snake pan brown front.png'
+import manSnakebluePanBrownLeft from '../clothing/man/bottom/blue 0091e5/snake pan brown front.png'
 
-import manSnakecyanPanBrownFront from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
-import manSnakecyanPanBrownBack from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
-import manSnakecyanPanBrownRight from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
-import manSnakecyanPanBrownLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
+import manSnakecyanPanBrownFront from '../clothing/man/bottom/cyan 00d2ff/snake pan brown front.png'
+import manSnakecyanPanBrownRight from '../clothing/man/bottom/cyan 00d2ff/snake pan brown front.png'
+import manSnakecyanPanBrownLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan brown front.png'
 
-import manSnakegreenPanBrownFront from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
-import manSnakegreenPanBrownBack from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
-import manSnakegreenPanBrownRight from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
-import manSnakegreenPanBrownLeft from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
+import manSnakegreenPanBrownFront from '../clothing/man/bottom/green 72ff00/snake pan brown front.png'
+import manSnakegreenPanBrownRight from '../clothing/man/bottom/green 72ff00/snake pan brown front.png'
+import manSnakegreenPanBrownLeft from '../clothing/man/bottom/green 72ff00/snake pan brown front.png'
 
-import manSnakeorangePanBrownFront from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
-import manSnakeorangePanBrownBack from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
-import manSnakeorangePanBrownRight from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
-import manSnakeorangePanBrownLeft from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
+import manSnakeorangePanBrownFront from '../clothing/man/bottom/orange fd6500/snake pan brown front.png'
+import manSnakeorangePanBrownRight from '../clothing/man/bottom/orange fd6500/snake pan brown front.png'
+import manSnakeorangePanBrownLeft from '../clothing/man/bottom/orange fd6500/snake pan brown front.png'
 
-import manSnakepinkPanBrownFront from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
-import manSnakepinkPanBrownBack from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
-import manSnakepinkPanBrownRight from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
-import manSnakepinkPanBrownLeft from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
+import manSnakepinkPanBrownFront from '../clothing/man/bottom/pink ff00f0/snake pan brown front.png'
+import manSnakepinkPanBrownRight from '../clothing/man/bottom/pink ff00f0/snake pan brown front.png'
+import manSnakepinkPanBrownLeft from '../clothing/man/bottom/pink ff00f0/snake pan brown front.png'
 
-import manSnakepurplePanBrownFront from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
-import manSnakepurplePanBrownBack from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
-import manSnakepurplePanBrownRight from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
-import manSnakepurplePanBrownLeft from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
+import manSnakepurplePanBrownFront from '../clothing/man/bottom/purple a200ff/snake pan brown front.png'
+import manSnakepurplePanBrownRight from '../clothing/man/bottom/purple a200ff/snake pan brown front.png'
+import manSnakepurplePanBrownLeft from '../clothing/man/bottom/purple a200ff/snake pan brown front.png'
 
-import manSnakeredPanBrownFront from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
-import manSnakeredPanBrownBack from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
-import manSnakeredPanBrownRight from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
-import manSnakeredPanBrownLeft from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
+import manSnakeredPanBrownFront from '../clothing/man/bottom/red ea0000/snake pan brown front.png'
+import manSnakeredPanBrownRight from '../clothing/man/bottom/red ea0000/snake pan brown front.png'
+import manSnakeredPanBrownLeft from '../clothing/man/bottom/red ea0000/snake pan brown front.png'
 
-import manSnaketurqoisePanBrownFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
-import manSnaketurqoisePanBrownBack from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
-import manSnaketurqoisePanBrownRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
-import manSnaketurqoisePanBrownLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
+import manSnaketurqoisePanBrownFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan brown front.png'
+import manSnaketurqoisePanBrownRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan brown front.png'
+import manSnaketurqoisePanBrownLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan brown front.png'
 
-import manSnakewhitePanBrownFront from '../clothing/man/bottom/white fff/snake pan orange front.png'
-import manSnakewhitePanBrownBack from '../clothing/man/bottom/white fff/snake pan orange front.png'
-import manSnakewhitePanBrownRight from '../clothing/man/bottom/white fff/snake pan orange front.png'
-import manSnakewhitePanBrownLeft from '../clothing/man/bottom/white fff/snake pan orange front.png'
+import manSnakewhitePanBrownFront from '../clothing/man/bottom/white fff/snake pan brown front.png'
+import manSnakewhitePanBrownRight from '../clothing/man/bottom/white fff/snake pan brown front.png'
+import manSnakewhitePanBrownLeft from '../clothing/man/bottom/white fff/snake pan brown front.png'
 
-import manSnakeyellowPanBrownFront from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
-import manSnakeyellowPanBrownBack from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
-import manSnakeyellowPanBrownRight from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
-import manSnakeyellowPanBrownLeft from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
+import manSnakeyellowPanBrownFront from '../clothing/man/bottom/yellow fff600/snake pan brown front.png'
+import manSnakeyellowPanBrownRight from '../clothing/man/bottom/yellow fff600/snake pan brown front.png'
+import manSnakeyellowPanBrownLeft from '../clothing/man/bottom/yellow fff600/snake pan brown front.png'
 
 
 /*----------GreySnake----------*/
 
 
 import manSnakeblackPanGreyFront from '../clothing/man/bottom/black 1c1919/snake pan grey front.png'
-import manSnakeblackPanGreyBack from '../clothing/man/bottom/black 1c1919/default pan grey back.png'
 import manSnakeblackPanGreyRight from '../clothing/man/bottom/black 1c1919/snake pan grey front.png'
 import manSnakeblackPanGreyLeft from '../clothing/man/bottom/black 1c1919/snake pan grey front.png'
 
 import manSnakebluePanGreyFront from '../clothing/man/bottom/blue 0091e5/snake pan grey front.png'
-import manSnakebluePanGreyBack from '../clothing/man/bottom/blue 0091e5/default pan grey back.png'
 import manSnakebluePanGreyRight from '../clothing/man/bottom/blue 0091e5/snake pan grey front.png'
 import manSnakebluePanGreyLeft from '../clothing/man/bottom/blue 0091e5/snake pan grey front.png'
 
 import manSnakecyanPanGreyFront from '../clothing/man/bottom/cyan 00d2ff/snake pan grey front.png'
-import manSnakecyanPanGreyBack from '../clothing/man/bottom/cyan 00d2ff/default pan grey back.png'
 import manSnakecyanPanGreyRight from '../clothing/man/bottom/cyan 00d2ff/snake pan grey front.png'
 import manSnakecyanPanGreyLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan grey front.png'
 
 import manSnakegreenPanGreyFront from '../clothing/man/bottom/green 72ff00/snake pan grey front.png'
-import manSnakegreenPanGreyBack from '../clothing/man/bottom/green 72ff00/default pan grey back.png'
 import manSnakegreenPanGreyRight from '../clothing/man/bottom/green 72ff00/snake pan grey front.png'
 import manSnakegreenPanGreyLeft from '../clothing/man/bottom/green 72ff00/snake pan grey front.png'
 
 import manSnakeorangePanGreyFront from '../clothing/man/bottom/orange fd6500/snake pan grey front.png'
-import manSnakeorangePanGreyBack from '../clothing/man/bottom/orange fd6500/default pan grey back.png'
 import manSnakeorangePanGreyRight from '../clothing/man/bottom/orange fd6500/snake pan grey front.png'
 import manSnakeorangePanGreyLeft from '../clothing/man/bottom/orange fd6500/snake pan grey front.png'
 
 import manSnakepinkPanGreyFront from '../clothing/man/bottom/pink ff00f0/snake pan grey front.png'
-import manSnakepinkPanGreyBack from '../clothing/man/bottom/pink ff00f0/default pan grey back.png'
 import manSnakepinkPanGreyRight from '../clothing/man/bottom/pink ff00f0/snake pan grey front.png'
 import manSnakepinkPanGreyLeft from '../clothing/man/bottom/pink ff00f0/snake pan grey front.png'
 
 import manSnakepurplePanGreyFront from '../clothing/man/bottom/purple a200ff/snake pan grey front.png'
-import manSnakepurplePanGreyBack from '../clothing/man/bottom/purple a200ff/default pan grey back.png'
 import manSnakepurplePanGreyRight from '../clothing/man/bottom/purple a200ff/snake pan grey front.png'
 import manSnakepurplePanGreyLeft from '../clothing/man/bottom/purple a200ff/snake pan grey front.png'
 
 import manSnakeredPanGreyFront from '../clothing/man/bottom/red ea0000/snake pan grey front.png'
-import manSnakeredPanGreyBack from '../clothing/man/bottom/red ea0000/default pan grey back.png'
 import manSnakeredPanGreyRight from '../clothing/man/bottom/red ea0000/snake pan grey front.png'
 import manSnakeredPanGreyLeft from '../clothing/man/bottom/red ea0000/snake pan grey front.png'
 
 import manSnaketurqoisePanGreyFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan grey front.png'
-import manSnaketurqoisePanGreyBack from '../clothing/man/bottom/turqoise 00ffd8/default pan grey back.png'
 import manSnaketurqoisePanGreyRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan grey front.png'
 import manSnaketurqoisePanGreyLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan grey front.png'
 
 import manSnakewhitePanGreyFront from '../clothing/man/bottom/white fff/snake pan grey front.png'
-import manSnakewhitePanGreyBack from '../clothing/man/bottom/white fff/default pan grey back.png'
 import manSnakewhitePanGreyRight from '../clothing/man/bottom/white fff/snake pan grey front.png'
 import manSnakewhitePanGreyLeft from '../clothing/man/bottom/white fff/snake pan grey front.png'
 
 import manSnakeyellowPanGreyFront from '../clothing/man/bottom/yellow fff600/snake pan grey front.png'
-import manSnakeyellowPanGreyBack from '../clothing/man/bottom/yellow fff600/default pan grey back.png'
 import manSnakeyellowPanGreyRight from '../clothing/man/bottom/yellow fff600/snake pan grey front.png'
 import manSnakeyellowPanGreyLeft from '../clothing/man/bottom/yellow fff600/snake pan grey front.png'
 
@@ -478,57 +417,46 @@ import manSnakeyellowPanGreyLeft from '../clothing/man/bottom/yellow fff600/snak
 
 
 import manSnakeblackPanRedFront from '../clothing/man/bottom/black 1c1919/snake pan red front.png'
-import manSnakeblackPanRedBack from '../clothing/man/bottom/black 1c1919/snake pan red front.png'
 import manSnakeblackPanRedRight from '../clothing/man/bottom/black 1c1919/snake pan red front.png'
 import manSnakeblackPanRedLeft from '../clothing/man/bottom/black 1c1919/snake pan red front.png'
 
 import manSnakebluePanRedFront from '../clothing/man/bottom/blue 0091e5/snake pan red front.png'
-import manSnakebluePanRedBack from '../clothing/man/bottom/blue 0091e5/snake pan red front.png'
 import manSnakebluePanRedRight from '../clothing/man/bottom/blue 0091e5/snake pan red front.png'
 import manSnakebluePanRedLeft from '../clothing/man/bottom/blue 0091e5/snake pan red front.png'
 
 import manSnakecyanPanRedFront from '../clothing/man/bottom/cyan 00d2ff/snake pan red front.png'
-import manSnakecyanPanRedBack from '../clothing/man/bottom/cyan 00d2ff/snake pan red front.png'
 import manSnakecyanPanRedRight from '../clothing/man/bottom/cyan 00d2ff/snake pan red front.png'
 import manSnakecyanPanRedLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan red front.png'
 
 import manSnakegreenPanRedFront from '../clothing/man/bottom/green 72ff00/snake pan red front.png'
-import manSnakegreenPanRedBack from '../clothing/man/bottom/green 72ff00/snake pan red front.png'
 import manSnakegreenPanRedRight from '../clothing/man/bottom/green 72ff00/snake pan red front.png'
 import manSnakegreenPanRedLeft from '../clothing/man/bottom/green 72ff00/snake pan red front.png'
 
 import manSnakeorangePanRedFront from '../clothing/man/bottom/orange fd6500/snake pan red front.png'
-import manSnakeorangePanRedBack from '../clothing/man/bottom/orange fd6500/snake pan red front.png'
 import manSnakeorangePanRedRight from '../clothing/man/bottom/orange fd6500/snake pan red front.png'
 import manSnakeorangePanRedLeft from '../clothing/man/bottom/orange fd6500/snake pan red front.png'
 
 import manSnakepinkPanRedFront from '../clothing/man/bottom/pink ff00f0/snake pan red front.png'
-import manSnakepinkPanRedBack from '../clothing/man/bottom/pink ff00f0/snake pan red front.png'
 import manSnakepinkPanRedRight from '../clothing/man/bottom/pink ff00f0/snake pan red front.png'
 import manSnakepinkPanRedLeft from '../clothing/man/bottom/pink ff00f0/snake pan red front.png'
 
 import manSnakepurplePanRedFront from '../clothing/man/bottom/purple a200ff/snake pan red front.png'
-import manSnakepurplePanRedBack from '../clothing/man/bottom/purple a200ff/snake pan red front.png'
 import manSnakepurplePanRedRight from '../clothing/man/bottom/purple a200ff/snake pan red front.png'
 import manSnakepurplePanRedLeft from '../clothing/man/bottom/purple a200ff/snake pan red front.png'
 
 import manSnakeredPanRedFront from '../clothing/man/bottom/red ea0000/snake pan red front.png'
-import manSnakeredPanRedBack from '../clothing/man/bottom/red ea0000/snake pan red front.png'
 import manSnakeredPanRedRight from '../clothing/man/bottom/red ea0000/snake pan red front.png'
 import manSnakeredPanRedLeft from '../clothing/man/bottom/red ea0000/snake pan red front.png'
 
 import manSnaketurqoisePanRedFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan red front.png'
-import manSnaketurqoisePanRedBack from '../clothing/man/bottom/turqoise 00ffd8/snake pan red front.png'
 import manSnaketurqoisePanRedRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan red front.png'
 import manSnaketurqoisePanRedLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan red front.png'
 
 import manSnakewhitePanRedFront from '../clothing/man/bottom/white fff/snake pan red front.png'
-import manSnakewhitePanRedBack from '../clothing/man/bottom/white fff/snake pan red front.png'
 import manSnakewhitePanRedRight from '../clothing/man/bottom/white fff/snake pan red front.png'
 import manSnakewhitePanRedLeft from '../clothing/man/bottom/white fff/snake pan red front.png'
 
 import manSnakeyellowPanRedFront from '../clothing/man/bottom/yellow fff600/snake pan red front.png'
-import manSnakeyellowPanRedBack from '../clothing/man/bottom/yellow fff600/snake pan red front.png'
 import manSnakeyellowPanRedRight from '../clothing/man/bottom/yellow fff600/snake pan red front.png'
 import manSnakeyellowPanRedLeft from '../clothing/man/bottom/yellow fff600/snake pan red front.png'
 
@@ -536,59 +464,121 @@ import manSnakeyellowPanRedLeft from '../clothing/man/bottom/yellow fff600/snake
 /*----------OrangeSnake---------*/
 
 import manSnakeblackPanOrangeFront from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
-import manSnakeblackPanOrangeBack from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
 import manSnakeblackPanOrangeRight from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
 import manSnakeblackPanOrangeLeft from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
 
 import manSnakebluePanOrangeFront from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
-import manSnakebluePanOrangeBack from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
 import manSnakebluePanOrangeRight from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
 import manSnakebluePanOrangeLeft from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
 
 import manSnakecyanPanOrangeFront from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
-import manSnakecyanPanOrangeBack from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
 import manSnakecyanPanOrangeRight from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
 import manSnakecyanPanOrangeLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
 
 import manSnakegreenPanOrangeFront from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
-import manSnakegreenPanOrangeBack from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
 import manSnakegreenPanOrangeRight from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
 import manSnakegreenPanOrangeLeft from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
 
 import manSnakeorangePanOrangeFront from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
-import manSnakeorangePanOrangeBack from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
 import manSnakeorangePanOrangeRight from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
 import manSnakeorangePanOrangeLeft from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
 
 import manSnakepinkPanOrangeFront from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
-import manSnakepinkPanOrangeBack from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
 import manSnakepinkPanOrangeRight from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
 import manSnakepinkPanOrangeLeft from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
 
 import manSnakepurplePanOrangeFront from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
-import manSnakepurplePanOrangeBack from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
 import manSnakepurplePanOrangeRight from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
 import manSnakepurplePanOrangeLeft from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
 
 import manSnakeredPanOrangeFront from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
-import manSnakeredPanOrangeBack from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
 import manSnakeredPanOrangeRight from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
 import manSnakeredPanOrangeLeft from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
 
 import manSnaketurqoisePanOrangeFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
-import manSnaketurqoisePanOrangeBack from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
 import manSnaketurqoisePanOrangeRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
 import manSnaketurqoisePanOrangeLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
 
 import manSnakewhitePanOrangeFront from '../clothing/man/bottom/white fff/snake pan orange front.png'
-import manSnakewhitePanOrangeBack from '../clothing/man/bottom/white fff/snake pan orange front.png'
 import manSnakewhitePanOrangeRight from '../clothing/man/bottom/white fff/snake pan orange front.png'
 import manSnakewhitePanOrangeLeft from '../clothing/man/bottom/white fff/snake pan orange front.png'
 
 import manSnakeyellowPanOrangeFront from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
-import manSnakeyellowPanOrangeBack from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
 import manSnakeyellowPanOrangeRight from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
 import manSnakeyellowPanOrangeLeft from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
+
+
+/*----------Shorts----------*/
+
+/*Layout*/
+
+import manLayoutShoBack from '../clothing/man/bottom/black 1c1919/default sho front.png'
+
+import manblackShoFront from '../clothing/man/bottom/black 1c1919/default sho front.png'
+import manblueShoFront from '../clothing/man/bottom/blue 0091e5/default sho front.png'
+import mancyanShoFront from '../clothing/man/bottom/cyan 00d2ff/default sho front.png'
+import mangreenShoFront from '../clothing/man/bottom/green 72ff00/default sho front.png'
+import manorangeShoFront from '../clothing/man/bottom/orange fd6500/default sho front.png'
+import manpinkShoFront from '../clothing/man/bottom/pink ff00f0/default sho front.png'
+import manpurpleShoFront from '../clothing/man/bottom/purple a200ff/default sho front.png'
+import manredShoFront from '../clothing/man/bottom/red ea0000/default sho front.png'
+import manturqoiseShoFront from '../clothing/man/bottom/turqoise 00ffd8/default sho front.png'
+import manyellowShoFront from '../clothing/man/bottom/yellow fff600/default sho front.png'
+
+/*Pattern*/
+
+import manPatternShoRedFront from '../clothing/man/bottom/pattern/red sho front.png'
+import manPatternShoRedBack from '../clothing/man/bottom/pattern/red sho back.png'
+import manPatternShoRedLeft from '../clothing/man/bottom/pattern/red sho left.png'
+import manPatternShoRedRight from '../clothing/man/bottom/pattern/red sho right.png'
+
+import manPatternShoWhiteFront from '../clothing/man/bottom/pattern/white sho front.png'
+import manPatternShoWhiteBack from '../clothing/man/bottom/pattern/white sho back.png'
+import manPatternShoWhiteLeft from '../clothing/man/bottom/pattern/white sho left.png'
+import manPatternShoWhiteRight from '../clothing/man/bottom/pattern/white sho right.png'
+
+
+
+/*===================WOMAN====================*/
+
+/*----------Tee----------*/
+
+/*Layout*/
+
+import womanLayoutTeeBack from '../clothing/woman/top/layout/default tee back.jpg'
+import womanLayoutTeeLeft from '../clothing/woman/top/layout/default tee left.jpg'
+import womanLayoutTeeRight from '../clothing/woman/top/layout/default tee right.jpg'
+
+
+import womanblackTeeFront from '../clothing/woman/top/black 1c1919/default tee front.png'
+import womanblueTeeFront from '../clothing/woman/top/blue 0091e5/default tee front.png'
+import womancyanTeeFront from '../clothing/woman/top/cyan 00d2ff/default tee front.png'
+import womangreenTeeFront from '../clothing/woman/top/green 72ff00/default tee front.png'
+import womanorangeTeeFront from '../clothing/woman/top/orange fd6500/default tee front.png'
+import womanpinkTeeFront from '../clothing/woman/top/pink ff00f0/default tee front.png'
+import womanpurpleTeeFront from '../clothing/woman/top/purple a200ff/default tee front.png'
+import womanredTeeFront from '../clothing/woman/top/red ea0000/default tee front.png'
+import womanturqoiseTeeFront from '../clothing/woman/top/turqoise 00ffd8/default tee front.png'
+import womanyellowTeeFront from '../clothing/woman/top/yellow fff600/default tee front.png'
+
+/*Pattern*/
+
+import womanPatternTeeRedFront from '../clothing/woman/top/pattern/red tee front.png'
+import womanPatternTeeRedBack from '../clothing/woman/top/pattern/red tee back.png'
+import womanPatternTeeRedLeft from '../clothing/woman/top/pattern/red tee left.png'
+import womanPatternTeeRedRight from '../clothing/woman/top/pattern/red tee right.png'
+
+import womanPatternTeeWhiteFront from '../clothing/woman/top/pattern/white tee front.png'
+import womanPatternTeeWhiteBack from '../clothing/woman/top/pattern/white tee back.png'
+import womanPatternTeeWhiteLeft from '../clothing/woman/top/pattern/white tee left.png'
+import womanPatternTeeWhiteRight from '../clothing/woman/top/pattern/white tee right.png'
+
+import womanPatternTeeYellowFront from '../clothing/woman/top/pattern/yellow tee front.png'
+import womanPatternTeeYellowBack from '../clothing/woman/top/pattern/yellow tee back.png'
+import womanPatternTeeYellowLeft from '../clothing/woman/top/pattern/yellow tee left.png'
+import womanPatternTeeYellowRight from '../clothing/woman/top/pattern/yellow tee right.png'
+
+
 
 export const Product = {
   a: {
@@ -986,7 +976,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manblackPanBrownFront,
-    sliderPhoto: [manblackPanBrownBack, manblackPanBrownLeft, manblackPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manblackPanBrownLeft, manblackPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -999,7 +989,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manbluePanBrownFront,
-    sliderPhoto: [manbluePanBrownBack, manbluePanBrownLeft, manbluePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manbluePanBrownLeft, manbluePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1012,7 +1002,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: mancyanPanBrownFront,
-    sliderPhoto: [mancyanPanBrownBack, mancyanPanBrownLeft, mancyanPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, mancyanPanBrownLeft, mancyanPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1025,7 +1015,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: mangreenPanBrownFront,
-    sliderPhoto: [mangreenPanBrownBack, mangreenPanBrownLeft, mangreenPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, mangreenPanBrownLeft, mangreenPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1038,7 +1028,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manorangePanBrownFront,
-    sliderPhoto: [manorangePanBrownBack, manorangePanBrownLeft, manorangePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manorangePanBrownLeft, manorangePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1051,7 +1041,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manpinkPanBrownFront,
-    sliderPhoto: [manpinkPanBrownBack, manpinkPanBrownLeft, manpinkPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manpinkPanBrownLeft, manpinkPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1064,7 +1054,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manpurplePanBrownFront,
-    sliderPhoto: [manpurplePanBrownBack, manpurplePanBrownLeft, manpurplePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manpurplePanBrownLeft, manpurplePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1077,7 +1067,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manredPanBrownFront,
-    sliderPhoto: [manredPanBrownBack, manredPanBrownLeft, manredPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manredPanBrownLeft, manredPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1090,7 +1080,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manturqoisePanBrownFront,
-    sliderPhoto: [manturqoisePanBrownBack, manturqoisePanBrownLeft, manturqoisePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manturqoisePanBrownLeft, manturqoisePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1103,7 +1093,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manwhitePanBrownFront,
-    sliderPhoto: [manwhitePanBrownBack, manwhitePanBrownLeft, manwhitePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manwhitePanBrownLeft, manwhitePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1116,7 +1106,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manyellowPanBrownFront,
-    sliderPhoto: [manyellowPanBrownBack, manyellowPanBrownLeft, manyellowPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manyellowPanBrownLeft, manyellowPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1129,7 +1119,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manblackPanGreyFront,
-    sliderPhoto: [manblackPanGreyBack, manblackPanGreyLeft, manblackPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manblackPanGreyLeft, manblackPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1142,7 +1132,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manbluePanGreyFront,
-    sliderPhoto: [manbluePanGreyBack, manbluePanGreyLeft, manbluePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manbluePanGreyLeft, manbluePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1155,7 +1145,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanGreyFront,
-    sliderPhoto: [mancyanPanGreyBack, mancyanPanGreyLeft, mancyanPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, mancyanPanGreyLeft, mancyanPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1168,7 +1158,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanGreyFront,
-    sliderPhoto: [mangreenPanGreyBack, mangreenPanGreyLeft, mangreenPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, mangreenPanGreyLeft, mangreenPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1181,7 +1171,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manorangePanGreyFront,
-    sliderPhoto: [manorangePanGreyBack, manorangePanGreyLeft, manorangePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manorangePanGreyLeft, manorangePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1194,7 +1184,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanGreyFront,
-    sliderPhoto: [manpinkPanGreyBack, manpinkPanGreyLeft, manpinkPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manpinkPanGreyLeft, manpinkPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1207,7 +1197,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanGreyFront,
-    sliderPhoto: [manpurplePanGreyBack, manpurplePanGreyLeft, manpurplePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manpurplePanGreyLeft, manpurplePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1220,7 +1210,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manredPanGreyFront,
-    sliderPhoto: [manredPanGreyBack, manredPanGreyLeft, manredPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manredPanGreyLeft, manredPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1233,7 +1223,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanGreyFront,
-    sliderPhoto: [manturqoisePanGreyBack, manturqoisePanGreyLeft, manturqoisePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manturqoisePanGreyLeft, manturqoisePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1246,7 +1236,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanGreyFront,
-    sliderPhoto: [manwhitePanGreyBack, manwhitePanGreyLeft, manwhitePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manwhitePanGreyLeft, manwhitePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1259,7 +1249,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanGreyFront,
-    sliderPhoto: [manyellowPanGreyBack, manyellowPanGreyLeft, manyellowPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manyellowPanGreyLeft, manyellowPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1272,7 +1262,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manblackPanRedFront,
-    sliderPhoto: [manblackPanRedBack, manblackPanRedLeft, manblackPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manblackPanRedLeft, manblackPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1285,7 +1275,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manbluePanRedFront,
-    sliderPhoto: [manbluePanRedBack, manbluePanRedLeft, manbluePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manbluePanRedLeft, manbluePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1298,7 +1288,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanRedFront,
-    sliderPhoto: [mancyanPanRedBack, mancyanPanRedLeft, mancyanPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, mancyanPanRedLeft, mancyanPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1311,7 +1301,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanRedFront,
-    sliderPhoto: [mangreenPanRedBack, mangreenPanRedLeft, mangreenPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, mangreenPanRedLeft, mangreenPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1324,7 +1314,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manorangePanRedFront,
-    sliderPhoto: [manorangePanRedBack, manorangePanRedLeft, manorangePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manorangePanRedLeft, manorangePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1337,7 +1327,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanRedFront,
-    sliderPhoto: [manpinkPanRedBack, manpinkPanRedLeft, manpinkPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manpinkPanRedLeft, manpinkPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1350,7 +1340,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanRedFront,
-    sliderPhoto: [manpurplePanRedBack, manpurplePanRedLeft, manpurplePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manpurplePanRedLeft, manpurplePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1363,7 +1353,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manredPanRedFront,
-    sliderPhoto: [manredPanRedBack, manredPanRedLeft, manredPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manredPanRedLeft, manredPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1376,7 +1366,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanRedFront,
-    sliderPhoto: [manturqoisePanRedBack, manturqoisePanRedLeft, manturqoisePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manturqoisePanRedLeft, manturqoisePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1389,7 +1379,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanRedFront,
-    sliderPhoto: [manwhitePanRedBack, manwhitePanRedLeft, manwhitePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manwhitePanRedLeft, manwhitePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1402,7 +1392,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanRedFront,
-    sliderPhoto: [manyellowPanRedBack, manyellowPanRedLeft, manyellowPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manyellowPanRedLeft, manyellowPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1415,7 +1405,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manblackPanOrangeFront,
-    sliderPhoto: [manblackPanOrangeBack, manblackPanOrangeLeft, manblackPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manblackPanOrangeLeft, manblackPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1428,7 +1418,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manbluePanOrangeFront,
-    sliderPhoto: [manbluePanOrangeBack, manbluePanOrangeLeft, manbluePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manbluePanOrangeLeft, manbluePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1441,7 +1431,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanOrangeFront,
-    sliderPhoto: [mancyanPanOrangeBack, mancyanPanOrangeLeft, mancyanPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, mancyanPanOrangeLeft, mancyanPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1454,7 +1444,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanOrangeFront,
-    sliderPhoto: [mangreenPanOrangeBack, mangreenPanOrangeLeft, mangreenPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, mangreenPanOrangeLeft, mangreenPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1467,7 +1457,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manorangePanOrangeFront,
-    sliderPhoto: [manorangePanOrangeBack, manorangePanOrangeLeft, manorangePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manorangePanOrangeLeft, manorangePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1480,7 +1470,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanOrangeFront,
-    sliderPhoto: [manpinkPanOrangeBack, manpinkPanOrangeLeft, manpinkPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manpinkPanOrangeLeft, manpinkPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1493,7 +1483,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanOrangeFront,
-    sliderPhoto: [manpurplePanOrangeBack, manpurplePanOrangeLeft, manpurplePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manpurplePanOrangeLeft, manpurplePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1506,7 +1496,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manredPanOrangeFront,
-    sliderPhoto: [manredPanOrangeBack, manredPanOrangeLeft, manredPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manredPanOrangeLeft, manredPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1519,7 +1509,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanOrangeFront,
-    sliderPhoto: [manturqoisePanOrangeBack, manturqoisePanOrangeLeft, manturqoisePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manturqoisePanOrangeLeft, manturqoisePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1532,7 +1522,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanOrangeFront,
-    sliderPhoto: [manwhitePanOrangeBack, manwhitePanOrangeLeft, manwhitePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manwhitePanOrangeLeft, manwhitePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1545,7 +1535,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanOrangeFront,
-    sliderPhoto: [manyellowPanOrangeBack, manyellowPanOrangeLeft, manyellowPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manyellowPanOrangeLeft, manyellowPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1553,13 +1543,12 @@ export const Product = {
     star: { total: 0, nr: 0 },
     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
     id: 'mpo11',
-  },
-  mpsb1: {
+  }, mpsb1: {
     name: 'Pantaloni simpli',
     price: 119.99,
     discount: 0.2,
     photo: manSnakeblackPanBrownFront,
-    sliderPhoto: [manSnakeblackPanBrownBack, manSnakeblackPanBrownLeft, manSnakeblackPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakeblackPanBrownLeft, manSnakeblackPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1572,7 +1561,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakebluePanBrownFront,
-    sliderPhoto: [manSnakebluePanBrownBack, manSnakebluePanBrownLeft, manSnakebluePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakebluePanBrownLeft, manSnakebluePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1585,7 +1574,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakecyanPanBrownFront,
-    sliderPhoto: [manSnakecyanPanBrownBack, manSnakecyanPanBrownLeft, manSnakecyanPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakecyanPanBrownLeft, manSnakecyanPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1598,7 +1587,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakegreenPanBrownFront,
-    sliderPhoto: [manSnakegreenPanBrownBack, manSnakegreenPanBrownLeft, manSnakegreenPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakegreenPanBrownLeft, manSnakegreenPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1611,7 +1600,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeorangePanBrownFront,
-    sliderPhoto: [manSnakeorangePanBrownBack, manSnakeorangePanBrownLeft, manSnakeorangePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakeorangePanBrownLeft, manSnakeorangePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1624,7 +1613,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakepinkPanBrownFront,
-    sliderPhoto: [manSnakepinkPanBrownBack, manSnakepinkPanBrownLeft, manSnakepinkPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakepinkPanBrownLeft, manSnakepinkPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1637,7 +1626,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakepurplePanBrownFront,
-    sliderPhoto: [manSnakepurplePanBrownBack, manSnakepurplePanBrownLeft, manSnakepurplePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakepurplePanBrownLeft, manSnakepurplePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1650,7 +1639,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeredPanBrownFront,
-    sliderPhoto: [manSnakeredPanBrownBack, manSnakeredPanBrownLeft, manSnakeredPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakeredPanBrownLeft, manSnakeredPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1663,7 +1652,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnaketurqoisePanBrownFront,
-    sliderPhoto: [manSnaketurqoisePanBrownBack, manSnaketurqoisePanBrownLeft, manSnaketurqoisePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnaketurqoisePanBrownLeft, manSnaketurqoisePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1676,7 +1665,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakewhitePanBrownFront,
-    sliderPhoto: [manSnakewhitePanBrownBack, manSnakewhitePanBrownLeft, manSnakewhitePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakewhitePanBrownLeft, manSnakewhitePanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1689,7 +1678,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeyellowPanBrownFront,
-    sliderPhoto: [manSnakeyellowPanBrownBack, manSnakeyellowPanBrownLeft, manSnakeyellowPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack, manSnakeyellowPanBrownLeft, manSnakeyellowPanBrownRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1697,25 +1686,25 @@ export const Product = {
     star: { total: 0, nr: 0 },
     size: { XS: 0, S: 7, M: 6, L: 5, XL: 3, XXL: 0 },
     id: 'mpsb11',
-  }, mpg1: {
+  }, mpsg1: {
     name: 'Pantaloni simpli',
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanGreyFront,
-    sliderPhoto: [manSnakeblackPanGreyBack, manSnakeblackPanGreyLeft, manSnakeblackPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakeblackPanGreyLeft, manSnakeblackPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
     colors: ['#1c1919', '#eee'],
     star: { total: 0, nr: 0 },
     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    id: 'mpg1',
+    id: 'mpsg1',
   }, mpsg2: {
     name: 'Pantaloni simpli',
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanGreyFront,
-    sliderPhoto: [manSnakebluePanGreyBack, manSnakebluePanGreyLeft, manSnakebluePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakebluePanGreyLeft, manSnakebluePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1728,7 +1717,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanGreyFront,
-    sliderPhoto: [manSnakecyanPanGreyBack, manSnakecyanPanGreyLeft, manSnakecyanPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakecyanPanGreyLeft, manSnakecyanPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1741,7 +1730,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanGreyFront,
-    sliderPhoto: [manSnakegreenPanGreyBack, manSnakegreenPanGreyLeft, manSnakegreenPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakegreenPanGreyLeft, manSnakegreenPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1754,7 +1743,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanGreyFront,
-    sliderPhoto: [manSnakeorangePanGreyBack, manSnakeorangePanGreyLeft, manSnakeorangePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakeorangePanGreyLeft, manSnakeorangePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1767,7 +1756,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanGreyFront,
-    sliderPhoto: [manSnakepinkPanGreyBack, manSnakepinkPanGreyLeft, manSnakepinkPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakepinkPanGreyLeft, manSnakepinkPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1780,7 +1769,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanGreyFront,
-    sliderPhoto: [manSnakepurplePanGreyBack, manSnakepurplePanGreyLeft, manSnakepurplePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakepurplePanGreyLeft, manSnakepurplePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1793,7 +1782,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanGreyFront,
-    sliderPhoto: [manSnakeredPanGreyBack, manSnakeredPanGreyLeft, manSnakeredPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakeredPanGreyLeft, manSnakeredPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1806,7 +1795,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanGreyFront,
-    sliderPhoto: [manSnaketurqoisePanGreyBack, manSnaketurqoisePanGreyLeft, manSnaketurqoisePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnaketurqoisePanGreyLeft, manSnaketurqoisePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1819,7 +1808,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanGreyFront,
-    sliderPhoto: [manSnakewhitePanGreyBack, manSnakewhitePanGreyLeft, manSnakewhitePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakewhitePanGreyLeft, manSnakewhitePanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1832,7 +1821,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanGreyFront,
-    sliderPhoto: [manSnakeyellowPanGreyBack, manSnakeyellowPanGreyLeft, manSnakeyellowPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack, manSnakeyellowPanGreyLeft, manSnakeyellowPanGreyRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1845,7 +1834,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanRedFront,
-    sliderPhoto: [manSnakeblackPanRedBack, manSnakeblackPanRedLeft, manSnakeblackPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakeblackPanRedLeft, manSnakeblackPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1858,7 +1847,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanRedFront,
-    sliderPhoto: [manSnakebluePanRedBack, manSnakebluePanRedLeft, manSnakebluePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakebluePanRedLeft, manSnakebluePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1871,7 +1860,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanRedFront,
-    sliderPhoto: [manSnakecyanPanRedBack, manSnakecyanPanRedLeft, manSnakecyanPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakecyanPanRedLeft, manSnakecyanPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1884,7 +1873,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanRedFront,
-    sliderPhoto: [manSnakegreenPanRedBack, manSnakegreenPanRedLeft, manSnakegreenPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakegreenPanRedLeft, manSnakegreenPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1897,7 +1886,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanRedFront,
-    sliderPhoto: [manSnakeorangePanRedBack, manSnakeorangePanRedLeft, manSnakeorangePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakeorangePanRedLeft, manSnakeorangePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1910,7 +1899,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanRedFront,
-    sliderPhoto: [manSnakepinkPanRedBack, manSnakepinkPanRedLeft, manSnakepinkPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakepinkPanRedLeft, manSnakepinkPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1923,7 +1912,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanRedFront,
-    sliderPhoto: [manSnakepurplePanRedBack, manSnakepurplePanRedLeft, manSnakepurplePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakepurplePanRedLeft, manSnakepurplePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1936,7 +1925,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanRedFront,
-    sliderPhoto: [manSnakeredPanRedBack, manSnakeredPanRedLeft, manSnakeredPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakeredPanRedLeft, manSnakeredPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1949,7 +1938,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanRedFront,
-    sliderPhoto: [manSnaketurqoisePanRedBack, manSnaketurqoisePanRedLeft, manSnaketurqoisePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnaketurqoisePanRedLeft, manSnaketurqoisePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1962,7 +1951,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanRedFront,
-    sliderPhoto: [manSnakewhitePanRedBack, manSnakewhitePanRedLeft, manSnakewhitePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakewhitePanRedLeft, manSnakewhitePanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1975,7 +1964,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanRedFront,
-    sliderPhoto: [manSnakeyellowPanRedBack, manSnakeyellowPanRedLeft, manSnakeyellowPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack, manSnakeyellowPanRedLeft, manSnakeyellowPanRedRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -1988,7 +1977,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanOrangeFront,
-    sliderPhoto: [manSnakeblackPanOrangeBack, manSnakeblackPanOrangeLeft, manSnakeblackPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakeblackPanOrangeLeft, manSnakeblackPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2001,7 +1990,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanOrangeFront,
-    sliderPhoto: [manSnakebluePanOrangeBack, manSnakebluePanOrangeLeft, manSnakebluePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakebluePanOrangeLeft, manSnakebluePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2014,7 +2003,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanOrangeFront,
-    sliderPhoto: [manSnakecyanPanOrangeBack, manSnakecyanPanOrangeLeft, manSnakecyanPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakecyanPanOrangeLeft, manSnakecyanPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2027,7 +2016,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanOrangeFront,
-    sliderPhoto: [manSnakegreenPanOrangeBack, manSnakegreenPanOrangeLeft, manSnakegreenPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakegreenPanOrangeLeft, manSnakegreenPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2040,7 +2029,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanOrangeFront,
-    sliderPhoto: [manSnakeorangePanOrangeBack, manSnakeorangePanOrangeLeft, manSnakeorangePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakeorangePanOrangeLeft, manSnakeorangePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2053,7 +2042,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanOrangeFront,
-    sliderPhoto: [manSnakepinkPanOrangeBack, manSnakepinkPanOrangeLeft, manSnakepinkPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakepinkPanOrangeLeft, manSnakepinkPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2066,7 +2055,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanOrangeFront,
-    sliderPhoto: [manSnakepurplePanOrangeBack, manSnakepurplePanOrangeLeft, manSnakepurplePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakepurplePanOrangeLeft, manSnakepurplePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2079,7 +2068,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanOrangeFront,
-    sliderPhoto: [manSnakeredPanOrangeBack, manSnakeredPanOrangeLeft, manSnakeredPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakeredPanOrangeLeft, manSnakeredPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2092,7 +2081,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanOrangeFront,
-    sliderPhoto: [manSnaketurqoisePanOrangeBack, manSnaketurqoisePanOrangeLeft, manSnaketurqoisePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnaketurqoisePanOrangeLeft, manSnaketurqoisePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2105,7 +2094,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanOrangeFront,
-    sliderPhoto: [manSnakewhitePanOrangeBack, manSnakewhitePanOrangeLeft, manSnakewhitePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakewhitePanOrangeLeft, manSnakewhitePanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2118,7 +2107,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanOrangeFront,
-    sliderPhoto: [manSnakeyellowPanOrangeBack, manSnakeyellowPanOrangeLeft, manSnakeyellowPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack, manSnakeyellowPanOrangeLeft, manSnakeyellowPanOrangeRight],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Tricou negru din bumbac',
@@ -2126,7 +2115,332 @@ export const Product = {
     star: { total: 0, nr: 0 },
     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
     id: 'mpso11',
-  },
+  }, wdt1: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanblackTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#1c1919', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt1',
+  }, wdt2: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanblueTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#0091e5', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt2',
+  }, wdt3: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womancyanTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00d2ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt3',
+  }, wdt4: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womangreenTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#72ff00', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt4',
+  }, wdt5: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanorangeTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fd6500', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt5',
+  }, wdt6: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanpinkTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ff00f0', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt6',
+  }, wdt7: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanpurpleTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#a200ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt7',
+  }, wdt8: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanredTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ea0000', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt8',
+  }, wdt9: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanturqoiseTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt9',
+  }, wdt10: {
+    name: 'Tricou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanyellowTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdt10',
+  }, mds1: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manblackShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#1c1919', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds1',
+  }, mds2: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manblueShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#0091e5', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds2',
+  }, mds3: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: mancyanShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00d2ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds3',
+  }, mds4: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: mangreenShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#72ff00', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds4',
+  }, mds5: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manorangeShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fd6500', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds5',
+  }, mds6: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manpinkShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ff00f0', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds6',
+  }, mds7: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manpurpleShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#a200ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds7',
+  }, mds8: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manredShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ea0000', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds8',
+  }, mds9: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manturqoiseShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds9',
+  }, mds10: {
+    name: 'Pantaloni scurti simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manyellowShoFront,
+    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mds10',
+  }, mpsr: {
+    name: 'Pantaloni scurti patern',
+    price: 119.99,
+    discount: 0,
+    photo: manPatternShoRedFront,
+    sliderPhoto: [manPatternShoRedBack, manPatternShoRedLeft, manPatternShoRedRight],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mpsr',
+  }, mpsw: {
+    name: 'Pantaloni scurti patern',
+    price: 119.99,
+    discount: 0,
+    photo: manPatternShoWhiteFront,
+    sliderPhoto: [manPatternShoWhiteBack, manPatternShoWhiteLeft, manPatternShoWhiteRight],
+    sex: 'man',
+    type: 'barbati bottom scurti',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mpsw',
+  }, wptr: {
+    name: 'Tricou cu pattern',
+    price: 119.99,
+    discount: 0,
+    photo: womanPatternTeeRedFront,
+    sliderPhoto: [womanPatternTeeRedBack, womanPatternTeeRedLeft, womanPatternTeeRedRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mptr',
+  }, wpty: {
+    name: 'Tricou cu pattern',
+    price: 119.99,
+    discount: 0,
+    photo: womanPatternTeeYellowFront,
+    sliderPhoto: [womanPatternTeeYellowBack, womanPatternTeeYellowLeft, womanPatternTeeYellowRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wpty',
+  }, wptw: {
+    name: 'Tricou cu pattern',
+    price: 119.99,
+    discount: 0,
+    photo: womanPatternTeeWhiteFront,
+    sliderPhoto: [womanPatternTeeWhiteBack, womanPatternTeeWhiteLeft, womanPatternTeeWhiteRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wptw',
+  }
 }
 
 

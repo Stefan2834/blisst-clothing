@@ -225,15 +225,15 @@ export default function Navbar() {
                 </div>
                 <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/femei foot'>
-                    <div className='nav-drop-img nav-11' />
+                    <div className='nav-drop-img nav-16' />
                     <div className='nav-square-text-woman'>Toate</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei foot adidasi'>
-                    <div className='nav-drop-img nav-11' />
+                    <div className='nav-drop-img nav-17' />
                     <div className='nav-square-text-woman'>Adidasi</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei foot papuci'>
-                    <div className='nav-drop-img nav-12' />
+                    <div className='nav-drop-img nav-18' />
                     <div className='nav-square-text-woman'>Papuci</div>
                   </Link>
                 </div>
