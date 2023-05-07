@@ -23,30 +23,30 @@ import turqoiseTeeBack from '../clothing/man/top/turqoise 00ffd8/default tee bac
 import whiteTeeBack from '../clothing/man/top/white fff/default tee back.png'
 import yellowTeeBack from '../clothing/man/top/yellow fff600/default tee back.png'
 
-import blueHooFrontPatern from '../clothing/man/top/patern/frontBlue.png'
-import blueHooBackPatern from '../clothing/man/top/patern/backBlue.png'
-import blueHooLeftPatern from '../clothing/man/top/patern/leftBlue.png'
-import blueHooRightPatern from '../clothing/man/top/patern/rightBlue.png'
+import blueHooFrontPatern from '../clothing/man/top/pattern/frontBlue.png'
+import blueHooBackPatern from '../clothing/man/top/pattern/backBlue.png'
+import blueHooLeftPatern from '../clothing/man/top/pattern/leftBlue.png'
+import blueHooRightPatern from '../clothing/man/top/pattern/rightBlue.png'
 
-import redHooFrontPatern from '../clothing/man/top/patern/frontRed.png'
-import redHooBackPatern from '../clothing/man/top/patern/backRed.png'
-import redHooLeftPatern from '../clothing/man/top/patern/leftRed.png'
-import redHooRightPatern from '../clothing/man/top/patern/rightRed.png'
+import redHooFrontPatern from '../clothing/man/top/pattern/frontRed.png'
+import redHooBackPatern from '../clothing/man/top/pattern/backRed.png'
+import redHooLeftPatern from '../clothing/man/top/pattern/leftRed.png'
+import redHooRightPatern from '../clothing/man/top/pattern/rightRed.png'
 
-import yellowHooFrontPatern from '../clothing/man/top/patern/frontYellow.png'
-import yellowHooBackPatern from '../clothing/man/top/patern/backYellow.png'
-import yellowHooLeftPatern from '../clothing/man/top/patern/leftYellow.png'
-import yellowHooRightPatern from '../clothing/man/top/patern/rightYellow.png'
+import yellowHooFrontPatern from '../clothing/man/top/pattern/frontYellow.png'
+import yellowHooBackPatern from '../clothing/man/top/pattern/backYellow.png'
+import yellowHooLeftPatern from '../clothing/man/top/pattern/leftYellow.png'
+import yellowHooRightPatern from '../clothing/man/top/pattern/rightYellow.png'
 
-import whiteHooFrontPatern from '../clothing/man/top/patern/frontWhite.png'
-import whiteHooBackPatern from '../clothing/man/top/patern/backWhite.png'
-import whiteHooLeftPatern from '../clothing/man/top/patern/leftWhite.png'
-import whiteHooRightPatern from '../clothing/man/top/patern/rightWhite.png'
+import whiteHooFrontPatern from '../clothing/man/top/pattern/frontWhite.png'
+import whiteHooBackPatern from '../clothing/man/top/pattern/backWhite.png'
+import whiteHooLeftPatern from '../clothing/man/top/pattern/leftWhite.png'
+import whiteHooRightPatern from '../clothing/man/top/pattern/rightWhite.png'
 
-import greenHooFrontPatern from '../clothing/man/top/patern/frontGreen.png'
-import greenHooBackPatern from '../clothing/man/top/patern/backGreen.png'
-import greenHooLeftPatern from '../clothing/man/top/patern/leftGreen.png'
-import greenHooRightPatern from '../clothing/man/top/patern/rightGreen.png'
+import greenHooFrontPatern from '../clothing/man/top/pattern/frontGreen.png'
+import greenHooBackPatern from '../clothing/man/top/pattern/backGreen.png'
+import greenHooLeftPatern from '../clothing/man/top/pattern/leftGreen.png'
+import greenHooRightPatern from '../clothing/man/top/pattern/rightGreen.png'
 
 import sprayHooFrontCustom from '../clothing/man/top/custom/frontSpray.png'
 import sprayHooBackCustom from '../clothing/man/top/custom/backSpray.png'
@@ -545,9 +545,9 @@ import manPatternShoWhiteRight from '../clothing/man/bottom/pattern/white sho ri
 
 /*Layout*/
 
-import womanLayoutTeeBack from '../clothing/woman/top/layout/default tee back.jpg'
-import womanLayoutTeeLeft from '../clothing/woman/top/layout/default tee left.jpg'
-import womanLayoutTeeRight from '../clothing/woman/top/layout/default tee right.jpg'
+import womanLayoutTeeBack from '../clothing/woman/top/layout/default tee back.png'
+import womanLayoutTeeLeft from '../clothing/woman/top/layout/default tee left.png'
+import womanLayoutTeeRight from '../clothing/woman/top/layout/default tee right.png'
 
 
 import womanblackTeeFront from '../clothing/woman/top/black 1c1919/default tee front.png'
