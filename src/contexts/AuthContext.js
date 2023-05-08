@@ -103,8 +103,8 @@ export default function Reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [product, setProduct] = useState(
-    // [] 
-    Product
+    [] 
+    // Product
   )
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
@@ -167,7 +167,7 @@ export function AuthProvider({ children }) {
   }
   useEffect(() => {
     getData()
-    postProduct()
+    // postProduct()
   }, [])
 
   useEffect(() => {
