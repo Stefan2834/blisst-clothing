@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "clothing-shop2834"
-  }
+    "default": "blisst-clothing",
+    "blisst-clothing": "blisst-clothing"
+  },
+  "targets": {},
+  "etags": {}
 }
