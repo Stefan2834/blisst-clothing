@@ -167,7 +167,7 @@ export function AuthProvider({ children }) {
   }
   useEffect(() => {
     getData()
-    // postProduct()
+    postProduct()
   }, [])
 
   useEffect(() => {
