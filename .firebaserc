@@ -1,6 +1,5 @@
 {
   "projects": {
-    "default": "blisst-clothing",
     "blisst-clothing": "blisst-clothing"
   },
   "targets": {},
