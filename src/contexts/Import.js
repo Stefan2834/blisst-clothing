@@ -2667,7 +2667,7 @@ export const Product = {
   }, mssi1: {
     name: 'Bluza snake',
     price: 139.99,
-    discount: 30,
+    discount: 0.3,
     photo: manSnakeblackShiFront,
     sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
     sex: 'man',
@@ -2680,7 +2680,7 @@ export const Product = {
   }, mssi2: {
     name: 'Bluza snake',
     price: 129.99,
-    discount: 10,
+    discount: 0.1,
     photo: manSnakeblueShiFront,
     sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
     sex: 'man',
@@ -2706,7 +2706,7 @@ export const Product = {
   }, mssi4: {
     name: 'Bluza snake',
     price: 94.99,
-    discount: 20,
+    discount: 0.2,
     photo: manSnakegreenShiFront,
     sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
     sex: 'man',
