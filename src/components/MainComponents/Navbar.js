@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
 import { useDefault } from '../../contexts/DefaultContext'
 import Swal from 'sweetalert2';
+import test from '../../clothing/man/top/custom/frontShape.png'
 
 
 export default function Navbar() {
@@ -14,6 +15,7 @@ export default function Navbar() {
     server,
     admin,
     dispatchCart, dispatchFav,
+    collections
   } = useAuth()
   const { setError, setActiveForm,
     darkTheme, setDarkTheme,
@@ -252,18 +254,20 @@ export default function Navbar() {
               </div>
               <div className='nav-drop-content'>
                 <div className='nav-drop-content-top'>
-                  <Link className='nav-drop-square' to='/main/cloth/barbati'>
+                  <Link className='nav-drop-square' to='/main/cloth/collection'>
                     <div className='nav-drop-img nav-19' />
                     <div className='nav-square-text'>Toate</div>
                   </Link>
-                  <Link className='nav-drop-square' to='/main/cloth/barbati'>
-                    <div className='nav-drop-img nav-20' />
-                    <div className='nav-square-text'>Nume</div>
-                  </Link>
-                  <Link className='nav-drop-square' to='/main/cloth/barbati'>
-                    <div className='nav-drop-img nav-21' />
-                    <div className='nav-square-text'>Alt Nume</div>
-                  </Link>
+                  {collections.map((collection, index) => {
+                    if (index < 2) {
+                      return (
+                        <Link className='nav-drop-square' to={`/main/cloth/collection ${collection.name}`}>
+                          <img className='nav-drop-img nav-drop-coll' src={collection.photo} />
+                          <div className='nav-square-text'>{collection.name}</div>
+                        </Link>
+                      )
+                    }
+                  })}
                 </div>
               </div>
             </div>
@@ -314,7 +318,7 @@ export default function Navbar() {
                   <div className='nav-none'>Nu ai nimic la favorite!</div>
                 ) : (
                   <>
-                    {favorite.map((product, index) => {
+                    {[...favorite].reverse().map((product, index) => {
                       if (index < 3) {
                         return (
                           <Link to={`/product/${product.id}`}>
@@ -376,7 +380,7 @@ export default function Navbar() {
                   <div className='nav-none'>Nu ai nimic in cos!</div>
                 ) : (
                   <>
-                    {cart.map((product, index) => {
+                    {[...cart].reverse().map((product, index) => {
                       if (index < 3) {
                         return (
                           <Link to={`/product/${product.id}`}>

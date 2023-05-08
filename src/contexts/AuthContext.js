@@ -104,17 +104,18 @@ export default function Reducer(state, action) {
 export function AuthProvider({ children }) {
   const [product, setProduct] = useState(
     // [] 
-    // Product
+    Product
   )
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = "https://blisst.onrender.com"
-  // const server = 'http://localhost:9000'
+  // const server = "https://blisst.onrender.com"
+  const server = 'http://localhost:9000'
   const [admin, setAdmin] = useState(false)
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [command, dispatchCommand] = useReducer(Reducer, [])
+  const [collections, setCollections] = useState([])
   const navigate = useNavigate()
 
   const getUserData = async (uid, product) => {
@@ -138,6 +139,7 @@ export function AuthProvider({ children }) {
     const product = await axios.get(`${server}/product`)
     if (product.data.success) {
       setProduct(product.data.product)
+      setCollections(product.data.collections)
     }
     const connect = await axios.get(`${server}/connect/admin`)
     if (connect.data.admin) {
@@ -165,7 +167,7 @@ export function AuthProvider({ children }) {
   }
   useEffect(() => {
     getData()
-    // postProduct()
+    postProduct()
   }, [])
 
   useEffect(() => {
@@ -211,7 +213,8 @@ export function AuthProvider({ children }) {
     command, dispatchCommand,
     getUserData,
     det, setDet,
-    admin, setAdmin
+    admin, setAdmin,
+    collections, setCollections
   }
 
   return (

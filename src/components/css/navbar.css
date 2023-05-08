@@ -168,6 +168,10 @@ body {
   background-size: contain;
   height: 100%;
 }
+.nav-drop-coll {
+  object-fit: contain;
+  object-position: center;
+}
 .nav-1 {
   background-image: url(../../clothing/blisst-man-PhotoRoom.png-PhotoRoom.png);
 }

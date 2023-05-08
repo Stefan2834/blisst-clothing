@@ -672,6 +672,10 @@ import womanSnakeyellowTeeFront from '../clothing/woman/top/yellow fff600/snake 
 import womanSnakeyellowTeeRight from '../clothing/woman/top/yellow fff600/snake tee front.png'
 import womanSnakeyellowTeeLeft from '../clothing/woman/top/yellow fff600/snake tee front.png'
 
+/*----------Collection----------*/
+
+import womanCollectionOniFront1 from '../clothing/collections/oni mask 1.png'
+import womanCollectionOniFront2 from '../clothing/collections/oni mask 2.png'
 
 
 export const Product = {
@@ -3054,6 +3058,32 @@ export const Product = {
     star: { total: 0, nr: 0 },
     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
     id: 'wst10',
+  }, cwo1: {
+    name: 'Tricou masca Oni',
+    price: 129.99,
+    discount: 0,
+    photo: womanCollectionOniFront1,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri collection Oni',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'cwo1',
+  }, cwo2: {
+    name: 'Tricou masca Oni',
+    price: 129.99,
+    discount: 0,
+    photo: womanCollectionOniFront2,
+    sliderPhoto: [womanLayoutTeeBack, womanLayoutTeeLeft, womanLayoutTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri collection Oni',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'cwo2',
   },
 }
 
@@ -3105,3 +3135,10 @@ export const counties = [
   'Vaslui',
   'Vrancea'
 ];
+
+export const validPath = ['barbati', 'femei', 'barbati top tricouri', 'barbati top bluze', 'barbati bottom scurti', 'barbati bottom lungi',
+  'barbati foot adidasi', 'barbati foot papuci', 'barbati top', 'barbati bottom', 'barbati foot',
+  'femei top tricouri', 'femei top bluze', 'femei bottom scurti', 'femei bottom lungi',
+  'femei foot adidasi', 'femei foot papuci', 'femei top', 'femei bottom', 'femei foot',
+  'collection'
+]
