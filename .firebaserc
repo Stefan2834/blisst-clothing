@@ -1,6 +1,6 @@
 {
   "projects": {
-    "blisst-clothing": "blisst-clothing"
+    "default": "blisst-clothing"
   },
   "targets": {},
   "etags": {}
