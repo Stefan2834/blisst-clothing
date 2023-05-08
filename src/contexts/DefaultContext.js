@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useTransition, useDeferredValue } from 'react'
 import useLocalStorage from '../CustomHook/useLocalStorage'
+import { useLocation } from 'react-router-dom';
 
 export const DefaultContext = createContext();
 
@@ -15,6 +16,8 @@ export default function DefaultProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [filterOpen, setFilterOpen] = useState(false)
   const [productLoad, setProductLoad] = useState(10);
+  const { pathname } = useLocation()
+  const [scrollPosition, setScrollPosition] = useState(0)
   const [filter, setFilter] = useState({
     minPrice: '',
     maxPrice: '',
@@ -23,11 +26,11 @@ export default function DefaultProvider({ children }) {
     color: '',
     searchId: '',
     searchName: '',
-    type:''
+    type: ''
   })
   const deferredSearch = useDeferredValue(filter.searchName)
 
-  
+
   useEffect(() => {
     if (darkTheme) {
       document.documentElement.style.setProperty("--black", '#fff')
@@ -49,7 +52,6 @@ export default function DefaultProvider({ children }) {
 
 
 
-
   const value = {
     error, setError,
     activeForm, setActiveForm,
@@ -58,7 +60,8 @@ export default function DefaultProvider({ children }) {
     filterOpen, setFilterOpen,
     filter, setFilter,
     startTransition, isPending,
-    deferredSearch
+    deferredSearch,
+    scrollPosition, setScrollPosition
   }
   return (
     <DefaultContext.Provider value={value}>

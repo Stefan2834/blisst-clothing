@@ -116,9 +116,9 @@ export default function Clothing() {
       <div className='cloth'>
         {filter.searchName.length < 2 && filter.searchId.length < 2 ? (
           sortedProducts.map((product, index) => {
-            if (noProduct < productLoad) {
-              if (handleFilter(product)) {
-                noProduct += 1;
+            if (handleFilter(product)) {
+              noProduct += 1;
+              if (noProduct - 1 < productLoad) {
                 return (
                   <Product key={index} product={product} />
                 )
@@ -134,7 +134,7 @@ export default function Clothing() {
                 return (
                   <Product key={index} product={product} />
                 )
-              } else if(filter.searchName !== ''){
+              } else if (filter.searchName !== '') {
                 return (
                   <Product key={index} product={product.item} />
                 )
@@ -142,7 +142,7 @@ export default function Clothing() {
             }
           })
         )}
-        {noProduct >= productLoad && (
+        {noProduct > productLoad && (
           <div className="cloth-more">
             <div className="cloth-more-btn" onClick={() => startTransition(() => setProductLoad(p => p + 10))}>Incarca mai multe produse</div>
           </div>

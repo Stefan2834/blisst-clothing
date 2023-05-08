@@ -36,7 +36,6 @@ export default function Footer() {
     setDet(newDet)
     axios.post(`${server}/user/infoUpdate`, { uid: currentUser.uid, det: newDet })
       .then((data) => {
-        console.log(data)
         if (value) {
           axios.post(`${server}/email/newsLetter`, { email: currentUser.email, name: det.name })
             .then((data) => console.log(data))

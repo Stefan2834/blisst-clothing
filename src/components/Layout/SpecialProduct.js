@@ -10,9 +10,8 @@ import axios from 'axios'
 
 
 export default function SpecialProduct() {
-  const { server } = useAuth()
   const { idPath } = useParams()
-  const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct } = useAuth()
+  const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct, server } = useAuth()
   const { darkTheme } = useDefault()
   const [sizeType, setSizeType] = useState([])
   const [loading, setLoading] = useState(true)

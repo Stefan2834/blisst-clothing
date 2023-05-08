@@ -118,6 +118,38 @@ import yellowHooBack from '../clothing/man/top/yellow fff600/default hoo back.pn
 import yellowHooRight from '../clothing/man/top/yellow fff600/default hoo right.png'
 import yellowHooLeft from '../clothing/man/top/yellow fff600/default hoo left.png'
 
+/*----------Shirt----------*/
+
+/*Layout*/
+
+import manLayoutShiBack from '../clothing/man/top/layout/default back.png'
+import manLayoutShiLeft from '../clothing/man/top/layout/default left.png'
+import manLayoutShiRight from '../clothing/man/top/layout/default right.png'
+
+
+import manDefaultblackShiFront from '../clothing/man/top/black 1c1919/default shi front.png'
+import manDefaultblueShiFront from '../clothing/man/top/blue 0091e5/default shi front.png'
+import manDefaultcyanShiFront from '../clothing/man/top/cyan 00d2ff/default shi front.png'
+import manDefaultgreenShiFront from '../clothing/man/top/green 72ff00/default shi front.png'
+import manDefaultorangeShiFront from '../clothing/man/top/orange fd6500/default shi front.png'
+import manDefaultpinkShiFront from '../clothing/man/top/pink ff00f0/default shi front.png'
+import manDefaultpurpleShiFront from '../clothing/man/top/purple a200ff/default shi front.png'
+import manDefaultredShiFront from '../clothing/man/top/red ea0000/default shi front.png'
+import manDefaultturqoiseShiFront from '../clothing/man/top/turqoise 00ffd8/default shi front.png'
+import manDefaultyellowShiFront from '../clothing/man/top/yellow fff600/default shi front.png'
+
+
+import manSnakeblackShiFront from '../clothing/man/top/black 1c1919/snake shi front.png'
+import manSnakeblueShiFront from '../clothing/man/top/blue 0091e5/snake shi front.png'
+import manSnakecyanShiFront from '../clothing/man/top/cyan 00d2ff/snake shi front.png'
+import manSnakegreenShiFront from '../clothing/man/top/green 72ff00/snake shi front.png'
+import manSnakeorangeShiFront from '../clothing/man/top/orange fd6500/snake shi front.png'
+import manSnakepinkShiFront from '../clothing/man/top/pink ff00f0/snake shi front.png'
+import manSnakepurpleShiFront from '../clothing/man/top/purple a200ff/snake shi front.png'
+import manSnakeredShiFront from '../clothing/man/top/red ea0000/snake shi front.png'
+import manSnaketurqoiseShiFront from '../clothing/man/top/turqoise 00ffd8/snake shi front.png'
+import manSnakeyellowShiFront from '../clothing/man/top/yellow fff600/snake shi front.png'
+
 
 
 /*----------Pants----------*/
@@ -512,7 +544,10 @@ import manSnakeyellowPanOrangeLeft from '../clothing/man/bottom/yellow fff600/sn
 
 /*Layout*/
 
-import manLayoutShoBack from '../clothing/man/bottom/black 1c1919/default sho front.png'
+import manLayoutShoBack from '../clothing/man/bottom/layout/default sho back.png'
+import manLayoutShoLeft from '../clothing/man/bottom/layout/default sho left.png'
+import manLayoutShoRight from '../clothing/man/bottom/layout/default sho right.png'
+
 
 import manblackShoFront from '../clothing/man/bottom/black 1c1919/default sho front.png'
 import manblueShoFront from '../clothing/man/bottom/blue 0091e5/default sho front.png'
@@ -577,6 +612,65 @@ import womanPatternTeeYellowFront from '../clothing/woman/top/pattern/yellow tee
 import womanPatternTeeYellowBack from '../clothing/woman/top/pattern/yellow tee back.png'
 import womanPatternTeeYellowLeft from '../clothing/woman/top/pattern/yellow tee left.png'
 import womanPatternTeeYellowRight from '../clothing/woman/top/pattern/yellow tee right.png'
+
+/*Layout*/
+
+import womanLayoutTanBack from '../clothing/woman/top/layout/default tan back.png'
+import womanLayoutTanLeft from '../clothing/woman/top/layout/default tan left.png'
+import womanLayoutTanRight from '../clothing/woman/top/layout/default tan right.png'
+
+import womanblackTanFront from '../clothing/woman/top/black 1c1919/default tan front.png'
+import womanblueTanFront from '../clothing/woman/top/blue 0091e5/default tan front.png'
+import womancyanTanFront from '../clothing/woman/top/cyan 00d2ff/default tan front.png'
+import womangreenTanFront from '../clothing/woman/top/green 72ff00/default tan front.png'
+import womanorangeTanFront from '../clothing/woman/top/orange fd6500/default tan front.png'
+import womanpinkTanFront from '../clothing/woman/top/pink ff00f0/default tan front.png'
+import womanpurpleTanFront from '../clothing/woman/top/purple a200ff/default tan front.png'
+import womanredTanFront from '../clothing/woman/top/red ea0000/default tan front.png'
+import womanturqoiseTanFront from '../clothing/woman/top/turqoise 00ffd8/default tan front.png'
+import womanyellowTanFront from '../clothing/woman/top/yellow fff600/default tan front.png'
+
+
+import womanSnakeblackTeeFront from '../clothing/woman/top/black 1c1919/snake tee front.png'
+import womanSnakeblackTeeRight from '../clothing/woman/top/black 1c1919/snake tee right.png'
+import womanSnakeblackTeeLeft from '../clothing/woman/top/black 1c1919/snake tee left.png'
+
+import womanSnakeblueTeeFront from '../clothing/woman/top/blue 0091e5/snake tee front.png'
+import womanSnakeblueTeeRight from '../clothing/woman/top/blue 0091e5/snake tee right.png'
+import womanSnakeblueTeeLeft from '../clothing/woman/top/blue 0091e5/snake tee left.png'
+
+import womanSnakecyanTeeFront from '../clothing/woman/top/cyan 00d2ff/snake tee front.png'
+import womanSnakecyanTeeRight from '../clothing/woman/top/cyan 00d2ff/snake tee right.png'
+import womanSnakecyanTeeLeft from '../clothing/woman/top/cyan 00d2ff/snake tee left.png'
+
+import womanSnakegreenTeeFront from '../clothing/woman/top/green 72ff00/snake tee front.png'
+import womanSnakegreenTeeRight from '../clothing/woman/top/green 72ff00/snake tee right.png'
+import womanSnakegreenTeeLeft from '../clothing/woman/top/green 72ff00/snake tee left.png'
+
+import womanSnakeorangeTeeFront from '../clothing/woman/top/orange fd6500/snake tee front.png'
+import womanSnakeorangeTeeRight from '../clothing/woman/top/orange fd6500/snake tee right.png'
+import womanSnakeorangeTeeLeft from '../clothing/woman/top/orange fd6500/snake tee left.png'
+
+import womanSnakepinkTeeFront from '../clothing/woman/top/pink ff00f0/snake tee front.png'
+import womanSnakepinkTeeRight from '../clothing/woman/top/pink ff00f0/snake tee right.png'
+import womanSnakepinkTeeLeft from '../clothing/woman/top/pink ff00f0/snake tee left.png'
+
+import womanSnakepurpleTeeFront from '../clothing/woman/top/purple a200ff/snake tee front.png'
+import womanSnakepurpleTeeRight from '../clothing/woman/top/purple a200ff/snake tee right.png'
+import womanSnakepurpleTeeLeft from '../clothing/woman/top/purple a200ff/snake tee left.png'
+
+import womanSnakeredTeeFront from '../clothing/woman/top/red ea0000/snake tee front.png'
+import womanSnakeredTeeRight from '../clothing/woman/top/red ea0000/snake tee right.png'
+import womanSnakeredTeeLeft from '../clothing/woman/top/red ea0000/snake tee left.png'
+
+import womanSnaketurqoiseTeeFront from '../clothing/woman/top/turqoise 00ffd8/snake tee front.png'
+import womanSnaketurqoiseTeeRight from '../clothing/woman/top/turqoise 00ffd8/snake tee right.png'
+import womanSnaketurqoiseTeeLeft from '../clothing/woman/top/turqoise 00ffd8/snake tee left.png'
+
+
+import womanSnakeyellowTeeFront from '../clothing/woman/top/yellow fff600/snake tee front.png'
+import womanSnakeyellowTeeRight from '../clothing/woman/top/yellow fff600/snake tee front.png'
+import womanSnakeyellowTeeLeft from '../clothing/woman/top/yellow fff600/snake tee front.png'
 
 
 
@@ -2250,7 +2344,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manblackShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2263,7 +2357,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manblueShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2276,7 +2370,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mancyanShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2289,7 +2383,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mangreenShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2302,7 +2396,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manorangeShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2315,7 +2409,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpinkShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2328,7 +2422,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpurpleShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2341,7 +2435,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manredShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2354,7 +2448,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manturqoiseShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2367,7 +2461,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manyellowShoFront,
-    sliderPhoto: [manLayoutShoBack, manLayoutShoBack, manLayoutShoBack],
+    sliderPhoto: [manLayoutShoBack, manLayoutShoLeft, manLayoutShoRight],
     sex: 'man',
     type: 'barbati bottom scurti',
     spec: 'Tricou negru din bumbac',
@@ -2440,7 +2534,527 @@ export const Product = {
     star: { total: 0, nr: 0 },
     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
     id: 'wptw',
-  }
+  }, mdsi1: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultblackShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#1c1919', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi1',
+  }, mdsi2: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultblueShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#0091e5', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi2',
+  }, mdsi3: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultcyanShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00d2ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi3',
+  }, mdsi4: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultgreenShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#72ff00', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi4',
+  }, mdsi5: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultorangeShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fd6500', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi5',
+  }, mdsi6: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultpinkShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ff00f0', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi6',
+  }, mdsi7: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultpurpleShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#a200ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi7',
+  }, mdsi8: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultredShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ea0000', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi8',
+  }, mdsi9: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultturqoiseShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi9',
+  }, mdsi10: {
+    name: 'Bluza simpla',
+    price: 119.99,
+    discount: 0,
+    photo: manDefaultyellowShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mdsi10',
+  }, mssi1: {
+    name: 'Bluza snake',
+    price: 139.99,
+    discount: 30,
+    photo: manSnakeblackShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#1c1919', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi1',
+  }, mssi2: {
+    name: 'Bluza snake',
+    price: 129.99,
+    discount: 10,
+    photo: manSnakeblueShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#0091e5', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi2',
+  }, mssi3: {
+    name: 'Bluza snake',
+    price: 59.99,
+    discount: 0,
+    photo: manSnakecyanShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00d2ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi3',
+  }, mssi4: {
+    name: 'Bluza snake',
+    price: 94.99,
+    discount: 20,
+    photo: manSnakegreenShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#72ff00', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi4',
+  }, mssi5: {
+    name: 'Bluza snake',
+    price: 99.99,
+    discount: 0,
+    photo: manSnakeorangeShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fd6500', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi5',
+  }, mssi6: {
+    name: 'Bluza snake',
+    price: 119.99,
+    discount: 0,
+    photo: manSnakepinkShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ff00f0', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi6',
+  }, mssi7: {
+    name: 'Bluza snake',
+    price: 69.99,
+    discount: 0,
+    photo: manSnakepurpleShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#a200ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi7',
+  }, mssi8: {
+    name: 'Bluza snake',
+    price: 94.99,
+    discount: 0,
+    photo: manSnakeredShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ea0000', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi8',
+  }, mssi9: {
+    name: 'Bluza snake',
+    price: 99.99,
+    discount: 0,
+    photo: manSnaketurqoiseShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi9',
+  }, mssi10: {
+    name: 'Bluza snake',
+    price: 109.99,
+    discount: 0,
+    photo: manSnakeyellowShiFront,
+    sliderPhoto: [manLayoutShiBack, manLayoutShiLeft, manLayoutShiRight],
+    sex: 'man',
+    type: 'barbati top bluze',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'mssi10',
+  }, wdta1: {
+    name: 'Maiou simplu',
+    price: 139.99,
+    discount: 0.3,
+    photo: womanblackTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#1c1919', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta1',
+  }, wdta2: {
+    name: 'Maiou simplu',
+    price: 129.99,
+    discount: 0.1,
+    photo: womanblueTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#0091e5', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta2',
+  }, wdta3: {
+    name: 'Maiou simplu',
+    price: 59.99,
+    discount: 0,
+    photo: womancyanTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00d2ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta3',
+  }, wdta4: {
+    name: 'Maiou simplu',
+    price: 94.99,
+    discount: 0.2,
+    photo: womangreenTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#72ff00', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta4',
+  }, wdta5: {
+    name: 'Maiou simplu',
+    price: 99.99,
+    discount: 0,
+    photo: womanorangeTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fd6500', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta5',
+  }, wdta6: {
+    name: 'Maiou simplu',
+    price: 119.99,
+    discount: 0,
+    photo: womanpinkTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ff00f0', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta6',
+  }, wdta7: {
+    name: 'Maiou simplu',
+    price: 69.99,
+    discount: 0,
+    photo: womanpurpleTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#a200ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta7',
+  }, wdta8: {
+    name: 'Maiou simplu',
+    price: 94.99,
+    discount: 0,
+    photo: womanredTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ea0000', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta8',
+  }, wdta9: {
+    name: 'Maiou simplu',
+    price: 99.99,
+    discount: 0,
+    photo: womanturqoiseTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta9',
+  }, wdta10: {
+    name: 'Maiou simplu',
+    price: 109.99,
+    discount: 0,
+    photo: womanyellowTanFront,
+    sliderPhoto: [womanLayoutTanBack, womanLayoutTanLeft, womanLayoutTanRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wdta10',
+  }, wst1: {
+    name: 'Tricou snake',
+    price: 139.99,
+    discount: 0.3,
+    photo: womanSnakeblackTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakeblackTeeLeft, womanSnakeblackTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#1c1919', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst1',
+  }, wst2: {
+    name: 'Tricou snake',
+    price: 129.99,
+    discount: 0.1,
+    photo: womanSnakeblueTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakeblueTeeLeft, womanSnakeblueTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#0091e5', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst2',
+  }, wst3: {
+    name: 'Tricou snake',
+    price: 59.99,
+    discount: 0,
+    photo: womanSnakecyanTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakecyanTeeLeft, womanSnakecyanTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00d2ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst3',
+  }, wst4: {
+    name: 'Tricou snake',
+    price: 94.99,
+    discount: 0.2,
+    photo: womanSnakegreenTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakegreenTeeLeft, womanSnakegreenTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#72ff00', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst4',
+  }, wst5: {
+    name: 'Tricou snake',
+    price: 99.99,
+    discount: 0,
+    photo: womanSnakeorangeTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakeorangeTeeLeft, womanSnakeorangeTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fd6500', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst5',
+  }, wst6: {
+    name: 'Tricou snake',
+    price: 119.99,
+    discount: 0,
+    photo: womanSnakepinkTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakepinkTeeLeft, womanSnakepinkTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ff00f0', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst6',
+  }, wst7: {
+    name: 'Tricou snake',
+    price: 69.99,
+    discount: 0,
+    photo: womanSnakepurpleTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakepurpleTeeLeft, womanSnakepurpleTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#a200ff', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst7',
+  }, wst8: {
+    name: 'Tricou snake',
+    price: 94.99,
+    discount: 0,
+    photo: womanSnakeredTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakeredTeeLeft, womanSnakeredTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#ea0000', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst8',
+  }, wst9: {
+    name: 'Tricou snake',
+    price: 99.99,
+    discount: 0,
+    photo: womanSnaketurqoiseTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnaketurqoiseTeeLeft, womanSnaketurqoiseTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#00ffd8', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst9',
+  }, wst10: {
+    name: 'Tricou snake',
+    price: 109.99,
+    discount: 0,
+    photo: womanSnakeyellowTeeFront,
+    sliderPhoto: [womanLayoutTeeBack, womanSnakeyellowTeeLeft, womanSnakeyellowTeeRight],
+    sex: 'woman',
+    type: 'femei top tricouri',
+    spec: 'Tricou negru din bumbac',
+    colors: ['#fff600', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
+    id: 'wst10',
+  },
 }
 
 

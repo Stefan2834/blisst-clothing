@@ -2,43 +2,49 @@ import React, { useState, useLayoutEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDefault } from '../../contexts/DefaultContext'
 import { colors } from '../../contexts/Import'
+import { debounce } from 'lodash'
+
 
 export default function Sidebar() {
-  const { setProductLoad, darkTheme, startTransition, filter, setFilter, filterOpen, setFilterOpen } = useDefault()
+  const { setProductLoad, darkTheme, startTransition, filter, setFilter, filterOpen, setFilterOpen, setScrollPosition } = useDefault()
   const { id } = useParams()
   const [sizeType, setSizeType] = useState([])
   const [expand, setExpand] = useState()
   const navigate = useNavigate()
-
-  console.log(filter.searchId)
   useLayoutEffect(() => {
-    document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
-    const validPath = ['barbati', 'femei', 'barbati top tricouri', 'barbati top bluze', 'barbati bottom scurti', 'barbati bottom lungi',
-      'barbati foot adidasi', 'barbati foot papuci', 'barbati top', 'barbati bottom', 'barbati foot',
-      'femei top tricouri', 'femei top bluze', 'femei bottom scurti', 'femei bottom lungi',
-      'femei foot adidasi', 'femei foot papuci', 'femei top', 'femei bottom', 'femei foot'
-    ]
-    if (!validPath.includes(id)) {
-      navigate('/')
-    }
-    if (id.includes('femei')) {
-      document.documentElement.style.setProperty("--principal2", '#e684ae')
-    } else {
-      document.documentElement.style.setProperty("--principal2", '#79cbca')
-    }
-    setProductLoad(10)
-    setFilter({ ...filter, type: id, })
-    if (id.includes('foot')) {
-      setSizeType(['37', '38', '39', '40', '41', '42', '43', '44'])
-    } else {
-      setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
-    }
+    console.log(filter.type, id)
+    startTransition(() => {
+      document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
+      const validPath = ['barbati', 'femei', 'barbati top tricouri', 'barbati top bluze', 'barbati bottom scurti', 'barbati bottom lungi',
+        'barbati foot adidasi', 'barbati foot papuci', 'barbati top', 'barbati bottom', 'barbati foot',
+        'femei top tricouri', 'femei top bluze', 'femei bottom scurti', 'femei bottom lungi',
+        'femei foot adidasi', 'femei foot papuci', 'femei top', 'femei bottom', 'femei foot'
+      ]
+      if (!validPath.includes(id)) {
+        navigate('/')
+      }
+      setFilter({ ...filter, type: id, })
+      if (id.includes('femei')) {
+        document.documentElement.style.setProperty("--principal2", '#e684ae')
+      } else {
+        document.documentElement.style.setProperty("--principal2", '#79cbca')
+      }
+      if (id.includes('foot')) {
+        setSizeType(['37', '38', '39', '40', '41', '42', '43', '44'])
+      } else {
+        setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
+      }
+    })
+    const handleScroll = () => {
+      setFilterOpen(false)
+      setScrollPosition(window.pageYOffset);
+    };
 
-    window.addEventListener("scroll", () => setFilterOpen(false))
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
-      window.removeEventListener("scroll", () => setFilterOpen(false))
-      setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, searchId: '', searchName: '' })
-    }
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [id])
 
   const handleExpand = (type) => {
@@ -217,7 +223,9 @@ export default function Sidebar() {
           <div className='side-expand' onClick={() => {
             startTransition(() => {
               setExpand()
-              setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, searchId: '', searchName: ''})
+              setProductLoad(10)
+              window.scrollTo(0, 0)
+              setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, searchId: '', searchName: '' })
             })
           }}>
             <span className='side-selection side-selection'>Sterge Filtre</span>
