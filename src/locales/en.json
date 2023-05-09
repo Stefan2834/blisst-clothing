@@ -1,0 +1,38 @@
+{
+  "Main": {
+    "Noi dăm": "We give",
+    "Moda": "Moda",
+    "Produsul zilei": "Daily product",
+    "Se resetează în": "Will reset in",
+    "Produse pentru": "Product for",
+    "El": "Her",
+    "Ea": "Him",
+    "Plata cu": "Pay with",
+    "ramburs": "ramburs",
+    "sau": "or",
+    "card": "card",
+    "Livrare gratuită la comenzi de peste": "Free shiping for command higher than",
+    "Comandă livrată în": "Command shipped in",
+    "3-5 zile": "3-5 bussiness",
+    "lucrătoare": "day",
+    "Produse": "Products",
+    "Tricou pentru El": "T-shirt for Him",
+    "Tricou pentru Ea": "T-shirt for Her",
+    "Hanorac pentru El": "Hoodie for Him",
+    "Hanorac pentru Ea": "Hoodie for Her",
+    "Pantaloni lungi pentru El": "Long pants for Him",
+    "Pantaloni lungi pentru Ea": "Long pants for Her",
+    "Pantaloni scurți pentru El": "Short pants for Him",
+    "Pantaloni scurți pentru Ea": "Short pants for Her",
+    "Adidași pentru El": "Shoes for Him",
+    "Adidași pentru Ea": "Shoes for Her",
+    "Șosete pentru El": "Shocks for Him",
+    "Șosete pentru Ea": "Shocks for Her"
+  },
+  "Nav": {
+    "Ești sigur?": "Are you sure?",
+    "Asta o să îți șteargă produsul de la favorite.": "This will delete the product from favorite",
+    "Înapoi": "Back",
+    "Șterge":"Delete"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "Main": {
+    "Noi dăm": "Noi dăm",
+    "Moda": "Moda",
+    "Produsul zilei": "Produsul zilei",
+    "Se resetează în": "Se resetează în",
+    "Produse pentru": "Produse pentru",
+    "El": "El",
+    "Ea": "Ea",
+    "Plata cu": "Plata cu",
+    "ramburs": "ramburs",
+    "sau": "sau",
+    "card": "card",
+    "Livrare gratuită la comenzi de peste": "Livrare gratuită la comenzi de peste",
+    "Comandă livrată în": "Comandă livrată în",
+    "3-5 zile": "3-5 zile",
+    "lucrătoare": "lucratoare",
+    "Produse": "Produse",
+    "Tricou pentru El": "Tricou pentru El",
+    "Tricou pentru Ea": "Tricou pentru Ea",
+    "Hanorac pentru El": "Hanorac pentru El",
+    "Hanorac pentru Ea": "Hanorac pentru Ea",
+    "Pantaloni lungi pentru El": "Pantaloni lungi pentru El",
+    "Pantaloni lungi pentru Ea": "Pantaloni lungi pentru Ea",
+    "Pantaloni scurți pentru El": "Pantaloni scurți pentru El",
+    "Pantaloni scurți pentru Ea": "Pantaloni scurți pentru El",
+    "Adidași pentru El": "Adidași pentru El",
+    "Adidași pentru Ea": "Adidași pentru Ea",
+    "Șosete pentru El": "Șosete pentru El",
+    "Șosete pentru Ea": "Șosete pentru Ea"
+  },
+  "Nav": {
+    "Ești sigur?": "Ești sigur?",
+    "Asta o să îți șteargă produsul de la favorite.": "Asta o să îți șteargă produsul de la favorite.",
+    "Înapoi": "Înapoi",
+    "Șterge":"Șterge"
+  }
+}

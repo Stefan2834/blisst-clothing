@@ -8,10 +8,12 @@ import Product from '../SmallComponents/Product'
 
 
 
+
 export default function Main() {
   const { server, product } = useAuth()
-  const { darkTheme } = useDefault()
+  const { darkTheme, t } = useDefault()
   const [suggestion, setSuggestion] = useState()
+
 
   useEffect(() => {
     document.title = 'Blisst'
@@ -29,8 +31,8 @@ export default function Main() {
         <div className='main-off'>
           <div className='main-left'>
             <div className='flex items-center justify-start flex-col'>
-              <div className='main-off-title'>Noi dam <span className='principal'>Moda</span></div>
-              <div className='main-off-text'>Produsul zilei:</div>
+              <div className='main-off-title'>{t('Main.Noi dăm')} <span className='principal'>{t('Main.Moda')}</span></div>
+              <div className='main-off-text'>{t('Main.Produsul zilei')}:</div>
               <div className='main-cloth-div'>
                 {suggestion && (
                   <Product product={suggestion} />
@@ -42,18 +44,18 @@ export default function Main() {
           <div className='main-right'>
             <div className='main-off-man'>
               <Link to='/main/cloth/barbati' className='main-off-photo-man' />
-              <Link to='/main/cloth/barbati' className='main-off-more'>Produse pentru
+              <Link to='/main/cloth/barbati' className='main-off-more'>{t('Main.Produse pentru')}
                 <span className='principal ml-2'>
-                  El
+                  {t('Main.El')}
                 </span>
                 <div className='nav-arrow' />
               </Link>
             </div>
             <div className='main-off-woman'>
               <Link to='/main/cloth/femei' className='main-off-photo-woman' />
-              <Link to='/main/cloth/femei' className='main-off-more'>Produse pentru
+              <Link to='/main/cloth/femei' className='main-off-more'>{t('Main.Produse pentru')}
                 <span className='principal ml-2'>
-                  Ea
+                  {t('Main.Ea')}
                 </span>
                 <div className='nav-arrow' />
               </Link>
@@ -64,25 +66,25 @@ export default function Main() {
           <div className='main-info-card'>
             <div className={darkTheme ? 'main-info-icon-truck-dark' : 'main-info-icon-truck'} />
             <div className='main-info-text'>
-              Plata cu <span className='principal'>ramburs</span> la curier
+              {t('Main.Plata cu')} <span className='principal'>{t('Main.ramburs')}</span> {t('Main.sau')} <span className='principal'>{t('Main.card')}</span>
             </div>
           </div>
           <div className='main-info-card'>
             <div className={darkTheme ? 'main-info-icon-wallet-dark' : 'main-info-icon-wallet'} />
             <div className='main-info-text'>
-              Livrare gratuita la comenzi de peste <span className='principal'>200</span> de Lei
+              {t('Main.Livrare gratuită la comenzi de peste')} <span className='principal'>200</span> Lei
             </div>
           </div>
           <div className='main-info-card'>
             <div className={darkTheme ? 'main-info-icon-watch-dark' : 'main-info-icon-watch'} />
             <div className='main-info-text'>
-              Comanda livrata in <span className='principal'>3-5 zile</span> lucratoare
+              {t('Main.Comandă livrată în')} <span className='principal'>{t('Main.3-5 zile')}</span> {t('Main.lucrătoare')}
             </div>
           </div>
         </div>
         <div className='main-disc'>
           <div className='main-disc-top'>
-            <div className='main-disc-top-text'>Produse</div>
+            <div className='main-disc-top-text'>{t('Main.Produse')}</div>
           </div>
           <div className='main-disc-flex'>
             <div className='main-disc-flex-container'>
@@ -90,7 +92,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo1' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Tricou pentru El
+                    {t('Main.Tricou pentru El')}
                   </div>
                 </div>
               </Link>
@@ -98,7 +100,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo2' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Tricou pentru Ea
+                    {t('Main.Tricou pentru Ea')}
                   </div>
                 </div>
               </Link>
@@ -106,7 +108,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo3' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Hanorac pentru El
+                    {t('Main.Hanorac pentru El')}
                   </div>
                 </div>
               </Link>
@@ -114,7 +116,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo4' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Hanorac pentru Ea
+                    {t('Main.Hanorac pentru Ea')}
                   </div>
                 </div>
               </Link>
@@ -124,7 +126,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo5' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Pantaloni lungi pentru El
+                    {t('Main.Pantaloni lungi pentru El')}
                   </div>
                 </div>
               </Link>
@@ -132,7 +134,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo6' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Pantaloni lungi pentru Ea
+                    {t('Main.Pantaloni lungi pentru Ea')}
                   </div>
                 </div>
               </Link>
@@ -140,7 +142,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo7' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Pantaloni scurti pentru El
+                    {t('Main.Pantaloni scurți pentru El')}
                   </div>
                 </div>
               </Link>
@@ -148,7 +150,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo8' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Pantaloni scurti pentru Ea
+                    {t('Main.Pantaloni scurți pentru Ea')}
                   </div>
                 </div>
               </Link>
@@ -158,7 +160,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo9' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Adidasi pentru El
+                    {t('Main.Adidași pentru El')}
                   </div>
                 </div>
               </Link>
@@ -166,7 +168,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo10' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Adidasi pentru Ea
+                    {t('Main.Adidași pentru Ea')}
                   </div>
                 </div>
               </Link>
@@ -174,7 +176,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo11' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Papuci pentru El
+                    {t('Main.Șosete pentru El')}
                   </div>
                 </div>
               </Link>
@@ -182,7 +184,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo12' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    Papuci pentru Ea
+                    {t('Main.Șosete pentru Ea')}
                   </div>
                 </div>
               </Link>

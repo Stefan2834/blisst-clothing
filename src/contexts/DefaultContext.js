@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useTransition, useDeferredValue } from 'react'
 import useLocalStorage from '../CustomHook/useLocalStorage'
-import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
 
 export const DefaultContext = createContext();
 
@@ -9,6 +9,7 @@ export function useDefault() {
 }
 
 export default function DefaultProvider({ children }) {
+  const { t } = useTranslation()
   const [darkTheme, setDarkTheme] = useLocalStorage('dark', false)
   const [isPending, startTransition] = useTransition({ timeoutMs: 500 });
   const [activeForm, setActiveForm] = useState(true)
@@ -16,7 +17,6 @@ export default function DefaultProvider({ children }) {
   const [loading, setLoading] = useState(true)
   const [filterOpen, setFilterOpen] = useState(false)
   const [productLoad, setProductLoad] = useState(10);
-  const { pathname } = useLocation()
   const [scrollPosition, setScrollPosition] = useState(0)
   const [filter, setFilter] = useState({
     minPrice: '',
@@ -61,7 +61,8 @@ export default function DefaultProvider({ children }) {
     filter, setFilter,
     startTransition, isPending,
     deferredSearch,
-    scrollPosition, setScrollPosition
+    scrollPosition, setScrollPosition,
+    t
   }
   return (
     <DefaultContext.Provider value={value}>

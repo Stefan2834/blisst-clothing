@@ -4,7 +4,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
 import { useDefault } from '../../contexts/DefaultContext'
 import Swal from 'sweetalert2';
-import test from '../../clothing/man/top/custom/frontShape.png'
+import i18n from '../../index'
 
 
 export default function Navbar() {
@@ -19,9 +19,10 @@ export default function Navbar() {
   } = useAuth()
   const { setError, setActiveForm,
     darkTheme, setDarkTheme,
-    setFilterOpen
+    setFilterOpen, t
   } = useDefault()
   const { pathname } = useLocation();
+  const [lang, setLang] = useState('en')
   const [open, setOpen] = useState(false)
   const [drop, setDrop] = useState([false, false, false, false, false, false])
   const [hover, setHover] = useState([true, false, false])
@@ -60,14 +61,14 @@ export default function Navbar() {
   function handleDeleteFav(e, product) {
     e.preventDefault()
     Swal.fire({
-      title: 'Esti sigur?',
-      text: 'Asta o sa iti stearga produsul de la favorite.',
+      title: t('Nav.Ești sigur?'),
+      text: t('Nav.Asta o să îți șteargă produsul de la favorite.'),
       icon: 'warning',
-      cancelButtonText: 'Inapoi',
+      cancelButtonText: t('Nav.Înapoi'),
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sterge-l'
+      confirmButtonText: t('Nav.Șterge')
     }).then((result) => {
       if (result.isConfirmed) {
         dispatchFav({ type: 'favRemove', payload: { fav: product } })
@@ -274,6 +275,12 @@ export default function Navbar() {
           </div>
         </div>
         <div className='nav-right'>
+          <select value={lang} className='nav-lang'
+            onChange={e => { setLang(e.target.value); i18n.changeLanguage(e.target.value) }}
+          >
+            <option value="en" className='nav-lang'>En</option>
+            <option value='ro' className='nav-lang'>Ro</option>
+          </select>
           {admin && (
             <div className={drop[6] ? 'nav-icon nav-icon-active' : 'nav-icon'}
               ref={(el) => (navIconRefs.current[6] = el)}

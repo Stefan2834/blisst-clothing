@@ -5,6 +5,7 @@ import './css/sidebar.css'
 import './css/profile.css'
 import './css/clothing.css'
 import './css/specialProduct.css'
+
 import { useEffect } from 'react';
 import { AuthProvider } from '../contexts/AuthContext';
 import DefaultProvider from '../contexts/DefaultContext';
@@ -115,7 +116,7 @@ function App() {
                 <Route path='discount' element={<AdminRoute element={AdminDiscount} />} />
                 <Route path='errors' element={<AdminRoute element={AdminErrors} />} />
                 <Route path='list' element={<OwnerRoute element={AdminList} />} />
-               </Route>
+              </Route>
 
 
             </Route>

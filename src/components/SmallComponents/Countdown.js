@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useDefault } from '../../contexts/DefaultContext';
 
 export default function Countdown() {
+  const { t } = useDefault()
   const [countdown, setCountdown] = useState({ hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export default function Countdown() {
 
   return (
     <div className="countdown-timer">
-      Se reseteaza in:
+      {t('Main.Se resetează în')}:
       <div className="countdown-timer-item">
         {countdown.hours < 10 ? `0${countdown.hours}` : countdown.hours }:
         {countdown.minutes < 10 ? `0${countdown.minutes}` : countdown.minutes }:
