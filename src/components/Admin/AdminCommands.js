@@ -92,17 +92,14 @@ export default function AdminCommands() {
                   <option value={'Toate'} className='comm-option' >
                     Toate
                   </option>
-                  <option value={'Se livreaza'} className='comm-option' >
-                    Se livreaza
+                  <option value={'Se livrează'} className='comm-option' >
+                    Se livrează
                   </option>
-                  <option value={'Plasata'} className='comm-option' >
-                    Plasata
+                  <option value={'Plasată'} className='comm-option' >
+                    Plasată
                   </option>
-                  <option value={'Livrata'} className='comm-option'>
-                    Livrata
-                  </option>
-                  <option value={'Anulata'} className='comm-option'>
-                    Anulata
+                  <option value={'Livrată'} className='comm-option'>
+                    Livrată
                   </option>
                 </select>
               </div>
@@ -190,17 +187,17 @@ export default function AdminCommands() {
                           <select value={command.status} className='comm-option'
                             onChange={e => { handleStatus(e.target.value, command.id, command.uid) }}
                           >
-                            <option value={'Plasata'} className='comm-option' >
-                              Plasata
+                            <option value={'Plasată'} className='comm-option' >
+                              Plasată
                             </option>
-                            <option value={'Se livreaza'} className='comm-option' >
-                              Se livreaza
+                            <option value={'Se livrează'} className='comm-option' >
+                              Se livrează
                             </option>
-                            <option value={'Livrata'} className='comm-option'>
-                              Livrata
+                            <option value={'Livrată'} className='comm-option'>
+                              Livrată
                             </option>
-                            <option value={'Anulata'} className='comm-option'>
-                              Anulata
+                            <option value={'Anulată'} className='comm-option'>
+                              Anulată
                             </option>
                           </select>
                         </div>

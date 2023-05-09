@@ -365,7 +365,7 @@ button.acc-btn:hover {
   min-height:700px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   background-color:var(--color-third);
   z-index:1;
   position: relative;
@@ -382,7 +382,7 @@ button.acc-btn:hover {
   height:100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content:center;
 }
 .main-left {
   width:30%;

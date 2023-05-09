@@ -8,13 +8,13 @@ import { useDefault } from '../../contexts/DefaultContext'
 export default function Footer() {
   const { pathname } = useLocation()
   const { currentUser, server, det, setDet } = useAuth()
-  const { darkTheme } = useDefault()
+  const { darkTheme, t } = useDefault()
   const [full, setFull] = useState(true)
 
   const handleSubscribe = () => {
     Swal.fire({
-      title: 'Te-ai abonat',
-      text: "Multumim ca te-ai abonat! Verifica adresa de email pentru a primi codul de reducere.",
+      title: t('Foo.Te-ai abonat'),
+      text: t('Foo.Mulțumim că te-ai abonat! Verifică adresa de email pentru a primit codul de reducere.'),
       icon: 'success',
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Ok',
@@ -23,8 +23,8 @@ export default function Footer() {
   }
   const handleUnSubscribe = () => {
     Swal.fire({
-      title: 'Ne pare rau.',
-      text: "Te-ai dezabonat de la News Letter",
+      title: t('Foo.Ne pare rău.'),
+      text: t('Foo.Te-ai dezabonat de la NewsLetter'),
       icon: 'success',
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Ok',
@@ -59,55 +59,59 @@ export default function Footer() {
       <div className={full ? 'foo-content-full' : 'foo-content'}>
         <div className='foo-top'>
           <div className='foo-collumn'>
-            <div className='foo-title'>Barbati</div>
-            <Link to='/main/cloth/barbati top tricouri' className='foo-text'>Tricouri</Link>
-            <Link to='/main/cloth/barbati top bluze' className='foo-text'>Bluze</Link>
-            <Link to='/main/cloth/barbati bottom lungi' className='foo-text'>Pantaloni lungi</Link>
-            <Link to='/main/cloth/barbati bottom scurti' className='foo-text'>Pantaloni scurti</Link>
-            <Link to='/main/cloth/barbati foot adidasi' className='foo-text'>Adidasi</Link>
-            <Link to='/main/cloth/barbati foot papuci' className='foo-text'>Papuci</Link>
+            <div className='foo-title'>{t('Foo.Bărbați')}</div>
+            <Link to='/main/cloth/barbati top tricouri' className='foo-text'>{t('Foo.Tricouri')}</Link>
+            <Link to='/main/cloth/barbati top bluze' className='foo-text'>{t('Foo.Bluze')}</Link>
+            <Link to='/main/cloth/barbati bottom lungi' className='foo-text'>{t('Foo.Pantaloni lungi')}</Link>
+            <Link to='/main/cloth/barbati bottom scurti' className='foo-text'>{t('Foo.Pantaloni scurți')}</Link>
+            <Link to='/main/cloth/barbati foot adidasi' className='foo-text'>{t('Foo.Adidași')}</Link>
+            <Link to='/main/cloth/barbati foot papuci' className='foo-text'>{t('Foo.Șosete')}</Link>
           </div>
           <div className='foo-collumn'>
-            <div className='foo-title'>Femei</div>
-            <Link to='/main/cloth/femei top tricouri' className='foo-text'>Tricouri</Link>
-            <Link to='/main/cloth/femei top bluze' className='foo-text'>Bluze</Link>
-            <Link to='/main/cloth/femei bottom lungi' className='foo-text'>Pantaloni lungi</Link>
-            <Link to='/main/cloth/femei bottom scurti' className='foo-text'>Pantaloni scurti</Link>
-            <Link to='/main/cloth/femei foot adidasi' className='foo-text'>Adidasi</Link>
-            <Link to='/main/cloth/femei foot papuci' className='foo-text'>Papuci</Link>
+            <div className='foo-title'>{t('Foo.Femei')}</div>
+            <Link to='/main/cloth/femei top tricouri' className='foo-text'>{t('Foo.Tricouri')}</Link>
+            <Link to='/main/cloth/femei top bluze' className='foo-text'>{t('Foo.Bluze')}</Link>
+            <Link to='/main/cloth/femei bottom lungi' className='foo-text'>{t('Foo.Pantaloni lungi')}</Link>
+            <Link to='/main/cloth/femei bottom scurti' className='foo-text'>{t('Foo.Pantaloni scurți')}</Link>
+            <Link to='/main/cloth/femei foot adidasi' className='foo-text'>{t('Foo.Adidași')}</Link>
+            <Link to='/main/cloth/femei foot papuci' className='foo-text'>{t('Foo.Șosete')}</Link>
           </div>
           <div className='foo-collumn'>
-            <div className='foo-title'>Contul meu</div>
-            <Link to='/main/fav' className='foo-text'>Favorite</Link>
-            <Link to='/main/cart' className='foo-text'>Cosul meu</Link>
-            <Link to='/main/profile' className='foo-text'>Profilul meu</Link>
-            <Link to='/connect' className='foo-text'>Conecteaza-te</Link>
+            <div className='foo-title'>{t('Foo.Contul meu')}</div>
+            <Link to='/main/fav' className='foo-text'>{t('Foo.Favorite')}</Link>
+            <Link to='/main/cart' className='foo-text'>{t('Foo.Coșul meu')}</Link>
+            <Link to='/main/profile' className='foo-text'>{t('Foo.Profilul meu')}</Link>
+            {currentUser ? (
+              <Link to='/connect' className='foo-text'>{t('Foo.Deconectare')}</Link>
+            ) : (
+              <Link to='/connect' className='foo-text'>{t('Foo.Conectare')}</Link>
+            )}
           </div>
           <div className='foo-collumn'>
-            <div className='foo-title'>Informatii</div>
-            <Link to='/main/terms' className='foo-text'>Termeni si conditii</Link>
-            <Link to='/main/faq' className='foo-text'>Faq</Link>
-            <Link to='/main/help' className='foo-text'>Ajutor</Link>
-            <Link to='/main/license' className='foo-text'>Licente</Link>
-            <Link to='/main/credits' className='foo-text'>Credite</Link>
+            <div className='foo-title'>{t('Foo.Informații')}</div>
+            <Link to='/main/terms' className='foo-text'>{t('Foo.Termeni și condiții')}</Link>
+            <Link to='/main/faq' className='foo-text'>{t('Foo.Întrebări frecvente')}</Link>
+            <Link to='/main/help' className='foo-text'>{t('Foo.Ajutor')}</Link>
+            <Link to='/main/license' className='foo-text'>{t('Foo.Licențe')}</Link>
+            <Link to='/main/credits' className='foo-text'>{t('Foo.Credite')}</Link>
           </div>
           <div className='foo-collumn'>
-            <div className='foo-title-news'>News letter</div>
+            <div className='foo-title-news'>NewsLetter</div>
             {currentUser ? (
               <>
                 {det.newsLetter ? (
-                  <div className='foo-news'>Primesti prea multe emailuri?
-                    <div className='foo-btn' onClick={handleUnSubscribe}>Dezaboneaza-te</div>
+                  <div className='foo-news'>{t('Foo.Primești prea multe emailuri?')}
+                    <div className='foo-btn' onClick={handleUnSubscribe}>{t('Foo.Dezabonează-te')}</div>
                   </div>
                 ) : (
-                  <div className='foo-news'>Aboneaza-te si primesti 10% reducere.
-                    <div className='foo-btn' onClick={handleSubscribe}>Aboneaza-te</div>
+                  <div className='foo-news'>{t('Foo.Abonează-te si primești 10% reducere.')}
+                    <div className='foo-btn' onClick={handleSubscribe}>{t('Foo.Abonează-te')}</div>
                   </div>
                 )}
               </>
             ) : (
-              <div className='foo-news'>Poti beneficia de o reducere de 10% daca te conectezi.
-                <Link to='/connect' className='foo-btn'>Conecteaza-te</Link>
+              <div className='foo-news'>{t('Foo.Poți beneficia de o reducere de 10% dacă te conectezi')}.
+                <Link to='/connect' className='foo-btn'>{t('Foo.Conectează-te')}</Link>
               </div>
             )}
           </div>

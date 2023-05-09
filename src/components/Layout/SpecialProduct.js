@@ -12,7 +12,7 @@ import axios from 'axios'
 export default function SpecialProduct() {
   const { idPath } = useParams()
   const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct, server } = useAuth()
-  const { darkTheme } = useDefault()
+  const { darkTheme, lang, t } = useDefault()
   const [sizeType, setSizeType] = useState([])
   const [loading, setLoading] = useState(true)
   const [cartSpec, dispatch] = useReducer(Reducer, { size: '', number: 1 })
@@ -29,7 +29,6 @@ export default function SpecialProduct() {
       try {
         const special = product.find(item => item.id === idPath)
         if (special) {
-          document.title = `Blisst — ${special.name}`
           const reviewList = (await axios.post(`${server}/product/review`, { id: special.id })).data.review
           const reviewIndex = reviewList.findIndex(rev => rev.user === email)
           if (reviewIndex !== -1) {
@@ -44,7 +43,6 @@ export default function SpecialProduct() {
             setSizeType(['XS', 'S', 'M', 'L', 'XL', 'XXL'])
           }
         } else {
-          document.title = `Blisst - Produs inexistent`
           navigate('/main/productNotFound')
         }
       } catch (err) {
@@ -64,17 +62,24 @@ export default function SpecialProduct() {
       document.body.style.overflowY = 'scroll'
     }
   }, [zoom])
+
+  useEffect(() => {
+    const special = product.find(item => item.id === idPath)
+    if (special) {
+      document.title = `Blisst — ${t(`${special.name}`)}`
+    }
+  }, [lang])
   const handleStar = (ratingValue) => {
     if (ratingValue === 1) {
-      setReview({ ...review, type: 'Nu recomand', star: ratingValue })
+      setReview({ ...review, type: t('Spec.Nu recomand'), star: ratingValue })
     } else if (ratingValue === 2) {
-      setReview({ ...review, type: 'Slab', star: ratingValue })
+      setReview({ ...review, type: t('Spec.Slab'), star: ratingValue })
     } else if (ratingValue === 3) {
-      setReview({ ...review, type: 'Acceptabil', star: ratingValue })
+      setReview({ ...review, type: t('Spec.Acceptabil'), star: ratingValue })
     } else if (ratingValue === 4) {
-      setReview({ ...review, type: 'Bun', star: ratingValue })
+      setReview({ ...review, type: t('Spec.Bun'), star: ratingValue })
     } else if (ratingValue === 5) {
-      setReview({ ...review, type: 'Excelent', star: ratingValue })
+      setReview({ ...review, type: t('Spec.Excelent'), star: ratingValue })
     }
   }
   const handleSubmit = async (e) => {
@@ -82,11 +87,11 @@ export default function SpecialProduct() {
     e.preventDefault()
     if (review.star === 0) {
       Swal.fire({
-        title: 'Eroare!',
-        text: "Nu ai selectat numarul de stele.",
+        title: t('Spec.Eroare!'),
+        text: t('Spec.Nu ai selectat numărul de stele.'),
         icon: 'error',
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi',
+        confirmButtonText: t('Spec.Înapoi'),
       })
       setLoading(false)
       return
@@ -105,19 +110,19 @@ export default function SpecialProduct() {
         }
       }))
       Swal.fire({
-        title: 'Postat',
-        text: "Review-ul a fost postat cu succes",
+        title: t('Spec.Postat!'),
+        text: t('Spec.Review-ul a fost postat cu succes.'),
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Ok',
       })
     } else {
       Swal.fire({
-        title: 'Eroare!',
-        text: `Am intampinat o eroare: ${reviewPost.data.message.code}`,
+        title: t('Spec.Eroare!'),
+        text: `${t('Spec.Am întâmpinat o eroare')} : ${reviewPost.data.message.code} .`,
         icon: 'error',
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi',
+        confirmButtonText: t('Spec.Înapoi'),
       })
     }
     setLoading(false)
@@ -128,11 +133,11 @@ export default function SpecialProduct() {
     setReview({ ...review, edit: false })
     if (review.star === 0) {
       Swal.fire({
-        title: 'Eroare!',
-        text: "Nu ai selectat numarul de stele.",
+        title: t('Spec.Eroare!'),
+        text: t('Spec.Nu ai selectat numărul de stele.'),
         icon: 'error',
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi',
+        confirmButtonText: t('Spec.Înapoi'),
       })
       setLoading(false)
       return
@@ -151,19 +156,19 @@ export default function SpecialProduct() {
         }
       }))
       Swal.fire({
-        title: 'Editat',
-        text: "Review-ul a fost editat cu succes",
+        title: t('Spec.Editat!'),
+        text: t('Spec.Review-ul a fost editat cu succes.'),
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Ok',
       })
     } else {
       Swal.fire({
-        title: 'Eroare!',
-        text: `Am intampinat o eroare: ${revUpdate.data.message.code}`,
+        title: t('Spec.Eroare!'),
+        text: `${t('Spec.Am întâmpinat o eroare')} : ${revUpdate.data.message.code}.`,
         icon: 'error',
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi',
+        confirmButtonText: t('Spec.Înapoi'),
       })
     }
     setLoading(false)
@@ -184,19 +189,19 @@ export default function SpecialProduct() {
         }
       }))
       Swal.fire({
-        title: 'Star',
-        text: "Review-ul a fost sters cu succes",
+        title: t('Spec.Șters!'),
+        text: t('Spec.Review-ul a fost șters cu succes.'),
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Ok',
       })
     } else {
       Swal.fire({
-        title: 'Eroare!',
-        text: `Am intampinat o eroare: ${reviewDelete.data.message.code}`,
+        title: t('Spec.Eroare!'),
+        text: `${t('Spec.Am întâmpinat o eroare')}: ${reviewDelete.data.message.code} .`,
         icon: 'error',
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi',
+        confirmButtonText: t('Spec.Înapoi'),
       })
     }
     setLoading(false)
@@ -205,30 +210,30 @@ export default function SpecialProduct() {
     if (currentUser) {
       if (cartSpec.size === '' || cartSpec.number === '') {
         Swal.fire({
-          title: 'Eroare',
-          text: "Nu ai selectat marimea sau numarul de produse.",
+          title: t('Spec.Eroare!'),
+          text: t('Spec.Nu ai selectat mărimea sau numărul de produse.'),
           icon: 'error',
           confirmButtonColor: '#3085d6',
-          confirmButtonText: 'Inapoi'
+          confirmButtonText: 'Înapoi'
         })
       } else {
         dispatchCart({ type: 'cartAdd', payload: { clothing: specialClothing, spec: cartSpec } })
         Swal.fire(
-          'Adaugat!',
-          'Produsul a fost adaugat cu succes in cos.',
+          t('Spec.Adăugat!'),
+          t('Spec.Produsul a fost adăugat cu succes in coș.'),
           'success'
         )
       }
     } else {
       Swal.fire({
-        title: 'Nu esti conectat!',
-        text: "Trebuie sa te conectezi pentru aceasta actiune.",
+        title: t('Spec.Nu ești conectat!'),
+        text: t('Spec.Trebuie să te conectezi pentru această actiune.'),
         icon: 'warning',
         showCancelButton: true,
-        cancelButtonText: 'Inapoi',
+        cancelButtonText: t('Spec.Înapoi'),
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Conecteaza-te'
+        confirmButtonText: t('Spec.Conectare')
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = '/connect'
@@ -284,7 +289,7 @@ export default function SpecialProduct() {
                   </div>
                 </div>
                 <div className='spec-right'>
-                  <div className='spec-name'>{specialClothing.name}</div>
+                  <div className='spec-name'>{t(`${specialClothing.name}`)}</div>
                   <div className='flex mb-2 flex-wrap'>
                     {[...Array(5)].map((_, i) => {
                       const ratingValue = i + 1;
@@ -298,14 +303,14 @@ export default function SpecialProduct() {
                     })}
                     {specialClothing.star.total === 0 ? (
                       <>
-                        Medie: 0.00
+                        {t('Spec.Medie')}: 0.00
                       </>
                     ) : (
                       <>
-                        Medie: {Number((specialClothing.star.total / specialClothing.star.nr).toFixed(2))}
+                        {t('Spec.Medie')}: {Number((specialClothing.star.total / specialClothing.star.nr).toFixed(2))}
                       </>
                     )}
-                    <div>({specialClothing.star.nr} Review-uri)</div>
+                    <div>({specialClothing.star.nr} {t('Spec.Review-uri')})</div>
                   </div>
                   {specialClothing.discount > 0 ? (
                     <>
@@ -320,15 +325,15 @@ export default function SpecialProduct() {
                       <div className='spec-id'>{specialClothing.price} Lei</div>
                     </>
                   )}
-                  <div className='spec-id-text'>Id produs: <span className='spec-id'>{specialClothing.id}</span></div>
-                  <div className='spec-id-text flex'>Culori:
+                  <div className='spec-id-text'>{t('Spec.Id produs')}: <span className='spec-id'>{specialClothing.id}</span></div>
+                  <div className='spec-id-text flex'>{t('Spec.Culori')}:
                     {specialClothing.colors.map(color => {
                       return (
                         <div className='spec-color' style={{ backgroundColor: color }} />
                       )
                     })}
                   </div>
-                  <div className='spec-id my-2'>Marimi</div>
+                  <div className='spec-id my-2'>{t('Spec.Mărimi')}</div>
                   <div className='spec-size-flex'>
                     {sizeType.map((sizeMap) => {
                       return (
@@ -348,7 +353,7 @@ export default function SpecialProduct() {
                     })}
                   </div>
                   <div className='spec-cart'>
-                    <div className='spec-add-cart' onClick={() => { handleAddToCart() }}>Adauga in cos
+                    <div className='spec-add-cart' onClick={() => { handleAddToCart() }}>{t('Spec.Adaugă în coș')}
                       <div className={darkTheme ? 'spec-cart-photo spec-cart-dark' : 'spec-cart-photo spec-cart-light'} />
                     </div>
                     <div className='spec-cart-nr'>
@@ -382,16 +387,16 @@ export default function SpecialProduct() {
                       <div className={darkTheme ? 'cloth-fav-dark' : "cloth-fav"} onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: specialClothing, user: currentUser } })} />
                     )}
                   </div>
-                  <div className='spec-det'><span className='spec-span'>Detalii: </span>{specialClothing.spec}</div>
+                  <div className='spec-det'><span className='spec-span'>{t('Spec.Detalii')}: </span>{specialClothing.spec}</div>
                 </div>
               </div>
               <div className='spec-white-space'>
                 {specialClothing.review.filter(item => item.user === email).length === 0 ? (
-                  <div className='spec-rev-text-dark'>Lasa un Review</div>
+                  <div className='spec-rev-text-dark'>{t('Spec.Lasă un Review')}</div>
                 ) : (
-                  <div className='spec-rev-text-dark'>Editeaza</div>
+                  <div className='spec-rev-text-dark'>{t('Spec.Editează')}</div>
                 )}
-                <div className='spec-rev-text-dark'>Alte Reviewuri</div>
+                <div className='spec-rev-text-dark'>{t('Spec.Alte Review-uri')}</div>
               </div>
               <div className='spec-review-page'>
                 <div className='spec-review-left'>
@@ -416,7 +421,7 @@ export default function SpecialProduct() {
                             </div>
                             <div className='spec-rev-left-text'>{review.type}</div>
                             <div className='flex flex-col items-start justify-start w-full'>
-                              <div className='spec-rev-title'>Parerea ta conteaza</div>
+                              <div className='spec-rev-title'>{t('Spec.Părerea ta contează')}</div>
                               <label className='spec-rev-label'>
                                 <input className='spec-rev-input' type='text'
                                   value={review.text}
@@ -431,10 +436,10 @@ export default function SpecialProduct() {
                               </label>
                             </div>
                             <div className='my-3 flex items-center justify-around w-full'>
-                              <input type='submit' value={'Posteaza'} className='spec-rev-submit'
+                              <input type='submit' value={t('Spec.Postează')} className='spec-rev-submit'
                                 onClick={() => { setReview({ ...review, anonim: false }) }}
                               />
-                              <input type='submit' value={'Posteaza anonim'} className='spec-rev-submit-anonim'
+                              <input type='submit' value={t('Spec.Postează anonim')} className='spec-rev-submit-anonim'
                                 onClick={() => { setReview({ ...review, anonim: true }) }}
                               />
                             </div>
@@ -484,13 +489,13 @@ export default function SpecialProduct() {
                                         </label>
                                       </div>
                                       <div className='spec-rev-edit-flex'>
-                                        <input type='submit' value={'Salveaza'} className='spec-rev-submit'
+                                        <input type='submit' value={t('Spec.Salvează')} className='spec-rev-submit'
                                           onClick={() => { setReview({ ...review, anonim: false }) }}
                                         />
-                                        <input type='submit' value={'Salveaza anonim'} className='spec-rev-submit-anonim'
+                                        <input type='submit' value={t('Spec.Salvează anonim')} className='spec-rev-submit-anonim'
                                           onClick={() => { setReview({ ...review, anonim: true }) }}
                                         />
-                                        <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: false })}>Inapoi</div>
+                                        <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: false })}>{t('Spec.Înapoi')}</div>
                                       </div>
                                     </form>
                                   </>
@@ -502,7 +507,7 @@ export default function SpecialProduct() {
                                       <div className='spec-rev-upper'>
                                         {rev.anonim ? (
                                           <>
-                                            <div className='spec-rev-user'>Anonim</div>
+                                            <div className='spec-rev-user'>{t('Spec.Anonim')}</div>
                                           </>
                                         ) : (
                                           <>
@@ -524,7 +529,7 @@ export default function SpecialProduct() {
                                       </div>
                                       <div className='spec-rev-text'>{rev.text}</div>
                                       <div className='flex items-center justify-around my-2'>
-                                        <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: true })}>Editeaza</div>
+                                        <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: true })}>{t('Spec.Editează')}</div>
                                       </div>
                                     </div>
                                   </>
@@ -537,10 +542,10 @@ export default function SpecialProduct() {
                     </>
                   ) : (
                     <div className='spec-review'>
-                      <div className='spec-rev-name text-center p-2'>Nu esti conectat. Conecteaza-te pentru a lasa o parere.</div>
+                      <div className='spec-rev-name text-center p-2'>{t('Spec.Nu esti conectat. Conectează-te pentru a lăsa o părere.')}</div>
                       <div className='spec-rev-enter'>
                         <div className='spec-rev-type-submit' >
-                          <Link to='/connect' className='spec-rev-submit'>Conecteaza</Link>
+                          <Link to='/connect' className='spec-rev-submit'>{t('Spec.Conectare')}</Link>
                         </div>
                       </div>
                     </div>
@@ -554,7 +559,7 @@ export default function SpecialProduct() {
                           <div className='spec-rev-upper'>
                             {rev.anonim ? (
                               <>
-                                <div className='spec-rev-user'>Anonim</div>
+                                <div className='spec-rev-user'>{t('Spec.Anonim')}</div>
                               </>
                             ) : (
                               <>
@@ -582,7 +587,7 @@ export default function SpecialProduct() {
                   {specialClothing.review.length > review.load && (
                     <div className='spec-rev-more'
                       onClick={() => setReview({ ...review, load: review.load + 4 })}
-                    >Incarca mai multe Reviewuri</div>
+                    >{t('Spec.Încarcă mai multe Review-uri')}</div>
                   )}
                 </div>
               </div>

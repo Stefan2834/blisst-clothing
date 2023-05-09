@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useState, useEffect, useTransition, useDeferredValue } from 'react'
+import React, { createContext, useContext, useState, useEffect, useTransition, useDeferredValue, useLayoutEffect } from 'react'
 import useLocalStorage from '../CustomHook/useLocalStorage'
 import { useTranslation } from 'react-i18next'
+import i18n from '../index'
 
 export const DefaultContext = createContext();
 
@@ -11,6 +12,7 @@ export function useDefault() {
 export default function DefaultProvider({ children }) {
   const { t } = useTranslation()
   const [darkTheme, setDarkTheme] = useLocalStorage('dark', false)
+  const [lang, setLang] = useLocalStorage('lang', 'en')
   const [isPending, startTransition] = useTransition({ timeoutMs: 500 });
   const [activeForm, setActiveForm] = useState(true)
   const [error, setError] = useState('');
@@ -50,6 +52,10 @@ export default function DefaultProvider({ children }) {
     setLoading(false)
   }, [darkTheme])
 
+  useLayoutEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang])
+
 
 
   const value = {
@@ -61,6 +67,7 @@ export default function DefaultProvider({ children }) {
     filter, setFilter,
     startTransition, isPending,
     deferredSearch,
+    lang, setLang,
     scrollPosition, setScrollPosition,
     t
   }

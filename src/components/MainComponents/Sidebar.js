@@ -3,11 +3,16 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useDefault } from '../../contexts/DefaultContext'
 import { colors, validPath } from '../../contexts/Import'
 import { useAuth } from '../../contexts/AuthContext'
+import { useEffect } from 'react'
 
 
 export default function Sidebar() {
   const { collections } = useAuth()
-  const { setProductLoad, darkTheme, startTransition, filter, setFilter, filterOpen, setFilterOpen, setScrollPosition } = useDefault()
+  const { setProductLoad, darkTheme, startTransition,
+    filter, setFilter,
+    filterOpen, setFilterOpen,
+    setScrollPosition, t, lang
+  } = useDefault()
   const { id } = useParams()
   const [sizeType, setSizeType] = useState([])
   const [expand, setExpand] = useState()
@@ -15,8 +20,7 @@ export default function Sidebar() {
   useLayoutEffect(() => {
     console.log(filter.type, id)
     startTransition(() => {
-      document.title = `Blisst — ${id.includes('femei') ? 'Femei' : 'Barbati'}`
-      const newValidPath = [...validPath, ...collections.map(coll => {return `collection ${coll.name}`})] 
+      const newValidPath = [...validPath, ...collections.map(coll => { return `collection ${coll.name}` })]
       if (!newValidPath.includes(id)) {
         navigate('/')
       }
@@ -44,6 +48,10 @@ export default function Sidebar() {
     };
   }, [id])
 
+  useEffect(() => {
+    document.title = `Blisst — ${id.includes('femei') ? t('Side.Femei') : t('Side.Bărbați')}`
+  }, [lang, id])
+
   const handleExpand = (type) => {
     if (expand === type) {
       setExpand()
@@ -58,14 +66,14 @@ export default function Sidebar() {
     <>
       <div className={filterOpen ? 'side-filter-bg' : 'hidden'} onClick={() => setFilterOpen(false)} />
       <div className={filterOpen ? 'side-filter-bar' : 'side-filter-closed'}>
-        <div className='side-font flex items-start'>Filtre
+        <div className='side-font flex items-start'>{t('Side.Filtre')}
           {filterNumber > 0 && (
             <span className="text-sm">({filterNumber})</span>
           )}
         </div>
         <form className="side-form" onChange={() => { setProductLoad(10); window.scrollTo(0, 0) }} onSubmit={(e) => e.preventDefault()}>
           <div className='side-expand' onClick={() => handleExpand('Pret')}>
-            <span className='side-selection'>Pret</span>
+            <span className='side-selection'>{t('Side.Preț')}</span>
             {darkTheme ? (
               <div className={expand === 'Pret' ? 'side-minus-dark' : 'side-plus-dark'} />
             ) : (
@@ -74,7 +82,7 @@ export default function Sidebar() {
           </div>
           <div className={expand === 'Pret' ? 'side-overflow-expand' : 'side-overflow'}>
             <label className='side-selection'>
-              Minim (Lei):
+              {t('Side.Minim')} (Lei):
               <input type='number'
                 className='side-price-input'
                 value={filter.minPrice}
@@ -82,7 +90,7 @@ export default function Sidebar() {
               />
             </label>
             <label className='side-selection'>
-              Maxim (Lei):
+              {t('Side.Maxim')} (Lei):
               <input type='number'
                 className='side-price-input'
                 value={filter.maxPrice}
@@ -91,7 +99,7 @@ export default function Sidebar() {
             </label>
           </div>
           <div className='side-expand' onClick={() => handleExpand('Marimi')}>
-            <span className='side-selection'>Marimi</span>
+            <span className='side-selection'>{t('Side.Mărimi')}</span>
             {darkTheme ? (
               <div className={expand === 'Marimi' ? 'side-minus-dark' : 'side-plus-dark'} />
             ) : (
@@ -115,11 +123,11 @@ export default function Sidebar() {
                 checked={filter.size === ''}
                 onChange={e => startTransition(() => e.target.checked && setFilter({ ...filter, size: '' }))}
               />
-              <div className="side-size-label w-100 side-selection">Toate</div>
+              <div className="side-size-label w-100 side-selection">{t('Side.Toate')}</div>
             </label>
           </div>
           <div className='side-expand' onClick={() => handleExpand('Sorteaza')}>
-            <span className='side-selection'>Sorteaza</span>
+            <span className='side-selection'>{t('Side.Sortează')}</span>
             {darkTheme ? (
               <div className={expand === 'Sorteaza' ? 'side-minus-dark' : 'side-plus-dark'} />
             ) : (
@@ -132,46 +140,46 @@ export default function Sidebar() {
                 checked={filter.sort === ''}
                 onChange={e => startTransition(() => e.target.checked && setFilter({ ...filter, sort: '' }))}
               />
-              <div className="side-size-label side-selection">Implicit</div>
+              <div className="side-size-label side-selection">{t('Side.Implicit')}</div>
             </label>
             <label className="w-24 m-1">
               <input type='checkbox' className="side-size-check"
                 checked={filter.sort === 'nrReview'}
                 onChange={e => startTransition(() => e.target.checked && setFilter({ ...filter, sort: 'nrReview' }))}
               />
-              <div className="side-size-label side-selection">Review-uri</div>
+              <div className="side-size-label side-selection">{t('Side.Review-uri')}</div>
             </label>
             <label className="w-5/12 m-1">
               <input type='checkbox' className="side-size-check"
                 checked={filter.sort === 'price+'}
                 onChange={e => startTransition(() => e.target.checked && setFilter({ ...filter, sort: 'price+' }))}
               />
-              <div className="side-size-label side-selection">Pret <div className={darkTheme ? 'side-size-img-up-dark' : "side-size-img-up"} /></div>
+              <div className="side-size-label side-selection">{t('Side.Preț')} <div className={darkTheme ? 'side-size-img-up-dark' : "side-size-img-up"} /></div>
             </label>
             <label className="w-5/12 m-1">
               <input type='checkbox' className="side-size-check"
                 checked={filter.sort === 'price-'}
                 onChange={e => startTransition(() => e.target.checked && setFilter({ ...filter, sort: 'price-' }))}
               />
-              <div className="side-size-label side-selection">Pret <div className={darkTheme ? 'side-size-img-down-dark' : "side-size-img-down"} /></div>
+              <div className="side-size-label side-selection">{t('Side.Preț')} <div className={darkTheme ? 'side-size-img-down-dark' : "side-size-img-down"} /></div>
             </label>
             <label className="w-5/12 m-1">
               <input type='checkbox' className="side-size-check"
                 checked={filter.sort === 'review+'}
                 onChange={e => startTransition(() => e.target.checked && setFilter({ ...filter, sort: 'review+' }))}
               />
-              <div className="side-size-label side-selection">Rating <div className={darkTheme ? 'side-size-img-up-dark' : "side-size-img-up"} /></div>
+              <div className="side-size-label side-selection">{t('Side.Rating')} <div className={darkTheme ? 'side-size-img-up-dark' : "side-size-img-up"} /></div>
             </label>
             <label className="w-5/12 m-1">
               <input type='checkbox' className="side-size-check"
                 checked={filter.sort === 'review-'}
                 onChange={e => startTransition(() => e.target.checked && setFilter({ ...filter, sort: 'review-' }))}
               />
-              <div className="side-size-label side-selection">Rating <div className={darkTheme ? 'side-size-img-down-dark' : "side-size-img-down"} /></div>
+              <div className="side-size-label side-selection">{t('Side.Rating')} <div className={darkTheme ? 'side-size-img-down-dark' : "side-size-img-down"} /></div>
             </label>
           </div>
           <div className='side-expand' onClick={() => handleExpand('Culori')}>
-            <span className='side-selection'>Culori</span>
+            <span className='side-selection'>{t('Side.Culori')}</span>
             {darkTheme ? (
               <div className={expand === 'Culori' ? 'side-minus-dark' : 'side-plus-dark'} />
             ) : (
@@ -192,7 +200,7 @@ export default function Sidebar() {
             })}
           </div>
           <div className='side-expand' onClick={() => handleExpand('Cauta')}>
-            <span className='side-selection side-selection'>Cauta</span>
+            <span className='side-selection side-selection'>{t('Side.Caută')}</span>
             {darkTheme ? (
               <div className={expand === 'Cauta' ? 'side-minus-dark' : 'side-plus-dark'} />
             ) : (
@@ -201,7 +209,7 @@ export default function Sidebar() {
           </div>
           <div className={expand === 'Cauta' ? 'side-overflow-expand' : 'side-overflow'}>
             <label className='side-selection'>
-              Dupa nume:
+              {t('Side.După nume')}:
               <input type='text'
                 className='side-price-input'
                 value={filter.searchName}
@@ -209,7 +217,7 @@ export default function Sidebar() {
               />
             </label>
             <label className='side-selection'>
-              Dupa id:
+              {t('Side.După id')}:
               <input type='text'
                 className='side-price-input'
                 value={filter.searchId}
@@ -225,7 +233,7 @@ export default function Sidebar() {
               setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, searchId: '', searchName: '' })
             })
           }}>
-            <span className='side-selection side-selection'>Sterge Filtre</span>
+            <span className='side-selection side-selection'>{t('Side.Șterge Filtre')}</span>
             {darkTheme ? (
               <div className='side-del-dark' />
             ) : (

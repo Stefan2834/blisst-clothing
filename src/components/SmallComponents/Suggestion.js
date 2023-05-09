@@ -3,12 +3,14 @@ import '../css/suggestion.css'
 import axios from 'axios'
 import Product from './Product'
 import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../contexts/DefaultContext'
 
 export default function Suggestion(props) {
   const type = props.type
   const [suggestion, setSuggestion] = useState({})
   const [loading, setLoading] = useState(true)
   const { server, product } = useAuth()
+  const { t } = useDefault()
 
   //componentul pentru afisare produsul zilei sau top reducere
 
@@ -42,18 +44,18 @@ export default function Suggestion(props) {
       {loading ? (
         <div className='suggestion'>
           {type === 'daily' ? (
-            <div className='sugg-title'>Produsul Zilei</div>
+            <div className='sugg-title'>{t('Fav.Produsul zilei')}</div>
           ) : (
-            <div className='sugg-title'>Top reducere</div>
+            <div className='sugg-title'>{t('Fav.Top reducere')}</div>
           )}
           <div className='main-cloth-div'></div>
         </div>
       ) : (
         <div className='suggestion'>
           {type === 'daily' ? (
-            <div className='sugg-title'>Produsul Zilei</div>
+            <div className='sugg-title'>{t('Fav.Produsul zilei')}</div>
           ) : (
-            <div className='sugg-title'>Top reducere</div>
+            <div className='sugg-title'>{t('Fav.Top reducere')}</div>
           )}
           <div className='main-cloth-div'>
             <Product product={suggestion} />

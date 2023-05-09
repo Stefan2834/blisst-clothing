@@ -4,7 +4,6 @@ import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
 import { useDefault } from '../../contexts/DefaultContext'
 import Swal from 'sweetalert2';
-import i18n from '../../index'
 
 
 export default function Navbar() {
@@ -19,10 +18,9 @@ export default function Navbar() {
   } = useAuth()
   const { setError, setActiveForm,
     darkTheme, setDarkTheme,
-    setFilterOpen, t
+    setFilterOpen, t, lang, setLang
   } = useDefault()
   const { pathname } = useLocation();
-  const [lang, setLang] = useState('en')
   const [open, setOpen] = useState(false)
   const [drop, setDrop] = useState([false, false, false, false, false, false])
   const [hover, setHover] = useState([true, false, false])
@@ -44,14 +42,14 @@ export default function Navbar() {
   function handleDeleteCart(e, product) {
     e.preventDefault();
     Swal.fire({
-      title: 'Esti sigur?',
-      text: 'Asta o sa iti stearga produsul din cos.',
+      title: t('Nav.Ești sigur?'),
+      text: t('Nav.Asta o să îți șteargă produsul din coș.'),
       icon: 'warning',
-      cancelButtonText: 'Inapoi',
+      cancelButtonText: t('Nav.Înapoi'),
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sterge-l'
+      confirmButtonText: t('Nav.Șterge')
     }).then((result) => {
       if (result.isConfirmed) {
         dispatchCart({ type: 'cartRemove', payload: { cart: product } })
@@ -77,18 +75,18 @@ export default function Navbar() {
   }//la fel ca la handleDeleteCart, dar pentru favorite
 
   useEffect(() => {
-    setDrop([false, false, false, false, false, false, false])
+    setDrop([false, false, false, false, false, false])
   }, [pathname])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navIconRefs.current.every((ref) => !ref.contains(event.target))) {
-        setDrop([false, false, false, false, false, false, false]);
+        setDrop([false, false, false, false, false, false]);
       }
     };
     const handleScroll = () => {
       setOpen(false)
-      setDrop([false, false, false, false, false, false, false])
+      setDrop([false, false, false, false, false, false])
     }
 
     window.addEventListener('click', handleClickOutside);
@@ -119,61 +117,61 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[4] = el)}
           >
             <div className='nav-left-type nav-left-photo1'
-              onClick={() => { setDrop([false, false, false, false, !drop[4], false, false, false]) }}
+              onClick={() => { setDrop([false, false, false, false, !drop[4], false, false]) }}
             />
             <div className={drop[4] ? 'nav-drop-active' : 'nav-drop'}>
               <div className='nav-drop-top'>
                 <div className={hover[0] ? 'nav-drop-link-active' : 'nav-drop-link'}
                   onMouseEnter={() => setHover([true, false, false])}
-                >Topuri</div>
+                >{t('Nav.Topuri')}</div>
                 <div className={hover[1] ? 'nav-drop-link-active' : 'nav-drop-link'}
                   onMouseEnter={() => setHover([false, true, false])}
-                >Pantaloni</div>
+                >{t('Nav.Pantaloni')}</div>
                 <div className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
                   onMouseEnter={() => setHover([false, false, true])}
-                >Incaltaminte</div>
+                >{t('Nav.Încălțăminte')}</div>
               </div>
               <div className='nav-drop-content'>
                 <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/barbati top'>
                     <div className='nav-drop-img nav-1' />
-                    <div className='nav-square-text-man'>Toate</div>
+                    <div className='nav-square-text-man'>{t('Nav.Toate')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati top tricouri'>
                     <div className='nav-drop-img nav-2' />
-                    <div className='nav-square-text-man'>Tricouri</div>
+                    <div className='nav-square-text-man'>{t('Nav.Tricouri')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati top bluze'>
                     <div className='nav-drop-img nav-3' />
-                    <div className='nav-square-text-man'>Bluze</div>
+                    <div className='nav-square-text-man'>{t('Nav.Bluze')}</div>
                   </Link>
                 </div>
                 <div className={hover[1] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/barbati bottom'>
                     <div className='nav-drop-img nav-4' />
-                    <div className='nav-square-text-man'>Toate</div>
+                    <div className='nav-square-text-man'>{t('Nav.Toate')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati bottom scurti'>
                     <div className='nav-drop-img nav-5' />
-                    <div className='nav-square-text-man'>Scurti</div>
+                    <div className='nav-square-text-man'>{t('Nav.Scurți')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati bottom lungi'>
                     <div className='nav-drop-img nav-6' />
-                    <div className='nav-square-text-man'>Lungi</div>
+                    <div className='nav-square-text-man'>{t('Nav.Lungi')}</div>
                   </Link>
                 </div>
                 <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/barbati foot adidasi'>
                     <div className='nav-drop-img nav-7' />
-                    <div className='nav-square-text-man'>Toate</div>
+                    <div className='nav-square-text-man'>{t('Nav.Toate')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati foot adidasi'>
                     <div className='nav-drop-img nav-8' />
-                    <div className='nav-square-text-man'>Adidasi</div>
+                    <div className='nav-square-text-man'>{t('Nav.Adidași')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/barbati foot papuci'>
                     <div className='nav-drop-img nav-9' />
-                    <div className='nav-square-text-man'>Papuci</div>
+                    <div className='nav-square-text-man'>{t('Nav.Șosete')}</div>
                   </Link>
                 </div>
               </div>
@@ -183,81 +181,81 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[5] = el)}
           >
             <div className='nav-left-type nav-left-photo2'
-              onClick={() => { setDrop([false, false, false, false, false, !drop[5], false, false]) }}
+              onClick={() => { setDrop([false, false, false, false, false, !drop[5], false]) }}
             />
             <div className={drop[5] ? 'nav-drop-active' : 'nav-drop'}>
               <div className='nav-drop-top'>
                 <div className={hover[0] ? 'nav-drop-link-active' : 'nav-drop-link'}
                   onMouseEnter={() => setHover([true, false, false])}
-                >Topuri</div>
+                >{t('Nav.Topuri')}</div>
                 <div className={hover[1] ? 'nav-drop-link-active' : 'nav-drop-link'}
                   onMouseEnter={() => setHover([false, true, false])}
-                >Pantaloni</div>
+                >{t('Nav.Pantaloni')}</div>
                 <div className={hover[2] ? 'nav-drop-link-active' : 'nav-drop-link'}
                   onMouseEnter={() => setHover([false, false, true])}
-                >Incaltaminte</div>
+                >{t('Nav.Încălțăminte')}</div>
               </div>
               <div className='nav-drop-content'>
                 <div className={hover[0] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/femei top'>
                     <div className='nav-drop-img nav-10' />
-                    <div className='nav-square-text-woman'>Toate</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Toate')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei top tricouri'>
                     <div className='nav-drop-img nav-11' />
-                    <div className='nav-square-text-woman'>Tricouri</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Tricouri')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei top bluze'>
                     <div className='nav-drop-img nav-12' />
-                    <div className='nav-square-text-woman'>Bluze</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Bluze')}</div>
                   </Link>
                 </div>
                 <div className={hover[1] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/femei bottom'>
                     <div className='nav-drop-img nav-13' />
-                    <div className='nav-square-text-woman'>Toate</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Toate')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei bottom scurti'>
                     <div className='nav-drop-img nav-14' />
-                    <div className='nav-square-text-woman'>Scurti</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Scurți')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei bottom lungi'>
                     <div className='nav-drop-img nav-15' />
-                    <div className='nav-square-text-woman'>Lungi</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Lungi')}</div>
                   </Link>
                 </div>
                 <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
                   <Link className='nav-drop-square' to='/main/cloth/femei foot'>
                     <div className='nav-drop-img nav-16' />
-                    <div className='nav-square-text-woman'>Toate</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Toate')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei foot adidasi'>
                     <div className='nav-drop-img nav-17' />
-                    <div className='nav-square-text-woman'>Adidasi</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Adidași')}</div>
                   </Link>
                   <Link className='nav-drop-square' to='/main/cloth/femei foot papuci'>
                     <div className='nav-drop-img nav-18' />
-                    <div className='nav-square-text-woman'>Papuci</div>
+                    <div className='nav-square-text-woman'>{t('Nav.Șosete')}</div>
                   </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className='nav-left-btn'
-            ref={(el) => (navIconRefs.current[7] = el)}
+            ref={(el) => (navIconRefs.current[6] = el)}
           >
             <div className={darkTheme ? 'nav-left-type nav-left-photo3-dark' : 'nav-left-type nav-left-photo3'}
-              onClick={() => { setDrop([false, false, false, false, false, false, false, !drop[7]]) }}
+              onClick={() => { setDrop([false, false, false, false, false, false, !drop[6]]) }}
             />
-            <div className={drop[7] ? 'nav-drop-active' : 'nav-drop'}>
+            <div className={drop[6] ? 'nav-drop-active' : 'nav-drop'}>
               <div className='nav-drop-top-colection'>
-                <div className='nav-drop-colection'>Colectii</div>
+                <div className='nav-drop-colection'>{t('Nav.Colecții')}</div>
               </div>
               <div className='nav-drop-content'>
                 <div className='nav-drop-content-top'>
                   <Link className='nav-drop-square' to='/main/cloth/collection'>
                     <div className='nav-drop-img nav-19' />
-                    <div className='nav-square-text'>Toate</div>
+                    <div className='nav-square-text'>{t('Nav.Toate')}</div>
                   </Link>
                   {collections.map((collection, index) => {
                     if (index < 2) {
@@ -276,25 +274,11 @@ export default function Navbar() {
         </div>
         <div className='nav-right'>
           <select value={lang} className='nav-lang'
-            onChange={e => { setLang(e.target.value); i18n.changeLanguage(e.target.value) }}
+            onChange={e => { setLang(e.target.value); }}
           >
             <option value="en" className='nav-lang'>En</option>
             <option value='ro' className='nav-lang'>Ro</option>
           </select>
-          {admin && (
-            <div className={drop[6] ? 'nav-icon nav-icon-active' : 'nav-icon'}
-              ref={(el) => (navIconRefs.current[6] = el)}
-            >
-              <div className={darkTheme ? 'nav-icon-dark-img6' : 'nav-icon-img6'}
-                onClick={() => setDrop([false, false, false, false, false, false, !drop[6], false])}
-              />
-              <div className='nav-drop-right'>
-                <div className='nav-fav-title'>Admin</div>
-                <div className='nav-profile-email principal'>{currentUser.email}</div>
-                <div className='nav-tot'><Link className='flex' to='/main/admin'>Vezi Admin<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
-              </div>
-            </div>
-          )}
           <div className='nav-theme'>
             <label>
               <input type='checkbox' value={darkTheme} className='nav-theme-input'
@@ -310,19 +294,19 @@ export default function Navbar() {
           >
             <div className={darkTheme ? 'nav-icon-dark-img1' : 'nav-icon-img1'}
               onClick={() => {
-                setDrop([!drop[0], false, false, false, false, false, false, false])
+                setDrop([!drop[0], false, false, false, false, false, false])
               }}
             />
             {currentUser && (
               <div className='nav-nr-absolute'
-                onClick={() => { setDrop([!drop[0], false, false, false, false, false, false, false]) }}
+                onClick={() => { setDrop([!drop[0], false, false, false, false, false, false]) }}
               >{favorite.length}</div>
             )}
             <div className='nav-drop-right nav-spec'>
-              <div className='nav-fav-title'>Favorite</div>
+              <div className='nav-fav-title'>{t('Nav.Favorite')}</div>
               {currentUser ? (
                 favorite.length === 0 ? (
-                  <div className='nav-none'>Nu ai nimic la favorite!</div>
+                  <div className='nav-none'>{t('Nav.Nu ai nimic la favorite!')}</div>
                 ) : (
                   <>
                     {[...favorite].reverse().map((product, index) => {
@@ -356,16 +340,16 @@ export default function Navbar() {
                       } else if (index === 3) {
                         return (
                           <div>
-                            + Alte {favorite.length - 3} produse
+                            + {t('Nav.Alte')} {favorite.length - 3} {t('Nav.produse')}
                           </div>
                         )
                       }
                     })}
-                    <div className='nav-tot'><Link className='flex' to='/main/fav'>Vezi Favoritele<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
+                    <div className='nav-tot'><Link className='flex' to='/main/fav'>{t('Nav.Vezi Favoritele')}<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
                   </>
                 )
               ) : (
-                <div className='nav-connect'><NavLink to='/connect'>Conecteaza-te</NavLink></div>
+                <div className='nav-connect'><NavLink to='/connect'>{t('Nav.Conectează-te')}</NavLink></div>
               )}
             </div>
           </div>
@@ -373,18 +357,18 @@ export default function Navbar() {
             ref={(el) => (navIconRefs.current[1] = el)}
           >
             <div className={darkTheme ? 'nav-icon-dark-img2' : 'nav-icon-img2'}
-              onClick={() => { setDrop([false, !drop[1], false, false, false, false, false, false]) }}
+              onClick={() => { setDrop([false, !drop[1], false, false, false, false, false]) }}
             />
             {currentUser && (
               <div className='nav-nr-absolute'
-                onClick={() => { setDrop([false, !drop[1], false, false, false, false, false, false]) }}
+                onClick={() => { setDrop([false, !drop[1], false, false, false, false, false]) }}
               >{cart.reduce((total, cart) => total + Number(cart.number), 0)}</div>
             )}
             <div className='nav-drop-right nav-spec'>
-              <div className='nav-fav-title'>Cosul meu</div>
+              <div className='nav-fav-title'>{t('Nav.Coșul meu')}</div>
               {currentUser ? (
                 cart.length === 0 ? (
-                  <div className='nav-none'>Nu ai nimic in cos!</div>
+                  <div className='nav-none'>{t('Nav.Nu ai nimic în coș!')}</div>
                 ) : (
                   <>
                     {[...cart].reverse().map((product, index) => {
@@ -399,8 +383,8 @@ export default function Navbar() {
                               <img src={product.photo} alt='Poza' className='nav-fav-photo' />
                               <div className='nav-fav-flex'>
                                 <div className='nav-fav-nume'>{product.name}</div>
-                                <div className='nav-fav-size'>Marime: {product.selectedSize}</div>
-                                <div className='nav-fav-nr'>Numar: {product.number}</div>
+                                <div className='nav-fav-size'>{t('Nav.Mărime')}: {product.selectedSize}</div>
+                                <div className='nav-fav-nr'>{t('Nav.Cantitate')}: {product.number}</div>
                                 <div className='nav-fav-price'>
                                   {product.discount ? (
                                     <>
@@ -420,34 +404,45 @@ export default function Navbar() {
                       } else if (index === 3) {
                         return (
                           <div>
-                            + Alte {cart.length - 3} produse
+                            + {t('Nav.Alte')} {cart.length - 3} {t('Nav.produse')}
                           </div>
                         )
                       }
                     })}
-                    <div className='nav-tot'><Link className='flex' to='/main/cart'>Vezi Cosul<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
+                    <div className='nav-tot'><Link className='flex' to='/main/cart'>{t('Nav.Vezi Coșul')}<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
                   </>
                 )
               ) : (
-                <div className='nav-connect'><NavLink to='/connect'>Conecteaza-te</NavLink></div>
+                <div className='nav-connect'><NavLink to='/connect'>{t('Nav.Conectează-te')}</NavLink></div>
               )}
             </div>
           </div>
           <div className={drop[2] ? 'nav-icon nav-icon-active' : 'nav-icon'}
             ref={(el) => (navIconRefs.current[2] = el)}
           >
-            <div className={darkTheme ? 'nav-icon-dark-img3' : 'nav-icon-img3'}
-              onClick={() => { setDrop([false, false, !drop[2], false, false, false, false, false]) }}
-            />
+            {admin ? (
+              <div className={darkTheme ? 'nav-icon-dark-img6' : 'nav-icon-img6'}
+                onClick={() => { setDrop([false, false, !drop[2], false, false, false, false]) }}
+              />
+            ) : (
+              <div className={darkTheme ? 'nav-icon-dark-img3' : 'nav-icon-img3'}
+                onClick={() => { setDrop([false, false, !drop[2], false, false, false, false]) }}
+              />
+            )}
             <div className='nav-drop-right'>
-              <div className='nav-fav-title'>Profil</div>
+              <div className='nav-fav-title'>{t('Nav.Profil')}</div>
               {currentUser ? (
                 <>
                   <div className='nav-profile-email principal'>{currentUser.email}</div>
-                  <div className='nav-tot'><Link className='flex' to='/main/profile'>Vezi Profilul<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
+                  <div className='nav-tot'><Link className='flex' to='/main/profile'>{t('Nav.Vezi Profilul')}<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
+                  {admin && (
+                    <>
+                      <div className='nav-tot'><Link className='flex' to='/main/admin'>{t('Nav.Vezi Admin')}<div className={darkTheme ? 'nav-arrow-dark' : 'nav-arrow'} /></Link></div>
+                    </>
+                  )}
                 </>
               ) : (
-                <div className='nav-connect'><Link to='/connect'>Conecteaza-te</Link></div>
+                <div className='nav-connect'><Link to='/connect'>{t('Nav.Conectează-te')}</Link></div>
               )}
             </div>
           </div>
@@ -456,11 +451,11 @@ export default function Navbar() {
               ref={(el) => (navIconRefs.current[3] = el)}
             >
               <div className={darkTheme ? 'nav-icon-dark-img4' : 'nav-icon-img4'}
-                onClick={() => setDrop([false, false, false, !drop[3], false, false, false, false])}
+                onClick={() => setDrop([false, false, false, !drop[3], false, false, false])}
               />
               <div className='nav-drop-right nav-drop-set'>
-                <div className='nav-fav-title'>Optiuni</div>
-                <div className='nav-set' onClick={() => handleLogout()}>Deconectare</div>
+                <div className='nav-fav-title'>{t('Nav.Opțiuni')}</div>
+                <div className='nav-set' onClick={() => handleLogout()}>{t('Nav.Deconectare')}</div>
               </div>
             </div>
           ) : (
@@ -468,11 +463,11 @@ export default function Navbar() {
               ref={(el) => (navIconRefs.current[3] = el)}
             >
               <div className={darkTheme ? 'nav-icon-dark-img5' : 'nav-icon-img5'}
-                onClick={() => setDrop([false, false, false, !drop[3], false, false, false, false])}
+                onClick={() => setDrop([false, false, false, !drop[3], false, false, false])}
               />
               <div className='nav-drop-right nav-drop-set'>
-                <div className='nav-fav-title'>Optiuni</div>
-                <div className='nav-set' onClick={() => navigate('/connect')}>Conectare</div>
+                <div className='nav-fav-title'>{t('Nav.Opțiuni')}</div>
+                <div className='nav-set' onClick={() => navigate('/connect')}>{t('Nav.Conectare')}</div>
               </div>
             </div>
           )}

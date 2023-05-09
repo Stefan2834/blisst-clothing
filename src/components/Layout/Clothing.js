@@ -15,7 +15,7 @@ export default function Clothing() {
   const { productLoad, setProductLoad,
     filter,
     startTransition, isPending,
-    deferredSearch
+    deferredSearch, t
   } = useDefault()
   const [sortedProducts, setSortedProducts] = useState([...product])
   const fuse = new Fuse(product, options);
@@ -144,11 +144,11 @@ export default function Clothing() {
         )}
         {noProduct > productLoad && (
           <div className="cloth-more">
-            <div className="cloth-more-btn" onClick={() => startTransition(() => setProductLoad(p => p + 10))}>Incarca mai multe produse</div>
+            <div className="cloth-more-btn" onClick={() => startTransition(() => setProductLoad(p => p + 10))}>{t('Clothing.Încarcă mai multe')}</div>
           </div>
         )}
         {noProduct === 0 && (
-          <div className="mt-8">Nici un product in stoc nu indeplineste filtrele</div>
+          <div className="mt-8">{t('Clothing.Nici un produs în stoc nu îndeplinește filtrele')}</div>
         )}
       </div>
     </>

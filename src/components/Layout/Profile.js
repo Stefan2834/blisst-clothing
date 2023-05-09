@@ -11,7 +11,7 @@ export default function Profile() {
     const {
         currentUser, server, command, det, setDet, admin
     } = useAuth()
-    const { darkTheme, isPending, startTransition } = useDefault()
+    const { darkTheme, isPending, startTransition, lang, t } = useDefault()
     const [infoChange, setInfoChange] = useState(false)
     const [preDet, setPreDet] = useState({})
     const changeInfo = () => {
@@ -65,9 +65,12 @@ export default function Profile() {
         setInfoChange(false);
     }//nu salva informatiile introduse
     useEffect(() => {
-        document.title = 'Blisst — Profilul meu'
         setPreDet(det)
     }, [])
+    
+    useEffect(() => {
+        document.title = `Blisst — ${t('Profile.Profilul meu')}`
+    }, [lang])
 
 
 
@@ -98,62 +101,62 @@ export default function Profile() {
                     )}
                     {/*verifica daca utilizatorul este admin, si daca da, schimba-i poza */}
                     {admin ? (
-                        <div className="prof-txt text-center">Salut, {det.type === 'man' ? 'Domnule' : 'Doamna'} <span className='principal'>{det.name}</span>!</div>
+                        <div className="prof-txt text-center">{t('Profile.Salut')}, {det.type === 'man' ? t('Profile.Domnule') : t('Profile.Doamna')} <span className='principal'>{det.name}</span>!</div>
                     ) : (
-                        <div className="prof-txt text-center">Salut, <span className='principal'>{det.name}</span>!</div>
+                        <div className="prof-txt text-center">{t('Profile.Salut')}, <span className='principal'>{det.name}</span>!</div>
                     )}
                     <div className={infoChange ? 'prof-det prof-det-slider' : 'prof-det'}>
                         <div className="prof-left-info">
-                            <div className="prof-txt">Judet:<br />
+                            <div className="prof-txt">{t('Profile.Județ')}:<br />
                                 <div className="prof-det-txt">
-                                    {det.county !== '' ? det.county : (<div className="prof-noset">Judet nesetat</div>)}
+                                    {det.county !== '' ? det.county : (<div className="prof-noset">{t('Profile.Județ nesetat')}</div>)}
                                 </div>
                             </div>
-                            <div className="prof-txt">Informatii adresa:<br />
+                            <div className="prof-txt">{t('Profile.Informații adresă')}:<br />
                                 <div className="prof-det-txt">
-                                    {det.info !== '' ? det.info : (<div className="prof-noset">Adresa nesetata</div>)}
+                                    {det.info !== '' ? det.info : (<div className="prof-noset">{t('Profile.Adresă nesetată')}</div>)}
                                 </div>
                             </div>
-                            <div className="prof-txt">Numar de telefon:<br />
+                            <div className="prof-txt">{t('Profile.Număr de telefon')}:<br />
                                 <div className="prof-det-txt">
-                                    {det.tel !== '' ? det.tel : (<div className="prof-noset">Numar de telefon nesetat</div>)}
+                                    {det.tel !== '' ? det.tel : (<div className="prof-noset">{t('Profile.Număr de telefon nesetat')}</div>)}
                                 </div>
                             </div>
-                            <div className="prof-txt">Email de contact:<br />
+                            <div className="prof-txt">{t('Profile.Email de contact')}:<br />
                                 <div className="prof-det-txt">
                                     {det.email}
                                 </div>
                             </div>
-                            <div className="prof-txt">Nume utilizator:<br />
+                            <div className="prof-txt">{t('Profile.Nume utilizator')}:<br />
                                 <div className="prof-det-txt">
                                     {det.name}
                                 </div>
                             </div>
                             <div className="prof-txt">
-                                Tipul utilizatorului:
+                                {t('Profile.Tipul utilizatorului')}:
                                 <div className="prof-det-txt">
                                     {det.type === 'woman' ? (
-                                        <div className="prof-woman">Femeie</div>
+                                        <div className="prof-woman">{t('Profile.Femeie')}</div>
                                     ) : (
-                                        <div className="prof-man">Barbat</div>
+                                        <div className="prof-man">{t('Profile.Bărbat')}</div>
                                     )}
                                 </div>
                             </div>
-                            <div className="prof-txt">Culoare preferata:<br />
+                            <div className="prof-txt">{t('Profile.Culoare preferată')}:<br />
                                 <div className="prof-det-square" style={{ backgroundColor: det.color }} />
                             </div>
-                            <div className="prof-save" onClick={changeInfo}>Editeaza</div>
+                            <div className="prof-save" onClick={changeInfo}>{t('Profile.Editează')}</div>
                         </div>
 
 
                         <form className="prof-left-save" onSubmit={saveInfo}>
                             <div className="prof-txt">
-                                Judet:<br />
+                               {t('Profile.Județ')}:<br />
                                 <select value={preDet.county}
                                     className='prof-det-txt outline-0'
                                     onChange={e => setPreDet({ ...preDet, county: e.target.value })}
                                 >
-                                    <option value="" className='check-option'>Judete</option>
+                                    <option value="" className='check-option'>{t('Profile.Județe')}</option>
                                     {counties.map((county) => (
                                         <option key={county} value={county} className='check-option'>
                                             {county}
@@ -162,35 +165,35 @@ export default function Profile() {
                                 </select>
                             </div>
                             <div className="prof-txt">
-                                Informatii adresa:
+                                {t('Profile.Informații adresă')}:
                                 <input type='text' value={preDet.info} minLength={20} maxLength={150}
                                     onChange={e => setPreDet({ ...preDet, info: e.target.value })}
                                     className='prof-input'
                                 />
                             </div>
                             <div className="prof-txt">
-                                Numar de telefon:
+                                {t('Profile.Număr de telefon')}:
                                 <input type='number' value={preDet.tel}
                                     onChange={e => setPreDet({ ...preDet, tel: e.target.value })}
                                     className='prof-input' minLength={8} maxLength={16}
                                 />
                             </div>
                             <div className="prof-txt">
-                                Email de contact:
+                                {t('Profile.Email de contact')}:
                                 <input type='email' value={preDet.email} minLength={8}
                                     onChange={e => setPreDet({ ...preDet, email: e.target.value })}
                                     className='prof-input' required
                                 />
                             </div>
                             <div className="prof-txt">
-                                Nume utilizator:
+                                {t('Profile.Nume utilizator')}:
                                 <input type='text' value={preDet.name}
                                     onChange={e => setPreDet({ ...preDet, name: e.target.value })}
                                     className='prof-input' required minLength={3} maxLength={16}
                                 />
                             </div>
                             <div className="prof-txt">
-                                Tipul utilizatorului:
+                                {t('Profile.Tipul utilizatorului')}:
                                 <div className="prof-type-slide">
                                     <div className={preDet.type === 'man' ? "prof-type-active nav-left-photo1" : "nav-left-photo1 prof-type-select"}
                                         onClick={() => setPreDet({ ...preDet, type: 'man' })}
@@ -202,7 +205,7 @@ export default function Profile() {
                                 </div>
                             </div>
                             <div className="prof-txt">
-                                Culoare preferata:
+                                {t('Profile.Culoare preferată')}:
                                 <div className="flex">
                                     <div className={preDet.color === "#FFB30B" ? "prof-det-square-selected" : "prof-det-square"}
                                         style={{ backgroundColor: "#FFB30B" }}
@@ -227,8 +230,8 @@ export default function Profile() {
                                 </div>
                             </div>
                             <div className="prof-btn-flex">
-                                <input type='submit' className="prof-save" value='Salveaza' />
-                                <div className="prof-back" onClick={backInfo}>Inapoi</div>
+                                <input type='submit' className="prof-save" value={t('Profile.Salvează')} />
+                                <div className="prof-back" onClick={backInfo}>{t('Profile.Înapoi')}</div>
                             </div>
                         </form>
                     </div>
@@ -236,23 +239,23 @@ export default function Profile() {
                 {command.length >= 1 ? (
                     <div className="prof-right">
                         <div className="prof-comm">
-                            <div className="prof-comm-title">Ultima comanda: </div>
-                            <div className="prof-comm-subtitle">Judet</div>
+                            <div className="prof-comm-title">{t('Profile.Ultima comandă')}: </div>
+                            <div className="prof-comm-subtitle">{t('Profile.Județ')}</div> 
                             <div className="prof-comm-txt">{command[command.length - 1].details.county}</div>
-                            <div className="prof-comm-subtitle">Adresa</div>
+                            <div className="prof-comm-subtitle">{t('Profile.Adresă')}</div> 
                             <div className="prof-comm-txt">{command[command.length - 1].details.info}</div>
-                            <div className="prof-comm-subtitle">Telefon</div>
+                            <div className="prof-comm-subtitle">{t('Profile.Telefon')}</div> 
                             <div className="prof-comm-txt">{command[command.length - 1].details.tel}</div>
-                            <div className="prof-comm-subtitle">Email</div>
+                            <div className="prof-comm-subtitle">{t('Profile.Email')}</div> 
                             <div className="prof-comm-txt">{command[command.length - 1].details.email}</div>
-                            <div className="prof-comm-subtitle">Metoda de plata</div>
+                            <div className="prof-comm-subtitle">{t('Profile.Metodă de plată')}</div> 
                             <div className="prof-comm-txt">{command[command.length - 1].method}</div>
-                            <div className="prof-comm-subtitle">Total</div>
+                            <div className="prof-comm-subtitle">{t('Profile.Total')}</div> 
                             <div className="prof-comm-txt">{command[command.length - 1].price.total} Lei</div>
-                            <div className="prof-comm-subtitle">Status</div>
-                            <div className="prof-comm-txt">{command[command.length - 1].status}</div>
+                            <div className="prof-comm-subtitle">{t('Profile.Status')}</div> 
+                            <div className="prof-comm-txt">{t(`Profile.${command[command.length - 1].status}`)}</div>
                             <Link to='/main/command' className="prof-comm-btn">
-                                Vezi mai multe detalii
+                                {t('Profile.Vezi mai multe detalii')}
                             </Link>
                         </div>
                     </div>
