@@ -2,12 +2,13 @@ import React from 'react'
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
-
+import {useDefault} from '../../contexts/DefaultContext'
 
 
 export default function Product(props) {
   const product = props.product
   const { favorite, dispatchFav, currentUser } = useAuth()
+  const { t } = useDefault()
 
   //ca sa nu existe prea multe lini de cod degeaba, am creat un component care apare 
   //pentru fiecare produs din favorite, paginile cu haine,
@@ -24,7 +25,7 @@ export default function Product(props) {
         <Link to={`/product/${product.id}`}>
           <div className="cloth-left">
             <div className="cloth-name">
-              {product.name}
+              {t(`${product.name}`)}
             </div>
             <div className="cloth-price">
               {product.discount > 0 ? (
@@ -51,7 +52,7 @@ export default function Product(props) {
           {favorite.some(item => item.id === product.id) ? (
             <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: product } })} />
           ) : (
-            <div className="cloth-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: product, user: currentUser } })} />
+            <div className="cloth-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: product, user: currentUser, t: t } })} />
           )}
           <div className="flex items-center justify-center">
             <FaStar size={16} className='principal' />

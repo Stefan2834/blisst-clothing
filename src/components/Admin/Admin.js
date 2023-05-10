@@ -35,7 +35,7 @@ export default function Admin() {
             <div className='admin-txt'>Bun venit pe pagina pentru admini!</div>
             <div className='admin-bottom-flex'>
               <Link to='/main/admin/products' className='admin-link'>Produse</Link>
-              <Link to='/main/admin/commands' className='admin-link'>Comenzi</Link>
+              <Link to='/main/admin/orders' className='admin-link'>Comenzi</Link>
               <Link to='/main/admin/discount' className='admin-link'>Discount-uri</Link>
               <Link to='/main/admin/errors' className='admin-link'>Erori</Link>
             </div>

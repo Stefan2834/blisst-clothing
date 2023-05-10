@@ -25,7 +25,7 @@ export default function Connect() {
         server,
         setCurrentUser, product,
         getUserData, setAdmin,
-        dispatchCart, dispatchCommand, dispatchFav
+        dispatchCart, dispatchOrder, dispatchFav
     } = useAuth();
     const {
         error, setError,
@@ -42,7 +42,7 @@ export default function Connect() {
         document.title = 'Blisst — Conectare'
         dispatchCart({ type: 'deleteState' })
         dispatchFav({ type: 'deleteState' })
-        dispatchCommand({ type: 'deleteState' })
+        dispatchOrder({ type: 'deleteState' })
         Cookies.remove('userData')
         setCurrentUser()
         setLoading(false)

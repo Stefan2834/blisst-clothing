@@ -10,10 +10,10 @@ import Swal from 'sweetalert2';
 export default function Checkout() {
   const { server, currentUser,
     cart, dispatchCart,
-    command,
+    order,
     det, setDet
   } = useAuth()
-  const { startTransition, isPending, darkTheme } = useDefault()
+  const { startTransition, isPending, darkTheme, t, lang } = useDefault()
   const [actualPage, setActualPage] = useState(1)
   const [edit, setEdit] = useState({ adress: false, contact: false, pay: false })
   const [error, setError] = useState({ adress: '', contact: '', pay: '' })
@@ -68,24 +68,24 @@ export default function Checkout() {
   const handleNext = () => {
     let actualError = { adress: '', contact: '', pay: '' }
     if (det.info === '' || det.county === '') {
-      actualError.adress = 'Seteaza adresa pentru a continua!'
+      actualError.adress = t('Check.Setează adresa pentru a continua!')
     }
     if (det.tel === '') {
-      actualError.contact = 'Seteaza un numar de telefon pentru a continua!'
+      actualError.contact = t('Check.Setează un număr de telefon pentru a continua!')
     }
     if (method.card === false && method.ramburs === false) {
-      actualError.pay = 'Selecteaza o metoda de plata!'
+      actualError.pay = t('Check.Selectează o metodă de plată!')
     }
     if (Object.values(actualError).every((value) => value === '')) {
       setActualPage(2);
       window.scrollTo(0, 0);
     } else {
       Swal.fire({
-        title: 'Eroare!',
-        text: "Nu ai introdus toate informatiile.",
+        title: t('Check.Eroare!'),
+        text: t('Check.Nu ai introdus toate informațiile.'),
         icon: 'error',
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi.',
+        confirmButtonText: t('Check.Înapoi'),
       })
     }
     setError({ ...actualError })
@@ -98,19 +98,19 @@ export default function Checkout() {
         if (info.data.success === true) {
           setDiscount({ value: info.data.discount, code: value })
           Swal.fire({
-            title: 'Felicitari',
-            text: `Reducerea de ${info.data.discount * 100}% a fost aplicata cu succes`,
+            title: t('Check.Felicitări!'),
+            text: `${t('Check.Reducerea de')} ${info.data.discount * 100} % ${t('Check.a fost aplicată cu succes.')}`,
             icon: 'success',
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'Ok'
           })
         } else {
           Swal.fire({
-            title: 'Eroare',
-            text: info.data.message,
+            title: t('Check.Eroare!'),
+            text: t(`Check.${info.data.message}`),
             icon: 'error',
             confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Inapoi'
+            confirmButtonText: t('Check.Înapoi')
           })
         }
       })
@@ -119,22 +119,25 @@ export default function Checkout() {
   }//verifica daca discount-ul este bun, si daca a mai fost folosit de acest utilizator
   const handleNewCommand = (payMethod) => {
     Swal.fire({
-      title: 'Esti sigur?',
-      text: "Esti sigur ca vrei sa plasezi comanda?",
+      title: t('Check.Ești sigur?'),
+      text: t('Check.Ești sigur că vrei să plasezi comanda?'),
       icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Plaseaza comanda',
-      cancelButtonText: 'Inapoi'
+      confirmButtonText: t('Check.Plasează comanda'),
+      cancelButtonText: t('Check.Înapoi')
     }).then(async (result) => {
       if (result.isConfirmed) {
         const date = new Date();
-        const options = { month: 'long' };
-        const commandData = {
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+        if(hours < 10) hours = `0${hours}` 
+        if(minutes < 10) minutes = `0${minutes}`
+        const orderData = {
           method: method.card ? 'Card' : 'Ramburs',
           details: det,
-          date: `${date.getDate()} ${date.toLocaleDateString('ro-RO', options)} ${date.getHours()}:${date.getMinutes()}`,
+          date: `${date.getDate()} ${date.getMonth() + 1} ${hours}:${minutes}`,
           price: {
             productPrice: productPrice,
             discount: discount.value,
@@ -142,14 +145,13 @@ export default function Checkout() {
             delivery: productPrice >= 200 ? 0 : 20,
             total: cartPrice
           },
-          status: 'Plasata',
-          id: command.length
+          status: 'Plasată',
+          id: order.length
         }
         if (payMethod === 'card') {
           try {
-            console.log(commandData.price.total)
             const response = await axios.post(`${server}/create-checkout-session`, {
-              commandData: commandData,
+              orderData: orderData,
             });
             console.log(response)
             if (response.data.success) {
@@ -159,30 +161,30 @@ export default function Checkout() {
           } catch (err) {
             console.log(err)
             Swal.fire({
-              title: 'Eroare',
-              text: `A aparut o eroare: ${err.message}`,
+              title: t('Check.Eroare!'),
+              text: `${t('Check.A apărut o eroare:')} ${err.message}.`,
               icon: 'error',
               confirmButtonColor: '#3085d6',
-              confirmButtonText: 'Inapoi'
+              confirmButtonText: t('Check.Înapoi')
             })
           }
         } else if (payMethod === 'ramburs') {
-          const newCommand = encodeURIComponent(JSON.stringify(commandData));
-          navigate(`/creditCard/${newCommand}`)
+          const newOrder = encodeURIComponent(JSON.stringify(orderData));
+          navigate(`/creditCard/${newOrder}`)
         }
       }
     })
   }//plaseaza comanda(adica salveaza comanda in baza de date la user/uid/command si la commands), trimite un email cu comanda, si sterge produsele din cos.
   const handleDeleteCart = product => {
     Swal.fire({
-      title: 'Esti sigur?',
-      text: 'Asta o sa iti stearga produsul din cos.',
+      title: t('Check.Ești sigur?'),
+      text: t('Check.Asta o să iți șteargă produsul din coș.'),
       icon: 'warning',
-      cancelButtonText: 'Inapoi',
+      cancelButtonText: t('Check.Înapoi'),
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sterge-l'
+      confirmButtonText: t('Check.Șterge')
     }).then((result) => {
       if (result.isConfirmed) {
         dispatchCart({ type: 'cartRemove', payload: { cart: product } })
@@ -209,9 +211,11 @@ export default function Checkout() {
   }, [cart, discount])//cand cosul sau discount-ul se modifica, recalculeaza pretul produselor
 
   useEffect(() => {
-    document.title = 'Blisst — Plaseaza comanda'
     setPreDet(det)
   }, [])
+  useEffect(() => {
+    document.title = `Blisst — ${t('Check.Plasează comanda')}`
+  }, [lang])
 
 
   return (
@@ -232,15 +236,15 @@ export default function Checkout() {
             <div className='check-bar-flex'>
               <div className={actualPage === 0 ? 'check-bar-text' : 'check-bar-text-grey'}
                 onClick={() => navigate('/main/cart')}
-              >Cosul Meu</div>
+              >{t('Check.Coșul Meu')}</div>
               <div className={actualPage === 1 ? 'check-bar-text' : 'check-bar-text-grey'}
                 onClick={() => setActualPage(1)}
-              >Detalii comanda</div>
+              >{t('Check.Detalii Comandă')}</div>
               <div className={actualPage === 2 ? 'check-bar-text' : 'check-bar-text-grey'}
                 onClick={() => handleNext()}
-              >Sumar Comanda</div>
+              >{t('Check.Sumar Comandă')}</div>
               <div className={actualPage === 3 ? 'check-bar-text' : 'check-bar-text-grey'}
-              >Comanda plasata</div>
+              >{t('Check.Comandă plasată')}</div>
             </div>
           </div>
         </div>
@@ -250,7 +254,7 @@ export default function Checkout() {
             <div className='check-page'>
               <div className='check-page-top'>
                 <div className='check-page-nr'>1</div>
-                <div className='check-page-title'>Adresa de livrare</div>
+                <div className='check-page-title'>{t('Check.Adresa de livrare')}</div>
                 <div className='check-error text-red-600'>
                   {error.adress}
                 </div>
@@ -259,12 +263,12 @@ export default function Checkout() {
                 {edit.adress ? (
                   <>
                     <div className='check-det-txt'>
-                      <label htmlFor="county-select" className='check-txt'>Judet: <br /></label>
+                      <label htmlFor="county-select" className='check-txt'>{t('Check.Județ')}: <br /></label>
                       <select id="county-select" value={preDet.county}
                         className='check-option'
                         onChange={e => setPreDet({ ...preDet, county: e.target.value })}
                       >
-                        <option value="" className='check-option'>Judete</option>
+                        <option value="" className='check-option'>{t('Check.Județe')}</option>
                         {counties.map((county) => (
                           <option key={county} value={county} className='check-option'>
                             {county}
@@ -272,7 +276,7 @@ export default function Checkout() {
                         ))}
                       </select>
                     </div>
-                    <div className="check-txt">Informatii adresa:<br />
+                    <div className="check-txt">{t('Check.Informații adresă')}:<br />
                       <form onSubmit={saveInfo}>
                         <input type='text'
                           className='check-input'
@@ -282,26 +286,26 @@ export default function Checkout() {
                         />
                         <div className='w-full flex justify-around mt-3'>
                           <input type='submit' className='prof-save'
-                            value='Salveaza'
+                            value={t('Check.Salvează')}
                           />
-                          <div className='prof-back' onClick={backInfo}>Inapoi</div>
+                          <div className='prof-back' onClick={backInfo}>{t('Check.Înapoi')}</div>
                         </div>
                       </form>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className='check-txt'>Judet: <br />
+                    <div className='check-txt'>{t('Check.Județ')}: <br />
                       <div className='check-det-txt'>
-                        {det.county !== "" ? det.county : (<div className="prof-noset">Judet neselectat</div>)}
+                        {det.county !== "" ? det.county : (<div className="prof-noset">{t('Check.Județ neselectat')}</div>)}
                       </div>
                     </div>
-                    <div className="check-txt">Informatii adresa:<br />
+                    <div className="check-txt">{t('Check.Informații adresă')}:<br />
                       <div className="check-det-txt">
-                        {det.info !== '' ? det.info : (<div className="prof-noset">Adresa nesetata</div>)}
+                        {det.info !== '' ? det.info : (<div className="prof-noset">{t('Check.Adresă nesetată')}</div>)}
                       </div>
                       <div className='flex justify-center mt-3'>
-                        <div className='check-save' onClick={() => setEdit({ ...edit, adress: true })}>Editeaza</div>
+                        <div className='check-save' onClick={() => setEdit({ ...edit, adress: true })}>{t('Check.Editează')}</div>
                       </div>
                     </div>
                   </>
@@ -311,7 +315,7 @@ export default function Checkout() {
             <div className='check-page'>
               <div className='check-page-top'>
                 <div className='check-page-nr'>2</div>
-                <div className='check-page-title'>Informatii contact</div>
+                <div className='check-page-title'>{t('Check.Informații contact')}</div>
                 <div className='check-error text-red-600'>
                   {error.contact}
                 </div>
@@ -320,7 +324,7 @@ export default function Checkout() {
                 {edit.contact ? (
                   <form onSubmit={saveInfo}>
                     <div className="check-txt">
-                      Numar de telefon:
+                      {t('Check.Număr de telefon')}:
                       <input type='number' value={preDet.tel}
                         onChange={e => setPreDet({ ...preDet, tel: e.target.value })}
                         className='check-input'
@@ -329,7 +333,7 @@ export default function Checkout() {
                       />
                     </div>
                     <div className="check-txt">
-                      Email de contact:
+                      {t('Check.Email de contact')}:
                       <input type='email' value={preDet.email}
                         onChange={e => setPreDet({ ...preDet, email: e.target.value })}
                         className='check-input' required minLength={8} maxLength={40}
@@ -337,25 +341,25 @@ export default function Checkout() {
                     </div>
                     <div className='w-full flex justify-around mt-3'>
                       <input type='submit' className='check-save'
-                        value='Salveaza'
+                        value={t('Check.Salvează')}
                       />
-                      <div className='check-back' onClick={backInfo}>Inapoi</div>
+                      <div className='check-back' onClick={backInfo}>{t('Check.Înapoi')}</div>
                     </div>
                   </form>
                 ) : (
                   <>
-                    <div className="check-txt">Numar de telefon:<br />
+                    <div className="check-txt">{t('Check.Număr de telefon')}:<br />
                       <div className="check-det-txt">
-                        {det.tel !== '' ? det.tel : (<div className="prof-noset">Numar de telefon nesetat</div>)}
+                        {det.tel !== '' ? det.tel : (<div className="prof-noset">{t('Check.Număr de telefon nesetat')}</div>)}
                       </div>
                     </div>
-                    <div className="check-txt">Email de contact:<br />
+                    <div className="check-txt">{t('Check.Email de contact')}:<br />
                       <div className="check-det-txt">
                         {det.email}
                       </div>
                     </div>
                     <div className='flex justify-center mt-3'>
-                      <div className='check-save' onClick={() => setEdit({ ...edit, contact: true })}>Editeaza</div>
+                      <div className='check-save' onClick={() => setEdit({ ...edit, contact: true })}>{t('Check.Editează')}</div>
                     </div>
                   </>
                 )}
@@ -364,7 +368,7 @@ export default function Checkout() {
             <div className='check-page'>
               <div className='check-page-top'>
                 <div className='check-page-nr'>3</div>
-                <div className='check-page-title'>Modalitate de plata</div>
+                <div className='check-page-title'>{t('Check.Modalitate de plată')}</div>
                 <div className='check-error text-red-600'>
                   {error.pay}
                 </div>
@@ -377,8 +381,8 @@ export default function Checkout() {
                     onChange={() => setMethod({ ramburs: false, card: true })}
                     className='check-page-checkbox' />
                   <div className='check-pay-content'>
-                    <div className='check-pay-title'>Plata cu cardul</div>
-                    <div className='check-pay-info'>Vei introduce cardul putin mai tarziu</div>
+                    <div className='check-pay-title'>{t('Check.Plată cu cardul')}</div>
+                    <div className='check-pay-info'>{t('Check.Vei introduce cardul puțin mai târziu')}</div>
                   </div>
                 </label>
                 <label className='check-page-pay cursor-pointer'>
@@ -388,13 +392,13 @@ export default function Checkout() {
                     onChange={() => setMethod({ ramburs: true, card: false })}
                   />
                   <div className='check-pay-content'>
-                    <div className='check-pay-title'>Ramburs la curier</div>
-                    <div className='check-pay-info'>Vei plati in momentul in care comanda va fi livrata</div>
+                    <div className='check-pay-title'>{t('Check.Ramburs la curier')}</div>
+                    <div className='check-pay-info'>{t('Check.Vei plăti în momentul în care comanda va fi livrată')}</div>
                   </div>
                 </label>
               </div>
             </div>
-            <div className='check-continue' onClick={handleNext}>Mai departe</div>
+            <div className='check-continue' onClick={handleNext}>{t('Check.Mai departe')}</div>
           </>
         ) : (
           // pagina 2 (editeaza informatiile, cosul si adauga discount)
@@ -402,38 +406,38 @@ export default function Checkout() {
             <div className='check-sumar-div'>
               <div className='check-sumar-flex'>
                 <div className='check-sumar'>
-                  <div className='check-txt'>Judetul: <br />
+                  <div className='check-txt'>{t('Check.Județul')}: <br />
                     <div className='check-det-txt'>
                       {det.county}
                     </div>
                   </div>
-                  <div className="check-txt">Informatii adresa:<br />
+                  <div className="check-txt">{t('Check.Informații adresă')}:<br />
                     <div className="check-det-txt">
                       {det.info}
                     </div>
                   </div>
                 </div>
                 <div className='check-sumar'>
-                  <div className='check-txt'>Numar de telefon: <br />
+                  <div className='check-txt'>{t('Check.Număr de telefon')}: <br />
                     <div className='check-det-txt'>
                       {det.tel}
                     </div>
                   </div>
-                  <div className="check-txt">Email contact:<br />
+                  <div className="check-txt">{t('Check.Email de contact')}:<br />
                     <div className="check-det-txt">
                       {det.email}
                     </div>
                   </div>
                 </div>
                 <div className='check-sumar'>
-                  <div className='check-txt'>Metoda de plata: <br />
+                  <div className='check-txt'>{t('Check.Modalitate de plată')}: <br />
                     <div className='check-det-txt'>
-                      {method.ramburs ? 'Ramburs' : method.card ? 'Card de credit' : 'Wrong'}
+                      {method.ramburs ? t('Ramburs') : method.card && t('Card de credit')}
                     </div>
                   </div>
                 </div>
               </div>
-              <div className='check-save' onClick={() => setActualPage(1)}>Editeaza</div>
+              <div className='check-save' onClick={() => setActualPage(1)}>{t('Check.Editează')}</div>
             </div>
             <div className='check-sumar-cart'>
               {cart.map((product) => {
@@ -445,8 +449,8 @@ export default function Checkout() {
                       />
                     </Link>
                     <Link to={`/product/${product.id}`} className='cart-det'>
-                      <div className='cart-name'>{product.name}</div>
-                      <div className='cart-info'>{product.spec}</div>
+                      <div className='cart-name'>{t(product.name)}</div>
+                      <div className='cart-info'>{t(product.spec)}</div>
                     </Link>
                     <div className='cart-action'>
                       {product.discount > 0 ? (
@@ -464,9 +468,9 @@ export default function Checkout() {
                       ) : (
                         <div className='cart-price'>{product.price} Lei</div>
                       )}
-                      <div className='cart-price'>Marime: {product.selectedSize}</div>
+                      <div className='cart-price'>{t('Check.Mărime')}: {product.selectedSize}</div>
                       <div className='flex'>
-                        <label className='cart-price'>Numar:</label>
+                        <label className='cart-price'>{t('Check.Cantitate')}:</label>
                         <select value={product.number} className='cart-option'
                           onChange={e => {
                             if (e.target.value === '') {
@@ -476,7 +480,7 @@ export default function Checkout() {
                             }
                           }}
                         >
-                          <option value="" className='principal font-semibold'>0(sterge)</option>
+                          <option value="" className='principal font-semibold'>0({t('Check.șterge')})</option>
                           {Array.from({ length: product.size[product.selectedSize] }, (_, index) => { if (index <= 10) { return index + 1 } }).map((number) => (
                             <option key={number} value={number} className='cart-option'>
                               {number}
@@ -493,7 +497,7 @@ export default function Checkout() {
               })}
               <div className='check-sumar-total'>
                 <div className='flex justify-between w-full'>
-                  <div className='cart-text'>Cost produse:</div>
+                  <div className='cart-text'>{t('Cart.Cost produse')}:</div>
                   {discount.value !== 0 ? (
                     <>
                       <div className='cart-right-price'>
@@ -507,28 +511,28 @@ export default function Checkout() {
                 </div>
                 {discount.value !== 0 ? (
                   <div className='flex justify-between w-full'>
-                    <div className='cart-text'>Cost produse nou</div>
+                    <div className='cart-text'>{t('Check.Cost produse nou')}:</div>
                     <div className='cart-right-price'>{(productPrice - (productPrice * discount.value)).toFixed(2)} Lei</div>
                   </div>
                 ) : (<></>)}
                 <div className='flex justify-between w-full'>
-                  <div className='cart-text'>Cost livrare:</div>
+                  <div className='cart-text'>{t('Cart.Cost livrare')}:</div>
                   {productPrice >= 200 ? (
-                    <div className='cart-right-free text-green-500'>Gratuit</div>
+                    <div className='cart-right-free text-green-500'>{t('Cart.Gratuit')}</div>
                   ) : (
                     <div className='cart-right-price'>20 Lei</div>
                   )}
                 </div>
                 <div className='flex justify-between w-full cart-line mt-4'></div>
                 <div className='flex justify-between w-full flex-row'>
-                  <div className='cart-title'>Total:</div>
+                  <div className='cart-title'>{t('Cart.Total')}:</div>
                   <div className='text-xl font-semibold principal'>{cartPrice} Lei</div>
                 </div>
-                <div className='text-xl font-bold cart-text'>Ai un cod de reducere?</div>
+                <div className='text-xl font-bold cart-text'>{t('Check.Ai un cod de reducere?')}</div>
                 <form className='flex justify-center items-center my-2' onSubmit={handleDiscount}>
                   <input type={'text'} maxLength={10} minLength={6}
                     className='cart-form-input' required
-                    placeholder='Introdu codul'
+                    placeholder={t('Check.Introdu codul')}
                     ref={discountValue}
                   />
                   <input type='submit' className={darkTheme ? 'cart-form-submit-dark' : 'cart-form-submit'} value=' ' />
@@ -537,11 +541,11 @@ export default function Checkout() {
             </div>
             {method.card ? (
               <div className='check-sumar-command' onClick={() => handleNewCommand('card')}>
-                Plaseaza comanda
+                {t('Check.Plasează comanda')}
               </div>
             ) : (
               <div className='check-sumar-command' onClick={() => handleNewCommand('ramburs')}>
-                Plaseaza comanda
+                {t('Check.Plasează comanda')}
               </div>
             )}
           </>

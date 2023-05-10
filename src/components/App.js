@@ -25,7 +25,7 @@ import NotFound from './SmallComponents/NotFound';
 import CreditCard from './SmallComponents/CreditCard';
 import Faq from './SmallComponents/Faq';
 
-import Command from './Layout/Command'
+import Order from './Layout/Order'
 import Connect from './Layout/Connect';
 import Profile from './Layout/Profile'
 import Favorite from './Layout/Favorite'
@@ -40,7 +40,7 @@ import AdminRoute from '../CustomHook/AdminRoute'
 import OwnerRoute from '../CustomHook/OwnerRoute';
 
 import Admin from './Admin/Admin';
-import AdminCommands from '../components/Admin/AdminCommands'
+import AdminOrders from './Admin/AdminOrders';
 import AdminProducs from './Admin/AdminProducs';
 import AdminDiscount from './Admin/AdminDiscount';
 import AdminErrors from './Admin/AdminErrors';
@@ -89,7 +89,7 @@ function App() {
               <Route exact index element={<Main />} />
               <Route path='profile' element={<PrivateRoute element={Profile} />} />
               <Route path='fav' element={<PrivateRoute element={Favorite} />} />
-              <Route path='command' element={<PrivateRoute element={Command} />} />
+              <Route path='orders' element={<PrivateRoute element={Order} />} />
 
               <Route path='error' element={<Outlet />}>
                 <Route path='forgotPassword' index element={<ForgotPassword />} />
@@ -111,7 +111,7 @@ function App() {
 
               <Route path='admin' element={<Outlet />} >
                 <Route index element={<AdminRoute element={Admin} />} />
-                <Route path='commands' element={<AdminRoute element={AdminCommands} />} />
+                <Route path='orders' element={<AdminRoute element={AdminOrders} />} />
                 <Route path='products' element={<AdminRoute element={AdminProducs} />} />
                 <Route path='discount' element={<AdminRoute element={AdminDiscount} />} />
                 <Route path='errors' element={<AdminRoute element={AdminErrors} />} />

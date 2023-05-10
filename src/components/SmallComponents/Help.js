@@ -1,20 +1,27 @@
 import React, { useRef, useState } from 'react'
 import '../css/help.css'
 import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../contexts/DefaultContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import emailSvg from '../../svg-icon/email-security.svg'
 import infoSvg from '../../svg-icon/info.svg'
+import { useEffect } from 'react'
 
 
 export default function Help() {
   const { currentUser, server } = useAuth()
+  const { t, lang } = useDefault()
   const emailRef = useRef()
   const errorRef = useRef()
   const [response, setResponse] = useState('')
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    document.title = `Blisst — ${t('Ajutor')}`
+  }, [lang])
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -26,8 +33,8 @@ export default function Help() {
       })
       if (error.data.success) {
         Swal.fire(
-          'Trimis!',
-          'Eroare a fost trimisa catre noi. Vei primi un email cu rezolvarea in cateva zile',
+          t('Help.Trimis!'),
+          t('Help.Eroare a fost trimisă către noi. Vei primi un email cu rezolvarea in câteva zile.'),
           'success'
         )
         navigate('/main')
@@ -51,22 +58,22 @@ export default function Help() {
       <div className='help'>
         <div className='help-div'>
           <div className='help-content'>
-            <div className='for-title'>Ai o problema?</div>
-            <div className='for-text'>Ai orice fel de problema legata de orice parte a site-ului? Scrie-o aici</div>
+            <div className='for-title'>{t('Help.Ai o problemă?')}</div>
+            <div className='for-text'>{t('Help.Ai orice fel de problemă legată de orice parte a site-ului? Scrie-o aici')}</div>
             <form className='for-form' onSubmit={handleSubmit}>
               <label className='acc-label'><img className='acc-svg' src={infoSvg} alt='Img' />
                 <input ref={errorRef} className='acc-input' type='text' placeholder=' ' required />
-                <span className='place-holder'>Detalii problema</span>
+                <span className='place-holder'>{t('Detalii problemă')}</span>
               </label>
               {!currentUser && (
                 <label className='help-label'><img className='acc-svg' src={emailSvg} alt='Img' />
                   <input ref={emailRef} className='acc-input' type='email' placeholder=' ' required />
-                  <span className='place-holder'>Email</span>
+                  <span className='place-holder'>{t('Forgot.Email')}</span>
                 </label>
               )}
               <input type='submit'
                 className='for-submit'
-                value='Raporteaza problema'
+                value={t('Help.Raportează problema')}
               />
               <div className='for-res'>
                 {response /* posibila eroare */}

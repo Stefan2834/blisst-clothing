@@ -69,16 +69,17 @@ export default function Reducer(state, action) {
     case ('favGet'):
       return action.payload.fav
     case ('favAdd'):
+      const t = action.payload.t
       if (!action.payload.user) {
         Swal.fire({
-          title: 'Nu esti conectat!',
-          text: "Trebuie sa te conectezi pentru aceasta actiune.",
+          title: t('Fav.Nu ești conectat!'),
+          text: t("Fav.Trebuie să te conectezi pentru această acțiune."),
           icon: 'warning',
           showCancelButton: true,
-          cancelButtonText: 'Inapoi',
+          cancelButtonText: t('Fav.Înapoi'),
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Conecteaza-te'
+          confirmButtonText: t('Fav.Conectează-te')
         }).then((result) => {
           if (result.isConfirmed) {
             window.location.href = '/connect'
@@ -90,10 +91,10 @@ export default function Reducer(state, action) {
       }
     case ('favRemove'):
       return state.filter(fav => fav.id !== action.payload.fav.id)
-    case ('commandGet'):
-      return action.payload.command
-    case ('commandAdd'):
-      return [...state, action.payload.command]
+    case ('orderGet'):
+      return action.payload.order
+    case ('orderAdd'):
+      return [...state, action.payload.order]
     case ('deleteState'):
       return []
     default:
@@ -114,7 +115,7 @@ export function AuthProvider({ children }) {
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
-  const [command, dispatchCommand] = useReducer(Reducer, [])
+  const [order, dispatchOrder] = useReducer(Reducer, [])
   const [collections, setCollections] = useState([])
   const navigate = useNavigate()
 
@@ -125,7 +126,8 @@ export function AuthProvider({ children }) {
           dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav } })
           dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart } })
           dispatchCart({ type: 'cartUpdate', payload: { product: product } })
-          dispatchCommand({ type: 'commandGet', payload: { command: info.data.data.command } })
+          console.log(info.data.data)
+          dispatchOrder({ type: 'orderGet', payload: { order: info.data.data.order } })
           setDet(info.data.data.det);
           document.documentElement.style.setProperty("--principal", info.data.data.det.color)
         }
@@ -194,14 +196,14 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (currentUser) {
-      axios.post(`${server}/user/command/add`, {
-        command: command,
+      axios.post(`${server}/user/order/add`, {
+        order: order,
         uid: currentUser.uid,
       })
         .then(data => console.log(data))
         .catch(err => console.error(err))
     }
-  }, [command])
+  }, [order])
 
 
   const value = {
@@ -210,7 +212,7 @@ export function AuthProvider({ children }) {
     favorite, dispatchFav,
     loading, setLoading,
     server, product, setProduct,
-    command, dispatchCommand,
+    order, dispatchOrder,
     getUserData,
     det, setDet,
     admin, setAdmin,

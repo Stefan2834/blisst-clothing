@@ -6,29 +6,29 @@ import '../css/admin.css'
 import '../../index.css'
 import { useDefault } from '../../contexts/DefaultContext'
 
-export default function AdminCommands() {
+export default function AdminOrders() {
   const { server, product, setProduct } = useAuth()
   const { isPending, startTransition } = useDefault()
-  const [commands, setCommands] = useState([])
+  const [orders, setOrders] = useState([])
   const [selectedProducts, setSelectedProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('Toate')
   const [load, setLoad] = useState(4)
 
-  const handleProductSelect = (commandIndex, selectedProduct) => {
+  const handleProductSelect = (orderIndex, selectedProduct) => {
     setSelectedProducts(prevState => {
       const newState = [...prevState]
-      newState[commandIndex] = selectedProduct
+      newState[orderIndex] = selectedProduct
       return newState
     })
   }
 
   const handleStatus = async (status, id, uid) => {
-    const updatedCommands = commands.map(command => {
-      if (command.id === id && command.uid === uid) {
+    const updatedOrders = orders.map(order => {
+      if (order.id === id && order.uid === uid) {
         if (status === 'Anulata') {
-          console.log(command.product)
-          command.product.map(comm => {
+          console.log(order.product)
+          order.product.map(comm => {
             setProduct(product.map((product) => {
               if (product.id === comm.id) {
                 return { ...product, size: { ...product.size, [comm.selectedSize]: product.size[comm.selectedSize] + comm.number } }
@@ -39,10 +39,10 @@ export default function AdminCommands() {
           })
           return null
         } else {
-          return { ...command, status: status }
+          return { ...order, status: status }
         }
       } else {
-        return command
+        return order
       }
     }).filter(c => c !== null)
     await axios.post(`${server}/admin/status`, {
@@ -52,18 +52,18 @@ export default function AdminCommands() {
     })
       .then(data => console.log(data))
       .catch(err => console.error(err))
-    setCommands(updatedCommands)
-    await axios.post(`${server}/admin/commands`, { commands: updatedCommands })
+    setOrders(updatedOrders)
+    await axios.post(`${server}/admin/orders`, { orders: updatedOrders })
       .then(data => console.log(data))
       .catch(err => console.error(err))
   }
 
   useEffect(() => {
-    axios.get(`${server}/admin/commands`)
+    axios.get(`${server}/admin/orders`)
       .then(data => {
         setLoading(false)
-        if (data.data.commands) {
-          setCommands(data.data.commands)
+        if (data.data.orders) {
+          setOrders(data.data.orders)
         }
       })
       .catch(err => {
@@ -104,23 +104,23 @@ export default function AdminCommands() {
                 </select>
               </div>
             </div>
-            {[...commands].reverse().map((command, index) => {
-              if (command.status === filter || filter === 'Toate') {
-                const selectedProduct = selectedProducts[index] || command.product[0]
+            {[...orders].reverse().map((order, index) => {
+              if (order.status === filter || filter === 'Toate') {
+                const selectedProduct = selectedProducts[index] || order.product[0]
                 if (load > index) {
                   return (
                     <div className='comm-element'>
                       <div className='comm-left'>
                         <div className='comm-left-top'>
                           <div className="comm-option flex justify-center items-center">Data comenzi:
-                            <div className="comm-txt">{command.date}</div>
+                            <div className="comm-txt">{order.date}</div>
                           </div>
                           <div>
                             <label className='comm-option'>Produs:</label>
                             <select value={JSON.stringify(selectedProduct)} className='comm-option'
                               onChange={e => { handleProductSelect(index, JSON.parse(e.target.value)) }}
                             >
-                              {command.product.map((product) => {
+                              {order.product.map((product) => {
                                 return (
                                   <option key={product.id}
                                     value={JSON.stringify(product)}
@@ -166,26 +166,26 @@ export default function AdminCommands() {
                       </div>
                       <div className='comm-right'>
                         <div className='comm-title'>Judetul:
-                          <div className='comm-txt'>{command.details.county}</div>
+                          <div className='comm-txt'>{order.details.county}</div>
                         </div>
                         <div className="comm-title">Informatii adresa:
-                          <div className="comm-txt">{command.details.info}</div>
+                          <div className="comm-txt">{order.details.info}</div>
                         </div>
                         <div className="comm-title">Telefon:
-                          <div className="comm-txt">{command.details.tel}</div>
+                          <div className="comm-txt">{order.details.tel}</div>
                         </div>
                         <div className="comm-title">Email:
-                          <div className="comm-txt">{command.details.email}</div>
+                          <div className="comm-txt">{order.details.email}</div>
                         </div>
                         <div className="comm-title">Total:
-                          <div className="comm-txt">{command.price.total} Lei</div>
+                          <div className="comm-txt">{order.price.total} Lei</div>
                         </div>
                         <div className="comm-title">Metoda de plata:
-                          <div className="comm-txt">{command.method}</div>
+                          <div className="comm-txt">{order.method}</div>
                         </div>
                         <div className='comm-title'>Status:
-                          <select value={command.status} className='comm-option'
-                            onChange={e => { handleStatus(e.target.value, command.id, command.uid) }}
+                          <select value={order.status} className='comm-option'
+                            onChange={e => { handleStatus(e.target.value, order.id, order.uid) }}
                           >
                             <option value={'Plasată'} className='comm-option' >
                               Plasată
@@ -207,7 +207,7 @@ export default function AdminCommands() {
                 }
               }
             })}
-            {load < commands.length && (
+            {load < orders.length && (
               <div className="cloth-more">
                 <div className="cloth-more-btn" onClick={() => startTransition(() => setLoad(p => p + 4))}>Incarca mai multe comenzi</div>
               </div>

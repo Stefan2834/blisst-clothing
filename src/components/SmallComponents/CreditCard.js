@@ -1,41 +1,46 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams, useHistory } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { useDefault } from '../../contexts/DefaultContext'
 
 export default function CreditCard() {
-  const { server, currentUser, cart, dispatchCart, dispatchCommand } = useAuth()
+  const { server, currentUser, cart, dispatchCart, dispatchOrder, setProduct } = useAuth()
+  const { t } = useDefault()
   const { cardId } = useParams()
   const navigate = useNavigate()
 
 
   useEffect(() => {
-    const handleCommand = async () => {
+    const handleOrder = async () => {
       try {
-        const commandData = { ...JSON.parse(cardId), product: cart }
-        if (commandData.price.discount !== 0) {
-          axios.post(`${server}/discountOnce`, { email: currentUser.email, code: commandData.price.code })
+        const orderData = { ...JSON.parse(cardId), product: cart }
+        if (orderData.price.discount !== 0) {
+          axios.post(`${server}/discountOnce`, { email: currentUser.email, code: orderData.price.code })
         }
         Swal.fire(
-          'Comanda Plasata!',
-          'Comanda a fost plasata.',
+          t('Check.Comandă plasată'),
+          t('Comanda a fost plasată.'),
           'success'
         )
-        axios.post(`${server}/commandUpdate`, {
+        axios.post(`${server}/orderUpdate`, {
           uid: currentUser.uid,
-          command: commandData,
+          order: orderData,
           cart: cart
         }
-        ).then(info => {
+        ).then(async info => {
           dispatchCart({ type: 'cartDeleteAll' })
-          dispatchCommand({ type: 'commandAdd', payload: { command: commandData } })
-          console.log(info);
-          axios.post(`${server}/email/command`,
+          dispatchOrder({ type: 'orderAdd', payload: { order: orderData } })
+          const product = await axios.get(`${server}/product`)
+          if (product.data.success) {
+            setProduct(product.data.product)
+          }
+          axios.post(`${server}/email/order`,
             {
               email: currentUser.email,
-              name: commandData.details.name,
-              price: commandData.price.total
+              name: orderData.details.name,
+              price: orderData.price.total
             }).then((data) => {
               console.log(data)
             }).catch(err => {
@@ -46,9 +51,9 @@ export default function CreditCard() {
       } catch (err) {
         console.log(err)
       }
-      navigate('/main/command', { replace: true })
+      navigate('/main/orders', { replace: true })
     }
-    handleCommand()
+    handleOrder()
   }, [])
 
 

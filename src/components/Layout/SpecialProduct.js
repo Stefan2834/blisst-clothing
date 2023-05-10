@@ -214,7 +214,7 @@ export default function SpecialProduct() {
           text: t('Spec.Nu ai selectat mărimea sau numărul de produse.'),
           icon: 'error',
           confirmButtonColor: '#3085d6',
-          confirmButtonText: 'Înapoi'
+          confirmButtonText: t('Spec.Înapoi')
         })
       } else {
         dispatchCart({ type: 'cartAdd', payload: { clothing: specialClothing, spec: cartSpec } })
@@ -384,7 +384,7 @@ export default function SpecialProduct() {
                     {favorite.some(item => item.id === specialClothing.id) ? (
                       <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: specialClothing } })} />
                     ) : (
-                      <div className={darkTheme ? 'cloth-fav-dark' : "cloth-fav"} onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: specialClothing, user: currentUser } })} />
+                      <div className={darkTheme ? 'cloth-fav-dark' : "cloth-fav"} onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: specialClothing, user: currentUser, t: t } })} />
                     )}
                   </div>
                   <div className='spec-det'><span className='spec-span'>{t('Spec.Detalii')}: </span>{specialClothing.spec}</div>
