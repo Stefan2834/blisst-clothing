@@ -112,7 +112,7 @@ export default function AdminOrders() {
                     <div className='comm-element'>
                       <div className='comm-left'>
                         <div className='comm-left-top'>
-                          <div className="comm-option flex justify-center items-center">Data comenzi:
+                          <div className="comm-option flex justify-center items-center">Data comenzii:
                             <div className="comm-txt">{order.date}</div>
                           </div>
                           <div>
@@ -150,7 +150,7 @@ export default function AdminOrders() {
                                   <div className="cart-price-old">{selectedProduct.price}
                                     <span className="cart-span">Lei</span>
                                   </div>
-                                  <span className="cart-price"> - {(selectedProduct.discount * 100).toFixed(2)} %</span>
+                                  <span className="cart-price"> - {(selectedProduct.discount * 100).toFixed(0)} %</span>
                                 </div>
                                 <div className="cart-price-new text-red-600">{(selectedProduct.price + 0.01 - ((selectedProduct.price + 0.01) * selectedProduct.discount) - 0.01).toFixed(2)}
                                   <span className="cart-span text-red-600">Lei</span>

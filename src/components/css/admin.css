@@ -94,12 +94,14 @@
 /*----------Admin err----------*/
 .admin-err-container {
   width:100vw;
+  min-height:100vh;
   background-color: var(--color-third);
   display: flex;
   height:auto;
   padding:100px 20px 20px 20px;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .admin-err-div {
   width:80vw;
@@ -423,13 +425,18 @@ input.adm-input:valid {
   font-family: 'Poppins', sans-serif;
   color:var(--color-oposite)
 }
-.adm-list-delete {
+.adm-list-delete, .adm-list-delete-dark {
   aspect-ratio: 1/1;
   height:40px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   cursor: pointer;
+}
+.adm-list-delete {
   background-image: url(../Main/svg-dark/delete.svg);
+}
+.adm-list-delete-dark {
+  background-image: url(../Main/svg/delete.svg);
 }
 
 @media screen and (max-width:800px) {

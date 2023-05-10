@@ -302,6 +302,64 @@
     "Pagina pe care încerci să o accesezi nu există.": "Pagina pe care încerci să o accesezi nu există.",
     "Înapoi acasa": "Înapoi acasa"
   },
+  "Admin": {
+    "Main": {
+      "Bun venit pe pagina pentru admini!": "Bun venit pe pagina pentru admini!",
+      "Produse": "Produse",
+      "Comenzi": "Comenzi",
+      "Discount-uri": "Discount-uri",
+      "Erori": "Erori",
+      "Alți admini": "Alți admini"
+    },
+    "Disc": {
+      "Adăugat!": "Adăugat!",
+      "Codul a fost creat cu succes.": "Codul a fost creat cu succes.",
+      "Eroare!": "Eroare!",
+      "Înapoi": "Înapoi",
+      "Ești sigur?": "Ești sigur?",
+      "Atenție! Asigură-te că nimeni în afară de tine nu este capabil să vada aceste coduri, deoarece sunt confidențiale.": "Atenție! Asigură-te că nimeni în afară de tine nu este capabil să vada aceste coduri, deoarece sunt confidențiale.",
+      "Afișeaza": "Afișeaza",
+      "Adaugă un cod de discount": "Adaugă un cod de discount",
+      "Cod": "Cod",
+      "Valoare discount %": "Valoare discount %",
+      "Creeaza codul": "Creeaza codul",
+      "Alte coduri": "Alte coduri",
+      "Afișeaza alte coduri": "Afișeaza alte coduri",
+      "Oprește afișarea": "Oprește afișarea",
+      "Codul:": "Codul:",
+      "Reducere:": "Reducere:"
+    },
+    "Errors": {
+      "Erori": "Erori",
+      "Email trimis!": "Email trimis!",
+      "Emailul a fost trimis cu succes către": "Emailul a fost trimis cu succes către",
+      "Răspunde acestui utilizator": "Răspunde acestui utilizator",
+      "Nume:": "Nume:",
+      "Problema:": "Problema:",
+      "Răspunde:": "Răspunde:",
+      "Răspuns...": "Răspuns...",
+      "Trimite email": "Trimite email",
+      "Nu mai există erori!": "Nu mai există erori!"
+    },
+    "List": {
+      "Listă":"Listă",
+      "Ești sigur?":"Ești sigur?",
+      "Sigur vrei să oferi gradul de admin lui":"Sigur vrei să oferi gradul de admin lui",
+      "Înapoi":"Înapoi",
+      "Adaugă":"Adaugă",
+      "Admin adăugat!":"Admin adăugat!",
+      "este acum admin.":"este acum admin.",
+      "Nu poți face asta!":"Nu poți face asta!",
+      "Nu poți să iți ștergi singur rolul de admin":"Nu poți să iți ștergi singur rolul de admin",
+      "Sigur vrei să îi scoți gradul de admin lui":"Sigur vrei să îi scoți gradul de admin lui",
+      "Șterge":"Șterge",
+      "Admin șters!":"Admin șters!",
+      "nu mai este admin.":"nu mai este admin.",
+      "Adaugă admin":"Adaugă admin",
+      "Email":"Email",
+      "Scoate admin":"Scoate admin"
+    }
+  },
   "Month": {
     "1": "Ianuarie",
     "2": "Februarie",

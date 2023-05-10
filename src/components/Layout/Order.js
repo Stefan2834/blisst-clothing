@@ -6,14 +6,14 @@ import '../css/order.css'
 
 export default function Order() {
   const { order, det } = useAuth()
-  const { darkTheme, startTransition, isPending, t } = useDefault()
+  const { darkTheme, startTransition, isPending, t, lang } = useDefault()
   const [selectedProducts, setSelectedProducts] = useState([])
   const [load, setLoad] = useState(4)
 
 
   useEffect(() => {
     document.title = `Blisst — ${t('Order.Comenziile mele')}`
-  }, [])
+  }, [lang])
 
   const handleProductSelect = (commandIndex, selectedProduct) => {
     setSelectedProducts(prevState => {

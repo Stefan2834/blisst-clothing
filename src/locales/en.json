@@ -46,7 +46,7 @@
     "Adidași": "Shoes",
     "Șosete": "Socks",
     "Colecții": "Collections",
-    "Vezi Admin": "See admin",
+    "Vezi Admin": "See Admin",
     "Favorite": "Favorite",
     "Nu ai nimic la favorite!": "Your favorite list is empty!",
     "Alte": "Other",
@@ -59,7 +59,7 @@
     "Cantitate": "Quantity",
     "Vezi Coșul": "See cart",
     "Profil": "Profile",
-    "Vezi Profilul": "See profile",
+    "Vezi Profilul": "See Profile",
     "Deconectare": "Disconnect",
     "Opțiuni": "Options",
     "Conectare": "Connect"
@@ -118,10 +118,10 @@
   "Fav": {
     "Produsul zilei": "Daily product",
     "Top reducere": "Top discount",
-    "Nu ești conectat!":"You are not connected",
-    "Trebuie să te conectezi pentru această acțiune.":"You need to log in to perform this action.",
-    "Înapoi":"Back",
-    "Conectează-te":"Connect"
+    "Nu ești conectat!": "You are not connected",
+    "Trebuie să te conectezi pentru această acțiune.": "You need to log in to perform this action.",
+    "Înapoi": "Back",
+    "Conectează-te": "Connect"
   },
   "Cart": {
     "Coșul meu": "My cart",
@@ -270,7 +270,7 @@
     "Produs": "Product"
   },
   "Forgot": {
-    "Am uitat parola":"I forgot my password",
+    "Am uitat parola": "I forgot my password",
     "Ți-ai uitat parola?": "Forgot your password?",
     "Introdu emailul pentru a reseta parola.": "Enter your email to reset your password.",
     "Email": "Email",
@@ -280,7 +280,7 @@
     "Emailul este invalid": "The email is invalid"
   },
   "Resend": {
-    "Retrimite email":"Resend email",
+    "Retrimite email": "Resend email",
     "Emailul de resetare a fost trimis. Verifică-ți emailul pentru a activa contul.": "The reset email has been sent. Check your email to activate your account.",
     "Nu ai primit emailul?": "Haven't received the email?",
     "Daca nu ai primit emailul iți sugerăm sa verifici secțiunea 'spam'.Daca l-ai șters din greșeală, sau nu il găsești, conectează-te aici.": "If you haven't received the email, we suggest checking your 'spam' section. If you accidentally deleted it or can't find it, log in here.",
@@ -294,13 +294,71 @@
     "Ai orice fel de problemă legată de orice parte a site-ului? Scrie-o aici": "Do you have any issue related to any part of the website? Write it here.",
     "Detalii problemă": "Issue details",
     "Trimis!": "Sent!",
-    "Raportează problema":"Report an issue",
+    "Raportează problema": "Report an issue",
     "Eroare a fost trimisă către noi. Vei primi un email cu rezolvarea in câteva zile.": "An error has been sent to us. You will receive an email with the solution in a few days."
   },
   "404": {
     "Pagina greșită": "Wrong page",
     "Pagina pe care încerci să o accesezi nu există.": "The page you are trying to access does not exist.",
     "Înapoi acasa": "Back home"
+  },
+  "Admin": {
+    "Main": {
+      "Bun venit pe pagina pentru admini!": "Welcome to admin page!",
+      "Produse": "Products",
+      "Comenzi": "Orders",
+      "Discount-uri": "Discounts",
+      "Erori": "Errors",
+      "Alți admini": "Other admins"
+    },
+    "Disc": {
+      "Adăugat!": "Added!",
+      "Codul a fost creat cu succes.": "The code has been successfully created.",
+      "Eroare!": "Error!",
+      "Înapoi": "Back",
+      "Ești sigur?": "Are you sure?",
+      "Atenție! Asigură-te că nimeni în afară de tine nu este capabil să vada aceste coduri, deoarece sunt confidențiale.": "Attention! Make sure that no one else is able to see these codes as they are confidential.",
+      "Afișeaza": "Display",
+      "Adaugă un cod de discount": "Add a discount code",
+      "Cod": "Code",
+      "Valoare discount %": "Discount value %",
+      "Creeaza codul": "Create code",
+      "Alte coduri": "Other codes",
+      "Afișeaza alte coduri": "Display other codes",
+      "Oprește afișarea": "Stop display",
+      "Codul:": "Code:",
+      "Reducere:": "Discount:"
+    },
+    "Errors": {
+      "Erori": "Errors",
+      "Email trimis!": "Email sent!",
+      "Emailul a fost trimis cu succes către": "Email has been successfully sent to",
+      "Răspunde acestui utilizator": "Reply to this user",
+      "Nume:": "Name",
+      "Problema:": "Issue:",
+      "Răspunde:": "Respond",
+      "Răspuns...": "Response...",
+      "Trimite email": "Send email",
+      "Nu mai există erori!": "No more errors!"
+    },
+    "List": {
+      "Listă": "List",
+      "Ești sigur?": "Are you sure?",
+      "Sigur vrei să oferi gradul de admin lui": "Are you sure you want to give admin role to",
+      "Înapoi": "Back",
+      "Adaugă": "Add",
+      "Admin adăugat!": "Admin added!",
+      "este acum admin.": "is now an admin.",
+      "Nu poți face asta!": "You can't do that!",
+      "Nu poți să iți ștergi singur rolul de admin": "You can't remove your own admin role",
+      "Sigur vrei să îi scoți gradul de admin lui": "Are you sure you want to remove admin role from",
+      "Șterge": "Delete",
+      "Admin șters!": "Admin deleted!",
+      "nu mai este admin.": "is no longer an admin.",
+      "Adaugă admin": "Add admin",
+      "Email": "Email",
+      "Scoate admin": "Remove admin"
+    }
   },
   "Month": {
     "1": "January",

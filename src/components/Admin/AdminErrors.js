@@ -4,10 +4,11 @@ import axios from 'axios'
 import { useDefault } from '../../contexts/DefaultContext'
 import { useRef } from 'react'
 import Swal from 'sweetalert2'
+import { useEffect } from 'react'
 
 export default function AdminErrors() {
   const { server } = useAuth()
-  const { darkTheme } = useDefault()
+  const { darkTheme, t, lang } = useDefault()
   const [error, setError] = useState([])
   const [loading, setLoading] = useState(true)
   const [popUp, setPopUp] = useState({ user: '', open: false, error: "" })
@@ -31,8 +32,8 @@ export default function AdminErrors() {
       .then(() => {
         handleDelete(popUp.id)
         Swal.fire({
-          title: 'Email trimis',
-          text: `Emailul a fost trimis cu succes catre ${popUp.user}`,
+          title: t('Admin.Errors.Email trimis!'),
+          text: `${t(`Admin.Errors.Emailul a fost trimis cu succes către`)} ${popUp.user}.`,
           icon: 'success',
           cancelButtonText: 'Ok',
           confirmButtonColor: '#3085d6',
@@ -45,6 +46,10 @@ export default function AdminErrors() {
       })
   }
 
+  useEffect(() => {
+    document.title = `Blisst — Admin — ${t('Admin.Errors.Erori')}`
+  }, [lang])
+
   useLayoutEffect(() => {
     axios.get(`${server}/admin/errors`)
       .then(data => {
@@ -53,7 +58,7 @@ export default function AdminErrors() {
         }
         setLoading(false)
       })
-      .catch(err => {console.error(err); setLoading(false)})
+      .catch(err => { console.error(err); setLoading(false) })
   }, [])
 
 
@@ -72,31 +77,32 @@ export default function AdminErrors() {
             <form className='adm-popup' onSubmit={e => handleSend(e)}>
               <div className='adm-popup-bg' onClick={() => setPopUp({ user: "", open: false, error: "" })} />
               <div className='adm-pop-content'>
-                <div className='adm-dis-title'>Raspunde acestui utilizator</div>
+                <div className='adm-dis-title'>{t('Admin.Errors.Răspunde acestui utilizator')}</div>
                 <div className='flex justify-start items-center my-4 w-full'>
-                  <div className="font-medium text-lg">Nume: </div>
+                  <div className="font-medium text-lg">{t('Admin.Errors.Nume:')}</div>
                   <div className="font-medium text-lg">{popUp.user}</div>
                 </div>
                 <div className='flex justify-start items-start my-4 w-full'>
-                  <div className="font-medium text-lg">Problema: </div>
+                  <div className="font-medium text-lg">{t('Admin.Errors.Problema:')} </div>
                   <div className="font-medium text-lg">{popUp.error} </div>
                 </div>
                 <div className='flex justify-start items-center my-4 w-full'>
-                  <div className='font-medium text-lg'>Raspunde:</div>
+                  <div className='font-medium text-lg'>{t('Admin.Errors.Răspunde:')}</div>
                   <input type='text' ref={solve}
                     className='adm-pop-input w-full'
                     required
-                    placeholder='Raspuns...' minLength={10} maxLength={500}
+                    placeholder={t('Admin.Errors.Răspuns...')} minLength={10} maxLength={500}
                   />
                 </div>
-                <input type='submit' className='adm-pop-send' value={'Trimite email'} />
+                <input type='submit' className='adm-pop-send' value={t('Admin.Errors.Trimite email')} />
               </div>
             </form>
           )}
           <div className='admin-err-div'>
+            <div className="text-2xl font-semibold my-2">{t('Admin.Errors.Erori')}</div>
             {error.length === 0 ? (
               <div className='admin-err'>
-                <div className='admin-err-title'>Nu mai exista erori!</div>
+                <div className='admin-err-title w-full  text-center'>{t('Admin.Errors.Nu mai există erori!')}</div>
               </div>
             ) : (
               <>

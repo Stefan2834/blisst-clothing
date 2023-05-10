@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import '../css/admin.css'
 import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../contexts/DefaultContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 export default function Admin() {
   const { det, currentUser, server } = useAuth()
+  const { t } = useDefault()
   const [owner, setOwner] = useState("")
   const [loading, setLoading] = useState(true)
 
@@ -29,18 +31,18 @@ export default function Admin() {
       ) : (
         <div className='admin'>
           <div className='admin-div'>
-            <div className='admin-top'>Salut, {det.type === 'man' ? 'Domnule' : 'Doamna'}
+            <div className='admin-top'>{t('Profile.Salut')}, {det.type === 'man' ? t('Profile.Domnule') : t('Profile.Doamna')}
               <span className='principal'> {det.name}</span>
             </div>
-            <div className='admin-txt'>Bun venit pe pagina pentru admini!</div>
+            <div className='admin-txt'>{t('Admin.Main.Bun venit pe pagina pentru admini!')}</div>
             <div className='admin-bottom-flex'>
-              <Link to='/main/admin/products' className='admin-link'>Produse</Link>
-              <Link to='/main/admin/orders' className='admin-link'>Comenzi</Link>
-              <Link to='/main/admin/discount' className='admin-link'>Discount-uri</Link>
-              <Link to='/main/admin/errors' className='admin-link'>Erori</Link>
+              <Link to='/main/admin/products' className='admin-link'>{t('Admin.Main.Produse')}</Link>
+              <Link to='/main/admin/orders' className='admin-link'>{t('Admin.Main.Comenzi')}</Link>
+              <Link to='/main/admin/discount' className='admin-link'>{t('Admin.Main.Discount-uri')}</Link>
+              <Link to='/main/admin/errors' className='admin-link'>{t('Admin.Main.Erori')}</Link>
             </div>
             {currentUser.email === owner && (
-              <Link to='/main/admin/list' className='admin-link'>Alti admini</Link>
+              <Link to='/main/admin/list' className='admin-link'>{t('Admin.Main.Alți admini')}</Link>
             )}
           </div>
         </div>
