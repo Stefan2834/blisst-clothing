@@ -97,10 +97,10 @@ export default function AdminDiscount() {
           return (
             <div className='adm-dis-div'>
               <div>
-                {t('Admin.Disc.Codul:')}<span className='font-semibold'>{dis.code}</span>
+                {t('Admin.Disc.Codul')}:<span className='font-semibold'>{dis.code}</span>
               </div>
               <div>
-                {t('Admin.Disc.Reducere:')}<span className='font-semibold'>{(dis.value * 100).toFixed(0)}%</span>
+                {t('Admin.Disc.Reducere')}:<span className='font-semibold'>{(dis.value * 100).toFixed(0)}%</span>
               </div>
             </div>
           )

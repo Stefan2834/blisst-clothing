@@ -23,7 +23,7 @@
     "Pantaloni lungi pentru El": "Pantaloni lungi pentru El",
     "Pantaloni lungi pentru Ea": "Pantaloni lungi pentru Ea",
     "Pantaloni scurți pentru El": "Pantaloni scurți pentru El",
-    "Pantaloni scurți pentru Ea": "Pantaloni scurți pentru El",
+    "Pantaloni scurți pentru Ea": "Pantaloni scurți pentru Ea",
     "Adidași pentru El": "Adidași pentru El",
     "Adidași pentru Ea": "Adidași pentru Ea",
     "Șosete pentru El": "Șosete pentru El",
@@ -112,7 +112,7 @@
     "Culori": "Culori",
     "Caută": "Caută",
     "După nume": "După nume",
-    "După id": "După id",
+    "După id": "După ID",
     "Șterge Filtre": "Șterge Filtre"
   },
   "Fav": {
@@ -167,6 +167,8 @@
     "Plasată": "Plasată",
     "Se livrează": "Se livrează",
     "Livrată": "Livrată",
+    "Ramburs": "Ramburs",
+    "Card": "Card",
     "Vezi mai multe detalii": "Vezi mai multe detalii"
   },
   "Clothing": {
@@ -195,7 +197,7 @@
     "Trebuie să te conectezi pentru această actiune.": "Trebuie să te conectezi pentru această actiune.",
     "Medie": "Medie",
     "Review-uri": "Review-uri",
-    "Id produs": "Id produs",
+    "Id produs": "ID produs",
     "Culori": "Culori",
     "Mărimi": "Mărimi",
     "Adaugă în coș": "Adaugă în coș",
@@ -226,7 +228,7 @@
     "Ești sigur?": "Ești sigur?",
     "Ești sigur că vrei să plasezi comanda?": "Ești sigur că vrei să plasezi comanda?",
     "Plasează comanda": "Plasează comanda",
-    "A apărut o eroare:": "A apărut o eroare:",
+    "A apărut o eroare": "A apărut o eroare",
     "Asta o să iți șteargă produsul din coș.": "Asta o să iți șteargă produsul din coș.",
     "Șterge": "Șterge",
     "Coșul Meu": "Coșul Meu",
@@ -267,7 +269,9 @@
     "Salut": "Salut",
     "Uite istoricul comenziilor tale": "Uite istoricul comenziilor mele",
     "Data comenzii": "Data comenzi",
-    "Produs": "Produs"
+    "Produs": "Produs",
+    "Toate": "Toate",
+    "Comenzi": "Comenzi"
   },
   "Forgot": {
     "Am uitat parola": "Am uitat parola",
@@ -283,7 +287,7 @@
     "Retrimite email": "Retrimite email",
     "Emailul de resetare a fost trimis. Verifică-ți emailul pentru a activa contul.": "Emailul de resetare a fost trimis. Verifică-ți emailul pentru a activa contul.",
     "Nu ai primit emailul?": "Nu ai primit emailul?",
-    "Daca nu ai primit emailul iți sugerăm sa verifici secțiunea 'spam'.Daca l-ai șters din greșeală, sau nu il găsești, conectează-te aici.": "Daca nu ai primit emailul iți sugerăm sa verifici secțiunea 'spam'.Daca l-ai șters din greșeală, sau nu il găsești, conectează-te aici.",
+    "ResendText": "Daca nu ai primit emailul iți sugerăm sa verifici secțiunea 'spam'.Daca l-ai șters din greșeală, sau nu il găsești, conectează-te aici.",
     "Parola": "Parola",
     "Utilizatorul nu există": "Utilizatorul nu există",
     "Parola este greșită": "Parola este greșită"
@@ -309,6 +313,7 @@
       "Comenzi": "Comenzi",
       "Discount-uri": "Discount-uri",
       "Erori": "Erori",
+      "Colecții":"Colecții",
       "Alți admini": "Alți admini"
     },
     "Disc": {
@@ -326,38 +331,43 @@
       "Alte coduri": "Alte coduri",
       "Afișeaza alte coduri": "Afișeaza alte coduri",
       "Oprește afișarea": "Oprește afișarea",
-      "Codul:": "Codul:",
-      "Reducere:": "Reducere:"
+      "Codul": "Codul",
+      "Reducere": "Reducere"
     },
     "Errors": {
       "Erori": "Erori",
       "Email trimis!": "Email trimis!",
       "Emailul a fost trimis cu succes către": "Emailul a fost trimis cu succes către",
       "Răspunde acestui utilizator": "Răspunde acestui utilizator",
-      "Nume:": "Nume:",
-      "Problema:": "Problema:",
-      "Răspunde:": "Răspunde:",
+      "Nume": "Nume",
+      "Problema": "Problema",
+      "Răspunde": "Răspunde",
       "Răspuns...": "Răspuns...",
       "Trimite email": "Trimite email",
       "Nu mai există erori!": "Nu mai există erori!"
     },
     "List": {
-      "Listă":"Listă",
-      "Ești sigur?":"Ești sigur?",
-      "Sigur vrei să oferi gradul de admin lui":"Sigur vrei să oferi gradul de admin lui",
-      "Înapoi":"Înapoi",
-      "Adaugă":"Adaugă",
-      "Admin adăugat!":"Admin adăugat!",
-      "este acum admin.":"este acum admin.",
-      "Nu poți face asta!":"Nu poți face asta!",
-      "Nu poți să iți ștergi singur rolul de admin":"Nu poți să iți ștergi singur rolul de admin",
-      "Sigur vrei să îi scoți gradul de admin lui":"Sigur vrei să îi scoți gradul de admin lui",
-      "Șterge":"Șterge",
-      "Admin șters!":"Admin șters!",
-      "nu mai este admin.":"nu mai este admin.",
-      "Adaugă admin":"Adaugă admin",
-      "Email":"Email",
-      "Scoate admin":"Scoate admin"
+      "Listă": "Listă",
+      "Ești sigur?": "Ești sigur?",
+      "Sigur vrei să oferi gradul de admin lui": "Sigur vrei să oferi gradul de admin lui",
+      "Înapoi": "Înapoi",
+      "Adaugă": "Adaugă",
+      "Admin adăugat!": "Admin adăugat!",
+      "este acum admin.": "este acum admin.",
+      "Nu poți face asta!": "Nu poți face asta!",
+      "Nu poți să iți ștergi singur rolul de admin": "Nu poți să iți ștergi singur rolul de admin",
+      "Sigur vrei să îi scoți gradul de admin lui": "Sigur vrei să îi scoți gradul de admin lui",
+      "Șterge": "Șterge",
+      "Admin șters!": "Admin șters!",
+      "nu mai este admin.": "nu mai este admin.",
+      "Adaugă admin": "Adaugă admin",
+      "Email": "Email",
+      "Scoate admin": "Scoate admin"
+    },
+    "Orders": {
+      "Sigur vrei să modifici statusul comenzi utilizatorului":"Sigur vrei să modifici statusul comenzi utilizatorului",
+      "Modifică":"Modifică",
+      "în":"în"
     }
   },
   "Month": {

@@ -20,7 +20,7 @@ export default function NotFound() {
         </div>
         <div className='not-title'>{t('404.Pagina greșită')}</div>
         <div className='not-text'>{t('404.Pagina pe care încerci să o accesezi nu există.')}</div>
-        <Link to='/main' className='not-btn'>{t('Înapoi acasa')}</Link>
+        <Link to='/main' className='not-btn'>{t('404.Înapoi acasa')}</Link>
       </div>
     </div>
   )

@@ -249,7 +249,7 @@ export default function Profile() {
                             <div className="prof-comm-subtitle">{t('Profile.Email')}</div> 
                             <div className="prof-comm-txt">{order[order.length - 1].details.email}</div>
                             <div className="prof-comm-subtitle">{t('Profile.Metodă de plată')}</div> 
-                            <div className="prof-comm-txt">{order[order.length - 1].method}</div>
+                            <div className="prof-comm-txt">{t(`Profile.${order[order.length - 1].method}`)}</div>
                             <div className="prof-comm-subtitle">{t('Profile.Total')}</div> 
                             <div className="prof-comm-txt">{order[order.length - 1].price.total} Lei</div>
                             <div className="prof-comm-subtitle">{t('Profile.Status')}</div> 

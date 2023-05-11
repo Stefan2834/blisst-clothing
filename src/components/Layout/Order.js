@@ -125,7 +125,7 @@ export default function Order() {
                             <div className="comm-txt">{order.price.total} Lei</div>
                           </div>
                           <div className="comm-title">{t('Profile.Metodă de plată')}:
-                            <div className="comm-txt">{order.method}</div>
+                            <div className="comm-txt">{t(`Profile.${order.method}`)}</div>
                           </div>
                           <div className="comm-title">{t('Profile.Status')}:
                             <div className="comm-txt principal">{t(`Profile.${order.status}`)}</div>

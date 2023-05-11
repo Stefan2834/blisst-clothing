@@ -30,9 +30,9 @@ export default function Cart() {
     }, [cart])
 
     useEffect(() => {
-        console.log(lang)
-        document.title = `Blisst — ${t('Cart.Coșul meu')}`
-    }, [lang])
+        const count = cart.reduce((total, cart) => total + Number(cart.number), 0)
+        document.title = `Blisst — ${t('Cart.Coșul meu')} (${count})`
+    }, [lang, cart])
 
     function handleDeleteCart(product) {
         Swal.fire({

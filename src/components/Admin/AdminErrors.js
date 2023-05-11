@@ -79,15 +79,15 @@ export default function AdminErrors() {
               <div className='adm-pop-content'>
                 <div className='adm-dis-title'>{t('Admin.Errors.Răspunde acestui utilizator')}</div>
                 <div className='flex justify-start items-center my-4 w-full'>
-                  <div className="font-medium text-lg">{t('Admin.Errors.Nume:')}</div>
+                  <div className="font-medium text-lg">{t('Admin.Errors.Nume')}:</div>
                   <div className="font-medium text-lg">{popUp.user}</div>
                 </div>
                 <div className='flex justify-start items-start my-4 w-full'>
-                  <div className="font-medium text-lg">{t('Admin.Errors.Problema:')} </div>
+                  <div className="font-medium text-lg">{t('Admin.Errors.Problema')}: </div>
                   <div className="font-medium text-lg">{popUp.error} </div>
                 </div>
                 <div className='flex justify-start items-center my-4 w-full'>
-                  <div className='font-medium text-lg'>{t('Admin.Errors.Răspunde:')}</div>
+                  <div className='font-medium text-lg'>{t('Admin.Errors.Răspunde')}</div>
                   <input type='text' ref={solve}
                     className='adm-pop-input w-full'
                     required

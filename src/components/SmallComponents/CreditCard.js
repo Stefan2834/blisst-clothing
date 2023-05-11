@@ -11,8 +11,8 @@ export default function CreditCard() {
   const { cardId } = useParams()
   const navigate = useNavigate()
 
-
   useEffect(() => {
+    document.title = 'Blisst'
     const handleOrder = async () => {
       try {
         const orderData = { ...JSON.parse(cardId), product: cart }
@@ -21,7 +21,7 @@ export default function CreditCard() {
         }
         Swal.fire(
           t('Check.Comandă plasată'),
-          t('Comanda a fost plasată.'),
+          t('Check.Comanda a fost plasată.'),
           'success'
         )
         axios.post(`${server}/orderUpdate`, {
@@ -30,6 +30,7 @@ export default function CreditCard() {
           cart: cart
         }
         ).then(async info => {
+          console.log(info)
           dispatchCart({ type: 'cartDeleteAll' })
           dispatchOrder({ type: 'orderAdd', payload: { order: orderData } })
           const product = await axios.get(`${server}/product`)

@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../contexts/DefaultContext'
 import axios from 'axios'
 import '../css/admin.css'
 import '../../index.css'
-import { useDefault } from '../../contexts/DefaultContext'
+import Swal from 'sweetalert2'
 
 export default function AdminOrders() {
   const { server, product, setProduct } = useAuth()
-  const { isPending, startTransition } = useDefault()
+  const { isPending, startTransition, t, lang } = useDefault()
   const [orders, setOrders] = useState([])
   const [selectedProducts, setSelectedProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('Toate')
   const [load, setLoad] = useState(4)
+  let count = 0;
 
   const handleProductSelect = (orderIndex, selectedProduct) => {
     setSelectedProducts(prevState => {
@@ -23,39 +25,51 @@ export default function AdminOrders() {
     })
   }
 
-  const handleStatus = async (status, id, uid) => {
-    const updatedOrders = orders.map(order => {
-      if (order.id === id && order.uid === uid) {
-        if (status === 'Anulata') {
-          console.log(order.product)
-          order.product.map(comm => {
-            setProduct(product.map((product) => {
-              if (product.id === comm.id) {
-                return { ...product, size: { ...product.size, [comm.selectedSize]: product.size[comm.selectedSize] + comm.number } }
-              } else {
-                return product
-              }
-            }))
-          })
-          return null
-        } else {
-          return { ...order, status: status }
-        }
-      } else {
-        return order
+  const handleStatus = async (status, id, uid, email) => {
+    Swal.fire({
+      title: t('Admin.Disc.Ești sigur?'),
+      text: `${t('Admin.Orders.Sigur vrei să modifici statusul comenzi utilizatorului')} ${email} ${t('Admin.Orders.în')} ${t(`Profile.${status}`)} ?`,
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: t('Admin.Orders.Modifică'),
+      cancelButtonText: t('Admin.Disc.Înapoi')
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const updatedOrders = orders.map(order => {
+          if (order.id === id && order.uid === uid) {
+            if (status === 'Anulată') {
+              order.product.map(comm => {
+                setProduct(product.map((product) => {
+                  if (product.id === comm.id) {
+                    return { ...product, size: { ...product.size, [comm.selectedSize]: product.size[comm.selectedSize] + comm.number } }
+                  } else {
+                    return product
+                  }
+                }))
+              })
+              return null
+            } else {
+              return { ...order, status: status }
+            }
+          } else {
+            return order
+          }
+        }).filter(c => c !== null)
+        await axios.post(`${server}/admin/status`, {
+          uid: uid,
+          id: id,
+          status: status
+        })
+          .then(data => console.log(data))
+          .catch(err => console.error(err))
+        setOrders(updatedOrders)
+        await axios.post(`${server}/admin/orders`, { uid, id, status })
+          .then(data => console.log(data))
+          .catch(err => console.error(err))
       }
-    }).filter(c => c !== null)
-    await axios.post(`${server}/admin/status`, {
-      uid: uid,
-      id: id,
-      status: status
     })
-      .then(data => console.log(data))
-      .catch(err => console.error(err))
-    setOrders(updatedOrders)
-    await axios.post(`${server}/admin/orders`, { orders: updatedOrders })
-      .then(data => console.log(data))
-      .catch(err => console.error(err))
   }
 
   useEffect(() => {
@@ -71,6 +85,10 @@ export default function AdminOrders() {
         setLoading(false)
       })
   }, [])
+
+  useEffect(() => {
+    document.title = `Blisst — Admin — ${t('Order.Comenzi')}`
+  }, [lang])
 
   return (
     <>
@@ -89,34 +107,36 @@ export default function AdminOrders() {
                 <select value={filter} className='comm-option'
                   onChange={e => { setFilter(e.target.value) }}
                 >
-                  <option value={'Toate'} className='comm-option' >
-                    Toate
+                  <option value='Toate' className='comm-option' >
+                    {t('Order.Toate')}
                   </option>
-                  <option value={'Se livrează'} className='comm-option' >
-                    Se livrează
+                  <option value='Se livrează' className='comm-option' >
+                    {t('Profile.Se livrează')}
                   </option>
-                  <option value={'Plasată'} className='comm-option' >
-                    Plasată
+                  <option value='Plasată' className='comm-option' >
+                    {t('Profile.Plasată')}
                   </option>
-                  <option value={'Livrată'} className='comm-option'>
-                    Livrată
+                  <option value='Livrată' className='comm-option'>
+                    {t('Profile.Livrată')}
                   </option>
                 </select>
               </div>
             </div>
             {[...orders].reverse().map((order, index) => {
               if (order.status === filter || filter === 'Toate') {
+                count += 1
                 const selectedProduct = selectedProducts[index] || order.product[0]
-                if (load > index) {
+                const [day, month, time] = order.date.split(' ');
+                if (load > count) {
                   return (
                     <div className='comm-element'>
                       <div className='comm-left'>
                         <div className='comm-left-top'>
-                          <div className="comm-option flex justify-center items-center">Data comenzii:
-                            <div className="comm-txt">{order.date}</div>
+                          <div className="comm-option flex justify-center items-center">{t('Order.Data comenzii')}:
+                            <div className="comm-txt">{day} {t(`Month.${month}`)} {time}</div>
                           </div>
                           <div>
-                            <label className='comm-option'>Produs:</label>
+                            <label className='comm-option'>{t('Order.Produs')}:</label>
                             <select value={JSON.stringify(selectedProduct)} className='comm-option'
                               onChange={e => { handleProductSelect(index, JSON.parse(e.target.value)) }}
                             >
@@ -126,7 +146,7 @@ export default function AdminOrders() {
                                     value={JSON.stringify(product)}
                                     className='comm-option'
                                   >
-                                    {product.name} {product.selectedSize}
+                                    {t(`${product.name}`)} {product.selectedSize}
                                   </option>
                                 )
                               })}
@@ -159,45 +179,45 @@ export default function AdminOrders() {
                             ) : (
                               <div className='cart-price'>{selectedProduct.price} Lei</div>
                             )}
-                            <div className='cart-price'>Marime: {selectedProduct.selectedSize}</div>
-                            <div className='cart-price'>Numar: {selectedProduct.number}</div>
+                            <div className='cart-price'>{t('Cart.Mărime')}: {selectedProduct.selectedSize}</div>
+                            <div className='cart-price'>{t('Cart.Cantitate')}: {selectedProduct.number}</div>
                           </div>
                         </div>
                       </div>
                       <div className='comm-right'>
-                        <div className='comm-title'>Judetul:
+                        <div className="comm-title">{t('Profile.Județ')}:
                           <div className='comm-txt'>{order.details.county}</div>
                         </div>
-                        <div className="comm-title">Informatii adresa:
+                        <div className="comm-title">{t('Profile.Informații adresă')}:
                           <div className="comm-txt">{order.details.info}</div>
                         </div>
-                        <div className="comm-title">Telefon:
+                        <div className="comm-title">{t('Profile.Telefon')}:
                           <div className="comm-txt">{order.details.tel}</div>
                         </div>
-                        <div className="comm-title">Email:
+                        <div className="comm-title">{t('Profile.Email')}:
                           <div className="comm-txt">{order.details.email}</div>
                         </div>
-                        <div className="comm-title">Total:
+                        <div className="comm-title">{t('Profile.Total')}:
                           <div className="comm-txt">{order.price.total} Lei</div>
                         </div>
-                        <div className="comm-title">Metoda de plata:
-                          <div className="comm-txt">{order.method}</div>
+                        <div className="comm-title">{t('Profile.Metodă de plată')}:
+                          <div className="comm-txt">{t(`Profile.${order.method}`)}</div>
                         </div>
                         <div className='comm-title'>Status:
                           <select value={order.status} className='comm-option'
-                            onChange={e => { handleStatus(e.target.value, order.id, order.uid) }}
+                            onChange={e => { handleStatus(e.target.value, order.id, order.uid, order.details.email) }}
                           >
                             <option value={'Plasată'} className='comm-option' >
-                              Plasată
+                              {t('Profile.Plasată')}
                             </option>
                             <option value={'Se livrează'} className='comm-option' >
-                              Se livrează
+                              {t('Profile.Se livrează')}
                             </option>
                             <option value={'Livrată'} className='comm-option'>
-                              Livrată
+                              {t('Profile.Livrată')}
                             </option>
                             <option value={'Anulată'} className='comm-option'>
-                              Anulată
+                              {t('Profile.Anulată')}
                             </option>
                           </select>
                         </div>
@@ -207,7 +227,7 @@ export default function AdminOrders() {
                 }
               }
             })}
-            {load < orders.length && (
+            {load < count && (
               <div className="cloth-more">
                 <div className="cloth-more-btn" onClick={() => startTransition(() => setLoad(p => p + 4))}>Incarca mai multe comenzi</div>
               </div>

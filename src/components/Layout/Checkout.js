@@ -162,7 +162,7 @@ export default function Checkout() {
             console.log(err)
             Swal.fire({
               title: t('Check.Eroare!'),
-              text: `${t('Check.A apărut o eroare:')} ${err.message}.`,
+              text: `${t('Check.A apărut o eroare')}: ${err.message}.`,
               icon: 'error',
               confirmButtonColor: '#3085d6',
               confirmButtonText: t('Check.Înapoi')
@@ -432,7 +432,7 @@ export default function Checkout() {
                 <div className='check-sumar'>
                   <div className='check-txt'>{t('Check.Modalitate de plată')}: <br />
                     <div className='check-det-txt'>
-                      {method.ramburs ? t('Ramburs') : method.card && t('Card de credit')}
+                      {method.ramburs ? t('Profile.Ramburs') : method.card && t('Profile.Card')}
                     </div>
                   </div>
                 </div>

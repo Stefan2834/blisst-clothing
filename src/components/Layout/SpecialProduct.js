@@ -11,7 +11,7 @@ import axios from 'axios'
 
 export default function SpecialProduct() {
   const { idPath } = useParams()
-  const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct, server } = useAuth()
+  const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct, server, admin } = useAuth()
   const { darkTheme, lang, t } = useDefault()
   const [sizeType, setSizeType] = useState([])
   const [loading, setLoading] = useState(true)
@@ -19,6 +19,7 @@ export default function SpecialProduct() {
   const [specialClothing, setSpecialClothing] = useState()
   const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false, edit: false })
   const [photoSlider, setPhotoSlider] = useState()
+  const [adminPopUp, setAdminPopUp] = useState({ active: false, user: '', star: 0, text: '', reason: '' })
   const [zoom, setZoom] = useState(false);
   const navigate = useNavigate()
   const email = currentUser ? currentUser.email : undefined
@@ -241,6 +242,33 @@ export default function SpecialProduct() {
       })
     }
   }// logica pentru adaugarea unui produs in cos, daca s-a selectat marimea si pretul corect
+  const handleAdminPopUp = (user, star, text) => {
+    setAdminPopUp({ active: true, user: user, star: star, text: text, reason: '' })
+  }
+  const handleAdminDelete = (e) => {
+    e.preventDefault()
+    axios.post(`${server}/admin/review`, {
+      user: adminPopUp.user,
+      star: adminPopUp.star,
+      id: idPath
+    }).then(data => {
+      if (data.data.success) {
+        setProduct(p => p.map(prod => {
+          if (prod.id === specialClothing.id) {
+            return { ...prod, star: data.data.star }
+          } else {
+            return prod
+          }
+        }))
+      }
+      setAdminPopUp({ active: false, user: '', star: '', text: '', reason: '' })
+      axios.post(`${server}/email/reviewDeleted`, {
+        reason: adminPopUp.reason,
+        email:adminPopUp.user,
+        id: idPath
+      }).catch(err => console.error(err))
+    }).catch(err => console.error(err))
+  }
   return (
     <>
       {loading ? (
@@ -251,349 +279,390 @@ export default function SpecialProduct() {
           <div className='h-screen' />
         </>
       ) : (
-        <div className='special'>
-          {specialClothing && (
+        <>
+          {adminPopUp.active && (
             <>
-              <div className='special-div'>
-                {zoom && (
-                  <div className='special-zoom' onClick={() => {
-                    setZoom(false)
-                  }}>
-                    <img className='special-zoom-photo'
-                      src={photoSlider}
-                      alt='Poza' />
-                  </div>
-                )}
-                <div className='spec-left'>
-                  <div className='spec-slider'>
-                    <img src={specialClothing.photo}
-                      className='spec-slider-photo'
-                      alt='Poza' onClick={() => setPhotoSlider(specialClothing.photo)}
-                    />
-                    {specialClothing.sliderPhoto.map((photo) => {
-                      return (
-                        <img src={photo}
-                          className='spec-slider-photo'
-                          alt='Poza' onClick={() => setPhotoSlider(photo)}
-                        />
-                      )
-                    })}
-                  </div>
-                  <div className='spec-photo'>
-                    <img alt='Poza Produs'
-                      className='spec-img' onClick={() => {
-                        setZoom(true)
-                      }}
-                      src={photoSlider}
-                    />
-                  </div>
-                </div>
-                <div className='spec-right'>
-                  <div className='spec-name'>{t(`${specialClothing.name}`)}</div>
-                  <div className='flex mb-2 flex-wrap'>
+              <div className='spec-pop'>
+                <div className='spec-pop-bg' onClick={() => setAdminPopUp({ active: false, user: '', star: 0, text: '', reason: '' })} />
+                <form className='spec-pop-div' onSubmit={e => handleAdminDelete(e)}>
+                  <div className='spec-pop-user my-4'>{t('Email')}: {adminPopUp.user}</div>
+                  <div className='spec-pop-star my-4'>
+                    <span className='text-xl font-semibold'>{t('Stele')}:</span>
                     {[...Array(5)].map((_, i) => {
                       const ratingValue = i + 1;
                       return (
                         <FaStar
                           key={ratingValue}
                           size={24}
-                          className={ratingValue <= specialClothing.star.total / specialClothing.star.nr + 0.5 ? 'principal' : 'black'}
+                          className={ratingValue <= adminPopUp.star ? 'principal' : 'black'}
                         />
                       );
                     })}
-                    {specialClothing.star.total === 0 ? (
-                      <>
-                        {t('Spec.Medie')}: 0.00
-                      </>
-                    ) : (
-                      <>
-                        {t('Spec.Medie')}: {Number((specialClothing.star.total / specialClothing.star.nr).toFixed(2))}
-                      </>
-                    )}
-                    <div>({specialClothing.star.nr} {t('Spec.Review-uri')})</div>
                   </div>
-                  {specialClothing.discount > 0 ? (
-                    <>
-                      <div className='flex'>
-                        <div className='spec-price-old'>{specialClothing.price} Lei</div>
-                        <span className='spec-price-old'> - {(specialClothing.discount * 100).toFixed(0)} %</span>
-                      </div>
-                      <div className='spec-price'>{(specialClothing.price + 0.01 - ((specialClothing.price + 0.01) * specialClothing.discount) - 0.01).toFixed(2)} Lei</div>
-                    </>
-                  ) : (
-                    <>
-                      <div className='spec-id'>{specialClothing.price} Lei</div>
-                    </>
+                  <div className='text-xl font-semibold my-4'>{t('Text')}: {adminPopUp.text}</div>
+                  <div className='text-xl font-semibold my-4'>{t('Motiv')}:
+                    <input type='text' className='spec-rev-input'
+                      value={adminPopUp.reason}
+                      onChange={e => setAdminPopUp({ ...adminPopUp, reason: e.target.value })}
+                      required minLength={10} maxLength={400}
+                    />
+                  </div>
+                  <div className='flex items-center justify-center w-full my-4'>
+                    <input type='submit' className='spec-pop-submit' value={t('Șterge Review-ul')} />
+                  </div>
+                </form>
+              </div>
+            </>
+          )}
+          <div className='special'>
+            {specialClothing && (
+              <>
+                <div className='special-div'>
+                  {zoom && (
+                    <div className='special-zoom' onClick={() => {
+                      setZoom(false)
+                    }}>
+                      <img className='special-zoom-photo'
+                        src={photoSlider}
+                        alt='Poza' />
+                    </div>
                   )}
-                  <div className='spec-id-text'>{t('Spec.Id produs')}: <span className='spec-id'>{specialClothing.id}</span></div>
-                  <div className='spec-id-text flex'>{t('Spec.Culori')}:
-                    {specialClothing.colors.map(color => {
-                      return (
-                        <div className='spec-color' style={{ backgroundColor: color }} />
-                      )
-                    })}
-                  </div>
-                  <div className='spec-id my-2'>{t('Spec.Mărimi')}</div>
-                  <div className='spec-size-flex'>
-                    {sizeType.map((sizeMap) => {
-                      return (
-                        <>
-                          {specialClothing.size[sizeMap] === 0 ? (
-                            <div className='spec-size-disable'>{sizeMap}</div>
-                          ) : (
-                            <div className={cartSpec.size === sizeMap ? 'spec-size-current' : 'spec-size'}
-                              onClick={() => {
-                                dispatch({ type: 'setSize', payload: { size: sizeMap } })
-                                dispatch({ type: 'cartReset' })
-                              }}>{sizeMap}
-                            </div>
-                          )}
-                        </>
-                      )
-                    })}
-                  </div>
-                  <div className='spec-cart'>
-                    <div className='spec-add-cart' onClick={() => { handleAddToCart() }}>{t('Spec.Adaugă în coș')}
-                      <div className={darkTheme ? 'spec-cart-photo spec-cart-dark' : 'spec-cart-photo spec-cart-light'} />
+                  <div className='spec-left'>
+                    <div className='spec-slider'>
+                      <img src={specialClothing.photo}
+                        className='spec-slider-photo'
+                        alt='Poza' onClick={() => setPhotoSlider(specialClothing.photo)}
+                      />
+                      {specialClothing.sliderPhoto.map((photo) => {
+                        return (
+                          <img src={photo}
+                            className='spec-slider-photo'
+                            alt='Poza' onClick={() => setPhotoSlider(photo)}
+                          />
+                        )
+                      })}
                     </div>
-                    <div className='spec-cart-nr'>
-                      {specialClothing.size[cartSpec.size] && (
-                        <select value={cartSpec.number} className="spec-option"
-                          onChange={e => { dispatch({ type: 'cartNr', payload: { number: e.target.value } }) }}
-                        >
-                          <option value="" className='principal'>Stoc:{specialClothing.size[cartSpec.size]}</option>
-                          {Array.from({ length: specialClothing.size[cartSpec.size] }, (_, index) => {
-                            if (index < 10) {
-                              return index + 1
-                            } else {
-                              return null
-                            }
-                          }).map((number) => <>(
-                            {number && (
-                              <option key={number} value={number}>
-                                {number}
-                              </option>
-                            )})
-                          </>
-                          )}
-                        </select>
-                      )}
+                    <div className='spec-photo'>
+                      <img alt='Poza Produs'
+                        className='spec-img' onClick={() => {
+                          setZoom(true)
+                        }}
+                        src={photoSlider}
+                      />
                     </div>
                   </div>
-                  <div className="spec-fav">
-                    {favorite.some(item => item.id === specialClothing.id) ? (
-                      <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: specialClothing } })} />
-                    ) : (
-                      <div className={darkTheme ? 'cloth-fav-dark' : "cloth-fav"} onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: specialClothing, user: currentUser, t: t } })} />
-                    )}
-                  </div>
-                  <div className='spec-det'><span className='spec-span'>{t('Spec.Detalii')}: </span>{specialClothing.spec}</div>
-                </div>
-              </div>
-              <div className='spec-white-space'>
-                {specialClothing.review.filter(item => item.user === email).length === 0 ? (
-                  <div className='spec-rev-text-dark'>{t('Spec.Lasă un Review')}</div>
-                ) : (
-                  <div className='spec-rev-text-dark'>{t('Spec.Editează')}</div>
-                )}
-                <div className='spec-rev-text-dark'>{t('Spec.Alte Review-uri')}</div>
-              </div>
-              <div className='spec-review-page'>
-                <div className='spec-review-left'>
-                  {currentUser ? (
-                    <>
-                      {specialClothing.review.filter(item => item.user === currentUser.email).length === 0 ? (
+                  <div className='spec-right'>
+                    <div className='spec-name'>{t(`${specialClothing.name}`)}</div>
+                    <div className='flex mb-2 flex-wrap'>
+                      {[...Array(5)].map((_, i) => {
+                        const ratingValue = i + 1;
+                        return (
+                          <FaStar
+                            key={ratingValue}
+                            size={24}
+                            className={ratingValue <= specialClothing.star.total / specialClothing.star.nr + 0.5 ? 'principal' : 'black'}
+                          />
+                        );
+                      })}
+                      {specialClothing.star.total === 0 ? (
                         <>
-                          <form className='spec-review-left-content' onSubmit={handleSubmit}>
-                            <div className='flex w-full justify-center'>
-                              {[...Array(5)].map((_, i) => {
-                                const ratingValue = i + 1;
-                                return (
-                                  <FaStar
-                                    key={ratingValue}
-                                    size={24}
-                                    className={ratingValue <= review.star ? 'principal-star' : 'black'}
-                                    onClick={() => handleStar(ratingValue)}
-                                    style={{ cursor: 'pointer' }}
-                                  />
-                                );
-                              })}
-                            </div>
-                            <div className='spec-rev-left-text'>{review.type}</div>
-                            <div className='flex flex-col items-start justify-start w-full'>
-                              <div className='spec-rev-title'>{t('Spec.Părerea ta contează')}</div>
-                              <label className='spec-rev-label'>
-                                <input className='spec-rev-input' type='text'
-                                  value={review.text}
-                                  placeholder='Spune-ti parerea' required minLength={10} maxLength={160}
-                                  onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
-                                />
-                                {review.text.length >= 10 ? (
-                                  <div className='spec-place-holder'>{review.text.length}/160</div>
-                                ) : (
-                                  <div className='spec-place-holder text-red-600'>{review.text.length}/160</div>
-                                )}
-                              </label>
-                            </div>
-                            <div className='my-3 flex items-center justify-around w-full'>
-                              <input type='submit' value={t('Spec.Postează')} className='spec-rev-submit'
-                                onClick={() => { setReview({ ...review, anonim: false }) }}
-                              />
-                              <input type='submit' value={t('Spec.Postează anonim')} className='spec-rev-submit-anonim'
-                                onClick={() => { setReview({ ...review, anonim: true }) }}
-                              />
-                            </div>
-                          </form>
+                          {t('Spec.Medie')}: 0.00
                         </>
                       ) : (
                         <>
-                          {specialClothing.review.map(rev => {
-                            if (rev.user === currentUser.email) {
-                              if (review.edit) {
-                                return (
-                                  <>
-                                    <form className='spec-review-left-content' onSubmit={handleUpdate}>
-                                      <div className='flex w-full justify-center'>
-                                        {[...Array(5)].map((_, i) => {
-                                          const ratingValue = i + 1;
-                                          return (
-                                            <FaStar
-                                              key={ratingValue}
-                                              size={24}
-                                              className={ratingValue <= review.star ? 'principal' : 'black'}
-                                              onClick={() => handleStar(ratingValue)}
-                                              style={{ cursor: 'pointer' }}
-                                            />
-                                          );
-                                        })}
-                                      </div>
-                                      <div className='spec-rev-left-text'>{review.type}</div>
-                                      <div className='flex flex-col items-start justify-start w-full'>
-                                        <div className='flex items-center justify-between w-full'>
-                                          <div className='spec-rev-title'>{rev.anonim ? 'Anonim' : rev.user}</div>
-                                          <div className={darkTheme ? 'spec-rev-trash-dark' : 'spec-rev-trash'}
-                                            onClick={() => handleDelete()}
-                                          />
-                                        </div>
-                                        <label className='spec-rev-label'>
-                                          <input className='spec-rev-input' type='text'
-                                            value={review.text}
-                                            placeholder='Spune-ti parerea' required minLength={10} maxLength={160}
-                                            onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
-                                          />
-                                          {review.text.length >= 10 ? (
-                                            <div className='spec-place-holder'>{review.text.length}/160</div>
-                                          ) : (
-                                            <div className='spec-place-holder text-red-600'>{review.text.length}/160</div>
-                                          )}
-                                        </label>
-                                      </div>
-                                      <div className='spec-rev-edit-flex'>
-                                        <input type='submit' value={t('Spec.Salvează')} className='spec-rev-submit'
-                                          onClick={() => { setReview({ ...review, anonim: false }) }}
-                                        />
-                                        <input type='submit' value={t('Spec.Salvează anonim')} className='spec-rev-submit-anonim'
-                                          onClick={() => { setReview({ ...review, anonim: true }) }}
-                                        />
-                                        <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: false })}>{t('Spec.Înapoi')}</div>
-                                      </div>
-                                    </form>
-                                  </>
-                                )
+                          {t('Spec.Medie')}: {Number((specialClothing.star.total / specialClothing.star.nr).toFixed(2))}
+                        </>
+                      )}
+                      <div>({specialClothing.star.nr} {t('Spec.Review-uri')})</div>
+                    </div>
+                    {specialClothing.discount > 0 ? (
+                      <>
+                        <div className='flex'>
+                          <div className='spec-price-old'>{specialClothing.price} Lei</div>
+                          <span className='spec-price-old'> - {(specialClothing.discount * 100).toFixed(0)} %</span>
+                        </div>
+                        <div className='spec-price'>{(specialClothing.price + 0.01 - ((specialClothing.price + 0.01) * specialClothing.discount) - 0.01).toFixed(2)} Lei</div>
+                      </>
+                    ) : (
+                      <>
+                        <div className='spec-id'>{specialClothing.price} Lei</div>
+                      </>
+                    )}
+                    <div className='spec-id-text'>{t('Spec.Id produs')}: <span className='spec-id'>{specialClothing.id}</span></div>
+                    <div className='spec-id-text flex'>{t('Spec.Culori')}:
+                      {specialClothing.colors.map(color => {
+                        return (
+                          <div className='spec-color' style={{ backgroundColor: color }} />
+                        )
+                      })}
+                    </div>
+                    <div className='spec-id my-2'>{t('Spec.Mărimi')}</div>
+                    <div className='spec-size-flex'>
+                      {sizeType.map((sizeMap) => {
+                        return (
+                          <>
+                            {specialClothing.size[sizeMap] === 0 ? (
+                              <div className='spec-size-disable'>{sizeMap}</div>
+                            ) : (
+                              <div className={cartSpec.size === sizeMap ? 'spec-size-current' : 'spec-size'}
+                                onClick={() => {
+                                  dispatch({ type: 'setSize', payload: { size: sizeMap } })
+                                  dispatch({ type: 'cartReset' })
+                                }}>{sizeMap}
+                              </div>
+                            )}
+                          </>
+                        )
+                      })}
+                    </div>
+                    <div className='spec-cart'>
+                      <div className='spec-add-cart' onClick={() => { handleAddToCart() }}>{t('Spec.Adaugă în coș')}
+                        <div className={darkTheme ? 'spec-cart-photo spec-cart-dark' : 'spec-cart-photo spec-cart-light'} />
+                      </div>
+                      <div className='spec-cart-nr'>
+                        {specialClothing.size[cartSpec.size] && (
+                          <select value={cartSpec.number} className="spec-option"
+                            onChange={e => { dispatch({ type: 'cartNr', payload: { number: e.target.value } }) }}
+                          >
+                            <option value="" className='principal'>Stoc:{specialClothing.size[cartSpec.size]}</option>
+                            {Array.from({ length: specialClothing.size[cartSpec.size] }, (_, index) => {
+                              if (index < 10) {
+                                return index + 1
                               } else {
-                                return (
-                                  <>
-                                    <div className='spec-review'>
-                                      <div className='spec-rev-upper'>
-                                        {rev.anonim ? (
-                                          <>
-                                            <div className='spec-rev-user'>{t('Spec.Anonim')}</div>
-                                          </>
-                                        ) : (
-                                          <>
-                                            <div className='spec-rev-user'>{rev.user}</div>
-                                          </>
-                                        )}
-                                        <div className='spec-rev-star'>
+                                return null
+                              }
+                            }).map((number) => <>(
+                              {number && (
+                                <option key={number} value={number}>
+                                  {number}
+                                </option>
+                              )})
+                            </>
+                            )}
+                          </select>
+                        )}
+                      </div>
+                    </div>
+                    <div className="spec-fav">
+                      {favorite.some(item => item.id === specialClothing.id) ? (
+                        <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: specialClothing } })} />
+                      ) : (
+                        <div className={darkTheme ? 'cloth-fav-dark' : "cloth-fav"} onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: specialClothing, user: currentUser, t: t } })} />
+                      )}
+                    </div>
+                    <div className='spec-det'><span className='spec-span'>{t('Spec.Detalii')}: </span>{specialClothing.spec}</div>
+                  </div>
+                </div>
+                <div className='spec-white-space'>
+                  {specialClothing.review.filter(item => item.user === email).length === 0 ? (
+                    <div className='spec-rev-text-dark'>{t('Spec.Lasă un Review')}</div>
+                  ) : (
+                    <div className='spec-rev-text-dark'>{t('Spec.Editează')}</div>
+                  )}
+                  <div className='spec-rev-text-dark'>{t('Spec.Alte Review-uri')}</div>
+                </div>
+                <div className='spec-review-page'>
+                  <div className='spec-review-left'>
+                    {currentUser ? (
+                      <>
+                        {specialClothing.review.filter(item => item.user === currentUser.email).length === 0 ? (
+                          <>
+                            <form className='spec-review-left-content' onSubmit={handleSubmit}>
+                              <div className='flex w-full justify-center'>
+                                {[...Array(5)].map((_, i) => {
+                                  const ratingValue = i + 1;
+                                  return (
+                                    <FaStar
+                                      key={ratingValue}
+                                      size={24}
+                                      className={ratingValue <= review.star ? 'principal-star' : 'black'}
+                                      onClick={() => handleStar(ratingValue)}
+                                      style={{ cursor: 'pointer' }}
+                                    />
+                                  );
+                                })}
+                              </div>
+                              <div className='spec-rev-left-text'>{review.type}</div>
+                              <div className='flex flex-col items-start justify-start w-full'>
+                                <div className='spec-rev-title'>{t('Spec.Părerea ta contează')}</div>
+                                <label className='spec-rev-label'>
+                                  <input className='spec-rev-input' type='text'
+                                    value={review.text}
+                                    placeholder='Spune-ti parerea' required minLength={10} maxLength={400}
+                                    onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
+                                  />
+                                  {review.text.length >= 10 ? (
+                                    <div className='spec-place-holder'>{review.text.length}/400</div>
+                                  ) : (
+                                    <div className='spec-place-holder text-red-600'>{review.text.length}/400</div>
+                                  )}
+                                </label>
+                              </div>
+                              <div className='my-3 flex items-center justify-around w-full'>
+                                <input type='submit' value={t('Spec.Postează')} className='spec-rev-submit'
+                                  onClick={() => { setReview({ ...review, anonim: false }) }}
+                                />
+                                <input type='submit' value={t('Spec.Postează anonim')} className='spec-rev-submit-anonim'
+                                  onClick={() => { setReview({ ...review, anonim: true }) }}
+                                />
+                              </div>
+                            </form>
+                          </>
+                        ) : (
+                          <>
+                            {specialClothing.review.map(rev => {
+                              if (rev.user === currentUser.email) {
+                                if (review.edit) {
+                                  return (
+                                    <>
+                                      <form className='spec-review-left-content' onSubmit={handleUpdate}>
+                                        <div className='flex w-full justify-center'>
                                           {[...Array(5)].map((_, i) => {
                                             const ratingValue = i + 1;
                                             return (
                                               <FaStar
                                                 key={ratingValue}
                                                 size={24}
-                                                className={ratingValue <= rev.star ? 'principal' : 'black'}
+                                                className={ratingValue <= review.star ? 'principal' : 'black'}
+                                                onClick={() => handleStar(ratingValue)}
+                                                style={{ cursor: 'pointer' }}
                                               />
                                             );
                                           })}
                                         </div>
+                                        <div className='spec-rev-left-text'>{review.type}</div>
+                                        <div className='flex flex-col items-start justify-start w-full'>
+                                          <div className='flex items-center justify-between w-full'>
+                                            <div className='spec-rev-title'>{rev.anonim ? 'Anonim' : rev.user}</div>
+                                            <div className={darkTheme ? 'spec-rev-trash-dark' : 'spec-rev-trash'}
+                                              onClick={() => handleDelete()}
+                                            />
+                                          </div>
+                                          <label className='spec-rev-label'>
+                                            <input className='spec-rev-input' type='text'
+                                              value={review.text}
+                                              placeholder='Spune-ti parerea' required minLength={10} maxLength={400}
+                                              onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
+                                            />
+                                            {review.text.length >= 10 ? (
+                                              <div className='spec-place-holder'>{review.text.length}/400</div>
+                                            ) : (
+                                              <div className='spec-place-holder text-red-600'>{review.text.length}/400</div>
+                                            )}
+                                          </label>
+                                        </div>
+                                        <div className='spec-rev-edit-flex'>
+                                          <input type='submit' value={t('Spec.Salvează')} className='spec-rev-submit'
+                                            onClick={() => { setReview({ ...review, anonim: false }) }}
+                                          />
+                                          <input type='submit' value={t('Spec.Salvează anonim')} className='spec-rev-submit-anonim'
+                                            onClick={() => { setReview({ ...review, anonim: true }) }}
+                                          />
+                                          <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: false })}>{t('Spec.Înapoi')}</div>
+                                        </div>
+                                      </form>
+                                    </>
+                                  )
+                                } else {
+                                  return (
+                                    <>
+                                      <div className='spec-review'>
+                                        <div className='spec-rev-upper'>
+                                          {rev.anonim ? (
+                                            <>
+                                              <div className='spec-rev-user'>{t('Spec.Anonim')}</div>
+                                            </>
+                                          ) : (
+                                            <>
+                                              <div className='spec-rev-user'>{rev.user}</div>
+                                            </>
+                                          )}
+                                          <div className='spec-rev-star'>
+                                            {[...Array(5)].map((_, i) => {
+                                              const ratingValue = i + 1;
+                                              return (
+                                                <FaStar
+                                                  key={ratingValue}
+                                                  size={24}
+                                                  className={ratingValue <= rev.star ? 'principal' : 'black'}
+                                                />
+                                              );
+                                            })}
+                                          </div>
+                                        </div>
+                                        <div className='spec-rev-text'>{rev.text}</div>
+                                        <div className='flex items-center justify-around my-2'>
+                                          <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: true })}>{t('Spec.Editează')}</div>
+                                        </div>
                                       </div>
-                                      <div className='spec-rev-text'>{rev.text}</div>
-                                      <div className='flex items-center justify-around my-2'>
-                                        <div className='spec-rev-submit' onClick={() => setReview({ ...review, edit: true })}>{t('Spec.Editează')}</div>
-                                      </div>
-                                    </div>
-                                  </>
-                                )
+                                    </>
+                                  )
+                                }
                               }
-                            }
-                          })}
-                        </>
-                      )}
-                    </>
-                  ) : (
-                    <div className='spec-review'>
-                      <div className='spec-rev-name text-center p-2'>{t('Spec.Nu esti conectat. Conectează-te pentru a lăsa o părere.')}</div>
-                      <div className='spec-rev-enter'>
-                        <div className='spec-rev-type-submit' >
-                          <Link to='/connect' className='spec-rev-submit'>{t('Spec.Conectare')}</Link>
+                            })}
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <div className='spec-review'>
+                        <div className='spec-rev-name text-center p-2'>{t('Spec.Nu esti conectat. Conectează-te pentru a lăsa o părere.')}</div>
+                        <div className='spec-rev-enter'>
+                          <div className='spec-rev-type-submit' >
+                            <Link to='/connect' className='spec-rev-submit'>{t('Spec.Conectare')}</Link>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-                <div className='spec-review-right'>
-                  {specialClothing.review.map((rev, index) => {
-                    if (index < review.load) {
-                      return (
-                        <div className='spec-review'>
-                          <div className='spec-rev-upper'>
-                            {rev.anonim ? (
-                              <>
-                                <div className='spec-rev-user'>{t('Spec.Anonim')}</div>
-                              </>
-                            ) : (
-                              <>
-                                <div className='spec-rev-user'>{rev.user}</div>
-                              </>
-                            )}
-                            <div className='spec-rev-star'>
-                              {[...Array(5)].map((_, i) => {
-                                const ratingValue = i + 1;
-                                return (
-                                  <FaStar
-                                    key={ratingValue}
-                                    size={24}
-                                    className={ratingValue <= rev.star ? 'principal' : 'black'}
-                                  />
-                                );
-                              })}
+                    )}
+                  </div>
+                  <div className='spec-review-right'>
+                    {specialClothing.review.map((rev, index) => {
+                      if (index < review.load) {
+                        return (
+                          <div className='spec-review'>
+                            <div className='spec-rev-upper'>
+                              {rev.anonim ? (
+                                <>
+                                  <div className='spec-rev-user'>{t('Spec.Anonim')}</div>
+                                </>
+                              ) : (
+                                <>
+                                  <div className='spec-rev-user'>{rev.user}</div>
+                                </>
+                              )}
+                              <div className='spec-rev-star'>
+                                {[...Array(5)].map((_, i) => {
+                                  const ratingValue = i + 1;
+                                  return (
+                                    <FaStar
+                                      key={ratingValue}
+                                      size={24}
+                                      className={ratingValue <= rev.star ? 'principal' : 'black'}
+                                    />
+                                  );
+                                })}
+                              </div>
+                              {admin && (
+                                <div className={darkTheme ? 'spec-rev-sett-dark' : 'spec-rev-sett'}
+                                  onClick={() => handleAdminPopUp(rev.user, rev.star, rev.text)}
+                                />
+                              )}
                             </div>
+                            <div className='spec-rev-text'>{rev.text}</div>
                           </div>
-                          <div className='spec-rev-text'>{rev.text}</div>
-                        </div>
-                      )
-                    }
-                  })}
-                  {specialClothing.review.length > review.load && (
-                    <div className='spec-rev-more'
-                      onClick={() => setReview({ ...review, load: review.load + 4 })}
-                    >{t('Spec.Încarcă mai multe Review-uri')}</div>
-                  )}
+                        )
+                      }
+                    })}
+                    {specialClothing.review.length > review.load && (
+                      <div className='spec-rev-more'
+                        onClick={() => setReview({ ...review, load: review.load + 4 })}
+                      >{t('Spec.Încarcă mai multe Review-uri')}</div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </>
-          )}
-        </div>
+              </>
+            )}
+          </div>
+        </>
       )}
     </>
   )

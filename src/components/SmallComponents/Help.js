@@ -20,15 +20,17 @@ export default function Help() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    document.title = `Blisst — ${t('Ajutor')}`
+    document.title = `Blisst — ${t('Help.Ajutor')}`
   }, [lang])
 
   const handleSubmit = async e => {
     e.preventDefault()
     try {
       setLoading(true)
+      const email = currentUser ? currentUser.email : emailRef.current.value
+      console.log(email, errorRef.current.value)
       const error = await axios.post(`${server}/error`, {
-        email: currentUser ? currentUser.email : emailRef.current.value,
+        email: email,
         error: errorRef.current.value
       })
       if (error.data.success) {
@@ -63,7 +65,7 @@ export default function Help() {
             <form className='for-form' onSubmit={handleSubmit}>
               <label className='acc-label'><img className='acc-svg' src={infoSvg} alt='Img' />
                 <input ref={errorRef} className='acc-input' type='text' placeholder=' ' required />
-                <span className='place-holder'>{t('Detalii problemă')}</span>
+                <span className='place-holder'>{t('Help.Detalii problemă')}</span>
               </label>
               {!currentUser && (
                 <label className='help-label'><img className='acc-svg' src={emailSvg} alt='Img' />

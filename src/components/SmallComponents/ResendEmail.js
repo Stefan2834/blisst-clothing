@@ -64,8 +64,7 @@ export default function ResendEmail() {
       <div className='for'>
         <div className='for-content'>
           <div className='for-title'>{t('Resend.Nu ai primit emailul?')}</div>
-          <div className='for-text'>{t(`Redens.Daca nu ai primit emailul iți sugerăm sa verifici secțiunea 'spam'.
-            Daca l-ai șters din greșeală, sau nu il găsești, conectează-te aici.`)}
+          <div className='for-text'>{t(`Resend.ResendText`)}
           </div>
           <form className='for-form' onSubmit={handleEmail}>
             <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />

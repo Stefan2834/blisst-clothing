@@ -167,6 +167,8 @@
     "Plasată": "Placed",
     "Se livrează": "Will be delivered shortly",
     "Livrată": "Delivered",
+    "Ramburs": "Cash on delivery",
+    "Card": "Card",
     "Vezi mai multe detalii": "See more details"
   },
   "Clothing": {
@@ -226,7 +228,7 @@
     "Ești sigur?": "Are you sure?",
     "Ești sigur că vrei să plasezi comanda?": "Are you sure you want to place the order?",
     "Plasează comanda": "Place order",
-    "A apărut o eroare:": "An error has occurred:",
+    "A apărut o eroare": "An error has occurred",
     "Asta o să iți șteargă produsul din coș.": "This will remove the product from your cart.",
     "Șterge": "Delete",
     "Coșul Meu": "My Cart",
@@ -267,7 +269,9 @@
     "Salut": "Hi",
     "Uite istoricul comenziilor tale": "Here's your order history",
     "Data comenzii": "Order date",
-    "Produs": "Product"
+    "Produs": "Product",
+    "Toate": "All",
+    "Comenzi": "Orders"
   },
   "Forgot": {
     "Am uitat parola": "I forgot my password",
@@ -283,7 +287,7 @@
     "Retrimite email": "Resend email",
     "Emailul de resetare a fost trimis. Verifică-ți emailul pentru a activa contul.": "The reset email has been sent. Check your email to activate your account.",
     "Nu ai primit emailul?": "Haven't received the email?",
-    "Daca nu ai primit emailul iți sugerăm sa verifici secțiunea 'spam'.Daca l-ai șters din greșeală, sau nu il găsești, conectează-te aici.": "If you haven't received the email, we suggest checking your 'spam' section. If you accidentally deleted it or can't find it, log in here.",
+    "ResendText": "If you haven't received the email, we suggest checking your 'spam' section. If you accidentally deleted it or can't find it, log in here.",
     "Parola": "Password",
     "Utilizatorul nu există": "User does not exist",
     "Parola este greșită": "Incorrect password"
@@ -309,6 +313,7 @@
       "Comenzi": "Orders",
       "Discount-uri": "Discounts",
       "Erori": "Errors",
+      "Colecții":"Collections",
       "Alți admini": "Other admins"
     },
     "Disc": {
@@ -326,17 +331,17 @@
       "Alte coduri": "Other codes",
       "Afișeaza alte coduri": "Display other codes",
       "Oprește afișarea": "Stop display",
-      "Codul:": "Code:",
-      "Reducere:": "Discount:"
+      "Codul": "Code",
+      "Reducere": "Discount"
     },
     "Errors": {
       "Erori": "Errors",
       "Email trimis!": "Email sent!",
       "Emailul a fost trimis cu succes către": "Email has been successfully sent to",
       "Răspunde acestui utilizator": "Reply to this user",
-      "Nume:": "Name",
-      "Problema:": "Issue:",
-      "Răspunde:": "Respond",
+      "Nume": "Name",
+      "Problema": "Issue",
+      "Răspunde": "Respond",
       "Răspuns...": "Response...",
       "Trimite email": "Send email",
       "Nu mai există erori!": "No more errors!"
@@ -358,6 +363,11 @@
       "Adaugă admin": "Add admin",
       "Email": "Email",
       "Scoate admin": "Remove admin"
+    },
+    "Orders": {
+      "Sigur vrei să modifici statusul comenzi utilizatorului": "Are you sure you want to modify the order status for the user",
+      "Modifică": "Modify",
+      "în":"in"
     }
   },
   "Month": {
