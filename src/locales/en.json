@@ -213,7 +213,14 @@
     "Înapoi": "Back",
     "Anonim": "Anonymous",
     "Nu esti conectat. Conectează-te pentru a lăsa o părere.": "You are not connected. Log in to leave a review.",
-    "Conectare": "Log in"
+    "Conectare": "Log in",
+    "Email": "Email",
+    "Text": "Text",
+    "Stele": "Stars",
+    "Motiv": "Reason",
+    "Încarcă mai multe Review-uri":"Load more reviews",    
+    "Șterge Review-ul": "Delete Review",
+    "BlisstText": "For a more enjoyable experience please write an objective review, without offending others. Blisst Team"
   },
   "Check": {
     "Setează adresa pentru a continua!": "Set your address to continue!",
@@ -313,7 +320,7 @@
       "Comenzi": "Orders",
       "Discount-uri": "Discounts",
       "Erori": "Errors",
-      "Colecții":"Collections",
+      "Colecții": "Collections",
       "Alți admini": "Other admins"
     },
     "Disc": {
@@ -367,7 +374,7 @@
     "Orders": {
       "Sigur vrei să modifici statusul comenzi utilizatorului": "Are you sure you want to modify the order status for the user",
       "Modifică": "Modify",
-      "în":"in"
+      "în": "in"
     }
   },
   "Month": {

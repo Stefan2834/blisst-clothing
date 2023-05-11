@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 import axios from 'axios'
@@ -91,7 +91,7 @@ export default function AdminList() {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     axios.get(`${server}/admin/admins`)
       .then(data => { setAdmins(data.data.admins); setLoading(false) })
       .catch(err => { console.error(err); setLoading(false) })

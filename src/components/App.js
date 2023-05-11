@@ -45,6 +45,7 @@ import AdminProducs from './Admin/AdminProducs';
 import AdminDiscount from './Admin/AdminDiscount';
 import AdminErrors from './Admin/AdminErrors';
 import AdminList from './Admin/AdminList';
+import AdminCollections from './Admin/AdminCollections';
 
 const Layout = () => (
   <>
@@ -115,6 +116,7 @@ function App() {
                 <Route path='products' element={<AdminRoute element={AdminProducs} />} />
                 <Route path='discount' element={<AdminRoute element={AdminDiscount} />} />
                 <Route path='errors' element={<AdminRoute element={AdminErrors} />} />
+                <Route path='collections' element={<AdminRoute element={AdminCollections} /> } />
                 <Route path='list' element={<OwnerRoute element={AdminList} />} />
               </Route>
 

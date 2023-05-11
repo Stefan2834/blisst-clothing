@@ -97,10 +97,16 @@ export default function SpecialProduct() {
       setLoading(false)
       return
     }
+    const date = new Date();
+    let hours = date.getHours()
+    let minutes = date.getMinutes()
+    if (hours < 10) hours = `0${hours}`
+    if (minutes < 10) minutes = `0${minutes}`
     const reviewPost = await axios.post(`${server}/product/review/post`, {
       review: review,
       id: specialClothing.id,
-      user: currentUser.email
+      user: currentUser.email,
+      date: `${date.getDate()} ${date.getMonth() + 1} ${date.getFullYear()} ${hours}:${minutes}`,
     })
     if (reviewPost.data.success) {
       setProduct(p => p.map(prod => {
@@ -146,7 +152,7 @@ export default function SpecialProduct() {
     const revUpdate = await axios.post(`${server}/product/review/update`, {
       user: currentUser.email,
       review: review,
-      id: specialClothing.id
+      id: specialClothing.id,
     })
     if (revUpdate.data.success) {
       setProduct(p => p.map(prod => {
@@ -264,7 +270,7 @@ export default function SpecialProduct() {
       setAdminPopUp({ active: false, user: '', star: '', text: '', reason: '' })
       axios.post(`${server}/email/reviewDeleted`, {
         reason: adminPopUp.reason,
-        email:adminPopUp.user,
+        email: adminPopUp.user,
         id: idPath
       }).catch(err => console.error(err))
     }).catch(err => console.error(err))
@@ -285,9 +291,9 @@ export default function SpecialProduct() {
               <div className='spec-pop'>
                 <div className='spec-pop-bg' onClick={() => setAdminPopUp({ active: false, user: '', star: 0, text: '', reason: '' })} />
                 <form className='spec-pop-div' onSubmit={e => handleAdminDelete(e)}>
-                  <div className='spec-pop-user my-4'>{t('Email')}: {adminPopUp.user}</div>
+                  <div className='spec-pop-user my-4'>{t('Spec.Email')}: {adminPopUp.user}</div>
                   <div className='spec-pop-star my-4'>
-                    <span className='text-xl font-semibold'>{t('Stele')}:</span>
+                    <span className='text-xl font-semibold'>{t('Spec.Stele')}:</span>
                     {[...Array(5)].map((_, i) => {
                       const ratingValue = i + 1;
                       return (
@@ -299,8 +305,8 @@ export default function SpecialProduct() {
                       );
                     })}
                   </div>
-                  <div className='text-xl font-semibold my-4'>{t('Text')}: {adminPopUp.text}</div>
-                  <div className='text-xl font-semibold my-4'>{t('Motiv')}:
+                  <div className='text-xl font-semibold my-4'>{t('Spec.Text')}: {adminPopUp.text}</div>
+                  <div className='text-xl font-semibold my-4'>{t('Spec.Motiv')}:
                     <input type='text' className='spec-rev-input'
                       value={adminPopUp.reason}
                       onChange={e => setAdminPopUp({ ...adminPopUp, reason: e.target.value })}
@@ -308,7 +314,7 @@ export default function SpecialProduct() {
                     />
                   </div>
                   <div className='flex items-center justify-center w-full my-4'>
-                    <input type='submit' className='spec-pop-submit' value={t('Șterge Review-ul')} />
+                    <input type='submit' className='spec-pop-submit' value={t('Spec.Șterge Review-ul')} />
                   </div>
                 </form>
               </div>
@@ -615,7 +621,14 @@ export default function SpecialProduct() {
                     )}
                   </div>
                   <div className='spec-review-right'>
+                    <div className='spec-review'>
+                      <div className='spec-rev-upper'>
+                        <div className='spec-rev-user principal'>blisstteam@gmail.com</div>
+                      </div>
+                      <div className='spec-rev-text'>{t('Spec.BlisstText')} &#x1F44B;</div>
+                    </div>
                     {specialClothing.review.map((rev, index) => {
+                      const [day, month, year, time] = rev.date.split(' ');
                       if (index < review.load) {
                         return (
                           <div className='spec-review'>
@@ -641,6 +654,7 @@ export default function SpecialProduct() {
                                   );
                                 })}
                               </div>
+                              <div className="font-semibold text-base">{day} {t(`Month.${month}`)} {year} {time}</div>
                               {admin && (
                                 <div className={darkTheme ? 'spec-rev-sett-dark' : 'spec-rev-sett'}
                                   onClick={() => handleAdminPopUp(rev.user, rev.star, rev.text)}
