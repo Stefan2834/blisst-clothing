@@ -113,7 +113,7 @@ export default function Connect() {
                 if (admin.data.success) {
                     setAdmin(admin.data.admin)
                 }
-                await getUserData(user.uid, product)
+                await getUserData(user.email, user.uid, product)
                 navigate('/')
                 setError()
             } else {

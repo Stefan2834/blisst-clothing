@@ -322,6 +322,7 @@
       "Discount-uri": "Discount-uri",
       "Erori": "Erori",
       "Colecții":"Colecții",
+      "Banuri":"Banuri",
       "Alți admini": "Alți admini"
     },
     "Disc": {
@@ -385,6 +386,18 @@
       "Colecția a fost adăugată cu succes.":"Colecția a fost adăugată cu succes.",
       "Colecție ștearsă!":"",
       "Colecția a fost ștearsă cu succes.":"Colecția a fost ștearsă cu succes."
+    }, 
+    "Ban":{
+      "Banuri":"Banuri",
+      "Setează ban":"Setează ban",
+      "Email":"Email",
+      "Motiv":"Motiv",
+      "Utilizator banat!":"Utilizator banat!",
+      "a fost banat cu succes.":"a fost banat cu succes.",
+      "Nu poți face asta!":"Nu poți face asta!",
+      "Nu poți bana un admin.":"Nu poți bana un admin.",
+      "Ban scos!":"Ban scos!",
+      "Banul a fost scos cu succes pentru":"Banul a fost scos cu succes pentru"
     }
   },
   "Month": {

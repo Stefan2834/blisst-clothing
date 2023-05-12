@@ -41,6 +41,7 @@ export default function Admin() {
               <Link to='/main/admin/discount' className='admin-link'>{t('Admin.Main.Discount-uri')}</Link>
               <Link to='/main/admin/errors' className='admin-link'>{t('Admin.Main.Erori')}</Link>
               <Link to='/main/admin/collections' className='admin-link'>{t('Admin.Main.Colecții')}</Link>
+              <Link to='/main/admin/banned' className='admin-link'>{t('Admin.Main.Banuri')}</Link>
               {currentUser.email === owner && (
                 <Link to='/main/admin/list' className='admin-link'>{t('Admin.Main.Alți admini')}</Link>
               )}

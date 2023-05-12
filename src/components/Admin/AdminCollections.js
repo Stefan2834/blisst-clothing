@@ -17,7 +17,7 @@ export default function AdminCollections() {
   const nameRef = useRef()
 
   useEffect(() => {
-    document.title = `Blisst - Admin - ${t('Admin.Coll.Colecții')}`
+    document.title = `Blisst — Admin — ${t('Admin.Coll.Colecții')}`
   }, [lang])
 
   useEffect(() => {

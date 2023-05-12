@@ -114,6 +114,7 @@ export function AuthProvider({ children }) {
   const server = "https://blisst.onrender.com"
   // const server = 'http://localhost:9000'
   const [admin, setAdmin] = useState(false)
+  const [ban, setBan] = useState()
   const [showMessage, setShowMessage] = useState(false)
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
@@ -122,8 +123,8 @@ export function AuthProvider({ children }) {
   const [collections, setCollections] = useState([])
   const navigate = useNavigate()
 
-  const getUserData = async (uid, product) => {
-    await axios.post(`${server}/user/info`, { uid: uid })
+  const getUserData = async (email, uid, product) => {
+    await axios.post(`${server}/user/info`, { uid: uid, email: email })
       .then(info => {
         if (info.data.success) {
           dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav } })
@@ -133,7 +134,10 @@ export function AuthProvider({ children }) {
           dispatchOrder({ type: 'orderGet', payload: { order: info.data.data.order } })
           setDet(info.data.data.det);
           document.documentElement.style.setProperty("--principal", info.data.data.det.color)
+        } else if (info.data.ban) {
+          setBan(info.data.reason)
         }
+        console.log(info)
       })
       .catch(err => {
         console.error(err.error)
@@ -156,7 +160,7 @@ export function AuthProvider({ children }) {
         const user = JSON.parse(Cookies.get('userData'));
         console.log(user)
         setCurrentUser(user)
-        await getUserData(user.uid, product.data.product)
+        await getUserData(user.email, user.uid, product.data.product)
       } else {
         navigate('/connect')
       }
@@ -235,7 +239,23 @@ export function AuthProvider({ children }) {
             </div>
           )}
         </>
-      ) : children}
+      ) : ban ? (
+        <div className='flex flex-col items-center justify-center text-center font-semibold'>
+          <div className='font-xl my-4'>
+            {t('Ne pare rău să te informăm, dar acest cont este banat. Motivul pentru care ai fost banat este următorul:')}
+          </div>
+          <div className="text-xl font-semibold my-4">
+            {ban}
+          </div>
+          <div className='font-semibold my-4'>
+            {t('Dacă consideri că ai fost banat pe nedrept, lasă un email la @blisstteam@gmail.com cu justificarea')}
+          </div>
+          <div className='auth-logout' onClick={() => { setBan(); navigate('/connect') }}>
+            {t('Deconectare')}
+          </div>
+        </div>
+      ) : children
+      }
     </AuthContext.Provider>
   )
 }
