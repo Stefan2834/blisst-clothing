@@ -27,7 +27,8 @@
     "Adidași pentru El": "Adidași pentru El",
     "Adidași pentru Ea": "Adidași pentru Ea",
     "Șosete pentru El": "Șosete pentru El",
-    "Șosete pentru Ea": "Șosete pentru Ea"
+    "Șosete pentru Ea": "Șosete pentru Ea",
+    "Servărul pornește. Asta durează între 10 și 60 de secunde":"Servărul pornește. Asta durează între 10 și 60 de secunde"
   },
   "Nav": {
     "Ești sigur?": "Ești sigur?",
@@ -375,6 +376,15 @@
       "Sigur vrei să modifici statusul comenzi utilizatorului":"Sigur vrei să modifici statusul comenzi utilizatorului",
       "Modifică":"Modifică",
       "în":"în"
+    },
+    "Coll": {
+      "Colecții":"Colecții",
+      "Adaugă colecție":"Adaugă colecție",
+      "Nume":"Nume",
+      "Colecție adăugată!":"Colecție adăugată!",
+      "Colecția a fost adăugată cu succes.":"Colecția a fost adăugată cu succes.",
+      "Colecție ștearsă!":"",
+      "Colecția a fost ștearsă cu succes.":"Colecția a fost ștearsă cu succes."
     }
   },
   "Month": {

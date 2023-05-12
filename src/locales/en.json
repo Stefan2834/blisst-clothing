@@ -27,7 +27,8 @@
     "Adidași pentru El": "Shoes for Him",
     "Adidași pentru Ea": "Shoes for Her",
     "Șosete pentru El": "Socks for Him",
-    "Șosete pentru Ea": "Socks for Her"
+    "Șosete pentru Ea": "Socks for Her",
+    "Servărul pornește. Asta durează între 10 și 60 de secunde":"The server is starting. This takes between 10 and 60 seconds."
   },
   "Nav": {
     "Ești sigur?": "Are you sure?",
@@ -218,7 +219,7 @@
     "Text": "Text",
     "Stele": "Stars",
     "Motiv": "Reason",
-    "Încarcă mai multe Review-uri":"Load more reviews",    
+    "Încarcă mai multe Review-uri": "Load more reviews",
     "Șterge Review-ul": "Delete Review",
     "BlisstText": "For a more enjoyable experience please write an objective review, without offending others. Blisst Team"
   },
@@ -375,6 +376,15 @@
       "Sigur vrei să modifici statusul comenzi utilizatorului": "Are you sure you want to modify the order status for the user",
       "Modifică": "Modify",
       "în": "in"
+    },
+    "Coll": {
+      "Colecții": "Collections",
+      "Adaugă colecție": "Add collection",
+      "Nume": "Name",
+      "Colecție adăugată!": "Collection added!",
+      "Colecția a fost adăugată cu succes.": "The collection was successfully added.",
+      "Colecție ștearsă!": "Collection deleted!",
+      "Colecția a fost ștearsă cu succes.": "The collection was successfully deleted."
     }
   },
   "Month": {

@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState, useReducer } fro
 import axios from 'axios';
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2';
+import { useTranslation } from 'react-i18next';
 import { Product } from './Import';
 import { useNavigate } from 'react-router-dom';
 export const AuthContext = createContext();
@@ -104,14 +105,16 @@ export default function Reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [product, setProduct] = useState(
-    [] 
+    []
     // Product
   )
+  const { t } = useTranslation()
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   const server = "https://blisst.onrender.com"
   // const server = 'http://localhost:9000'
   const [admin, setAdmin] = useState(false)
+  const [showMessage, setShowMessage] = useState(false)
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false, color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
@@ -168,6 +171,9 @@ export function AuthProvider({ children }) {
       .catch(err => console.log(err))
   }
   useEffect(() => {
+    setTimeout(() => {
+      setShowMessage(true);
+    }, 3000)
     getData()
     // postProduct()
   }, [])
@@ -221,7 +227,15 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={value}>
-      {!loading && children}
+      {loading ? (
+        <>
+          {showMessage && (
+            <div className='auth-loading'>
+              {t('Main.Servărul pornește. Asta durează între 10 și 60 de secunde')}
+            </div>
+          )}
+        </>
+      ) : children}
     </AuthContext.Provider>
   )
 }

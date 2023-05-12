@@ -5,9 +5,8 @@ import axios from 'axios'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
-import app from '../SmallComponents/Firebase';
-import { ref as storageRef, uploadBytes, getDownloadURL, getStorage } from 'firebase/storage';
-const storage = getStorage(app)
+import storage from '../SmallComponents/Firebase';
+import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 export default function AdminProducs() {
   const { product, server } = useAuth()

@@ -3,17 +3,21 @@ import '../css/admin.css'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 import axios from 'axios'
+import Swal from 'sweetalert2'
+
+import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
+import storage from '../SmallComponents/Firebase'
 
 export default function AdminCollections() {
   const { server } = useAuth()
-  const { t, lang } = useDefault()
+  const { t, lang, darkTheme } = useDefault()
   const [loading, setLoading] = useState(true)
   const [collections, setCollections] = useState([])
-  const uidRef = useRef()
-  const emailRef = useRef()
+  const [photo, setPhoto] = useState()
+  const nameRef = useRef()
 
   useEffect(() => {
-    document.title = `Blisst - Admin - ${t('Admin.Coll.Collecții')}`
+    document.title = `Blisst - Admin - ${t('Admin.Coll.Colecții')}`
   }, [lang])
 
   useEffect(() => {
@@ -25,8 +29,57 @@ export default function AdminCollections() {
       .catch(err => { console.error(err); setLoading(false) })
   }, [])
 
+  const handlePhoto = async (e) => {
+    const file = e.target.files[0]
+    let imageUrl = null;
+    if (file) {
+      const imageRef = storageRef(storage, `images/${file.name}`);
+      await uploadBytes(imageRef, file);
+      imageUrl = await getDownloadURL(imageRef);
+      const url = imageUrl
+      setPhoto(url)
+    }
+  };
+
+  const handleDelete = (coll) => {
+    setLoading(true)
+    axios.post(`${server}/admin/collectionsDelete`, {
+      name: coll.name
+    }).then(data => {
+      setCollections(c => c.map(c => {
+        if (c.name === coll.name) {
+          return null
+        } else {
+          return c
+        }
+      }).filter(c => c != null))
+      setLoading(false)
+      Swal.fire(
+        t('Admin.Coll.Colecție ștearsă!'),
+        t('Admin.Coll.Colecția a fost ștearsă cu succes.'),
+        'success'
+      )
+    }).catch(err => { console.error(err); setLoading(false) })
+  }
+
   const handleAdmin = (e) => {
+    setLoading(true)
     e.preventDefault()
+    const name = nameRef.current.value
+    axios.post(`${server}/admin/collections`, {
+      name: name,
+      photo: photo
+    }).then(data => {
+      console.log(data);
+      setCollections([...collections, { name: name, photo: photo }])
+      setLoading(false)
+      Swal.fire(
+        t('Admin.Coll.Colecție adăugată!'),
+        t('Admin.Coll.Colecția a fost adăugată cu succes.'),
+        'success'
+      )
+    })
+      .catch(err => { console.error(err); setLoading(false) })
   }
 
   return (
@@ -41,14 +94,13 @@ export default function AdminCollections() {
       ) : (
         <div className='adm-list'>
           <form className='adm-list-container' onSubmit={e => handleAdmin(e)}>
-            <div className='adm-list-title'>{t('Admin.List.Adaugă admin')}</div>
+            <div className='adm-list-title'>{t('Admin.Coll.Adaugă colecție')}</div>
             <label className='adm-label'>
-              <input ref={uidRef} className='adm-input' type='text' placeholder=' ' required minLength={10} maxLength={30} />
-              <span className='adm-place-holder'>Uid</span>
+              <input ref={nameRef} className='adm-input' type='text' placeholder=' ' required minLength={2} maxLength={30} />
+              <span className='adm-place-holder'>{t('Admin.Coll.Nume')}</span>
             </label>
-            <label className='adm-label'>
-              <input ref={emailRef} className='adm-input' type='email' placeholder=' ' required minLength={6} maxLength={30} />
-              <span className='adm-place-holder'>{t('Admin.List.Email')}</span>
+            <label className='adm-option-label'>
+              <input type='file' onChange={(e) => handlePhoto(e)} required />
             </label>
             <input type='submit' value={t('Admin.List.Adaugă')} className='adm-submit' />
           </form>
@@ -58,6 +110,9 @@ export default function AdminCollections() {
               return (
                 <div className='flex items-center justify-between w-full my-4'>
                   <div className='adm-list-name'>{coll.name}</div>
+                  <div className={darkTheme ? 'adm-list-delete-dark' : 'adm-list-delete'}
+                    onClick={() => handleDelete(coll)}
+                  />
                 </div>
               )
             })}

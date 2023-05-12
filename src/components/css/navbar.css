@@ -254,6 +254,12 @@ body {
 .nav-square-text {
   color:var(--color-oposite)
 }
+.nav-text-coll {
+  overflow: hidden;
+  height:30px;
+  white-space: nowrap;  
+  text-overflow: ellipsis;
+}
 .nav-right {
   display: flex;
   align-items: center;

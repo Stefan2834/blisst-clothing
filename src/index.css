@@ -51,6 +51,21 @@ body {
   background-color: var(--principal);
   border: 2px solid var(--color);
 }
+.auth-loading {
+  width:calc(100% - 20px);
+  margin: 0 10px;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 
 .loading-bg {
@@ -369,11 +384,12 @@ button.acc-btn:hover {
   background-color:var(--color-third);
   z-index:1;
   position: relative;
-  background-image: url(clothing/pexels-karolina-grabowska-5650037.jpg);
-  background-size: cover;
+  background-image: url(clothing/navbarPhotos/manHoo.png);
+  background-size: contain;
+  background-repeat:space;
   background-position: center;
   background-blend-mode: darken;
-  background-color: rgba(0, 0, 0, 0.695);
+  background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.605);
 }
 .main-left, .main-right {

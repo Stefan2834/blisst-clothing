@@ -257,12 +257,12 @@ export default function Navbar() {
                     <div className='nav-drop-img nav-19' />
                     <div className='nav-square-text'>{t('Nav.Toate')}</div>
                   </Link>
-                  {collections.map((collection, index) => {
+                  {[...collections].reverse().map((collection, index) => {
                     if (index < 2) {
                       return (
                         <Link className='nav-drop-square' to={`/main/cloth/collection ${collection.name}`}>
                           <img className='nav-drop-img nav-drop-coll' src={collection.photo} />
-                          <div className='nav-square-text'>{collection.name}</div>
+                          <div className='nav-square-text nav-text-coll w-full text-center'>{collection.name}</div>
                         </Link>
                       )
                     }
