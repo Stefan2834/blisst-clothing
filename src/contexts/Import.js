@@ -2511,7 +2511,7 @@ export const Product = {
     colors: ['#00ffd8', '#eee'],
     star: { total: 0, nr: 0 },
     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
-    id: 'mptr',
+    id: 'wptr',
   }, wpty: {
     name: 'Tricou cu pattern',
     price: 119.99,

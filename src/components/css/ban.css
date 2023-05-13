@@ -1,0 +1,48 @@
+.ban-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height:100vh;
+  min-height: 500px;
+}
+.ban-logout {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size:18px;
+  padding:6px 16px;
+  border-radius: 4px;
+  background-color: black;
+  color:white;
+  cursor: pointer;
+  margin:10px 0;
+}
+.ban-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height:auto;
+  width:600px;
+  max-width: calc(100% - 20px);
+  background-color: white;
+  padding:10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-family: 'Poppins', sans-serif;
+}
+.ban-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.ban-text {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.ban-reason {
+  font-size:18px;
+  font-weight: 600;
+  margin:5px 0;
+  text-align: center;
+}

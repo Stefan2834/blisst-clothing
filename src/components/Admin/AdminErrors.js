@@ -87,7 +87,7 @@ export default function AdminErrors() {
                   <div className="font-medium text-lg">{popUp.error} </div>
                 </div>
                 <div className='flex justify-start items-center my-4 w-full'>
-                  <div className='font-medium text-lg'>{t('Admin.Errors.Răspunde')}</div>
+                  <div className='font-medium text-lg'>{t('Admin.Errors.Răspunde')}:</div>
                   <input type='text' ref={solve}
                     className='adm-pop-input w-full'
                     required

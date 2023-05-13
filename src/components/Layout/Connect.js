@@ -37,16 +37,19 @@ export default function Connect() {
     const [passView, setPassView] = useState([false, false, false]);
 
     useEffect(() => {
-        setLoading(true)
-        setAdmin()
         document.title = 'Blisst — Conectare'
+        setCurrentUser()
+        setAdmin()
+        setLoading(true)
         dispatchCart({ type: 'deleteState' })
         dispatchFav({ type: 'deleteState' })
         dispatchOrder({ type: 'deleteState' })
         Cookies.remove('userData')
-        setCurrentUser()
+        axios.post(`${server}/connect/logout`)
         setLoading(false)
     }, [])// daca ai accesat aceasta pagina, sterge cosul favoritele si comenziile urilizatorului, si deconecteaza-l
+
+
 
 
     const handleRadio = (e) => {
@@ -109,17 +112,12 @@ export default function Connect() {
                 Cookies.set('userData', JSON.stringify(user), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
                 await setCurrentUser(user)
                 console.log(user);
-                const admin = await axios.get(`${server}/connect/admin`)
-                if (admin.data.success) {
-                    setAdmin(admin.data.admin)
-                }
                 await getUserData(user.email, user.uid, product)
                 navigate('/')
                 setError()
             } else {
                 setError(response.data.message)
             }
-            setLoading(false)
         } catch (err) {
             console.log(err);
             setError(err);

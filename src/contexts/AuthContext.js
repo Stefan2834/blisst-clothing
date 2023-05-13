@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 import Swal from 'sweetalert2';
 import { useTranslation } from 'react-i18next';
 import { Product } from './Import';
+import Ban from '../components/SmallComponents/Ban'
 import { useNavigate } from 'react-router-dom';
 export const AuthContext = createContext();
 export function useAuth() {
@@ -111,8 +112,8 @@ export function AuthProvider({ children }) {
   const { t } = useTranslation()
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = "https://blisst.onrender.com"
-  // const server = 'http://localhost:9000'
+  // const server = "https://blisst.onrender.com"
+  const server = 'http://localhost:9000'
   const [admin, setAdmin] = useState(false)
   const [ban, setBan] = useState()
   const [showMessage, setShowMessage] = useState(false)
@@ -127,12 +128,13 @@ export function AuthProvider({ children }) {
     await axios.post(`${server}/user/info`, { uid: uid, email: email })
       .then(info => {
         if (info.data.success) {
+          console.log(info.data.data)
           dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav } })
           dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart } })
           dispatchCart({ type: 'cartUpdate', payload: { product: product } })
-          console.log(info.data.data)
           dispatchOrder({ type: 'orderGet', payload: { order: info.data.data.order } })
           setDet(info.data.data.det);
+          setAdmin(info.data.admin)
           document.documentElement.style.setProperty("--principal", info.data.data.det.color)
         } else if (info.data.ban) {
           setBan(info.data.reason)
@@ -151,10 +153,6 @@ export function AuthProvider({ children }) {
       setCollections(product.data.collections)
     }
     const connect = await axios.get(`${server}/connect/admin`)
-    if (connect.data.admin) {
-      console.log(connect)
-      setAdmin(true)
-    }
     if (connect.data.success) {
       if (Cookies.get('userData')) {
         const user = JSON.parse(Cookies.get('userData'));
@@ -177,7 +175,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     setTimeout(() => {
       setShowMessage(true);
-    }, 3000)
+    }, 1000)
     getData()
     // postProduct()
   }, [])
@@ -240,20 +238,7 @@ export function AuthProvider({ children }) {
           )}
         </>
       ) : ban ? (
-        <div className='flex flex-col items-center justify-center text-center font-semibold'>
-          <div className='font-xl my-4'>
-            {t('Ne pare rău să te informăm, dar acest cont este banat. Motivul pentru care ai fost banat este următorul:')}
-          </div>
-          <div className="text-xl font-semibold my-4">
-            {ban}
-          </div>
-          <div className='font-semibold my-4'>
-            {t('Dacă consideri că ai fost banat pe nedrept, lasă un email la @blisstteam@gmail.com cu justificarea')}
-          </div>
-          <div className='auth-logout' onClick={() => { setBan(); navigate('/connect') }}>
-            {t('Deconectare')}
-          </div>
-        </div>
+        <Ban t={t} ban={ban} setBan={setBan} />
       ) : children
       }
     </AuthContext.Provider>

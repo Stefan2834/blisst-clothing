@@ -41,12 +41,13 @@ import OwnerRoute from '../CustomHook/OwnerRoute';
 
 import Admin from './Admin/Admin';
 import AdminOrders from './Admin/AdminOrders';
-import AdminProducs from './Admin/AdminProducs';
+import AdminProducs from './Admin/AdminProducts';
 import AdminDiscount from './Admin/AdminDiscount';
 import AdminErrors from './Admin/AdminErrors';
 import AdminList from './Admin/AdminList';
 import AdminCollections from './Admin/AdminCollections';
 import AdminBan from './Admin/AdminBan';
+import AdminProducsAdd from './Admin/AdminProductsAdd';
 
 const Layout = () => (
   <>
@@ -114,7 +115,10 @@ function App() {
               <Route path='admin' element={<Outlet />} >
                 <Route index element={<AdminRoute element={Admin} />} />
                 <Route path='orders' element={<AdminRoute element={AdminOrders} />} />
-                <Route path='products' element={<AdminRoute element={AdminProducs} />} />
+                <Route path='products' element={<Outlet />}>
+                  <Route exact index element={<AdminRoute element={AdminProducs} />} />
+                  <Route path='add' element={<AdminRoute element={AdminProducsAdd} />} />
+                </Route>
                 <Route path='discount' element={<AdminRoute element={AdminDiscount} />} />
                 <Route path='errors' element={<AdminRoute element={AdminErrors} />} />
                 <Route path='collections' element={<AdminRoute element={AdminCollections} />} />

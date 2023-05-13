@@ -379,6 +379,132 @@ input.adm-input:valid {
   cursor: pointer;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
 }
+.adm-prod-more {
+  padding:6px 16px;
+  background-color: var(--color-oposite);
+  color:var(--color);
+  border-radius: 4px;
+  font-size:18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin:20px 0;
+}
+.adm-prod-new, .adm-prod-new-dark {
+  width:280px;
+  height:420px;
+  margin:20px;
+  background-color: var(--color-oposite);
+  box-shadow: 2px 2px 3px black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:100px 100px;
+  cursor: pointer;
+}
+.adm-prod-new {
+  background-image: url(../Main/svg/plus-cross.svg);
+}
+.adm-prod-new-dark {
+  background-image: url(../Main/svg-dark/plus-cross.svg);
+}
+.adm-prod-edit {
+  width:280px;
+  height:420px;
+  margin:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.adm-prod-edit-bg {
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  transition: 300ms ease;
+  height:100%;
+  position: absolute;
+  color:var(--color);
+  font-family: 'Poppins', sans-serif;
+  padding:5px;
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--color-oposite);
+}
+.adm-prod-edit:hover .adm-prod-edit-bg {
+  visibility: visible;
+  opacity: 1;
+}
+.adm-prod-edit-title {
+  font-size:18px;
+  font-weight: 600;
+}
+.adm-prod-edit-text {
+  font-size:16px;
+  width: 100%;
+  margin:5px;
+}
+.adm-prod-edit-input {
+  width:16px;
+  padding:2px;
+  background-color: var(--color);
+  color: var(--color-oposite);
+  outline: none;
+  width:fit-content;
+}
+.adm-prod-size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin:5px;
+}
+.adm-prod-option {
+  background-color: var(--color-oposite);
+  color:var(--color);
+  outline:none;
+}
+.adm-edit {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width:100%;
+  height:100%;
+}
+.adm-edit-btn, .adm-delete-btn, .adm-back-btn, .adm-save-btn,
+.adm-edit-btn-dark, .adm-delete-btn-dark, .adm-back-btn-dark, .adm-save-btn-dark
+{
+  width:50px;
+  height:50px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.adm-edit-btn {
+  background-image: url(../Main/svg/edit.svg);
+}
+.adm-delete-btn {
+  background-image: url(../Main/svg/delete.svg);
+}
+.adm-back-btn {
+  background-image: url(../Main/svg/back.svg);
+}
+.adm-save-btn {
+  background-image: url(../Main/svg/save.svg);
+}
+.adm-edit-btn-dark {
+  background-image: url(../Main/svg-dark/edit.svg);
+}
+.adm-delete-btn-dark {
+  background-image: url(../Main/svg-dark/delete.svg);
+}
+.adm-back-btn-dark {
+  background-image: url(../Main/svg-dark/back.svg);
+}
+.adm-save-btn-dark {
+  background-image: url(../Main/svg-dark/save.svg);
+}
 @media screen and (max-width:700px) {
   label.adm-label {
     width:calc(100% - 20px)

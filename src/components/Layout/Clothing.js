@@ -62,22 +62,35 @@ export default function Clothing() {
         });
       } else if (filter.sort === 'review+') {
         sort.sort((a, b) => {
-          const reviewA = a.star.total / a.star.nr
-          const reviewB = b.star.total / b.star.nr
+          const reviewA = a.star.nr === 0 ? 0 : a.star.total / a.star.nr;
+          const reviewB = b.star.nr === 0 ? 0 : b.star.total / b.star.nr;
+
           if (reviewA < reviewB) {
             return -1;
-          } else {
-            return 1
-          }
-        })
-      } else if (filter.sort === 'review-') {
-        sort.sort((a, b) => {
-          const reviewA = a.star.total / a.star.nr
-          const reviewB = b.star.total / b.star.nr
-          if (reviewA < reviewB) {
+          } else if (reviewA > reviewB) {
             return 1;
           } else {
+            if (a.star.nr < b.star.nr) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }
+        });
+      } else if (filter.sort === 'review-') {
+        sort.sort((a, b) => {
+          const reviewA = a.star.nr === 0 ? 0 : a.star.total / a.star.nr
+          const reviewB = b.star.nr === 0 ? 0 : b.star.total / b.star.nr
+          if (reviewA < reviewB) {
+            return 1;
+          } else if (reviewB > reviewA) {
             return -1
+          } else {
+            if (a.star.nr < b.star.nr) {
+              return 1
+            } else {
+              return -1
+            }
           }
         })
       } else if (filter.sort === 'nrReview') {

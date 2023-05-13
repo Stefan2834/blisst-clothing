@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import storage from '../SmallComponents/Firebase';
 import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
-export default function AdminProducs() {
-  const { product, server } = useAuth()
+export default function AdminProductsAdd() {
+  const { server } = useAuth()
   const navigate = useNavigate()
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -133,11 +133,9 @@ export default function AdminProducs() {
         <label className='adm-option adm-option-label'>Stoc:
           {Object.keys(size).map(size => {
             return (
-
               <select value={newProduct.size[size]} className='adm-option' required
                 onChange={e => { setNewProduct({ ...newProduct, size: { ...newProduct.size, [size]: Number(e.target.value) } }) }}
               >
-                <option value="" className='adm-option'>{size}</option>
                 {[...Array(101).keys()].map((type) => {
                   return (
                     <option key={type}

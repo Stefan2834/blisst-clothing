@@ -27,18 +27,6 @@ export default function Navbar() {
   const navIconRefs = useRef([])
   const navigate = useNavigate()
 
-  async function handleLogout() {
-    try {
-      setError()
-      setActiveForm(true)
-      const response = await axios.post(`${server}/connect/logout`)
-      if (response.data.success) {
-        navigate('/connect');
-      }
-    } catch {
-      setError('Failed to log out')
-    }
-  }//deconecteaza utilizatorul, si trimite-l pe pagina de connect
   function handleDeleteCart(e, product) {
     e.preventDefault();
     Swal.fire({
@@ -455,7 +443,7 @@ export default function Navbar() {
               />
               <div className='nav-drop-right nav-drop-set'>
                 <div className='nav-fav-title'>{t('Nav.Opțiuni')}</div>
-                <div className='nav-set' onClick={() => handleLogout()}>{t('Nav.Deconectare')}</div>
+                <div className='nav-set' onClick={() => navigate('/connect')}>{t('Nav.Deconectare')}</div>
               </div>
             </div>
           ) : (

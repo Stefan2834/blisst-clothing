@@ -14,7 +14,7 @@ export default function Admin() {
   useEffect(() => {
     document.title = 'Blisst — Admin'
     axios.get(`${server}/admin/owner`)
-      .then(data => { setOwner(data.data.owner); setLoading(false) })
+      .then(data => { setOwner(data.data.owner);console.log(data); setLoading(false) })
       .catch(err => console.error('Owner not found'))
   }, [])
 
