@@ -80,7 +80,7 @@ export default function AdminProducts() {
       <div className='flex flex-wrap items-center justify-around mt-14 mx-4'>
         <Link to='/main/admin/products/add' className={darkTheme ? 'adm-prod-new-dark' : 'adm-prod-new'}></Link>
         {product.map((product, ind) => {
-          if (ind < load) {
+          if (ind + 1 < load) {
             return (
               <div className='adm-prod-edit'>
                 <Product product={product} />

@@ -19,7 +19,7 @@ export default function Favorite() {
     <div className='fav-div'>
       <Suggestion type={'daily'} />
       <div className='fav-center'>
-        {favorite.map((product) => {
+        {[...favorite].reverse().map((product) => {
           return (
             <Product product={product} />
           )

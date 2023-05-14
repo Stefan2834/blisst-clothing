@@ -61,7 +61,7 @@ export default function Cart() {
             )}
             <div className='cart-div'>
                 <div className='cart-left'>
-                    {cart.map((product) => {
+                    {[...cart].reverse().map((product) => {
                         return (
                             <div className='cart-product'>
                                 <Link to={`/product/${product.id}`}>

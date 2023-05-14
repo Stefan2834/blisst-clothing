@@ -214,6 +214,7 @@ span.cart-span {
     color:var(--color-oposite);
     font-size:20px;
     padding:5px;
+    width: calc(100% - 50px);
     background-color: var(--color);
 }
 .cart-form-input:focus {

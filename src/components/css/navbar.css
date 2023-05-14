@@ -420,6 +420,7 @@ body {
   flex-direction: column;
   padding-right:10px;
   height:100%;
+  width: 200px;
   font-family: 'Noto sans serif', sans-serif;
 }
 .nav-top {
@@ -437,9 +438,14 @@ body {
   justify-self: flex-start;
   line-height:20px;
   padding-top:5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color:black;
+  width: 100%;
   font-family: 'Dancing script', sans-serif;
   font-weight: 700;
+  text-align: right;
 }
 .nav-fav-price {
   font-weight: 600;

@@ -11,13 +11,11 @@ export default function Navbar() {
     currentUser,
     favorite,
     cart,
-    server,
     admin,
     dispatchCart, dispatchFav,
     collections
   } = useAuth()
-  const { setError, setActiveForm,
-    darkTheme, setDarkTheme,
+  const { darkTheme, setDarkTheme,
     setFilterOpen, t, lang, setLang
   } = useDefault()
   const { pathname } = useLocation();
