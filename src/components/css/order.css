@@ -206,7 +206,7 @@ span.comm-span {
     align-items: center;
   }
 }
-@media screen and (max-width:700px) {
+@media screen and (max-width:800px) {
   .comm-left {
     width:auto;
   }

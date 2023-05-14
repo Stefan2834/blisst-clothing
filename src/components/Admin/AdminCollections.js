@@ -13,7 +13,7 @@ export default function AdminCollections() {
   const { t, lang, darkTheme } = useDefault()
   const [loading, setLoading] = useState(true)
   const [collections, setCollections] = useState([])
-  const [photo, setPhoto] = useState()
+  const [photo, setPhoto] = useState('')
   const nameRef = useRef()
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function AdminCollections() {
     }).catch(err => { console.error(err); setLoading(false) })
   }
 
-  const handleAdmin = (e) => {
+  const handleColl = (e) => {
     setLoading(true)
     e.preventDefault()
     const name = nameRef.current.value
@@ -93,7 +93,7 @@ export default function AdminCollections() {
         </>
       ) : (
         <div className='adm-list'>
-          <form className='adm-list-container' onSubmit={e => handleAdmin(e)}>
+          <form className='adm-list-container' onSubmit={e => handleColl(e)}>
             <div className='adm-list-title'>{t('Admin.Coll.Adaugă colecție')}</div>
             <label className='adm-label'>
               <input ref={nameRef} className='adm-input' type='text' placeholder=' ' required minLength={2} maxLength={30} />

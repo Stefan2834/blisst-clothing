@@ -266,6 +266,11 @@ export default function SpecialProduct() {
             return prod
           }
         }))
+        Swal.fire(
+          t('Spec.Review șters!'),
+          t('Spec.Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.'),
+          'success'
+        )
       }
       setAdminPopUp({ active: false, user: '', star: '', text: '', reason: '' })
       axios.post(`${server}/email/reviewDeleted`, {
@@ -407,7 +412,7 @@ export default function SpecialProduct() {
                       {sizeType.map((sizeMap) => {
                         return (
                           <>
-                            {specialClothing.size[sizeMap] === 0 ? (
+                            {specialClothing.size[sizeMap] <= 0 ? (
                               <div className='spec-size-disable'>{sizeMap}</div>
                             ) : (
                               <div className={cartSpec.size === sizeMap ? 'spec-size-current' : 'spec-size'}

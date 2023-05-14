@@ -281,7 +281,7 @@
   margin-top:50px;
   padding:10px;
   max-width: calc(100vw - 20px);
-  background-color: var(--color-second);
+  /* background-color: var(--color-second); */
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
 }
 .check-sumar-total {
@@ -338,7 +338,7 @@
     margin-bottom: 20px;
   }
 }
-@media screen and (max-width:700px) {
+@media screen and (max-width:800px) {
   .check-sumar-cart {
     align-items: center;
     display: flex;

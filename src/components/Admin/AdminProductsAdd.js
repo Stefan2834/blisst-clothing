@@ -136,6 +136,7 @@ export default function AdminProductsAdd() {
               <select value={newProduct.size[size]} className='adm-option' required
                 onChange={e => { setNewProduct({ ...newProduct, size: { ...newProduct.size, [size]: Number(e.target.value) } }) }}
               >
+                <option value="" className='adm-prod-option'>{size}</option>
                 {[...Array(101).keys()].map((type) => {
                   return (
                     <option key={type}

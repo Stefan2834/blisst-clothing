@@ -221,7 +221,9 @@
     "Motiv": "Reason",
     "Încarcă mai multe Review-uri": "Load more reviews",
     "Șterge Review-ul": "Delete Review",
-    "BlisstText": "For a more enjoyable experience please write an objective review, without offending others. Blisst Team"
+    "BlisstText": "For a more enjoyable experience please write an objective review, without offending others. Blisst Team",
+    "Review șters!":"Review deleted!",
+    "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.":"The review was successfully deleted, and a warning email was sent."
   },
   "Check": {
     "Setează adresa pentru a continua!": "Set your address to continue!",

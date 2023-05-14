@@ -68,7 +68,7 @@
 }
 .cart-photo {
     height:100%;
-    aspect-ratio: 10/8;
+    width:200px;
     object-fit: cover;
     object-position: center;
 }
@@ -78,10 +78,11 @@
     align-items: center;
     justify-content: flex-start;
     height:100%;
-    width:100%;
+    width: 100%;
     text-align: left;
     flex-direction: column;
     margin-left:10px;
+    overflow: hidden;
 }
 .cart-name {
     font-size:24px;
@@ -89,18 +90,38 @@
     width:100%;
     color:var(--color-oposite);
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 40px;
+    white-space: nowrap;
+    margin: 5px 0;
+    text-align: center;
 }
 .cart-info {
     width:100%;
     font-size:18px;
-    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    font-family:cursive;
     font-weight: 500;
-    color:var(--color-oposite);
+    overflow: hidden;
+    text-align: justify;
+    line-height: 26px;
+    height:120px;
+    color:grey;
+    display: -webkit-box;
+   -webkit-line-clamp: 4;
+   -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    display: box;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -moz-box-lines: 4;
 }
 .cart-action {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-direction: column;
     width:30%;
     height:100%;
@@ -257,7 +278,7 @@ span.cart-span {
 
 /*----------Media Queries---------*/
 
-@media screen and (max-width:700px) {   
+@media screen and (max-width:800px) {   
     .cart-div {
         padding:20px 10px;
     }
@@ -268,6 +289,8 @@ span.cart-span {
     .cart-info {
         line-height: 20px;
         font-size:16px;
+        -webkit-line-clamp: 6;
+        -moz-box-lines: 6;
     }
     .cart-product {
         flex-wrap: wrap;
@@ -307,6 +330,10 @@ span.cart-span {
     }
     .cart-left {
         width:420px;
+    }
+    .cart-info {
+        -webkit-line-clamp:5;
+        -moz-box-lines: 5;
     }
     .cart-photo {
         height:300px;

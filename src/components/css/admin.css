@@ -443,14 +443,18 @@ input.adm-input:valid {
   font-size:16px;
   width: 100%;
   margin:5px;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .adm-prod-edit-input {
   width:16px;
   padding:2px;
+  width:fit-content;
   background-color: var(--color);
   color: var(--color-oposite);
   outline: none;
-  width:fit-content;
 }
 .adm-prod-size {
   display: flex;

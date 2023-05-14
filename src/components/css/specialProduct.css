@@ -81,7 +81,7 @@
 .spec-right {
     width:25vw;
     min-width: 500px;
-    height:500px;
+    height:600px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -217,12 +217,13 @@ span.spec-price-old {
     margin-top:10px;
 }
 .spec-det {
-    font-size:20px;
+    font-size:16px;
     font-weight: 500;
     margin-top:10px;
 }
 .spec-span {
     font-weight: 600;
+    font-size:20px;
 }
 .spec-white-space {
     width:100vw;
