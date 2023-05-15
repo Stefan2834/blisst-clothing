@@ -28,7 +28,7 @@
     "Adidași pentru Ea": "Shoes for Her",
     "Șosete pentru El": "Socks for Him",
     "Șosete pentru Ea": "Socks for Her",
-    "Servărul pornește. Asta durează între 10 și 60 de secunde":"The server is starting. This takes between 10 and 60 seconds."
+    "Servărul pornește. Asta durează între 10 și 60 de secunde": "The server is starting. This takes between 10 and 60 seconds."
   },
   "Nav": {
     "Ești sigur?": "Are you sure?",
@@ -222,8 +222,8 @@
     "Încarcă mai multe Review-uri": "Load more reviews",
     "Șterge Review-ul": "Delete Review",
     "BlisstText": "For a more enjoyable experience please write an objective review, without offending others. Blisst Team",
-    "Review șters!":"Review deleted!",
-    "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.":"The review was successfully deleted, and a warning email was sent."
+    "Review șters!": "Review deleted!",
+    "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.": "The review was successfully deleted, and a warning email was sent."
   },
   "Check": {
     "Setează adresa pentru a continua!": "Set your address to continue!",
@@ -281,7 +281,8 @@
     "Data comenzii": "Order date",
     "Produs": "Product",
     "Toate": "All",
-    "Comenzi": "Orders"
+    "Comenzi": "Orders",
+    "Încarcă mai multe comenzi": "Load more orders"
   },
   "Forgot": {
     "Am uitat parola": "I forgot my password",
@@ -324,7 +325,7 @@
       "Discount-uri": "Discounts",
       "Erori": "Errors",
       "Colecții": "Collections",
-      "Banuri":"Bans",
+      "Banuri": "Bans",
       "Alți admini": "Other admins"
     },
     "Disc": {
@@ -378,7 +379,9 @@
     "Orders": {
       "Sigur vrei să modifici statusul comenzi utilizatorului": "Are you sure you want to modify the order status for the user",
       "Modifică": "Modify",
-      "în": "in"
+      "în": "in",
+      "Încarcă mai multe comenzi": "Load more orders",
+      "Nici un produs nu îndeplinește filtrele": "No product fulfills the filters."
     },
     "Coll": {
       "Colecții": "Collections",
@@ -389,17 +392,32 @@
       "Colecție ștearsă!": "Collection deleted!",
       "Colecția a fost ștearsă cu succes.": "The collection was successfully deleted."
     },
-    "Ban":{
-      "Banuri":"Bans",
-      "Setează ban":"Set ban",
-      "Email":"Email",
-      "Motiv":"Reason",
-      "Utilizator banat!":"User banned!",
-      "a fost banat cu succes.":"has been banned successfully.",
-      "Nu poți face asta!":"You can't do that!",
-      "Nu poți bana un admin.":"You can't ban an admin.",
-      "Ban scos!":"Ban removed!",
-      "Banul a fost scos cu succes pentru":"Ban has been successfully removed for"
+    "Ban": {
+      "Banuri": "Bans",
+      "Setează ban": "Set ban",
+      "Email": "Email",
+      "Motiv": "Reason",
+      "Utilizator banat!": "User banned!",
+      "a fost banat cu succes.": "has been banned successfully.",
+      "Nu poți face asta!": "You can't do that!",
+      "Nu poți bana un admin.": "You can't ban an admin.",
+      "Ban scos!": "Ban removed!",
+      "Banul a fost scos cu succes pentru": "Ban has been successfully removed for",
+      "Nici un utilizator nu este banat.": "No user is banned."
+    },
+    "Prod": {
+      "Ești sigur?": "Are you sure?",
+      "Sigur vrei să ștergi acest produs? Atenți mare când faci această acțiune!": "Are you sure you want to delete this product? Be careful when performing this action!",
+      "Șterge": "Delete",
+      "Produs șters!": "Product deleted!",
+      "Produsul a fost șters cu succes.": "The product has been successfully deleted.",
+      "Produs editat!": "Product edited!",
+      "Produsul a fost editat cu succes.": "The product has been successfully edited.",
+      "Nume": "Name",
+      "Detalii": "Details",
+      "Preț": "Price",
+      "Discount": "Discount",
+      "Stoc": "Stock"
     }
   },
   "Month": {
@@ -415,5 +433,36 @@
     "10": "October",
     "11": "November",
     "12": "December"
+  },
+  "Faq": {
+    "Întrebări frecvente": "Faq",
+    "Que": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": ""
+    },
+    "Ans": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": ""
+    }
   }
 }

@@ -161,7 +161,7 @@ export default function Clothing() {
           </div>
         )}
         {noProduct === 0 && (
-          <div className="mt-8">{t('Clothing.Nici un produs în stoc nu îndeplinește filtrele')}</div>
+          <div className="cloth-no">{t('Clothing.Nici un produs în stoc nu îndeplinește filtrele')}</div>
         )}
       </div>
     </>

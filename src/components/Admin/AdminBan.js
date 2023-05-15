@@ -104,16 +104,24 @@ export default function AdminBan() {
           </form>
           <div className='adm-list-container'>
             <div className='adm-list-title'>{t('Admin.Ban.Banuri')}</div>
-            {bannedUsers.map(ban => {
-              return (
-                <div className='flex items-center justify-between w-full my-4'>
-                  <div className='adm-list-name'>{ban.email}</div>
-                  <div className={darkTheme ? 'adm-list-delete-dark' : 'adm-list-delete'}
-                    onClick={() => handleDelete(ban.email)}
-                  />
-                </div>
-              )
-            })}
+            {bannedUsers.length === 0 ? (
+              <div className="font-semibold text-lg">
+                {t('Admin.Ban.Nici un utilizator nu este banat.')}
+              </div>
+            ) : (
+              <>
+                {bannedUsers.map(ban => {
+                  return (
+                    <div className='flex items-center justify-between w-full my-4'>
+                      <div className='adm-list-name'>{ban.email}</div>
+                      <div className={darkTheme ? 'adm-list-delete-dark' : 'adm-list-delete'}
+                        onClick={() => handleDelete(ban.email)}
+                      />
+                    </div>
+                  )
+                })}
+              </>
+            )}
           </div>
         </div>
       )}

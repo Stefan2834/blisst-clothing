@@ -28,7 +28,7 @@
     "Adidași pentru Ea": "Adidași pentru Ea",
     "Șosete pentru El": "Șosete pentru El",
     "Șosete pentru Ea": "Șosete pentru Ea",
-    "Servărul pornește. Asta durează între 10 și 60 de secunde":"Servărul pornește. Asta durează între 10 și 60 de secunde"
+    "Servărul pornește. Asta durează între 10 și 60 de secunde": "Servărul pornește. Asta durează între 10 și 60 de secunde"
   },
   "Nav": {
     "Ești sigur?": "Ești sigur?",
@@ -215,15 +215,15 @@
     "Anonim": "Anonim",
     "Nu esti conectat. Conectează-te pentru a lăsa o părere.": "Nu esti conectat. Conectează-te pentru a lăsa o părere.",
     "Conectare": "Conectare",
-    "Email":"Email",
-    "Text":"Text",
-    "Stele":"Stele",
-    "Motiv":"Motiv",
-    "Încarcă mai multe Review-uri":"Încarcă mai multe Review-uri",
-    "Șterge Review-ul":"Șterge Review-ul",
-    "BlisstText":"Pentru o experiență cât mai plăcuta, te rugam să scri o părere obiectivă, fără a jigni pe altcineva. Echipa Blisst",
-    "Review șters!":"Review șters!",
-    "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.":"Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis."
+    "Email": "Email",
+    "Text": "Text",
+    "Stele": "Stele",
+    "Motiv": "Motiv",
+    "Încarcă mai multe Review-uri": "Încarcă mai multe Review-uri",
+    "Șterge Review-ul": "Șterge Review-ul",
+    "BlisstText": "Pentru o experiență cât mai plăcuta, te rugăm să scri o părere obiectivă, fără a jigni pe altcineva. Echipa Blisst",
+    "Review șters!": "Review șters!",
+    "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.": "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis."
   },
   "Check": {
     "Setează adresa pentru a continua!": "Setează adresa pentru a continua!",
@@ -281,7 +281,8 @@
     "Data comenzii": "Data comenzi",
     "Produs": "Produs",
     "Toate": "Toate",
-    "Comenzi": "Comenzi"
+    "Comenzi": "Comenzi",
+    "Încarcă mai multe comenzi": "Încarcă mai multe comenzi"
   },
   "Forgot": {
     "Am uitat parola": "Am uitat parola",
@@ -323,8 +324,8 @@
       "Comenzi": "Comenzi",
       "Discount-uri": "Discount-uri",
       "Erori": "Erori",
-      "Colecții":"Colecții",
-      "Banuri":"Banuri",
+      "Colecții": "Colecții",
+      "Banuri": "Banuri",
       "Alți admini": "Alți admini"
     },
     "Disc": {
@@ -376,30 +377,47 @@
       "Scoate admin": "Scoate admin"
     },
     "Orders": {
-      "Sigur vrei să modifici statusul comenzi utilizatorului":"Sigur vrei să modifici statusul comenzi utilizatorului",
-      "Modifică":"Modifică",
-      "în":"în"
+      "Sigur vrei să modifici statusul comenzi utilizatorului": "Sigur vrei să modifici statusul comenzi utilizatorului",
+      "Modifică": "Modifică",
+      "în": "în",
+      "Încarcă mai multe comenzi": "Încarcă mai multe comenzi",
+      "Nici un produs nu îndeplinește filtrele": "Nici un produs nu îndeplinește filtrele"
     },
     "Coll": {
-      "Colecții":"Colecții",
-      "Adaugă colecție":"Adaugă colecție",
-      "Nume":"Nume",
-      "Colecție adăugată!":"Colecție adăugată!",
-      "Colecția a fost adăugată cu succes.":"Colecția a fost adăugată cu succes.",
-      "Colecție ștearsă!":"Colecție ștearsă!",
-      "Colecția a fost ștearsă cu succes.":"Colecția a fost ștearsă cu succes."
-    }, 
-    "Ban":{
-      "Banuri":"Banuri",
-      "Setează ban":"Setează ban",
-      "Email":"Email",
-      "Motiv":"Motiv",
-      "Utilizator banat!":"Utilizator banat!",
-      "a fost banat cu succes.":"a fost banat cu succes.",
-      "Nu poți face asta!":"Nu poți face asta!",
-      "Nu poți bana un admin.":"Nu poți bana un admin.",
-      "Ban scos!":"Ban scos!",
-      "Banul a fost scos cu succes pentru":"Banul a fost scos cu succes pentru"
+      "Colecții": "Colecții",
+      "Adaugă colecție": "Adaugă colecție",
+      "Nume": "Nume",
+      "Colecție adăugată!": "Colecție adăugată!",
+      "Colecția a fost adăugată cu succes.": "Colecția a fost adăugată cu succes.",
+      "Colecție ștearsă!": "Colecție ștearsă!",
+      "Colecția a fost ștearsă cu succes.": "Colecția a fost ștearsă cu succes."
+    },
+    "Ban": {
+      "Banuri": "Banuri",
+      "Setează ban": "Setează ban",
+      "Email": "Email",
+      "Motiv": "Motiv",
+      "Utilizator banat!": "Utilizator banat!",
+      "a fost banat cu succes.": "a fost banat cu succes.",
+      "Nu poți face asta!": "Nu poți face asta!",
+      "Nu poți bana un admin.": "Nu poți bana un admin.",
+      "Ban scos!": "Ban scos!",
+      "Banul a fost scos cu succes pentru": "Banul a fost scos cu succes pentru",
+      "Nici un utilizator nu este banat.": "Nici un utilizator nu este banat."
+    },
+    "Prod": {
+      "Ești sigur?": "Ești sigur?",
+      "Sigur vrei să ștergi acest produs? Atenți mare când faci această acțiune!": "Sigur vrei să ștergi acest produs? Atenți mare când faci această acțiune!",
+      "Șterge": "Șterge",
+      "Produs șters!": "Produs șters!",
+      "Produsul a fost șters cu succes.": "Produsul a fost șters cu succes.",
+      "Produs editat!": "Produs editat!",
+      "Produsul a fost editat cu succes.": "Produsul a fost editat cu succes.",
+      "Nume": "Nume",
+      "Detalii": "Detalii",
+      "Preț": "Preț",
+      "Discount": "Discount",
+      "Stoc": "Stoc"
     }
   },
   "Month": {
@@ -415,5 +433,36 @@
     "10": "Octombrie",
     "11": "Noiembrie",
     "12": "Decembrie"
+  },
+  "Faq": {
+    "Întrebări frecvente": "Întrebări frecvente",
+    "Que": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": ""
+    },
+    "Ans": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": ""
+    }
   }
 }

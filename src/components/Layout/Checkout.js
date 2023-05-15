@@ -170,7 +170,7 @@ export default function Checkout() {
           }
         } else if (payMethod === 'ramburs') {
           const newOrder = encodeURIComponent(JSON.stringify(orderData));
-          navigate(`/creditCard/${newOrder}`)
+          navigate(`/placeOrder/${newOrder}`)
         }
       }
     })

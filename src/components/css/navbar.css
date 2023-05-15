@@ -692,7 +692,7 @@ body {
   }
   .nav-icon {
     height:50px;
-    width:70px;
+    width:50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -705,7 +705,7 @@ body {
   .nav-drop-right {
     z-index:10;
     top:50%;
-    left:40px;
+    left:50px;
     transform: translate(50px, -50%);
   }
   .nav-drop-right::before {
@@ -755,6 +755,9 @@ body {
   }
   .nav-fav {
     width:230px;
+  }
+  .nav-fav-flex {
+    width: 150px;
   }
   .nav-drop-right {
     width:250px;

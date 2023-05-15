@@ -15,7 +15,6 @@ import Footer from './MainComponents/Footer';
 import Sidebar from './MainComponents/Sidebar';
 import Main from './MainComponents/Main';
 
-import Test from '../CustomHook/Test';
 import Checkout from './Layout/Checkout'
 import ScrollToTop from './SmallComponents/ScrollToTop';
 import ForgotPassword from './SmallComponents/ForgotPassword';
@@ -79,8 +78,9 @@ function App() {
           <Routes>
             <Route path='/' index element={<GoTo />} />
             <Route path='/connect' element={<Connect />} />
-            <Route path='/test' element={<Test />} />
-            <Route path='/creditCard'>
+
+            
+            <Route path='/placeOrder'>
               <Route path=':cardId' exact element={<CreditCard />} />
             </Route>
 

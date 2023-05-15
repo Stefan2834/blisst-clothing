@@ -348,7 +348,8 @@ span.cart-span {
         height:260px;
     }
     .cart-photo {
-        height:260px
+        height:260px;
+        width:150px
     }
     .cart-left {
         width:340px;

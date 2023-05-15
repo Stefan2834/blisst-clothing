@@ -139,6 +139,18 @@ span.cloth-price {
     padding:8px 16px;
     font-size:16px;
 }
+.cloth-no {
+    width: 100%;
+    text-align: center;
+    height:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:var(--color-oposite);
+    font-family: 'Poppins', sans-serif;
+    font-size:20px;
+    font-weight: 600;
+}
 
 
 /*----------Media Queries----------*/

@@ -25,6 +25,7 @@ export default function AdminOrders() {
     })
   }
 
+  console.log(orders)
   const handleStatus = async (status, id, uid, email) => {
     Swal.fire({
       title: t('Admin.Disc.Ești sigur?'),
@@ -40,6 +41,11 @@ export default function AdminOrders() {
         const updatedOrders = orders.map(order => {
           if (order.id === id && order.uid === uid) {
             if (status === 'Anulată') {
+              axios.post(`${server}/admin/order/cancel`, {
+                cart: order.product,
+                id: id,
+                uid: uid
+              })
               order.product.map(comm => {
                 setProduct(product.map((product) => {
                   if (product.id === comm.id) {
@@ -49,23 +55,23 @@ export default function AdminOrders() {
                   }
                 }))
               })
-              return null
+              return { ...order, status: status }
             } else {
               return { ...order, status: status }
             }
           } else {
             return order
           }
-        }).filter(c => c !== null)
+        })
+        await axios.post(`${server}/admin/orders`, { uid, id, status })
+          .then(data => console.log(data))
+          .catch(err => console.error(err))
+        setOrders(updatedOrders)
         await axios.post(`${server}/admin/status`, {
           uid: uid,
           id: id,
           status: status
         })
-          .then(data => console.log(data))
-          .catch(err => console.error(err))
-        setOrders(updatedOrders)
-        await axios.post(`${server}/admin/orders`, { uid, id, status })
           .then(data => console.log(data))
           .catch(err => console.error(err))
       }
@@ -118,6 +124,9 @@ export default function AdminOrders() {
                   </option>
                   <option value='Livrată' className='comm-option'>
                     {t('Profile.Livrată')}
+                  </option>
+                  <option value='Anulată' className='comm-option'>
+                    {t('Profile.Anulată')}
                   </option>
                 </select>
               </div>
@@ -227,9 +236,16 @@ export default function AdminOrders() {
                 }
               }
             })}
+            {count === 0 && (
+              <div className="h-80 w-full flex items-center justify-center">
+                <div className='font-semibold text-xl'>
+                  {t('Admin.Orders.Nici un produs nu îndeplinește filtrele')}
+                </div>
+              </div>
+            )}
             {load < count && (
               <div className="cloth-more">
-                <div className="cloth-more-btn" onClick={() => startTransition(() => setLoad(p => p + 4))}>Incarca mai multe comenzi</div>
+                <div className="cloth-more-btn" onClick={() => startTransition(() => setLoad(p => p + 4))}>{t('Admin.Orders.Încarcă mai multe comenzi')}</div>
               </div>
             )}
           </div>

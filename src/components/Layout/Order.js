@@ -139,7 +139,7 @@ export default function Order() {
             )}
             {load < order.length && (
               <div className="cloth-more">
-                <div className="cloth-more-btn" onClick={() => startTransition(() => setLoad(p => p + 4))}>Incarca mai multe comenzi</div>
+                <div className="cloth-more-btn" onClick={() => startTransition(() => setLoad(p => p + 4))}>{t('Orders.Încarcă mai multe comenzi')}</div>
               </div>
             )}
           </div>
