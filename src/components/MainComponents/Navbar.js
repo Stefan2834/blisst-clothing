@@ -92,13 +92,13 @@ export default function Navbar() {
           <div className={darkTheme ? 'side-switch-dark' : 'side-switch'} onClick={() => setFilterOpen(o => !o)} />
         )}
         <div className='nav-logo-second'>
-          <Link to='/main' className='principal'>Blisst</Link>
+          <Link to='/main' className='principal'></Link>
         </div>
       </div>
       <div className={open ? 'navbar-bg' : 'navbar-bg-closed'} onClick={() => setOpen(false)} />
       <div className={open ? 'navbar' : 'navbar-closed'}>
         <div className='nav-left'>
-          <div className='nav-logo'><Link to='/main' className='principal'>Blisst</Link></div>
+          <div className='nav-logo'><Link to='/main' className='principal'></Link></div>
           <div className='nav-left-btn'
             ref={(el) => (navIconRefs.current[4] = el)}
           >

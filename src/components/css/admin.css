@@ -479,6 +479,9 @@ input.adm-input:valid {
   width:100%;
   height:100%;
 }
+.adm-color {
+  color:var(--color-oposite);
+}
 .adm-edit-btn, .adm-delete-btn, .adm-back-btn, .adm-save-btn,
 .adm-edit-btn-dark, .adm-delete-btn-dark, .adm-back-btn-dark, .adm-save-btn-dark
 {

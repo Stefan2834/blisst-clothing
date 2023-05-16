@@ -155,7 +155,7 @@ export default function Footer() {
             </div>
           )}
         </div>
-        <Link to='/' className='foo-logo principal'>Blisst</Link>
+        <Link to='/' className='foo-logo principal'></Link>
       </div>
     </div>
   )

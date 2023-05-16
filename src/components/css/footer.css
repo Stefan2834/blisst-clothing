@@ -151,6 +151,12 @@
     font-family: 'Freehand', sans-serif;
     height:50px;
     padding:0 8px;
+    background-image: url(../../clothing/logo.png);
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width:100px;
+    height: 100px;
 }
 
 /*----------Media Queries----------*/

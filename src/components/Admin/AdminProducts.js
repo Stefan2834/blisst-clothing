@@ -100,7 +100,7 @@ export default function AdminProducts() {
       ) : (
         <>
           <div className='flex items-center justify-center mt-14'>
-            <label className='side-selection mx-2'>
+            <label className='side-selection mx-2 adm-color'>
               {t('Side.După id')}:
               <input type='text'
                 className='side-price-input'
@@ -112,6 +112,7 @@ export default function AdminProducts() {
           <div className='flex flex-wrap items-center justify-around mx-6'>
             <Link to='/main/admin/products/add' className={darkTheme ? 'adm-prod-new-dark' : 'adm-prod-new'}></Link>
             {product.map((product, ind) => {
+              console.log(product, filter)
               if (ind + 1 < load) {
                 if((filter.length > -1 && product.name.toLowerCase().includes(filter.toLowerCase())) ||
                   filter.length === 0

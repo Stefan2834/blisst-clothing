@@ -384,9 +384,8 @@ button.acc-btn:hover {
   background-color:var(--color-third);
   z-index:1;
   position: relative;
-  background-image: url(clothing/navbarPhotos/manHoo.png);
-  background-size: contain;
-  background-repeat:space;
+  background-image: url(clothing/Design\ fără\ titlu.png);
+  background-size: cover;
   background-position: center;
   background-blend-mode: darken;
   background-color: rgba(0, 0, 0, 0.6);
