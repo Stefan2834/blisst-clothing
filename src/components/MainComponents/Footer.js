@@ -89,11 +89,14 @@ export default function Footer() {
           </div>
           <div className='foo-collumn'>
             <div className='foo-title'>{t('Foo.Informații')}</div>
-            <Link to='/main/terms' className='foo-text'>{t('Foo.Termeni și condiții')}</Link>
+            <a href='/Terms.pdf' className='foo-text flex' download>{t('Foo.Termeni și condiții')}
+              <div className={darkTheme ? 'foo-download-dark' : 'foo-download'} />
+            </a>
+            <a href='/Licenses.pdf' className='foo-text flex' download>{t('Foo.Licențe')}
+              <div className={darkTheme ? 'foo-download-dark' : 'foo-download'} />
+            </a>
             <Link to='/main/faq' className='foo-text'>{t('Foo.Întrebări frecvente')}</Link>
             <Link to='/main/help' className='foo-text'>{t('Foo.Ajutor')}</Link>
-            <a href='/Licenses.pdf' className='foo-text' download>{t('Foo.Licențe')}</a>
-            <Link to='/main/credits' className='foo-text'>{t('Foo.Credite')}</Link>
           </div>
           <div className='foo-collumn'>
             <div className='foo-title-news'>NewsLetter</div>
@@ -156,7 +159,7 @@ export default function Footer() {
           )}
         </div>
         <Link to='/' className='foo-logo principal'></Link>
-        <div className='foo-copy'>© <span className='principal'>2023</span> Blisst Clothing</div>
+        <div className='foo-copy'>Copyright <span className='principal'>2023</span> Blisst Clothing</div>
       </div>
     </div>
   )

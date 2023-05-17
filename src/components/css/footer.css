@@ -164,6 +164,21 @@
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
 }
+.foo-download, .foo-download-dark {
+    width:24px;
+    height:24px;
+    background-position: center;
+    background-size: 20px 20px;
+    margin-left:4px;
+    background-repeat: no-repeat;
+}
+.foo-download {
+    background-image: url(../Main/svg-dark/download.svg);
+}
+.foo-download-dark {
+    background-image: url(../Main/svg/download.svg);
+}
+
 
 /*----------Media Queries----------*/
 
