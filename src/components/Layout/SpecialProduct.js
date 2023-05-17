@@ -6,6 +6,7 @@ import Reducer from '../../contexts/AuthContext'
 import { FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import axios from 'axios'
+import Confetti from 'react-confetti'
 
 
 
@@ -456,7 +457,10 @@ export default function SpecialProduct() {
                     </div>
                     <div className="spec-fav">
                       {favorite.some(item => item.id === specialClothing.id) ? (
-                        <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: specialClothing } })} />
+                        <>
+                          <Confetti width={50} height={50} recycle={false} gravity={0.3}/>
+                          <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: specialClothing } })} />
+                        </>
                       ) : (
                         <div className={darkTheme ? 'cloth-fav-dark' : "cloth-fav"} onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: specialClothing, user: currentUser, t: t } })} />
                       )}

@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
-import {useDefault} from '../../contexts/DefaultContext'
+import { useDefault } from '../../contexts/DefaultContext'
+import Confetti from 'react-confetti';
 
 
 export default function Product(props) {
   const product = props.product
   const { favorite, dispatchFav, currentUser } = useAuth()
   const { t } = useDefault()
+  const [confetti, setConfetti] = useState(false)
 
   //ca sa nu existe prea multe lini de cod degeaba, am creat un component care apare 
   //pentru fiecare produs din favorite, paginile cu haine,
@@ -50,7 +52,10 @@ export default function Product(props) {
         </Link>
         <div className="cloth-right">
           {favorite.some(item => item.id === product.id) ? (
-            <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: product } })} />
+            <>
+              <Confetti width={60} height={60}  recycle={false}/>
+              <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: product } })} />
+            </>
           ) : (
             <div className="cloth-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: product, user: currentUser, t: t } })} />
           )}

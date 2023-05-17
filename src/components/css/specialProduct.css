@@ -214,6 +214,7 @@ span.spec-price-old {
 .spec-fav {
     height:50px;
     width:50px;
+    position: relative;
     margin-top:10px;
 }
 .spec-det {
