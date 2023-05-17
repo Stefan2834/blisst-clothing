@@ -142,7 +142,7 @@ export default function AdminOrders() {
                 count += 1
                 const selectedProduct = selectedProducts[index] || order.product[0]
                 const [day, month, time, year] = order.date.split(' ');
-                if (load > count) {
+                if (load >= count) {
                   return (
                     <div className='comm-element'>
                       <div className='comm-left'>
