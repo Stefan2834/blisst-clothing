@@ -3,6 +3,7 @@ import '../css/faq.css'
 import { useState } from 'react'
 import { useDefault } from '../../contexts/DefaultContext'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Faq() {
   const { t } = useDefault()
@@ -12,18 +13,16 @@ export default function Faq() {
     { quest: t('Faq.Que.2'), answer: t('Faq.Ans.2') },
     { quest: t('Faq.Que.3'), answer: t('Faq.Ans.3') },
     { quest: t('Faq.Que.4'), answer: t('Faq.Ans.4') },
-    { quest: t('Faq.Que.5'), answer: t('Faq.Ans.5') },
+    { quest: t('Faq.Que.5'), answer: (<>{t('Faq.Ans.5')} {<Link to='/main/orders' className="font-semibold text-lg">Click</Link>}</>) },
     { quest: t('Faq.Que.6'), answer: t('Faq.Ans.6') },
     { quest: t('Faq.Que.7'), answer: t('Faq.Ans.7') },
     { quest: t('Faq.Que.8'), answer: t('Faq.Ans.8') },
     { quest: t('Faq.Que.9'), answer: t('Faq.Ans.9') },
-    { quest: t('Faq.Que.10'), answer: t('Faq.Ans.10') },
-    { quest: t('Faq.Que.11'), answer: t('Faq.Ans.11') },
-    { quest: t('Faq.Que.12'), answer: t('Faq.Ans.12') },
+    { quest: t('Faq.Que.10'), answer: (<>{t('Faq.Ans.10')} {<Link to='/main/help' className="font-semibold text-lg">Click</Link>}</>) },
   ]
 
   useEffect(() => {
-    document.title = `Blisst — ${t('Faq.Întrebări frecvente')}` 
+    document.title = `Blisst — ${t('Faq.Întrebări frecvente')}`
   })
   return (
     <div className='faq'>

@@ -476,7 +476,7 @@ export default function Checkout() {
                             if (e.target.value === '') {
                               handleDeleteCart(product)
                             } else {
-                              dispatchCart({ type: 'cartNrChange', payload: { product: product, number: e.target.value } })
+                              dispatchCart({ type: 'cartNrChange', payload: { product: product, number: parseInt(e.target.value) } })
                             }
                           }}
                         >

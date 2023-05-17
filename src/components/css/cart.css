@@ -351,6 +351,11 @@ span.cart-span {
         height:260px;
         width:150px
     }
+    .cart-info {
+        -webkit-line-clamp:4;
+        -moz-box-lines: 4;
+        height:80px;
+    }
     .cart-left {
         width:340px;
     }

@@ -22,7 +22,15 @@ export default function Reducer(state, action) {
     case ('setSize'):
       return { ...state, size: action.payload.size }
     case ('cartGet'):
-      return action.payload.cart
+      const newCart = action.payload.cart.map(cart => {
+        const find = action.payload.product.find(p => p.id === cart.id)
+        if (find) {
+          return { ...find, number: cart.number, selectedSize: cart.selectedSize }
+        } else {
+          return null
+        }
+      }).filter(c => c != null)
+      return newCart
     case ('cartAdd'):
       if (state.some(item => item.id === action.payload.clothing.id && item.selectedSize === action.payload.spec.size)) {
         const updatedCart = state.map(cartMap => {
@@ -71,7 +79,15 @@ export default function Reducer(state, action) {
     case ('cartDeleteAll'):
       return []
     case ('favGet'):
-      return action.payload.fav
+      const newFav = action.payload.fav.map(fav => {
+        const find = action.payload.product.find(p => p.id === fav.id)
+        if (find) {
+          return find
+        } else {
+          return null
+        }
+      }).filter(f => f != null)
+      return newFav
     case ('favAdd'):
       const t = action.payload.t
       if (!action.payload.user) {
@@ -115,8 +131,8 @@ export function AuthProvider({ children }) {
   const { t } = useTranslation()
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = "https://blisst.onrender.com"
-  // const server = 'http://localhost:9000'
+  // const server = "https://blisst.onrender.com"
+  const server = 'http://localhost:9000'
   const [admin, setAdmin] = useState(false)
   const [ban, setBan] = useState()
   const [showMessage, setShowMessage] = useState(false)
@@ -127,13 +143,14 @@ export function AuthProvider({ children }) {
   const [collections, setCollections] = useState([])
   const navigate = useNavigate()
 
+
   const getUserData = async (email, uid, product) => {
     await axios.post(`${server}/user/info`, { uid: uid, email: email })
       .then(info => {
         if (info.data.success) {
           console.log(info.data.data)
-          dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav } })
-          dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart } })
+          dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav, product: product } })
+          dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart, product: product } })
           dispatchCart({ type: 'cartUpdate', payload: { product: product } })
           dispatchOrder({ type: 'orderGet', payload: { order: info.data.data.order } })
           setDet(info.data.data.det);

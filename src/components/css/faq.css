@@ -36,7 +36,6 @@
   font-size:22px;
   font-weight: 600;
   margin-bottom:20px;
-  height:50px;
 }
 .faq-content {
   width:80%;
@@ -48,25 +47,25 @@
   cursor: pointer;
   background-color: var(--color);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   margin-top:10px;
   position: relative;
   padding:0 10px;
   overflow: hidden;
+  min-height: 50px;
   transition: 400ms ease;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-  height:50px;
 }
 .faq-que-text {
   font-size:20px;
-  height:50px;
+  height:auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   font-weight: 600;
 }
-.faq-que-plus, .faq-que-plus-rotate {
+.faq-que-plus, .faq-que-plus-rotate, .faq-que-plus-dark {
   aspect-ratio: 1/1;
   height:50px;
   background-size: 40px 40px;
@@ -89,9 +88,24 @@
 .faq-overflow-open {
   height:auto;
   padding:5px;
-  border-top: 1px solid rgba(0, 0, 0, 0.8);
+  border-top: 1px solid var(--color-oposite)
 }
 .faq-overflow {
   height:0;
   padding: 0 5px;
+}
+
+@media screen and (max-width:700px) {
+  .faq-container {
+    padding:10px 0;
+  }
+  .faq {
+    padding:70px 0px 10px 0px;
+  }
+  .faq-container {
+    width: calc(100% - 40px);
+  }
+  .faq-content {
+    width: calc(100% - 20px);
+  }
 }

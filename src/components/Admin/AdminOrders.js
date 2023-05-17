@@ -238,7 +238,7 @@ export default function AdminOrders() {
             })}
             {count === 0 && (
               <div className="h-80 w-full flex items-center justify-center">
-                <div className='font-semibold text-xl'>
+                <div className='cloth-no'>
                   {t('Admin.Orders.Nici un produs nu îndeplinește filtrele')}
                 </div>
               </div>

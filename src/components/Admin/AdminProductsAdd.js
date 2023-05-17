@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
+import { useDefault } from '../../contexts/DefaultContext'
 import { colors } from '../../contexts/Import';
 import axios from 'axios'
 import Swal from 'sweetalert2';
@@ -9,7 +10,8 @@ import storage from '../SmallComponents/Firebase';
 import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 export default function AdminProductsAdd() {
-  const { server } = useAuth()
+  const { server, collections } = useAuth()
+  const { t, lang } = useDefault()
   const navigate = useNavigate()
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -19,6 +21,7 @@ export default function AdminProductsAdd() {
     sex: "",
     spec: "",
     photo: ["", "", "", ""],
+    collection: ''
   })
   const [size, setSize] = useState([])
   const type = [
@@ -51,8 +54,8 @@ export default function AdminProductsAdd() {
     const sendProduct = await axios.post(`${server}/admin/product`, { newProduct: newProduct })
     if (sendProduct.data.success) {
       Swal.fire({
-        title: 'Produs adaugat!',
-        text: "Produsul a fost adaugat cu succes, iar acum este pe site!",
+        title: t('Admin.Add.Produs adăugat!'),
+        text: t("Admin.Add.Produsul a fost adăugat cu succes, iar acum este pe site."),
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Ok',
@@ -60,49 +63,49 @@ export default function AdminProductsAdd() {
       navigate('/main/admin')
     } else {
       Swal.fire({
-        title: 'Eroare!',
-        text: `A intervenit o eroare: ${sendProduct.data.message.code}`,
+        title: t('Admin.Add.Eroare!'),
+        text: `${t('Admin.Add.A intervenit o eroare')}: ${sendProduct.data.message.code}`,
         icon: 'warning',
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Inapoi',
+        confirmButtonText: t('Admin.Add.Înapoi'),
       })
     }
   }
   return (
     <div className='adm-prod'>
       <form className='adm-prod-form' onSubmit={e => handleNewProduct(e)}>
-        <div className='adm-prof-title'>Adauga un produs nou</div>
+        <div className='adm-prof-title'>{t('Admin.Add.Adaugă un produs nou')}</div>
         <label className='adm-label'>
           <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
             type='text' placeholder=' ' value={newProduct.nume}
             required minLength={6} maxLength={30} />
-          <span className='adm-place-holder'>Nume</span>
+          <span className='adm-place-holder'>{t('Admin.Add.Nume')}</span>
         </label>
         <label className='adm-label'>
           <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, id: e.target.value })}
             type='text' placeholder=' ' value={newProduct.id}
             required minLength={6} maxLength={6} />
-          <span className='adm-place-holder'>Id</span>
+          <span className='adm-place-holder'>ID</span>
         </label>
         <label className='adm-label'>
           <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
             type='number' placeholder=' ' value={newProduct.price}
             required min={1} max={500} />
-          <span className='adm-place-holder'>Pret</span>
+          <span className='adm-place-holder'>{t('Admin.Add.Preț')}</span>
         </label>
         <label className='adm-label'>
           <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, discount: e.target.value })}
             type='number' placeholder=' ' value={newProduct.discount}
             required min={0} max={100} />
-          <span className='adm-place-holder'>Reducere</span>
+          <span className='adm-place-holder'>{t('Admin.Add.Reducere')}</span>
         </label>
         <label className='adm-label'>
           <input className='adm-input' type='text' onChange={(e) => setNewProduct({ ...newProduct, spec: e.target.value })}
             placeholder=' ' required minLength={10} maxLength={150} value={newProduct.spec}
           />
-          <span className='adm-place-holder'>Specificatii</span>
+          <span className='adm-place-holder'>{t('Admin.Add.Specificații')}</span>
         </label>
-        <label className='adm-option adm-option-label'>Tip:
+        <label className='adm-option adm-option-label'>{t('Admin.Add.Tip')} :
           <select value={newProduct.type} className='adm-option' required
             onChange={e => {
               if (e.target.value !== "") {
@@ -117,7 +120,7 @@ export default function AdminProductsAdd() {
               setNewProduct({ ...newProduct, type: e.target.value, size: size, sex: e.target.value.includes('barbati') ? 'man' : 'woman' })
             }}
           >
-            <option value="" className='adm-option'>Selecteaza</option>
+            <option value="" className='adm-option'>{t('Admin.Add.Selectează')}</option>
             {type.map((type) => {
               return (
                 <option key={type}
@@ -130,7 +133,7 @@ export default function AdminProductsAdd() {
             })}
           </select>
         </label>
-        <label className='adm-option adm-option-label'>Stoc:
+        <label className='adm-option adm-option-label'>{t('Admin.Add.Stoc')} :
           {Object.keys(size).map(size => {
             return (
               <select value={newProduct.size[size]} className='adm-option' required
@@ -151,11 +154,11 @@ export default function AdminProductsAdd() {
             )
           })}
         </label>
-        <label className='adm-option adm-option-label'>Culoare 1:
+        <label className='adm-option adm-option-label'>{t('Admin.Add.Culoare')} 1 :
           <select value={newProduct.colors[0]} className='adm-option' required
             onChange={e => { setNewProduct({ ...newProduct, colors: [e.target.value, newProduct.colors[1]] }) }}
           >
-            <option value="" className='adm-option'>Selecteaza</option>
+            <option value="" className='adm-option'>Selectează</option>
             {colors.map((color) => {
               return (
                 <option key={color}
@@ -172,11 +175,11 @@ export default function AdminProductsAdd() {
             })}
           </select>
         </label>
-        <label className='adm-option adm-option-label'>Culoare 2:
+        <label className='adm-option adm-option-label'>{t('Admin.Add.Culoare')} 2 :
           <select value={newProduct.colors[1]} className='adm-option' required
             onChange={e => { setNewProduct({ ...newProduct, colors: [newProduct.colors[0], e.target.value] }) }}
           >
-            <option value="" className='adm-option'>Selecteaza</option>
+            <option value="" className='adm-option'>{t('Admin.Add.Selectează')}</option>
             {colors.map((color) => {
               return (
                 <option key={color}
@@ -188,6 +191,23 @@ export default function AdminProductsAdd() {
                     { backgroundColor: color, color: 'white' }}
                 >
                   {color}
+                </option>
+              )
+            })}
+          </select>
+        </label>
+        <label className='adm-option adm-option-label'>{t('Admin.Add.Colecție')} :
+          <select value={newProduct.collection} className='adm-option' required
+            onChange={e => { setNewProduct({ ...newProduct, collection: e.target.value }) }}
+          >
+            <option value="" className='adm-option'>{t('Admin.Add.Nici una')}</option>
+            {collections.map((coll, index) => {
+              return (
+                <option key={index}
+                  value={coll.name}
+                  className='adm-option'
+                >
+                  {coll.name}
                 </option>
               )
             })}
@@ -205,7 +225,7 @@ export default function AdminProductsAdd() {
         <label className='adm-option-label'>
           <input type='file' onChange={(e) => handleSubmit(e, 3)} required />
         </label>
-        <input type='submit' value="Posteaza produsul" className='adm-prod-submit' />
+        <input type='submit' value={t("Admin.Add.Postează produsul")} className='adm-prod-submit' />
       </form>
     </div>
   )

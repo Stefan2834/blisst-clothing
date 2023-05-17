@@ -152,11 +152,17 @@
     height:50px;
     padding:0 8px;
     background-image: url(../../clothing/logo.png);
-    background-position: cover;
+    background-position: contain;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width:100px;
     height: 100px;
+}
+.foo-copy {
+    margin: 10px 0;
+    font-size:18px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*----------Media Queries----------*/
