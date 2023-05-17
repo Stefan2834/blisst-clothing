@@ -92,7 +92,7 @@ export default function Footer() {
             <Link to='/main/terms' className='foo-text'>{t('Foo.Termeni și condiții')}</Link>
             <Link to='/main/faq' className='foo-text'>{t('Foo.Întrebări frecvente')}</Link>
             <Link to='/main/help' className='foo-text'>{t('Foo.Ajutor')}</Link>
-            <Link to='/main/license' className='foo-text'>{t('Foo.Licențe')}</Link>
+            <a href='/Licenses.pdf' className='foo-text' download>{t('Foo.Licențe')}</a>
             <Link to='/main/credits' className='foo-text'>{t('Foo.Credite')}</Link>
           </div>
           <div className='foo-collumn'>
