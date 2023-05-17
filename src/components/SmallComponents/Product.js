@@ -53,7 +53,7 @@ export default function Product(props) {
         <div className="cloth-right">
           {favorite.some(item => item.id === product.id) ? (
             <>
-              <Confetti width={60} height={60}  recycle={false}/>
+              <Confetti width={60} height={60} recycle={false} gravity={0.3} />
               <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: product } })} />
             </>
           ) : (

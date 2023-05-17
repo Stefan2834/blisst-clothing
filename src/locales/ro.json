@@ -100,6 +100,7 @@
   "Side": {
     "Femei": "Femei",
     "Bărbați": "Bărbați",
+    "Colecții":"Colecții",
     "Filtre": "Filtre",
     "Preț": "Preț",
     "Minim": "Minim",
@@ -312,6 +313,12 @@
     "Trimis!": "Trimis!",
     "Eroare a fost trimisă către noi. Vei primi un email cu rezolvarea in câteva zile.": "Eroare a fost trimisă către noi. Vei primi un email cu rezolvarea in câteva zile."
   },
+  "Ban": {
+    "Ai fost banat!": "",
+    "Acest cont a fost banat deoarece": "",
+    "Dacă nu ai încălcat nicio regula, scrie-ne la": "",
+    "Deconectare": ""
+  },
   "404": {
     "Pagina greșită": "Pagina greșită",
     "Pagina pe care încerci să o accesezi nu există.": "Pagina pe care încerci să o accesezi nu există.",
@@ -344,7 +351,11 @@
       "Afișeaza alte coduri": "Afișeaza alte coduri",
       "Oprește afișarea": "Oprește afișarea",
       "Codul": "Codul",
-      "Reducere": "Reducere"
+      "Reducere": "Reducere",
+      "Atenție! Odată ce ai șters un cod, îți sugerăm să nu îl mai adaugi înapoi, deoarece oameni îl pot folosi iar, dupa readăugare.":"Atenție! Odată ce ai șters un cod, îți sugerăm să nu îl mai adaugi înapoi, deoarece oameni îl pot folosi iar, dupa readăugare.",
+      "Șterge":"Șterge",
+      "Cod șters!":"Cod șters!",
+      "Codul a fost șters cu succes.":"Codul a fost șters cu succes."
     },
     "Errors": {
       "Erori": "Erori",

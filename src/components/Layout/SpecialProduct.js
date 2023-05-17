@@ -458,7 +458,7 @@ export default function SpecialProduct() {
                     <div className="spec-fav">
                       {favorite.some(item => item.id === specialClothing.id) ? (
                         <>
-                          <Confetti width={50} height={50} recycle={false} gravity={0.3}/>
+                          <Confetti width={50} height={50} recycle={false} gravity={0.3} />
                           <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: specialClothing } })} />
                         </>
                       ) : (

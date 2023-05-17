@@ -50,14 +50,14 @@ export default function Order() {
                 {[...order].reverse().map((order, index) => {
                   // afiseaza comenziile, dar in ordine inversa, adica de la cea mai recenta in jos
                   const selectedProduct = selectedProducts[index] || order.product[0]
-                  const [day, month, time] = order.date.split(' ');
+                  const [day, month, time, year] = order.date.split(' ');
                   if (load > index) {
                     return (
                       <div className='comm-element'>
                         <div className='comm-left'>
                           <div className='comm-left-top'>
                             <div className="comm-option flex justify-center items-center">{t('Order.Data comenzii')}:
-                              <div className="comm-txt">{day} {t(`Month.${month}`)} {time}</div>
+                              <div className="comm-txt">{day} {t(`Month.${month}`)} {time} {year}</div>
                             </div>
                             <div>
                               <label className='comm-option'>{t('Order.Produs')}:</label>

@@ -142,7 +142,6 @@ export default function Clothing() {
           searchResult.map((product, index) => {
             if (noProduct < productLoad) {
               noProduct += 1;
-              console.log(product)
               if (filter.searchId !== '') {
                 return (
                   <Product key={index} product={product} />

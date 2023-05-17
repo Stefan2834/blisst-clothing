@@ -135,14 +135,14 @@ export default function AdminOrders() {
               if (order.status === filter || filter === 'Toate') {
                 count += 1
                 const selectedProduct = selectedProducts[index] || order.product[0]
-                const [day, month, time] = order.date.split(' ');
+                const [day, month, time, year] = order.date.split(' ');
                 if (load > count) {
                   return (
                     <div className='comm-element'>
                       <div className='comm-left'>
                         <div className='comm-left-top'>
                           <div className="comm-option flex justify-center items-center">{t('Order.Data comenzii')}:
-                            <div className="comm-txt">{day} {t(`Month.${month}`)} {time}</div>
+                            <div className="comm-txt">{day} {t(`Month.${month}`)} {time} {year}</div>
                           </div>
                           <div>
                             <label className='comm-option'>{t('Order.Produs')}:</label>
@@ -213,22 +213,26 @@ export default function AdminOrders() {
                           <div className="comm-txt">{t(`Profile.${order.method}`)}</div>
                         </div>
                         <div className='comm-title'>Status:
-                          <select value={order.status} className='comm-option'
-                            onChange={e => { handleStatus(e.target.value, order.id, order.uid, order.details.email) }}
-                          >
-                            <option value={'Plasată'} className='comm-option' >
-                              {t('Profile.Plasată')}
-                            </option>
-                            <option value={'Se livrează'} className='comm-option' >
-                              {t('Profile.Se livrează')}
-                            </option>
-                            <option value={'Livrată'} className='comm-option'>
-                              {t('Profile.Livrată')}
-                            </option>
-                            <option value={'Anulată'} className='comm-option'>
-                              {t('Profile.Anulată')}
-                            </option>
-                          </select>
+                          {order.status === 'Anulată' ? (
+                            <label className='comm-option'>{t('Profile.Anulată')}</label>
+                          ) : (
+                            <select value={order.status} className='comm-option'
+                              onChange={e => { handleStatus(e.target.value, order.id, order.uid, order.details.email) }}
+                            >
+                              <option value={'Plasată'} className='comm-option' >
+                                {t('Profile.Plasată')}
+                              </option>
+                              <option value={'Se livrează'} className='comm-option' >
+                                {t('Profile.Se livrează')}
+                              </option>
+                              <option value={'Livrată'} className='comm-option'>
+                                {t('Profile.Livrată')}
+                              </option>
+                              <option value={'Anulată'} className='comm-option'>
+                                {t('Profile.Anulată')}
+                              </option>
+                            </select>
+                          )}
                         </div>
                       </div>
                     </div>

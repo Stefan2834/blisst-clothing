@@ -13,7 +13,6 @@ export default function AdminProducts() {
   const [loading, setLoading] = useState(false)
   const [updateProduct, setUpdateProduct] = useState({ index: -1 })
   const [filter, setFilter] = useState('')
-  let count = 0;
 
   useEffect(() => {
     document.title = `Blisst — Admin — ${t('Produse')}`
@@ -89,6 +88,8 @@ export default function AdminProducts() {
   }
 
 
+  let count = 1;
+
   return (
     <>
       {loading ? (
@@ -100,7 +101,7 @@ export default function AdminProducts() {
         </>
       ) : (
         <>
-          <div className='flex items-center justify-center mt-14'>
+          <div className='flex items-center justify-center mt-14' onClick={() => console.log(load,count)}>
             <label className='side-selection mx-2 adm-color'>
               {t('Side.După id')}:
               <input type='text'
@@ -113,11 +114,12 @@ export default function AdminProducts() {
           <div className='flex flex-wrap items-center justify-around mx-6'>
             <Link to='/main/admin/products/add' className={darkTheme ? 'adm-prod-new-dark' : 'adm-prod-new'}></Link>
             {product.map((product, ind) => {
-              if (count + 1 < load) {
+              if (count < load) {
                 if ((filter.length > -1 && product.id.toLowerCase().includes(filter.toLowerCase())) ||
                   filter.length === 0
                 ) {
                   count += 1
+                  console.log(count)
                   return (
                     <div className='adm-prod-edit'>
                       <Product product={product} />
@@ -202,7 +204,7 @@ export default function AdminProducts() {
                 }
               }
             })}
-            {load < count && (
+            {load <= count && (
               <div className='w-full flex items-center justify-center'>
                 <div className='adm-prod-more' onClick={() => setLoad(c => c + 10)}>
                   {t('Încarcă mai multe')}

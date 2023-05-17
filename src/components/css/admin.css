@@ -323,6 +323,8 @@ input.adm-input:valid {
   color:var(--color-oposite);
   display: flex;
   padding:10px;
+  flex-wrap: wrap;
+  height:auto;
   margin:10px 0;
   align-items: center;
   justify-content: space-between;

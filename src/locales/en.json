@@ -100,6 +100,7 @@
   "Side": {
     "Femei": "Woman",
     "Bărbați": "Man",
+    "Colecții":"Collections",
     "Filtre": "Filters",
     "Preț": "Price",
     "Minim": "Minimum",
@@ -312,6 +313,12 @@
     "Raportează problema": "Report an issue",
     "Eroare a fost trimisă către noi. Vei primi un email cu rezolvarea in câteva zile.": "An error has been sent to us. You will receive an email with the solution in a few days."
   },
+  "Ban": {
+    "Ai fost banat!": "You have been banned!",
+    "Acest cont a fost banat deoarece": "This account has been banned because",
+    "Dacă nu ai încălcat nicio regula, scrie-ne la": "If you haven't violated any rules, please contact us at",
+    "Deconectare": "Logout"
+  },
   "404": {
     "Pagina greșită": "Wrong page",
     "Pagina pe care încerci să o accesezi nu există.": "The page you are trying to access does not exist.",
@@ -344,7 +351,11 @@
       "Afișeaza alte coduri": "Display other codes",
       "Oprește afișarea": "Stop display",
       "Codul": "Code",
-      "Reducere": "Discount"
+      "Reducere": "Discount",
+      "Atenție! Odată ce ai șters un cod, îți sugerăm să nu îl mai adaugi înapoi, deoarece oameni îl pot folosi iar, după readăugare.": "Attention! Once you have deleted a code, we suggest not adding it back, as people can use it again after re-addition.",
+      "Șterge": "Delete",
+      "Cod șters!": "Code deleted!",
+      "Codul a fost șters cu succes.": "The code has been successfully deleted."
     },
     "Errors": {
       "Erori": "Errors",

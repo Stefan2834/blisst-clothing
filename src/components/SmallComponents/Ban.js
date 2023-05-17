@@ -8,22 +8,24 @@ export default function Ban({ ...props }) {
 
 
   return (
-    <div className='ban-main'>
-      <div className='ban-div'>
-        <div className='ban-title text-red-600'>
-          {t('Ai fost banat!')}
-        </div>
-        <div className='ban-text'>
-          {t('Acest cont a fost banat deoarece')}:
-        </div>
-        <div className='ban-reason'>
-          {ban}
-        </div>
-        <div className='ban-text'>
-          {t('Dacă nu ai încălcat nicio regula, scrie-ne la @blisstteam@gmail.com')}
-        </div>
-        <div className='ban-logout' onClick={() => { setBan(); navigate('/connect') }}>
-          {t('Deconectare')}
+    <div className='h-screen w-screen bg-white'>
+      <div className='ban-main'>
+        <div className='ban-div'>
+          <div className='ban-title text-red-600'>
+            {t('Ban.Ai fost banat!')}
+          </div>
+          <div className='ban-text'>
+            {t('Ban.Acest cont a fost banat deoarece')}:
+          </div>
+          <div className='ban-reason'>
+            {ban}
+          </div>
+          <div className='ban-text'>
+            {t('Ban.Dacă nu ai încălcat nicio regula, scrie-ne la')} @blisstteam@gmail.com .
+          </div>
+          <div className='ban-logout' onClick={() => { setBan(); navigate('/connect') }}>
+            {t('Ban.Deconectare')}
+          </div>
         </div>
       </div>
     </div>

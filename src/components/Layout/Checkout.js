@@ -137,7 +137,7 @@ export default function Checkout() {
         const orderData = {
           method: method.card ? 'Card' : 'Ramburs',
           details: det,
-          date: `${date.getDate()} ${date.getMonth() + 1} ${hours}:${minutes}`,
+          date: `${date.getDate()} ${date.getMonth() + 1} ${hours}:${minutes} ${date.getFullYear()}`,
           price: {
             productPrice: productPrice,
             discount: discount.value,

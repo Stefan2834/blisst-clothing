@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 
 export default function AdminDiscount() {
   const { server } = useAuth()
-  const { t } = useDefault()
+  const { t, darkTheme } = useDefault()
   const codeRef = useRef()
   const valueRef = useRef()
   const navigate = useNavigate()
@@ -23,10 +23,9 @@ export default function AdminDiscount() {
     e.preventDefault()
     const code = codeRef.current.value
     const value = Number(valueRef.current.value / 100).toFixed(2)
-    console.log(code, value)
     axios.post(`${server}/admin/discount`, { code: code, value: value })
       .then(data => {
-        if (data.data.succes) {
+        if (data.data.success) {
           Swal.fire({
             title: t('Admin.Disc.Adăugat!'),
             text: t(`Admin.Disc.${data.data.message}`),
@@ -37,11 +36,11 @@ export default function AdminDiscount() {
           navigate('/main/admin')
         } else {
           Swal.fire({
-            title: t('Admin.Main.Eroare!'),
+            title: t('Admin.Add.Eroare!'),
             text: data.data.message,
             icon: 'error',
             confirmButtonColor: '#3085d6',
-            confirmButtonText: t('Admin.Main.Înapoi'),
+            confirmButtonText: t('Admin.Add.Înapoi'),
           })
         }
       })
@@ -65,6 +64,34 @@ export default function AdminDiscount() {
         axios.get(`${server}/admin/discount`)
           .then(data => {
             setDiscount(data.data.discount)
+          })
+          .catch(err => console.error(err))
+      }
+    })
+  }
+
+  const handleDelete = (dis) => {
+    Swal.fire({
+      title: t('Admin.Disc.Ești sigur?'),
+      text: t('Admin.Disc.Atenție! Odată ce ai șters un cod, îți sugerăm să nu îl mai adaugi înapoi, deoarece oameni îl pot folosi iar, dupa readăugare.'),
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: t('Admin.Disc.Șterge'),
+      cancelButtonText: t('Admin.Disc.Înapoi')
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.post(`${server}/admin/discountDelete`, {discount: dis})
+          .then(data => {
+            if (data.data.success) {
+              Swal.fire(
+                t('Admin.Disc.Cod șters!'),
+                t('Admin.Disc.Codul a fost șters cu succes.'),
+                'success'
+              )
+              setDiscount(discount.filter(d => d.code != dis.code))
+            }
           })
           .catch(err => console.error(err))
       }
@@ -102,6 +129,9 @@ export default function AdminDiscount() {
               <div>
                 {t('Admin.Disc.Reducere')}:<span className='font-semibold'>{(dis.value * 100).toFixed(0)}%</span>
               </div>
+              <div className={darkTheme ? 'adm-list-delete-dark' : 'adm-list-delete'}
+                onClick={() => handleDelete(dis)}
+              />
             </div>
           )
         })}

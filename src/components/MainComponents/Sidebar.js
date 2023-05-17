@@ -49,7 +49,15 @@ export default function Sidebar() {
   }, [id])
 
   useEffect(() => {
-    document.title = `Blisst — ${id.includes('femei') ? t('Side.Femei') : t('Side.Bărbați')}`
+    let title
+    if (id.includes('femei')) {
+      title = 'Femei'
+    } else if (id.includes('barbati')) {
+      title = 'Bărbați'
+    } else if (id.includes('collection')) {
+      title = 'Colecții'
+    }
+    document.title = `Blisst — ${t(`Side.${title}`)}`
   }, [lang, id])
 
   const handleExpand = (type) => {
