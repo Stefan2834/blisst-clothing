@@ -25,7 +25,6 @@ export default function AdminOrders() {
     })
   }
 
-  console.log(orders)
   const handleStatus = async (status, id, uid, email) => {
     Swal.fire({
       title: t('Admin.Disc.Ești sigur?'),
@@ -46,15 +45,22 @@ export default function AdminOrders() {
                 id: id,
                 uid: uid
               })
-              order.product.map(comm => {
-                setProduct(product.map((product) => {
-                  if (product.id === comm.id) {
-                    return { ...product, size: { ...product.size, [comm.selectedSize]: product.size[comm.selectedSize] + comm.number } }
-                  } else {
-                    return product
-                  }
-                }))
-              })
+              const updatedProduct = [...product];
+              order.product.forEach((orderItem) => {
+                const productIndex = updatedProduct.findIndex((productItem) => productItem.id === orderItem.id);
+                if (productIndex !== -1) {
+                  const selectedSize = orderItem.selectedSize;
+                  const number = orderItem.number;
+                  updatedProduct[productIndex] = {
+                    ...updatedProduct[productIndex],
+                    size: {
+                      ...updatedProduct[productIndex].size,
+                      [selectedSize]: Number(updatedProduct[productIndex].size[selectedSize]) + Number(number),
+                    },
+                  };
+                }
+              });
+              setProduct(updatedProduct);
               return { ...order, status: status }
             } else {
               return { ...order, status: status }
