@@ -35,9 +35,12 @@ export default function Footer() {
     const newDet = { ...det, newsLetter: value }
     setDet(newDet)
     axios.post(`${server}/user/infoUpdate`, { uid: currentUser.uid, det: newDet })
-      .then((data) => {
+      .then(async (data) => {
+        await axios.post(`${server}/user/newsLetter`, { email: currentUser.email, value: value })
+          .then(data => { console.log(data) })
+          .catch(err => console.error(err))
         if (value) {
-          axios.post(`${server}/email/newsLetter`, { email: currentUser.email, name: det.name })
+          await axios.post(`${server}/email/newsLetter`, { email: currentUser.email, name: det.name })
             .then((data) => console.log(data))
             .catch(err => console.error(err))
         }
