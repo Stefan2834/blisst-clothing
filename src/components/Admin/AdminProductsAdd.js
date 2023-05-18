@@ -197,7 +197,7 @@ export default function AdminProductsAdd() {
           </select>
         </label>
         <label className='adm-option adm-option-label'>{t('Admin.Add.Colecție')} :
-          <select value={newProduct.collection} className='adm-option' required
+          <select value={newProduct.collection} className='adm-option'
             onChange={e => { setNewProduct({ ...newProduct, collection: e.target.value }) }}
           >
             <option value="" className='adm-option'>{t('Admin.Add.Nici una')}</option>
