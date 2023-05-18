@@ -316,6 +316,13 @@ button.acc-btn:hover {
   width:13px;
   aspect-ratio: 1/1;
 }
+.acc-lang {
+  background-color: #ddd;
+  color:black;
+  font-size: 30px;
+  font-weight: 600;
+  outline: none;
+}
 
 @media screen and (max-width:500px) {
   label.acc-label {

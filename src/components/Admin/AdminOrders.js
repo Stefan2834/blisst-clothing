@@ -80,6 +80,9 @@ export default function AdminOrders() {
         })
           .then(data => console.log(data))
           .catch(err => console.error(err))
+        await axios.post(`${server}/email/status`, { status: status, email: email, nr: id })
+          .then(data => console.log(data))
+          .catch(err => console.error(err))
       }
     })
   }

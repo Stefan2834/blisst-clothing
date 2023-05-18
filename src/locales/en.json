@@ -100,7 +100,7 @@
   "Side": {
     "Femei": "Woman",
     "Bărbați": "Man",
-    "Colecții":"Collections",
+    "Colecții": "Collections",
     "Filtre": "Filters",
     "Preț": "Price",
     "Minim": "Minimum",
@@ -284,6 +284,25 @@
     "Toate": "All",
     "Comenzi": "Orders",
     "Încarcă mai multe comenzi": "Load more orders"
+  },
+  "Connect": {
+    "Înregistrare": "Register",
+    "Conectare": "Log in",
+    "Creeaza un cont": "Create an account",
+    "Nume": "Name",
+    "Email": "Email",
+    "Parola": "Password",
+    "Confirmă": "Confirm",
+    "Înregistrează-te": "Sign up",
+    "mi-am uitat parola": "Forgot my password",
+    "nu am primit un email": "Did not receive an email",
+    "Validare cont!": "Account validation!",
+    "Accesează link-ul de pe email, iar apoi conectează-te.": "Access the link from your email, then log in.",
+    "Înregistrarea a eșuat": "Registration failed",
+    "Email deja folosit": "Email already in use",
+    "Contul nu este activat. Accesează emailul pentru a îl activa": "Account is not activated. Access your email to activate it",
+    "Parola sau emailul greșit": "Incorrect password or email",
+    "Acest cont nu există": "This account does not exist"
   },
   "Forgot": {
     "Am uitat parola": "I forgot my password",
