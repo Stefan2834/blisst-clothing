@@ -513,8 +513,15 @@ import womanShogreenFront from '../clothing/man/foot/green 72ff00/default sho.pn
 import womanShoorangeFront from '../clothing/man/foot/orange fd6500/default sho.png'
 import womanShopinkFront from '../clothing/man/foot/pink ff00f0/default sho.png'
 import womanShoredFront from '../clothing/man/foot/red ea0000/default sho.png'
-import womanShowhiteFront from '../clothing/man/foot/white fff/default sho.png'
+import womanShowhiteFront from '../clothing/woman/foot/white fff/default sho.png'
 import womanShoyellowFront from '../clothing/man/foot/yellow fff600/default sho.png'
+
+
+import manSliwhiteFront from '../clothing/man/foot/white fff/default sli.png'
+
+
+import womanSliwhiteFront from '../clothing/woman/foot/white fff/default sli.png'
+
 
 
 
@@ -2908,7 +2915,7 @@ export const Product1 = {
     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
     id: 'wst10',
   }, cwo1: {
-    name: 'Tricou masca Oni',
+    name: 'Tricou mască Oni',
     price: 129.99,
     discount: 0,
     photo: womanCollectionOniFront1,
@@ -2921,7 +2928,7 @@ export const Product1 = {
     size: { XS: 3, S: 7, M: 6, L: 5, XL: 3, XXL: 1 },
     id: 'cwo1',
   }, cwo2: {
-    name: 'Tricou masca Oni',
+    name: 'Tricou mască Oni',
     price: 129.99,
     discount: 0,
     photo: womanCollectionOniFront2,
@@ -4262,6 +4269,32 @@ export const Product2 = {
     star: { total: 0, nr: 0 },
     size: { 37: 4, 38: 9, 39: 5, 40: 3, 41: 6, 42: 10, 43: 0, 44: 0 },
     id: 'wsd7',
+  }, msld1: {
+    name: 'Papuci simpli',
+    price: 119.99,
+    discount: 0,
+    photo: manSliwhiteFront,
+    sliderPhoto: [],
+    sex: 'man',
+    type: 'barbati foot papuci',
+    spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
+    colors: ['#1c1919', '#eee'],
+    star: { total: 0, nr: 0 },
+    size: { 37: 4, 38: 9, 39: 5, 40: 3, 41: 6, 42: 10, 43: 0, 44: 0 },
+    id: 'msld1',
+  }, wsld1: {
+    name: 'Papuci simpli',
+    price: 119.99,
+    discount: 0,
+    photo: womanSliwhiteFront,
+    sliderPhoto: [],
+    sex: 'woman',
+    type: 'femei foot papuci',
+    spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
+    colors: ['#eee', '#1c1919'],
+    star: { total: 0, nr: 0 },
+    size: { 37: 4, 38: 9, 39: 5, 40: 3, 41: 6, 42: 10, 43: 0, 44: 0 },
+    id: 'wsld1',
   }, whd1: {
     name: 'Hanorac simplu',
     price: 99.99,

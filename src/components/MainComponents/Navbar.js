@@ -242,7 +242,7 @@ export default function Navbar() {
                 <div className='nav-drop-content'>
                   <div className='nav-drop-content-top'>
                     <Link className='nav-drop-square' to='/main/cloth/collection'>
-                      <div className='nav-drop-img nav-19' />
+                      <div className={darkTheme ? 'nav-drop-img nav-19-dark' : 'nav-drop-img nav-19'} />
                       <div className='nav-square-text'>{t('Nav.Toate')}</div>
                     </Link>
                     {[...collections].reverse().map((collection, index) => {
