@@ -14,7 +14,11 @@ export default function ScrollToTop() {
       window.scrollTo(0, 0);
     }
     if ((!pathname.includes('/main/cloth') && !pathname.includes('/product')) || (lastPath.includes('/main/cloth') && pathname.includes('/main/cloth'))) {
-      setProductLoad(10)
+      if(window.innerWidth > 1770) {
+        setProductLoad(10)
+      } else {
+        setProductLoad(8)
+      }
     }
     setLastPath(pathname)
   }, [pathname]);// de fiecare data cand pagina se schimba, se da scroll in varful pagini

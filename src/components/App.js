@@ -47,6 +47,7 @@ import AdminList from './Admin/AdminList';
 import AdminCollections from './Admin/AdminCollections';
 import AdminBan from './Admin/AdminBan';
 import AdminProducsAdd from './Admin/AdminProductsAdd';
+import { Test } from '../components/SmallComponents/Test'
 
 const Layout = () => (
   <>
@@ -78,6 +79,7 @@ function App() {
           <Routes>
             <Route path='/' index element={<GoTo />} />
             <Route path='/connect' element={<Connect />} />
+            <Route path='/test' element={<Test />} />
 
             
             <Route path='/placeOrder'>

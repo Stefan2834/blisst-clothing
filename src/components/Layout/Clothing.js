@@ -156,7 +156,13 @@ export default function Clothing() {
         )}
         {noProduct > productLoad && (
           <div className="cloth-more">
-            <div className="cloth-more-btn" onClick={() => startTransition(() => setProductLoad(p => p + 10))}>{t('Clothing.Încarcă mai multe')}</div>
+            <div className="cloth-more-btn" onClick={() => startTransition(() => {
+              if(window.innerWidth > 1770) {
+                setProductLoad(p => p + 10)
+              } else {
+                setProductLoad(p => p + 8)
+              }
+            })}>{t('Clothing.Încarcă mai multe')}</div>
           </div>
         )}
         {noProduct === 0 && (

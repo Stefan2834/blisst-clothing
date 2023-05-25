@@ -222,14 +222,14 @@
     "Motiv": "Motiv",
     "Încarcă mai multe Review-uri": "Încarcă mai multe Review-uri",
     "Șterge Review-ul": "Șterge Review-ul",
-    "BlisstText": "Pentru o experiență cât mai plăcuta, te rugăm să scri o părere obiectivă, fără a jigni pe altcineva. Echipa Blisst",
+    "BlisstText": "Pentru o experiență cât mai plăcută, te rugăm să scri o părere obiectivă, fără a jigni pe altcineva. Echipa Blisst",
     "Review șters!": "Review șters!",
     "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.": "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis."
   },
   "Check": {
     "Setează adresa pentru a continua!": "Setează adresa pentru a continua!",
     "Setează un număr de telefon pentru a continua!": "Setează un număr de telefon pentru a continua!",
-    "Selectează o metodaă de plată!": "Selectează o metodaă de plată!",
+    "Selectează o metodă de plată!": "Selectează o metodă de plată!",
     "Eroare!": "Eroare!",
     "Nu ai introdus toate informațiile.": "Nu ai introdus toate informațiile.",
     "Înapoi": "Înapoi",
@@ -279,7 +279,7 @@
     "Comenziile mele": "Comenziile mele",
     "Salut": "Salut",
     "Uite istoricul comenziilor tale": "Uite istoricul comenziilor mele",
-    "Data comenzii": "Data comenzi",
+    "Data comenzii": "Data comenzii",
     "Produs": "Produs",
     "Toate": "Toate",
     "Comenzi": "Comenzi",
@@ -294,8 +294,8 @@
     "Parola": "Parola",
     "Confirmă": "Confirmă",
     "Înregistrează-te": "Înregistrează-te",
-    "mi-am uitat parola": "mi-am uitat parola",
-    "nu am primit un email": "nu am primit un email",
+    "mi-am uitat parola": "Mi-am uitat parola",
+    "nu am primit un email": "Nu am primit un email",
     "Validare cont!": "Validare cont!",
     "Accesează link-ul de pe email, iar apoi conectează-te.": "Accesează link-ul de pe email, iar apoi conectează-te.",
     "Înregistrarea a eșuat": "Înregistrarea a eșuat",
@@ -333,10 +333,10 @@
     "Eroare a fost trimisă către noi. Vei primi un email cu rezolvarea in câteva zile.": "Eroare a fost trimisă către noi. Vei primi un email cu rezolvarea in câteva zile."
   },
   "Ban": {
-    "Ai fost banat!": "",
-    "Acest cont a fost banat deoarece": "",
-    "Dacă nu ai încălcat nicio regula, scrie-ne la": "",
-    "Deconectare": ""
+    "Ai fost banat!": "Ai fost banat!",
+    "Acest cont a fost banat deoarece": "Acest cont a fost banat deoarece",
+    "Dacă nu ai încălcat nicio regula, scrie-ne la": "Dacă nu ai încălcat nicio regula, scrie-ne la",
+    "Deconectare": "Deconectare"
   },
   "404": {
     "Pagina greșită": "Pagina greșită",

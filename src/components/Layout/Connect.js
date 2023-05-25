@@ -38,7 +38,6 @@ export default function Connect() {
     const [passView, setPassView] = useState([false, false, false]);
 
     useEffect(() => {
-        document.title = 'Blisst — Conectare'
         setCurrentUser()
         setAdmin()
         setLoading(true)
@@ -49,6 +48,10 @@ export default function Connect() {
         axios.post(`${server}/connect/logout`)
         setLoading(false)
     }, [])// daca ai accesat aceasta pagina, sterge cosul favoritele si comenziile urilizatorului, si deconecteaza-l
+
+    useEffect(() => {
+        document.title = `Blisst — ${t(`Connect.Conectare`)}`
+    }, [lang])
 
 
 

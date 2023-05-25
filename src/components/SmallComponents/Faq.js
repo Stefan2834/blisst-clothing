@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Faq() {
-  const { t } = useDefault()
+  const { t, darkTheme, lang } = useDefault()
   const [expand, setExpand] = useState()
   const questions = [
     { quest: t('Faq.Que.1'), answer: t('Faq.Ans.1') },
@@ -23,7 +23,7 @@ export default function Faq() {
 
   useEffect(() => {
     document.title = `Blisst — ${t('Faq.Întrebări frecvente')}`
-  })
+  }, [lang])
   return (
     <div className='faq'>
       <div className='faq-container'>
@@ -33,7 +33,11 @@ export default function Faq() {
             <div className='faq-content'>
               <div className='faq-question' onClick={() => expand === index ? setExpand() : setExpand(index)}>
                 <div className='faq-que-text'>{question.quest}</div>
-                <div className={expand === index ? 'faq-que-plus-rotate' : 'faq-que-plus'} />
+                {darkTheme ? (
+                  <div className={expand === index ? 'faq-rotate faq-que-plus-dark' : 'faq-que-plus-dark'} />
+                ) : (
+                  <div className={expand === index ? 'faq-rotate faq-que-plus' : 'faq-que-plus'} />
+                )}
               </div>
               <div className={expand === index ? 'faq-overflow-open' : 'faq-overflow'}>{question.answer}</div>
             </div>

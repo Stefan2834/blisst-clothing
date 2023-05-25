@@ -34,7 +34,6 @@ export default function ResendEmail() {
         email: email,
         password: password
       })
-      console.log(response)
       if (response.data.success) {
         Swal.fire(
           t('Forgot.Trimis!'),

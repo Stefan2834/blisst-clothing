@@ -65,16 +65,21 @@
   justify-content: flex-start;
   font-weight: 600;
 }
-.faq-que-plus, .faq-que-plus-rotate, .faq-que-plus-dark {
+.faq-que-plus, .faq-rotate, .faq-que-plus-dark {
   aspect-ratio: 1/1;
   height:50px;
   background-size: 40px 40px;
   background-position: center;
   background-repeat: no-repeat;
   transition: 300ms ease;
+}
+.faq-que-plus {
   background-image: url(../Main/svg-dark/plus.svg);
 }
-.faq-que-plus-rotate {
+.faq-que-plus-dark {
+  background-image: url(../Main/svg/plus.svg);
+}
+.faq-rotate {
   transform: rotate(45deg);
 }
 .faq-overflow, .faq-overflow-open {

@@ -162,382 +162,206 @@ import manLayoutPanRedBack from '../clothing/man/bottom/layout/default pan red b
 import manLayoutPanOrangeBack from '../clothing/man/bottom/layout/default pan orange back.png'
 
 import manblackPanBrownFront from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
-import manblackPanBrownRight from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
-import manblackPanBrownLeft from '../clothing/man/bottom/black 1c1919/default pan brown front.png'
 
 import manbluePanBrownFront from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
-import manbluePanBrownRight from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
-import manbluePanBrownLeft from '../clothing/man/bottom/blue 0091e5/default pan brown front.png'
 
 import mancyanPanBrownFront from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
-import mancyanPanBrownRight from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
-import mancyanPanBrownLeft from '../clothing/man/bottom/cyan 00d2ff/default pan brown front.png'
 
 import mangreenPanBrownFront from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
-import mangreenPanBrownRight from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
-import mangreenPanBrownLeft from '../clothing/man/bottom/green 72ff00/default pan brown front.png'
 
 import manorangePanBrownFront from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
-import manorangePanBrownRight from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
-import manorangePanBrownLeft from '../clothing/man/bottom/orange fd6500/default pan brown front.png'
 
 import manpinkPanBrownFront from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
-import manpinkPanBrownRight from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
-import manpinkPanBrownLeft from '../clothing/man/bottom/pink ff00f0/default pan brown front.png'
 
 import manpurplePanBrownFront from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
-import manpurplePanBrownRight from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
-import manpurplePanBrownLeft from '../clothing/man/bottom/purple a200ff/default pan brown front.png'
 
 import manredPanBrownFront from '../clothing/man/bottom/red ea0000/default pan brown front.png'
-import manredPanBrownRight from '../clothing/man/bottom/red ea0000/default pan brown front.png'
-import manredPanBrownLeft from '../clothing/man/bottom/red ea0000/default pan brown front.png'
 
 import manturqoisePanBrownFront from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
-import manturqoisePanBrownRight from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
-import manturqoisePanBrownLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan brown front.png'
 
 import manwhitePanBrownFront from '../clothing/man/bottom/white fff/default pan brown front.png'
-import manwhitePanBrownRight from '../clothing/man/bottom/white fff/default pan brown front.png'
-import manwhitePanBrownLeft from '../clothing/man/bottom/white fff/default pan brown front.png'
 
 import manyellowPanBrownFront from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
-import manyellowPanBrownRight from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
-import manyellowPanBrownLeft from '../clothing/man/bottom/yellow fff600/default pan brown front.png'
 
 
 /*Grey*/
 
 
 import manblackPanGreyFront from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
-import manblackPanGreyRight from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
-import manblackPanGreyLeft from '../clothing/man/bottom/black 1c1919/default pan grey front.png'
 
 import manbluePanGreyFront from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
-import manbluePanGreyRight from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
-import manbluePanGreyLeft from '../clothing/man/bottom/blue 0091e5/default pan grey front.png'
 
 import mancyanPanGreyFront from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
-import mancyanPanGreyRight from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
-import mancyanPanGreyLeft from '../clothing/man/bottom/cyan 00d2ff/default pan grey front.png'
 
 import mangreenPanGreyFront from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
-import mangreenPanGreyRight from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
-import mangreenPanGreyLeft from '../clothing/man/bottom/green 72ff00/default pan grey front.png'
 
 import manorangePanGreyFront from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
-import manorangePanGreyRight from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
-import manorangePanGreyLeft from '../clothing/man/bottom/orange fd6500/default pan grey front.png'
 
 import manpinkPanGreyFront from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
-import manpinkPanGreyRight from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
-import manpinkPanGreyLeft from '../clothing/man/bottom/pink ff00f0/default pan grey front.png'
 
 import manpurplePanGreyFront from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
-import manpurplePanGreyRight from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
-import manpurplePanGreyLeft from '../clothing/man/bottom/purple a200ff/default pan grey front.png'
 
 import manredPanGreyFront from '../clothing/man/bottom/red ea0000/default pan grey front.png'
-import manredPanGreyRight from '../clothing/man/bottom/red ea0000/default pan grey front.png'
-import manredPanGreyLeft from '../clothing/man/bottom/red ea0000/default pan grey front.png'
 
 import manturqoisePanGreyFront from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
-import manturqoisePanGreyRight from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
-import manturqoisePanGreyLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan grey front.png'
 
 import manwhitePanGreyFront from '../clothing/man/bottom/white fff/default pan grey front.png'
-import manwhitePanGreyRight from '../clothing/man/bottom/white fff/default pan grey front.png'
-import manwhitePanGreyLeft from '../clothing/man/bottom/white fff/default pan grey front.png'
 
 import manyellowPanGreyFront from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
-import manyellowPanGreyRight from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
-import manyellowPanGreyLeft from '../clothing/man/bottom/yellow fff600/default pan grey front.png'
 
 
 /*----------Red----------*/
 
 
 import manblackPanRedFront from '../clothing/man/bottom/black 1c1919/default pan red front.png'
-import manblackPanRedRight from '../clothing/man/bottom/black 1c1919/default pan red front.png'
-import manblackPanRedLeft from '../clothing/man/bottom/black 1c1919/default pan red front.png'
 
 import manbluePanRedFront from '../clothing/man/bottom/blue 0091e5/default pan red front.png'
-import manbluePanRedRight from '../clothing/man/bottom/blue 0091e5/default pan red front.png'
-import manbluePanRedLeft from '../clothing/man/bottom/blue 0091e5/default pan red front.png'
 
 import mancyanPanRedFront from '../clothing/man/bottom/cyan 00d2ff/default pan red front.png'
-import mancyanPanRedRight from '../clothing/man/bottom/cyan 00d2ff/default pan red front.png'
-import mancyanPanRedLeft from '../clothing/man/bottom/cyan 00d2ff/default pan red front.png'
 
 import mangreenPanRedFront from '../clothing/man/bottom/green 72ff00/default pan red front.png'
-import mangreenPanRedRight from '../clothing/man/bottom/green 72ff00/default pan red front.png'
-import mangreenPanRedLeft from '../clothing/man/bottom/green 72ff00/default pan red front.png'
 
 import manorangePanRedFront from '../clothing/man/bottom/orange fd6500/default pan red front.png'
-import manorangePanRedRight from '../clothing/man/bottom/orange fd6500/default pan red front.png'
-import manorangePanRedLeft from '../clothing/man/bottom/orange fd6500/default pan red front.png'
 
 import manpinkPanRedFront from '../clothing/man/bottom/pink ff00f0/default pan red front.png'
-import manpinkPanRedRight from '../clothing/man/bottom/pink ff00f0/default pan red front.png'
-import manpinkPanRedLeft from '../clothing/man/bottom/pink ff00f0/default pan red front.png'
 
 import manpurplePanRedFront from '../clothing/man/bottom/purple a200ff/default pan red front.png'
-import manpurplePanRedRight from '../clothing/man/bottom/purple a200ff/default pan red front.png'
-import manpurplePanRedLeft from '../clothing/man/bottom/purple a200ff/default pan red front.png'
 
 import manredPanRedFront from '../clothing/man/bottom/red ea0000/default pan red front.png'
-import manredPanRedRight from '../clothing/man/bottom/red ea0000/default pan red front.png'
-import manredPanRedLeft from '../clothing/man/bottom/red ea0000/default pan red front.png'
 
 import manturqoisePanRedFront from '../clothing/man/bottom/turqoise 00ffd8/default pan red front.png'
-import manturqoisePanRedRight from '../clothing/man/bottom/turqoise 00ffd8/default pan red front.png'
-import manturqoisePanRedLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan red front.png'
 
 import manwhitePanRedFront from '../clothing/man/bottom/white fff/default pan red front.png'
-import manwhitePanRedRight from '../clothing/man/bottom/white fff/default pan red front.png'
-import manwhitePanRedLeft from '../clothing/man/bottom/white fff/default pan red front.png'
 
 import manyellowPanRedFront from '../clothing/man/bottom/yellow fff600/default pan red front.png'
-import manyellowPanRedRight from '../clothing/man/bottom/yellow fff600/default pan red front.png'
-import manyellowPanRedLeft from '../clothing/man/bottom/yellow fff600/default pan red front.png'
 
 
 /*----------Orange---------*/
 
 import manblackPanOrangeFront from '../clothing/man/bottom/black 1c1919/default pan orange front.png'
-import manblackPanOrangeRight from '../clothing/man/bottom/black 1c1919/default pan orange front.png'
-import manblackPanOrangeLeft from '../clothing/man/bottom/black 1c1919/default pan orange front.png'
 
 import manbluePanOrangeFront from '../clothing/man/bottom/blue 0091e5/default pan orange front.png'
-import manbluePanOrangeRight from '../clothing/man/bottom/blue 0091e5/default pan orange front.png'
-import manbluePanOrangeLeft from '../clothing/man/bottom/blue 0091e5/default pan orange front.png'
 
 import mancyanPanOrangeFront from '../clothing/man/bottom/cyan 00d2ff/default pan orange front.png'
-import mancyanPanOrangeRight from '../clothing/man/bottom/cyan 00d2ff/default pan orange front.png'
-import mancyanPanOrangeLeft from '../clothing/man/bottom/cyan 00d2ff/default pan orange front.png'
 
 import mangreenPanOrangeFront from '../clothing/man/bottom/green 72ff00/default pan orange front.png'
-import mangreenPanOrangeRight from '../clothing/man/bottom/green 72ff00/default pan orange front.png'
-import mangreenPanOrangeLeft from '../clothing/man/bottom/green 72ff00/default pan orange front.png'
 
 import manorangePanOrangeFront from '../clothing/man/bottom/orange fd6500/default pan orange front.png'
-import manorangePanOrangeRight from '../clothing/man/bottom/orange fd6500/default pan orange front.png'
-import manorangePanOrangeLeft from '../clothing/man/bottom/orange fd6500/default pan orange front.png'
 
 import manpinkPanOrangeFront from '../clothing/man/bottom/pink ff00f0/default pan orange front.png'
-import manpinkPanOrangeRight from '../clothing/man/bottom/pink ff00f0/default pan orange front.png'
-import manpinkPanOrangeLeft from '../clothing/man/bottom/pink ff00f0/default pan orange front.png'
 
 import manpurplePanOrangeFront from '../clothing/man/bottom/purple a200ff/default pan orange front.png'
-import manpurplePanOrangeRight from '../clothing/man/bottom/purple a200ff/default pan orange front.png'
-import manpurplePanOrangeLeft from '../clothing/man/bottom/purple a200ff/default pan orange front.png'
 
 import manredPanOrangeFront from '../clothing/man/bottom/red ea0000/default pan orange front.png'
-import manredPanOrangeRight from '../clothing/man/bottom/red ea0000/default pan orange front.png'
-import manredPanOrangeLeft from '../clothing/man/bottom/red ea0000/default pan orange front.png'
 
 import manturqoisePanOrangeFront from '../clothing/man/bottom/turqoise 00ffd8/default pan orange front.png'
-import manturqoisePanOrangeRight from '../clothing/man/bottom/turqoise 00ffd8/default pan orange front.png'
-import manturqoisePanOrangeLeft from '../clothing/man/bottom/turqoise 00ffd8/default pan orange front.png'
 
 import manwhitePanOrangeFront from '../clothing/man/bottom/white fff/default pan orange front.png'
-import manwhitePanOrangeRight from '../clothing/man/bottom/white fff/default pan orange front.png'
-import manwhitePanOrangeLeft from '../clothing/man/bottom/white fff/default pan orange front.png'
 
 import manyellowPanOrangeFront from '../clothing/man/bottom/yellow fff600/default pan orange front.png'
-import manyellowPanOrangeRight from '../clothing/man/bottom/yellow fff600/default pan orange front.png'
-import manyellowPanOrangeLeft from '../clothing/man/bottom/yellow fff600/default pan orange front.png'
 
 
 /*Snake edition*/
 /*----------BrownSnake---------*/
 
 import manSnakeblackPanBrownFront from '../clothing/man/bottom/black 1c1919/snake pan brown front.png'
-import manSnakeblackPanBrownRight from '../clothing/man/bottom/black 1c1919/snake pan brown front.png'
-import manSnakeblackPanBrownLeft from '../clothing/man/bottom/black 1c1919/snake pan brown front.png'
 
 import manSnakebluePanBrownFront from '../clothing/man/bottom/blue 0091e5/snake pan brown front.png'
-import manSnakebluePanBrownRight from '../clothing/man/bottom/blue 0091e5/snake pan brown front.png'
-import manSnakebluePanBrownLeft from '../clothing/man/bottom/blue 0091e5/snake pan brown front.png'
 
 import manSnakecyanPanBrownFront from '../clothing/man/bottom/cyan 00d2ff/snake pan brown front.png'
-import manSnakecyanPanBrownRight from '../clothing/man/bottom/cyan 00d2ff/snake pan brown front.png'
-import manSnakecyanPanBrownLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan brown front.png'
 
 import manSnakegreenPanBrownFront from '../clothing/man/bottom/green 72ff00/snake pan brown front.png'
-import manSnakegreenPanBrownRight from '../clothing/man/bottom/green 72ff00/snake pan brown front.png'
-import manSnakegreenPanBrownLeft from '../clothing/man/bottom/green 72ff00/snake pan brown front.png'
 
 import manSnakeorangePanBrownFront from '../clothing/man/bottom/orange fd6500/snake pan brown front.png'
-import manSnakeorangePanBrownRight from '../clothing/man/bottom/orange fd6500/snake pan brown front.png'
-import manSnakeorangePanBrownLeft from '../clothing/man/bottom/orange fd6500/snake pan brown front.png'
 
 import manSnakepinkPanBrownFront from '../clothing/man/bottom/pink ff00f0/snake pan brown front.png'
-import manSnakepinkPanBrownRight from '../clothing/man/bottom/pink ff00f0/snake pan brown front.png'
-import manSnakepinkPanBrownLeft from '../clothing/man/bottom/pink ff00f0/snake pan brown front.png'
 
 import manSnakepurplePanBrownFront from '../clothing/man/bottom/purple a200ff/snake pan brown front.png'
-import manSnakepurplePanBrownRight from '../clothing/man/bottom/purple a200ff/snake pan brown front.png'
-import manSnakepurplePanBrownLeft from '../clothing/man/bottom/purple a200ff/snake pan brown front.png'
 
 import manSnakeredPanBrownFront from '../clothing/man/bottom/red ea0000/snake pan brown front.png'
-import manSnakeredPanBrownRight from '../clothing/man/bottom/red ea0000/snake pan brown front.png'
-import manSnakeredPanBrownLeft from '../clothing/man/bottom/red ea0000/snake pan brown front.png'
 
 import manSnaketurqoisePanBrownFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan brown front.png'
-import manSnaketurqoisePanBrownRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan brown front.png'
-import manSnaketurqoisePanBrownLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan brown front.png'
 
 import manSnakewhitePanBrownFront from '../clothing/man/bottom/white fff/snake pan brown front.png'
-import manSnakewhitePanBrownRight from '../clothing/man/bottom/white fff/snake pan brown front.png'
-import manSnakewhitePanBrownLeft from '../clothing/man/bottom/white fff/snake pan brown front.png'
 
 import manSnakeyellowPanBrownFront from '../clothing/man/bottom/yellow fff600/snake pan brown front.png'
-import manSnakeyellowPanBrownRight from '../clothing/man/bottom/yellow fff600/snake pan brown front.png'
-import manSnakeyellowPanBrownLeft from '../clothing/man/bottom/yellow fff600/snake pan brown front.png'
 
 
 /*----------GreySnake----------*/
 
 
 import manSnakeblackPanGreyFront from '../clothing/man/bottom/black 1c1919/snake pan grey front.png'
-import manSnakeblackPanGreyRight from '../clothing/man/bottom/black 1c1919/snake pan grey front.png'
-import manSnakeblackPanGreyLeft from '../clothing/man/bottom/black 1c1919/snake pan grey front.png'
 
 import manSnakebluePanGreyFront from '../clothing/man/bottom/blue 0091e5/snake pan grey front.png'
-import manSnakebluePanGreyRight from '../clothing/man/bottom/blue 0091e5/snake pan grey front.png'
-import manSnakebluePanGreyLeft from '../clothing/man/bottom/blue 0091e5/snake pan grey front.png'
 
 import manSnakecyanPanGreyFront from '../clothing/man/bottom/cyan 00d2ff/snake pan grey front.png'
-import manSnakecyanPanGreyRight from '../clothing/man/bottom/cyan 00d2ff/snake pan grey front.png'
-import manSnakecyanPanGreyLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan grey front.png'
 
 import manSnakegreenPanGreyFront from '../clothing/man/bottom/green 72ff00/snake pan grey front.png'
-import manSnakegreenPanGreyRight from '../clothing/man/bottom/green 72ff00/snake pan grey front.png'
-import manSnakegreenPanGreyLeft from '../clothing/man/bottom/green 72ff00/snake pan grey front.png'
 
 import manSnakeorangePanGreyFront from '../clothing/man/bottom/orange fd6500/snake pan grey front.png'
-import manSnakeorangePanGreyRight from '../clothing/man/bottom/orange fd6500/snake pan grey front.png'
-import manSnakeorangePanGreyLeft from '../clothing/man/bottom/orange fd6500/snake pan grey front.png'
 
 import manSnakepinkPanGreyFront from '../clothing/man/bottom/pink ff00f0/snake pan grey front.png'
-import manSnakepinkPanGreyRight from '../clothing/man/bottom/pink ff00f0/snake pan grey front.png'
-import manSnakepinkPanGreyLeft from '../clothing/man/bottom/pink ff00f0/snake pan grey front.png'
 
 import manSnakepurplePanGreyFront from '../clothing/man/bottom/purple a200ff/snake pan grey front.png'
-import manSnakepurplePanGreyRight from '../clothing/man/bottom/purple a200ff/snake pan grey front.png'
-import manSnakepurplePanGreyLeft from '../clothing/man/bottom/purple a200ff/snake pan grey front.png'
 
 import manSnakeredPanGreyFront from '../clothing/man/bottom/red ea0000/snake pan grey front.png'
-import manSnakeredPanGreyRight from '../clothing/man/bottom/red ea0000/snake pan grey front.png'
-import manSnakeredPanGreyLeft from '../clothing/man/bottom/red ea0000/snake pan grey front.png'
 
 import manSnaketurqoisePanGreyFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan grey front.png'
-import manSnaketurqoisePanGreyRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan grey front.png'
-import manSnaketurqoisePanGreyLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan grey front.png'
 
 import manSnakewhitePanGreyFront from '../clothing/man/bottom/white fff/snake pan grey front.png'
-import manSnakewhitePanGreyRight from '../clothing/man/bottom/white fff/snake pan grey front.png'
-import manSnakewhitePanGreyLeft from '../clothing/man/bottom/white fff/snake pan grey front.png'
 
 import manSnakeyellowPanGreyFront from '../clothing/man/bottom/yellow fff600/snake pan grey front.png'
-import manSnakeyellowPanGreyRight from '../clothing/man/bottom/yellow fff600/snake pan grey front.png'
-import manSnakeyellowPanGreyLeft from '../clothing/man/bottom/yellow fff600/snake pan grey front.png'
 
 
 /*----------RedSnake----------*/
 
 
 import manSnakeblackPanRedFront from '../clothing/man/bottom/black 1c1919/snake pan red front.png'
-import manSnakeblackPanRedRight from '../clothing/man/bottom/black 1c1919/snake pan red front.png'
-import manSnakeblackPanRedLeft from '../clothing/man/bottom/black 1c1919/snake pan red front.png'
 
 import manSnakebluePanRedFront from '../clothing/man/bottom/blue 0091e5/snake pan red front.png'
-import manSnakebluePanRedRight from '../clothing/man/bottom/blue 0091e5/snake pan red front.png'
-import manSnakebluePanRedLeft from '../clothing/man/bottom/blue 0091e5/snake pan red front.png'
 
 import manSnakecyanPanRedFront from '../clothing/man/bottom/cyan 00d2ff/snake pan red front.png'
-import manSnakecyanPanRedRight from '../clothing/man/bottom/cyan 00d2ff/snake pan red front.png'
-import manSnakecyanPanRedLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan red front.png'
 
 import manSnakegreenPanRedFront from '../clothing/man/bottom/green 72ff00/snake pan red front.png'
-import manSnakegreenPanRedRight from '../clothing/man/bottom/green 72ff00/snake pan red front.png'
-import manSnakegreenPanRedLeft from '../clothing/man/bottom/green 72ff00/snake pan red front.png'
 
 import manSnakeorangePanRedFront from '../clothing/man/bottom/orange fd6500/snake pan red front.png'
-import manSnakeorangePanRedRight from '../clothing/man/bottom/orange fd6500/snake pan red front.png'
-import manSnakeorangePanRedLeft from '../clothing/man/bottom/orange fd6500/snake pan red front.png'
 
 import manSnakepinkPanRedFront from '../clothing/man/bottom/pink ff00f0/snake pan red front.png'
-import manSnakepinkPanRedRight from '../clothing/man/bottom/pink ff00f0/snake pan red front.png'
-import manSnakepinkPanRedLeft from '../clothing/man/bottom/pink ff00f0/snake pan red front.png'
 
 import manSnakepurplePanRedFront from '../clothing/man/bottom/purple a200ff/snake pan red front.png'
-import manSnakepurplePanRedRight from '../clothing/man/bottom/purple a200ff/snake pan red front.png'
-import manSnakepurplePanRedLeft from '../clothing/man/bottom/purple a200ff/snake pan red front.png'
 
 import manSnakeredPanRedFront from '../clothing/man/bottom/red ea0000/snake pan red front.png'
-import manSnakeredPanRedRight from '../clothing/man/bottom/red ea0000/snake pan red front.png'
-import manSnakeredPanRedLeft from '../clothing/man/bottom/red ea0000/snake pan red front.png'
 
 import manSnaketurqoisePanRedFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan red front.png'
-import manSnaketurqoisePanRedRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan red front.png'
-import manSnaketurqoisePanRedLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan red front.png'
 
 import manSnakewhitePanRedFront from '../clothing/man/bottom/white fff/snake pan red front.png'
-import manSnakewhitePanRedRight from '../clothing/man/bottom/white fff/snake pan red front.png'
-import manSnakewhitePanRedLeft from '../clothing/man/bottom/white fff/snake pan red front.png'
 
 import manSnakeyellowPanRedFront from '../clothing/man/bottom/yellow fff600/snake pan red front.png'
-import manSnakeyellowPanRedRight from '../clothing/man/bottom/yellow fff600/snake pan red front.png'
-import manSnakeyellowPanRedLeft from '../clothing/man/bottom/yellow fff600/snake pan red front.png'
 
 
 /*----------OrangeSnake---------*/
 
 import manSnakeblackPanOrangeFront from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
-import manSnakeblackPanOrangeRight from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
-import manSnakeblackPanOrangeLeft from '../clothing/man/bottom/black 1c1919/snake pan orange front.png'
 
 import manSnakebluePanOrangeFront from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
-import manSnakebluePanOrangeRight from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
-import manSnakebluePanOrangeLeft from '../clothing/man/bottom/blue 0091e5/snake pan orange front.png'
 
 import manSnakecyanPanOrangeFront from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
-import manSnakecyanPanOrangeRight from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
-import manSnakecyanPanOrangeLeft from '../clothing/man/bottom/cyan 00d2ff/snake pan orange front.png'
 
 import manSnakegreenPanOrangeFront from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
-import manSnakegreenPanOrangeRight from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
-import manSnakegreenPanOrangeLeft from '../clothing/man/bottom/green 72ff00/snake pan orange front.png'
 
 import manSnakeorangePanOrangeFront from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
-import manSnakeorangePanOrangeRight from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
-import manSnakeorangePanOrangeLeft from '../clothing/man/bottom/orange fd6500/snake pan orange front.png'
 
 import manSnakepinkPanOrangeFront from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
-import manSnakepinkPanOrangeRight from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
-import manSnakepinkPanOrangeLeft from '../clothing/man/bottom/pink ff00f0/snake pan orange front.png'
 
 import manSnakepurplePanOrangeFront from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
-import manSnakepurplePanOrangeRight from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
-import manSnakepurplePanOrangeLeft from '../clothing/man/bottom/purple a200ff/snake pan orange front.png'
 
 import manSnakeredPanOrangeFront from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
-import manSnakeredPanOrangeRight from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
-import manSnakeredPanOrangeLeft from '../clothing/man/bottom/red ea0000/snake pan orange front.png'
 
 import manSnaketurqoisePanOrangeFront from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
-import manSnaketurqoisePanOrangeRight from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
-import manSnaketurqoisePanOrangeLeft from '../clothing/man/bottom/turqoise 00ffd8/snake pan orange front.png'
 
 import manSnakewhitePanOrangeFront from '../clothing/man/bottom/white fff/snake pan orange front.png'
-import manSnakewhitePanOrangeRight from '../clothing/man/bottom/white fff/snake pan orange front.png'
-import manSnakewhitePanOrangeLeft from '../clothing/man/bottom/white fff/snake pan orange front.png'
 
 import manSnakeyellowPanOrangeFront from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
-import manSnakeyellowPanOrangeRight from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
-import manSnakeyellowPanOrangeLeft from '../clothing/man/bottom/yellow fff600/snake pan orange front.png'
 
 
 /*----------Shorts----------*/
@@ -684,7 +508,7 @@ export const Product = {
     price: 29.99,
     discount: 0.2,
     photo: blackTeeFront,
-    sliderPhoto: [blackTeeBack, blackTeeBack, blackTeeBack],
+    sliderPhoto: [blackTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#1c1919', '#eee'],
@@ -697,7 +521,7 @@ export const Product = {
     price: 29.99,
     discount: 0.4,
     photo: blueTeeFront,
-    sliderPhoto: [blueTeeBack, blueTeeBack, blueTeeBack],
+    sliderPhoto: [blueTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#0091e5', '#eee'],
@@ -710,7 +534,7 @@ export const Product = {
     price: 79.99,
     discount: 0,
     photo: cyanTeeFront,
-    sliderPhoto: [cyanTeeBack, cyanTeeBack, cyanTeeBack],
+    sliderPhoto: [cyanTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#00d2ff', '#eee'],
@@ -723,7 +547,7 @@ export const Product = {
     price: 149.99,
     discount: 0.5,
     photo: greenTeeFront,
-    sliderPhoto: [greenTeeBack, greenTeeBack, greenTeeBack],
+    sliderPhoto: [greenTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#72ff00', '#eee'],
@@ -736,7 +560,7 @@ export const Product = {
     price: 99.99,
     discount: 0.1,
     photo: orangeTeeFront,
-    sliderPhoto: [orangeTeeBack, orangeTeeBack, orangeTeeBack],
+    sliderPhoto: [orangeTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#fd6500', '#eee'],
@@ -749,7 +573,7 @@ export const Product = {
     price: 129.99,
     discount: 0,
     photo: pinkTeeFront,
-    sliderPhoto: [pinkTeeBack, pinkTeeBack, pinkTeeBack],
+    sliderPhoto: [pinkTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#ff00f0', '#eee'],
@@ -762,7 +586,7 @@ export const Product = {
     price: 89.99,
     discount: 0,
     photo: purpleTeeFront,
-    sliderPhoto: [purpleTeeBack, purpleTeeBack, purpleTeeBack],
+    sliderPhoto: [purpleTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#a200ff', '#eee'],
@@ -775,7 +599,7 @@ export const Product = {
     price: 49.99,
     discount: 0,
     photo: redTeeFront,
-    sliderPhoto: [redTeeBack, redTeeBack, redTeeBack],
+    sliderPhoto: [redTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#ea0000', '#eee'],
@@ -788,7 +612,7 @@ export const Product = {
     price: 99.99,
     discount: 0.1,
     photo: turqoiseTeeFront,
-    sliderPhoto: [turqoiseTeeBack, turqoiseTeeBack, turqoiseTeeBack],
+    sliderPhoto: [turqoiseTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#00ffd8', '#eee'],
@@ -801,7 +625,7 @@ export const Product = {
     price: 29.99,
     discount: 0.2,
     photo: whiteTeeFront,
-    sliderPhoto: [whiteTeeBack, whiteTeeBack, whiteTeeBack],
+    sliderPhoto: [whiteTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#eee', '#eee'],
@@ -814,7 +638,7 @@ export const Product = {
     price: 29.99,
     discount: 0.4,
     photo: yellowTeeFront,
-    sliderPhoto: [yellowTeeBack, yellowTeeBack, yellowTeeBack],
+    sliderPhoto: [yellowTeeBack],
     sex: 'man',
     type: 'barbati top tricouri',
     colors: ['#fff600', '#eee'],
@@ -824,7 +648,7 @@ export const Product = {
     id: 'mtd11'
   }, mhp1: {
     name: 'Hanorac cu patern',
-    price: 129.99,
+    price: 129.99, 
     discount: 0,
     photo: blueHooFrontPatern,
     sliderPhoto: [blueHooBackPatern, blueHooLeftPatern, blueHooRightPatern],
@@ -1074,7 +898,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manblackPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manblackPanBrownLeft, manblackPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1087,7 +911,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manbluePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manbluePanBrownLeft, manbluePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1100,7 +924,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: mancyanPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, mancyanPanBrownLeft, mancyanPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1113,7 +937,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: mangreenPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, mangreenPanBrownLeft, mangreenPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1126,7 +950,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manorangePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manorangePanBrownLeft, manorangePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1139,7 +963,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manpinkPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manpinkPanBrownLeft, manpinkPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1152,7 +976,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manpurplePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manpurplePanBrownLeft, manpurplePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1165,7 +989,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manredPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manredPanBrownLeft, manredPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1178,7 +1002,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manturqoisePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manturqoisePanBrownLeft, manturqoisePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1191,7 +1015,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manwhitePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manwhitePanBrownLeft, manwhitePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1204,7 +1028,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manyellowPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manyellowPanBrownLeft, manyellowPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1217,7 +1041,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manblackPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manblackPanGreyLeft, manblackPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1230,7 +1054,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manbluePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manbluePanGreyLeft, manbluePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1243,7 +1067,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, mancyanPanGreyLeft, mancyanPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1256,7 +1080,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, mangreenPanGreyLeft, mangreenPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1269,7 +1093,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manorangePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manorangePanGreyLeft, manorangePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1282,7 +1106,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manpinkPanGreyLeft, manpinkPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1295,7 +1119,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manpurplePanGreyLeft, manpurplePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1308,7 +1132,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manredPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manredPanGreyLeft, manredPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1321,7 +1145,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manturqoisePanGreyLeft, manturqoisePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1334,7 +1158,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manwhitePanGreyLeft, manwhitePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1347,7 +1171,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manyellowPanGreyLeft, manyellowPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1360,7 +1184,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manblackPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manblackPanRedLeft, manblackPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1373,7 +1197,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manbluePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manbluePanRedLeft, manbluePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1386,7 +1210,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, mancyanPanRedLeft, mancyanPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1399,7 +1223,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, mangreenPanRedLeft, mangreenPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1412,7 +1236,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manorangePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manorangePanRedLeft, manorangePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1425,7 +1249,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manpinkPanRedLeft, manpinkPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1438,7 +1262,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manpurplePanRedLeft, manpurplePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1451,7 +1275,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manredPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manredPanRedLeft, manredPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1464,7 +1288,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manturqoisePanRedLeft, manturqoisePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1477,7 +1301,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manwhitePanRedLeft, manwhitePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1490,7 +1314,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manyellowPanRedLeft, manyellowPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1503,7 +1327,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manblackPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manblackPanOrangeLeft, manblackPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1516,7 +1340,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manbluePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manbluePanOrangeLeft, manbluePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1529,7 +1353,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, mancyanPanOrangeLeft, mancyanPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1542,7 +1366,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, mangreenPanOrangeLeft, mangreenPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1555,7 +1379,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manorangePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manorangePanOrangeLeft, manorangePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1568,7 +1392,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manpinkPanOrangeLeft, manpinkPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1581,7 +1405,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manpurplePanOrangeLeft, manpurplePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1594,7 +1418,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manredPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manredPanOrangeLeft, manredPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1607,7 +1431,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manturqoisePanOrangeLeft, manturqoisePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1620,7 +1444,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manwhitePanOrangeLeft, manwhitePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1633,7 +1457,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manyellowPanOrangeLeft, manyellowPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1646,7 +1470,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeblackPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakeblackPanBrownLeft, manSnakeblackPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1659,7 +1483,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakebluePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakebluePanBrownLeft, manSnakebluePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1672,7 +1496,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakecyanPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakecyanPanBrownLeft, manSnakecyanPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1685,7 +1509,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakegreenPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakegreenPanBrownLeft, manSnakegreenPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1698,7 +1522,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeorangePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakeorangePanBrownLeft, manSnakeorangePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1711,7 +1535,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakepinkPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakepinkPanBrownLeft, manSnakepinkPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1724,7 +1548,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakepurplePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakepurplePanBrownLeft, manSnakepurplePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1737,7 +1561,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeredPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakeredPanBrownLeft, manSnakeredPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1750,7 +1574,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnaketurqoisePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnaketurqoisePanBrownLeft, manSnaketurqoisePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1763,7 +1587,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakewhitePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakewhitePanBrownLeft, manSnakewhitePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1776,7 +1600,7 @@ export const Product = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeyellowPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakeyellowPanBrownLeft, manSnakeyellowPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1789,7 +1613,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakeblackPanGreyLeft, manSnakeblackPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1802,7 +1626,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakebluePanGreyLeft, manSnakebluePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1815,7 +1639,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakecyanPanGreyLeft, manSnakecyanPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1828,7 +1652,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakegreenPanGreyLeft, manSnakegreenPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1841,7 +1665,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakeorangePanGreyLeft, manSnakeorangePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1854,7 +1678,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakepinkPanGreyLeft, manSnakepinkPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1867,7 +1691,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakepurplePanGreyLeft, manSnakepurplePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1880,7 +1704,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakeredPanGreyLeft, manSnakeredPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1893,7 +1717,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnaketurqoisePanGreyLeft, manSnaketurqoisePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1906,7 +1730,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakewhitePanGreyLeft, manSnakewhitePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1919,7 +1743,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakeyellowPanGreyLeft, manSnakeyellowPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1932,7 +1756,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakeblackPanRedLeft, manSnakeblackPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1945,7 +1769,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakebluePanRedLeft, manSnakebluePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1958,7 +1782,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakecyanPanRedLeft, manSnakecyanPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1971,7 +1795,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakegreenPanRedLeft, manSnakegreenPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1984,7 +1808,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakeorangePanRedLeft, manSnakeorangePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -1997,7 +1821,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakepinkPanRedLeft, manSnakepinkPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2010,7 +1834,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakepurplePanRedLeft, manSnakepurplePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2023,7 +1847,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakeredPanRedLeft, manSnakeredPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2036,7 +1860,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnaketurqoisePanRedLeft, manSnaketurqoisePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2049,7 +1873,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakewhitePanRedLeft, manSnakewhitePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2062,7 +1886,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakeyellowPanRedLeft, manSnakeyellowPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2075,7 +1899,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakeblackPanOrangeLeft, manSnakeblackPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2088,7 +1912,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakebluePanOrangeLeft, manSnakebluePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2101,7 +1925,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakecyanPanOrangeLeft, manSnakecyanPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2114,7 +1938,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakegreenPanOrangeLeft, manSnakegreenPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2127,7 +1951,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakeorangePanOrangeLeft, manSnakeorangePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2140,7 +1964,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakepinkPanOrangeLeft, manSnakepinkPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2153,7 +1977,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakepurplePanOrangeLeft, manSnakepurplePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2166,7 +1990,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakeredPanOrangeLeft, manSnakeredPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2179,7 +2003,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnaketurqoisePanOrangeLeft, manSnaketurqoisePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2192,7 +2016,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakewhitePanOrangeLeft, manSnakewhitePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -2205,7 +2029,7 @@ export const Product = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakeyellowPanOrangeLeft, manSnakeyellowPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'man',
     type: 'barbati bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3092,7 +2916,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manblackPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manblackPanBrownLeft, manblackPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3105,7 +2929,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manbluePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manbluePanBrownLeft, manbluePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3118,7 +2942,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: mancyanPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, mancyanPanBrownLeft, mancyanPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3131,7 +2955,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: mangreenPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, mangreenPanBrownLeft, mangreenPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3144,7 +2968,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manorangePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manorangePanBrownLeft, manorangePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3157,7 +2981,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manpinkPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manpinkPanBrownLeft, manpinkPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3170,7 +2994,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manpurplePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manpurplePanBrownLeft, manpurplePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3183,7 +3007,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manredPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manredPanBrownLeft, manredPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3196,7 +3020,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manturqoisePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manturqoisePanBrownLeft, manturqoisePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3209,7 +3033,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manwhitePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manwhitePanBrownLeft, manwhitePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3222,7 +3046,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manyellowPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manyellowPanBrownLeft, manyellowPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3235,7 +3059,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manblackPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manblackPanGreyLeft, manblackPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3248,7 +3072,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manbluePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manbluePanGreyLeft, manbluePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3261,7 +3085,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, mancyanPanGreyLeft, mancyanPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3274,7 +3098,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, mangreenPanGreyLeft, mangreenPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3287,7 +3111,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manorangePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manorangePanGreyLeft, manorangePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3300,7 +3124,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manpinkPanGreyLeft, manpinkPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3313,7 +3137,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manpurplePanGreyLeft, manpurplePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3326,7 +3150,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manredPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manredPanGreyLeft, manredPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3339,7 +3163,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manturqoisePanGreyLeft, manturqoisePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3352,7 +3176,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manwhitePanGreyLeft, manwhitePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3365,7 +3189,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manyellowPanGreyLeft, manyellowPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3378,7 +3202,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manblackPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manblackPanRedLeft, manblackPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3391,7 +3215,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manbluePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manbluePanRedLeft, manbluePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3404,7 +3228,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, mancyanPanRedLeft, mancyanPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3417,7 +3241,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, mangreenPanRedLeft, mangreenPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3430,7 +3254,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manorangePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manorangePanRedLeft, manorangePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3443,7 +3267,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manpinkPanRedLeft, manpinkPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3456,7 +3280,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manpurplePanRedLeft, manpurplePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3469,7 +3293,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manredPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manredPanRedLeft, manredPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3482,7 +3306,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manturqoisePanRedLeft, manturqoisePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3495,7 +3319,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manwhitePanRedLeft, manwhitePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3508,7 +3332,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manyellowPanRedLeft, manyellowPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3521,7 +3345,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manblackPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manblackPanOrangeLeft, manblackPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3534,7 +3358,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manbluePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manbluePanOrangeLeft, manbluePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3547,7 +3371,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: mancyanPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, mancyanPanOrangeLeft, mancyanPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3560,7 +3384,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: mangreenPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, mangreenPanOrangeLeft, mangreenPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3573,7 +3397,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manorangePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manorangePanOrangeLeft, manorangePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3586,7 +3410,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manpinkPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manpinkPanOrangeLeft, manpinkPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3599,7 +3423,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manpurplePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manpurplePanOrangeLeft, manpurplePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3612,7 +3436,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manredPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manredPanOrangeLeft, manredPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3625,7 +3449,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manturqoisePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manturqoisePanOrangeLeft, manturqoisePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3638,7 +3462,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manwhitePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manwhitePanOrangeLeft, manwhitePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3651,7 +3475,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manyellowPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manyellowPanOrangeLeft, manyellowPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3664,7 +3488,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeblackPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakeblackPanBrownLeft, manSnakeblackPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3677,7 +3501,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakebluePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakebluePanBrownLeft, manSnakebluePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3690,7 +3514,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakecyanPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakecyanPanBrownLeft, manSnakecyanPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3703,7 +3527,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakegreenPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakegreenPanBrownLeft, manSnakegreenPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3716,7 +3540,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeorangePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakeorangePanBrownLeft, manSnakeorangePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3729,7 +3553,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakepinkPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakepinkPanBrownLeft, manSnakepinkPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3742,7 +3566,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakepurplePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakepurplePanBrownLeft, manSnakepurplePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3755,7 +3579,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeredPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakeredPanBrownLeft, manSnakeredPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3768,7 +3592,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnaketurqoisePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnaketurqoisePanBrownLeft, manSnaketurqoisePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3781,7 +3605,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakewhitePanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakewhitePanBrownLeft, manSnakewhitePanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3794,7 +3618,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0.2,
     photo: manSnakeyellowPanBrownFront,
-    sliderPhoto: [manLayoutPanBrownBack, manSnakeyellowPanBrownLeft, manSnakeyellowPanBrownRight],
+    sliderPhoto: [manLayoutPanBrownBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3807,7 +3631,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakeblackPanGreyLeft, manSnakeblackPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3820,7 +3644,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakebluePanGreyLeft, manSnakebluePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3833,7 +3657,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakecyanPanGreyLeft, manSnakecyanPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3846,7 +3670,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakegreenPanGreyLeft, manSnakegreenPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3859,7 +3683,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakeorangePanGreyLeft, manSnakeorangePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3872,7 +3696,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakepinkPanGreyLeft, manSnakepinkPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3885,7 +3709,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakepurplePanGreyLeft, manSnakepurplePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3898,7 +3722,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakeredPanGreyLeft, manSnakeredPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3911,7 +3735,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnaketurqoisePanGreyLeft, manSnaketurqoisePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3924,7 +3748,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakewhitePanGreyLeft, manSnakewhitePanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3937,7 +3761,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanGreyFront,
-    sliderPhoto: [manLayoutPanGreyBack, manSnakeyellowPanGreyLeft, manSnakeyellowPanGreyRight],
+    sliderPhoto: [manLayoutPanGreyBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3950,7 +3774,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakeblackPanRedLeft, manSnakeblackPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3963,7 +3787,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakebluePanRedLeft, manSnakebluePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3976,7 +3800,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakecyanPanRedLeft, manSnakecyanPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -3989,7 +3813,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakegreenPanRedLeft, manSnakegreenPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4002,7 +3826,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakeorangePanRedLeft, manSnakeorangePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4015,7 +3839,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakepinkPanRedLeft, manSnakepinkPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4028,7 +3852,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakepurplePanRedLeft, manSnakepurplePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4041,7 +3865,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakeredPanRedLeft, manSnakeredPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4054,7 +3878,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnaketurqoisePanRedLeft, manSnaketurqoisePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4067,7 +3891,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakewhitePanRedLeft, manSnakewhitePanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4080,7 +3904,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanRedFront,
-    sliderPhoto: [manLayoutPanRedBack, manSnakeyellowPanRedLeft, manSnakeyellowPanRedRight],
+    sliderPhoto: [manLayoutPanRedBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4093,7 +3917,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeblackPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakeblackPanOrangeLeft, manSnakeblackPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4106,7 +3930,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakebluePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakebluePanOrangeLeft, manSnakebluePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4119,7 +3943,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakecyanPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakecyanPanOrangeLeft, manSnakecyanPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4132,7 +3956,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakegreenPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakegreenPanOrangeLeft, manSnakegreenPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4145,7 +3969,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeorangePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakeorangePanOrangeLeft, manSnakeorangePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4158,7 +3982,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakepinkPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakepinkPanOrangeLeft, manSnakepinkPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4171,7 +3995,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakepurplePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakepurplePanOrangeLeft, manSnakepurplePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4184,7 +4008,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeredPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakeredPanOrangeLeft, manSnakeredPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4197,7 +4021,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnaketurqoisePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnaketurqoisePanOrangeLeft, manSnaketurqoisePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4210,7 +4034,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakewhitePanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakewhitePanOrangeLeft, manSnakewhitePanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',
@@ -4223,7 +4047,7 @@ export const Product1 = {
     price: 119.99,
     discount: 0,
     photo: manSnakeyellowPanOrangeFront,
-    sliderPhoto: [manLayoutPanOrangeBack, manSnakeyellowPanOrangeLeft, manSnakeyellowPanOrangeRight],
+    sliderPhoto: [manLayoutPanOrangeBack],
     sex: 'woman',
     type: 'femei bottom lungi',
     spec: 'Chiar dacă este doar un tricou simplu, acesta este unul dintre cele mai apreciate produse. Materialul din care este confecționat este: bumbac. Prețul este unul foarte accesibil, iar raportul calitate preț este unul foarte ridicat.',

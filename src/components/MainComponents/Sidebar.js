@@ -18,7 +18,6 @@ export default function Sidebar() {
   const [expand, setExpand] = useState()
   const navigate = useNavigate()
   useLayoutEffect(() => {
-    console.log(filter.type, id)
     startTransition(() => {
       const newValidPath = [...validPath, ...collections.map(coll => { return `collection ${coll.name}` })]
       if (!newValidPath.includes(id)) {
@@ -79,7 +78,7 @@ export default function Sidebar() {
             <span className="text-sm">({filterNumber})</span>
           )}
         </div>
-        <form className="side-form" onChange={() => { setProductLoad(10); window.scrollTo(0, 0) }} onSubmit={(e) => e.preventDefault()}>
+        <form className="side-form" onChange={() => { if (window.innerWidth > 1770) setProductLoad(10); else setProductLoad(8); window.scrollTo(0, 0) }} onSubmit={(e) => e.preventDefault()}>
           <div className='side-expand' onClick={() => handleExpand('Pret')}>
             <span className='side-selection'>{t('Side.Preț')}</span>
             {darkTheme ? (
@@ -236,7 +235,7 @@ export default function Sidebar() {
           <div className='side-expand' onClick={() => {
             startTransition(() => {
               setExpand()
-              setProductLoad(10)
+              if (window.innerWidth > 1770) setProductLoad(10); else setProductLoad(8)
               window.scrollTo(0, 0)
               setFilter({ minPrice: '', maxPrice: '', size: '', sort: '', color: '', type: id, searchId: '', searchName: '' })
             })

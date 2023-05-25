@@ -49,9 +49,22 @@ export default function DefaultProvider({ children }) {
       document.documentElement.style.setProperty("--color-oposite", '#070707')
       document.documentElement.style.setProperty("--color-third", '#ddd')
     }
-    setLoading(false)
   }, [darkTheme])
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1770) {
+        setProductLoad(10)
+      } else {
+        setProductLoad(8)
+      }
+    }
+    window.addEventListener("resize", handleResize())
+    setLoading(false)
+    return () => {
+      window.removeEventListener("resieze", handleResize())
+    }
+  }, [])
   useLayoutEffect(() => {
     i18n.changeLanguage(lang)
   }, [lang])
