@@ -248,7 +248,7 @@ export default function Navbar() {
                     {[...collections].reverse().map((collection, index) => {
                       if (index < 2) {
                         return (
-                          <Link className='nav-drop-square' to={`/main/cloth/collection ${collection.name}`}>
+                          <Link className='nav-drop-square' key={index} to={`/main/cloth/collection ${collection.name}`}>
                             <img className='nav-drop-img nav-drop-coll' src={collection.photo} />
                             <div className='nav-square-text nav-text-coll w-full text-center'>{collection.name}</div>
                           </Link>
@@ -300,7 +300,7 @@ export default function Navbar() {
                       {[...favorite].reverse().map((product, index) => {
                         if (index < 3) {
                           return (
-                            <Link to={`/product/${product.id}`}>
+                            <Link to={`/product/${product.id}`} key={index}>
                               <div className={product.sex === 'man' ? (
                                 'nav-fav nav-fav-man'
                               ) : (
@@ -362,7 +362,7 @@ export default function Navbar() {
                       {[...cart].reverse().map((product, index) => {
                         if (index < 3) {
                           return (
-                            <Link to={`/product/${product.id}`}>
+                            <Link to={`/product/${product.id}`} key={index}>
                               <div className={product.sex === 'man' ? (
                                 'nav-fav nav-fav-man'
                               ) : (

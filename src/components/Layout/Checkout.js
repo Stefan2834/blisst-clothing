@@ -449,8 +449,8 @@ export default function Checkout() {
                       />
                     </Link>
                     <Link to={`/product/${product.id}`} className='cart-det'>
-                      <div className='cart-name'>{t(product.name)}</div>
-                      <div className='cart-info'>{t(product.spec)}</div>
+                      <div className='cart-name'>{product.name}</div>
+                      <div className='cart-info'>{product.spec}</div>
                     </Link>
                     <div className='cart-action'>
                       {product.discount > 0 ? (

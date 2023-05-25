@@ -450,6 +450,7 @@
       "Stoc": "Stock"
     },
     "Add": {
+      "Produse": "Products",
       "Produs adăugat!": "Product added!",
       "Produsul a fost adăugat cu succes, iar acum este pe site.": "The product has been successfully added and is now on the site.",
       "Eroare!": "Error!",
@@ -466,7 +467,8 @@
       "Culoare": "Color",
       "Colecție": "Collection",
       "Nici una": "None",
-      "Postează produsul": "Post the product"
+      "Postează produsul": "Post the product",
+      "Adaugă produs": "Add product"
     }
   },
   "Month": {

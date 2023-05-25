@@ -147,7 +147,7 @@ export default function AdminOrders() {
                 const [day, month, time, year] = order.date.split(' ');
                 if (load >= count) {
                   return (
-                    <div className='comm-element'>
+                    <div className='comm-element' key={index}>
                       <div className='comm-left'>
                         <div className='comm-left-top'>
                           <div className="comm-option flex justify-center items-center">{t('Order.Data comenzii')}:
@@ -158,13 +158,13 @@ export default function AdminOrders() {
                             <select value={JSON.stringify(selectedProduct)} className='comm-option'
                               onChange={e => { handleProductSelect(index, JSON.parse(e.target.value)) }}
                             >
-                              {order.product.map((product) => {
+                              {order.product.map((product, ind) => {
                                 return (
-                                  <option key={product.id}
+                                  <option key={ind}
                                     value={JSON.stringify(product)}
                                     className='comm-option'
                                   >
-                                    {t(`${product.name}`)} {product.selectedSize}
+                                    {product.name} {product.selectedSize}
                                   </option>
                                 )
                               })}

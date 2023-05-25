@@ -14,6 +14,7 @@ export default function AdminCollections() {
   const [loading, setLoading] = useState(true)
   const [collections, setCollections] = useState([])
   const [photo, setPhoto] = useState('')
+  const [loadSecond, setLoadSecond] = useState(false)
   const nameRef = useRef()
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function AdminCollections() {
   }, [])
 
   const handlePhoto = async (e) => {
+    setLoadSecond(true)
     const file = e.target.files[0]
     let imageUrl = null;
     if (file) {
@@ -39,6 +41,7 @@ export default function AdminCollections() {
       const url = imageUrl
       setPhoto(url)
     }
+    setLoadSecond(false)
   };
 
   const handleDelete = (coll) => {
@@ -84,6 +87,11 @@ export default function AdminCollections() {
 
   return (
     <>
+      {loadSecond && (
+        <div className="loading-bg">
+          <div className="loading-spin">Loading...</div>
+        </div>
+      )}
       {loading ? (
         <>
           <div className="loading-bg">

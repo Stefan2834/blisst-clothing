@@ -299,10 +299,10 @@
     "Validare cont!": "Validare cont!",
     "Accesează link-ul de pe email, iar apoi conectează-te.": "Accesează link-ul de pe email, iar apoi conectează-te.",
     "Înregistrarea a eșuat": "Înregistrarea a eșuat",
-    "Email deja folosit":"Email deja folosit",
-    "Contul nu este activat. Accesează emailul pentru a îl activa":"Contul nu este activat. Accesează emailul pentru a îl activa",
-    "Parola sau emailul greșit":"Parola sau emailul greșit",
-    "Acest cont nu există":"Acest cont nu există"
+    "Email deja folosit": "Email deja folosit",
+    "Contul nu este activat. Accesează emailul pentru a îl activa": "Contul nu este activat. Accesează emailul pentru a îl activa",
+    "Parola sau emailul greșit": "Parola sau emailul greșit",
+    "Acest cont nu există": "Acest cont nu există"
   },
   "Forgot": {
     "Am uitat parola": "Am uitat parola",
@@ -450,6 +450,7 @@
       "Stoc": "Stoc"
     },
     "Add": {
+      "Produse": "Produse",
       "Produs adăugat!": "Produs adăugat!",
       "Produsul a fost adăugat cu succes, iar acum este pe site.": "Produsul a fost adăugat cu succes, iar acum este pe site.",
       "Eroare!": "Eroare!",
@@ -466,7 +467,8 @@
       "Culoare": "Culoare",
       "Colecție": "Colecție",
       "Nici una": "Nici una",
-      "Postează produsul": "Postează produsul"
+      "Postează produsul": "Postează produsul",
+      "Adaugă produs": "Adaugă produs"
     }
   },
   "Month": {

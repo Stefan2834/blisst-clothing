@@ -3,7 +3,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie'
 import Swal from 'sweetalert2';
 import { useTranslation } from 'react-i18next';
-import { Product, Product1 } from './Import';
+import { Product, Product1, Product2 } from './Import';
 import Ban from '../components/SmallComponents/Ban'
 import { useNavigate } from 'react-router-dom';
 
@@ -127,6 +127,7 @@ export function AuthProvider({ children }) {
     []
     // Product
     // Product1
+    // Product2
   )
   const { t } = useTranslation()
   const [currentUser, setCurrentUser] = useState();
@@ -193,7 +194,7 @@ export function AuthProvider({ children }) {
       .then(data => console.log(data))
       .catch(err => console.log(err))
   }
-  
+
   useEffect(() => {
     setTimeout(() => {
       setShowMessage(true);

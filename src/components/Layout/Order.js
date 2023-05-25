@@ -70,7 +70,7 @@ export default function Order() {
                                       value={JSON.stringify(product)}
                                       className='comm-option'
                                     >
-                                      {t(`${product.name}`)} {product.selectedSize}
+                                      {product.name} {product.selectedSize}
                                     </option>
                                   )
                                 })}

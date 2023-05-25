@@ -1,10 +1,15 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../css/ban.css'
+import { useEffect } from 'react';
 
 export default function Ban({ ...props }) {
   const { t, ban, setBan } = props
   const navigate = useNavigate()
+
+  useEffect(() => {
+    document.title = 'Blisst'
+  }, [])
 
 
   return (

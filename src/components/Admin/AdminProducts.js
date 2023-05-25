@@ -15,7 +15,7 @@ export default function AdminProducts() {
   const [filter, setFilter] = useState('')
 
   useEffect(() => {
-    document.title = `Blisst — Admin — ${t('Produse')}`
+    document.title = `Blisst — Admin — ${t('Admin.Add.Produse')}`
   }, [lang])
 
 
@@ -101,7 +101,7 @@ export default function AdminProducts() {
         </>
       ) : (
         <>
-          <div className='flex items-center justify-center mt-14' onClick={() => console.log(load,count)}>
+          <div className='flex items-center justify-center mt-14'>
             <label className='side-selection mx-2 adm-color'>
               {t('Side.După id')}:
               <input type='text'
@@ -119,7 +119,6 @@ export default function AdminProducts() {
                   filter.length === 0
                 ) {
                   count += 1
-                  console.log(count)
                   return (
                     <div className='adm-prod-edit'>
                       <Product product={product} />
@@ -207,7 +206,7 @@ export default function AdminProducts() {
             {load <= count && (
               <div className='w-full flex items-center justify-center'>
                 <div className='adm-prod-more' onClick={() => setLoad(c => c + 10)}>
-                  {t('Încarcă mai multe')}
+                  {t('Clothing.Încarcă mai multe')}
                 </div>
               </div>
             )}

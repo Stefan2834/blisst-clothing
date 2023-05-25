@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
 import { colors } from '../../contexts/Import';
@@ -13,6 +13,7 @@ export default function AdminProductsAdd() {
   const { server, collections } = useAuth()
   const { t, lang } = useDefault()
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(false)
   const [newProduct, setNewProduct] = useState({
     name: "",
     id: "",
@@ -31,6 +32,7 @@ export default function AdminProductsAdd() {
     'femei foot adidasi', 'femei foot papuci',
   ]
   const handleSubmit = async (e, photoIndex) => {
+    setLoading(true)
     const file = e.target.files[0]
     let imageUrl = null;
     if (file) {
@@ -48,6 +50,7 @@ export default function AdminProductsAdd() {
         })
       })
     }
+    setLoading(false)
   };
   const handleNewProduct = async e => {
     e.preventDefault()
@@ -71,162 +74,178 @@ export default function AdminProductsAdd() {
       })
     }
   }
+
+
+  useEffect(() => {
+    document.title = `Blisst — Admin — ${t('Admin.Add.Adaugă produs')}`
+  }, [lang])
+
   return (
-    <div className='adm-prod'>
-      <form className='adm-prod-form' onSubmit={e => handleNewProduct(e)}>
-        <div className='adm-prof-title'>{t('Admin.Add.Adaugă un produs nou')}</div>
-        <label className='adm-label'>
-          <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
-            type='text' placeholder=' ' value={newProduct.nume}
-            required minLength={6} maxLength={30} />
-          <span className='adm-place-holder'>{t('Admin.Add.Nume')}</span>
-        </label>
-        <label className='adm-label'>
-          <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, id: e.target.value })}
-            type='text' placeholder=' ' value={newProduct.id}
-            required minLength={6} maxLength={6} />
-          <span className='adm-place-holder'>ID</span>
-        </label>
-        <label className='adm-label'>
-          <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
-            type='number' placeholder=' ' value={newProduct.price}
-            required min={1} max={500} />
-          <span className='adm-place-holder'>{t('Admin.Add.Preț')}</span>
-        </label>
-        <label className='adm-label'>
-          <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, discount: e.target.value })}
-            type='number' placeholder=' ' value={newProduct.discount}
-            required min={0} max={100} />
-          <span className='adm-place-holder'>{t('Admin.Add.Reducere')}</span>
-        </label>
-        <label className='adm-label'>
-          <input className='adm-input' type='text' onChange={(e) => setNewProduct({ ...newProduct, spec: e.target.value })}
-            placeholder=' ' required minLength={10} maxLength={150} value={newProduct.spec}
-          />
-          <span className='adm-place-holder'>{t('Admin.Add.Specificații')}</span>
-        </label>
-        <label className='adm-option adm-option-label'>{t('Admin.Add.Tip')} :
-          <select value={newProduct.type} className='adm-option' required
-            onChange={e => {
-              if (e.target.value !== "") {
-                if (e.target.value.includes('foot')) {
-                  setSize({ 37: "", 38: "", 39: "", 40: "", 41: "", 42: "", 43: "", 44: "" })
+    <>
+      {loading && (
+        <>
+          <div className="loading-bg">
+            <div className="loading-spin">Loading...</div>
+          </div>
+          <div className="h-screen" />
+        </>
+      )}
+      <div className='adm-prod'>
+        <form className='adm-prod-form' onSubmit={e => handleNewProduct(e)}>
+          <div className='adm-prof-title'>{t('Admin.Add.Adaugă un produs nou')}</div>
+          <label className='adm-label'>
+            <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
+              type='text' placeholder=' ' value={newProduct.nume}
+              required minLength={6} maxLength={30} />
+            <span className='adm-place-holder'>{t('Admin.Add.Nume')}</span>
+          </label>
+          <label className='adm-label'>
+            <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, id: e.target.value })}
+              type='text' placeholder=' ' value={newProduct.id}
+              required minLength={6} maxLength={6} />
+            <span className='adm-place-holder'>ID</span>
+          </label>
+          <label className='adm-label'>
+            <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
+              type='number' placeholder=' ' value={newProduct.price}
+              required min={1} max={500} />
+            <span className='adm-place-holder'>{t('Admin.Add.Preț')}</span>
+          </label>
+          <label className='adm-label'>
+            <input className='adm-input' onChange={(e) => setNewProduct({ ...newProduct, discount: e.target.value })}
+              type='number' placeholder=' ' value={newProduct.discount}
+              required min={0} max={100} />
+            <span className='adm-place-holder'>{t('Admin.Add.Reducere')}</span>
+          </label>
+          <label className='adm-label'>
+            <input className='adm-input' type='text' onChange={(e) => setNewProduct({ ...newProduct, spec: e.target.value })}
+              placeholder=' ' required minLength={10} maxLength={150} value={newProduct.spec}
+            />
+            <span className='adm-place-holder'>{t('Admin.Add.Specificații')}</span>
+          </label>
+          <label className='adm-option adm-option-label'>{t('Admin.Add.Tip')} :
+            <select value={newProduct.type} className='adm-option' required
+              onChange={e => {
+                if (e.target.value !== "") {
+                  if (e.target.value.includes('foot')) {
+                    setSize({ 37: "", 38: "", 39: "", 40: "", 41: "", 42: "", 43: "", 44: "" })
+                  } else {
+                    setSize({ XS: "", S: "", M: "", L: "", XL: "", XXL: "" })
+                  }
                 } else {
-                  setSize({ XS: "", S: "", M: "", L: "", XL: "", XXL: "" })
+                  setSize([])
                 }
-              } else {
-                setSize([])
-              }
-              setNewProduct({ ...newProduct, type: e.target.value, size: size, sex: e.target.value.includes('barbati') ? 'man' : 'woman' })
-            }}
-          >
-            <option value="" className='adm-option'>{t('Admin.Add.Selectează')}</option>
-            {type.map((type) => {
+                setNewProduct({ ...newProduct, type: e.target.value, size: size, sex: e.target.value.includes('barbati') ? 'man' : 'woman' })
+              }}
+            >
+              <option value="" className='adm-option'>{t('Admin.Add.Selectează')}</option>
+              {type.map((type) => {
+                return (
+                  <option key={type}
+                    value={type}
+                    className='adm-option'
+                  >
+                    {type}
+                  </option>
+                )
+              })}
+            </select>
+          </label>
+          <label className='adm-option adm-option-label'>{t('Admin.Add.Stoc')} :
+            {Object.keys(size).map(size => {
               return (
-                <option key={type}
-                  value={type}
-                  className='adm-option'
+                <select value={newProduct.size[size]} className='adm-option' required
+                  onChange={e => { setNewProduct({ ...newProduct, size: { ...newProduct.size, [size]: Number(e.target.value) } }) }}
                 >
-                  {type}
-                </option>
+                  <option value="" className='adm-prod-option'>{size}</option>
+                  {[...Array(101).keys()].map((type) => {
+                    return (
+                      <option key={type}
+                        value={type}
+                        className='adm-option'
+                      >
+                        {type}
+                      </option>
+                    )
+                  })}
+                </select>
               )
             })}
-          </select>
-        </label>
-        <label className='adm-option adm-option-label'>{t('Admin.Add.Stoc')} :
-          {Object.keys(size).map(size => {
-            return (
-              <select value={newProduct.size[size]} className='adm-option' required
-                onChange={e => { setNewProduct({ ...newProduct, size: { ...newProduct.size, [size]: Number(e.target.value) } }) }}
-              >
-                <option value="" className='adm-prod-option'>{size}</option>
-                {[...Array(101).keys()].map((type) => {
-                  return (
-                    <option key={type}
-                      value={type}
-                      className='adm-option'
-                    >
-                      {type}
-                    </option>
-                  )
-                })}
-              </select>
-            )
-          })}
-        </label>
-        <label className='adm-option adm-option-label'>{t('Admin.Add.Culoare')} 1 :
-          <select value={newProduct.colors[0]} className='adm-option' required
-            onChange={e => { setNewProduct({ ...newProduct, colors: [e.target.value, newProduct.colors[1]] }) }}
-          >
-            <option value="" className='adm-option'>Selectează</option>
-            {colors.map((color) => {
-              return (
-                <option key={color}
-                  value={color}
-                  className='adm-option'
-                  style={color !== '#1c1919' ?
-                    { backgroundColor: color, color: 'black' }
-                    :
-                    { backgroundColor: color, color: 'white' }}
-                >
-                  {color}
-                </option>
-              )
-            })}
-          </select>
-        </label>
-        <label className='adm-option adm-option-label'>{t('Admin.Add.Culoare')} 2 :
-          <select value={newProduct.colors[1]} className='adm-option' required
-            onChange={e => { setNewProduct({ ...newProduct, colors: [newProduct.colors[0], e.target.value] }) }}
-          >
-            <option value="" className='adm-option'>{t('Admin.Add.Selectează')}</option>
-            {colors.map((color) => {
-              return (
-                <option key={color}
-                  value={color}
-                  className='adm-option'
-                  style={color !== '#1c1919' ?
-                    { backgroundColor: color, color: 'black' }
-                    :
-                    { backgroundColor: color, color: 'white' }}
-                >
-                  {color}
-                </option>
-              )
-            })}
-          </select>
-        </label>
-        <label className='adm-option adm-option-label'>{t('Admin.Add.Colecție')} :
-          <select value={newProduct.collection} className='adm-option'
-            onChange={e => { setNewProduct({ ...newProduct, collection: e.target.value }) }}
-          >
-            <option value="" className='adm-option'>{t('Admin.Add.Nici una')}</option>
-            {collections.map((coll, index) => {
-              return (
-                <option key={index}
-                  value={coll.name}
-                  className='adm-option'
-                >
-                  {coll.name}
-                </option>
-              )
-            })}
-          </select>
-        </label>
-        <label className='adm-option-label'>
-          <input type='file' onChange={(e) => handleSubmit(e, 0)} required />
-        </label>
-        <label className='adm-option-label'>
-          <input type='file' onChange={(e) => handleSubmit(e, 1)} required />
-        </label>
-        <label className='adm-option-label'>
-          <input type='file' onChange={(e) => handleSubmit(e, 2)} required />
-        </label>
-        <label className='adm-option-label'>
-          <input type='file' onChange={(e) => handleSubmit(e, 3)} required />
-        </label>
-        <input type='submit' value={t("Admin.Add.Postează produsul")} className='adm-prod-submit' />
-      </form>
-    </div>
+          </label>
+          <label className='adm-option adm-option-label'>{t('Admin.Add.Culoare')} 1 :
+            <select value={newProduct.colors[0]} className='adm-option' required
+              onChange={e => { setNewProduct({ ...newProduct, colors: [e.target.value, newProduct.colors[1]] }) }}
+            >
+              <option value="" className='adm-option'>Selectează</option>
+              {colors.map((color) => {
+                return (
+                  <option key={color}
+                    value={color}
+                    className='adm-option'
+                    style={color !== '#1c1919' ?
+                      { backgroundColor: color, color: 'black' }
+                      :
+                      { backgroundColor: color, color: 'white' }}
+                  >
+                    {color}
+                  </option>
+                )
+              })}
+            </select>
+          </label>
+          <label className='adm-option adm-option-label'>{t('Admin.Add.Culoare')} 2 :
+            <select value={newProduct.colors[1]} className='adm-option' required
+              onChange={e => { setNewProduct({ ...newProduct, colors: [newProduct.colors[0], e.target.value] }) }}
+            >
+              <option value="" className='adm-option'>{t('Admin.Add.Selectează')}</option>
+              {colors.map((color) => {
+                return (
+                  <option key={color}
+                    value={color}
+                    className='adm-option'
+                    style={color !== '#1c1919' ?
+                      { backgroundColor: color, color: 'black' }
+                      :
+                      { backgroundColor: color, color: 'white' }}
+                  >
+                    {color}
+                  </option>
+                )
+              })}
+            </select>
+          </label>
+          <label className='adm-option adm-option-label'>{t('Admin.Add.Colecție')} :
+            <select value={newProduct.collection} className='adm-option'
+              onChange={e => { setNewProduct({ ...newProduct, collection: e.target.value }) }}
+            >
+              <option value="" className='adm-option'>{t('Admin.Add.Nici una')}</option>
+              {collections.map((coll, index) => {
+                return (
+                  <option key={index}
+                    value={coll.name}
+                    className='adm-option'
+                  >
+                    {coll.name}
+                  </option>
+                )
+              })}
+            </select>
+          </label>
+          <label className='adm-option-label'>
+            <input type='file' onChange={(e) => handleSubmit(e, 0)} required />
+          </label>
+          <label className='adm-option-label'>
+            <input type='file' onChange={(e) => handleSubmit(e, 1)} required />
+          </label>
+          <label className='adm-option-label'>
+            <input type='file' onChange={(e) => handleSubmit(e, 2)} required />
+          </label>
+          <label className='adm-option-label'>
+            <input type='file' onChange={(e) => handleSubmit(e, 3)} required />
+          </label>
+          <input type='submit' value={t("Admin.Add.Postează produsul")} className='adm-prod-submit' />
+        </form>
+      </div>
+    </>
   )
 }

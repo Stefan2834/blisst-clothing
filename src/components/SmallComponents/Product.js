@@ -27,7 +27,7 @@ export default function Product(props) {
         <Link to={`/product/${product.id}`}>
           <div className="cloth-left">
             <div className="cloth-name">
-              {t(`${product.name}`)}
+              {product.name}
             </div>
             <div className="cloth-price">
               {product.discount > 0 ? (

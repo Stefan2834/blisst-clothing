@@ -68,7 +68,7 @@ export default function SpecialProduct() {
   useEffect(() => {
     const special = product.find(item => item.id === idPath)
     if (special) {
-      document.title = `Blisst — ${t(`${special.name}`)}`
+      document.title = `Blisst — ${special.name}`
     }
   }, [lang])
   const handleStar = (ratingValue) => {
@@ -345,7 +345,7 @@ export default function SpecialProduct() {
                         className='spec-slider-photo'
                         alt='Poza' onClick={() => setPhotoSlider(specialClothing.photo)}
                       />
-                      {specialClothing.sliderPhoto.map((photo) => {
+                      {specialClothing.sliderPhoto && specialClothing.sliderPhoto.map((photo) => {
                         return (
                           <img src={photo}
                             className='spec-slider-photo'
@@ -364,7 +364,7 @@ export default function SpecialProduct() {
                     </div>
                   </div>
                   <div className='spec-right'>
-                    <div className='spec-name'>{t(`${specialClothing.name}`)}</div>
+                    <div className='spec-name'>{specialClothing.name}</div>
                     <div className='flex mb-2 flex-wrap'>
                       {[...Array(5)].map((_, i) => {
                         const ratingValue = i + 1;
