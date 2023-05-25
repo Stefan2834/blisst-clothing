@@ -38,19 +38,6 @@ body {
   background-color: var(--principal);
   color: white;
 }
-::-webkit-scrollbar {
-  width: 12px;
-}
-::-webkit-scrollbar-track {
-  background-color: var(--color);
-}
-::-webkit-scrollbar-thumb:active {
-  background-color: var(--color-oposite);
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--principal);
-  border: 2px solid var(--color);
-}
 .auth-loading {
   width:calc(100% - 20px);
   margin: 0 10px;
@@ -327,7 +314,6 @@ button.acc-btn:hover {
 @media screen and (max-width:500px) {
   label.acc-label {
     width: calc(100% - 20px);
-    background-color: red;
   }
 }
 
