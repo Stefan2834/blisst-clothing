@@ -185,6 +185,7 @@ export function AuthProvider({ children }) {
     }
     setLoading(false)
   }
+
   const postProduct = () => {
     axios.post(`${server}/user/product`, {
       product: product,
@@ -192,6 +193,7 @@ export function AuthProvider({ children }) {
       .then(data => console.log(data))
       .catch(err => console.log(err))
   }
+  
   useEffect(() => {
     setTimeout(() => {
       setShowMessage(true);
