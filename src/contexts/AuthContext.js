@@ -200,7 +200,7 @@ export function AuthProvider({ children }) {
       setShowMessage(true);
     }, 1000)
     getData()
-    postProduct()
+    // postProduct()
   }, [])
 
   useEffect(() => {
