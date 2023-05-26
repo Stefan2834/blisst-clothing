@@ -116,9 +116,9 @@ Cerințe sistem:
 
 - Pentru accesare pagină admini, se conectează cu  
 
-     emailul:  
+     emailul:  iosifs617@gmail.com
 
-     parola: 
+     parola: blisstclothing
 
 Descriere pe larg: 
 
