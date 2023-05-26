@@ -68,7 +68,7 @@ export default function Footer() {
             <Link to='/main/cloth/barbati bottom lungi' className='foo-text'>{t('Foo.Pantaloni lungi')}</Link>
             <Link to='/main/cloth/barbati bottom scurti' className='foo-text'>{t('Foo.Pantaloni scurți')}</Link>
             <Link to='/main/cloth/barbati foot adidasi' className='foo-text'>{t('Foo.Adidași')}</Link>
-            <Link to='/main/cloth/barbati foot papuci' className='foo-text'>{t('Foo.Șosete')}</Link>
+            <Link to='/main/cloth/barbati foot papuci' className='foo-text'>{t('Foo.Papuci')}</Link>
           </div>
           <div className='foo-collumn'>
             <div className='foo-title'>{t('Foo.Femei')}</div>
@@ -77,7 +77,7 @@ export default function Footer() {
             <Link to='/main/cloth/femei bottom lungi' className='foo-text'>{t('Foo.Pantaloni lungi')}</Link>
             <Link to='/main/cloth/femei bottom scurti' className='foo-text'>{t('Foo.Pantaloni scurți')}</Link>
             <Link to='/main/cloth/femei foot adidasi' className='foo-text'>{t('Foo.Adidași')}</Link>
-            <Link to='/main/cloth/femei foot papuci' className='foo-text'>{t('Foo.Șosete')}</Link>
+            <Link to='/main/cloth/femei foot papuci' className='foo-text'>{t('Foo.Papuci')}</Link>
           </div>
           <div className='foo-collumn'>
             <div className='foo-title'>{t('Foo.Contul meu')}</div>

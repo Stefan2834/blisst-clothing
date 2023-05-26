@@ -159,7 +159,7 @@ export default function Navbar() {
                     </Link>
                     <Link className='nav-drop-square' to='/main/cloth/barbati foot papuci'>
                       <div className='nav-drop-img nav-9' />
-                      <div className='nav-square-text-man'>{t('Nav.Șosete')}</div>
+                      <div className='nav-square-text-man'>{t('Nav.Papuci')}</div>
                     </Link>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export default function Navbar() {
                     </Link>
                     <Link className='nav-drop-square' to='/main/cloth/femei foot papuci'>
                       <div className='nav-drop-img nav-18' />
-                      <div className='nav-square-text-woman'>{t('Nav.Șosete')}</div>
+                      <div className='nav-square-text-woman'>{t('Nav.Papuci')}</div>
                     </Link>
                   </div>
                 </div>

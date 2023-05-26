@@ -5,8 +5,6 @@
 /.pnp
 .pnp.js
 .env
-/src/components/SmallComponents/Firebase.js
-/src/components/contexts/Import.js
 
 # testing
 /coverage

@@ -176,7 +176,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo11' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    {t('Main.Șosete pentru El')}
+                    {t('Main.Papuci pentru El')}
                   </div>
                 </div>
               </Link>
@@ -184,7 +184,7 @@ export default function Main() {
                 <div className='main-disc-photo main-disc-photo12' />
                 <div className='main-disc-text'>
                   <div className='main-disc-text-btn'>
-                    {t('Main.Șosete pentru Ea')}
+                    {t('Main.Papuci pentru Ea')}
                   </div>
                 </div>
               </Link>
