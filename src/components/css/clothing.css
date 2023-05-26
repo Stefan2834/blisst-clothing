@@ -150,6 +150,8 @@ span.cloth-price {
     color:var(--color-oposite);
     font-family: 'Poppins', sans-serif;
     font-size:20px;
+    margin:100px 0 0 0;
+    z-index:0;
     font-weight: 600;
 }
 
