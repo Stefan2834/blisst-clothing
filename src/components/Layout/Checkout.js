@@ -31,7 +31,8 @@ export default function Checkout() {
       email: det.email,
       name: det.name,
       type: det.type,
-      county: det.county
+      county: det.county,
+      color: det.color
     })
     setEdit({ adress: false, contact: false, pay: false })
   }//daca utilizatorul nu modifica informatiile, nu le salva
@@ -49,7 +50,8 @@ export default function Checkout() {
             email: preDet.email,
             name: preDet.name,
             type: preDet.type,
-            county: preDet.county
+            county: preDet.county,
+            color: preDet.color
           })
         })
         .catch(err => {
