@@ -200,7 +200,6 @@ export function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-    setLoading(false)
     setTimeout(() => {
       setShowMessage(true);
     }, 1000)
