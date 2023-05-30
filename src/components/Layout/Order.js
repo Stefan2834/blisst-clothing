@@ -11,6 +11,7 @@ export default function Order() {
   const [load, setLoad] = useState(4)
 
 
+  console.log(order)
   useEffect(() => {
     document.title = `Blisst — ${t('Order.Comenziile mele')}`
   }, [lang])

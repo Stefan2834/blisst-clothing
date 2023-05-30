@@ -123,12 +123,7 @@ export default function Reducer(state, action) {
 }
 
 export function AuthProvider({ children }) {
-  const [product, setProduct] = useState(
-    []
-    // Product
-    // Product1
-    // Product2
-  )
+  const [product, setProduct] = useState([])
   const { t } = useTranslation()
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
@@ -188,12 +183,20 @@ export function AuthProvider({ children }) {
   }
 
 
-  const postProduct = () => {
-    axios.post(`${server}/user/product`, {
-      product: product,
-    })
-      .then(data => console.log(data))
-      .catch(err => console.log(err))
+  const postProduct = async () => {
+    try {
+      await axios.post(`${server}/user/product`, {
+        product: Product,
+      })
+      await axios.post(`${server}/user/product`, {
+        product: Product1,
+      })
+      await axios.post(`${server}/user/product`, {
+        product: Product2,
+      })
+    } catch(err) {
+      console.error(err)
+    }
   }
 
   useEffect(() => {

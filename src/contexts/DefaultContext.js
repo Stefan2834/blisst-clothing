@@ -33,6 +33,7 @@ export default function DefaultProvider({ children }) {
   const deferredSearch = useDeferredValue(filter.searchName)
 
 
+
   useEffect(() => {
     if (darkTheme) {
       document.documentElement.style.setProperty("--black", '#fff')
@@ -41,6 +42,7 @@ export default function DefaultProvider({ children }) {
       document.documentElement.style.setProperty("--color-second", '#0b0b0b')
       document.documentElement.style.setProperty("--color-oposite", '#fff')
       document.documentElement.style.setProperty("--color-third", '#1c1c1c')
+      document.documentElement.style.setProperty('color-scheme', 'dark');
     } else {
       document.documentElement.style.setProperty("--black", '#141414')
       document.documentElement.style.setProperty("--dark-principal", '#101010')
@@ -48,6 +50,7 @@ export default function DefaultProvider({ children }) {
       document.documentElement.style.setProperty("--color-second", '#eee')
       document.documentElement.style.setProperty("--color-oposite", '#070707')
       document.documentElement.style.setProperty("--color-third", '#ddd')
+      document.documentElement.style.setProperty('color-scheme', 'light');
     }
   }, [darkTheme])
 
@@ -69,6 +72,8 @@ export default function DefaultProvider({ children }) {
     i18n.changeLanguage(lang)
   }, [lang])
 
+  
+  
 
 
   const value = {

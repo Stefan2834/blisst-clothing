@@ -575,11 +575,12 @@ body {
 
 @media screen and (max-width:1000px) {
   .navbar, .navbar-closed {
-    height:100vh;
+    height:calc(100vh - 50px);
     flex-direction: column;
     justify-content: flex-start;
     min-height: 500px;
     width:100px;
+    margin-top:50px;
     align-items: flex-start;
     transition: 400ms ease;
     justify-content: center;
@@ -606,8 +607,8 @@ body {
     background-repeat: no-repeat;
   }
   .nav-logo-second a {
-    width:45px;
-    height:45px;
+    width:70px;
+    height:50px;
   }
   .navbar-bg, .navbar-bg-closed {
     z-index:9;
@@ -686,7 +687,7 @@ body {
     flex-direction: column;
     height:auto;
     width:100%;
-    margin:5px 0;
+    margin:8px 0;
   }
   .nav-theme {
     margin:5px 0;
@@ -696,7 +697,7 @@ body {
     justify-content: center;
   }
   .nav-left-type {
-    height:50px;
+    height:40px;
     width:100%;
   }
   .nav-right {
@@ -706,12 +707,12 @@ body {
     width:100%;
   }
   .nav-icon {
-    height:50px;
-    width:50px;
+    height:40px;
+    width:40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin:5px 0;
+    margin:8px 0;
   }
   .nav-icon-img1, .nav-icon-img2, .nav-icon-img3, .nav-icon-img4, .nav-icon-img5, .nav-icon-img6
   .nav-icon-dark-img1, .nav-icon-dark-img2, .nav-icon-dark-img3, .nav-icon-dark-img4, .nav-icon-dark-img5, .nav-icon-dark-img6 {
@@ -738,7 +739,6 @@ body {
     width:calc(100vw - 100px);
     height:calc(100vh - 50px);
     margin-left:100px;
-    margin-top:50px;
     top:0;
   }
   .nav-square-text-woman, .nav-square-text-man, .nav-square-text {

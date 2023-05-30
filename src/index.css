@@ -8,19 +8,25 @@ body {
     sans-serif;
   margin:0;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: auto !important;
 }
 :root {
+  color-scheme: light;
   --black:#0b0b0b;
   --dark-principal:#1e1e1e;
   --color:white;
   --color-second:#eeeeee;
   --color-oposite:#0b0b0b;
   --color-third: #ddd;
+  --color-fourth: #d3d3d3;
   --gradient:linear-gradient(180deg, #2289ff 0%,#d604cf 100%);
   --first:#e684ae;
   --second:#79cbca;
   --principal:#2289ff;
+}
+.swal2-popup {
+  color:var(--color-oposite) !important;
+  background-color: var(--color) !important;
 }
 .principal {
   color:var(--principal)
@@ -211,6 +217,7 @@ label.acc-label {
 }
 .type-place-holder {
   padding: 8px 16px;
+  color:grey;
   transition: 400ms ease;
   border-radius: 5px;
   margin:0 5px;

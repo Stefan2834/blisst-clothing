@@ -10,7 +10,6 @@ export default function Product(props) {
   const product = props.product
   const { favorite, dispatchFav, currentUser } = useAuth()
   const { t } = useDefault()
-  const [confetti, setConfetti] = useState(false)
 
   //ca sa nu existe prea multe lini de cod degeaba, am creat un component care apare 
   //pentru fiecare produs din favorite, paginile cu haine,

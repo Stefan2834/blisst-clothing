@@ -538,7 +538,7 @@ export default function SpecialProduct() {
                                               <FaStar
                                                 key={ratingValue}
                                                 size={24}
-                                                className={ratingValue <= review.star ? 'principal' : 'black'}
+                                                className={ratingValue <= review.star ? 'principal-star' : 'black'}
                                                 onClick={() => handleStar(ratingValue)}
                                                 style={{ cursor: 'pointer' }}
                                               />
