@@ -24,9 +24,9 @@ export default function AdminProducts() {
     setLoading(true)
     e.preventDefault()
     const price = Number(updateProduct.price) - 0.01
-    const discount = (updateProduct.discount / 100).toFixed(2)
+    const discount = Number((updateProduct.discount / 100).toFixed(2))
     axios.post(`${server}/admin/productUpdate`, {
-      product: { ...update, index: undefined, price: price, discount: discount }
+      product: { ...update, index: undefined, price: Number(price), discount: discount }
     })
       .then(data => {
         console.log(data);

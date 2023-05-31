@@ -14,8 +14,8 @@ export default function AdminErrors() {
   const [popUp, setPopUp] = useState({ user: '', open: false, error: "" })
   const solve = useRef()
 
-  const handleDelete = (id) => {
-    axios.post(`${server}/admin/errors`, { id: id })
+  const handleDelete = (_id, id) => {
+    axios.post(`${server}/admin/errors`, { _id: _id })
       .then(data => {
         setError(prevErrors => {
           const newErrors = [...prevErrors]
@@ -30,7 +30,7 @@ export default function AdminErrors() {
     e.preventDefault()
     await axios.post(`${server}/email/error`, { name: popUp.user, solve: solve.current.value, error: popUp.error })
       .then(() => {
-        handleDelete(popUp.id)
+        handleDelete(popUp._id, popUp.id)
         Swal.fire({
           title: t('Admin.Errors.Email trimis!'),
           text: `${t(`Admin.Errors.Emailul a fost trimis cu succes către`)} ${popUp.user}.`,
@@ -114,7 +114,7 @@ export default function AdminErrors() {
                         <div className='admin-err-text'>{err.error}</div>
                       </div>
                       <div className='flex flex-col'>
-                        <div onClick={() => setPopUp({ user: err.email, open: true, error: err.error, id: index })}
+                        <div onClick={() => setPopUp({ user: err.email, open: true, error: err.error, id: index, _id: err._id })}
                           className={darkTheme ? 'admin-err-checkbox-dark' : 'admin-err-checkbox'}
                         ></div>
                       </div>

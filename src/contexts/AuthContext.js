@@ -127,8 +127,7 @@ export function AuthProvider({ children }) {
   const { t } = useTranslation()
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
-  const server = "https://blisst.onrender.com"
-  // const server = 'http://localhost:9000'
+  const server = process.env.REACT_APP_SERVER
   const [admin, setAdmin] = useState(false)
   const [ban, setBan] = useState()
   const [showMessage, setShowMessage] = useState(false)
