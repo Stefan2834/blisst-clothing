@@ -166,6 +166,7 @@ export function AuthProvider({ children }) {
     const product = await axios.get(`${server}/product`)
     if (product.data.success) {
       setProduct(product.data.product)
+      console.log(product)
       setCollections(product.data.collections)
     }
     const connect = await axios.get(`${server}/connect/admin`)
