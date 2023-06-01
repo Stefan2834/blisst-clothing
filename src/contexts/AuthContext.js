@@ -22,15 +22,7 @@ export default function Reducer(state, action) {
     case ('setSize'):
       return { ...state, size: action.payload.size }
     case ('cartGet'):
-      const newCart = action.payload.cart.map(cart => {
-        const find = action.payload.product.find(p => p.id === cart.id)
-        if (find) {
-          return { ...find, number: cart.number, selectedSize: cart.selectedSize }
-        } else {
-          return null
-        }
-      }).filter(c => c != null)
-      return newCart
+      return [...action.payload.cart]
     case ('cartAdd'):
       if (state.some(item => item.id === action.payload.clothing.id && item.selectedSize === action.payload.spec.size)) {
         const updatedCart = state.map(cartMap => {
@@ -61,33 +53,10 @@ export default function Reducer(state, action) {
         }
       })
       return updatedNr
-    case ('cartUpdate'):
-      return state.map(cart => {
-        const selectedProduct = action.payload.product.find(product => product.id === cart.id);
-        if (selectedProduct.size[cart.selectedSize] === 0) {
-          return null
-        } else if (cart.number > selectedProduct.size[cart.selectedSize]) {
-          return {
-            ...cart, number: selectedProduct.size[cart.selectedSize],
-            size: {
-              ...cart.size, [cart.selectedSize]: selectedProduct.size[cart.selectedSize]
-            }
-          }
-        }
-        return { ...cart }
-      }).filter(cart => cart !== null)
     case ('cartDeleteAll'):
       return []
     case ('favGet'):
-      const newFav = action.payload.fav.map(fav => {
-        const find = action.payload.product.find(p => p.id === fav.id)
-        if (find) {
-          return find
-        } else {
-          return null
-        }
-      }).filter(f => f != null)
-      return newFav
+      return [...action.payload.fav]
     case ('favAdd'):
       const t = action.payload.t
       if (!action.payload.user) {
@@ -140,13 +109,13 @@ export function AuthProvider({ children }) {
 
 
   const getUserData = async (email, uid, product) => {
+    setLoading(true)
     await axios.post(`${server}/user/info`, { uid: uid, email: email })
       .then(info => {
         if (info.data.success) {
           console.log(info.data.data)
-          dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav, product: product } })
-          dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart, product: product } })
-          dispatchCart({ type: 'cartUpdate', payload: { product: product } })
+          dispatchFav({ type: 'favGet', payload: { fav: info.data.data.fav } })
+          dispatchCart({ type: 'cartGet', payload: { cart: info.data.data.cart } })
           dispatchOrder({ type: 'orderGet', payload: { order: info.data.data.order } })
           setDet(info.data.data.det);
           setAdmin(info.data.admin)
@@ -154,34 +123,14 @@ export function AuthProvider({ children }) {
         } else if (info.data.ban) {
           setBan(info.data.reason)
         }
+        setLoading(false)
         console.log(info)
       })
       .catch(err => {
+        setLoading(false)
         console.error(err.error)
       })
   }
-
-  const getData = async () => {
-    const product = await axios.get(`${server}/product`)
-    if (product.data.success) {
-      setProduct(product.data.product)
-      console.log(product)
-      setCollections(product.data.collections)
-    }
-    const connect = await axios.get(`${server}/connect/admin`)
-    if (connect.data.success) {
-      if (Cookies.get('userData')) {
-        const user = JSON.parse(Cookies.get('userData'));
-        console.log(user)
-        setCurrentUser(user)
-        await getUserData(user.email, user.uid, product.data.product)
-      } else {
-        navigate('/connect')
-      }
-    }
-    setLoading(false)
-  }
-
 
   const postProduct = async () => {
     try {
@@ -194,7 +143,7 @@ export function AuthProvider({ children }) {
       await axios.post(`${server}/user/product`, {
         product: Product2,
       })
-    } catch(err) {
+    } catch (err) {
       console.error(err)
     }
   }
@@ -202,10 +151,33 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     setTimeout(() => {
       setShowMessage(true);
-    }, 1000)
+    }, 3000)
+    const getData = async () => {
+      const product = await axios.get(`${server}/product`)
+      if (product.data.success) {
+        setCollections(product.data.collections)
+      }
+      const connect = await axios.get(`${server}/connect/admin`)
+      if (connect.data.success) {
+        if (Cookies.get('userData')) {
+          const user = JSON.parse(Cookies.get('userData'));
+          console.log(user)
+          setCurrentUser(user)
+        } else {
+          navigate('/connect')
+        }
+      }
+      setLoading(false)
+    }
     getData()
     // postProduct()
   }, [])
+
+  useEffect(() => {
+    if (currentUser) {
+      getUserData(currentUser.email, currentUser.uid, product)
+    }
+  }, [currentUser])
 
   useEffect(() => {
     if (currentUser) {
@@ -220,6 +192,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (currentUser) {
+      console.log(cart)
       axios.post(`${server}/user/cart/add`, {
         cart: cart,
         uid: currentUser.uid
@@ -246,7 +219,7 @@ export function AuthProvider({ children }) {
     cart, dispatchCart,
     favorite, dispatchFav,
     loading, setLoading,
-    server, product, setProduct,
+    server,
     order, dispatchOrder,
     getUserData,
     det, setDet,

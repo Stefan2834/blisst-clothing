@@ -116,7 +116,6 @@ export default function Connect() {
                 Cookies.set('userData', JSON.stringify(user), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
                 await setCurrentUser(user)
                 console.log(user);
-                await getUserData(user.email, user.uid, product)
                 navigate('/')
                 setError()
             } else {

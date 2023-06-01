@@ -46,7 +46,7 @@
 .spec-slider-photo {
     width:75%;
     height:20%;
-    object-fit: cover;
+    object-fit: contein;
     box-shadow:1px 1px 3px black;
     cursor: pointer;
 }
@@ -55,7 +55,7 @@
     height:100%;
 }
 .spec-img {
-    object-fit: cover;
+    object-fit: contain;
     width:100%;
     height:100%;
     cursor: zoom-in;
@@ -199,11 +199,11 @@ span.spec-price-old {
     margin-left:10px;
 }
 .spec-option {
-    background-color: var(--color);
+    background-color: var(--color-second);
     color:var(--color-oposite);
     outline: none;
     font-weight: 600;
-    font-size:20px
+    font-size:20px;
 }
 .spec-cart-btn {
     border:1px solid var(--color-oposite);

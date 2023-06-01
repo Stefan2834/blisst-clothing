@@ -11,7 +11,7 @@ export default function Checkout() {
   const { server, currentUser,
     cart, dispatchCart,
     order,
-    det, setDet
+    det,
   } = useAuth()
   const { startTransition, isPending, darkTheme, t, lang } = useDefault()
   const [actualPage, setActualPage] = useState(1)
@@ -21,58 +21,41 @@ export default function Checkout() {
   const [method, setMethod] = useState({ card: false, ramburs: false })
   const [discount, setDiscount] = useState({ value: 0, code: '' })
   const [preDet, setPreDet] = useState({})
+  const [newDet, setNewDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false, color: '' })
   const [productPrice, setProductPrice] = useState(0)
   const discountValue = useRef()
   const navigate = useNavigate()
   const backInfo = () => {
     setPreDet({
-      info: det.info,
-      tel: det.tel,
-      email: det.email,
-      name: det.name,
-      type: det.type,
-      county: det.county,
-      color: det.color
+      info: newDet.info,
+      tel: newDet.tel,
+      email: newDet.email,
+      name: newDet.name,
+      type: newDet.type,
+      county: newDet.county,
+      color: newDet.color
     })
     setEdit({ adress: false, contact: false, pay: false })
   }//daca utilizatorul nu modifica informatiile, nu le salva
   const saveInfo = e => {
     e.preventDefault()
-    startTransition(() => {
-      axios.post(`${server}/user/infoUpdate`, {
-        uid: currentUser.uid,
-        det: preDet,
-      })
-        .then(info => {
-          setDet({
-            info: preDet.info,
-            tel: preDet.tel,
-            email: preDet.email,
-            name: preDet.name,
-            type: preDet.type,
-            county: preDet.county,
-            color: preDet.color
-          })
-        })
-        .catch(err => {
-          setPreDet({
-            info: det.info,
-            tel: det.info,
-            email: det.email,
-            name: det.name,
-            type: det.type,
-            county: det.county
-          }); console.error(err)
-        })
-      setEdit({ adress: false, contact: false, pay: false })
+    setNewDet({
+      info: preDet.info,
+      tel: preDet.tel,
+      email: preDet.email,
+      name: preDet.name,
+      type: preDet.type,
+      county: preDet.county,
+      color: preDet.color
     })
+    setEdit({ adress: false, contact: false, pay: false })
   }//daca utilizatorul apasa salveaza,salveaza informatiile
   const handleNext = () => {
     let actualError = { adress: '', contact: '', pay: '' }
-    if (det.info === '' || det.county === '') {
+    if (newDet.info === '' || newDet.county === '') {
       actualError.adress = t('Check.Setează adresa pentru a continua!')
     }
-    if (det.tel === '') {
+    if (newDet.tel === '') {
       actualError.contact = t('Check.Setează un număr de telefon pentru a continua!')
     }
     if (method.card === false && method.ramburs === false) {
@@ -131,48 +114,57 @@ export default function Checkout() {
       cancelButtonText: t('Check.Înapoi')
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const date = new Date();
-        let hours = date.getHours()
-        let minutes = date.getMinutes()
-        if(hours < 10) hours = `0${hours}` 
-        if(minutes < 10) minutes = `0${minutes}`
-        const orderData = {
-          method: method.card ? 'Card' : 'Ramburs',
-          details: det,
-          date: `${date.getDate()} ${date.getMonth() + 1} ${hours}:${minutes} ${date.getFullYear()}`,
-          price: {
-            productPrice: productPrice,
-            discount: discount.value,
-            code: discount.code,
-            delivery: productPrice >= 200 ? 0 : 20,
-            total: cartPrice
-          },
-          status: 'Plasată',
-          id: order.length
-        }
-        if (payMethod === 'card') {
-          try {
-            const response = await axios.post(`${server}/create-checkout-session`, {
-              orderData: orderData,
-            });
-            console.log(response)
-            if (response.data.success) {
-              window.open(response.data.url, '_blank')
-              navigate('/main')
-            } 
-          } catch (err) {
-            console.log(err)
-            Swal.fire({
-              title: t('Check.Eroare!'),
-              text: `${t('Check.A apărut o eroare')}: ${err.message}.`,
-              icon: 'error',
-              confirmButtonColor: '#3085d6',
-              confirmButtonText: t('Check.Înapoi')
-            })
+        const verify = await axios.post(`${server}/product/verifyStock`, { cart: cart })
+        if (verify.data.success) {
+          const date = new Date();
+          let hours = date.getHours()
+          let minutes = date.getMinutes()
+          if (hours < 10) hours = `0${hours}`
+          if (minutes < 10) minutes = `0${minutes}`
+          const orderData = {
+            method: method.card ? 'Card' : 'Ramburs',
+            details: newDet,
+            date: `${date.getDate()} ${date.getMonth() + 1} ${hours}:${minutes} ${date.getFullYear()}`,
+            price: {
+              productPrice: productPrice,
+              discount: discount.value,
+              code: discount.code,
+              delivery: productPrice >= 200 ? 0 : 20,
+              total: cartPrice
+            },
+            status: 'Plasată',
+            id: order.length
           }
-        } else if (payMethod === 'ramburs') {
-          const newOrder = encodeURIComponent(JSON.stringify(orderData));
-          navigate(`/placeOrder/${newOrder}`)
+          if (payMethod === 'card') {
+            try {
+              const response = await axios.post(`${server}/create-checkout-session`, {
+                orderData: orderData,
+              });
+              console.log(response)
+              if (response.data.success) {
+                window.open(response.data.url, '_blank')
+                navigate('/main')
+              }
+            } catch (err) {
+              console.log(err)
+              Swal.fire({
+                title: t('Check.Eroare!'),
+                text: `${t('Check.A apărut o eroare')}: ${err.message}.`,
+                icon: 'error',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: t('Check.Înapoi')
+              })
+            }
+          } else if (payMethod === 'ramburs') {
+            const newOrder = encodeURIComponent(JSON.stringify(orderData));
+            navigate(`/placeOrder/${newOrder}`)
+          }
+        } else { 
+          Swal.fire(
+            t('Check.A apărut o eroare'),
+            t(`Check.${verify.data.message}`),
+            'error'
+          )
         }
       }
     })
@@ -213,7 +205,10 @@ export default function Checkout() {
   }, [cart, discount])//cand cosul sau discount-ul se modifica, recalculeaza pretul produselor
 
   useEffect(() => {
-    setPreDet(det)
+    startTransition(() => {
+      setNewDet(det)
+      setPreDet(det)
+    })
   }, [])
   useEffect(() => {
     document.title = `Blisst — ${t('Check.Plasează comanda')}`
@@ -299,12 +294,12 @@ export default function Checkout() {
                   <>
                     <div className='check-txt'>{t('Check.Județ')}: <br />
                       <div className='check-det-txt'>
-                        {det.county !== "" ? det.county : (<div className="prof-noset">{t('Check.Județ neselectat')}</div>)}
+                        {newDet.county !== "" ? newDet.county : (<div className="prof-noset">{t('Check.Județ neselectat')}</div>)}
                       </div>
                     </div>
                     <div className="check-txt">{t('Check.Informații adresă')}:<br />
                       <div className="check-det-txt">
-                        {det.info !== '' ? det.info : (<div className="prof-noset">{t('Check.Adresă nesetată')}</div>)}
+                        {newDet.info !== '' ? newDet.info : (<div className="prof-noset">{t('Check.Adresă nesetată')}</div>)}
                       </div>
                       <div className='flex justify-center mt-3'>
                         <div className='check-save' onClick={() => setEdit({ ...edit, adress: true })}>{t('Check.Editează')}</div>
@@ -352,12 +347,12 @@ export default function Checkout() {
                   <>
                     <div className="check-txt">{t('Check.Număr de telefon')}:<br />
                       <div className="check-det-txt">
-                        {det.tel !== '' ? det.tel : (<div className="prof-noset">{t('Check.Număr de telefon nesetat')}</div>)}
+                        {newDet.tel !== '' ? newDet.tel : (<div className="prof-noset">{t('Check.Număr de telefon nesetat')}</div>)}
                       </div>
                     </div>
                     <div className="check-txt">{t('Check.Email de contact')}:<br />
                       <div className="check-det-txt">
-                        {det.email}
+                        {newDet.email}
                       </div>
                     </div>
                     <div className='flex justify-center mt-3'>
@@ -410,24 +405,24 @@ export default function Checkout() {
                 <div className='check-sumar'>
                   <div className='check-txt'>{t('Check.Județul')}: <br />
                     <div className='check-det-txt'>
-                      {det.county}
+                      {newDet.county}
                     </div>
                   </div>
                   <div className="check-txt">{t('Check.Informații adresă')}:<br />
                     <div className="check-det-txt">
-                      {det.info}
+                      {newDet.info}
                     </div>
                   </div>
                 </div>
                 <div className='check-sumar'>
                   <div className='check-txt'>{t('Check.Număr de telefon')}: <br />
                     <div className='check-det-txt'>
-                      {det.tel}
+                      {newDet.tel}
                     </div>
                   </div>
                   <div className="check-txt">{t('Check.Email de contact')}:<br />
                     <div className="check-det-txt">
-                      {det.email}
+                      {newDet.email}
                     </div>
                   </div>
                 </div>

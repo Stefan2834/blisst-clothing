@@ -18,21 +18,17 @@ export default function Suggestion(props) {
     if (type === 'daily') {
       axios.get(`${server}/suggestion/daily`)
         .then(daily => {
-          const id = daily.data.data
-          setSuggestion(product.find(p => p.id === id))
+          setSuggestion(daily.data.daily)
           setLoading(false)
         })
         .catch(err => console.log(err))
     } else if (type === 'discount') {
-      const discount = product.reduce((prev, current) => {
-        if (current.discount > prev.discount) {
-          return current;
-        } else {
-          return prev;
-        }
-      })
-      setSuggestion(discount)
-      setLoading(false)
+      axios.get(`${server}/suggestion/discount`)
+        .then(discount => {
+          setSuggestion(discount.data.discount)
+          setLoading(false)
+        })
+        .catch(err => console.error(err))
     }
   }, [])//daca props.type === daily afiseaza produsul zile, altfel afiseaza produsul cu cel mai mare discount
 

@@ -12,13 +12,14 @@ import Confetti from 'react-confetti'
 
 export default function SpecialProduct() {
   const { idPath } = useParams()
-  const { product, favorite, dispatchCart, dispatchFav, currentUser, setProduct, server, admin } = useAuth()
+  const { favorite, dispatchCart, dispatchFav, currentUser, server, admin } = useAuth()
   const { darkTheme, lang, t } = useDefault()
   const [sizeType, setSizeType] = useState([])
   const [loading, setLoading] = useState(true)
+  const [change, setChange] = useState()
   const [cartSpec, dispatch] = useReducer(Reducer, { size: '', number: 1 })
   const [specialClothing, setSpecialClothing] = useState()
-  const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteaza o nota', anonim: false, edit: false })
+  const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteăza o nota', anonim: false, edit: false })
   const [photoSlider, setPhotoSlider] = useState()
   const [adminPopUp, setAdminPopUp] = useState({ active: false, user: '', star: 0, text: '', reason: '' })
   const [zoom, setZoom] = useState(false);
@@ -29,8 +30,10 @@ export default function SpecialProduct() {
     setLoading(true)
     const fetchData = async () => {
       try {
-        const special = product.find(item => item.id === idPath)
-        if (special) {
+        const find = await axios.post(`${server}/product/getOne`, { path: idPath })
+        if (find.data.success) {
+          const special = find.data.product
+          setSpecialClothing(special)
           const reviewList = (await axios.post(`${server}/product/review`, { id: special.id })).data.review
           const reviewIndex = reviewList.findIndex(rev => rev.user === email)
           if (reviewIndex !== -1) {
@@ -53,7 +56,7 @@ export default function SpecialProduct() {
       setLoading(false)
     }
     fetchData()
-  }, [idPath, product])//cauta produsul cu id-ul egal cu idPath, iar daca nu exista, muta utilizatorul pe pagina 404
+  }, [idPath])//cauta produsul cu id-ul egal cu idPath, iar daca nu exista, muta utilizatorul pe pagina 404
   useEffect(() => {
     if (zoom) {
       document.body.style.overflowY = "hidden"
@@ -66,11 +69,11 @@ export default function SpecialProduct() {
   }, [zoom])
 
   useEffect(() => {
-    const special = product.find(item => item.id === idPath)
+    const special = specialClothing
     if (special) {
       document.title = `Blisst — ${special.name}`
     }
-  }, [lang])
+  }, [lang, specialClothing])
   const handleStar = (ratingValue) => {
     if (ratingValue === 1) {
       setReview({ ...review, type: t('Spec.Nu recomand'), star: ratingValue })
@@ -110,20 +113,13 @@ export default function SpecialProduct() {
       date: `${date.getDate()} ${date.getMonth() + 1} ${date.getFullYear()} ${hours}:${minutes}`,
     })
     if (reviewPost.data.success) {
-      setProduct(p => p.map(prod => {
-        if (prod.id === specialClothing.id) {
-          return { ...prod, star: reviewPost.data.star }
-        } else {
-          return prod
-        }
-      }))
       Swal.fire({
         title: t('Spec.Postat!'),
         text: t('Spec.Review-ul a fost postat cu succes.'),
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Ok',
-      })
+      }).then(result => { if (result.isConfirmed) window.location.reload() })
     } else {
       Swal.fire({
         title: t('Spec.Eroare!'),
@@ -156,20 +152,13 @@ export default function SpecialProduct() {
       id: specialClothing.id,
     })
     if (revUpdate.data.success) {
-      setProduct(p => p.map(prod => {
-        if (prod.id === specialClothing.id) {
-          return { ...prod, star: revUpdate.data.star }
-        } else {
-          return prod
-        }
-      }))
       Swal.fire({
         title: t('Spec.Editat!'),
         text: t('Spec.Review-ul a fost editat cu succes.'),
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Ok',
-      })
+      }).then(result => { if (result.isConfirmed) window.location.reload() })
     } else {
       Swal.fire({
         title: t('Spec.Eroare!'),
@@ -189,20 +178,13 @@ export default function SpecialProduct() {
     })
     if (reviewDelete.data.success) {
       setReview({ ...review, text: "" })
-      setProduct(p => p.map(prod => {
-        if (prod.id === specialClothing.id) {
-          return { ...prod, star: reviewDelete.data.star }
-        } else {
-          return prod
-        }
-      }))
       Swal.fire({
         title: t('Spec.Șters!'),
         text: t('Spec.Review-ul a fost șters cu succes.'),
         icon: 'success',
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Ok',
-      })
+      }).then(result => { if (result.isConfirmed) window.location.reload() })
     } else {
       Swal.fire({
         title: t('Spec.Eroare!'),
@@ -260,18 +242,13 @@ export default function SpecialProduct() {
       id: idPath
     }).then(data => {
       if (data.data.success) {
-        setProduct(p => p.map(prod => {
-          if (prod.id === specialClothing.id) {
-            return { ...prod, star: data.data.star }
-          } else {
-            return prod
-          }
-        }))
-        Swal.fire(
-          t('Spec.Review șters!'),
-          t('Spec.Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.'),
-          'success'
-        )
+        Swal.fire({
+          title: t('Spec.Review șters!'),
+          text: t('Spec.Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.'),
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Ok',
+        }).then((result) => { if (result.isConfirmed) window.location.reload() });
       }
       setAdminPopUp({ active: false, user: '', star: '', text: '', reason: '' })
       axios.post(`${server}/email/reviewDeleted`, {
@@ -503,7 +480,7 @@ export default function SpecialProduct() {
                                 <label className='spec-rev-label'>
                                   <input className='spec-rev-input' type='text'
                                     value={review.text}
-                                    placeholder='Spune-ti parerea' required minLength={10} maxLength={400}
+                                    placeholder={t('Spec.Spune-ți părerea')} required minLength={10} maxLength={400}
                                     onChange={e => setReview(r => { return { ...r, text: e.target.value } })}
                                   />
                                   {review.text.length >= 10 ? (

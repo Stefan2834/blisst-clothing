@@ -224,7 +224,8 @@
     "Șterge Review-ul": "Delete Review",
     "BlisstText": "For a more enjoyable experience please write an objective review, without offending others. Blisst Team",
     "Review șters!": "Review deleted!",
-    "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.": "The review was successfully deleted, and a warning email was sent."
+    "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.": "The review was successfully deleted, and a warning email was sent.",
+    "Spune-ți părerea":"Tell your opinion"
   },
   "Check": {
     "Setează adresa pentru a continua!": "Set your address to continue!",
@@ -273,7 +274,8 @@
     "Ai mai folosit acest cod": "You have already used this code",
     "Cost produse nou": "New product cost",
     "Comanda a fost plasată.": "The order has been placed.",
-    "Introdu codul": "Enter code"
+    "Introdu codul": "Enter code",
+    "Stocul nu mai este disponibil. Dă-i un refresh, iar stocul va fi updatat automat.":"The stock is no longer available. Refresh the page, and the stock will be automatically updated."
   },
   "Order": {
     "Comenziile mele": "My orders",
