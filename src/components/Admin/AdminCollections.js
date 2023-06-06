@@ -73,14 +73,21 @@ export default function AdminCollections() {
       name: name,
       photo: photo
     }).then(data => {
-      console.log(data);
-      setCollections([...collections, { name: name, photo: photo }])
+      if (data.data.success) {
+        Swal.fire(
+          t('Admin.Coll.Colecție adăugată!'),
+          t('Admin.Coll.Colecția a fost adăugată cu succes.'),
+          'success'
+        )
+        setCollections([...collections, { name: name, photo: photo }])
+      } else {
+        Swal.fire(
+          t('Admin.Coll.Eroare!'),
+          t(`Admin.Coll.${data.data.message}`),
+          'error'
+        )
+      }
       setLoading(false)
-      Swal.fire(
-        t('Admin.Coll.Colecție adăugată!'),
-        t('Admin.Coll.Colecția a fost adăugată cu succes.'),
-        'success'
-      )
     })
       .catch(err => { console.error(err); setLoading(false) })
   }

@@ -67,7 +67,7 @@ export default function AdminProductsAdd() {
     } else {
       Swal.fire({
         title: t('Admin.Add.Eroare!'),
-        text: `${t('Admin.Add.A intervenit o eroare')}: ${sendProduct.data.message.code}`,
+        text: t(`Admin.Add.${sendProduct.data.message}`),
         icon: 'warning',
         confirmButtonColor: '#3085d6',
         confirmButtonText: t('Admin.Add.Înapoi'),

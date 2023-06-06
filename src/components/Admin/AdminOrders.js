@@ -37,6 +37,7 @@ export default function AdminOrders() {
       cancelButtonText: t('Admin.Disc.Înapoi')
     }).then(async (result) => {
       if (result.isConfirmed) {
+        setLoading(true)
         const updatedOrders = orders.map(order => {
           if (order.id === id && order.uid === uid) {
             if (status === 'Anulată') {
@@ -83,6 +84,7 @@ export default function AdminOrders() {
         await axios.post(`${server}/email/status`, { status: status, email: email, nr: id })
           .then(data => console.log(data))
           .catch(err => console.error(err))
+        setLoading(false)
       }
     })
   }

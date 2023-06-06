@@ -32,13 +32,17 @@ export default function Footer() {
     handleModify(false)
   }//daca utilizatorul vrea se se dezaboneze de la newsLetter, cheama functia handleModify cu parametrul egal cu adevarat respectiv fals
   const handleModify = (value) => {
-    const newDet = { ...det, newsLetter: value }
+    const date = Date.now().toString()
+    const newDet = { ...det, newsLetter: 'pending' }
     setDet(newDet)
-    axios.post(`${server}/user/infoUpdate`, { uid: currentUser.uid, det: newDet })
+    axios.post(`${server}/user/newsLetter`,
+      {
+        uid: currentUser.uid,
+        email: currentUser.email,
+        value: value,
+        date: date
+      })
       .then(async (data) => {
-        await axios.post(`${server}/user/newsLetter`, { email: currentUser.email, value: value })
-          .then(data => { console.log(data) })
-          .catch(err => console.error(err))
         if (value) {
           await axios.post(`${server}/email/newsLetter`, { email: currentUser.email, name: det.name })
             .then((data) => console.log(data))
@@ -49,6 +53,7 @@ export default function Footer() {
   }// modifica in baza de date, datele de la newsLetter
 
   useEffect(() => {
+    console.log(det.newsLetter)
     if (pathname.includes('/main/cloth')) {
       setFull(false)
     } else {
@@ -105,13 +110,17 @@ export default function Footer() {
             <div className='foo-title-news'>NewsLetter</div>
             {currentUser ? (
               <>
-                {det.newsLetter ? (
+                {det.newsLetter === 'on' ? (
                   <div className='foo-news'>{t('Foo.Primești prea multe emailuri?')}
                     <div className='foo-btn' onClick={handleUnSubscribe}>{t('Foo.Dezabonează-te')}</div>
                   </div>
-                ) : (
+                ) : det.newsLetter === 'off' ? (
                   <div className='foo-news'>{t('Foo.Abonează-te si primești 10% reducere.')}
                     <div className='foo-btn' onClick={handleSubscribe}>{t('Foo.Abonează-te')}</div>
+                  </div>
+                ) : det.newsLetter === 'pending' && (
+                  <div className='foo-news'>{t('Foo.Nu te poți abona/dezabona timp de 24 de ore.')}
+                    <Link className='foo-btn' to='/main/help'>{t('Foo.Ajutor')}</Link>
                   </div>
                 )}
               </>

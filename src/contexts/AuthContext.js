@@ -92,7 +92,6 @@ export default function Reducer(state, action) {
 }
 
 export function AuthProvider({ children }) {
-  const [product, setProduct] = useState([])
   const { t } = useTranslation()
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
@@ -100,7 +99,7 @@ export function AuthProvider({ children }) {
   const [admin, setAdmin] = useState(false)
   const [ban, setBan] = useState()
   const [showMessage, setShowMessage] = useState(false)
-  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: false, color: '' })
+  const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: 'off', color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
   const [order, dispatchOrder] = useReducer(Reducer, [])
@@ -108,7 +107,7 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate()
 
 
-  const getUserData = async (email, uid, product) => {
+  const getUserData = async (email, uid) => {
     setLoading(true)
     await axios.post(`${server}/user/info`, { uid: uid, email: email })
       .then(info => {
@@ -175,7 +174,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (currentUser) {
-      getUserData(currentUser.email, currentUser.uid, product)
+      getUserData(currentUser.email, currentUser.uid)
     }
   }, [currentUser])
 

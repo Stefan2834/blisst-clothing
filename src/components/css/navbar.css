@@ -337,8 +337,8 @@ body {
 }
 .nav-nr-absolute {
   position: absolute;
-  right:0;
-  top:0;
+  left:100%;
+  transform: translate(-50%);
   background-color: var(--principal);
   color:var(--color);
   padding:0 3px;

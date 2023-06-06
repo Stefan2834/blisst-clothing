@@ -10,7 +10,6 @@ export default function AdminList() {
   const { t, lang, darkTheme } = useDefault()
   const [admins, setAdmins] = useState([])
   const [loading, setLoading] = useState(true)
-  const uidRef = useRef()
   const emailRef = useRef()
 
   useEffect(() => {
@@ -30,19 +29,29 @@ export default function AdminList() {
       confirmButtonText: t('Admin.List.Adaugă')
     }).then((result) => {
       if (result.isConfirmed) {
+        setLoading(true)
+        const email = emailRef.current.value
         axios.post(`${server}/admin/admins`, {
-          uid: uidRef.current.value,
-          email: emailRef.current.value
+          email: email
         })
           .then(data => {
-            Swal.fire(
-              t('Admin.List.Admin adăugat!'),
-              `${emailRef.current.value} ${t('Admin.List.este acum admin.')}`,
-              'success'
-            )
-            setAdmins([...admins, emailRef.current.value])
+            if (data.data.success) {
+              Swal.fire(
+                t('Admin.List.Admin adăugat!'),
+                `${email} ${t('Admin.List.este acum admin.')}`,
+                'success'
+              )
+              setAdmins([...admins, email])
+            } else {
+              Swal.fire(
+                t('Admin.List.Eroare!'),
+                t(`Admin.List.${data.data.message}.`),
+                'error'
+              )
+            }
+            setLoading(false)
           })
-          .catch(err => console.error(err))
+          .catch(err => { console.error(err); setLoading(false) })
       }
     });
   }
@@ -70,20 +79,21 @@ export default function AdminList() {
             email: email
           })
             .then(data => {
-              Swal.fire(
-                t('Admin.List.Admin șters!'),
-                `${email} ${t('Admin.List.nu mai este admin.')}`,
-                'success'
-              )
-              emailRef.current.value = ""
-              uidRef.current.value = ""
-              setAdmins(admins.map(admin => {
-                if (admin === email) {
-                  return null
-                } else {
-                  return admin
-                }
-              }).filter(a => a != null))
+              if (data.data.success) {
+                Swal.fire(
+                  t('Admin.List.Admin șters!'),
+                  `${email} ${t('Admin.List.nu mai este admin.')}`,
+                  'success'
+                )
+                emailRef.current.value = ""
+                setAdmins(admins.map(admin => {
+                  if (admin === email) {
+                    return null
+                  } else {
+                    return admin
+                  }
+                }).filter(a => a != null))
+              }
             })
             .catch(err => console.error(err))
         }
@@ -113,10 +123,6 @@ export default function AdminList() {
         <div className='adm-list'>
           <form className='adm-list-container' onSubmit={e => handleAdmin(e)}>
             <div className='adm-list-title'>{t('Admin.List.Adaugă admin')}</div>
-            <label className='adm-label'>
-              <input ref={uidRef} className='adm-input' type='text' placeholder=' ' required minLength={10} maxLength={30} />
-              <span className='adm-place-holder'>Uid</span>
-            </label>
             <label className='adm-label'>
               <input ref={emailRef} className='adm-input' type='email' placeholder=' ' required minLength={6} maxLength={30} />
               <span className='adm-place-holder'>{t('Admin.List.Email')}</span>

@@ -113,7 +113,7 @@ export default function Connect() {
             if (response.data.success === true) {
                 console.log(response)
                 const user = response.data.user
-                Cookies.set('userData', JSON.stringify(user), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
+                Cookies.set('userData', JSON.stringify({ email: user.email, uid: user.uid, emailVerified: user.emailVerified }), { expires: 10 * 365 * 24 * 60 * 60 * 1000, path: '/' });
                 await setCurrentUser(user)
                 console.log(user);
                 navigate('/')

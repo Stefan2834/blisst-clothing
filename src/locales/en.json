@@ -95,7 +95,8 @@
     "Abonează-te si primești 10% reducere.": "Subscribe and you will get 10% discount.",
     "Abonează-te": "Subscribe",
     "Poți beneficia de o reducere de 10% dacă te conectezi": "You can get 10% discount if you connect",
-    "Conectează-te": "Connect"
+    "Conectează-te": "Connect",
+    "Nu te poți abona/dezabona timp de 24 de ore.":"You can't subscribe/unsubscribe for 24 hours."
   },
   "Side": {
     "Femei": "Woman",
@@ -178,6 +179,7 @@
     "Nici un produs în stoc nu îndeplinește filtrele": "No products in stock fulfill the filters"
   },
   "Spec": {
+    "Selectează o notă":"Select a note",
     "Nu recomand": "Not recommended",
     "Slab": "Poor",
     "Acceptabil": "Acceptable",
@@ -376,7 +378,8 @@
       "Atenție! Odată ce ai șters un cod, îți sugerăm să nu îl mai adaugi înapoi, deoarece oameni îl pot folosi iar, după readăugare.": "Attention! Once you have deleted a code, we suggest not adding it back, as people can use it again after re-addition.",
       "Șterge": "Delete",
       "Cod șters!": "Code deleted!",
-      "Codul a fost șters cu succes.": "The code has been successfully deleted."
+      "Codul a fost șters cu succes.": "The code has been successfully deleted.",
+      "Codul există deja.":"This code already exist."
     },
     "Errors": {
       "Erori": "Errors",
@@ -406,7 +409,11 @@
       "nu mai este admin.": "is no longer an admin.",
       "Adaugă admin": "Add admin",
       "Email": "Email",
-      "Scoate admin": "Remove admin"
+      "Scoate admin": "Remove admin",
+      "Eroare!":"Error!",
+      "Acest utilizator este deja admin.":"This user is already an admin.",
+      "Acest utilizator este banat.":"This user is banned.",
+      "Utilizatorul nu există.":"This user doesn't exist."
     },
     "Orders": {
       "Sigur vrei să modifici statusul comenzi utilizatorului": "Are you sure you want to modify the order status for the user",
@@ -422,7 +429,9 @@
       "Colecție adăugată!": "Collection added!",
       "Colecția a fost adăugată cu succes.": "The collection was successfully added.",
       "Colecție ștearsă!": "Collection deleted!",
-      "Colecția a fost ștearsă cu succes.": "The collection was successfully deleted."
+      "Colecția a fost ștearsă cu succes.": "The collection was successfully deleted.",
+      "Eroare!":"Error!",
+      "Această colecție deja există.":"This collection already exist"
     },
     "Ban": {
       "Banuri": "Bans",
@@ -435,7 +444,9 @@
       "Nu poți bana un admin.": "You can't ban an admin.",
       "Ban scos!": "Ban removed!",
       "Banul a fost scos cu succes pentru": "Ban has been successfully removed for",
-      "Nici un utilizator nu este banat.": "No user is banned."
+      "Nici un utilizator nu este banat.": "No user is banned.",
+      "Acest utilizator nu există.":"This user doesn't exist.",
+      "Acest utilizator este deja banat.":"This user is already banned."
     },
     "Prod": {
       "Ești sigur?": "Are you sure?",
@@ -470,7 +481,8 @@
       "Colecție": "Collection",
       "Nici una": "None",
       "Postează produsul": "Post the product",
-      "Adaugă produs": "Add product"
+      "Adaugă produs": "Add product",
+      "Acest id este deja folosit. Introdu altul.":"This ID is already in use. Please enter another one."
     }
   },
   "Month": {

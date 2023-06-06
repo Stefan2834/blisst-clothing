@@ -95,7 +95,8 @@
     "Abonează-te si primești 10% reducere.": "Abonează-te si primești 10% reducere.",
     "Abonează-te": "Abonează-te",
     "Poți beneficia de o reducere de 10% dacă te conectezi": "Poți beneficia de o reducere de 10% dacă te conectezi",
-    "Conectează-te": "Conectează-te"
+    "Conectează-te": "Conectează-te",
+    "Nu te poți abona/dezabona timp de 24 de ore.":"Nu te poți abona/dezabona timp de 24 de ore."
   },
   "Side": {
     "Femei": "Femei",
@@ -178,6 +179,7 @@
     "Nici un produs în stoc nu îndeplinește filtrele": "Nici un produs în stoc nu îndeplinește filtrele"
   },
   "Spec": {
+    "Selectează o notă":"Selectează o notă",
     "Nu recomand": "Nu recomand",
     "Slab": "Slab",
     "Acceptabil": "Acceptabil",
@@ -376,7 +378,8 @@
       "Atenție! Odată ce ai șters un cod, îți sugerăm să nu îl mai adaugi înapoi, deoarece oameni îl pot folosi iar, dupa readăugare.": "Atenție! Odată ce ai șters un cod, îți sugerăm să nu îl mai adaugi înapoi, deoarece oameni îl pot folosi iar, dupa readăugare.",
       "Șterge": "Șterge",
       "Cod șters!": "Cod șters!",
-      "Codul a fost șters cu succes.": "Codul a fost șters cu succes."
+      "Codul a fost șters cu succes.": "Codul a fost șters cu succes.",
+      "Codul există deja.":"Codul există deja."
     },
     "Errors": {
       "Erori": "Erori",
@@ -406,7 +409,11 @@
       "nu mai este admin.": "nu mai este admin.",
       "Adaugă admin": "Adaugă admin",
       "Email": "Email",
-      "Scoate admin": "Scoate admin"
+      "Scoate admin": "Scoate admin",
+      "Eroare!":"Eroare!",
+      "Acest utilizator este deja admin.":"Acest utilizator este deja admin.",
+      "Acest utilizator este banat.":"Acest utilizator este banat.",
+      "Utilizatorul nu există.":"Utilizatorul nu există."
     },
     "Orders": {
       "Sigur vrei să modifici statusul comenzi utilizatorului": "Sigur vrei să modifici statusul comenzi utilizatorului",
@@ -422,7 +429,9 @@
       "Colecție adăugată!": "Colecție adăugată!",
       "Colecția a fost adăugată cu succes.": "Colecția a fost adăugată cu succes.",
       "Colecție ștearsă!": "Colecție ștearsă!",
-      "Colecția a fost ștearsă cu succes.": "Colecția a fost ștearsă cu succes."
+      "Colecția a fost ștearsă cu succes.": "Colecția a fost ștearsă cu succes.",
+      "Eroare!":"Eroare!",
+      "Această colecție deja există.":"Această colecție deja există"
     },
     "Ban": {
       "Banuri": "Banuri",
@@ -435,7 +444,9 @@
       "Nu poți bana un admin.": "Nu poți bana un admin.",
       "Ban scos!": "Ban scos!",
       "Banul a fost scos cu succes pentru": "Banul a fost scos cu succes pentru",
-      "Nici un utilizator nu este banat.": "Nici un utilizator nu este banat."
+      "Nici un utilizator nu este banat.": "Nici un utilizator nu este banat.",
+      "Acest utilizator nu există.":"Acest utilizator nu există.",
+      "Acest utilizator este deja banat.":"Acest utilizator este deja banat."
     },
     "Prod": {
       "Ești sigur?": "Ești sigur?",
@@ -470,7 +481,8 @@
       "Colecție": "Colecție",
       "Nici una": "Nici una",
       "Postează produsul": "Postează produsul",
-      "Adaugă produs": "Adaugă produs"
+      "Adaugă produs": "Adaugă produs",
+      "Acest id este deja folosit. Introdu altul.":"Acest id este deja folosit. Introdu altul."
     }
   },
   "Month": {

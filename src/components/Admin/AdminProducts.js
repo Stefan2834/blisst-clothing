@@ -7,14 +7,18 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 export default function AdminProducts() {
-  const { product, server, setProduct } = useAuth()
+  const { server } = useAuth()
   const { t, lang, darkTheme } = useDefault()
   const [load, setLoad] = useState(10)
-  const [loading, setLoading] = useState(false)
+  const [product, setProduct] = useState([])
+  const [loading, setLoading] = useState(true)
   const [updateProduct, setUpdateProduct] = useState({ index: -1 })
   const [filter, setFilter] = useState('')
 
   useEffect(() => {
+    axios.get(`${server}/admin/product`)
+      .then(data => { setProduct(data.data.product); setLoading(false) })
+      .catch(err => { console.error(err); setLoading(false) })
     document.title = `Blisst — Admin — ${t('Admin.Add.Produse')}`
   }, [lang])
 

@@ -3,7 +3,6 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
 import { useDefault } from '../../contexts/DefaultContext'
-import Confetti from 'react-confetti';
 
 
 export default function Product(props) {
@@ -51,10 +50,7 @@ export default function Product(props) {
         </Link>
         <div className="cloth-right">
           {favorite.some(item => item.id === product.id) ? (
-            <>
-              <Confetti width={60} height={60} recycle={false} gravity={0.3} />
-              <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: product } })} />
-            </>
+            <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: product } })} />
           ) : (
             <div className="cloth-fav" onClick={() => dispatchFav({ type: 'favAdd', payload: { fav: product, user: currentUser, t: t } })} />
           )}

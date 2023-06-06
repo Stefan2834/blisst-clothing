@@ -37,7 +37,7 @@ export default function AdminDiscount() {
         } else {
           Swal.fire({
             title: t('Admin.Add.Eroare!'),
-            text: data.data.message,
+            text: t(`Admin.Disc.${data.data.message}`),
             icon: 'error',
             confirmButtonColor: '#3085d6',
             confirmButtonText: t('Admin.Add.Înapoi'),

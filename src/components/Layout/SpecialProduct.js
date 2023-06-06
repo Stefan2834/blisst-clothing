@@ -6,7 +6,6 @@ import Reducer from '../../contexts/AuthContext'
 import { FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import axios from 'axios'
-import Confetti from 'react-confetti'
 
 
 
@@ -19,7 +18,7 @@ export default function SpecialProduct() {
   const [change, setChange] = useState()
   const [cartSpec, dispatch] = useReducer(Reducer, { size: '', number: 1 })
   const [specialClothing, setSpecialClothing] = useState()
-  const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selecteăza o nota', anonim: false, edit: false })
+  const [review, setReview] = useState({ star: 0, text: '', load: 4, type: 'Selectează o notă', anonim: false, edit: false })
   const [photoSlider, setPhotoSlider] = useState()
   const [adminPopUp, setAdminPopUp] = useState({ active: false, user: '', star: 0, text: '', reason: '' })
   const [zoom, setZoom] = useState(false);
@@ -76,15 +75,15 @@ export default function SpecialProduct() {
   }, [lang, specialClothing])
   const handleStar = (ratingValue) => {
     if (ratingValue === 1) {
-      setReview({ ...review, type: t('Spec.Nu recomand'), star: ratingValue })
+      setReview({ ...review, type: 'Nu recomand', star: ratingValue })
     } else if (ratingValue === 2) {
-      setReview({ ...review, type: t('Spec.Slab'), star: ratingValue })
+      setReview({ ...review, type: 'Slab', star: ratingValue })
     } else if (ratingValue === 3) {
-      setReview({ ...review, type: t('Spec.Acceptabil'), star: ratingValue })
+      setReview({ ...review, type: 'Acceptabil', star: ratingValue })
     } else if (ratingValue === 4) {
-      setReview({ ...review, type: t('Spec.Bun'), star: ratingValue })
+      setReview({ ...review, type: 'Bun', star: ratingValue })
     } else if (ratingValue === 5) {
-      setReview({ ...review, type: t('Spec.Excelent'), star: ratingValue })
+      setReview({ ...review, type: 'Excelent', star: ratingValue })
     }
   }
   const handleSubmit = async (e) => {
@@ -236,12 +235,18 @@ export default function SpecialProduct() {
   }
   const handleAdminDelete = (e) => {
     e.preventDefault()
+    setAdminPopUp({ active: false, user: '', star: '', text: '', reason: '' })
     axios.post(`${server}/admin/review`, {
       user: adminPopUp.user,
       star: adminPopUp.star,
       id: idPath
     }).then(data => {
       if (data.data.success) {
+        axios.post(`${server}/email/reviewDeleted`, {
+          reason: adminPopUp.reason,
+          email: adminPopUp.user,
+          id: idPath
+        }).catch(err => console.error(err))
         Swal.fire({
           title: t('Spec.Review șters!'),
           text: t('Spec.Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.'),
@@ -250,12 +255,6 @@ export default function SpecialProduct() {
           confirmButtonText: 'Ok',
         }).then((result) => { if (result.isConfirmed) window.location.reload() });
       }
-      setAdminPopUp({ active: false, user: '', star: '', text: '', reason: '' })
-      axios.post(`${server}/email/reviewDeleted`, {
-        reason: adminPopUp.reason,
-        email: adminPopUp.user,
-        id: idPath
-      }).catch(err => console.error(err))
     }).catch(err => console.error(err))
   }
   return (
@@ -435,7 +434,6 @@ export default function SpecialProduct() {
                     <div className="spec-fav">
                       {favorite.some(item => item.id === specialClothing.id) ? (
                         <>
-                          <Confetti width={50} height={50} recycle={false} gravity={0.3} />
                           <div className="cloth-removefav" onClick={() => dispatchFav({ type: 'favRemove', payload: { fav: specialClothing } })} />
                         </>
                       ) : (
@@ -474,7 +472,7 @@ export default function SpecialProduct() {
                                   );
                                 })}
                               </div>
-                              <div className='spec-rev-left-text'>{review.type}</div>
+                              <div className='spec-rev-left-text'>{t(`Spec.${review.type}`)}</div>
                               <div className='flex flex-col items-start justify-start w-full'>
                                 <div className='spec-rev-title'>{t('Spec.Părerea ta contează')}</div>
                                 <label className='spec-rev-label'>
@@ -522,7 +520,7 @@ export default function SpecialProduct() {
                                             );
                                           })}
                                         </div>
-                                        <div className='spec-rev-left-text'>{review.type}</div>
+                                        <div className='spec-rev-left-text'>{t(`Spec.${review.type}`)}</div>
                                         <div className='flex flex-col items-start justify-start w-full'>
                                           <div className='flex items-center justify-between w-full'>
                                             <div className='spec-rev-title'>{rev.anonim ? 'Anonim' : rev.user}</div>
