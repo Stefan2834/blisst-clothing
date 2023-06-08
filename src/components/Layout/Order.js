@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { useDefault } from '../../contexts/DefaultContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../css/order.css'
+import axios from 'axios'
 
 export default function Order() {
-  const { order, det } = useAuth()
+  const { det, currentUser, server } = useAuth()
   const { darkTheme, startTransition, isPending, t, lang } = useDefault()
+  const [order, setOrder] = useState([])
   const [selectedProducts, setSelectedProducts] = useState([])
   const [load, setLoad] = useState(4)
+  const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
 
-  console.log(order)
   useEffect(() => {
     document.title = `Blisst — ${t('Order.Comenziile mele')}`
   }, [lang])
+
+  useEffect(() => {
+    if (currentUser) {
+      axios.post(`${server}/user/orders`, { uid: currentUser.uid })
+        .then(data => { setOrder(data.data.orders); setLoading(false) })
+        .catch(err => { console.error(err); setLoading(false) })
+    } else {
+      navigate('/main')
+    }
+  }, [])
 
   const handleProductSelect = (commandIndex, selectedProduct) => {
     setSelectedProducts(prevState => {
@@ -26,7 +39,7 @@ export default function Order() {
 
   return (
     <>
-      {isPending ? (
+      {loading ? (
         <>
           <div className="loading-bg">
             <div className="loading-spin">Loading...</div>

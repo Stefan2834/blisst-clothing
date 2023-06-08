@@ -82,8 +82,6 @@ export default function Reducer(state, action) {
       return state.filter(fav => fav.id !== action.payload.fav.id)
     case ('orderGet'):
       return action.payload.order
-    case ('orderAdd'):
-      return [...state, action.payload.order]
     case ('deleteState'):
       return []
     default:
@@ -102,7 +100,7 @@ export function AuthProvider({ children }) {
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: 'off', color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
-  const [order, dispatchOrder] = useReducer(Reducer, [])
+  const [order, dispatchOrder] = useReducer(Reducer, {})
   const [collections, setCollections] = useState([])
   const navigate = useNavigate()
 
@@ -191,7 +189,6 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (currentUser) {
-      console.log(cart)
       axios.post(`${server}/user/cart/add`, {
         cart: cart,
         uid: currentUser.uid
@@ -201,16 +198,7 @@ export function AuthProvider({ children }) {
     }
   }, [cart])
 
-  useEffect(() => {
-    if (currentUser) {
-      axios.post(`${server}/user/order/add`, {
-        order: order,
-        uid: currentUser.uid,
-      })
-        .then(data => console.log(data))
-        .catch(err => console.error(err))
-    }
-  }, [order])
+
 
 
   const value = {

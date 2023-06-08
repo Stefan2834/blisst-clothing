@@ -32,15 +32,10 @@ export default function CreditCard() {
         ).then(async info => {
           console.log(info)
           dispatchCart({ type: 'cartDeleteAll' })
-          dispatchOrder({ type: 'orderAdd', payload: { order: orderData } })
-          const product = await axios.get(`${server}/product`)
-          if (product.data.success) {
-            setProduct(product.data.product)
-          }
+          dispatchOrder({ type: 'orderGet', payload: { order: orderData } })
           axios.post(`${server}/email/order`,
             {
               email: currentUser.email,
-              name: orderData.details.name,
               price: orderData.price.total
             }).then((data) => {
               console.log(data)
@@ -48,9 +43,9 @@ export default function CreditCard() {
               console.log(err)
             })
         })
-          .catch(err => console.error(err.error))
+          .catch(err => console.error(err))
       } catch (err) {
-        console.log(err)
+        console.error(err)
       }
       navigate('/main/orders', { replace: true })
     }

@@ -8,7 +8,7 @@ import '../../index.css'
 import Swal from 'sweetalert2'
 
 export default function AdminOrders() {
-  const { server, product, setProduct } = useAuth()
+  const { server } = useAuth()
   const { isPending, startTransition, t, lang } = useDefault()
   const [orders, setOrders] = useState([])
   const [selectedProducts, setSelectedProducts] = useState([])
@@ -25,7 +25,7 @@ export default function AdminOrders() {
     })
   }
 
-  const handleStatus = async (status, id, uid, email) => {
+  const handleStatus = async (status, date, uid, email) => {
     Swal.fire({
       title: t('Admin.Disc.Ești sigur?'),
       text: `${t('Admin.Orders.Sigur vrei să modifici statusul comenzi utilizatorului')} ${email} ${t('Admin.Orders.în')} ${t(`Profile.${status}`)} ?`,
@@ -39,29 +39,11 @@ export default function AdminOrders() {
       if (result.isConfirmed) {
         setLoading(true)
         const updatedOrders = orders.map(order => {
-          if (order.id === id && order.uid === uid) {
+          if (order.date === date && order.uid === uid) {
             if (status === 'Anulată') {
               axios.post(`${server}/admin/order/cancel`, {
                 cart: order.product,
-                id: id,
-                uid: uid
               })
-              const updatedProduct = [...product];
-              order.product.forEach((orderItem) => {
-                const productIndex = updatedProduct.findIndex((productItem) => productItem.id === orderItem.id);
-                if (productIndex !== -1) {
-                  const selectedSize = orderItem.selectedSize;
-                  const number = orderItem.number;
-                  updatedProduct[productIndex] = {
-                    ...updatedProduct[productIndex],
-                    size: {
-                      ...updatedProduct[productIndex].size,
-                      [selectedSize]: Number(updatedProduct[productIndex].size[selectedSize]) + Number(number),
-                    },
-                  };
-                }
-              });
-              setProduct(updatedProduct);
               return { ...order, status: status }
             } else {
               return { ...order, status: status }
@@ -70,18 +52,18 @@ export default function AdminOrders() {
             return order
           }
         })
-        await axios.post(`${server}/admin/orders`, { uid, id, status })
+        await axios.post(`${server}/admin/orders`, { uid, date, status })
           .then(data => console.log(data))
           .catch(err => console.error(err))
         setOrders(updatedOrders)
         await axios.post(`${server}/admin/status`, {
           uid: uid,
-          id: id,
+          date: date,
           status: status
         })
           .then(data => console.log(data))
           .catch(err => console.error(err))
-        await axios.post(`${server}/email/status`, { status: status, email: email, nr: id })
+        await axios.post(`${server}/email/status`, { status: status, email: email })
           .then(data => console.log(data))
           .catch(err => console.error(err))
         setLoading(false)
@@ -227,7 +209,7 @@ export default function AdminOrders() {
                             <label className='comm-option'>{t('Profile.Anulată')}</label>
                           ) : (
                             <select value={order.status} className='comm-option'
-                              onChange={e => { handleStatus(e.target.value, order.id, order.uid, order.details.email) }}
+                              onChange={e => { handleStatus(e.target.value, order.date, order.uid, order.details.email) }}
                             >
                               <option value={'Plasată'} className='comm-option' >
                                 {t('Profile.Plasată')}

@@ -236,24 +236,24 @@ export default function Profile() {
                         </form>
                     </div>
                 </div>
-                {order.length >= 1 ? (
+                {order ? (
                     <div className="prof-right">
                         <div className="prof-comm">
                             <div className="prof-comm-title">{t('Profile.Ultima comandă')}: </div>
                             <div className="prof-comm-subtitle">{t('Profile.Județ')}</div> 
-                            <div className="prof-comm-txt">{order[order.length - 1].details.county}</div>
+                            <div className="prof-comm-txt">{order.details.county}</div>
                             <div className="prof-comm-subtitle">{t('Profile.Adresă')}</div> 
-                            <div className="prof-comm-txt">{order[order.length - 1].details.info}</div>
+                            <div className="prof-comm-txt">{order.details.info}</div>
                             <div className="prof-comm-subtitle">{t('Profile.Telefon')}</div> 
-                            <div className="prof-comm-txt">{order[order.length - 1].details.tel}</div>
+                            <div className="prof-comm-txt">{order.details.tel}</div>
                             <div className="prof-comm-subtitle">{t('Profile.Email')}</div> 
-                            <div className="prof-comm-txt">{order[order.length - 1].details.email}</div>
+                            <div className="prof-comm-txt">{order.details.email}</div>
                             <div className="prof-comm-subtitle">{t('Profile.Metodă de plată')}</div> 
-                            <div className="prof-comm-txt">{t(`Profile.${order[order.length - 1].method}`)}</div>
+                            <div className="prof-comm-txt">{t(`Profile.${order.method}`)}</div>
                             <div className="prof-comm-subtitle">{t('Profile.Total')}</div> 
-                            <div className="prof-comm-txt">{order[order.length - 1].price.total} Lei</div>
+                            <div className="prof-comm-txt">{order.price.total} Lei</div>
                             <div className="prof-comm-subtitle">{t('Profile.Status')}</div> 
-                            <div className="prof-comm-txt">{t(`Profile.${order[order.length - 1].status}`)}</div>
+                            <div className="prof-comm-txt">{t(`Profile.${order.status}`)}</div>
                             <Link to='/main/orders' className="prof-comm-btn">
                                 {t('Profile.Vezi mai multe detalii')}
                             </Link>

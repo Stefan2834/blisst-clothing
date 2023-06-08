@@ -28,7 +28,8 @@ export default function AdminErrors() {
 
   const handleSend = async (e) => {
     e.preventDefault()
-    await axios.post(`${server}/email/error`, { name: popUp.user, solve: solve.current.value, error: popUp.error })
+    console.log(popUp.user)
+    await axios.post(`${server}/email/error`, { email: popUp.user, solve: solve.current.value, error: popUp.error })
       .then(() => {
         handleDelete(popUp._id, popUp.id)
         Swal.fire({

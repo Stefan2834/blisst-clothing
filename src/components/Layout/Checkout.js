@@ -10,7 +10,6 @@ import Swal from 'sweetalert2';
 export default function Checkout() {
   const { server, currentUser,
     cart, dispatchCart,
-    order,
     det,
   } = useAuth()
   const { startTransition, isPending, darkTheme, t, lang } = useDefault()
@@ -133,7 +132,6 @@ export default function Checkout() {
               total: cartPrice
             },
             status: 'Plasată',
-            id: order.length
           }
           if (payMethod === 'card') {
             try {
@@ -159,7 +157,7 @@ export default function Checkout() {
             const newOrder = encodeURIComponent(JSON.stringify(orderData));
             navigate(`/placeOrder/${newOrder}`)
           }
-        } else { 
+        } else {
           Swal.fire(
             t('Check.A apărut o eroare'),
             t(`Check.${verify.data.message}`),
@@ -185,6 +183,7 @@ export default function Checkout() {
       }
     });
   }//sterge un produs din cos
+
   useEffect(() => {
     startTransition(() => {
       if (cart.length !== 0) {

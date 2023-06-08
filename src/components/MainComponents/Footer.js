@@ -33,7 +33,7 @@ export default function Footer() {
   }//daca utilizatorul vrea se se dezaboneze de la newsLetter, cheama functia handleModify cu parametrul egal cu adevarat respectiv fals
   const handleModify = (value) => {
     const date = Date.now().toString()
-    const newDet = { ...det, newsLetter: 'pending' }
+    const newDet = { ...det, newsLetter: value ? 'pending' : 'off'}
     setDet(newDet)
     axios.post(`${server}/user/newsLetter`,
       {
@@ -53,7 +53,6 @@ export default function Footer() {
   }// modifica in baza de date, datele de la newsLetter
 
   useEffect(() => {
-    console.log(det.newsLetter)
     if (pathname.includes('/main/cloth')) {
       setFull(false)
     } else {
@@ -119,7 +118,7 @@ export default function Footer() {
                     <div className='foo-btn' onClick={handleSubscribe}>{t('Foo.Abonează-te')}</div>
                   </div>
                 ) : det.newsLetter === 'pending' && (
-                  <div className='foo-news'>{t('Foo.Nu te poți abona/dezabona timp de 24 de ore.')}
+                  <div className='foo-news'>{t('Foo.Nu te poți dezabona timp de 24 de ore.')}
                     <Link className='foo-btn' to='/main/help'>{t('Foo.Ajutor')}</Link>
                   </div>
                 )}

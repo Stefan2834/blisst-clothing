@@ -129,54 +129,58 @@ export default function Clothing() {
   let noProduct = 0
   return (
     <>
-      {loading && (
+      {loading ? (
+        <>
         <div className="loading-bg">
           <div className="loading-spin">Loading...</div>
         </div>
+        <div className="h-screen" />
+        </>
+      ) : (
+        <div className='cloth'>
+          {filter.searchName.length < 2 && filter.searchId.length < 2 ? (
+            sortedProducts.map((product, index) => {
+              if (handleFilter(product)) {
+                noProduct += 1;
+                if (noProduct - 1 < productLoad) {
+                  return (
+                    <Product key={index} product={product} />
+                  )
+                }
+              }
+            })
+          ) : (
+            searchResult.map((product, index) => {
+              if (noProduct < productLoad) {
+                noProduct += 1;
+                if (filter.searchId !== '') {
+                  return (
+                    <Product key={index} product={product} />
+                  )
+                } else if (filter.searchName !== '') {
+                  return (
+                    <Product key={index} product={product.item} />
+                  )
+                }
+              }
+            })
+          )}
+          {noProduct > productLoad && (
+            <div className="cloth-more">
+              <div className="cloth-more-btn" onClick={() => {
+                if (window.innerWidth > 1770) {
+                  setProductLoad(p => p + 10)
+                } else {
+                  setProductLoad(p => p + 8)
+                }
+              }}>{t('Clothing.Încarcă mai multe')}</div>
+            </div>
+          )}
+          {noProduct === 0 && (
+            <div className="cloth-no">{t('Clothing.Nici un produs în stoc nu îndeplinește filtrele')}</div>
+          )}
+        </div>
       )}
-      <div className='cloth'>
-        {filter.searchName.length < 2 && filter.searchId.length < 2 ? (
-          sortedProducts.map((product, index) => {
-            if (handleFilter(product)) {
-              noProduct += 1;
-              if (noProduct - 1 < productLoad) {
-                return (
-                  <Product key={index} product={product} />
-                )
-              }
-            }
-          })
-        ) : (
-          searchResult.map((product, index) => {
-            if (noProduct < productLoad) {
-              noProduct += 1;
-              if (filter.searchId !== '') {
-                return (
-                  <Product key={index} product={product} />
-                )
-              } else if (filter.searchName !== '') {
-                return (
-                  <Product key={index} product={product.item} />
-                )
-              }
-            }
-          })
-        )}
-        {noProduct > productLoad && (
-          <div className="cloth-more">
-            <div className="cloth-more-btn" onClick={() => {
-              if (window.innerWidth > 1770) {
-                setProductLoad(p => p + 10)
-              } else {
-                setProductLoad(p => p + 8)
-              }
-            }}>{t('Clothing.Încarcă mai multe')}</div>
-          </div>
-        )}
-        {noProduct === 0 && (
-          <div className="cloth-no">{t('Clothing.Nici un produs în stoc nu îndeplinește filtrele')}</div>
-        )}
-      </div>
     </>
   )
 }
