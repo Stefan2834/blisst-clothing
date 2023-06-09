@@ -16,7 +16,7 @@ export function useAuth() {
 export default function Reducer(state, action) {
   switch (action.type) {
     case ('cartNr'):
-      return { ...state, number: action.payload.number }
+      return { ...state, number: Number(action.payload.number) }
     case ('cartReset'):
       return { ...state, number: 1 }
     case ('setSize'):

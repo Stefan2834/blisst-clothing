@@ -182,6 +182,7 @@ input.acc-input {
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
   font-size:14px;
+  caret-color: black;
 }
 input.acc-input:invalid{
   animation: wrong 300ms ease-in-out;
@@ -206,7 +207,8 @@ label.acc-label {
   position: absolute;
   transform: translateX(55px);
   transition: 300ms ease;
-  opacity:0.8
+  opacity:0.8;
+  color:var(--black);
 }
 .acc-type {
   display: flex;

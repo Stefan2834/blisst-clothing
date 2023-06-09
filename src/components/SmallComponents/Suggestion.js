@@ -47,7 +47,7 @@ export default function Suggestion(props) {
           <div className='main-cloth-div'></div>
         </div>
       ) : (
-        <div className='suggestion'>
+        <div className='suggestion sugg-load'>
           {type === 'daily' ? (
             <div className='sugg-title'>{t('Fav.Produsul zilei')}</div>
           ) : (

@@ -421,7 +421,7 @@ export default function SpecialProduct() {
                               }
                             }).map((number) => <>(
                               {number && (
-                                <option key={number} value={number}>
+                                <option key={number} value={Number(number)}>
                                   {number}
                                 </option>
                               )})

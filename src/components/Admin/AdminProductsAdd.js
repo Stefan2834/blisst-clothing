@@ -231,16 +231,16 @@ export default function AdminProductsAdd() {
               })}
             </select>
           </label>
-          <label className='adm-option-label'>
+          <label className='adm-option-label adm-prod-color'>
             <input type='file' onChange={(e) => handleSubmit(e, 0)} required />
           </label>
-          <label className='adm-option-label'>
+          <label className='adm-option-label adm-prod-color'>
             <input type='file' onChange={(e) => handleSubmit(e, 1)} required />
           </label>
-          <label className='adm-option-label'>
+          <label className='adm-option-label adm-prod-color'>
             <input type='file' onChange={(e) => handleSubmit(e, 2)} required />
           </label>
-          <label className='adm-option-label'>
+          <label className='adm-option-label adm-prod-color'>
             <input type='file' onChange={(e) => handleSubmit(e, 3)} required />
           </label>
           <input type='submit' value={t("Admin.Add.Postează produsul")} className='adm-prod-submit' />

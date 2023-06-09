@@ -436,7 +436,7 @@ export default function Checkout() {
               <div className='check-save' onClick={() => setActualPage(1)}>{t('Check.Editează')}</div>
             </div>
             <div className='check-sumar-cart'>
-              {cart.map((product) => {
+              {[...cart].reverse().map((product) => {
                 return (
                   <div className='cart-product'>
                     <Link to={`/product/${product.id}`}>
@@ -477,10 +477,14 @@ export default function Checkout() {
                           }}
                         >
                           <option value="" className='principal font-semibold'>0({t('Check.șterge')})</option>
-                          {Array.from({ length: product.size[product.selectedSize] }, (_, index) => { if (index <= 10) { return index + 1 } }).map((number) => (
-                            <option key={number} value={number} className='cart-option'>
-                              {number}
-                            </option>
+                          {Array.from({ length: product.size[product.selectedSize] }, (_, index) => { if (index < 10) { return index + 1 } }).map((number) => (
+                            <>
+                              {number && (
+                                <option key={number} value={number} className='cart-option'>
+                                  {number}
+                                </option>
+                              )}
+                            </>
                           ))}
                         </select>
                       </div>

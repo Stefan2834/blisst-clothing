@@ -44,7 +44,8 @@ label.help-label {
 }
 .help .place-holder {
   position: absolute;
+  color: black;
   transform: translateX(55px);
   transition: 300ms ease;
-  opacity:0.8
+  opacity:0.8;
 }

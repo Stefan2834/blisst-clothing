@@ -337,7 +337,9 @@ input.adm-input:valid {
 
 /*----------Products----------*/
 
-
+.adm-prod-color {
+  color:var(--color-oposite)
+}
 .adm-prod {
   width:100vw;
   background-color: var(--color-third);
@@ -435,12 +437,10 @@ input.adm-input:valid {
   color:var(--color);
   font-family: 'Poppins', sans-serif;
   padding:5px;
-  visibility: hidden;
   opacity: 0;
   background-color: var(--color-oposite);
 }
 .adm-prod-edit:hover .adm-prod-edit-bg {
-  visibility: visible;
   opacity: 1;
 }
 .adm-prod-edit-title {
