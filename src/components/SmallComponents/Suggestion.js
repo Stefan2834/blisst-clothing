@@ -9,7 +9,7 @@ export default function Suggestion(props) {
   const type = props.type
   const [suggestion, setSuggestion] = useState({})
   const [loading, setLoading] = useState(true)
-  const { server, product } = useAuth()
+  const { server, det } = useAuth()
   const { t } = useDefault()
 
   //componentul pentru afisare produsul zilei sau top reducere
@@ -18,19 +18,27 @@ export default function Suggestion(props) {
     if (type === 'daily') {
       axios.get(`${server}/suggestion/daily`)
         .then(daily => {
-          setSuggestion(daily.data.daily)
+          if(det.type === 'man') {
+            setSuggestion(daily.data.man)
+          } else {
+            setSuggestion(daily.data.woman)
+          }
           setLoading(false)
         })
         .catch(err => console.log(err))
     } else if (type === 'discount') {
       axios.get(`${server}/suggestion/discount`)
         .then(discount => {
-          setSuggestion(discount.data.discount)
+          if(det.type === 'man') {
+            setSuggestion(discount.data.man)
+          } else {
+            setSuggestion(discount.data.woman)
+          }
           setLoading(false)
         })
         .catch(err => console.error(err))
     }
-  }, [])//daca props.type === daily afiseaza produsul zile, altfel afiseaza produsul cu cel mai mare discount
+  }, [det.type])//daca props.type === daily afiseaza produsul zile, altfel afiseaza produsul cu cel mai mare discount
 
 
 

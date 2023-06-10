@@ -12,13 +12,11 @@ body {
 }
 :root {
   color-scheme: light;
-  --black:#0b0b0b;
   --dark-principal:#1e1e1e;
   --color:white;
   --color-second:#eeeeee;
   --color-oposite:#0b0b0b;
   --color-third: #ddd;
-  --color-fourth: #d3d3d3;
   --gradient:linear-gradient(180deg, #2289ff 0%,#d604cf 100%);
   --first:#e684ae;
   --second:#79cbca;
@@ -63,6 +61,7 @@ body {
 
 .loading-bg {
   width:100vw;
+  z-index:3;
   height:100vh;
   z-index:1;
   background-color: rgba(255, 255, 255, 0.6);
@@ -208,7 +207,7 @@ label.acc-label {
   transform: translateX(55px);
   transition: 300ms ease;
   opacity:0.8;
-  color:var(--black);
+  color:var(--color-oposite);
 }
 .acc-type {
   display: flex;

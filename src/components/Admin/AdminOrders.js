@@ -25,7 +25,7 @@ export default function AdminOrders() {
     })
   }
 
-  const handleStatus = async (status, date, uid, email) => {
+  const handleStatus = async (status, date, uid, email, name) => {
     Swal.fire({
       title: t('Admin.Disc.Ești sigur?'),
       text: `${t('Admin.Orders.Sigur vrei să modifici statusul comenzi utilizatorului')} ${email} ${t('Admin.Orders.în')} ${t(`Profile.${status}`)} ?`,
@@ -63,7 +63,7 @@ export default function AdminOrders() {
         })
           .then(data => console.log(data))
           .catch(err => console.error(err))
-        await axios.post(`${server}/email/status`, { status: status, email: email })
+        await axios.post(`${server}/email/status`, { status, email, name })
           .then(data => console.log(data))
           .catch(err => console.error(err))
         setLoading(false)
@@ -186,6 +186,9 @@ export default function AdminOrders() {
                         </div>
                       </div>
                       <div className='comm-right'>
+                        <div className="comm-title">{t('Profile.Utilizator')}:
+                          <div className="comm-txt">{order.user}</div>
+                        </div>
                         <div className="comm-title">{t('Profile.Județ')}:
                           <div className='comm-txt'>{order.details.county}</div>
                         </div>
@@ -194,9 +197,6 @@ export default function AdminOrders() {
                         </div>
                         <div className="comm-title">{t('Profile.Telefon')}:
                           <div className="comm-txt">{order.details.tel}</div>
-                        </div>
-                        <div className="comm-title">{t('Profile.Email')}:
-                          <div className="comm-txt">{order.details.email}</div>
                         </div>
                         <div className="comm-title">{t('Profile.Total')}:
                           <div className="comm-txt">{order.price.total} Lei</div>
@@ -209,7 +209,7 @@ export default function AdminOrders() {
                             <label className='comm-option'>{t('Profile.Anulată')}</label>
                           ) : (
                             <select value={order.status} className='comm-option'
-                              onChange={e => { handleStatus(e.target.value, order.date, order.uid, order.details.email) }}
+                              onChange={e => { handleStatus(e.target.value, order.date, order.uid, order.details.email, order.details.name) }}
                             >
                               <option value={'Plasată'} className='comm-option' >
                                 {t('Profile.Plasată')}

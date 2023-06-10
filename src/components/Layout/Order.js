@@ -123,6 +123,9 @@ export default function Order() {
                           </div>
                         </div>
                         <div className='comm-right'>
+                          <div className="comm-title">{t('Profile.Utilizator')}:
+                            <div className="comm-txt">{order.user}</div>
+                          </div>
                           <div className="comm-title">{t('Profile.Județ')}:
                             <div className='comm-txt'>{order.details.county}</div>
                           </div>
@@ -131,9 +134,6 @@ export default function Order() {
                           </div>
                           <div className="comm-title">{t('Profile.Telefon')}:
                             <div className="comm-txt">{order.details.tel}</div>
-                          </div>
-                          <div className="comm-title">{t('Profile.Email')}:
-                            <div className="comm-txt">{order.details.email}</div>
                           </div>
                           <div className="comm-title">{t('Profile.Total')}:
                             <div className="comm-txt">{order.price.total} Lei</div>

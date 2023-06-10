@@ -36,19 +36,19 @@ export default function DefaultProvider({ children }) {
 
   useEffect(() => {
     if (darkTheme) {
-      document.documentElement.style.setProperty("--black", '#fff')
+      document.documentElement.style.setProperty("--footer", '#272727')
       document.documentElement.style.setProperty("--dark-principal", '#fff')
-      document.documentElement.style.setProperty("--color", '#070707')
+      document.documentElement.style.setProperty("--color", '#101010')
       document.documentElement.style.setProperty("--color-second", '#0b0b0b')
       document.documentElement.style.setProperty("--color-oposite", '#fff')
       document.documentElement.style.setProperty("--color-third", '#1c1c1c')
       document.documentElement.style.setProperty('color-scheme', 'dark');
     } else {
-      document.documentElement.style.setProperty("--black", '#141414')
+      document.documentElement.style.setProperty("--footer", '#eee')
       document.documentElement.style.setProperty("--dark-principal", '#101010')
-      document.documentElement.style.setProperty("--color", 'white')
+      document.documentElement.style.setProperty("--color", '#fff')
       document.documentElement.style.setProperty("--color-second", '#eee')
-      document.documentElement.style.setProperty("--color-oposite", '#070707')
+      document.documentElement.style.setProperty("--color-oposite", '#101010')
       document.documentElement.style.setProperty("--color-third", '#ddd')
       document.documentElement.style.setProperty('color-scheme', 'light');
     }

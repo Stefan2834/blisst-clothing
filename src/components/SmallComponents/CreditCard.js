@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 import { useDefault } from '../../contexts/DefaultContext'
 
 export default function CreditCard() {
-  const { server, currentUser, cart, dispatchCart, dispatchOrder, setProduct } = useAuth()
+  const { server, currentUser, cart, dispatchCart, dispatchOrder } = useAuth()
   const { t } = useDefault()
   const { cardId } = useParams()
   const navigate = useNavigate()
@@ -27,7 +27,8 @@ export default function CreditCard() {
         axios.post(`${server}/orderUpdate`, {
           uid: currentUser.uid,
           order: orderData,
-          cart: cart
+          cart: cart,
+          user: currentUser.email
         }
         ).then(async info => {
           console.log(info)

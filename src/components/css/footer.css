@@ -1,5 +1,4 @@
 :root {
-    --black:#0b0b0b;
     --dark-principal:#0b0b0b;
     --color:white;
     --color-second:#eeeeee;
@@ -13,7 +12,7 @@
     width:100vw;
     position: relative;
     color:var(--color-oposite);
-    background-color: var(--color-third);
+    background-color: var(--footer);
     box-shadow: 3px 3px 5px black inset;
     padding: 10px;
     display: flex;
