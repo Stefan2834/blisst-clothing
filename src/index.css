@@ -155,6 +155,7 @@ input[type=number]::-webkit-clear-button{
 form.acc-form {
   background-color: #fff;
   display: flex;
+  color:black;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -176,6 +177,7 @@ input.acc-input {
   background-color:#eee;
   padding:12px 15px 10px 55px;
   width:100%;
+  color:black;
   border:1px solid transparent;
   outline: none;
   border-radius: 5px;
@@ -207,7 +209,7 @@ label.acc-label {
   transform: translateX(55px);
   transition: 300ms ease;
   opacity:0.8;
-  color:var(--color-oposite);
+  color:black;
 }
 .acc-type {
   display: flex;

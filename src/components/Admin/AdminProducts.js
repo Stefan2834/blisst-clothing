@@ -33,7 +33,6 @@ export default function AdminProducts() {
       product: { ...update, index: undefined, price: Number(price), discount: discount }
     })
       .then(data => {
-        console.log(data);
         if (data.data.success) {
           Swal.fire(
             t('Admin.Prod.Produs editat!'),
@@ -99,7 +98,7 @@ export default function AdminProducts() {
       {loading ? (
         <>
           <div className="loading-bg">
-            <div className="loading-spin">Loading...</div>
+            <div className="loading-spin">{t('Main.Se încarcă')}...</div>
           </div>
           <div className="h-screen" />
         </>

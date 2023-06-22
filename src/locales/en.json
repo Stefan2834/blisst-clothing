@@ -1,5 +1,6 @@
 {
   "Main": {
+    "Se încarcă":"Loading",
     "Noi dăm": "We set the",
     "Moda": "Fashion",
     "Produsul zilei": "Daily product",
@@ -170,6 +171,7 @@
     "Plasată": "Placed",
     "Se livrează": "Will be delivered shortly",
     "Livrată": "Delivered",
+    "Se anulează":"Will be canceled",
     "Ramburs": "Cash on delivery",
     "Card": "Card",
     "Utilizator":"User",
@@ -288,7 +290,11 @@
     "Produs": "Product",
     "Toate": "All",
     "Comenzi": "Orders",
-    "Încarcă mai multe comenzi": "Load more orders"
+    "Încarcă mai multe comenzi": "Load more orders",
+    "Ești sigur că vrei să anulezi comanda?":"Are you sure you want to cancel the order?",
+    "Anulează comanda":"Cancel order",
+    "Comanda se anulează":"The order will be canceled",
+    "Comanda este în curs de anulare.":"The order is being canceled."
   },
   "Connect": {
     "Înregistrare": "Register",

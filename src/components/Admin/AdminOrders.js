@@ -52,6 +52,7 @@ export default function AdminOrders() {
             return order
           }
         })
+        setLoading(false)
         await axios.post(`${server}/admin/orders`, { uid, date, status })
           .then(data => console.log(data))
           .catch(err => console.error(err))
@@ -66,7 +67,6 @@ export default function AdminOrders() {
         await axios.post(`${server}/email/status`, { status, email, name })
           .then(data => console.log(data))
           .catch(err => console.error(err))
-        setLoading(false)
       }
     })
   }
@@ -94,7 +94,7 @@ export default function AdminOrders() {
         {loading || isPending ? (
           <>
             <div className="loading-bg">
-              <div className="loading-spin">Loading...</div>
+              <div className="loading-spin">{t('Main.Se încarcă')}...</div>
             </div>
             <div className='h-screen' />
           </>
@@ -119,6 +119,9 @@ export default function AdminOrders() {
                   </option>
                   <option value='Anulată' className='comm-option'>
                     {t('Profile.Anulată')}
+                  </option>
+                  <option value='Se anulează' className='comm-option'>
+                    {t('Profile.Se anulează')}
                   </option>
                 </select>
               </div>
@@ -222,6 +225,9 @@ export default function AdminOrders() {
                               </option>
                               <option value={'Anulată'} className='comm-option'>
                                 {t('Profile.Anulată')}
+                              </option>
+                              <option value={'Se anulează'} className='comm-option'>
+                                {t('Profile.Se anulează')}
                               </option>
                             </select>
                           )}

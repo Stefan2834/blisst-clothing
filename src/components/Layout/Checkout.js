@@ -218,7 +218,7 @@ export default function Checkout() {
     <>
       {isPending && (
         <div className="loading-bg">
-          <div className="loading-spin">Loading...</div>
+          <div className="loading-spin">{t('Main.Se încarcă')}..</div>
         </div>
       )}
       <div className='check'>
@@ -501,12 +501,12 @@ export default function Checkout() {
                   {discount.value !== 0 ? (
                     <>
                       <div className='cart-right-price'>
-                        <span className='text-gray-500 line-through'>{productPrice} Lei</span>
+                        <span className='text-gray-500 line-through'>{productPrice.toFixed(2)} Lei</span>
                         -{discount.value * 100} %
                       </div>
                     </>
                   ) : (
-                    <div className='cart-right-price'>{productPrice} Lei</div>
+                    <div className='cart-right-price'>{productPrice.toFixed(2)} Lei</div>
                   )}
                 </div>
                 {discount.value !== 0 ? (
@@ -523,7 +523,7 @@ export default function Checkout() {
                     <div className='cart-right-price'>20 Lei</div>
                   )}
                 </div>
-                <div className='flex justify-between w-full cart-line mt-4'></div>
+                <div className='flex justify-between w-full check-line-abs mt-4'></div>
                 <div className='flex justify-between w-full flex-row'>
                   <div className='cart-title'>{t('Cart.Total')}:</div>
                   <div className='text-xl font-semibold principal'>{cartPrice} Lei</div>

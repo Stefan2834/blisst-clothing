@@ -89,6 +89,19 @@
   outline: none;
   background-color: var(--color);
 }
+.comm-cancel, .comm-cancel-dark {
+  width:30px;
+  height:30px;
+  cursor: pointer;
+  background-position: center;
+  background-size: 100% 100%;
+}
+.comm-cancel {
+  background-image: url(../Main/svg-dark/more-one.svg);
+}
+.comm-cancel-dark {
+  background-image: url(../Main/svg/more-one.svg);
+}
 .comm-left{
   width:800px;
 }

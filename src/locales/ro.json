@@ -1,5 +1,6 @@
 {
   "Main": {
+    "Se încarcă":"Se încarcă",
     "Noi dăm": "Noi dăm",
     "Moda": "Moda",
     "Produsul zilei": "Produsul zilei",
@@ -170,6 +171,7 @@
     "Plasată": "Plasată",
     "Se livrează": "Se livrează",
     "Livrată": "Livrată",
+    "Se anulează":"Se anulează",
     "Ramburs": "Ramburs",
     "Card": "Card",
     "Utilizator":"Utilizator",
@@ -288,7 +290,11 @@
     "Produs": "Produs",
     "Toate": "Toate",
     "Comenzi": "Comenzi",
-    "Încarcă mai multe comenzi": "Încarcă mai multe comenzi"
+    "Încarcă mai multe comenzi": "Încarcă mai multe comenzi",
+    "Ești sigur că vrei să anulezi comanda?":"Ești sigur că vrei să anulezi comanda?",
+    "Anulează comanda":"Anulează comanda",
+    "Comanda se anulează":"Comanda se anulează",
+    "Comanda este în curs de anulare.":"Comanda este în curs de anulare."
   },
   "Connect": {
     "Înregistrare": "Înregistrare",

@@ -4,6 +4,7 @@ import { useDefault } from '../../contexts/DefaultContext'
 import { Link, useNavigate } from 'react-router-dom'
 import '../css/order.css'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 export default function Order() {
   const { det, currentUser, server } = useAuth()
@@ -29,6 +30,41 @@ export default function Order() {
     }
   }, [])
 
+  const handleCancel = (uid, date) => {
+    Swal.fire({
+      title: t('Check.Ești sigur?'),
+      text: t('Order.Ești sigur că vrei să anulezi comanda?'),
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: t('Order.Anulează comanda'),
+      cancelButtonText: t('Check.Înapoi')
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        axios.post(`${server}/user/order/cancel`, {
+          uid,
+          date
+        }).then(data => {
+          if (data.data.success) {
+            setOrder(o => o.map(order => {
+              if (order.date === date) {
+                return { ...order, status: 'Se anulează' }
+              } else {
+                return order
+              }
+            }))
+            Swal.fire(
+              t('Order.Comanda se anulează'),
+              t('Order.Comanda este în curs de anulare.'),
+              'success'
+            )
+          }
+        })
+      }
+    })
+  }
+
   const handleProductSelect = (commandIndex, selectedProduct) => {
     setSelectedProducts(prevState => {
       const newState = [...prevState]
@@ -42,7 +78,7 @@ export default function Order() {
       {loading ? (
         <>
           <div className="loading-bg">
-            <div className="loading-spin">Loading...</div>
+            <div className="loading-spin">{t('Main.Se încarcă')}...</div>
           </div>
           <div className='h-screen' />
         </>
@@ -73,7 +109,7 @@ export default function Order() {
                             <div className="comm-option flex justify-center items-center">{t('Order.Data comenzii')}:
                               <div className="comm-txt">{day} {t(`Month.${month}`)} {time} {year}</div>
                             </div>
-                            <div>
+                            <div className='flex items-center justify-center'>
                               <label className='comm-option'>{t('Order.Produs')}:</label>
                               <select value={JSON.stringify(selectedProduct)} className='comm-option'
                                 onChange={e => { handleProductSelect(index, JSON.parse(e.target.value)) }}
@@ -89,6 +125,11 @@ export default function Order() {
                                   )
                                 })}
                               </select>
+                              {order.status === 'Plasată' && (
+                                <div className={darkTheme ? 'comm-cancel-dark' : 'comm-cancel'}
+                                  onClick={() => handleCancel(order.uid, order.date)}
+                                />
+                              )}
                             </div>
                           </div>
                           <div className='cart-product'>

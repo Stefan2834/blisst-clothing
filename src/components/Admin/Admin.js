@@ -24,7 +24,7 @@ export default function Admin() {
       {loading ? (
         <>
           <div className="loading-bg">
-            <div className="loading-spin">Loading...</div>
+            <div className="loading-spin">{t('Main.Se încarcă')}...</div>
           </div>
           <div className="h-screen" />
         </>

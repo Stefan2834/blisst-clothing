@@ -96,13 +96,13 @@ export default function AdminCollections() {
     <>
       {loadSecond && (
         <div className="loading-bg">
-          <div className="loading-spin">Loading...</div>
+          <div className="loading-spin">{t('Main.Se încarcă')}...</div>
         </div>
       )}
       {loading ? (
         <>
           <div className="loading-bg">
-            <div className="loading-spin">Loading...</div>
+            <div className="loading-spin">{t('Main.Se încarcă')}...</div>
           </div>
           <div className="h-screen" />
         </>

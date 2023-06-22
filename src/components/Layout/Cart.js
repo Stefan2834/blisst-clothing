@@ -56,7 +56,7 @@ export default function Cart() {
         <>
             {isPending && (
                 <div className="loading-bg">
-                    <div className="loading-spin">Loading...</div>
+                    <div className="loading-spin">{t('Main.Se încarcă')}...</div>
                 </div>
             )}
             <div className='cart-div'>
@@ -123,7 +123,7 @@ export default function Cart() {
                     <div className='cart-title'>{t('Cart.Sumar comandă')}:</div>
                     <div className='flex justify-between w-full'>
                         <div className='cart-text'>{t('Cart.Cost produse')}:</div>
-                        <div className='cart-right-price'>{productPrice} Lei</div>
+                        <div className='cart-right-price'>{productPrice.toFixed(2)} Lei</div>
                     </div>
                     <div className='flex justify-between w-full'>
                         <div className='cart-text'>{t('Cart.Cost livrare')}:</div>
