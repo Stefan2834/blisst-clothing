@@ -1,6 +1,6 @@
 {
   "Main": {
-    "Se încarcă":"Loading",
+    "Se încarcă": "Loading",
     "Noi dăm": "We set the",
     "Moda": "Fashion",
     "Produsul zilei": "Daily product",
@@ -97,7 +97,7 @@
     "Abonează-te": "Subscribe",
     "Poți beneficia de o reducere de 10% dacă te conectezi": "You can get 10% discount if you connect",
     "Conectează-te": "Connect",
-    "Nu te poți dezabona timp de 24 de ore.":"You can't unsubscribe for 24 hours."
+    "Nu te poți dezabona timp de 24 de ore.": "You can't unsubscribe for 24 hours."
   },
   "Side": {
     "Femei": "Woman",
@@ -171,10 +171,10 @@
     "Plasată": "Placed",
     "Se livrează": "Will be delivered shortly",
     "Livrată": "Delivered",
-    "Se anulează":"Will be canceled",
+    "Se anulează": "Will be canceled",
     "Ramburs": "Cash on delivery",
     "Card": "Card",
-    "Utilizator":"User",
+    "Utilizator": "User",
     "Vezi mai multe detalii": "See more details"
   },
   "Clothing": {
@@ -182,7 +182,7 @@
     "Nici un produs în stoc nu îndeplinește filtrele": "No products in stock fulfill the filters"
   },
   "Spec": {
-    "Selectează o notă":"Select a note",
+    "Selectează o notă": "Select a note",
     "Nu recomand": "Not recommended",
     "Slab": "Poor",
     "Acceptabil": "Acceptable",
@@ -230,7 +230,7 @@
     "BlisstText": "For a more enjoyable experience please write an objective review, without offending others. Blisst Team",
     "Review șters!": "Review deleted!",
     "Review-ul a fost șters cu succes, iar un email de avertizare a fost trimis.": "The review was successfully deleted, and a warning email was sent.",
-    "Spune-ți părerea":"Tell your opinion"
+    "Spune-ți părerea": "Tell your opinion"
   },
   "Check": {
     "Setează adresa pentru a continua!": "Set your address to continue!",
@@ -280,7 +280,7 @@
     "Cost produse nou": "New product cost",
     "Comanda a fost plasată.": "The order has been placed.",
     "Introdu codul": "Enter code",
-    "Stocul nu mai este disponibil. Dă-i un refresh, iar stocul va fi updatat automat.":"The stock is no longer available. Refresh the page, and the stock will be automatically updated."
+    "Stocul nu mai este disponibil. Dă-i un refresh, iar stocul va fi updatat automat.": "The stock is no longer available. Refresh the page, and the stock will be automatically updated."
   },
   "Order": {
     "Comenziile mele": "My orders",
@@ -291,15 +291,21 @@
     "Toate": "All",
     "Comenzi": "Orders",
     "Încarcă mai multe comenzi": "Load more orders",
-    "Ești sigur că vrei să anulezi comanda?":"Are you sure you want to cancel the order?",
-    "Anulează comanda":"Cancel order",
-    "Comanda se anulează":"The order will be canceled",
-    "Comanda este în curs de anulare.":"The order is being canceled."
+    "Ești sigur că vrei să anulezi comanda?": "Are you sure you want to cancel the order?",
+    "Anulează comanda": "Cancel order",
+    "Comanda se anulează": "The order will be canceled",
+    "Comanda este în curs de anulare.": "The order is being canceled."
   },
   "Connect": {
     "Înregistrare": "Register",
     "Conectare": "Log in",
-    "Creeaza un cont": "Create an account",
+    "Ai deja un cont?": "You had already an account?",
+    "Conectează-te": "Connect",
+    "Bine ai venit!": "Welcome!",
+    "Creează un cont.": "Create an account.",
+    "Nu ai un cont?": "Don't have an account?",
+    "Creează unul": "Create one",
+    "Salut!": "Hello!",
     "Nume": "Name",
     "Email": "Email",
     "Parola": "Password",
@@ -313,7 +319,8 @@
     "Email deja folosit": "Email already in use",
     "Contul nu este activat. Accesează emailul pentru a îl activa": "Account is not activated. Access your email to activate it",
     "Parola sau emailul greșit": "Incorrect password or email",
-    "Acest cont nu există": "This account does not exist"
+    "Acest cont nu există": "This account does not exist",
+    "Parolele nu se potrivesc": "The passwords do not match"
   },
   "Forgot": {
     "Am uitat parola": "I forgot my password",
@@ -386,7 +393,7 @@
       "Șterge": "Delete",
       "Cod șters!": "Code deleted!",
       "Codul a fost șters cu succes.": "The code has been successfully deleted.",
-      "Codul există deja.":"This code already exist."
+      "Codul există deja.": "This code already exist."
     },
     "Errors": {
       "Erori": "Errors",
@@ -417,10 +424,10 @@
       "Adaugă admin": "Add admin",
       "Email": "Email",
       "Scoate admin": "Remove admin",
-      "Eroare!":"Error!",
-      "Acest utilizator este deja admin.":"This user is already an admin.",
-      "Acest utilizator este banat.":"This user is banned.",
-      "Utilizatorul nu există.":"This user doesn't exist."
+      "Eroare!": "Error!",
+      "Acest utilizator este deja admin.": "This user is already an admin.",
+      "Acest utilizator este banat.": "This user is banned.",
+      "Utilizatorul nu există.": "This user doesn't exist."
     },
     "Orders": {
       "Sigur vrei să modifici statusul comenzi utilizatorului": "Are you sure you want to modify the order status for the user",
@@ -437,8 +444,8 @@
       "Colecția a fost adăugată cu succes.": "The collection was successfully added.",
       "Colecție ștearsă!": "Collection deleted!",
       "Colecția a fost ștearsă cu succes.": "The collection was successfully deleted.",
-      "Eroare!":"Error!",
-      "Această colecție deja există.":"This collection already exist"
+      "Eroare!": "Error!",
+      "Această colecție deja există.": "This collection already exist"
     },
     "Ban": {
       "Banuri": "Bans",
@@ -452,8 +459,8 @@
       "Ban scos!": "Ban removed!",
       "Banul a fost scos cu succes pentru": "Ban has been successfully removed for",
       "Nici un utilizator nu este banat.": "No user is banned.",
-      "Acest utilizator nu există.":"This user doesn't exist.",
-      "Acest utilizator este deja banat.":"This user is already banned."
+      "Acest utilizator nu există.": "This user doesn't exist.",
+      "Acest utilizator este deja banat.": "This user is already banned."
     },
     "Prod": {
       "Ești sigur?": "Are you sure?",
@@ -489,7 +496,7 @@
       "Nici una": "None",
       "Postează produsul": "Post the product",
       "Adaugă produs": "Add product",
-      "Acest id este deja folosit. Introdu altul.":"This ID is already in use. Please enter another one."
+      "Acest id este deja folosit. Introdu altul.": "This ID is already in use. Please enter another one."
     }
   },
   "Month": {

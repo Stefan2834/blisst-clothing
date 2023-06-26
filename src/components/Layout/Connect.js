@@ -5,6 +5,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useDefault } from '../../contexts/DefaultContext';
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2';
+import '../css/connect.css'
 import passSvg from '../../svg-icon/key.svg'
 import emailSvg from '../../svg-icon/email-security.svg'
 import checkSvg from '../../svg-icon/check.svg'
@@ -54,15 +55,15 @@ export default function Connect() {
     }, [lang])
 
 
-
-
     const handleRadio = (e) => {
         setType(e.target.value);
     }
     async function handleSignUp(e) {
         e.preventDefault()
+        setLoading(true)
         if (signPassRef.current.value !== signPassConfirmRef.current.value) {
             setError('Parolele nu se potrivesc')
+            setLoading(false)
         } else {
             try {
                 setLoading(true)
@@ -72,6 +73,7 @@ export default function Connect() {
                 });
                 console.log(response.data)
                 if (response.data.success) {
+                    console.log(signNameRef)
                     const writeData = await axios.post(`${server}/connect/write`, {
                         uid: response.data.user.user.uid,
                         email: signEmailRef.current.value,
@@ -127,6 +129,11 @@ export default function Connect() {
         }
         setLoading(false)
     }//conecteaza utilizatorul
+
+    useEffect(() => {
+        setError('')
+    }, [activeForm])
+
     return (
         <>
             {loading && (
@@ -134,101 +141,114 @@ export default function Connect() {
                     <div className="loading-spin">{t('Main.Se încarcă')}...</div>
                 </div>
             )}
-            <div className='acc-main'>
-                <div className='flex items-center justify-center mb-4'>
-                    <select value={lang} className='acc-lang'
-                        onChange={e => { setLang(e.target.value); }}
-                    >
-                        <option value="en" className='acc-lang'>En</option>
-                        <option value='ro' className='acc-lang'>Ro</option>
-                    </select>
-                </div>
-                <div className={!activeForm ? 'acc-slider-active' : 'acc-slider'}>
-                    <div className='acc-slider-left' onClick={() => {setActiveForm(false); setError()}}>{t('Connect.Înregistrare')}</div>
-                    <div className='acc-slider-right' onClick={() => {setActiveForm(true); setError()}}>{t('Connect.Conectare')}</div>
-                </div>
-                <div className='container'>
-                    <div className={activeForm ? 'container-overflow-active' : 'container-overflow'}>
-                        <div className='sign-up'>
-                            <form className='acc-form' onSubmit={handleSignUp}>
-                                <div className='acc-form-title'>{t('Connect.Creeaza un cont')}</div>
-                                <label className='acc-label'><img className='acc-svg' src={nameSvg} alt='Img' />
-                                    <input ref={signNameRef} className='acc-input' type='text' placeholder=' ' minLength={3} maxLength={16} required />
-                                    <span className='place-holder'>{t('Connect.Nume')}*</span>
-                                </label>
-                                <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />
-                                    <input ref={signEmailRef} className='acc-input' type='email' placeholder=' ' required />
-                                    <span className='place-holder'>{t('Connect.Email')}*</span>
-                                </label>
-                                <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
-                                    <input ref={signPassRef} className='acc-input' type={passView[0] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
-                                    <span className='place-holder'>{t('Connect.Parola')}*</span>
-                                    <img className='acc-svg-eye'
-                                        src={passView[0] ? eyeTrue : eyeFalse}
-                                        alt='Img' onClick={() => { setPassView(c => [!c[0], c[1], c[2]]) }}
-                                    />
-                                </label>
-                                <label className='acc-label'><img className='acc-svg' src={checkSvg} alt='Img' />
-                                    <input ref={signPassConfirmRef} className='acc-input' type={passView[1] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
-                                    <span className='place-holder'>{t('Connect.Confirmă')}*</span>
-                                    <img className='acc-svg-eye'
-                                        src={passView[1] ? eyeTrue : eyeFalse}
-                                        alt='Img' onClick={() => { setPassView(c => [c[0], !c[1], c[2]]) }}
-                                    />
-                                </label>
-                                <div className='acc-type'>
-                                    <label>
-                                        <input className='acc-type-input hidden'
-                                            type='radio' value='man'
-                                            name='radio-type'
-                                            checked={type === 'man'}
-                                            onChange={e => handleRadio(e)}
-                                        />
-                                        <div className='type-place-holder nav-left-photo1' />
-                                    </label>
-                                    <label>
-                                        <input className='acc-type-input hidden'
-                                            type='radio' value='woman'
-                                            name='radio-type'
-                                            checked={type === 'woman'}
-                                            onChange={e => handleRadio(e)}
-                                        />
-                                        <div className='type-place-holder nav-left-photo2' />
-                                    </label>
-                                </div>
-                                {error && (
-                                    <div className=' text-red-600'>{t(`Connect.${error}`)}</div>
-                                )}
-                                <button disabled={loading} type='submit' className='acc-submit'>{t('Connect.Înregistrează-te')}</button>
-                            </form>
+            <div className='con-bg'>
+                <div className='con-log-bg'>
+                    <div className='con-log'>
+                        <div className="self-end text-black">{t('Connect.Ai deja un cont?')}
+                            <span
+                                className='cursor-pointer text-blue-400 underline mx-1'
+                                onClick={() => { if (!activeForm) setActiveForm(true) }}
+                            >
+                                {t('Connect.Conectează-te')}
+                            </span>
                         </div>
-                        <div className='sign-in'>
-                            <form className='acc-form' onSubmit={handleLogIn}>
-                                <div className='acc-form-title'>{t('Connect.Conectare')}</div>
-                                <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />
-                                    <input ref={logEmailRef} className='acc-input' type='email' placeholder=' ' required />
-                                    <span className='place-holder'>{t('Connect.Email')}*</span>
-                                </label>
-                                <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
-                                    <input ref={logPassRef} className='acc-input' type={passView[2] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
-                                    <span className='place-holder'>{t('Connect.Parola')}*</span>
-                                    <img className='acc-svg-eye'
-                                        src={passView[2] ? eyeTrue : eyeFalse}
-                                        alt='Img' onClick={() => { setPassView(c => [c[0], c[1], !c[2]]) }}
+                        <div className='con-title'>{t('Connect.Bine ai venit!')}</div>
+                        <div className='con-subtitle'>{t('Connect.Creează un cont.')}</div>
+                        <form className='flex items-center justify-center w-full py-6 flex-col' onSubmit={handleSignUp}>
+                            <label className='acc-label'><img className='acc-svg' src={nameSvg} alt='Img' />
+                                <input ref={signNameRef} className='con-input' type='text' placeholder=' ' minLength={3} maxLength={20} required />
+                                <span className='place-holder'>{t('Connect.Nume')}*</span>
+                            </label>
+                            <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />
+                                <input ref={signEmailRef} className='con-input' type='email' placeholder=' ' minLength={3} maxLength={40} required />
+                                <span className='place-holder'>{t('Connect.Email')}*</span>
+                            </label>
+                            <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
+                                <input ref={signPassRef} className='con-input' type={passView[0] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
+                                <span className='place-holder'>{t('Connect.Parola')}*</span>
+                                <img className='acc-svg-eye'
+                                    src={passView[0] ? eyeTrue : eyeFalse}
+                                    alt='Img' onClick={() => { setPassView(c => [!c[0], c[1], c[2]]) }}
+                                />
+                            </label>
+                            <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
+                                <input ref={signPassConfirmRef} className='con-input' type={passView[1] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
+                                <span className='place-holder'>{t('Connect.Confirmă')}*</span>
+                                <img className='acc-svg-eye'
+                                    src={passView[1] ? eyeTrue : eyeFalse}
+                                    alt='Img' onClick={() => { setPassView(c => [c[0], !c[1], c[2]]) }}
+                                />
+                            </label>
+                            <div className='acc-type'>
+                                <label>
+                                    <input className='acc-type-input hidden'
+                                        type='radio' value='man'
+                                        name='radio-type'
+                                        checked={type === 'man'}
+                                        onChange={e => handleRadio(e)}
                                     />
+                                    <div className='type-place-holder nav-left-photo1' />
                                 </label>
-                                {error && (
-                                    <div className=' text-red-600'>{t(`Connect.${error}`)}</div>
-                                )}
-                                <button disabled={loading} className='acc-submit' type='submit'>{t('Connect.Conectare')}</button>
-                                <div className='acc-form-text'><Link to='/main/error/forgotPassword'>{t('Connect.mi-am uitat parola')}</Link></div>
-                                <div className='acc-form-text'><Link to='/main/error/resendEmail'>{t('Connect.nu am primit un email')}</Link></div>
-                            </form>
-                        </div>
+                                <label>
+                                    <input className='acc-type-input hidden'
+                                        type='radio' value='woman'
+                                        name='radio-type'
+                                        checked={type === 'woman'}
+                                        onChange={e => handleRadio(e)}
+                                    />
+                                    <div className='type-place-holder nav-left-photo2' />
+                                </label>
+                            </div>
+                            <button disabled={loading} type='submit' className='acc-submit'>{t('Connect.Înregistrează-te')}</button>
+                        </form>
                     </div>
                 </div>
-            </div >
+                <div className='con-sign-bg'>
+                    <div className='con-sign h-full'>
+                        <div className="self-start text-black">{t('Connect.Nu ai un cont?')}
+                            <span
+                                className='cursor-pointer text-blue-400 underline mx-1'
+                                onClick={() => { if (activeForm) setActiveForm(false) }}
+                            >
+                                {t('Connect.Creează unul')}
+                            </span>
+                        </div>
+                        <div className='con-title'>{t('Connect.Salut!')}</div>
+                        <div className='con-subtitle'>{t('Connect.Conectează-te')}.</div>
+                        <form className='flex items-center justify-center w-full py-6 flex-col' onSubmit={handleLogIn}>
+                            <label className='acc-label'><img className='acc-svg' src={emailSvg} alt='Img' />
+                                <input ref={logEmailRef} className='con-input' type='email' placeholder=' ' minLength={3} maxLength={40} required />
+                                <span className='place-holder'>{t('Connect.Email')}*</span>
+                            </label>
+                            <label className='acc-label'><img className='acc-svg' src={passSvg} alt='Img' />
+                                <input ref={logPassRef} className='con-input' type={passView[2] ? 'text' : 'password'} placeholder=' ' minLength={6} maxLength={20} required />
+                                <span className='place-holder'>{t('Connect.Parola')}*</span>
+                                <img className='acc-svg-eye'
+                                    src={passView[2] ? eyeTrue : eyeFalse}
+                                    alt='Img' onClick={() => { setPassView(c => [c[0], c[1], !c[2]]) }}
+                                />
+                            </label>
+                            <div className='acc-form-text'><Link to='/main/error/forgotPassword'>{t('Connect.mi-am uitat parola')}</Link></div>
+                            <div className='acc-form-text'><Link to='/main/error/resendEmail'>{t('Connect.nu am primit un email')}</Link></div>
+                            <button disabled={loading} className='acc-submit' type='submit'>{t('Connect.Conectare')}</button>
+                        </form>
+                    </div>
+                </div>
+                <div className={activeForm ? 'con-overflow' : 'con-overflow-active'}>
+                    <div className='con-overflow-left'>
+                        <div className='con-over-left-bg' />
+                        {error && (
+                            <div className=' text-red-600'>{t(`Connect.${error}`)}</div>
+                        )}
+                    </div>
+                    <div className='con-overflow-right'>
+                        <div className='con-over-right-bg' />
+                        {error && (
+                            <div className=' text-red-600'>{t(`Connect.${error}`)}</div>
+                        )}
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
-

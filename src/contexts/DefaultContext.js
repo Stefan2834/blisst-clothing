@@ -14,7 +14,7 @@ export default function DefaultProvider({ children }) {
   const [darkTheme, setDarkTheme] = useLocalStorage('dark', false)
   const [lang, setLang] = useLocalStorage('lang', 'en')
   const [isPending, startTransition] = useTransition({ timeoutMs: 500 });
-  const [activeForm, setActiveForm] = useState(true)
+  const [activeForm, setActiveForm] = useState(false)
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true)
   const [filterOpen, setFilterOpen] = useState(false)
