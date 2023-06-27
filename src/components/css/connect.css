@@ -179,6 +179,7 @@ label.acc-label {
   }
   .con-log-bg, .con-sign-bg {
     width: 100%;
+    padding:10px;
   }
   .con-overflow, .con-overflow-active {
     width: 100%;
