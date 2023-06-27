@@ -520,25 +520,23 @@
       "1": "Ce este produsul zilei?",
       "2": "De ce nu pot să comand mai mult de 10 produse dintr-un fel?",
       "3": "Cum pot plăti comanda si cât costă livrare?",
-      "4": "Cum anulez o comandă",
-      "5": "Unde pot vedea istoricul comenzilor?",
-      "6": "Este plata cu cardul sigură?",
-      "7": "Cum folosesc codul de reducere?",
-      "8": "Când se va livra comanda?",
-      "9": "Cum pot fi banat?",
-      "10": "Ce fac dacă am întâmpinat o problemă, iar rezolvarea nu este printre aceste întrebări?"
+      "4": "Unde pot vedea istoricul comenzilor?",
+      "5": "Este plata cu cardul sigură?",
+      "6": "Cum folosesc codul de reducere?",
+      "7": "Când se va livra comanda?",
+      "8": "Cum pot fi banat?",
+      "9": "Ce fac dacă am întâmpinat o problemă, iar rezolvarea nu este printre aceste întrebări?"
     },
     "Ans": {
       "1": "Produsul zilei este un produs generat aleatoriu în fiecare zi la ora 12 noaptea.",
       "2": "Am limitat cumpărarea de produse, așa că nu poti sa pui într-o comandă mai mult de 10 produse dintr-un fel pentru mărimea respectivă. Dacă chiar îți dorești foarte multe produse de aceelași fel, va trebui să plasezi mai multe comenzi.",
       "3": "Poți plăti comanda folosind 2 metode: cardul de credit, și ramburs la curier. Se poate folosi orice fel de card. Cât despre livrare, prețul este următorul: pentru comenzi de sub 200 de Lei - 20 de lei, pentru comenzi de peste 200 de lei - Gratis.",
-      "4": "Dacă vrei să anulezi o comandă nu poți face acest lucru de pe site. Poți totuși să ne lași un email la: blisstteam@gmail.com cu titlul 'Anulare comandă', iar unul dintre admini noștri iți va anula comanda din pagina pentru admini. Dacă ai plătit comanda cu cardul te rugăm sa specifici asta în email, iar bani vor fi trimiși înapoi în cont. Ai grijă dacă plasezi prea multe comenzi, iar apoi le anulezi, deoarece riști să fii banat.",
-      "5": "Dacă dorești să vezi toate comenzile plasate, inclusiv ultima comandă, poți face asta din profilu tău, sau apăsând pe următorul link.",
-      "6": "DA! Plata cu cardul este 100% sigură, așa că nu trebuie să te ingrijorezi. Dacă ai selectat plata cu cardul, după ce ai apăsat butonul de 'Plasează comanda', vei fi redirecționat către Stripe. Stripe este o platformă care se ocupă cu acest gen de tranzacții, și este folosită de peste un milion de site-uri. Noi nu vom avea acces la datele cardului tău!",
-      "7": "Dacă ai primit un cod de reducere, il poți folosi înainte să apeși pe butonul 'Plasează comanda'. Deasupra butonului apare o casetă unde poți introduce codul iar apoi trebuie să apeși Enter.",
-      "8": "Știm că ești nerăbdator să primești produsele comandate, dar trebuie să mai aștepți deoarece acestea ajung în 3-5 zile lucrătoare",
-      "9": "Dacă un utilizator încalcă regurile, poate fii banat. Iată câteva motive pentru care poți să fii banat: Review-uri jignitoare lăsate la produse, Plasarea de comenzi fără rost, Abuzarea butonului NewsLetter, Plasare erori fără rost și altele. Te rugăm să nu abuzezi și să respecți regurile.",
-      "10": "Dacă ai întâmpinat o problemă, sau ai găsit o eroare pe site, atunci ne poți descrie problema ta cât mai detaliat la urmatorul link ,iar noi o să îți răspundem printr-un email cât mai repede posibil."
+      "4": "Dacă dorești să vezi toate comenzile plasate, inclusiv ultima comandă, poți face asta din profilu tău, sau apăsând pe următorul link.",
+      "5": "DA! Plata cu cardul este 100% sigură, așa că nu trebuie să te ingrijorezi. Dacă ai selectat plata cu cardul, după ce ai apăsat butonul de 'Plasează comanda', vei fi redirecționat către Stripe. Stripe este o platformă care se ocupă cu acest gen de tranzacții, și este folosită de peste un milion de site-uri. Noi nu vom avea acces la datele cardului tău!",
+      "6": "Dacă ai primit un cod de reducere, il poți folosi înainte să apeși pe butonul 'Plasează comanda'. Deasupra butonului apare o casetă unde poți introduce codul iar apoi trebuie să apeși Enter.",
+      "7": "Știm că ești nerăbdator să primești produsele comandate, dar trebuie să mai aștepți deoarece acestea ajung în 3-5 zile lucrătoare",
+      "8": "Dacă un utilizator încalcă regurile, poate fii banat. Iată câteva motive pentru care poți să fii banat: Review-uri jignitoare lăsate la produse, Plasarea de comenzi fără rost, Abuzarea butonului NewsLetter, Plasare erori fără rost și altele. Te rugăm să nu abuzezi și să respecți regurile.",
+      "9": "Dacă ai întâmpinat o problemă, sau ai găsit o eroare pe site, atunci ne poți descrie problema ta cât mai detaliat la urmatorul link ,iar noi o să îți răspundem printr-un email cât mai repede posibil."
     }
   }
 }

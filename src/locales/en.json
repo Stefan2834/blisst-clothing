@@ -519,25 +519,23 @@
       "1": "What is the product of the day?",
       "2": "Why can't I order more than 10 products of the same kind?",
       "3": "How can I pay for my order and what is the cost of delivery?",
-      "4": "How do I cancel an order?",
-      "5": "Where can I see my order history?",
-      "6": "Is card payment secure?",
-      "7": "How do I use a discount code?",
-      "8": "When will my order be delivered?",
-      "9": "How can I get banned?",
-      "10": "What should I do if I encounter a problem that is not addressed in these questions?"
+      "4": "Where can I see my order history?",
+      "5": "Is card payment secure?",
+      "6": "How do I use a discount code?",
+      "7": "When will my order be delivered?",
+      "8": "How can I get banned?",
+      "9": "What should I do if I encounter a problem that is not addressed in these questions?"
     },
     "Ans": {
       "1": "The product of the day is a randomly generated product each day at midnight.",
       "2": "We have limited the purchase of products, so you cannot order more than 10 products of the same kind for that particular size. If you really want to order a large quantity of the same product, you will need to place multiple orders.",
       "3": "You can pay for your order using two methods: credit card and cash on delivery. Any type of card can be used. As for delivery, the prices are as follows: for orders under 200 Lei - 20 Lei, for orders over 200 Lei - Free.",
-      "4": "If you want to cancel an order, you cannot do it directly on the website. However, you can send us an email at blisstteam@gmail.com with the subject 'Order Cancellation', and one of our admins will cancel your order from the admin page. If you have paid for the order with a credit card, please mention it in the email, and the money will be refunded to your account. Be careful when placing too many orders and canceling them, as it may result in a ban.",
-      "5": "If you want to view all placed orders, including the latest one, you can do so from your profile or by clicking on the following link.",
-      "6": "YES! Card payment is 100% secure, so you don't have to worry. If you have selected card payment, after clicking the 'Place Order' button, you will be redirected to Stripe. Stripe is a platform that handles these types of transactions and is used by over a million websites. We will not have access to your card details!",
-      "7": "If you have received a discount code, you can use it before clicking the 'Place Order' button. There is a box above the button where you can enter the code, and then press Enter.",
-      "8": "We know you are eager to receive your ordered products, but you have to wait a bit longer as they will arrive within 3-5 working days.",
-      "9": "If a user violates the rules, they may be banned. Here are some reasons why you may be banned: leaving offensive reviews on products, placing unnecessary orders, abusing the Newsletter button, intentionally causing errors, and others. Please do not abuse the system and respect the rules.",
-      "10": "If you encounter a problem or find an error on the site, you can describe the issue in detail at the following link, and we will respond to you via email as soon as possible."
+      "4": "If you want to view all placed orders, including the latest one, you can do so from your profile or by clicking on the following link.",
+      "5": "YES! Card payment is 100% secure, so you don't have to worry. If you have selected card payment, after clicking the 'Place Order' button, you will be redirected to Stripe. Stripe is a platform that handles these types of transactions and is used by over a million websites. We will not have access to your card details!",
+      "6": "If you have received a discount code, you can use it before clicking the 'Place Order' button. There is a box above the button where you can enter the code, and then press Enter.",
+      "7": "We know you are eager to receive your ordered products, but you have to wait a bit longer as they will arrive within 3-5 working days.",
+      "8": "If a user violates the rules, they may be banned. Here are some reasons why you may be banned: leaving offensive reviews on products, placing unnecessary orders, abusing the Newsletter button, intentionally causing errors, and others. Please do not abuse the system and respect the rules.",
+      "9": "If you encounter a problem or find an error on the site, you can describe the issue in detail at the following link, and we will respond to you via email as soon as possible."
     }
   }
 }

@@ -47,8 +47,9 @@ export default function CreditCard() {
           .catch(err => console.error(err))
       } catch (err) {
         console.error(err)
+      } finally {
+        navigate('/main/orders', { replace: true })
       }
-      navigate('/main/orders', { replace: true })
     }
     handleOrder()
   }, [])

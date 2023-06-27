@@ -149,7 +149,7 @@ export default function Navbar() {
                     </Link>
                   </div>
                   <div className={hover[2] ? 'nav-drop-content-top' : 'hidden'}>
-                    <Link className='nav-drop-square' to='/main/cloth/barbati foot adidasi'>
+                    <Link className='nav-drop-square' to='/main/cloth/barbati foot'>
                       <div className='nav-drop-img nav-7' />
                       <div className='nav-square-text-man'>{t('Nav.Toate')}</div>
                     </Link>
