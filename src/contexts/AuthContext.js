@@ -96,7 +96,6 @@ export function AuthProvider({ children }) {
   const server = process.env.REACT_APP_SERVER || 'https://blisst.onrender.com'
   const [admin, setAdmin] = useState(false)
   const [ban, setBan] = useState()
-  const [showMessage, setShowMessage] = useState(false)
   const [det, setDet] = useState({ info: '', tel: '', email: '', name: '', type: '', county: '', newsLetter: 'off', color: '' })
   const [favorite, dispatchFav] = useReducer(Reducer, [])
   const [cart, dispatchCart] = useReducer(Reducer, [])
@@ -146,9 +145,6 @@ export function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowMessage(true);
-    }, 3000)
     const getData = async () => {
       const product = await axios.get(`${server}/product`)
       if (product.data.success) {
@@ -217,13 +213,7 @@ export function AuthProvider({ children }) {
   return (
     <AuthContext.Provider value={value}>
       {loading ? (
-        <>
-          {showMessage && (
-            <div className='auth-loading'>
-              {t('Main.Servărul pornește. Asta durează între 10 și 60 de secunde')}
-            </div>
-          )}
-        </>
+        <></>
       ) : ban ? (
         <Ban t={t} ban={ban} setBan={setBan} />
       ) : children
